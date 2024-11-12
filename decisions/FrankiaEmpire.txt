@@ -1,0 +1,129 @@
+#country_decisions = {
+#
+#	frankia_empire = {
+#		##major = yes
+#		potential = {
+#             has_country_flag = open_all_decision
+#			normal_or_historical_nations = yes
+#			was_never_end_game_tag_trigger = yes
+#			NOT = { has_country_flag = formed_frankia_empire_flag }
+#			OR = {
+#				ai = no
+#				is_playing_custom_nation = no
+#			}
+#			OR = {
+#				ai = no
+#				NOT = { exists = FRK }
+#			}
+#			NOT = { tag = MUG }
+#			NOT = { tag = TIM }
+#			NOT = { tag = FRK }
+#			NOT = { tag = HLR }
+#			NOT = { tag = ROM }
+#			NOT = { tag = PAP }
+#			NOT = { tag = TUR }
+#			NOT = { tag = BYZ }
+#			NOT = { tag = ARB }
+#			NOT = { tag = ROW }
+#			OR = {
+#				culture_group = germanic
+#				culture_group = french
+#				culture_group = latin
+#				
+#			}
+#			is_colonial_nation = no
+#			OR = {
+#				is_former_colonial_nation = no
+#				AND = {
+#					is_former_colonial_nation = yes
+#					ai = no
+#				}
+#			}
+#		}
+#		provinces_to_highlight = {
+#			OR = {
+#	
+#				
+#				
+#				region = france_region
+#				region = low_countries_region
+#				region = italy_region
+#				#region = north_german_region
+#				#region = south_german_region
+#			
+#				area = switzerland_area
+#				
+#				
+#			}
+#			OR = {
+#				NOT = { owned_by = ROOT }
+#				NOT = { is_core = ROOT }
+#			}
+#		}
+#		allow = {
+#			
+#			is_nomad = no
+#			is_at_war = no
+#			is_tribal = no
+#			NOT = { exists = FRK }
+#  
+# 	
+#			
+#			france_region = {
+#				type = all
+#				owned_by = ROOT
+#			}
+#			low_countries_region  = {
+#				type = all
+#				owned_by = ROOT
+#			}
+#			italy_region  = {
+#				type = all
+#				owned_by = ROOT
+#			}
+#			#north_german_region  = {
+#			#	type = all
+#			#	owned_by = ROOT
+#			#}
+#			#south_german_region  = {
+#			#	type = all
+#			#	owned_by = ROOT
+#			#}
+#			
+#			switzerland_area = {
+#				NOT = { owned_by = JAE }
+#				NOT = { is_core = JAE }
+#			}
+#			
+#		}
+#		effect = {
+#			change_tag = FRK
+#			swap_non_generic_missions = yes
+#			#remove_non_electors_emperors_from_empire_effect = yes
+#			
+#			
+#			
+#			add_country_modifier = {
+#				name = "centralization_modifier"
+#				duration = 7300
+#			}
+#			add_prestige = 100
+#			if = {
+#				limit = {
+#					NOT = { primary_culture = cosmopolitan_french }
+#				}
+#				change_primary_culture = cosmopolitan_french
+#			}
+#			set_country_flag = formed_frankia_empire_flag
+#			if = {
+#				limit = { has_custom_ideas = no }
+#				country_event = { id = ideagroups.1 } #Swap Ideas
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 1
+#		}
+#		#ai_importance = 400
+#	}
+#	
+#}

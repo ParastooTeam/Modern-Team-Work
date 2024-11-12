@@ -1,0 +1,179 @@
+un_sanctions = {
+	category = alliance
+	require_acceptance = no
+	is_visible = { 
+		always = yes
+		ai = no
+	}
+	is_allowed = {
+		NOT = { FROM = { has_country_modifier = un_sanction_modifire } }
+		if = {
+			limit = { ai = yes }
+			NOT = { has_global_flag = un_sanction_cooldown_modifire }
+		}
+		#NOT = { great_power_rank = 15 }
+		#FROM = {
+		#	OR = {
+		#		AND = {
+		#			ROOT = {
+		#				ai = no
+		#			}
+		#			FROM = { ai = no }
+		#		}
+		#		AND = { 
+		#			overextension_percentage = 1.00
+		#			core_claim = ROOT
+		#			NOT = { is_rival = ROOT }
+		#			NOT = { ROOT = { is_rival = FROM } }
+		#		}
+		#		AND = {
+		#			offensive_war_with = ROOT
+		#			NOT = { core_claim = ROOT }
+		#			NOT = { is_rival = ROOT }
+		#			NOT = { ROOT = { is_rival = FROM } }
+		#		}
+		#		#AND = {
+		#		#	NOT = { is_rival = ROOT }
+		#		#	NOT = { ROOT = { is_rival = FROM } }
+		#		#}
+		#		AND = {
+		#			offensive_war_with = ROOT
+		#			NOT = { culture_group_claim = ROOT }				
+		#		}
+		#	}
+		#}
+	}
+	on_accept = {
+		
+		if = {
+			limit = {
+				FROM = { ai = yes }
+			}
+			set_global_flag = un_sanction_cooldown_modifire
+			FROM = { country_event = { id = set_variable.40 days = 730 } }
+		}
+		FROM = {
+			save_global_event_target_as = un_sanction_target
+			add_country_modifier = {
+				name = "un_sanction_modifire"
+				duration = 730
+			}
+		}
+		#country_event = { id = un_sanction_event.0 days = 1 }
+		every_country = {
+			limit = {
+				great_power_rank = 15
+				NOT = { great_power_rank = 16 }
+			}
+			country_event = { id = un_sanction_event.1 days = 2 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 14
+				NOT = { great_power_rank = 15 }
+			}
+			country_event = { id = un_sanction_event.1 days = 4 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 13
+				NOT = { great_power_rank = 14 }
+			}
+			country_event = { id = un_sanction_event.1 days = 6 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 12
+				NOT = { great_power_rank = 13 }
+			}
+			country_event = { id = un_sanction_event.1 days = 8 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 11
+				NOT = { great_power_rank = 12 }
+			}
+			country_event = { id = un_sanction_event.1 days = 10 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 10
+				NOT = { great_power_rank = 11 }
+			}
+			country_event = { id = un_sanction_event.1 days = 12 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 9
+				NOT = { great_power_rank = 10 }
+			}
+			country_event = { id = un_sanction_event.1 days = 14 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 8
+				NOT = { great_power_rank = 9 }
+			}
+			country_event = { id = un_sanction_event.1 days = 16 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 7
+				NOT = { great_power_rank = 8 }
+			}
+			country_event = { id = un_sanction_event.1 days = 18 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 6
+				NOT = { great_power_rank = 7 }
+			}
+			country_event = { id = un_sanction_event.1 days = 20 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 5
+				NOT = { great_power_rank = 6 }
+			}
+			country_event = { id = un_sanction_event.1 days = 22 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 4
+				NOT = { great_power_rank = 5 }
+			}
+			country_event = { id = un_sanction_event.1 days = 24 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 3
+				NOT = { great_power_rank = 4 }
+			}
+			country_event = { id = un_sanction_event.1 days = 26 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 2
+				NOT = { great_power_rank = 3 }
+			}
+			country_event = { id = un_sanction_event.1 days = 28 }
+		}
+		every_country = {
+			limit = {
+				great_power_rank = 1
+				NOT = { great_power_rank = 2 }
+			}
+			country_event = { id = un_sanction_event.2 days = 180 }
+		}
+
+		
+
+	}
+	ai_will_do = {  
+		NOT = { 
+			has_opinion = { 
+				who = FROM value = -75
+			}   
+		} 
+	}
+}

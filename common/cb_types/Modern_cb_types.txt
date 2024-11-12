@@ -1,0 +1,109 @@
+
+#cb_spread_democracy = {
+#	#is_triggered_only = yes
+#	prerequisites_self = {
+#		has_reform = democracy_reform
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}
+#		has_reform = democracy_reform
+#		
+#		FROM = {
+#			NOT = { has_reform = democracy_reform }	
+#		}
+#	}
+#	war_goal = war_goal_spread_democracy	
+#}
+
+cb_cancel_military_base = {
+	is_triggered_only = yes
+	prerequisites = {
+
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		
+	}
+	war_goal = take_capital_imperial	
+}
+cb_kill_ruller = {
+	is_triggered_only = yes
+	prerequisites = {
+
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		
+	}
+	war_goal = take_capital_imperial	
+}
+cb_attack_teryak = {
+	is_triggered_only = yes
+	prerequisites = {
+
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		
+	}
+	war_goal = take_capital_imperial	
+}
+cb_cyber_attack = {
+	is_triggered_only = yes
+	prerequisites = {
+
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		
+	}
+	war_goal = take_capital_imperial	
+}
+cb_spy_discovered = {
+	#valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 48
+
+	war_goal = superiority_spy
+}
+
+cb_zi = {
+	is_triggered_only = yes
+
+	war_goal = stop_zombies
+}
+cb_kill_advisor_event_attack = {
+	is_triggered_only = yes
+	war_goal = take_capital_imperial
+}
+
+cb_want_our_land = {
+	
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		any_owned_province = {
+			is_claim = FROM
+		}
+		#ROOT = {
+		#	has_opinion_modifier = {
+		#		who = FROM
+		#		modifier = have_claim
+		#	}
+		#}
+		#FROM = { claim = ROOT }
+		is_revolution_target = no
+	}
+
+	war_goal = take_capital_imperial
+}

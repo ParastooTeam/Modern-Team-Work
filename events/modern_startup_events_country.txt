@@ -1,0 +1,16 @@
+namespace = startup
+
+
+#######################################################################
+country_event = {
+	id = startup.1
+	title = "startup.NAME1"
+	desc = "startup.DESC.1"
+	picture = Instagram_eventPicture
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "startup1.OPT"
+	}
+}

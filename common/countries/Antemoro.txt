@@ -1,0 +1,49 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 51 183 51 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {		
+}
+
+monarch_names = {
+	"Raminia #0" = 5
+	"Zafikazimambobe #0" = 5
+	"Rabesirana #0" = 5
+	"Andriapanolaha #0" = 5
+	
+	
+	"Rangita #0" = -10
+	"Rafohy #0" = -5
+	"Rasoherina #0" = -5
+	"Ranavalona  #0" = -5
+	"Randapavola  #0" = -1
+}
+
+leader_names = {
+	Tsimeto
+	Zafimbolazi
+	Anakara
+	Anterotri
+	Anteoni
+	Antemahazo
+	Anteisambo
+	Zafindraminia
+	Zafikasimambo
+	Rohandria
+	Maroserana
+}
+
+ship_names = {
+	Darafify Fatrapaitanana Mananara Alaotra Mahavavy Mania
+	Mangoky Onilahy Ikopa Kinkony Ihotry Betsiboka
+}

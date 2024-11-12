@@ -1,0 +1,75 @@
+namespace = revolution
+
+
+# The road to bankruptcy
+country_event = {
+	id = revolution.7
+	title = "EVTNAME3017"
+	desc = "EVTDESC3017"
+	picture = BANKRUPTCY_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = road_to_bankruptcy }
+		#num_of_loans = 10
+		is_at_war = yes
+		NOT = { is_revolutionary_republic_trigger = yes }
+		#NOT = { has_reform = revolutionary_empire_reform }
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { 
+		set_country_flag = road_to_bankruptcy 
+	}
+	
+	option = {
+		name = "EVTOPTA3017"			# Mint more money
+		ai_chance = { factor = 30 }
+		add_inflation = 3
+	}
+	option = {
+		name = "EVTOPTB3017"			# We must strengthen our currency
+		ai_chance = { factor = 70 }
+	}
+}
+
+# Financial Crisis
+country_event = {
+	id = revolution.8
+	title = "EVTNAME3018"
+	desc = "EVTDESC3018"
+	picture = ECONOMY_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = financial_crisis }
+		OR = {
+			is_bankrupt = yes
+			num_of_loans = 20
+		}
+		NOT = { is_revolutionary_republic_trigger = yes }
+		NOT = { has_reform = revolutionary_empire_reform }
+	}
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = { 
+		set_country_flag = financial_crisis 
+	}	
+	
+	option = {
+		name = "EVTOPTA3018"			# Cut back on war expenditures
+		ai_chance = { factor = 70 }
+	}
+	option = {
+		name = "EVTOPTB3018"			# The war has its purpose
+		ai_chance = { factor = 30 }
+	}
+}
+

@@ -1,0 +1,43 @@
+﻿l_german:
+ # Decisions:
+ open_canal_decision_kiel_canal_title: "Öffnet den §Y[kiel_canal]§!"
+ open_canal_decision_kiel_canal_desc: "Ermöglicht es Schiffen wieder, den §Y[kiel_canal]§! zu passieren."
+ close_canal_decision_kiel_canal_title: "Schließt den §Y[kiel_canal]§!"
+ close_canal_decision_kiel_canal_desc: "Verbietet es Schiffen, den §Y[kiel_canal]§! zu passieren."
+
+ open_canal_decision_suez_canal_title: "Öffnet den §Y[suez_canal]§!"
+ open_canal_decision_suez_canal_desc: "Ermöglicht es Schiffen wieder, den §Y[suez_canal]§! zu passieren."
+ close_canal_decision_suez_canal_title: "Schließt den §Y[suez_canal]§!"
+ close_canal_decision_suez_canal_desc: "Verbietet es Schiffen, den §Y[suez_canal]§! zu passieren."
+
+ open_canal_decision_panama_canal_title: "Öffnet den §Y[panama_canal]§!"
+ open_canal_decision_panama_canal_desc: "Ermöglicht es Schiffen wieder, den §Y[panama_canal]§! zu passieren."
+ close_canal_decision_panama_canal_title: "Schließt den §Y[panama_canal]§!"
+ close_canal_decision_panama_canal_desc: "Verbietet es Schiffen, den §Y[panama_canal]§! zu passieren."
+
+ # Events:
+ closeable_canals_events.EVTNAME1: "[Root.GetCloseableCanalsEvents1Title]"
+ closeable_canals_events.EVTNAME1.1: "§Y[kiel_canal]§! wieder eröffnet"
+ closeable_canals_events.EVTNAME1.2: "§Y[suez_canal]§! wieder eröffnet"
+ closeable_canals_events.EVTNAME1.3: "§Y[panama_canal]§! wieder eröffnet"
+ closeable_canals_events.EVTDESC1.1: "§Y[From.GetName]§! hat entschieden, den §Y[kiel_canal]§! wieder zu eröffnen. Alle Schiffen können ihn nun wieder passieren."
+ closeable_canals_events.EVTDESC1.2: "§Y[From.GetName]§! hat entschieden, den §Y[suez_canal]§! wieder zu eröffnen. Alle Schiffen können ihn nun wieder passieren."
+ closeable_canals_events.EVTDESC1.3: "§Y[From.GetName]§! hat entschieden, den §Y[panama_canal]§! wieder zu eröffnen. Alle Schiffen können ihn nun wieder passieren."
+ closeable_canals_events1.EVTOPT1: "Der Kanal ist nun wieder geöffnet."
+
+ closeable_canals_events.EVTNAME2: "[Root.GetCloseableCanalsEvents2Title]"
+ closeable_canals_events.EVTNAME2.1: "§Y[kiel_canal]§! geschlossen"
+ closeable_canals_events.EVTNAME2.2: "§Y[suez_canal]§! geschlossen"
+ closeable_canals_events.EVTNAME2.3: "§Y[panama_canal]§! geschlossen"
+ closeable_canals_events.EVTDESC2.1: "§Y[From.GetName]§! hat entschieden, den §Y[kiel_canal]§! zu schließen. Schiffe können ihn nun nicht länger passieren."
+ closeable_canals_events.EVTDESC2.2: "§Y[From.GetName]§! hat entschieden, den §Y[suez_canal]§! zu schließen. Schiffe können ihn nun nicht länger passieren."
+ closeable_canals_events.EVTDESC2.3: "§Y[From.GetName]§! hat entschieden, den §Y[panama_canal]§! zu schließen. Schiffe können ihn nun nicht länger passieren."
+ closeable_canals_events2.EVTOPT1: "Der Kanal ist nun geschlossen."
+
+ # Tooltips:
+ CANAL_IS_CLOSED: "Der §YKanal§! ist geschlossen"
+ CANAL_IS_NOT_CLOSED: "Der §YKanal§! ist NICHT geschlossen"
+
+ # Modifiers:
+ canal_geschlossen: "Kanal geschlossen"
+

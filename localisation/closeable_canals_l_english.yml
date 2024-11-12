@@ -1,0 +1,101 @@
+﻿l_english:
+ # Decisions:
+ open_canal_decision_kiel_canal_title: "Open the §Y[kiel_canal]§!"
+ open_canal_decision_kiel_canal_desc: "Allow ships to pass the §Y[kiel_canal]§! again."
+ close_canal_decision_kiel_canal_title: "Close the §Y[kiel_canal]§!"
+ close_canal_decision_kiel_canal_desc: "Disallow ships to pass the §Y[kiel_canal]§!."
+
+ open_canal_decision_suez_canal_title: "Open the §Y[suez_canal]§!"
+ open_canal_decision_suez_canal_desc: "Allow ships to pass the §Y[suez_canal]§! again."
+ close_canal_decision_suez_canal_title: "Close the §Y[suez_canal]§!"
+ close_canal_decision_suez_canal_desc: "Disallow ships to pass the §Y[suez_canal]§!."
+
+ open_canal_decision_panama_canal_title: "Open the §Y[panama_canal]§!"
+ open_canal_decision_panama_canal_desc: "Allow ships to pass the §Y[panama_canal]§! again."
+ close_canal_decision_panama_canal_title: "Close the §Y[panama_canal]§!"
+ close_canal_decision_panama_canal_desc: "Disallow ships to pass the §Y[panama_canal]§!."
+ 
+ open_canal_decision_volga_canal_title: "Open the §YVolga Canal§!"
+ open_canal_decision_volga_canal_desc: "Allow ships to pass the §YVolga Canal§! again."
+ close_canal_decision_volga_canal_title: "Close the §YVolga Canal§!"
+ close_canal_decision_volga_canal_desc: "Disallow ships to pass the §YVolga Canal§!."
+
+ # Events:
+ closeable_canals_events.EVTNAME1: "[Root.GetCloseableCanalsEvents1Title]"
+ closeable_canals_events.EVTNAME1.1: "§Y[kiel_canal]§! reopened"
+ closeable_canals_events.EVTNAME1.2: "§Y[suez_canal]§! reopened"
+ closeable_canals_events.EVTNAME1.3: "§Y[panama_canal]§! reopened"
+ closeable_canals_events.EVTNAME1.4: "§YVolga Canal§! reopened"
+ closeable_canals_events.EVTDESC1.1: "§Y[From.GetName]§! has decided to reopen the §Y[kiel_canal]§!. All ships are now able to pass it again."
+ closeable_canals_events.EVTDESC1.2: "§Y[From.GetName]§! has decided to reopen the §Y[suez_canal]§!. All ships are now able to pass it again."
+ closeable_canals_events.EVTDESC1.3: "§Y[From.GetName]§! has decided to reopen the §Y[panama_canal]§!. All ships are now able to pass it again."
+ closeable_canals_events.EVTDESC1.4: "§Y[From.GetName]§! has decided to reopen the §YVolga Canal§!. All ships are now able to pass it again."
+ closeable_canals_events1.EVTOPT1: "The canal is now open again."
+
+ closeable_canals_events.EVTNAME2: "[Root.GetCloseableCanalsEvents2Title]"
+ closeable_canals_events.EVTNAME2.1: "§Y[kiel_canal]§! closed"
+ closeable_canals_events.EVTNAME2.2: "§Y[suez_canal]§! closed"
+ closeable_canals_events.EVTNAME2.3: "§Y[panama_canal]§! closed"
+ closeable_canals_events.EVTNAME2.4: "§YVolga Canal§! closed"
+ closeable_canals_events.EVTDESC2.1: "§Y[From.GetName]§! has decided to close the §Y[kiel_canal]§!. Ships are now no longer able to pass it."
+ closeable_canals_events.EVTDESC2.2: "§Y[From.GetName]§! has decided to close the §Y[suez_canal]§!. Ships are now no longer able to pass it."
+ closeable_canals_events.EVTDESC2.3: "§Y[From.GetName]§! has decided to close the §Y[panama_canal]§!. Ships are now no longer able to pass it."
+ closeable_canals_events.EVTDESC2.4: "§Y[From.GetName]§! has decided to close the §YVolga Canal§!. Ships are now no longer able to pass it."
+ closeable_canals_events2.EVTOPT1: "The canal is now closed."
+
+ # Tooltips:
+ CANAL_IS_CLOSED:0 "The §Ycanal§! is closed"
+ CANAL_IS_NOT_CLOSED:0 "The §Ycanal§! is NOT closed"
+ ATOMIC_USED:0 "There have been no §RNuclear Attack§! on this city"
+ MISSILE_USED:0 "No §RMissiles§! have been proven to this channel"
+ # Modifiers:
+ canal_closed:0 "Canal Closed"
+
+ NOT_CONTROLED_CANAL:0 "The channel is under our control"
+ 
+ 
+ 
+ openable_country_canals_events1.OPT:0 "This is Great"
+ closeable_country_canals_events2.OPT:0 "No No No This is a Disaster"
+ 
+ closeable_country_canals_events.close1:0 "The §YKiel Canal§! was closed"
+ closeable_country_canals_events.NAME1:0 "The §YKiel Canal§! was closed"
+ closeable_country_canals_events.DESC.1:0 "§R[From.From.GetName]§! has decided to close the §YKiel Canal§!. \nShips are now no longer able to pass it."
+ 
+ closeable_country_canals_events.close2:0 "The §YSuez Canal§! was closed"
+ closeable_country_canals_events.NAME2:0 "The §YSuez Canal§! was closed"
+ closeable_country_canals_events.DESC.2:0 "§R[From.From.GetName]§! has decided to close the §YSuez Canal§!. \nShips are now no longer able to pass it."
+ 
+ closeable_country_canals_events.close3:0 "The §YPanama Canal§! was closed"
+ closeable_country_canals_events.NAME3:0 "The §YPanama Canal§! was closed"
+ closeable_country_canals_events.DESC.3:0 "§R[From.From.GetName]§! has decided to close the §YPanama Canal§!. \nShips are now no longer able to pass it."
+ 
+ closeable_country_canals_events.close4:0 "The §YVolga Canal§! was closed"
+ closeable_country_canals_events.NAME4:0 "The §YVolga Canal§! was closed"
+ closeable_country_canals_events.DESC.4:0 "§R[From.From.GetName]§! has decided to close the §YVolga Canal§!. \nShips are now no longer able to pass it."
+ 
+ 
+ 
+ openable_country_canals_events.open1:0 "The §YKiel Canal§! was opened"
+ openable_country_canals_events.NAME1:0 "The §YKiel Canal§! was opened"
+ openable_country_canals_events.DESC.1:0 "§R[From.From.GetName]§! managed to open the §YKiel Canal§!. \nAll ships are now able to pass it again."
+ 
+ openable_country_canals_events.open2:0 "The §YSuez Canal§! was opened"
+ openable_country_canals_events.NAME2:0 "The §YSuez Canal§! was opened"
+ openable_country_canals_events.DESC.2:0 "§R[From.From.GetName]§! managed to open the §YSuez Canal§!. \nAll ships are now able to pass it again."
+ 
+ openable_country_canals_events.open3:0 "The §YPanama Canal§! was opened"
+ openable_country_canals_events.NAME3:0 "The §YPanama Canal§! was opened"
+ openable_country_canals_events.DESC.3:0 "§R[From.From.GetName]§! managed to open the §YPanama Canal§!. \nAll ships are now able to pass it again."
+ 
+ openable_country_canals_events.open4:0 "The §YVolga Canal§! was opened"
+ openable_country_canals_events.NAME4:0 "The §YVolga Canal§! was opened"
+ openable_country_canals_events.DESC.4:0 "§R[From.From.GetName]§! managed to open the §YVolga Canal§!. \nAll ships are now able to pass it again."
+ 
+ closed_canal_bad:0 "Closing the international waterway"
+ closed_canal_baddesc:0 ""
+ closed_canal_good:0 "Open international waterway"
+ closed_canal_good_desc:0 "" 
+ THEY_WANT_WE_CLOSE_PANAMA:0 "They Want we close §YPanama Canal§!"
+ THEY_WANT_WE_CLOSE_SUEZ:0 "They Want we close §YSuez Canal§!"
+ THEY_WANT_WE_CLOSE_VOLGA:0 "They Want we close §YVolga Canal§!"

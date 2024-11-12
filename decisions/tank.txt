@@ -1,0 +1,1441 @@
+country_decisions = {
+	
+	show_tank_diploaction_decision = {
+		major = yes
+		potential = {   
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			
+			if = {
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = show_tank_dip
+							value = 1
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = DONT_SHOW_TANK_DIP
+				}
+			}
+			else = {
+				custom_trigger_tooltip = {
+					tooltip = SHOW_TANK_DIP
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_tank_technology
+			if = {
+				limit = { NOT = { has_country_flag = dont_show_tank_tech } }
+				set_country_flag = dont_show_tank_tech
+			}
+			else = {
+				clr_country_flag = dont_show_tank_tech
+			}
+
+			hidden_effect = {
+				if = {
+					limit = { 
+						NOT = {
+							check_variable = {
+								which = show_tank_dip
+								value = 1
+							}
+						}
+					}
+					set_variable = {
+						which = show_tank_dip
+						value = 1
+					}
+				}
+				else = {
+					set_variable = {
+						which = show_tank_dip
+						value = 0
+					}
+				}
+			}
+			if = {
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = show_tank_dip
+							value = 1
+						}
+					}
+				}
+				custom_tooltip = DONT_SHOW_TANK_DIP
+				
+			}
+			else = {
+				custom_tooltip = SHOW_TANK_DIP
+			}
+		}
+		ai_will_do = {
+			factor = 0 
+		}
+	}
+	tank_tech_decision = {
+		major = yes
+		potential = { 	
+			if = {
+				limit = { ai = no }
+				has_country_flag = show_all_dip_decision
+			}
+			NOT = {
+				check_variable = {
+					which = tank_Support
+					value = 25
+				}
+			}
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = LEVEL_UP_TANK_TECH_01
+			}
+			full_idea_group = artillery_ideas
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 2
+						}
+					}
+				}
+				mil_tech = 10
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 3
+						}
+					}
+				}
+				mil_tech = 11
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 4
+						}
+					}
+				}
+				mil_tech = 12
+				innovativeness = 1
+			}	
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 5
+						}
+					}
+				}
+				mil_tech = 14
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 3
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 6
+						}
+					}
+				}
+				mil_tech = 15
+				arms = 1
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 5
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 7
+						}
+					}
+				}
+				mil_tech = 17
+				arms = 1
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 7
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 8
+						}
+					}
+				}
+				mil_tech = 19
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 10
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 9
+						}
+					}
+				}
+				mil_tech = 20
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 13
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 10
+						}
+					}
+				}
+				mil_tech = 23
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 10
+				}
+				}
+				else = {
+					innovativeness = 15
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 11
+						}
+					}
+				}
+				mil_tech = 25
+				arms = 3
+
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 20
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 12
+						}
+					}
+				}
+				mil_tech = 27
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 22
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 13
+						}
+					}
+				}
+				mil_tech = 29
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 24
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 14
+						}
+					}
+				}
+				mil_tech = 31
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 26
+				}
+
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 15
+						}
+					}
+				}
+				mil_tech = 35
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 28
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 16
+						}
+					}
+				}
+				mil_tech = 39
+				arms = 3
+
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}				
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 17
+						}
+					}
+				}
+				mil_tech = 43
+				arms = 3
+
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 18
+						}
+					}
+				}
+				mil_tech = 47
+				arms = 3
+
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 19
+						}
+					}
+				}
+				mil_tech = 51
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 20
+						}
+					}
+				}
+				mil_tech = 55
+				arms = 3
+
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 28
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 21
+						}
+					}
+				}
+				mil_tech = 63
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 22
+						}
+					}
+				}
+				mil_tech = 67
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 23
+						}
+					}
+				}
+				mil_tech = 71
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 24
+						}
+					}
+				}
+				mil_tech = 75
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 25
+						}
+					}
+				}
+				mil_tech = 79
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 30
+				}
+			}
+
+			if = {
+				limit = { ai = yes }
+				years_of_income = 0.1
+			}
+			else = {
+				years_of_income = 0.3
+			}
+		}
+		effect = {
+			if = {
+				limit = { ai = yes }
+				add_years_of_income = -0.1
+			}
+			else = {
+				add_years_of_income = -0.3
+			}
+			
+			custom_tooltip = LEVEL_UP_TANK_TECH
+			#add_country_modifier = {
+			#	name = cooldown_tank
+			#	duration = 730
+			#}
+			hidden_effect = {
+				if = {
+					limit = { 
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 2
+							}
+						}
+					}
+					set_variable = {
+						which = tank_Support
+						value = 2
+					}
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}
+					}
+					change_variable = {
+						which = tank_Support
+						value = 1
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = tank_Support
+							value = 25
+						}
+						
+					}
+					set_country_flag = tank_level_finish
+				}
+			}			
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 1000
+				is_at_war = yes	
+			}
+		}
+		ai_importance = 25
+	}
+##	03show_all_dip_decision = {
+##		major = yes
+##		
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			OR = {
+##				sea_superregion = {
+##					NOT = {
+##						province_distance = {
+##							who = prev
+##							distance = 100
+##						}
+##					}
+##					heavy_ships_in_province = ROOT
+##					is_sea = yes	
+##				}
+##				AND = {
+##					any_province = {
+##						AND = {
+##							country_or_subject_holds = ROOT
+##						}
+##						OR = {
+##							AND = {
+##								has_building = constable
+##								OR = {
+##									controlled_by = ROOT
+##									controller = {
+##										is_subject_of = ROOT
+##									}
+##								}
+##							}
+##						}
+##						OR = {
+##							check_variable = {
+##								which = airforce_Dev
+##								value = 1
+##							}
+##							check_variable = {
+##								which = airforce_Unit
+##								value = 1	
+##							}
+##							check_variable = {
+##								which = airforce_Building
+##								value = 1
+##								
+##							}
+##						}
+##						NOT = {
+##							province_distance = {
+##								who = prev
+##								distance = 100
+##							}
+##						}
+##					}
+##				}
+##			}
+##			#is_city = yes
+##			NOT = {
+##				country_or_subject_holds = ROOT
+##			}	
+##		}
+##		allow = {	
+##			
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			every_province = {
+##				limit = {
+##					owned_by = root
+##					has_building = constable
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building
+##						value = 2
+##					}
+##				}
+##			}
+##			ROOT = {
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building
+##						value = 2
+##					}
+##				}
+##			}
+##		}
+##					
+##		
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+##	04show_all_dip_decision = {
+##		major = yes
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			has_building = constable
+##			country_or_subject_holds = ROOT
+##		}
+##			
+##		allow = {	
+##			any_province = {
+##				country_or_subject_holds = ROOT	
+##				check_variable = {
+##					which = airforce_Dev
+##					value = 1
+##				}
+##				check_variable = {
+##					which = airforce_Unit
+##					value = 1
+##				}
+##				check_variable = {
+##					which = airforce_Building
+##					value = 1
+##				}	
+##			} 
+##			
+##						
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			every_province = {
+##				limit = {
+##					check_variable = {
+##						which = airforce_Dev
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Unit
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Building
+##						value = 1
+##					}	
+##				}
+##				change_variable = {
+##					which = airforce_Dev
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Unit
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Building
+##					value = -1
+##				}
+##			}
+##							
+##		}
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+##
+##	#####################################################################################
+##
+##	03_decision = {
+##		major = yes
+##		
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			OR = {
+##				sea_superregion = {
+##					NOT = {
+##						province_distance = {
+##							who = prev
+##							distance = 100
+##						}
+##					}
+##					heavy_ships_in_province = ROOT
+##					is_sea = yes	
+##				}
+##				AND = {
+##					any_province = {
+##						AND = {
+##							country_or_subject_holds = ROOT
+##						}
+##						OR = {
+##							AND = {
+##								has_building = constable
+##								OR = {
+##									controlled_by = ROOT
+##									controller = {
+##										is_subject_of = ROOT
+##									}
+##								}
+##							}
+##						}
+##						OR = {
+##							check_variable = {
+##								which = airforce_Dev@TAG
+##								value = 1
+##							}
+##							check_variable = {
+##								which = airforce_Unit@TAG
+##								value = 1	
+##							}
+##							check_variable = {
+##								which = airforce_Building@TAG
+##								value = 1
+##								
+##							}
+##						}
+##						NOT = {
+##							province_distance = {
+##								who = prev
+##								distance = 100
+##							}
+##						}
+##					}
+##				}
+##			}
+##			#is_city = yes
+##			NOT = {
+##				country_or_subject_holds = ROOT
+##			}	
+##		}
+##		allow = {	
+##			
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			every_province = {
+##				limit = {
+##					owned_by = root
+##					has_building = constable
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev@TAG
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit@TAG
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building@TAG
+##						value = 2
+##					}
+##				}
+##			}
+##			ROOT = {
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev@TAG
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit@TAG
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building@TAG
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building@TAG
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building@TAG
+##						value = 2
+##					}
+##				}
+##			}
+##		}
+##					
+##		
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+##	04_decision = {
+##		major = yes
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			has_building = constable
+##			country_or_subject_holds = ROOT
+##		}
+##			
+##		allow = {	
+##			any_province = {
+##				check_variable = {
+##					which = airforce_Dev_test@RootRoot
+##					value = 1
+##				}
+##			}			
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			every_province = {
+##				limit = {
+##					check_variable = {
+##						which = airforce_Dev@TAG
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Unit@TAG
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Building@TAG
+##						value = 1
+##					}	
+##				}
+##				change_variable = {
+##					which = airforce_Dev@TAG
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Unit@TAG
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Building@TAG
+##					value = -1
+##				}
+##			}
+##							
+##		}
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+##
+##
+##	################################################################################################
+##
+##
+##	05_decision = {
+##		major = yes
+##		
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			OR = {
+##				sea_superregion = {
+##					NOT = {
+##						province_distance = {
+##							who = prev
+##							distance = 100
+##						}
+##					}
+##					heavy_ships_in_province = ROOT
+##					is_sea = yes	
+##				}
+##				AND = {
+##					any_province = {
+##						AND = {
+##							country_or_subject_holds = ROOT
+##						}
+##						OR = {
+##							AND = {
+##								has_building = constable
+##								OR = {
+##									controlled_by = ROOT
+##									controller = {
+##										is_subject_of = ROOT
+##									}
+##								}
+##							}
+##						}
+##						OR = {
+##							check_variable = {
+##								which = airforce_Dev@FROM
+##								value = 1
+##							}
+##							check_variable = {
+##								which = airforce_Unit@FROM
+##								value = 1	
+##							}
+##							check_variable = {
+##								which = airforce_Building@FROM
+##								value = 1
+##								
+##							}
+##						}
+##						NOT = {
+##							province_distance = {
+##								who = prev
+##								distance = 100
+##							}
+##						}
+##					}
+##				}
+##			}
+##			#is_city = yes
+##			NOT = {
+##				country_or_subject_holds = ROOT
+##			}	
+##		}
+##		allow = {	
+##			
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			118 = {
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev@RootRoot
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit@RootRoot
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building@RootRoot
+##						value = 2
+##					}
+##				}
+##			}
+##			ITA = {
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Dev@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Dev@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Dev@RootRoot
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Unit@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Unit@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Unit@RootRoot
+##						value = 2
+##					}
+##				}
+##				if = {
+##					limit = { 
+##						NOT = {
+##							check_variable = {
+##								which = airforce_Building@RootRoot
+##								value = 1
+##								
+##							}
+##						}
+##					}
+##					set_variable = {
+##						which = airforce_Building@RootRoot
+##						value = 1
+##					}
+##				}
+##				else = {
+##					change_variable = {
+##						which = airforce_Building@RootRoot
+##						value = 2
+##					}
+##				}
+##			}
+##		}
+##					
+##		
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+##	06_decision = {
+##		major = yes
+##		potential = { 
+##			ai = no
+##			
+##		}
+##		provinces_to_highlight = {
+##			has_building = constable
+##			country_or_subject_holds = ROOT
+##		}
+##			
+##		allow = {	
+##			118 = {
+##				check_variable = {
+##					which = airforce_Dev@RootRoot
+##					value = 1
+##				}
+##				check_variable = {
+##					which = airforce_Unit@RootRoot
+##					value = 1
+##				}
+##				check_variable = {
+##					which = airforce_Building@RootRoot
+##					value = 1
+##				}	
+##			} 
+##			
+##						
+##		}
+##		effect = {
+##			custom_tooltip = SHOW_ALL_SIDE_DECISION
+##			every_province = {
+##				limit = {
+##					check_variable = {
+##						which = airforce_Dev@RootRoot
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Unit@RootRoot
+##						value = 1
+##					}
+##					check_variable = {
+##						which = airforce_Building@RootRoot
+##						value = 1
+##					}	
+##				}
+##				change_variable = {
+##					which = airforce_Dev@RootRoot
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Unit@RootRoot
+##					value = -1
+##				}
+##				change_variable = {
+##					which = airforce_Building@RootRoot
+##					value = -1
+##				}
+##			}
+##							
+##		}
+##		ai_will_do = {
+##			factor = 0
+##		}
+##	}
+
+}
+

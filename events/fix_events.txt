@@ -1,0 +1,36 @@
+namespace = fix
+country_event = {	# [From.GetName] bribed our officials
+	id = fix.12
+	title = fix.11.t
+	desc = "fix.11.d"
+	picture = ADDCorrupt_eventPicture
+
+	hidden = yes
+	fire_only_once = yes
+
+	trigger = {
+		any_province = {
+			religion = secularism
+		}
+	}
+
+	immediate = {
+		every_province = {
+			limit = {
+				religion = secularism
+			}
+			change_religion = irreligious
+		}
+	}
+	
+	option = {
+		name = fix.11.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+
+
+

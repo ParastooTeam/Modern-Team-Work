@@ -1,0 +1,193 @@
+namespace = sell_ship
+
+country_event = {
+	id = sell_ship.1
+	title = "sell_ship.1title"
+	desc = "sell_ship.1desc"
+	picture = military_transport_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "sell_ship.100opt"
+		trigger = {
+			num_of_transport = 100
+		}
+		while = {
+			limit = { 
+				ROOT = {
+					NOT = {
+						check_variable = {
+							which = transport_check
+							value = 100
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ROOT = {
+						NOT = {
+							check_variable = {
+								which = transport_check
+								value = 100
+							}
+						}
+					}
+					sea_superregion = { 
+						transports_in_province = ROOT
+					}
+				}
+				sea_superregion = {
+					limit = {
+						transports_in_province = ROOT					
+					}
+					if = {
+						limit = {
+							transports_in_province = ROOT
+							NOT = {
+								check_variable = {
+									which = transport_check
+									value = 100
+								}
+							}
+						}
+						kill_units = { who = root type = transport amount = 1 }
+						transport = event_target:sell_ship_from
+					}
+				}
+				if = {
+					limit = { 
+						ROOT = {
+							has_country_flag = transporter_ship_set
+							OR = {
+								has_country_flag = transporter_ship_set
+								check_variable = {
+									which = transport_check
+									value = 1
+								}
+							}
+						}
+					}
+					ROOT = {
+						change_variable = {
+							which = transport_check
+							value = 1
+							}
+					}
+				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = transporter_ship_set } } }
+					ROOT = {
+						set_country_flag = transporter_ship_set
+						set_variable = {
+							which = transport_check
+							value = 1
+						}
+					}
+				}
+			}
+			
+		}
+		country_event = {
+			id = set_variable.36
+			days = 1			
+		}
+		clear_global_event_target = sell_ship_from
+	}
+	option = {
+		name = "sell_ship.50opt"
+		trigger = {
+			num_of_transport = 50
+		}
+		while = {
+			limit = { 
+				ROOT = {
+					NOT = {
+						check_variable = {
+							which = transport_check
+							value = 50
+						}
+					}
+				}
+			}
+			if = {
+				limit = { 
+					ROOT = {
+						NOT = {
+							check_variable = {
+								which = transport_check
+								value = 50
+							}
+						}
+					}
+					sea_superregion = { 
+						transports_in_province = ROOT
+					}
+				}
+				sea_superregion = {
+					limit = {
+						transports_in_province = ROOT					
+					}
+					if = {
+						limit = {
+							transports_in_province = ROOT
+							NOT = {
+								check_variable = {
+									which = transport_check
+									value = 50
+								}
+							}
+						}
+						kill_units = { who = root type = transport amount = 1 }
+						transport = event_target:sell_ship_from
+					}
+				}
+				if = {
+					limit = { 
+						ROOT = {
+							has_country_flag = transporter_ship_set
+							OR = {
+								has_country_flag = transporter_ship_set
+								check_variable = {
+									which = transport_check
+									value = 1
+								}
+							}
+						}
+					}
+					ROOT = {
+						change_variable = {
+							which = transport_check
+							value = 1
+							}
+					}
+				}
+				if = {
+					limit = { ROOT = { NOT = { has_country_flag = transporter_ship_set } } }
+					ROOT = {
+						set_country_flag = transporter_ship_set
+						set_variable = {
+							which = transport_check
+							value = 1
+						}
+					}
+				}
+			}
+			
+		}
+		country_event = {
+			id = set_variable.36
+			days = 1			
+		}
+		clear_global_event_target = sell_ship_from
+	}
+	option = {
+		name = "sell_ship.1opt"
+		clear_global_event_target = sell_ship_from
+	}
+}
+
+
+
+

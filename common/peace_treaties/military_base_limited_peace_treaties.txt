@@ -1,0 +1,88 @@
+po_make_military_base_limited = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.33
+		no_provinces = 0.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = -1
+	requires_demand_independence = no
+	is_make_subject = yes
+	requires_is_allowed = no
+	
+	is_visible = {		
+	}
+	is_allowed = {
+		OR = {
+			full_idea_group = military_base_ideas
+			full_idea_group = kolonialimperium0
+		}
+		ROOT = { is_great_power = yes }
+	}
+	effect = {
+		create_subject = {
+			subject = FROM
+			subject_type = limited_army
+		}
+		#FROM = { 
+		#	add_country_modifier = {
+		#		name = cooldown_faction_member
+		#		duration = 18250
+		#	} 
+		#}
+		if = {
+			limit = {
+				OR = {
+					FROM = { is_subject_of_type = access_building_on_state }
+					FROM = { is_subject_of_type = limited_army }
+					FROM = { is_subject_of_type = naval_base }
+				}
+			}
+			FROM = {
+				overlord = {
+					add_casus_belli = {
+						type = cb_cancel_military_base
+						target = ROOT
+						months = 240
+					}
+					add_truce_with = FROM
+					add_opinion = {
+						modifier = cancel_access_building_OPINION  
+						who = ROOT
+					}
+					country_event = { id = great_power_know.1 }
+				}
+			}
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 50
+		}
+		limit = {
+			FROM = {
+				NOT = { total_development = 1000 }
+				any_neighbor_country = {
+					OR = {
+						is_rival = ROOT
+						overlord = {
+							is_rival = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+

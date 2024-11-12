@@ -1,0 +1,19 @@
+name = "Azerbaijan Armenian War"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2282 #Grodno
+}
+
+2020.8.25 = {
+	add_attacker = AZE
+	add_defender = ARM
+	add_defender = MLK
+}
+
+2020.11.1 = {
+	rem_attacker = AZE
+	rem_defender = ARM
+	rem_defender = MLK
+}

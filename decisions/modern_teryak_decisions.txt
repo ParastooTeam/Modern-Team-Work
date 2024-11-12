@@ -1,0 +1,197 @@
+country_decisions = {
+
+	teryak_def = {
+		potential = {
+             has_country_flag = show_all_dip_decision
+			NOT = { has_country_modifier = teryak_defensive_1 }
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					any_neighbor_country = {
+						drugs = 1	
+					}
+					any_rival_country = {
+						drugs = 1
+					}
+					any_neighbor_country = {
+						production_leader = {
+							trade_goods = drugs
+						}	
+					}
+					any_rival_country = {
+						trading_bonus = {
+							trade_goods = drugs
+							value = yes
+						}
+					}
+					any_neighbor_country = {
+						trading_bonus = {
+							trade_goods = drugs
+							value = yes
+						}		
+					}
+					any_rival_country = {
+						production_leader = {
+							trade_goods = drugs
+						}
+					}
+				}
+				
+			}
+		}
+		allow = {
+			NOT = { has_country_modifier = teryak_defensive_1 }
+			years_of_income = 0.5
+			mil_tech = 7
+			mil_power = 50			
+		}
+		effect = {
+			add_years_of_income = -0.5
+			add_mil_power = -50
+			add_prestige = 10
+			add_country_modifier = {
+				name = "teryak_defensive"
+				duration = 3650
+			}
+			
+			hidden_effect = {
+				remove_country_modifier = teryak_attack_1
+				add_country_modifier = {
+					name = "teryak_defensive_1"
+					duration = 3650
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	remove_teryak = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			ai = no
+			drugs = 1
+			#if = {
+			#	limit = {
+			#		ai = yes
+			#		drugs = 5
+			#	}
+			#	diplomatic_reputation = -2
+			#}
+		}
+		allow = {
+			drugs = 1				
+			years_of_income = 0.1
+			adm_power = 50
+		}
+		effect = {
+			add_years_of_income = -0.1
+			add_adm_power = -50
+			add_prestige = 5
+			random_owned_province = {
+				limit = {
+					owned_by = ROOT
+					trade_goods = drugs
+				}
+				change_trade_goods = unknown			
+			}
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	add_teryak = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			ai = no
+			
+		}
+		allow = {
+			treasury = 4000
+			if = {
+				limit = { has_idea_group = teryak_farm_research }
+				full_idea_group = teryak_farm_research
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_6 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 6
+					}
+				}
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_5 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 5
+					}
+				}
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_4 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 4
+					}
+				}
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_3 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 3
+					}
+				}
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_2 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 2
+					}
+				}
+			}
+			else_if = {
+				limit = { has_idea = teryak_farm_research_1 }
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = drugs
+						}
+						amount = 1
+					}
+				}
+			}
+			has_idea = teryak_farm_research_1
+		}
+		effect = {
+			country_event = {
+				id = modern_tradegoods.1
+			}			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+}

@@ -1,0 +1,117 @@
+province = {
+    war = {
+        active = {
+            is_at_war = yes
+        }
+		eval_add = {
+            factor = 5.0
+            modifier = {
+                factor = 5.0
+				
+				NOT = { controlled_by = root }
+				NOT = { controller = { is_subject_of = root } }
+				NOT = {
+					num_of_units_in_province = {
+						amount = 32
+						who = root
+						type = artillery					
+					}	
+				}
+				fort_level = 1
+                has_siege = yes
+            }
+		}
+		eval_add = {
+            factor = 3.0
+            modifier = {
+                factor = 3.0
+				
+				NOT = { controlled_by = root }
+				NOT = { controller = { is_subject_of = root } }
+				NOT = {
+					num_of_units_in_province = {
+						amount = 1
+						who = root
+					}
+				}
+				NOT = { fort_level = 1 }
+                
+            }
+		}
+		#eval_multiply = {
+        #    factor = 3000.0
+        #    modifier = {
+        #        factor = 6.1
+		#		
+		#		NOT = { controlled_by = root }
+		#		NOT = { controller = { is_subject_of = root } }
+		#		NOT = {
+		#			num_of_units_in_province = {
+		#				amount = 32
+		#				who = prev
+		#				type = artillery					
+		#			}	
+		#		}
+		#		fort_level = 1
+        #        has_siege = yes
+        #    }
+		#}
+		#eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+        #        factor = 0.75
+        #        fort_level = 1
+        #    }
+		#}
+		#eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+        #        factor = -1.25
+        #        NOT = { development = 6 }
+        #    }
+		#}
+		#eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+        #        factor = -1.25
+        #        NOT = { development = 9 }
+        #    }
+		#}
+		#eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+        #        factor = -1.25
+        #        OR = {
+        #            has_terrain = hills
+        #            has_terrain = mountain
+        #            has_terrain = highlands
+        #        }
+        #    }
+		#}
+		#eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+		#		factor = -1.5
+        #        OR = {
+        #            has_terrain = glacier
+        #            has_terrain = desert
+        #        }
+        #    }
+		#}
+        #eval_add = {
+        #    factor = 2500.0
+        #    modifier = {
+        #        factor = -1.5
+		#		is_in_capital_area = no
+		#	}
+        #    
+        #}
+        #eval_multiply = {
+        #    factor = 10000.0
+        #    modifier = {
+        #        factor = -9999.0
+        #        is_city = yes                
+        #    }
+        #}
+    }
+}

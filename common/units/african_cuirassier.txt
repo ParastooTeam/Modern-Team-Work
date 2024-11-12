@@ -1,0 +1,12 @@
+# African Dragoon
+
+type = infantry
+unit_type = western
+
+maneuver = 3
+offensive_morale = 7
+defensive_morale = 8
+offensive_fire = 6
+defensive_fire = 6
+offensive_shock = 6
+defensive_shock = 6

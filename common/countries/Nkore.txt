@@ -1,0 +1,57 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 124 212 121 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {		
+}
+
+monarch_names = {
+	"Ruhinda #0" = 5
+	"Nkuba #0" = 5
+	"Nyaika #0" = 5
+	"Ntare #0" = 10
+	"Rushango #0" = 5
+	"Kasasira #0" = 5
+	"Kitra #0" = 5
+	"Rumongye #0" = 5
+	"Mirindi #0" = 5
+	"Macwa #0" = 5
+	"Rwabirere #0" = 5
+	"Kahaya #0" = 5
+	"Rwebishengye #0" = 5
+	"Gasyonga #0" = 5
+	"Mutambuka #0" = 5
+	
+	
+	"Nyiramavugo #0" = -1
+	"Kanjogera #0" = -1
+	"Nyirarukangaga #0" = -1
+}
+
+leader_names = {
+	Bahinda
+	Hima
+	Shambo
+	Bito
+	Bairu
+	Kooki
+	Gahima
+	Rrwoga
+	Bahavu
+	Bashi
+	Bongera
+}
+
+ship_names = {
+	Shyerezo Nkuba Kigwa Muntu Kijuru Kimanuka Merano Randa Gisa Kazi Gihanga
+}

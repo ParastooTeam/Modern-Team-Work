@@ -1,0 +1,20 @@
+# Field Howitzer
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 19
+	}
+}
+
+maneuver = 2
+offensive_morale = 5
+defensive_morale = 4
+offensive_fire = 8
+defensive_fire = 8
+offensive_shock = 3
+defensive_shock = 2
+

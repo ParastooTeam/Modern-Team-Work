@@ -1,0 +1,23 @@
+#Early Carrack 
+#Heavy ship Level 1
+type = heavy_ship
+
+trigger = {
+	OR = {
+		any_owned_province = {
+			trade_goods = navalarms
+		}
+		has_idea_group = gross0
+	}
+	
+}
+
+
+hull_size = 100
+base_cannons = 110
+sail_speed = 5
+
+blockade = 30
+
+
+sprite_level = 1

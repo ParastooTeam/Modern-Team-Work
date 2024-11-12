@@ -1,0 +1,6 @@
+government = monarchy
+
+primary_culture = persian
+religion = zoroastrian
+technology_group = muslim
+capital = 416 # Tabriz

@@ -1,0 +1,116 @@
+influance_in_their = {
+	category = influence
+	require_acceptance = no
+	is_visible = { 
+		always = yes
+		#ai = no
+	}
+	is_allowed = {
+		if = {
+			limit = { ai = yes ROOT = { has_reform = democracy_reform } }
+			is_year = 2100
+		}
+		if = {
+			limit = {
+				FROM = { is_great_power = yes }
+			}
+			ROOT = { is_great_power = yes }
+		}
+		stability = 3
+		is_at_war = no
+		adm_power = 10
+		dip_power = 10
+		mil_power = 10
+		OR = {
+			full_idea_group = influence_ideas
+			full_idea_group = propaganda0
+		}
+		ROOT = {  
+			NOT = { num_of_rebel_armies = 1 }
+			NOT = { num_of_rebel_controlled_provinces = 1 }
+		}
+		NOT = { has_country_modifier = cool_down_influance }
+		if = { 
+			limit = { ai = no }
+			has_spy_network_in = {
+				who = FROM
+				value = 10
+			}
+		}
+		if = { 
+			limit = { ai = yes }
+			has_spy_network_in = {
+				who = FROM
+				value = 50
+			}
+		}
+		#if = { limit = { ai = yes }
+		#	if = {
+		#		limit = { FROM = { has_reform = democracy_reform } }
+		#		ROOT = { NOT = { has_reform = democracy_reform } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { has_reform = fascist_government } }
+		#		ROOT = { NOT = { has_reform = fascist_government } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { has_reform = communist_government } }
+		#		ROOT = { NOT = { has_reform = communist_government } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { has_reform = oligarchic_reform } }
+		#		ROOT = { NOT = { has_reform = oligarchic_reform } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { has_reform = military_government } }
+		#		ROOT = { NOT = { has_reform = military_government } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { government = republic } }
+		#		ROOT = { NOT = { government = republic } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { government = monarchy } }
+		#		ROOT = { NOT = { government = monarchy } }
+		#	}
+		#	if = {
+		#		limit = { FROM = { government = theocracy } }
+		#		ROOT = { NOT = { government = theocracy } }
+		#	}
+		#}
+	}
+	on_accept = {
+		
+		FROM = { save_global_event_target_as = influence_in_their_government }
+		add_country_modifier = {
+			name = cool_down_influance
+			duration = 10
+			hidden = yes
+			
+		}
+		country_event = {
+			id = government_inflience_type.10
+		}
+	}
+	ai_will_do = {  
+		if = {
+			limit = { ROOT = { has_reform = democracy_reform } }
+			is_year = 2100
+		}
+		FROM = {
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = -50
+				}
+			}
+		}
+		ROOT = {  
+			OR = {
+				NOT = { num_of_rebel_armies = 1 }
+				NOT = { num_of_rebel_controlled_provinces = 1 }
+			}
+		}
+		#total_development = 360
+	}
+}

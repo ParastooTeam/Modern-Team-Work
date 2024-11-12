@@ -1,0 +1,6 @@
+government = republic
+technology_group = muslim
+primary_culture = yemeni_culture
+religion = sunni
+
+2020.1.1 = { capital = 4405 }

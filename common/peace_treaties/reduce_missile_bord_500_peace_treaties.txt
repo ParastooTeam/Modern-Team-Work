@@ -1,0 +1,132 @@
+
+po_missile_bord_500 = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 15.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 15
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		FROM = {
+			OR = {
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			}
+		}
+	}
+	is_allowed = {
+		FROM = {
+			OR = {
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			set_variable = {
+				which = missil_500
+				value = 0
+			}
+			set_variable = {
+				which = missil_700
+				value = 0
+			}
+			set_variable = {
+				which = missil_1000
+				value = 0
+			}
+			set_variable = {
+				which = missil_1500
+				value = 0
+			}
+			add_country_modifier = {
+				name = "non_missil_modifire_less_500"
+				duration = 9125
+			}
+			clr_country_flag = missile_state_500
+			clr_country_flag = missile_state_700
+			clr_country_flag = missile_state_1000
+			clr_country_flag = missile_state_1500
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+		limit = {
+			FROM = {
+				OR = {
+					check_variable = {
+						which = missil_500
+						value = 1
+					}
+					check_variable = {
+						which = missil_700
+						value = 1
+					}
+					check_variable = {
+						which = missil_1000
+						value = 1
+					}
+					check_variable = {
+						which = missil_1500
+						value = 1
+					}
+				}
+			}
+			OR = {
+				any_neighbor_country = {
+					is_subject_of = FROM
+				}
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			
+		}
+	}
+}

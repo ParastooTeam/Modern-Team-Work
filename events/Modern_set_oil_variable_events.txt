@@ -1,0 +1,659 @@
+namespace = set_variable_oil
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable_oil.1
+	title = "set_variable_oil.1t"
+	desc = "set_variable_oil.1d"
+	picture = Oil_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 1
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 1
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -0.5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 1
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 1
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 2
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 2
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -0.5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 2
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 2
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 3
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 3
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -1
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 3
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 3
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 4
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 4
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -2
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 4
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 4
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 5
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 5
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -3
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 5
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 5
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 6
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 6
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -4
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 6
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 6
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 7
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 7
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -4.5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 7
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 7
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 8
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 8
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 8
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 8
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 9
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 9
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -6
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 9
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 9
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 10
+					}
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 10
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -6.5
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = cars
+						}
+							amount = 10
+					}
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = electronics
+						}
+							amount = 10
+					}
+				}
+			}
+			change_variable = {
+				which = bought_oil
+				value = -7
+			}
+		}
+	}
+	option = {
+		name = set_variable_oil.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable_oil.2
+	title = "set_variable_oil.2t"
+	desc = "set_variable_oil.2d"
+	picture = Oil_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 1
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 2
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -1
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 2
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 3
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -2
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 3
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 4
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -3
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 4
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 5
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -4
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 5
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 3
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -5
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 6
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 7
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -6
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 7
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 8
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -7
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 8
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 9
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -8
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 9
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 10
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -9
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 10
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							trade_goods = oil
+						}
+							amount = 11
+					}
+				}
+			}
+			change_variable = {
+				which = oil_sold
+				value = -10
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+					}
+						amount = 11
+				}				
+			}
+			change_variable = {
+				which = oil_sold
+				value = -11
+			}
+		}
+	}
+	option = {
+		name = set_variable_oil.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+

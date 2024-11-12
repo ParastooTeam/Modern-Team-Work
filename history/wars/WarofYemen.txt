@@ -1,0 +1,22 @@
+name = "War of Yemen"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 390 #Grodno
+}
+
+2015.5.1 = {
+	add_attacker = MHR
+	add_defender = SNA
+}
+2015.5.2 = {
+	add_attacker = SAU
+}
+
+2035.1.1 = {
+	rem_attacker = MHR
+	rem_attacker = SAU
+	rem_defender = SNA
+}
+

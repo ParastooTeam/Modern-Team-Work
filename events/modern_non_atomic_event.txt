@@ -1,0 +1,240 @@
+namespace = non_atomic
+
+#non_atomic Point admin power X1
+country_event = {
+	id = non_atomic.1
+	title = "non_atomic.1title"
+	desc = "non_atomic.1desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.1opt"
+	}
+}
+
+
+
+#non_atomic Point diplo power 
+country_event = {
+	id = non_atomic.2
+	title = "non_atomic.2title"
+	desc = "non_atomic.2desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.1opt"
+	}
+}
+
+
+			
+#non_atomic Point diplo power 
+country_event = {
+	id = non_atomic.3
+	title = "non_atomic.3title"
+	desc = "non_atomic.3desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.3opt"
+		set_variable = {
+				which = num_of_nuclear_weapons
+				value = 0
+		}
+		
+			add_country_modifier = {
+				name = "non_atomic_modifire"
+				duration = 12775
+			}
+			add_country_modifier = {
+				name = "non_atomic_modifire_all"
+				duration = 12775
+			}
+			hidden_effect = {
+				every_known_country = { 
+					limit = { ai = no }
+						country_event = { id = non_atomic.2 }
+				}
+			}
+		
+	}
+	option = {
+		name = "non_atomic.4opt"	
+	}
+}
+
+#non_atomic Point admin power X1
+country_event = {
+	id = non_atomic.4
+	title = "non_atomic.4title"
+	desc = "non_atomic.4desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.1opt"
+	}
+}
+
+#non_atomic Point diplo power 
+country_event = {
+	id = non_atomic.5
+	title = "non_atomic.5title"
+	desc = "non_atomic.5desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.3opt"
+		if = { limit = { has_country_modifier = nuclear_research_modifire }
+			remove_country_modifier = nuclear_research_modifire
+		}
+		if = { limit = { has_country_modifier = research_nuclear_10_modifire }
+			remove_country_modifier = research_nuclear_10_modifire
+		}
+		if = { limit = { has_country_modifier = research_nuclear_20_modifire }
+			remove_country_modifier = research_nuclear_20_modifire
+		}
+		if = { limit = { has_country_modifier = research_nuclear_40_modifire }
+			remove_country_modifier = research_nuclear_40_modifire
+		}
+		if = { limit = { has_country_modifier = research_nuclear_75_modifire }
+			remove_country_modifier = research_nuclear_75_modifire
+		}
+		if = { limit = { has_country_modifier = research_nuclear_90_modifire }
+			remove_country_modifier = research_nuclear_90_modifire
+		}
+		set_variable = {
+			which = beginning_nuclear_research
+			value = 0
+		}
+		set_variable = {
+			which = nuclear_research_10
+			value = 0
+		}
+		set_variable = {
+			which = nuclear_research_20
+			value = 0
+		}
+		set_variable = {
+			which = nuclear_research_40
+			value = 0
+		}
+		set_variable = {
+			which = nuclear_research_75
+			value = 0
+		}
+		set_variable = {
+			which = nuclear_research_90
+			value = 0
+		}
+			add_country_modifier = {
+				name = "non_atomic_modifire"
+				duration = 9125
+			}
+			add_country_modifier = {
+				name = "non_atomic_modifire_all"
+				duration = 9125
+			}
+		hidden_effect = {
+			every_known_country = { 
+				limit = { ai = no }
+					country_event = { id = non_atomic.6 }
+			}
+		}
+	}
+	option = {
+		name = "non_atomic.4opt"	
+	}
+}
+
+#non_atomic Point diplo power 
+country_event = {
+	id = non_atomic.6
+	title = "non_atomic.6title"
+	desc = "non_atomic.6desc"
+	picture = non_atomic_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.1opt"
+	}
+}
+
+
+country_event = {
+	id = non_atomic.7
+	title = "non_atomic.7title"
+	desc = "non_atomic.7desc"
+	picture = non_hidrogen_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.3opt"
+		set_variable = {
+			which = hidrogen_x1
+			value = 0
+		}
+		set_variable = {
+			which = hidrogen_x2
+			value = 0
+		}
+		set_variable = {
+			which = hidrogen_x3
+			value = 0
+		}
+		set_variable = {
+			which = hidrogen_x4
+			value = 0
+		}
+		set_variable = {
+			which = hidrogen_x5
+			value = 0
+		}
+		set_variable = {
+			which = hidrogen_x6
+			value = 0
+		}
+			add_country_modifier = {
+				name = "non_atomic_modifire"
+				duration = 9125
+			}
+			add_country_modifier = {
+				name = "non_atomic_modifire_all"
+				duration = 9125
+			}
+			hidden_effect = {
+				every_known_country = { 
+					limit = { ai = no }
+						country_event = { id = non_atomic.8 }
+				}
+			}
+		
+	}
+	option = {
+		name = "non_atomic.4opt"	
+	}
+}
+
+country_event = {
+	id = non_atomic.8
+	title = "non_atomic.8title"
+	desc = "non_atomic.8desc"
+	picture = non_hidrogen_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "non_atomic.1opt"
+	}
+}

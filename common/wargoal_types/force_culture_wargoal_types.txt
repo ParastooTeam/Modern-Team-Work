@@ -1,0 +1,37 @@
+superiority_culture = {
+	type = superiority
+	attacker = {
+		badboy_factor = 0.9
+	prestige_factor = 1
+	peace_cost_factor = 0.9
+	
+	allowed_provinces = {
+		always = yes
+	}
+	
+	peace_options = {
+		po_force_culture
+	}
+	
+	country_desc = ALL_FORCE_CULTURE
+	prov_desc = ALL_PROVS
+	}
+	defender = {
+		badboy_factor = 0.9
+	prestige_factor = 1
+	peace_cost_factor = 0.9
+	
+	allowed_provinces = {
+		always = yes
+	}
+	
+	peace_options = {
+		po_force_culture
+	}
+	
+	country_desc = ALL_FORCE_CULTURE
+	prov_desc = ALL_PROVS
+	}
+	
+	war_name = CULTURE_WAR_NAME	
+}

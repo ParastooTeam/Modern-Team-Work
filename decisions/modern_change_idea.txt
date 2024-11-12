@@ -1,0 +1,31 @@
+country_decisions = {
+
+	change_national_idea = {
+		#major = yes
+		potential = {
+            has_country_flag = open_all_decision
+			ai = no
+			NOT = { has_country_flag = changed_national_idea }
+		}
+		
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = cant_again
+			}
+		
+		}
+		effect = {
+			custom_tooltip = cant_again
+			set_country_flag = changed_national_idea
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		##ai_importance = 400
+	}
+	
+}

@@ -1,0 +1,74 @@
+namespace = send_atomic_bomb
+
+country_event = {
+	id = send_atomic_bomb.1
+	title = send_atomic_bomb.1.t
+	desc = send_atomic_bomb.1.d
+	picture = SEND_ATOMIC_BOMB_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Major City
+		name = send_atomic_bomb.1.a
+		trigger = { 
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+		}
+		change_variable = {
+			which = num_of_nuclear_weapons
+			value = -1
+		}
+		event_target:send_atomic_bomb_target_country = {
+			country_event = {
+				id = send_atomic_bomb.2
+			}
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+		}
+		clear_global_event_target = send_atomic_bomb_target_country
+	}
+	option = { #Major City
+		name = send_atomic_bomb.1.b
+		trigger = { 
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 2
+			}
+		}
+		change_variable = {
+			which = num_of_nuclear_weapons
+			value = -2
+		}
+		event_target:send_atomic_bomb_target_country = {
+			country_event = {
+				id = send_atomic_bomb.2
+			}
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = 2
+			}
+		}
+		clear_global_event_target = send_atomic_bomb_target_country
+	}
+	option = { #Cancel
+		name = send_atomic_bomb.1.cansel
+		clear_global_event_target = send_atomic_bomb_target_country
+	}
+}
+
+country_event = {
+	id = send_atomic_bomb.2
+	title = send_atomic_bomb.2title
+	desc = send_atomic_bomb.2desc
+	picture = GIVE_ATOMIC_BOMB_eventPicture
+	
+	is_triggered_only = yes
+
+	option = {
+		name = send_atomic_bomb.2opt
+	}
+}

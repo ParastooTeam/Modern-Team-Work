@@ -1,0 +1,177 @@
+namespace = modern_dis_religion
+
+# Revolution
+country_event = {
+	id = modern_dis_religion.1
+	title = "modern_dis_religion.EVTNAME1"
+	desc = "modern_dis_religion.EVTDESC1"
+	picture = REVOLUTION_eventPicture
+	
+	major = yes
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+
+	immediate = {
+		random_owned_province = { 
+			limit = {
+				base_tax = 4
+			}
+			spawn_rebels = {
+				type = fanatic_rebels
+				size = 3		
+				win = yes
+				unrest = 10
+			}
+			
+		}
+		add_stability = -3
+	
+	
+		set_country_flag = had_religion_revolution
+		set_country_flag = religion_revolution
+	}
+	
+	option = {
+		name = "modern_dis_religion.EVTOPTA1"			# Dire times are ahead of us
+		add_prestige = -10
+	}
+}
+
+# Serfdom
+country_event = {
+	id = modern_dis_religion.2
+	title = "modern_dis_monarchy.EVTNAME2"
+	desc = "modern_dis_monarchy.EVTDESC2"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = minority_rights }
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = minority_rights
+	}	
+	
+	option = {
+		name = "modern_dis_republic.EVTOPTA3"		# Restrict serfdom
+		ai_chance = { factor = 30 }
+		add_country_modifier = {
+			name = "minority_restrictions"
+			duration = -1
+			desc = "END_OF_REVOLUTION"
+		}
+	}
+	option = {
+		name = "modern_dis_republic.EVTOPTB3"		# Keep the masses in chains
+		ai_chance = { factor = 70 }
+		random_owned_province = { fanatic_rebels = 2 }
+	}
+}
+
+# Social reform
+country_event = {
+	id = modern_dis_religion.3
+	title = "modern_dis_monarchy.EVTNAME2"
+	desc = "modern_dis_monarchy.EVTDESC2"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = fascist_thinkers }
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = { 
+		set_country_flag = fascist_thinkers
+	}
+	
+	option = {
+		name = "modern_dis_republic.EVTOPTA3"			# Suppress the free thinkers
+		ai_chance = { factor = 60 }
+		add_country_modifier = {
+			name = "suppress_fascist_thinkers"
+			duration = -1
+			desc = "END_OF_REVOLUTION"			
+		}
+	}
+	option = {
+		name = "modern_dis_republic.EVTOPTB3"			# They hardly pose a threat
+		ai_chance = { factor = 40 }
+		random_owned_province = { fanatic_rebels = 1 }
+		random_owned_province = { fanatic_rebels = 1 }
+		random_owned_province = { fanatic_rebels = 1 }
+	}
+}
+
+# Stability returns
+country_event = {
+	id = modern_dis_religion.4
+	title = "EVTNAME3019"
+	desc = "EVTDESC3019"
+	picture = REVOLUTION_eventPicture
+	
+	major = yes	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = religion_revolution
+		had_country_flag = { flag = religion_revolution days = 1000 }
+	
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA3019"			# Restore order
+		country_event = { id = modern_dis_religion.5 }
+		add_stability = 2
+	}
+}
+
+country_event = {
+	id = modern_dis_religion.5
+	title = revolution.20.t
+	desc = revolution.20.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = revolution.20.a
+		if = {
+			limit = { has_disaster = religion_revolution }
+			end_disaster = religion_revolution
+		}
+		
+		clr_country_flag = religion_revolution
+
+		clr_country_flag = minority_rights
+		clr_country_flag = fascist_thinkers
+		clr_country_flag = government_corruption
+		clr_country_flag = road_to_bankruptcy
+		clr_country_flag = financial_crisis		
+		remove_country_modifier = minority_restrictions
+		remove_country_modifier = suppress_fascist_thinkers
+		remove_country_modifier = corrupted_government
+		remove_country_modifier = mint_money
+		remove_country_modifier = fight_inflation
+		remove_country_modifier = disarmament
+		remove_country_modifier = financial_disaster
+	}
+}
+

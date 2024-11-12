@@ -1,0 +1,94 @@
+spriteTypes = {
+	textSpriteType = {
+		name = "GFX_button_flogi_custom_ideas"
+		texturefile = "gfx/interface/button_flogi_custom_ideas.dds"
+	}	
+	spriteType = {
+		name = "GFX_button_flogi_custom_ideas_glow"
+		texturefile = "gfx/interface/button_flogi_custom_ideas_glow.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_pick_idea_button"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_pick_idea_button_2"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button_2.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_pick_idea_button_3"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button_3.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_pick_idea_button_4"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button_4.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_pick_idea_button_5"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button_5.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	spriteType = {
+		name = "GFX_pick_idea_button_6"
+		texturefile = "gfx/interface/government_mechanics/pick_idea_button_6.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+	
+	
+	spriteType = {
+		name = "GFX_button_flogi_gold"
+		texturefile = "gfx//interface//button_flogi_gold.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_button_flogi_dev"
+		texturefile = "gfx//interface//button_flogi_dev.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_button_flogi_dev_2"
+		texturefile = "gfx//interface//button_flogi_dev_2.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_button_flogi_tradecenter"
+		texturefile = "gfx//interface//button_flogi_tradecenter.dds"
+		noOfFrames = 1
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}
+	
+	spriteType = {
+		name = "GFX_flogi_alerticons_government_mechanics"
+		texturefile = "gfx//interface//flogi_alerticons_government_mechanics.dds"
+		noOfFrames = 17
+		loadType = "INGAME"
+		alwaystransparent = yes
+	}
+	
+}

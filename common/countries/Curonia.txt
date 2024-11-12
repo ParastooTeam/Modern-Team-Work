@@ -1,0 +1,61 @@
+#Curonia
+
+graphical_culture = westerngfx
+
+color = { 83  176  94 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+	hungarian_hussar
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Jersika #0" = 10
+	"Lameikis #0" = 10
+	"Talava #0" = 10
+	"Kursiu #0" = 10
+	"Preilis #0" = 10
+	"Viescekis #0" = 10
+	"Egon #0" = 0
+	"Janis #0" = 0
+	"Karlis #0" = 0
+	"Andris #0" = 0
+	"Miervaldis #0" = 0
+}
+
+leader_names = { 
+	Saper Balderis Tal Ambundi
+	Visvaldis Talivaldis Nerija
+	Satekle Autine Koknese
+	Alksnis Baumanis Dreimanis
+	Kaupers Liepa Podnieks Vanags
+}
+
+ship_names = {
+	George "Maria Mighell" Cristofer
+	Barbara Margaret Leonard Thomas
+	Julian Johan Katerina
+}
+
+
+

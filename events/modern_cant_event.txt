@@ -1,0 +1,362 @@
+namespace = they_cant_set_atom
+
+#they_cant_set_atom Point admin power X1
+province_event = {
+	id = they_cant_set_atom.1
+	title = "they_cant_set_atom.1title"
+	desc = "they_cant_set_atom.1desc"
+	picture = ATOMIC_DEFENCE_eventPicture
+	goto = nuke_target_province
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+
+
+#they_cant_set_atom Point diplo power 
+province_event = {
+	id = they_cant_set_atom.2
+	title = "they_cant_set_atom.2title"
+	desc = "they_cant_set_atom.2desc"
+	picture = MISSILE_DEFENCE_eventPicture
+	goto = missil_target_province
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+country_event = {
+	id = they_cant_set_atom.3
+	title = "they_cant_set_atom.3title"
+	desc = "they_cant_set_atom.3desc"
+	picture = MISSILE_SATELLITE_DEFENCE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+country_event = {
+	id = they_cant_set_atom.4
+	title = "they_cant_set_atom.4title"
+	desc = "they_cant_set_atom.4desc"
+	picture = MISSILE_SATELLITE_CANT_DEFENCE_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.5
+	title = "they_cant_set_atom.5title"
+	desc = "they_cant_set_atom.5desc"
+	picture = MISSILE_SATELLITE_CAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+####################################################################
+####################################################################  Missile Ship
+####################################################################
+
+#################################### Heavy Ship attack
+country_event = {
+	id = they_cant_set_atom.6
+	title = "they_cant_set_atom.6title"
+	desc = "they_cant_set_atom.6desc"
+	picture = cant_Missile_attack_aircroft_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+################################## Heavy Ship diffance
+
+country_event = {
+	id = they_cant_set_atom.7
+	title = "they_cant_set_atom.7title"
+	desc = "they_cant_set_atom.7desc"
+	picture = Missile_attack_aircroft_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+
+#################################### Battle ship attack
+province_event = {
+	id = they_cant_set_atom.26
+	title = "they_cant_set_atom.26title"
+	desc = "they_cant_set_atom.26desc"
+	picture = cant_Missile_attack_battle_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+################################## Battle ship diffance
+
+country_event = {
+	id = they_cant_set_atom.27
+	title = "they_cant_set_atom.27title"
+	desc = "they_cant_set_atom.27desc"
+	picture = Missile_attack_battel_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+
+#################################### Trade ship attack
+country_event = {
+	id = they_cant_set_atom.36
+	title = "they_cant_set_atom.36title"
+	desc = "they_cant_set_atom.36desc"
+	picture = cant_Missile_attack_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+################################## Trade ship diffance
+
+country_event = {
+	id = they_cant_set_atom.37
+	title = "they_cant_set_atom.37title"
+	desc = "they_cant_set_atom.37desc"
+	picture = Missile_attack_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+
+#################################### Transporter ship attack
+country_event = {
+	id = they_cant_set_atom.46
+	title = "they_cant_set_atom.46title"
+	desc = "they_cant_set_atom.46desc"
+	picture = cant_Missile_attack_transporter_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.1opt"
+	}
+}
+
+################################## Transporter ship diffance
+
+country_event = {
+	id = they_cant_set_atom.47
+	title = "they_cant_set_atom.47title"
+	desc = "they_cant_set_atom.47desc"
+	picture = Missile_attack_transporter_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+###############################################################################
+
+country_event = {
+	id = they_cant_set_atom.70
+	title = "they_cant_set_atom.70title"
+	desc = "they_cant_set_atom.70desc"
+	picture = Missile_attack_aircroft_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.71
+	title = "they_cant_set_atom.71title"
+	desc = "they_cant_set_atom.71desc"
+	picture = Missile_attack_aircroft_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.72
+	title = "they_cant_set_atom.72title"
+	desc = "they_cant_set_atom.72desc"
+	picture = Missile_attack_aircroft_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+
+#############################################################################################################
+
+country_event = {
+	id = they_cant_set_atom.270
+	title = "they_cant_set_atom.270title"
+	desc = "they_cant_set_atom.270desc"
+	picture = Missile_attack_battel_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.271
+	title = "they_cant_set_atom.271title"
+	desc = "they_cant_set_atom.271desc"
+	picture = Missile_attack_battel_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.272
+	title = "they_cant_set_atom.272title"
+	desc = "they_cant_set_atom.272desc"
+	picture = Missile_attack_battel_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+###############################################################################################################################
+
+country_event = {
+	id = they_cant_set_atom.370
+	title = "they_cant_set_atom.370title"
+	desc = "they_cant_set_atom.370desc"
+	picture = Missile_attack_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.371
+	title = "they_cant_set_atom.371title"
+	desc = "they_cant_set_atom.371desc"
+	picture = Missile_attack_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.372
+	title = "they_cant_set_atom.372title"
+	desc = "they_cant_set_atom.372desc"
+	picture = Missile_attack_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+#############################################################################################################################
+
+country_event = {
+	id = they_cant_set_atom.470
+	title = "they_cant_set_atom.470title"
+	desc = "they_cant_set_atom.470desc"
+	picture = Missile_attack_transporter_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.471
+	title = "they_cant_set_atom.471title"
+	desc = "they_cant_set_atom.471desc"
+	picture = Missile_attack_transporter_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}
+country_event = {
+	id = they_cant_set_atom.472
+	title = "they_cant_set_atom.472title"
+	desc = "they_cant_set_atom.472desc"
+	picture = Missile_attack_transporter_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "they_cant_set_atom.2opt"
+	}
+}

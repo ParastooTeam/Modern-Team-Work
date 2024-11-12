@@ -1,0 +1,71 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+
+random_nation_chance = 0
+
+color = { 189  187  52 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+		
+}
+
+monarch_names = {
+	"Imraz #0" = 10
+	"Hari #0" = 10
+	"Ballu #0" = 10
+	"Shivlal #0" = 10
+	"Josateki #0" = 10
+	"Dixon #0" = 10
+	"Mere #0" = -10
+	"Ram #0" = 10
+	"Rajnesh #0" = 10
+	"Davila #0" = -10
+	"Sangeeta #0" = -10
+	"Taito #0" = 10
+	"Sunil #0" = 10
+	"Praveen #0" = 10
+	"Penaia #0" = 10
+	"Kamisese #0" = 10
+	"Josefa #0" = 10
+	"Epeli #0" = 10
+}
+
+leader_names = {
+	Nailatikau Iloilo Bainimarama Mara Ganilau Rabuka Chandra Lal
+	Narayan Pillay Rundrananda Siwatubau Ali Heffernan Luveni
+	Punja Nawalowalo Seeto Samisoni
+}
+
+ship_names = {
+	Adams Alfred Alliance "Andrew Doria" Argo Argus
+	Cabot Chesapeake Champion Columbus
+	Dolphin Deane Diligent 
+	Effingham Enterprise
+	Fly
+	Hampden Hancock Hornet
+	Lexington
+	Montgomery Mosquito
+	Nautilus
+	Pigot
+	Randolph Racehorse Ranger Reprisal Repulse Resistance Retaliation Revenge
+	Sachem Saratoga Serapis Siren Surprise
+	Trumbull
+	Viper Vixen
+	Warren Wasp 
+}
+
+

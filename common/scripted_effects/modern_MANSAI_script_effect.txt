@@ -1,0 +1,182 @@
+
+manpower_script_effect = {
+
+	if = { 
+		limit = { 
+			tag = INI
+			
+		}
+		add_manpower = 750
+		add_sailors = 300000
+	}
+	if = { 
+		limit = { 
+			tag = JAP
+			
+		}
+		add_manpower = 250
+		add_sailors = 250000
+	}
+	if = { 
+		limit = { 
+			tag = GBR
+			
+		}
+		add_manpower = 75
+			add_sailors = 250000
+	}
+	if = { 
+		limit = { 
+			tag = CHN
+			
+		}
+		add_manpower = 900
+		add_sailors = 500000
+	}
+	if = { 
+		limit = { 
+			tag = RUS
+			
+		}
+		add_manpower = 350
+		add_sailors = 200000
+	}
+	if = { 
+		limit = { 
+			tag = USA
+			
+		}
+		add_manpower = 500
+		add_sailors = 500000
+	}
+	if = { 
+		limit = { 
+			OR = {
+				tag = IRN
+				tag = IRA
+			}
+			
+		}
+		add_manpower = 250
+		add_sailors = 500000
+	}
+		if = { 
+			limit = { 
+				OR = {
+					tag = TKY
+					tag = NOK
+					tag = SKO
+					tag = GER
+					tag = LAP
+					tag = FR2
+					tag = RSA
+					tag = EGY
+					tag = ITA
+					tag = UKR
+					tag = SPA
+				}
+				
+			}
+			add_manpower = 150
+			add_sailors = 50000
+		}	
+
+		if = { 
+			limit = { 
+				OR = {
+					tag = PAK
+					tag = BRZ
+					tag = MEX
+					tag = VTN
+					tag = NIG
+					tag = BGD
+					tag = IDN
+				}
+				
+			}
+			add_manpower = 300
+			add_sailors = 75000
+				
+		}	
+		if = { 
+			limit = { 
+				OR = {
+					tag = AUS
+					tag = FRM
+					tag = CAN
+				}
+				
+			}
+			add_manpower = 75
+			add_sailors = 75000
+				
+		}
+		if = { 
+			limit = { 
+				OR = {
+					tag = ISR
+					tag = GRE
+					tag = POL
+					tag = COL
+					tag = THL
+					tag = SUD
+					tag = SAU
+				}
+				
+				
+				
+			}
+			add_manpower = 100
+			add_sailors = 25000
+				
+		}
+		if = { 
+			limit = { 
+				OR = {
+					tag = SWE
+					tag = NOR
+					tag = FIN
+					tag = NED
+					tag = KZK
+					tag = VNZ
+					tag = ALG
+										
+				}
+				
+				
+				
+			}
+			add_manpower = 50
+			add_sailors = 50000
+				
+		}
+		if = { 
+			limit = { 
+				OR = {
+					tag = UAE																			
+					tag = DAN										
+					tag = CHL										
+					tag = AZE										
+					tag = QTR										
+				}
+				
+				
+				
+			}
+			add_manpower = 50
+			add_sailors = 25000
+				
+		}
+		if = { 
+			limit = { 
+				OR = {
+					tag = UZB					
+					tag = SWI					
+					tag = HAB					
+					tag = KHA					
+				}
+				
+			}
+			add_manpower = 50				
+		}
+}

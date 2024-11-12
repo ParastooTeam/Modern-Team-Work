@@ -1,0 +1,26 @@
+namespace = more_favors_action_events
+
+country_event = {
+	id = more_favors_action_events.1
+	title = more_favors_action_events.EVTNAME1
+	desc = more_favors_action_events.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	fire_only_once = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		hidden_effect = {
+			et_setup_effect = yes # to make sure the ET flag is set, if active
+		}
+	}
+
+	option = {
+		name = more_favors_action_events1.EVTOPT1
+		ai_chance = { factor = 100 }
+	}
+}

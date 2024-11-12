@@ -1,0 +1,187 @@
+country_decisions = {
+	open_all = {
+		major = yes
+		color = { 110 190 40 }
+		potential = {   
+			NOT = { has_country_flag = open_all_decision }
+		}
+		allow = {
+		}
+		effect = {
+			set_country_flag = open_all_decision
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	close_all = {
+		major = yes
+		color = { 110 190 40 }
+		potential = {
+            has_country_flag = open_all_decision    
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			clr_country_flag = open_all_decision
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+	#open_logestic_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+    #        has_country_flag = show_all_dip_decision
+	#		NOT = { has_country_flag = opened_logestic_diplomacy }
+	#		ai = no
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		set_country_flag = opened_logestic_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 1	
+	#	}
+	#}
+	#close_logestic_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+    #        has_country_flag = show_all_dip_decision
+	#		ai = no
+	#		has_country_flag = opened_logestic_diplomacy
+	#		
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		clr_country_flag = opened_logestic_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+#
+	#################################
+#
+	#open_expotentional_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+    #        has_country_flag = show_all_dip_decision
+	#		NOT = { 
+	#			has_country_flag = opened_expotentional_diplomacy
+	#		}
+	#		ai = no
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		set_country_flag = opened_expotentional_diplomacy 
+	#	}
+	#	ai_will_do = {
+	#		factor = 1	
+	#	}
+	#}
+	#close_expotentional_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+	#		has_country_flag = show_all_dip_decision
+	#		ai = no
+	#		has_country_flag = opened_expotentional_diplomacy
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		clr_country_flag = opened_expotentional_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+#
+	#################################
+#
+	#open_trade_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+    #        has_country_flag = show_all_dip_decision
+	#		NOT = { has_country_flag = opened_trade_diplomacy }
+	#		ai = no
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		set_country_flag = opened_trade_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 1	
+	#	}
+	#}
+	#close_trade_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+	#		has_country_flag = show_all_dip_decision
+	#		ai = no
+	#		has_country_flag = opened_trade_diplomacy	
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		clr_country_flag = opened_trade_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+#
+	#################################
+#
+	#open_sanction_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+	#		has_country_flag = show_all_dip_decision
+	#		NOT = { has_country_flag = opened_sanction_diplomacy } 
+	#		ai = no
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		set_country_flag = opened_sanction_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 1	
+	#	}
+	#}
+	#close_sanction_doplomatic_action = {
+	#	major = yes
+	#	potential = {
+	#		has_country_flag = show_all_dip_decision
+	#		ai = no
+	#		has_country_flag = opened_sanction_diplomacy
+	#	}
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		clr_country_flag = opened_sanction_diplomacy
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+#
+	#################################
+
+}

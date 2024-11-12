@@ -1,0 +1,444 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+##send_missile = {
+##	category = influence
+##
+##	alert_index = 40
+##	alert_tooltip = demand_dummy_alert_tooltip
+##
+##	require_acceptance = no # Whether the recipient gets an option to decline
+##
+##	is_visible = {
+##		if = {
+##			limit = { ROOT  = { ai = yes } }
+##			FROM = { ai = no }
+##			NOT = { has_country_modifier = send_to_send_missile }
+##		}
+##	}
+##	is_allowed = {
+##		if = {
+##			limit = {
+##				ROOT = { ai = no }
+##				FROM = { ai = yes }
+##			}
+##			OR = {
+##				alliance_with = FROM
+##				FROM = { is_subject_of = ROOT }
+##				ROOT = { is_subject_of = FROM }
+##				AND = {
+##					FROM = { is_at_war = yes }
+##					reverse_has_opinion = { 
+##						who = FROM value = 110
+##					}
+##					any_rival_country = {
+##						war_with = FROM
+##					}
+##				}
+##				AND = {
+##					reverse_has_opinion = { 
+##						who = FROM value = 110
+##					}
+##					any_rival_country = {
+##						is_neighbor_of = FROM
+##					}
+##				}
+##				any_rival_country = {
+##					is_neighbor_of = FROM
+##				}
+##			}
+##		}
+##		if = {
+##			limit = {
+##				ROOT = { ai = yes }
+##			}
+##			OR = {
+##				FROM = { is_subject_of = ROOT }
+##				ROOT = { is_subject_of = FROM }
+##				AND = {
+##					FROM = { is_at_war = yes }
+##					reverse_has_opinion = { 
+##						who = FROM value = 110
+##					}
+##					any_rival_country = {
+##						war_with = FROM
+##					}
+##				}
+##				AND = {
+##					reverse_has_opinion = { 
+##						who = FROM value = 110
+##					}
+##					any_rival_country = {
+##						is_neighbor_of = FROM
+##					}
+##				}
+##				any_rival_country = {
+##					is_neighbor_of = FROM
+##					OR = {
+##						check_variable = {
+##							which = missil_50
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_100
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_150
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_250
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_350
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_500
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_700
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_1000
+##							value = 1
+##						}
+##						check_variable = {
+##							which = missil_1500
+##							value = 1
+##						}
+##					}
+##				}
+##			}
+##		}
+##		OR = {
+##			check_variable = {
+##				which = missil_50
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_100
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_150
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_250
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_350
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_500
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_700
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_1000
+##				value = 1
+##			}
+##			check_variable = {
+##				which = missil_1500
+##				value = 1
+##			}
+##		}
+##		if = { 
+##			limit = { 
+##				FROM = {
+##					is_neighbor_of = ROOT					
+##				}	
+##			}
+##			army_size = 50
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = { 
+##					any_neighbor_country = {
+##						is_subject_of = ROOT
+##					}
+##				}
+##			}
+##			army_size = 50
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##					border_distance = { who = ROOT distance = 1 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 50 } }
+##				}
+##			}
+##			army_size = 100
+##			num_of_galley = 1
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##				border_distance = { who = ROOT distance = 50 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 100 } }
+##				}
+##			}
+##			army_size = 100
+##			num_of_galley = 2
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##				border_distance = { who = ROOT distance = 100 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 150 } }
+##				}
+##			}
+##			army_size = 100
+##			num_of_galley = 3
+##		} 
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##				border_distance = { who = ROOT distance = 150 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 200 } }
+##				}
+##			}
+##			army_size = 100
+##			num_of_galley = 4
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 200 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 250 } }
+##				}
+##			}
+##			army_size = 100
+##			num_of_galley = 5
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 250 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 300 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 1
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 300 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 350 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 2
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 350 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 400 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 3
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 400 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 450 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 4
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 450 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 500 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 5
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 450 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 500 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 6
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 500 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 600 } }
+##				}
+##			}
+##			army_size = 150
+##			num_of_heavy_ship = 7
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 600 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 700 } }
+##				}
+##			}
+##			army_size = 200
+##			num_of_heavy_ship = 8
+##			num_of_galley = 1
+##			
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 700 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 1000 } }
+##				}
+##			}
+##			army_size = 200
+##			num_of_heavy_ship = 9
+##			num_of_galley = 2
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 1000 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 1500 } }
+##				}
+##			}
+##			army_size = 200
+##			num_of_heavy_ship = 10
+##			num_of_galley = 3
+##		}
+##		else_if = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 1500 }
+##				}
+##				FROM = {
+##						NOT = {	border_distance = { who = ROOT distance = 2000 } }
+##				}
+##			}
+##			army_size = 200
+##			num_of_heavy_ship = 10
+##			num_of_galley = 4
+##		}
+##		else = { 
+##			limit = { 
+##				FROM = {
+##						border_distance = { who = ROOT distance = 2000 }
+##				}
+##			}
+##			army_size = 250
+##			num_of_heavy_ship = 10
+##			num_of_galley = 5
+##		}
+##	}
+##	on_accept = {
+##	
+##		FROM = { save_global_event_target_as = send_missile_target_country }
+##				
+##		country_event = {
+##			id = send_missile.1
+##		}
+##
+##		if = {
+##			limit = { ai = yes }
+##			add_country_modifier = { 
+##				name = send_to_send_missile
+##				duration = 2000
+##			}
+##		}
+##	
+##	}
+##	on_decline = {
+##	}
+##
+##	ai_acceptance = {
+##	}
+##
+##	ai_will_do = { # this is a trigger
+##	OR = {
+##		check_variable = {
+##			which = missil_50
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_100
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_150
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_250
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_350
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_500
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_700
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_1000
+##			value = 1
+##		}
+##		check_variable = {
+##			which = missil_1500
+##			value = 1
+##		}
+##	}
+##	}
+##}

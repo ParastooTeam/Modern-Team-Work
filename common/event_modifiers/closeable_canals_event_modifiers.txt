@@ -1,0 +1,11 @@
+canal_closed = {
+	picture = "estuary_icon"
+}
+
+closed_canal_bad = { 
+	diplomatic_reputation = -1
+}
+ 
+closed_canal_good = { 
+	diplomatic_reputation = 1
+}

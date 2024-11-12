@@ -1,0 +1,19 @@
+# Swivel Cannon
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 15
+	}
+}
+
+maneuver = 2
+offensive_morale = 4
+defensive_morale = 3
+offensive_fire = 8
+defensive_fire = 7
+offensive_shock = 2
+defensive_shock = 2

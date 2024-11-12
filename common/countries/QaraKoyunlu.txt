@@ -1,0 +1,51 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 54 117 136  } 
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Qara Yûsuf #0" = 30
+	"Pir Budaq #0" = 30
+	"Iskander #0" = 30
+	"Jahân Shâh #0" = 20
+	"Hasan 'Ali #0" = 20
+	
+	"Fayruz #0" = -1
+	"Sultanim #0" = -1
+	"Ak #0" = -1
+	"Fatima #0" = -1
+	"Aisha #0" = -1
+	"Maryam #0" = -1
+	"Munawar #0" = -1
+}
+
+leader_names = {
+	Jahan
+	Nyuan
+	Khwaja
+	Yûsuf
+	Turmush
+	Bairam
+	Muhammad
+	Muzaffar
+	Hasan
+	Nasr
+}
+
+ship_names = {
+	Herat "Qara Yusuf" "Qara Muhammad" "Iskander Yusuf"
+	Kura Sumgait Bazard'uz'u "Qareh Sü" Sevan "Bälän Safar"
+	Agdam K'urdamir Udzary
+}

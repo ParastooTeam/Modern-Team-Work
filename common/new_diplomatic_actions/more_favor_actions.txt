@@ -1,0 +1,2599 @@
+more_favors_action_improve_opinion = {
+	category = favors
+
+	alert_index = 48
+	alert_tooltip = more_favors_action_improve_opinion_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 10 }
+			}
+			NOT = { has_country_modifier = more_favors_action_improve_opinion_used_modifier }
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 10 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_improve_opinion_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_improve_opinion_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_improve_opinion_tt_recently_used
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 10 }
+				}
+				NOT = { has_country_modifier = more_favors_action_improve_opinion_used_modifier }
+			}
+			add_favors = { who = FROM amount = -10 }
+			FROM = {
+				add_opinion = {
+					who = ROOT
+					modifier = more_favors_action_improve_opinion_opinion_positive
+				}
+			}
+			add_country_modifier = {
+				name = more_favors_action_improve_opinion_used_modifier
+				duration = 5475
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_improve_opinion
+				years = 5
+			}
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 10 }
+				}
+				NOT = { has_country_modifier = more_favors_action_improve_opinion_used_modifier }
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_improve_opinion_opinion_negative
+			}
+			clr_country_flag = more_favors_action_improve_opinion_rejected_@FROM
+			set_country_flag = more_favors_action_improve_opinion_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		alliance_with = FROM
+		OR = {
+			NOT = { has_country_flag = more_favors_action_improve_opinion_rejected_@FROM }
+			had_country_flag = { flag = more_favors_action_improve_opinion_rejected_@FROM days = 1095 }
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 75 }
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = 100
+				}
+			}
+		}
+	}
+}
+
+more_favors_action_remove_rival = {
+	category = favors
+
+	alert_index = 47
+	alert_tooltip = more_favors_action_remove_rival_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 25 }
+			}
+			NOT = { has_country_modifier = more_favors_action_remove_rival_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			FROM = {
+				is_at_war = no
+			}
+			FROM = {
+				any_rival_country = {
+					exists = yes
+				}
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 25 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_remove_rival_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_at_war = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_from_at_war
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							any_rival_country = {
+								exists = yes
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_rival_tt_no_rivals
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 25 }
+				}
+				NOT = { has_country_modifier = more_favors_action_remove_rival_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				FROM = {
+					is_at_war = no
+				}
+				FROM = {
+					any_rival_country = {
+						exists = yes
+					}
+				}
+			}
+			add_favors = { who = FROM amount = -25 }
+			add_country_modifier = {
+				name = more_favors_action_remove_rival_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_remove_rival
+				years = 10
+			}
+			FROM = {
+				save_event_target_as = more_favors_action_remove_rival_target
+			}
+			country_event = { id = more_favors_action_remove_rival_events.1 }
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 25 }
+				}
+				NOT = { has_country_modifier = more_favors_action_remove_rival_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				FROM = {
+					is_at_war = no
+				}
+				FROM = {
+					any_rival_country = {
+						exists = yes
+					}
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_remove_rival_opinion_negative
+			}
+			clr_country_flag = more_favors_action_remove_rival_rejected_@FROM
+			set_country_flag = more_favors_action_remove_rival_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_POWER_PROJECTION
+			export_to_variable = {
+				which = ai_value
+				value = trigger_value:power_projection
+			}
+			change_variable = { which = ai_value value = -100 }
+			multiply_variable = { which = ai_value value = 2 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}
+
+more_favors_action_request_adm_power = {
+	category = favors
+
+	alert_index = 46
+	alert_tooltip = more_favors_action_request_adm_power_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 15 }
+			}
+			NOT = { has_country_modifier = more_favors_action_request_adm_power_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			NOT = { adm_power_cost = 1500 }
+			FROM = {
+				ADM = 1
+			}
+			FROM = {
+				OR = {
+					AND = {
+						ADM = 1
+						adm_power = 10
+					}
+					AND = {
+						ADM = 2
+						adm_power = 20
+					}
+					AND = {
+						ADM = 3
+						adm_power = 30
+					}
+					AND = {
+						ADM = 4
+						adm_power = 40
+					}
+					AND = {
+						ADM = 5
+						adm_power = 50
+					}
+					AND = {
+						ADM = 6
+						adm_power = 60
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 15 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_request_adm_power_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					adm_power_cost = 1500
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_max_power
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { ADM = 1 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_no_skill
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							OR = {
+								AND = {
+									ADM = 1
+									adm_power = 10
+								}
+								AND = {
+									ADM = 2
+									adm_power = 20
+								}
+								AND = {
+									ADM = 3
+									adm_power = 30
+								}
+								AND = {
+									ADM = 4
+									adm_power = 40
+								}
+								AND = {
+									ADM = 5
+									adm_power = 50
+								}
+								AND = {
+									ADM = 6
+									adm_power = 60
+								}
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_adm_power_tt_no_power
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_adm_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { adm_power_cost = 1500 }
+				FROM = {
+					ADM = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							ADM = 1
+							adm_power = 10
+						}
+						AND = {
+							ADM = 2
+							adm_power = 20
+						}
+						AND = {
+							ADM = 3
+							adm_power = 30
+						}
+						AND = {
+							ADM = 4
+							adm_power = 40
+						}
+						AND = {
+							ADM = 5
+							adm_power = 50
+						}
+						AND = {
+							ADM = 6
+							adm_power = 60
+						}
+					}
+				}
+			}
+			add_favors = { who = FROM amount = -15 }
+			add_country_modifier = {
+				name = more_favors_action_request_adm_power_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_request_adm_power
+				years = 10
+			}
+			if = {
+				limit = {
+					FROM = {
+						ADM = 6
+					}
+				}
+				add_adm_power = 60
+				FROM = {
+					add_adm_power = -60
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						ADM = 5
+					}
+				}
+				add_adm_power = 50
+				FROM = {
+					add_adm_power = -50
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						ADM = 4
+					}
+				}
+				add_adm_power = 40
+				FROM = {
+					add_adm_power = -40
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						ADM = 3
+					}
+				}
+				add_adm_power = 30
+				FROM = {
+					add_adm_power = -30
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						ADM = 2
+					}
+				}
+				add_adm_power = 20
+				FROM = {
+					add_adm_power = -20
+				}
+			}
+			else = {
+				add_adm_power = 10
+				FROM = {
+					add_adm_power = -10
+				}
+			}
+			clr_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+			set_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_adm_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { adm_power_cost = 1500 }
+				FROM = {
+					ADM = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							ADM = 1
+							adm_power = 10
+						}
+						AND = {
+							ADM = 2
+							adm_power = 20
+						}
+						AND = {
+							ADM = 3
+							adm_power = 30
+						}
+						AND = {
+							ADM = 4
+							adm_power = 40
+						}
+						AND = {
+							ADM = 5
+							adm_power = 50
+						}
+						AND = {
+							ADM = 6
+							adm_power = 60
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_request_adm_power_opinion_negative
+			}
+			clr_country_flag = more_favors_action_request_adm_power_rejected_@FROM
+			set_country_flag = more_favors_action_request_adm_power_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_ADM_POWER
+			limit = {
+				FROM = {
+					ADM = 1
+					NOT = {
+						OR = {
+							AND = {
+								ADM = 1
+								adm_power = 10
+							}
+							AND = {
+								ADM = 2
+								adm_power = 20
+							}
+							AND = {
+								ADM = 3
+								adm_power = 30
+							}
+							AND = {
+								ADM = 4
+								adm_power = 40
+							}
+							AND = {
+								ADM = 5
+								adm_power = 50
+							}
+							AND = {
+								ADM = 6
+								adm_power = 60
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_ADM_POWER
+			limit = {
+				FROM = {
+					adm_power = 50
+					NOT = { adm_power = 100 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_ADM_POWER
+			limit = {
+				FROM = {
+					adm_power = 100
+					NOT = { adm_power = 150 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_ADM_POWER
+			limit = {
+				FROM = {
+					adm_power = 150
+					NOT = { adm_power = 200 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 25
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_RULER_SKILL
+			limit = {
+				FROM = {
+					ADM = 1
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = ADM
+				who = FROM
+			}
+			multiply_variable = { which = ai_value value = -5 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_BEHIND_IN_ADM_TECH
+			limit = {
+				any_country = {
+					FROM = {
+						NOT = { adm_tech = PREV }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_UNFINISHED_ADM_IDEA_GROUP
+			limit = {
+				more_favor_actions_has_unfinished_adm_idea_group = yes
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_RECENTLY_GIVEN_ROOT_MANA
+			limit = {
+				has_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+				NOT = { had_country_flag = { flag = more_favors_action_request_monarch_power_accepted_@FROM days = 1825 } }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		OR = {
+			NOT = { has_country_flag = more_favors_action_request_adm_power_rejected_@FROM }
+			had_country_flag = { flag = more_favors_action_request_adm_power_rejected_@FROM days = 1095 }
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 50 }
+		}
+		NOT = { adm_power = 100 }
+		FROM = {
+			ADM = 3
+			adm_power = 200
+		}
+		OR = {
+			more_favor_actions_has_unfinished_adm_idea_group = yes
+			any_country = {
+				ROOT = {
+					NOT = { adm_tech = PREV }
+				}
+			}
+		}
+	}
+}
+
+more_favors_action_request_dip_power = {
+	category = favors
+
+	alert_index = 46
+	alert_tooltip = more_favors_action_request_dip_power_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 15 }
+			}
+			NOT = { has_country_modifier = more_favors_action_request_dip_power_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			NOT = { dip_power_cost = 1500 }
+			FROM = {
+				DIP = 1
+			}
+			FROM = {
+				OR = {
+					AND = {
+						DIP = 1
+						dip_power = 10
+					}
+					AND = {
+						DIP = 2
+						dip_power = 20
+					}
+					AND = {
+						DIP = 3
+						dip_power = 30
+					}
+					AND = {
+						DIP = 4
+						dip_power = 40
+					}
+					AND = {
+						DIP = 5
+						dip_power = 50
+					}
+					AND = {
+						DIP = 6
+						dip_power = 60
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 15 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_request_dip_power_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					dip_power_cost = 1500
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_max_power
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { DIP = 1 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_no_skill
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							OR = {
+								AND = {
+									DIP = 1
+									dip_power = 10
+								}
+								AND = {
+									DIP = 2
+									dip_power = 20
+								}
+								AND = {
+									DIP = 3
+									dip_power = 30
+								}
+								AND = {
+									DIP = 4
+									dip_power = 40
+								}
+								AND = {
+									DIP = 5
+									dip_power = 50
+								}
+								AND = {
+									DIP = 6
+									dip_power = 60
+								}
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_dip_power_tt_no_power
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_dip_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { dip_power_cost = 1500 }
+				FROM = {
+					DIP = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							DIP = 1
+							dip_power = 10
+						}
+						AND = {
+							DIP = 2
+							dip_power = 20
+						}
+						AND = {
+							DIP = 3
+							dip_power = 30
+						}
+						AND = {
+							DIP = 4
+							dip_power = 40
+						}
+						AND = {
+							DIP = 5
+							dip_power = 50
+						}
+						AND = {
+							DIP = 6
+							dip_power = 60
+						}
+					}
+				}
+			}
+			add_favors = { who = FROM amount = -15 }
+			add_country_modifier = {
+				name = more_favors_action_request_dip_power_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_request_dip_power
+				years = 10
+			}
+			if = {
+				limit = {
+					FROM = {
+						DIP = 6
+					}
+				}
+				add_dip_power = 60
+				FROM = {
+					add_dip_power = -60
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						DIP = 5
+					}
+				}
+				add_dip_power = 50
+				FROM = {
+					add_dip_power = -50
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						DIP = 4
+					}
+				}
+				add_dip_power = 40
+				FROM = {
+					add_dip_power = -40
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						DIP = 3
+					}
+				}
+				add_dip_power = 30
+				FROM = {
+					add_dip_power = -30
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						DIP = 2
+					}
+				}
+				add_dip_power = 20
+				FROM = {
+					add_dip_power = -20
+				}
+			}
+			else = {
+				add_dip_power = 10
+				FROM = {
+					add_dip_power = -10
+				}
+			}
+			clr_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+			set_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_dip_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { dip_power_cost = 1500 }
+				FROM = {
+					DIP = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							DIP = 1
+							dip_power = 10
+						}
+						AND = {
+							DIP = 2
+							dip_power = 20
+						}
+						AND = {
+							DIP = 3
+							dip_power = 30
+						}
+						AND = {
+							DIP = 4
+							dip_power = 40
+						}
+						AND = {
+							DIP = 5
+							dip_power = 50
+						}
+						AND = {
+							DIP = 6
+							dip_power = 60
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_request_dip_power_opinion_negative
+			}
+			clr_country_flag = more_favors_action_request_dip_power_rejected_@FROM
+			set_country_flag = more_favors_action_request_dip_power_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_DIP_POWER
+			limit = {
+				FROM = {
+					DIP = 1
+					NOT = {
+						OR = {
+							AND = {
+								DIP = 1
+								dip_power = 10
+							}
+							AND = {
+								DIP = 2
+								dip_power = 20
+							}
+							AND = {
+								DIP = 3
+								dip_power = 30
+							}
+							AND = {
+								DIP = 4
+								dip_power = 40
+							}
+							AND = {
+								DIP = 5
+								dip_power = 50
+							}
+							AND = {
+								DIP = 6
+								dip_power = 60
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_DIP_POWER
+			limit = {
+				FROM = {
+					dip_power = 50
+					NOT = { dip_power = 100 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_DIP_POWER
+			limit = {
+				FROM = {
+					dip_power = 100
+					NOT = { dip_power = 150 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_DIP_POWER
+			limit = {
+				FROM = {
+					dip_power = 150
+					NOT = { dip_power = 200 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 25
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_RULER_SKILL
+			limit = {
+				FROM = {
+					DIP = 1
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = DIP
+				who = FROM
+			}
+			multiply_variable = { which = ai_value value = -5 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_BEHIND_IN_DIP_TECH
+			limit = {
+				any_country = {
+					FROM = {
+						NOT = { dip_tech = PREV }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_UNFINISHED_DIP_IDEA_GROUP
+			limit = {
+				more_favor_actions_has_unfinished_dip_idea_group = yes
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_RECENTLY_GIVEN_ROOT_MANA
+			limit = {
+				has_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+				NOT = { had_country_flag = { flag = more_favors_action_request_monarch_power_accepted_@FROM days = 1825 } }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		OR = {
+			NOT = { has_country_flag = more_favors_action_request_dip_power_rejected_@FROM }
+			had_country_flag = { flag = more_favors_action_request_dip_power_rejected_@FROM days = 1095 }
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 50 }
+		}
+		NOT = { dip_power = 100 }
+		FROM = {
+			DIP = 3
+			dip_power = 200
+		}
+		OR = {
+			more_favor_actions_has_unfinished_dip_idea_group = yes
+			any_country = {
+				ROOT = {
+					NOT = { dip_tech = PREV }
+				}
+			}
+		}
+	}
+}
+
+more_favors_action_request_mil_power = {
+	category = favors
+
+	alert_index = 46
+	alert_tooltip = more_favors_action_request_mil_power_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 15 }
+			}
+			NOT = { has_country_modifier = more_favors_action_request_mil_power_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			NOT = { mil_power_cost = 1500 }
+			FROM = {
+				MIL = 1
+			}
+			FROM = {
+				OR = {
+					AND = {
+						MIL = 1
+						mil_power = 10
+					}
+					AND = {
+						MIL = 2
+						mil_power = 20
+					}
+					AND = {
+						MIL = 3
+						mil_power = 30
+					}
+					AND = {
+						MIL = 4
+						mil_power = 40
+					}
+					AND = {
+						MIL = 5
+						mil_power = 50
+					}
+					AND = {
+						MIL = 6
+						mil_power = 60
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 15 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_request_mil_power_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					mil_power_cost = 1500
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_max_power
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { MIL = 1 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_no_skill
+					always = no
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							OR = {
+								AND = {
+									MIL = 1
+									mil_power = 10
+								}
+								AND = {
+									MIL = 2
+									mil_power = 20
+								}
+								AND = {
+									MIL = 3
+									mil_power = 30
+								}
+								AND = {
+									MIL = 4
+									mil_power = 40
+								}
+								AND = {
+									MIL = 5
+									mil_power = 50
+								}
+								AND = {
+									MIL = 6
+									mil_power = 60
+								}
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_mil_power_tt_no_power
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_mil_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { mil_power_cost = 1500 }
+				FROM = {
+					MIL = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							MIL = 1
+							mil_power = 10
+						}
+						AND = {
+							MIL = 2
+							mil_power = 20
+						}
+						AND = {
+							MIL = 3
+							mil_power = 30
+						}
+						AND = {
+							MIL = 4
+							mil_power = 40
+						}
+						AND = {
+							MIL = 5
+							mil_power = 50
+						}
+						AND = {
+							MIL = 6
+							mil_power = 60
+						}
+					}
+				}
+			}
+			add_favors = { who = FROM amount = -15 }
+			add_country_modifier = {
+				name = more_favors_action_request_mil_power_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_request_mil_power
+				years = 10
+			}
+			if = {
+				limit = {
+					FROM = {
+						MIL = 6
+					}
+				}
+				add_mil_power = 60
+				FROM = {
+					add_mil_power = -60
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						MIL = 5
+					}
+				}
+				add_mil_power = 50
+				FROM = {
+					add_mil_power = -50
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						MIL = 4
+					}
+				}
+				add_mil_power = 40
+				FROM = {
+					add_mil_power = -40
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						MIL = 3
+					}
+				}
+				add_mil_power = 30
+				FROM = {
+					add_mil_power = -30
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						MIL = 2
+					}
+				}
+				add_mil_power = 20
+				FROM = {
+					add_mil_power = -20
+				}
+			}
+			else = {
+				add_mil_power = 10
+				FROM = {
+					add_mil_power = -10
+				}
+			}
+			clr_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+			set_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 15 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_mil_power_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				NOT = { mil_power_cost = 1500 }
+				FROM = {
+					MIL = 1
+				}
+				FROM = {
+					OR = {
+						AND = {
+							MIL = 1
+							mil_power = 10
+						}
+						AND = {
+							MIL = 2
+							mil_power = 20
+						}
+						AND = {
+							MIL = 3
+							mil_power = 30
+						}
+						AND = {
+							MIL = 4
+							mil_power = 40
+						}
+						AND = {
+							MIL = 5
+							mil_power = 50
+						}
+						AND = {
+							MIL = 6
+							mil_power = 60
+						}
+					}
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_request_mil_power_opinion_negative
+			}
+			clr_country_flag = more_favors_action_request_mil_power_rejected_@FROM
+			set_country_flag = more_favors_action_request_mil_power_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_MIL_POWER
+			limit = {
+				FROM = {
+					MIL = 1
+					NOT = {
+						OR = {
+							AND = {
+								MIL = 1
+								mil_power = 10
+							}
+							AND = {
+								MIL = 2
+								mil_power = 20
+							}
+							AND = {
+								MIL = 3
+								mil_power = 30
+							}
+							AND = {
+								MIL = 4
+								mil_power = 40
+							}
+							AND = {
+								MIL = 5
+								mil_power = 50
+							}
+							AND = {
+								MIL = 6
+								mil_power = 60
+							}
+						}
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_MIL_POWER
+			limit = {
+				FROM = {
+					mil_power = 50
+					NOT = { mil_power = 100 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_MIL_POWER
+			limit = {
+				FROM = {
+					mil_power = 100
+					NOT = { mil_power = 150 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_FEW_MIL_POWER
+			limit = {
+				FROM = {
+					mil_power = 150
+					NOT = { mil_power = 200 }
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 25
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_RULER_SKILL
+			limit = {
+				FROM = {
+					MIL = 1
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = MIL
+				who = FROM
+			}
+			multiply_variable = { which = ai_value value = -5 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_BEHIND_IN_MIL_TECH
+			limit = {
+				any_country = {
+					FROM = {
+						NOT = { mil_tech = PREV }
+					}
+				}
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_UNFINISHED_MIL_IDEA_GROUP
+			limit = {
+				more_favor_actions_has_unfinished_mil_idea_group = yes
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_RECENTLY_GIVEN_ROOT_MANA
+			limit = {
+				has_country_flag = more_favors_action_request_monarch_power_accepted_@FROM
+				NOT = { had_country_flag = { flag = more_favors_action_request_monarch_power_accepted_@FROM days = 1825 } }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 1000
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		OR = {
+			NOT = { has_country_flag = more_favors_action_request_mil_power_rejected_@FROM }
+			had_country_flag = { flag = more_favors_action_request_mil_power_rejected_@FROM days = 1095 }
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 50 }
+		}
+		NOT = { mil_power = 100 }
+		FROM = {
+			MIL = 3
+			mil_power = 200
+		}
+		OR = {
+			more_favor_actions_has_unfinished_mil_idea_group = yes
+			any_country = {
+				ROOT = {
+					NOT = { mil_tech = PREV }
+				}
+			}
+		}
+	}
+}
+
+
+more_favors_action_request_general = {
+	category = favors
+
+	alert_index = 46
+	alert_tooltip = more_favors_action_request_general_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 35 }
+			}
+			NOT = { has_country_modifier = more_favors_action_request_general_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			FROM = {
+				is_at_war = no
+			}
+			FROM = {
+				army_tradition = 10
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 35 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_request_general_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_at_war = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_from_at_war
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { army_tradition = 10 }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_request_general_tt_low_army_tradition
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 35 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_general_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				FROM = {
+					is_at_war = no
+				}
+				FROM = {
+					army_tradition = 10
+				}
+			}
+			add_favors = { who = FROM amount = -35 }
+			add_country_modifier = {
+				name = more_favors_action_request_general_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_request_general
+				years = 10
+			}
+			more_favor_actions_create_general_based_on_army_tradition_of = { who = FROM }
+			FROM = {
+				add_army_tradition = -10
+			}
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 50 }
+				}
+				NOT = { has_country_modifier = more_favors_action_request_general_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				FROM = {
+					is_at_war = no
+				}
+				FROM = {
+					army_tradition = 10
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_request_general_opinion_negative
+			}
+			clr_country_flag = more_favors_action_request_general_rejected_@FROM
+			set_country_flag = more_favors_action_request_general_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_ARMY_TRADITION
+			export_to_variable = {
+				which = ai_value
+				value = trigger_value:army_tradition
+			}
+			change_variable = { which = ai_value value = -100 }
+			multiply_variable = { which = ai_value value = 2 }
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		always = no
+	}
+}
+
+more_favors_action_remove_guarantee = {
+	category = favors
+
+	alert_index = 46
+	alert_tooltip = more_favors_action_remove_guarantee_alert_tooltip
+
+	require_acceptance = yes
+
+	is_visible = {
+		OR = {
+			has_dlc = "The Cossacks"
+			has_dlc = "Leviathan"
+		}
+	}
+
+	is_allowed = {
+		hidden_trigger = {
+			OR = {
+				has_dlc = "The Cossacks"
+				has_dlc = "Leviathan"
+			}
+			FROM = {
+				owes_favors = { who = ROOT value = 50 }
+			}
+			NOT = { has_country_modifier = more_favors_action_remove_guarantee_used_modifier }
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 50
+				}
+			}
+			is_subject = no
+			FROM = {
+				is_subject = no
+			}
+			is_at_war = no
+			FROM = {
+				is_at_war = no
+			}
+			any_country = {
+				NOT = { tag = ROOT }
+				guaranteed_by = FROM
+				is_at_war = no
+				is_emperor = no
+			}
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = { owes_favors = { who = ROOT value = 50 } }
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_no_favors
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = more_favors_action_remove_guarantee_used_modifier
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_recently_used
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = { alliance_with = FROM }
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_not_allied
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							has_opinion = {
+								who = ROOT
+								value = 50
+							}
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_low_opinion
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					is_subject = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_root_is_subject
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_subject = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_from_is_subject
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					is_at_war = yes
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_root_at_war
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_at_war = yes
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_from_at_war
+					always = no
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						any_country = {
+							NOT = { tag = ROOT }
+							guaranteed_by = FROM
+							is_at_war = no
+							is_emperor = no
+						}
+					}
+				}
+				custom_trigger_tooltip = {
+					tooltip = more_favors_action_remove_guarantee_tt_no_guarantees
+					always = no
+				}
+			}
+		}
+	}
+
+	on_accept = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 50 }
+				}
+				NOT = { has_country_modifier = more_favors_action_remove_guarantee_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				is_subject = no
+				FROM = {
+					is_subject = no
+				}
+				is_at_war = no
+				FROM = {
+					is_at_war = no
+				}
+				any_country = {
+					NOT = { tag = ROOT }
+					guaranteed_by = FROM
+					is_at_war = no
+					is_emperor = no
+				}
+			}
+			add_favors = { who = FROM amount = -50 }
+			add_country_modifier = {
+				name = more_favors_action_remove_guarantee_used_modifier
+				duration = 3650
+				hidden = yes
+			}
+			more_favor_actions_set_display_vars_for_next_usage = {
+				name = more_favors_action_remove_guarantee
+				years = 10
+			}
+			FROM = {
+				save_event_target_as = more_favors_action_remove_guarantee_target
+			}
+			country_event = { id = more_favors_action_remove_guarantee_events.1 }
+		}
+	}
+
+	on_decline = {
+		if = {
+			limit = {
+				OR = {
+					has_dlc = "The Cossacks"
+					has_dlc = "Leviathan"
+				}
+				FROM = {
+					owes_favors = { who = ROOT value = 50 }
+				}
+				NOT = { has_country_modifier = more_favors_action_remove_guarantee_used_modifier }
+				alliance_with = FROM
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 50
+					}
+				}
+				is_subject = no
+				FROM = {
+					is_subject = no
+				}
+				is_at_war = no
+				FROM = {
+					is_at_war = no
+				}
+				any_country = {
+					NOT = { tag = ROOT }
+					guaranteed_by = FROM
+					is_at_war = no
+					is_emperor = no
+				}
+			}
+			add_opinion = {
+				who = FROM
+				modifier = more_favors_action_remove_guarantee_opinion_negative
+			}
+			clr_country_flag = more_favors_action_remove_guarantee_rejected_@FROM
+			set_country_flag = more_favors_action_remove_guarantee_rejected_@FROM
+		}
+	}
+
+	ai_acceptance = {
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_DEFAULT
+			export_to_variable = {
+				which = ai_value
+				value = 50
+			}
+		}
+		add_entry = {
+			name = OPINION
+			export_to_variable = {
+				which = ai_value
+				value = opinion
+				who = FROM
+				with = ROOT
+			}
+		}
+		add_entry = {
+			name = MORE_FAVOR_ACTIONS_AI_ACCEPT_REASON_FROM_HAS_CRUEL_RULER
+			limit = {
+				has_dlc = "Rights of Man"
+				FROM = { ruler_has_personality = cruel_personality }
+			}
+			export_to_variable = {
+				which = ai_value
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+
+	ai_will_do = {
+		OR = {
+			NOT = { has_country_flag = more_favors_action_remove_guarantee_rejected_@FROM }
+			had_country_flag = { flag = more_favors_action_remove_guarantee_rejected_@FROM days = 1095 }
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 90 }
+		}
+		any_known_country = {
+			is_at_war = no
+			NOT = { tag = ROOT }
+			guaranteed_by = FROM
+			NOT = { truce_with = ROOT }
+			NOT = { alliance_with = ROOT }
+			NOT = { alliance_with = FROM }
+			NOT = { guaranteed_by = ROOT }
+			NOT = { num_of_allies = 3 }
+			ROOT = { has_casus_belli_against = PREV }
+			OR = {
+				ROOT = { is_emperor = no }
+				is_part_of_hre = no
+			}
+			is_emperor = no
+			NOT = {
+				border_distance = {
+					who = ROOT
+					distance = 300
+				}
+			}
+		}
+	}
+}

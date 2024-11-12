@@ -1,0 +1,53 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 169  217  48 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Amath #0" = 30
+	"Mamadou #0" = 10
+	"Blaise #0" = 10
+	"Abdou #0" = 10
+	"Lamine #0" = 10
+	"Ségolène #0" = 10
+	"Idrissa #0" = 10
+	"Léopold #0" = 10
+	"Umar #0" = 10
+	"Abdoulaye #0" = 10
+	"Henry #0" = 10
+	"Tony #0" = 10
+	"Papa #0" = 10
+	"El Hadji #0" = 10
+	"Assane #0" = 10
+	"Amadou #0" = 10
+	"Leyti #0" = 10
+	"Ndiss #0" = 10
+	"Cheikh #0" = 10
+}
+
+leader_names = {
+	Dansokho Dia Diagne Diouf Guèye Seck Sédar Senghor Tal Wade
+	Faye Ba Diome Sembène Senghor Mambéty Kouyaté Diop Vieyra
+}
+
+ship_names = {
+	Tawwab Muntaqim Afuww Fa'uf "Malik Mulk"
+	"Jalal Ikram" Muqsit Jami Ghani Mughni
+	Mani Darr Nafi Nur Hadi Badi Baqi Warith
+	Rashid Sabur "Fazl Azim"
+}
+
+
+

@@ -1,0 +1,1771 @@
+request_boost_tank_tech = {
+	category = dynasty
+
+	
+	alert_index = 15  
+	alert_tooltip = WE_WANT_TANK_TECH_UP
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy		
+		if = {
+			limit = {
+				ai = no
+			}
+			FROM = { NOT = { has_country_flag = dont_show_tank_tech } }
+		}
+		ROOT = {
+			NOT = {
+				has_country_flag = tank_level_finish
+			}
+			NOT = {
+				check_variable = {
+					which = tank_Support
+					value = 25
+				}
+			}
+		}
+		
+	}
+	is_allowed = {	
+		if = {
+			limit = { ai = yes }
+			NOT = {
+				war_with = FROM
+			}
+			years_of_income = 0.2
+		}
+		if = {
+			limit = { ai = no }
+			years_of_income = 0.6
+		}
+		FROM = { full_idea_group = artillery_ideas }
+		ROOT = { NOT = { has_country_modifier = wait_for_tank_tech_defence_1 } }
+		custom_trigger_tooltip = {
+			tooltip = TECH__UP_OF_US
+			hidden_trigger = {
+				FROM = {
+					check_variable = {
+						which = tank_Support
+						value = 2
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 2
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 2
+							}
+						}
+					}
+					mil_tech = 10
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 3
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 3
+							}
+						}
+					}
+					mil_tech = 11
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 4
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 4
+							}
+						}
+					}
+					mil_tech = 12
+				}	
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 5
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 5
+							}
+						}
+					}
+					mil_tech = 14
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 6
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 6
+							}
+						}
+					}
+					mil_tech = 15
+					FROM = { arms = 1 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 7
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 7
+							}
+						}
+					}
+					mil_tech = 17
+					FROM = { arms = 1 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 8
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 8
+							}
+						}
+					}
+					mil_tech = 19
+					FROM = { arms = 2 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 9
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 9
+							}
+						}
+					}
+					mil_tech = 20
+					FROM = { arms = 2 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 10
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 10
+							}
+						}
+					}
+					mil_tech = 23
+					FROM = { arms = 2 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 11
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 11
+							}
+						}
+					}
+					mil_tech = 25
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 12
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 12
+							}
+						}
+					}
+					mil_tech = 27
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 13
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 13
+							}
+						}
+					}
+					mil_tech = 29
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 14
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 14
+							}
+						}
+					}
+					mil_tech = 31
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 15
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 15
+							}
+						}
+					}
+					mil_tech = 35
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 16
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 16
+							}
+						}
+					}
+					mil_tech = 39
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 17
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 17
+							}
+						}
+					}
+					mil_tech = 43
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 18
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 18
+							}
+						}
+					}
+					mil_tech = 47
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 19
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 19
+							}
+						}
+					}
+					mil_tech = 51
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 20
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 20
+							}
+						}
+					}
+					mil_tech = 55
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 21
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 21
+							}
+						}
+					}
+					mil_tech = 63
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 22
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 22
+							}
+						}
+					}
+					mil_tech = 67
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 23
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 23
+							}
+						}
+					}
+					mil_tech = 71
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 24
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 24
+							}
+						}
+					}
+					mil_tech = 75
+					FROM = { arms = 3 }
+				}
+				else_if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}
+					}
+					mil_tech = 79
+					FROM = { arms = 3 }
+				}
+			}
+		}
+		
+	}
+	on_accept = {
+		hidden_effect = {
+			if = {
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 2
+						}
+					}
+				}
+				set_variable = {
+					which = tank_Support
+					value = 2
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = tank_Support
+							value = 25
+						}
+					}
+				}
+				change_variable = {
+					which = tank_Support
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = tank_Support
+						value = 25
+					}
+					
+				}
+				set_country_flag = tank_level_finish
+				
+			}
+		}	
+		add_country_modifier = {
+			name = wait_for_tank_tech_defence_1
+			duration = 60
+			hidden = yes
+		}
+		
+		FROM = { add_years_of_income = 0.3 }
+		add_years_of_income = -0.6
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		#has_country_modifier = european_leader
+		#NOT = {
+		#	reverse_has_opinion = { 
+		#		who = FROM value = -75 
+		#	}
+		#}
+		always = yes
+	}
+	
+}
+boost_tank_tech = {
+	category = dynasty
+
+	alert_index = 15  
+	alert_tooltip = WANT_TANK_TECH_UP
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy		
+		#ai = no
+		if = {
+			limit = { ai = no }
+			FROM = { NOT = { has_country_flag = dont_show_tank_tech } }
+		}
+		FROM = {
+			NOT = {
+				has_country_flag = tank_level_finish
+			}
+			NOT = {
+				check_variable = {
+					which = tank_Support
+					value = 25
+				}
+			}
+		}
+		
+	}
+	is_allowed = {	
+		if = {
+			limit = { ai = yes }
+			NOT = {
+				war_with = FROM
+			}
+		}
+		full_idea_group = artillery_ideas
+		if = {
+			limit = { ai = yes }
+			years_of_income = 0.2
+		}
+		else = {
+			years_of_income = 0.6
+		}
+		FROM = { NOT = { has_country_modifier = wait_for_tank_tech_defence } }
+		ROOT = {
+			check_variable = {
+				which = tank_Support
+				value = 2
+			}
+		}
+		#custom_trigger_tooltip = {
+			#tooltip = TECH__UP_OF_US_1
+			if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 2
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 2
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 3
+							}
+						}
+					}
+				}
+				mil_tech = 10
+				FROM = { mil_tech = 10 }
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 3
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 3
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 4
+							}
+						}
+					}
+				}
+				mil_tech = 11
+				FROM = { mil_tech = 11 }
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 4
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 4
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 5
+							}
+						}
+					}
+				}
+				mil_tech = 12
+				FROM = { mil_tech = 12 }
+				innovativeness = 1
+			}	
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 5
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 5
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 6
+							}
+						}
+					}
+				}
+				mil_tech = 14
+				FROM = { mil_tech = 14 }
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 3
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 6
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 6
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 7
+							}
+						}
+					}
+				}
+				mil_tech = 15
+				FROM = { mil_tech = 15 }
+				arms = 1
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 5
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 7
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 7
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 8
+							}
+						}
+					}
+				}
+				mil_tech = 17
+				FROM = { mil_tech = 17 }
+				arms = 1
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 1
+				}
+				else = {
+					innovativeness = 7
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 8
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 8
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 9
+							}
+						}
+					}
+				}
+				mil_tech = 19
+				FROM = { mil_tech = 19 }
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 10
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 9
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 9
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 10
+							}
+						}
+					}
+				}
+				mil_tech = 20
+				FROM = { mil_tech = 20 }
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 5
+				}
+				else = {
+					innovativeness = 13
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 10
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 10
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 11
+							}
+						}
+					}
+				}
+				mil_tech = 23
+				FROM = { mil_tech = 23 }
+				arms = 2
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 15
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 11
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 11
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 12
+							}
+						}
+					}
+				}
+				mil_tech = 25
+				FROM = { mil_tech = 25 }
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 20
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 12
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 12
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 13
+							}
+						}
+					}
+				}
+				mil_tech = 27
+				FROM = { mil_tech = 27 }
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 22
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 13
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 13
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 14
+							}
+						}
+					}
+				}
+				mil_tech = 29
+				FROM = { mil_tech = 29 }
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 24
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 14
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 14
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 15
+							}
+						}
+					}
+				}
+				mil_tech = 31
+				FROM = { mil_tech = 31 }
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 26
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 15
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 15
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 16
+							}
+						}
+					}
+				}
+				mil_tech = 35
+				FROM = { mil_tech = 35 }
+				arms = 3
+				if = {
+					limit =  { ai = yes }
+					innovativeness = 10
+				}
+				else = {
+					innovativeness = 28
+				}
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 16
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 16
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 17
+							}
+						}
+					}
+				}
+				mil_tech = 39
+				FROM = { mil_tech = 39 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 17
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 17
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 18
+							}
+						}
+					}
+				}
+				mil_tech = 43
+				FROM = { mil_tech = 43 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 18
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 18
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 19
+							}
+						}
+					}
+				}
+				mil_tech = 47
+				FROM = { mil_tech = 47 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 19
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 19
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 20
+							}
+						}
+					}
+				}
+				mil_tech = 51
+				FROM = { mil_tech = 51 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 20
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 20
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 21
+							}
+						}
+					}
+				}
+				mil_tech = 55
+				FROM = { mil_tech = 55 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 21
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 21
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 22
+							}
+						}
+					}
+				}
+				mil_tech = 63
+				FROM = { mil_tech = 63 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 22
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 22
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 23
+							}
+						}
+					}
+				}
+				mil_tech = 67
+				FROM = { mil_tech = 67 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 23
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 23
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 24
+							}
+						}
+					}
+				}
+				mil_tech = 71
+				FROM = { mil_tech = 71 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 24
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 24
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}
+					}
+				}
+				mil_tech = 75
+				FROM = { mil_tech = 75 }
+				innovativeness = 30
+				arms = 3
+			}
+			else_if = {
+				limit = {
+					FROM = {
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}
+					}
+					ROOT = {
+						check_variable = {
+							which = tank_Support
+							value = 25
+						}
+						NOT = {
+							check_variable = {
+								which = tank_Support
+								value = 26
+							}
+						}
+					}
+				}
+				mil_tech = 79
+				FROM = { mil_tech = 79 }
+				innovativeness = 30
+				arms = 3
+			}
+		#}
+	}
+	on_accept = {
+		
+			hidden_effect = {
+				if = {
+					limit = { 
+						FROM = {
+							NOT = {
+								check_variable = {
+									which = tank_Support
+									value = 2
+								}
+							}
+						}
+					}
+					FROM = {
+						set_variable = {
+							which = tank_Support
+							value = 2
+						}
+					}
+					
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							NOT = {
+								check_variable = {
+									which = tank_Support
+									value = 25
+								}
+							}
+						}
+					}
+					FROM = {
+						change_variable = {
+							which = tank_Support
+							value = 1
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						FROM = {
+							check_variable = {
+								which = tank_Support
+								value = 25
+							}
+						}						
+					}
+					FROM = { set_country_flag = tank_level_finish }
+				}
+			}	
+			FROM = {
+				add_country_modifier = {
+					name = wait_for_tank_tech_defence
+					duration = 60
+					hidden = yes
+				}
+			}
+		
+		add_years_of_income = -0.6
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		#has_country_modifier = european_leader
+		#NOT = {
+		#	reverse_has_opinion = { 
+		#		who = FROM value = -75 
+		#	}
+		#}
+		always = yes
+		any_rival_country = {
+			war_with = FROM
+		}
+		any_country = {
+			NOT = {
+				has_opinion = {
+					who = ROOT
+					value = -50
+				}
+			}
+			war_with = FROM
+		}
+	}
+}

@@ -1,0 +1,5523 @@
+namespace = send_troops
+country_event = {
+	id = send_troops.102
+	title = "send_troops.102title"
+	desc = "send_troops.102desc"
+	picture = send_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.102opt"
+		country_event = {
+			id = send_troops.101
+		}
+	}
+}
+
+country_event = {
+	id = send_troops.101
+	title = "send_troops.101title"
+	desc = "send_troops.101desc"
+	picture = send_troop_eventPicture
+	is_triggered_only = yes
+	
+	option = { #Occupied city
+		name = modern_troop.1.a
+		goto = capital_set
+		trigger = { has_saved_event_target = capital_set }
+		event_target:capital_set = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Occupied city
+		name = modern_troop.1.bb
+		goto = occupied_city
+		trigger = { has_saved_event_target = occupied_city }
+		event_target:occupied_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Major City
+		name = modern_troop.1.b
+		goto = major_city
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+	}
+	option = { #Center of Trade
+		name = modern_troop.1.c
+		goto = center_of_trade
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Fortification
+		name = modern_troop.1.dd
+		goto = fort
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Port
+		name = modern_troop.1.e
+		goto = port
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Random Province
+		name = modern_troop.1.f
+		goto = random_province
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_global_event_target_as = air_plan_2
+		}
+		country_event = {
+			id = send_troops.100
+		}
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+	option = { #Random Province
+		name = modern_troop.2.b
+		event_target:send_troop_target_country = {
+			every_owned_province = {
+				limit = { has_building = constable }
+				clear_global_event_target = random_province
+				clear_global_event_target = capital_set
+				clear_global_event_target = major_city
+				clear_global_event_target = fort
+				clear_global_event_target = port
+			}
+		}
+		
+	}
+}
+
+
+#send_troops Point admin power X1
+country_event = {
+	id = send_troops.100
+	title = "send_troops.100title"
+	desc = "send_troops.100desc"
+	picture = send_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.1opt"
+		#All trops
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = artillery					
+				}
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = infantry
+				}
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		country_event = {
+			id = send_troops.1
+		}
+	}
+	option = {
+		name = "send_troops.2opt"
+		#infantry
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = infantry
+				}
+			}
+		}
+		country_event = {
+			id = send_troops.2
+		}
+	}
+	option = {
+		name = "send_troops.3opt"
+		#cavalry
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		country_event = {
+			id = send_troops.3
+		}
+	}
+	option = {
+		name = "send_troops.4opt"
+		#Tank
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = artillery					
+				}
+			}
+		}
+		country_event = {
+			id = send_troops.4
+		}
+	}
+	option = {
+		name = "send_troops_cansel.opt"
+		random_province = {
+			limit = {
+				OR = {
+					has_saved_event_target = air_plan_1
+					has_saved_event_target = air_plan_2
+				}
+				
+			}
+			clear_global_event_target = air_plan_1
+			clear_global_event_target = air_plan_2
+		}
+		
+	}
+}
+
+
+
+#send_troops Point diplo power 
+country_event = {
+	id = send_troops.1
+	title = "send_troops.1title"
+	desc = "send_troops.1desc"
+	picture = send_mixed_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.11opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1875
+		hidden_effect = {
+				event_target:air_plan_1 = { 
+					kill_units = {
+						amount = 50
+						type = infantry
+						who = root
+					}
+					kill_units = {
+						amount = 25
+						type = cavalry
+						who = root
+					}
+					kill_units = {
+						amount = 50
+						type = artillery
+						who = root
+					}
+				}
+				event_target:air_plan_2 = { 
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+					infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#26
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#27
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#28
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#29
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#30
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#31
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#32
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#33
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#34
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#35
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#36
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#37
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#38
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#39
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#40
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#41
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#42
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#43
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#44
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#45
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#46
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#47
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#48
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#49
+					infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#50
+		 		} 
+				 random_province = {
+					limit = {
+						OR = {
+							has_saved_event_target = air_plan_1
+							has_saved_event_target = air_plan_2
+						}
+
+					}
+					clear_global_event_target = air_plan_1
+					clear_global_event_target = air_plan_2
+				}
+				every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.51
+					}
+				}
+				event_target:send_troop_target_country = {
+					country_event = {
+						id = send_troops.5
+					}
+				}
+			}
+			add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.12opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1500
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 40
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 20
+					type = cavalry
+					who = root
+				}
+				kill_units = {
+					amount = 40
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#40
+
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+				limit = {
+					ai = no
+				}
+				country_event = {
+					id = send_troops.96
+				}
+			}
+
+			event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.6
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+		event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.13opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1125
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 30
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 15
+					type = cavalry
+					who = root
+				}
+				kill_units = {
+					amount = 30
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#30
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.52
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.7
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.14opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -750
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 20
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 10
+					type = cavalry
+					who = root
+				}
+				kill_units = {
+					amount = 20
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#20
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.53
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.8
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.15opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -525
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 15
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 5
+					type = cavalry
+					who = root
+				}
+				kill_units = {
+					amount = 15
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#15
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.54
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.9
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.16opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = cavalry
+				}
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -375
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 10
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 5
+					type = cavalry
+					who = root
+				}
+				kill_units = {
+					amount = 10
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	cavalry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country														artillery = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.55
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.10
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.17opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1500
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 50
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 50
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#40
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#41
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#42
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#43
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#44
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#45
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#46
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#47
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#48
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#49
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#50
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.56
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.11
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.18opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 45
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 45
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1350
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 45
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 45
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#40
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#41
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#42
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#43
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#44
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#45
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.57
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.12
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.19opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1200
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 40
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 40
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#40
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.58
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.13
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.111opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 35
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 35
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1050
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 35
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 35
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#35
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.59
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.14
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.112opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -900
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 30
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 30
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#30
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.60
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.15
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.113opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -750
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 25
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 25
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#25
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.61
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.16
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.114opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -600
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 20
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 20
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#20
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.62
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.17
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.115opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -450
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 15
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 15
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#15
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.63
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.18
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.116opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -300
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 10
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 10
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.64
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.19
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.117opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = infantry					
+				}
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -150
+		hidden_effect = {
+			event_target:air_plan_1 = {  
+				kill_units = {
+				amount = 5
+				type = infantry
+				who = root
+				}
+				kill_units = {
+					amount = 5
+					type = artillery
+					who = root
+				} 
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	artillery = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.65
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.20
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+		
+	}
+	option = {
+		name = "send_troops_cansel.opt"	
+		random_province = {
+			limit = {
+				OR = {
+					has_saved_event_target = air_plan_1
+					has_saved_event_target = air_plan_2
+				}
+			}
+			clear_global_event_target = air_plan_1
+			clear_global_event_target = air_plan_2
+		}
+	}
+}
+
+country_event = {
+	id = send_troops.2
+	title = "send_troops.2title"
+	desc = "send_troops.2desc"
+	picture = send_infantry_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.21opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -50
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 5
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.66
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.21
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.22opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -100
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 10
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.67
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.22
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.23opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -150
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 15
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.68
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.23
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.24opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -200
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 20
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.69
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.24
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.25opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -250
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 25
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.70
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.25
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.26opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -300
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 30
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	#30
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.71
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.26
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.27opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 35
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -350
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 35
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	#35
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.72
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.27
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.28opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -400
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 40
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	#40
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.73
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.28
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.29opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 45
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -450
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 45
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	#40
+				infantry = event_target:send_troop_target_country	#41
+				infantry = event_target:send_troop_target_country	#42
+				infantry = event_target:send_troop_target_country	#43
+				infantry = event_target:send_troop_target_country	#44
+				infantry = event_target:send_troop_target_country	#45
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.74
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.29
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.211opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = infantry
+				}
+			}
+		}
+		add_treasury = -500
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 50
+					type = infantry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				infantry = event_target:send_troop_target_country	#1
+				infantry = event_target:send_troop_target_country	#2
+				infantry = event_target:send_troop_target_country	#3
+				infantry = event_target:send_troop_target_country	#4
+				infantry = event_target:send_troop_target_country	#5
+				infantry = event_target:send_troop_target_country	#6
+				infantry = event_target:send_troop_target_country	#7
+				infantry = event_target:send_troop_target_country	#8
+				infantry = event_target:send_troop_target_country	#9
+				infantry = event_target:send_troop_target_country	#10
+				infantry = event_target:send_troop_target_country	#11
+				infantry = event_target:send_troop_target_country	#12
+				infantry = event_target:send_troop_target_country	#13
+				infantry = event_target:send_troop_target_country	#14
+				infantry = event_target:send_troop_target_country	#15
+				infantry = event_target:send_troop_target_country	#16
+				infantry = event_target:send_troop_target_country	#17
+				infantry = event_target:send_troop_target_country	#18
+				infantry = event_target:send_troop_target_country	#19
+				infantry = event_target:send_troop_target_country	#20
+				infantry = event_target:send_troop_target_country	#21
+				infantry = event_target:send_troop_target_country	#22
+				infantry = event_target:send_troop_target_country	#23
+				infantry = event_target:send_troop_target_country	#24
+				infantry = event_target:send_troop_target_country	#25
+				infantry = event_target:send_troop_target_country	#26
+				infantry = event_target:send_troop_target_country	#27
+				infantry = event_target:send_troop_target_country	#28
+				infantry = event_target:send_troop_target_country	#29
+				infantry = event_target:send_troop_target_country	#30
+				infantry = event_target:send_troop_target_country	#31
+				infantry = event_target:send_troop_target_country	#32
+				infantry = event_target:send_troop_target_country	#33
+				infantry = event_target:send_troop_target_country	#34
+				infantry = event_target:send_troop_target_country	#35
+				infantry = event_target:send_troop_target_country	#36
+				infantry = event_target:send_troop_target_country	#37
+				infantry = event_target:send_troop_target_country	#38
+				infantry = event_target:send_troop_target_country	#39
+				infantry = event_target:send_troop_target_country	#40
+				infantry = event_target:send_troop_target_country	#41
+				infantry = event_target:send_troop_target_country	#42
+				infantry = event_target:send_troop_target_country	#43
+				infantry = event_target:send_troop_target_country	#44
+				infantry = event_target:send_troop_target_country	#45
+				infantry = event_target:send_troop_target_country	#46
+				infantry = event_target:send_troop_target_country	#47
+				infantry = event_target:send_troop_target_country	#48
+				infantry = event_target:send_troop_target_country	#49
+				infantry = event_target:send_troop_target_country	#50
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.75
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.30
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops_cansel.opt"	
+		random_province = {
+			limit = {
+				OR = {
+					has_saved_event_target = air_plan_1
+					has_saved_event_target = air_plan_2
+				}
+			}
+			clear_global_event_target = air_plan_1
+			clear_global_event_target = air_plan_2
+		}
+	}
+}
+
+
+			
+#send_troops Point diplo power 
+country_event = {
+	id = send_troops.3
+	title = "send_troops.3title"
+	desc = "send_troops.3desc"
+	picture = send_warmachine_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.31opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -75
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 5
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.76
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.31
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.32opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -150
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 10
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.77
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.32
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.33opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -225
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 15
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.78
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.33
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.34opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -300
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 20
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.79
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.34
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.35opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -375
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 25
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.80
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.35
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.36opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -450
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 30
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+				cavalry = event_target:send_troop_target_country	#26
+				cavalry = event_target:send_troop_target_country	#27
+				cavalry = event_target:send_troop_target_country	#28
+				cavalry = event_target:send_troop_target_country	#29
+				cavalry = event_target:send_troop_target_country	#30
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.81
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.36
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.37opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 35
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -625
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 35
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+				cavalry = event_target:send_troop_target_country	#26
+				cavalry = event_target:send_troop_target_country	#27
+				cavalry = event_target:send_troop_target_country	#28
+				cavalry = event_target:send_troop_target_country	#29
+				cavalry = event_target:send_troop_target_country	#30
+				cavalry = event_target:send_troop_target_country	#31
+				cavalry = event_target:send_troop_target_country	#32
+				cavalry = event_target:send_troop_target_country	#33
+				cavalry = event_target:send_troop_target_country	#34
+				cavalry = event_target:send_troop_target_country	#35
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.82
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.37
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.38opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -700
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 40
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+				cavalry = event_target:send_troop_target_country	#26
+				cavalry = event_target:send_troop_target_country	#27
+				cavalry = event_target:send_troop_target_country	#28
+				cavalry = event_target:send_troop_target_country	#29
+				cavalry = event_target:send_troop_target_country	#30
+				cavalry = event_target:send_troop_target_country	#31
+				cavalry = event_target:send_troop_target_country	#32
+				cavalry = event_target:send_troop_target_country	#33
+				cavalry = event_target:send_troop_target_country	#34
+				cavalry = event_target:send_troop_target_country	#35
+				cavalry = event_target:send_troop_target_country	#36
+				cavalry = event_target:send_troop_target_country	#37
+				cavalry = event_target:send_troop_target_country	#38
+				cavalry = event_target:send_troop_target_country	#39
+				cavalry = event_target:send_troop_target_country	#40
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.83
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.38
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.39opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 45
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -775
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 45
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+				cavalry = event_target:send_troop_target_country	#26
+				cavalry = event_target:send_troop_target_country	#27
+				cavalry = event_target:send_troop_target_country	#28
+				cavalry = event_target:send_troop_target_country	#29
+				cavalry = event_target:send_troop_target_country	#30
+				cavalry = event_target:send_troop_target_country	#31
+				cavalry = event_target:send_troop_target_country	#32
+				cavalry = event_target:send_troop_target_country	#33
+				cavalry = event_target:send_troop_target_country	#34
+				cavalry = event_target:send_troop_target_country	#35
+				cavalry = event_target:send_troop_target_country	#36
+				cavalry = event_target:send_troop_target_country	#37
+				cavalry = event_target:send_troop_target_country	#38
+				cavalry = event_target:send_troop_target_country	#39
+				cavalry = event_target:send_troop_target_country	#40
+				cavalry = event_target:send_troop_target_country	#41
+				cavalry = event_target:send_troop_target_country	#42
+				cavalry = event_target:send_troop_target_country	#43
+				cavalry = event_target:send_troop_target_country	#44
+				cavalry = event_target:send_troop_target_country	#45
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.84
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.39
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.311opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = cavalry
+				}
+			}
+		}
+		add_treasury = -850
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 50
+					type = cavalry
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				cavalry = event_target:send_troop_target_country	#1
+				cavalry = event_target:send_troop_target_country	#2
+				cavalry = event_target:send_troop_target_country	#3
+				cavalry = event_target:send_troop_target_country	#4
+				cavalry = event_target:send_troop_target_country	#5
+				cavalry = event_target:send_troop_target_country	#6
+				cavalry = event_target:send_troop_target_country	#7
+				cavalry = event_target:send_troop_target_country	#8
+				cavalry = event_target:send_troop_target_country	#9
+				cavalry = event_target:send_troop_target_country	#10
+				cavalry = event_target:send_troop_target_country	#11
+				cavalry = event_target:send_troop_target_country	#12
+				cavalry = event_target:send_troop_target_country	#13
+				cavalry = event_target:send_troop_target_country	#14
+				cavalry = event_target:send_troop_target_country	#15
+				cavalry = event_target:send_troop_target_country	#16
+				cavalry = event_target:send_troop_target_country	#17
+				cavalry = event_target:send_troop_target_country	#18
+				cavalry = event_target:send_troop_target_country	#19
+				cavalry = event_target:send_troop_target_country	#20
+				cavalry = event_target:send_troop_target_country	#21
+				cavalry = event_target:send_troop_target_country	#22
+				cavalry = event_target:send_troop_target_country	#23
+				cavalry = event_target:send_troop_target_country	#24
+				cavalry = event_target:send_troop_target_country	#25
+				cavalry = event_target:send_troop_target_country	#26
+				cavalry = event_target:send_troop_target_country	#27
+				cavalry = event_target:send_troop_target_country	#28
+				cavalry = event_target:send_troop_target_country	#29
+				cavalry = event_target:send_troop_target_country	#30
+				cavalry = event_target:send_troop_target_country	#31
+				cavalry = event_target:send_troop_target_country	#32
+				cavalry = event_target:send_troop_target_country	#33
+				cavalry = event_target:send_troop_target_country	#34
+				cavalry = event_target:send_troop_target_country	#35
+				cavalry = event_target:send_troop_target_country	#36
+				cavalry = event_target:send_troop_target_country	#37
+				cavalry = event_target:send_troop_target_country	#38
+				cavalry = event_target:send_troop_target_country	#39
+				cavalry = event_target:send_troop_target_country	#40
+				cavalry = event_target:send_troop_target_country	#41
+				cavalry = event_target:send_troop_target_country	#42
+				cavalry = event_target:send_troop_target_country	#43
+				cavalry = event_target:send_troop_target_country	#44
+				cavalry = event_target:send_troop_target_country	#45
+				cavalry = event_target:send_troop_target_country	#46
+				cavalry = event_target:send_troop_target_country	#47
+				cavalry = event_target:send_troop_target_country	#48
+				cavalry = event_target:send_troop_target_country	#49
+				cavalry = event_target:send_troop_target_country	#50
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.85
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.40
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops_cansel.opt"	
+		random_province = {
+			limit = {
+				OR = {
+					has_saved_event_target = air_plan_1
+					has_saved_event_target = air_plan_2
+				}
+			}
+			clear_global_event_target = air_plan_1
+			clear_global_event_target = air_plan_2
+		}
+	}
+}
+
+#send_troops Point admin power X1
+country_event = {
+	id = send_troops.4
+	title = "send_troops.4title"
+	desc = "send_troops.4desc"
+	picture = send_tank_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.41opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 5
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -100
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 5
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.86
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.41
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.42opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 10
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -200
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 10
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.87
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.42
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.43opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 15
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -300
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 15
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.88
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.43
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.44opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 20
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -400
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 20
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.89
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.44
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.45opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 25
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -500
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 25
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.90
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.45
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.46opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 30
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -600
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 30
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+				artillery = event_target:send_troop_target_country	#26
+				artillery = event_target:send_troop_target_country	#27
+				artillery = event_target:send_troop_target_country	#28
+				artillery = event_target:send_troop_target_country	#29
+				artillery = event_target:send_troop_target_country	#30
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.91
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.46
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.47opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 35
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -700
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 35
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+				artillery = event_target:send_troop_target_country	#26
+				artillery = event_target:send_troop_target_country	#27
+				artillery = event_target:send_troop_target_country	#28
+				artillery = event_target:send_troop_target_country	#29
+				artillery = event_target:send_troop_target_country	#30
+				artillery = event_target:send_troop_target_country	#31
+				artillery = event_target:send_troop_target_country	#32
+				artillery = event_target:send_troop_target_country	#33
+				artillery = event_target:send_troop_target_country	#34
+				artillery = event_target:send_troop_target_country	#35
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.92
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.47
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.48opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 40
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -800
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 40
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+				artillery = event_target:send_troop_target_country	#26
+				artillery = event_target:send_troop_target_country	#27
+				artillery = event_target:send_troop_target_country	#28
+				artillery = event_target:send_troop_target_country	#29
+				artillery = event_target:send_troop_target_country	#30
+				artillery = event_target:send_troop_target_country	#31
+				artillery = event_target:send_troop_target_country	#32
+				artillery = event_target:send_troop_target_country	#33
+				artillery = event_target:send_troop_target_country	#34
+				artillery = event_target:send_troop_target_country	#35
+				artillery = event_target:send_troop_target_country	#36
+				artillery = event_target:send_troop_target_country	#37
+				artillery = event_target:send_troop_target_country	#38
+				artillery = event_target:send_troop_target_country	#39
+				artillery = event_target:send_troop_target_country	#40
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.93
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.48
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.49opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 45
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -900
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 45
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+				artillery = event_target:send_troop_target_country	#26
+				artillery = event_target:send_troop_target_country	#27
+				artillery = event_target:send_troop_target_country	#28
+				artillery = event_target:send_troop_target_country	#29
+				artillery = event_target:send_troop_target_country	#30
+				artillery = event_target:send_troop_target_country	#31
+				artillery = event_target:send_troop_target_country	#32
+				artillery = event_target:send_troop_target_country	#33
+				artillery = event_target:send_troop_target_country	#34
+				artillery = event_target:send_troop_target_country	#35
+				artillery = event_target:send_troop_target_country	#36
+				artillery = event_target:send_troop_target_country	#37
+				artillery = event_target:send_troop_target_country	#38
+				artillery = event_target:send_troop_target_country	#39
+				artillery = event_target:send_troop_target_country	#40
+				artillery = event_target:send_troop_target_country	#41
+				artillery = event_target:send_troop_target_country	#42
+				artillery = event_target:send_troop_target_country	#43
+				artillery = event_target:send_troop_target_country	#44
+				artillery = event_target:send_troop_target_country	#45
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.94
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.49
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops.411opt"
+		trigger = {
+			event_target:air_plan_1 = {
+				num_of_units_in_province = {
+					amount = 50
+					who = root
+					type = artillery
+				}
+			}
+		}
+		add_treasury = -1000
+		hidden_effect = {
+			event_target:air_plan_1 = { 
+				kill_units = {
+					amount = 50
+					type = artillery
+					who = root
+				}
+			}
+			event_target:air_plan_2 = { 
+				artillery = event_target:send_troop_target_country	#1
+				artillery = event_target:send_troop_target_country	#2
+				artillery = event_target:send_troop_target_country	#3
+				artillery = event_target:send_troop_target_country	#4
+				artillery = event_target:send_troop_target_country	#5
+				artillery = event_target:send_troop_target_country	#6
+				artillery = event_target:send_troop_target_country	#7
+				artillery = event_target:send_troop_target_country	#8
+				artillery = event_target:send_troop_target_country	#9
+				artillery = event_target:send_troop_target_country	#10
+				artillery = event_target:send_troop_target_country	#11
+				artillery = event_target:send_troop_target_country	#12
+				artillery = event_target:send_troop_target_country	#13
+				artillery = event_target:send_troop_target_country	#14
+				artillery = event_target:send_troop_target_country	#15
+				artillery = event_target:send_troop_target_country	#16
+				artillery = event_target:send_troop_target_country	#17
+				artillery = event_target:send_troop_target_country	#18
+				artillery = event_target:send_troop_target_country	#19
+				artillery = event_target:send_troop_target_country	#20
+				artillery = event_target:send_troop_target_country	#21
+				artillery = event_target:send_troop_target_country	#22
+				artillery = event_target:send_troop_target_country	#23
+				artillery = event_target:send_troop_target_country	#24
+				artillery = event_target:send_troop_target_country	#25
+				artillery = event_target:send_troop_target_country	#26
+				artillery = event_target:send_troop_target_country	#27
+				artillery = event_target:send_troop_target_country	#28
+				artillery = event_target:send_troop_target_country	#29
+				artillery = event_target:send_troop_target_country	#30
+				artillery = event_target:send_troop_target_country	#31
+				artillery = event_target:send_troop_target_country	#32
+				artillery = event_target:send_troop_target_country	#33
+				artillery = event_target:send_troop_target_country	#34
+				artillery = event_target:send_troop_target_country	#35
+				artillery = event_target:send_troop_target_country	#36
+				artillery = event_target:send_troop_target_country	#37
+				artillery = event_target:send_troop_target_country	#38
+				artillery = event_target:send_troop_target_country	#39
+				artillery = event_target:send_troop_target_country	#40
+				artillery = event_target:send_troop_target_country	#41
+				artillery = event_target:send_troop_target_country	#42
+				artillery = event_target:send_troop_target_country	#43
+				artillery = event_target:send_troop_target_country	#44
+				artillery = event_target:send_troop_target_country	#45
+				artillery = event_target:send_troop_target_country	#46
+				artillery = event_target:send_troop_target_country	#47
+				artillery = event_target:send_troop_target_country	#48
+				artillery = event_target:send_troop_target_country	#49
+				artillery = event_target:send_troop_target_country	#50
+			}
+			random_province = {
+				limit = {
+					OR = {
+						has_saved_event_target = air_plan_1
+						has_saved_event_target = air_plan_2
+					}
+				}
+				clear_global_event_target = air_plan_1
+				clear_global_event_target = air_plan_2
+			}
+			every_country = {
+					limit = {
+						ai = no
+                        NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = send_troops.95
+					}
+				}
+				event_target:send_troop_target_country = {
+				country_event = {
+					id = send_troops.50
+				}
+			}
+		}
+		add_opinion = { who = event_target:send_troop_target_country  modifier = opinion_support_army }
+            event_target:send_troop_target_country = {
+                add_opinion = { who = ROOT  modifier = opinion_support_army }
+            }
+	}
+	option = {
+		name = "send_troops_cansel.opt"	
+		random_province = {
+			limit = {
+				OR = {
+					has_saved_event_target = air_plan_1
+					has_saved_event_target = air_plan_2
+				}
+			}
+			clear_global_event_target = air_plan_1
+			clear_global_event_target = air_plan_2
+		}
+		
+	}
+}
+#send_troops Point diplo power 
+country_event = {
+	id = send_troops.5
+	title = "send_troops.5title"
+	desc = "send_troops.5desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"	
+
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+#send_troops Point diplo power 
+country_event = {
+	id = send_troops.6
+	title = "send_troops.5title"
+	desc = "send_troops.6desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+country_event = {
+	id = send_troops.7
+	title = "send_troops.5title"
+	desc = "send_troops.7desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"	
+		clear_global_event_target = send_troop_target_country
+	}
+}
+country_event = {
+	id = send_troops.8
+	title = "send_troops.5title"
+	desc = "send_troops.8desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+country_event = {
+	id = send_troops.9
+	title = "send_troops.5title"
+	desc = "send_troops.9desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+country_event = {
+	id = send_troops.10
+	title = "send_troops.5title"
+	desc = "send_troops.10desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.11
+	title = "send_troops.5title"
+	desc = "send_troops.11desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.12
+	title = "send_troops.5title"
+	desc = "send_troops.12desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.13
+	title = "send_troops.5title"
+	desc = "send_troops.13desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.14
+	title = "send_troops.5title"
+	desc = "send_troops.14desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.15
+	title = "send_troops.5title"
+	desc = "send_troops.15desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.16
+	title = "send_troops.5title"
+	desc = "send_troops.16desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.17
+	title = "send_troops.5title"
+	desc = "send_troops.17desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.18
+	title = "send_troops.5title"
+	desc = "send_troops.18desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.19
+	title = "send_troops.5title"
+	desc = "send_troops.19desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.20
+	title = "send_troops.5title"
+	desc = "send_troops.20desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.21
+	title = "send_troops.5title"
+	desc = "send_troops.21desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.22
+	title = "send_troops.5title"
+	desc = "send_troops.22desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.23
+	title = "send_troops.5title"
+	desc = "send_troops.23desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.24
+	title = "send_troops.5title"
+	desc = "send_troops.24desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.25
+	title = "send_troops.5title"
+	desc = "send_troops.25desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.26
+	title = "send_troops.5title"
+	desc = "send_troops.26desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.27
+	title = "send_troops.5title"
+	desc = "send_troops.27desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.28
+	title = "send_troops.5title"
+	desc = "send_troops.28desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.29
+	title = "send_troops.5title"
+	desc = "send_troops.29desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.30
+	title = "send_troops.5title"
+	desc = "send_troops.30desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.31
+	title = "send_troops.5title"
+	desc = "send_troops.31desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.32
+	title = "send_troops.5title"
+	desc = "send_troops.32desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.33
+	title = "send_troops.5title"
+	desc = "send_troops.33desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.34
+	title = "send_troops.5title"
+	desc = "send_troops.34desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.35
+	title = "send_troops.5title"
+	desc = "send_troops.35desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.36
+	title = "send_troops.5title"
+	desc = "send_troops.36desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.37
+	title = "send_troops.5title"
+	desc = "send_troops.37desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.38
+	title = "send_troops.5title"
+	desc = "send_troops.38desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.39
+	title = "send_troops.5title"
+	desc = "send_troops.39desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.40
+	title = "send_troops.5title"
+	desc = "send_troops.40desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.41
+	title = "send_troops.5title"
+	desc = "send_troops.41desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.42
+	title = "send_troops.5title"
+	desc = "send_troops.42desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.43
+	title = "send_troops.5title"
+	desc = "send_troops.43desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.44
+	title = "send_troops.5title"
+	desc = "send_troops.44desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.45
+	title = "send_troops.5title"
+	desc = "send_troops.45desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.46
+	title = "send_troops.5title"
+	desc = "send_troops.46desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.47
+	title = "send_troops.5title"
+	desc = "send_troops.47desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.48
+	title = "send_troops.5title"
+	desc = "send_troops.48desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.49
+	title = "send_troops.5title"
+	desc = "send_troops.49desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+
+country_event = {
+	id = send_troops.50
+	title = "send_troops.5title"
+	desc = "send_troops.50desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		clear_global_event_target = send_troop_target_country
+	}
+}
+country_event = {
+	id = send_troops.51
+	title = "send_troops.6title"
+	desc = "send_troops.51desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.52
+	title = "send_troops.6title"
+	desc = "send_troops.52desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.53
+	title = "send_troops.6title"
+	desc = "send_troops.53desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.54
+	title = "send_troops.6title"
+	desc = "send_troops.54desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.55
+	title = "send_troops.6title"
+	desc = "send_troops.55desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.56
+	title = "send_troops.6title"
+	desc = "send_troops.56desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.57
+	title = "send_troops.6title"
+	desc = "send_troops.57desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.58
+	title = "send_troops.6title"
+	desc = "send_troops.58desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.59
+	title = "send_troops.6title"
+	desc = "send_troops.59desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.60
+	title = "send_troops.6title"
+	desc = "send_troops.60desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.61
+	title = "send_troops.6title"
+	desc = "send_troops.61desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.62
+	title = "send_troops.6title"
+	desc = "send_troops.62desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.63
+	title = "send_troops.6title"
+	desc = "send_troops.63desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.64
+	title = "send_troops.6title"
+	desc = "send_troops.64desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.65
+	title = "send_troops.6title"
+	desc = "send_troops.65desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.66
+	title = "send_troops.6title"
+	desc = "send_troops.66desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.67
+	title = "send_troops.6title"
+	desc = "send_troops.67desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.68
+	title = "send_troops.6title"
+	desc = "send_troops.68desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.69
+	title = "send_troops.6title"
+	desc = "send_troops.69desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.70
+	title = "send_troops.6title"
+	desc = "send_troops.70desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.71
+	title = "send_troops.6title"
+	desc = "send_troops.71desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.72
+	title = "send_troops.6title"
+	desc = "send_troops.72desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.73
+	title = "send_troops.6title"
+	desc = "send_troops.73desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.74
+	title = "send_troops.6title"
+	desc = "send_troops.74desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.75
+	title = "send_troops.6title"
+	desc = "send_troops.75desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.76
+	title = "send_troops.6title"
+	desc = "send_troops.76desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.77
+	title = "send_troops.6title"
+	desc = "send_troops.77desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.78
+	title = "send_troops.6title"
+	desc = "send_troops.78desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.79
+	title = "send_troops.6title"
+	desc = "send_troops.79desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.80
+	title = "send_troops.6title"
+	desc = "send_troops.80desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.81
+	title = "send_troops.6title"
+	desc = "send_troops.81desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.82
+	title = "send_troops.6title"
+	desc = "send_troops.82desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.83
+	title = "send_troops.6title"
+	desc = "send_troops.83desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.84
+	title = "send_troops.6title"
+	desc = "send_troops.84desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.85
+	title = "send_troops.6title"
+	desc = "send_troops.85desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.86
+	title = "send_troops.6title"
+	desc = "send_troops.86desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.87
+	title = "send_troops.6title"
+	desc = "send_troops.87desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.88
+	title = "send_troops.6title"
+	desc = "send_troops.88desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.89
+	title = "send_troops.6title"
+	desc = "send_troops.89desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.90
+	title = "send_troops.6title"
+	desc = "send_troops.90desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.91
+	title = "send_troops.6title"
+	desc = "send_troops.91desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.92
+	title = "send_troops.6title"
+	desc = "send_troops.92desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.93
+	title = "send_troops.6title"
+	desc = "send_troops.93desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.94
+	title = "send_troops.6title"
+	desc = "send_troops.94desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.95
+	title = "send_troops.6title"
+	desc = "send_troops.95desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+country_event = {
+	id = send_troops.96
+	title = "send_troops.6title"
+	desc = "send_troops.96desc"
+	picture = recive_troop_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "send_troops.5opt"
+		
+	}
+}
+

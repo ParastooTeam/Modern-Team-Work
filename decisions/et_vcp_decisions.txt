@@ -1,0 +1,135 @@
+country_decisions = { 
+
+	#Form Rus'
+	russ_nation = {
+		major = yes
+		color = { 100 20 200 }
+		potential = {
+             has_country_flag = open_all_decision
+			normal_or_historical_nations = yes
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = KRU }
+			NOT = { exists = RUS }
+			NOT = { tag = UKR }
+			NOT = { tag = PAP }
+			NOT = { tag = HLR }
+			NOT = { tag = SOV }
+			NOT = { tag = EUR }
+			OR = {
+				primary_culture = russian
+				primary_culture = ruthenian
+				primary_culture = byelorussian
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 310
+				province_id = 280
+				province_id = 276
+				province_id = 294
+				province_id = 308
+				province_id = 301
+				province_id = 293
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			adm_tech = 8
+			is_subject = no
+			is_at_war = no
+			owns = 310			# Novgorod
+			owns = 280			# Kiev
+			owns = 276			# Minsk
+			is_core = 310			# Novgorod
+			is_core = 280			# Kiev
+			is_core = 276			# Minsk
+			OR = {
+				AND = {
+					owns = 294		# Tver
+					is_core = 294
+				}
+				AND = {
+					owns = 308		# Yaroslavl	
+					is_core = 308
+				}
+			}
+			OR = {
+				AND = {
+					owns = 301		# Ryazan
+					is_core = 301
+				}
+				AND = {
+					owns = 293		# Smolensk
+					is_core = 293
+				}
+			}
+		}
+		effect = {
+			add_prestige = 25
+			change_tag = KRU
+			swap_non_generic_missions = yes
+			
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 400
+	}
+	
+	#Novgorod banishes prince (historical)
+	banish_prince_novgorod = { 
+		major = yes
+		potential = {
+             has_country_flag = open_all_decision
+			tag = NOV
+			NOT = { government = republic }
+		}
+		allow = {
+			OR = {
+				NOT = { stability = 0 }
+				NOT = { legitimacy = 60 }
+			}
+			has_regency = no
+			OR = { 
+				NOT = { adm = 3 }
+				NOT = { mil = 2 }
+			}
+		}
+		effect = {
+			kill_ruler = yes
+			
+			add_republican_tradition = 10
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 400
+	}
+
+}

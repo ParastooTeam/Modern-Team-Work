@@ -1,0 +1,1779 @@
+
+namespace = send_missile
+
+country_event = {
+	id = send_missile.1
+	title = send_missile.1.t
+	desc = send_missile.1.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Major City
+		name = send_missile.1.a50
+		trigger = { 
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_50
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		country_event = {
+			id = send_missile.50
+		}
+		
+	}
+	option = { #Center of Trade
+		name = send_missile.1.a100
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_100
+							value = 3
+						}
+					}
+				}
+			}
+			
+		}		
+		country_event = {
+			id = send_missile.100
+		}
+		
+	}
+	option = { #Fortification
+		name = send_missile.1.a150
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_150
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.150
+		}
+		
+	}
+	option = { #Port
+		name = send_missile.1.a250
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_250
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.250
+		}
+		
+	}
+	option = { #Random Province
+		name = send_missile.1.a350
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_350
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.350
+		}
+		
+	}
+	option = { #More options
+		name = send_missile.1.a500
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_500
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.500
+		}
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.a700
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_700
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.700
+		}
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.a1000
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_1000
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.1000
+		}
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.a1500
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+			if = {
+				limit = { root = { ai = yes } }
+				event_target:send_missile_target_country = {
+					NOT = {
+						check_variable = {
+							which = missil_1500
+							value = 3
+						}
+					}
+				}
+			}
+		}
+		
+		country_event = {
+			id = send_missile.1500
+		}
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+
+		clear_global_event_target = send_missile_target_country
+	}
+}
+country_event = {
+	id = send_missile.50
+	title = send_missile.50.t
+	desc = send_missile.50.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a501
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a502
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a503
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a504
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a505
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a5010
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 10
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -10
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 10
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #send missile +5
+		name = send_missile.1.a5020
+		trigger = {
+			check_variable = {
+				which = missil_50
+				value = 20
+			}
+		}
+		change_variable = {
+			which = missil_50
+			value = -20
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.2
+			}
+			change_variable = {
+				which = missil_50
+				value = 20
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+#####################################
+country_event = {
+	id = send_missile.100
+	title = send_missile.100.t
+	desc = send_missile.100.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a1001
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a1002
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a1003
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a1004
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a1005
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a10010
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 10
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -10
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 10
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a10020
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 20
+			}
+		}
+		change_variable = {
+			which = missil_100
+			value = -20
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.3
+			}
+			change_variable = {
+				which = missil_100
+				value = 20
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+#####################################################
+country_event = {
+	id = send_missile.150
+	title = send_missile.150.t
+	desc = send_missile.150.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a1501
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a1502
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a1503
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a1504
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a1505
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #send missile +5
+		name = send_missile.1.a15010
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 10
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -10
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 10
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #send missile +5
+		name = send_missile.1.a15020
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 20
+			}
+		}
+		change_variable = {
+			which = missil_150
+			value = -20
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.4
+			}
+			change_variable = {
+				which = missil_150
+				value = 20
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+###################################################################################
+
+country_event = {
+	id = send_missile.250
+	title = send_missile.250.t
+	desc = send_missile.250.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a2501
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_250
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.5
+			}
+			change_variable = {
+				which = missil_250
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a2502
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_250
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.5
+			}
+			change_variable = {
+				which = missil_250
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a2503
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_250
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.5
+			}
+			change_variable = {
+				which = missil_250
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a2504
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_250
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.5
+			}
+			change_variable = {
+				which = missil_250
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a2505
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_250
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.5
+			}
+			change_variable = {
+				which = missil_250
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+#############################################################################
+
+country_event = {
+	id = send_missile.350
+	title = send_missile.350.t
+	desc = send_missile.350.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a3501
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_350
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.6
+			}
+			change_variable = {
+				which = missil_350
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a3502
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_350
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.6
+			}
+			change_variable = {
+				which = missil_350
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a3503
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_350
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.6
+			}
+			change_variable = {
+				which = missil_350
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a3504
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_350
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.6
+			}
+			change_variable = {
+				which = missil_350
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a3505
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_350
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.6
+			}
+			change_variable = {
+				which = missil_350
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+#######################################################################################
+country_event = {
+	id = send_missile.500
+	title = send_missile.500.t
+	desc = send_missile.500.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #send missile +1
+		name = send_missile.1.a5001
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_500
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.7
+			}
+			change_variable = {
+				which = missil_500
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a5002
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_500
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.7
+			}
+			change_variable = {
+				which = missil_500
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a5003
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_500
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.7
+			}
+			change_variable = {
+				which = missil_500
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a5004
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_500
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.7
+			}
+			change_variable = {
+				which = missil_500
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a5005
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_500
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.7
+			}
+			change_variable = {
+				which = missil_500
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+###########################################################################################
+country_event = {
+	id = send_missile.700
+	title = send_missile.700.t
+	desc = send_missile.700.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a7001
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_700
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.8
+			}
+			change_variable = {
+				which = missil_700
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a7002
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_700
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.8
+			}
+			change_variable = {
+				which = missil_700
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a7003
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_700
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.8
+			}
+			change_variable = {
+				which = missil_700
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a7004
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_700
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.8
+			}
+			change_variable = {
+				which = missil_700
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a7005
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_700
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.8
+			}
+			change_variable = {
+				which = missil_700
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+#######################################################################################
+country_event = {
+	id = send_missile.1000
+	title = send_missile.1000.t
+	desc = send_missile.1000.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a10001
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_1000
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.9
+			}
+			change_variable = {
+				which = missil_1000
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a10002
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_1000
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.9
+			}
+			change_variable = {
+				which = missil_1000
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a10003
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_1000
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.9
+			}
+			change_variable = {
+				which = missil_1000
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a10004
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_1000
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.9
+			}
+			change_variable = {
+				which = missil_1000
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a10005
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_1000
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.9
+			}
+			change_variable = {
+				which = missil_1000
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+#############################################################################################
+country_event = {
+	id = send_missile.1500
+	title = send_missile.1500.t
+	desc = send_missile.1500.d
+	picture = SEND_MISSILE_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = { #send missile +1
+		name = send_missile.1.a15001
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}
+		change_variable = {
+			which = missil_1500
+			value = -1
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.10
+			}
+			change_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +2
+		name = send_missile.1.a15002
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 2
+			}
+		}
+		change_variable = {
+			which = missil_1500
+			value = -2
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.10
+			}
+			change_variable = {
+				which = missil_1500
+				value = 2
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +3
+		name = send_missile.1.a15003
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 3
+			}
+		}
+		change_variable = {
+			which = missil_1500
+			value = -3
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.10
+			}
+			change_variable = {
+				which = missil_1500
+				value = 3
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +4
+		name = send_missile.1.a15004
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 4
+			}
+		}
+		change_variable = {
+			which = missil_1500
+			value = -4
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.10
+			}
+			change_variable = {
+				which = missil_1500
+				value = 4
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #send missile +5
+		name = send_missile.1.a15005
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 5
+			}
+		}
+		change_variable = {
+			which = missil_1500
+			value = -5
+		}
+
+		event_target:send_missile_target_country = {
+			country_event = {
+				id = send_missile.10
+			}
+			change_variable = {
+				which = missil_1500
+				value = 5
+			}
+		}
+		clear_global_event_target = send_missile_target_country
+		
+	}
+	option = { #Cancel
+		name = send_missile.1.cansel
+		clear_global_event_target = send_missile_target_country
+	}
+}
+
+country_event = {
+	id = send_missile.2
+	title = send_missile.2title
+	desc = send_missile.2desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.3
+	title = send_missile.3title
+	desc = send_missile.3desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.4
+	title = send_missile.4title
+	desc = send_missile.4desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.5
+	title = send_missile.5title
+	desc = send_missile.5desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.6
+	title = send_missile.6title
+	desc = send_missile.6desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.7
+	title = send_missile.7title
+	desc = send_missile.7desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.8
+	title = send_missile.8title
+	desc = send_missile.8desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.9
+	title = send_missile.9title
+	desc = send_missile.9desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}
+country_event = {
+	id = send_missile.10
+	title = send_missile.10title
+	desc = send_missile.10desc
+	picture = SEND_MISSILE_eventPicture
+	
+	is_triggered_only = yes
+	
+	
+	
+	option = {
+		name = send_missile.2opt
+	}
+}

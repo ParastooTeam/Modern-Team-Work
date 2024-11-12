@@ -1,0 +1,19 @@
+# Kavalarioi
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 15
+	}
+}
+
+maneuver = 2
+offensive_morale = 3
+defensive_morale = 4
+offensive_fire = 7
+defensive_fire = 8
+offensive_shock = 2
+defensive_shock = 2

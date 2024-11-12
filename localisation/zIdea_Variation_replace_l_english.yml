@@ -1,0 +1,18 @@
+﻿l_english:
+ FACTIONS_TITLE:0 "Council"
+ M_FACTION_BUTTON:0 "Council"
+ mechanic_has_parliament_yes:2 "Enables Parliament."
+ CHANGE_REFORM_DESC:1 "Changing to the Government Reform $REFORM|Y$ will add $COST|R$ Corruption and §R-1§W Stability to your country and give you the following benefits:\n$BENEFITS$"
+ CHANGE_REFORM_CONFIRM_DESC:1 "Are you sure you want to change to the Government Reform $REFORM|Y$? This will add $COST|R$ Corruption and §R-1§W Stability to your country and give you the following benefits:\n$BENEFITS$$POTENTIAL$"
+ 
+ 
+ cawa_regiment:0 "Commando"
+ CAWA_REGIMENT:0 "Commando Regiment\n$EFFECT$"
+ HAVE_LESS_CAWA_THAN:0 "Have less Commando Regiments than $VALUE|Y$.\n"
+ HAVE_AT_LEAST_CAWA_THAN:0 "Have at least $VALUE|Y$ Commando Regiments.\n"
+ CAWA_REGIMENT_TYPE:0 "Commando"
+
+ CAROLEAN_REGIMENT:0 "Mountain Regiment\n$EFFECT$"
+ CAROLEAN_REGIMENT_TYPE:0 "Mountain"
+
+ 

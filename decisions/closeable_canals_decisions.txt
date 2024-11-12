@@ -1,0 +1,768 @@
+country_decisions = {
+	# Kiel Canal
+	open_canal_decision_kiel_canal = {
+		potential = {
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				AND = {
+					owns_or_vassal_of = 6389
+					owns_or_vassal_of = 3231
+				}
+				AND = {
+					6389 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+					3231 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				}
+			}
+			6389 = {
+				has_great_project = { type = kiel_canal }
+				has_province_modifier = canal_closed
+			}
+			NOT = { has_country_flag = is_opening_a_canal }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 6389
+				province_id = 3231
+			}
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 6389
+					owns_or_vassal_of = 3231
+				}
+				AND = {
+					6389 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+					3231 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				}
+			}			
+			6389 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_CLOSED
+					has_province_modifier = canal_closed
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_opening_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = openable_country_canals_events.open1 }
+					}
+				}
+			}
+			6389 = {
+				hidden_effect = {
+					remove_province_modifier = canal_closed
+					add_canal = kiel_canal
+				}
+				province_event = { id = closeable_canals_events.1 }
+			}
+			if = { 
+				limit = { 
+					has_country_modifier = closed_canal_bad
+				}
+				remove_country_modifier = closed_canal_bad
+			}
+			else_if = { 
+				limit = { 
+					NOT = {	has_country_modifier = closed_canal_bad }
+				}
+				add_country_modifier = {
+					name = closed_canal_good
+					duration = 1825
+				}
+			}
+			
+			
+			
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 1000
+	}
+
+	close_canal_decision_kiel_canal = {
+		potential = {
+			ai = no
+			OR = {
+				AND = {
+					owns_or_vassal_of = 6389
+					owns_or_vassal_of = 3231
+				}
+				AND = {
+					6389 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+					3231 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				}
+			}
+			6389 = {
+				has_great_project = { type = kiel_canal }
+				NOT = { has_province_modifier = canal_closed }
+			}
+			NOT = { has_country_flag = is_closing_a_canal }
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 6389
+				province_id = 3231
+			}
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 6389
+					owns_or_vassal_of = 3231
+				}
+				AND = {
+					6389 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+					3231 = {
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				}
+			}
+			6389 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_NOT_CLOSED
+					NOT = { has_province_modifier = canal_closed }
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_closing_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = closeable_country_canals_events.close1 }
+					}
+				}
+			}
+			6389 = {
+				hidden_effect = {
+					add_permanent_province_modifier = {
+						name = canal_closed
+						duration = -1
+					}
+					remove_canal = kiel_canal
+				}
+				province_event = { id = closeable_canals_events.2 }
+			}
+			add_country_modifier = {
+					name = closed_canal_bad
+					duration = 1825
+			}
+		
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Suez Canal
+	open_canal_decision_suez_canal = {
+		potential = {
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				AND = {
+					owns_or_vassal_of = 1155
+					
+				}
+				1155 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			1155 = {
+				has_great_project = { type = suez_canal }
+				has_province_modifier = canal_closed
+			}
+			NOT = { has_country_flag = is_opening_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 1155
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 1155
+					
+				}
+				1155 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			1155 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_CLOSED
+					has_province_modifier = canal_closed
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_opening_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = openable_country_canals_events.open2 }
+					}
+				}
+			}
+			1155 = {
+				hidden_effect = {
+					remove_province_modifier = canal_closed
+					add_canal = suez_canal
+				}
+				province_event = { id = closeable_canals_events.1 }
+			}
+			if = { 
+				limit = { 
+					has_country_modifier = closed_canal_bad
+				}
+				remove_country_modifier = closed_canal_bad
+			}
+			else_if = { 
+				limit = { 
+					NOT = {	has_country_modifier = closed_canal_bad }
+				}
+				add_country_modifier = {
+					name = closed_canal_good
+					duration = 1825
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 1000
+	}
+
+	close_canal_decision_suez_canal = {
+		potential = {
+			ai = no
+			OR = {
+				AND = {
+					owns_or_vassal_of = 1155
+					
+				}
+				1155 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			1155 = {
+				has_great_project = { type = suez_canal }
+				NOT = { has_province_modifier = canal_closed }
+			}
+			NOT = { has_country_flag = is_closing_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 1155
+		}
+		
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 1155
+					
+				}
+				1155 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			1155 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_NOT_CLOSED
+					NOT = { has_province_modifier = canal_closed }
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_closing_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = closeable_country_canals_events.close2 }
+					}
+				}
+			}
+			1155 = {
+				hidden_effect = {
+					add_permanent_province_modifier = {
+						name = canal_closed
+						duration = -1
+					}
+					remove_canal = suez_canal
+				}
+				province_event = { id = closeable_canals_events.2 }
+			}
+			add_country_modifier = {
+					name = closed_canal_bad
+					duration = 1825
+			}
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# Panam Canal
+	open_canal_decision_panama_canal = {
+		potential = {
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				AND = {
+					owns_or_vassal_of = 7630
+					
+				}
+				7630 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			7630 = {
+				has_great_project = { type = panama_canal }
+				has_province_modifier = canal_closed
+			}
+			NOT = { has_country_flag = is_opening_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 7630
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 7630
+					
+				}
+				7630 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			7630 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_CLOSED
+					has_province_modifier = canal_closed
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_opening_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = openable_country_canals_events.open3 }
+					}
+				}
+			}
+			7630 = {
+				hidden_effect = {
+					remove_province_modifier = canal_closed
+					add_canal = panama_canal
+				}
+				province_event = { id = closeable_canals_events.1 }
+			}
+			if = { 
+				limit = { 
+					has_country_modifier = closed_canal_bad
+				}
+				remove_country_modifier = closed_canal_bad
+			}
+			else_if = { 
+				limit = { 
+					NOT = {	has_country_modifier = closed_canal_bad }
+				}
+				add_country_modifier = {
+					name = closed_canal_good
+					duration = 1825
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 1000
+	}
+
+	close_canal_decision_panama_canal = {
+		potential = {			
+			ai = no
+			OR = {
+				AND = {
+					owns_or_vassal_of = 7630
+					
+				}
+				7630 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			7630 = {
+				has_great_project = { type = panama_canal }
+				NOT = { has_province_modifier = canal_closed }
+			}
+			NOT = { has_country_flag = is_closing_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 7630
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 7630
+					
+				}
+				7630 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			7630 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_NOT_CLOSED
+					NOT = { has_province_modifier = canal_closed }
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_closing_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = closeable_country_canals_events.close3 }
+					}
+				}
+			}
+			7630 = {
+				hidden_effect = {
+					add_permanent_province_modifier = {
+						name = canal_closed
+						duration = -1
+					}
+					remove_canal = panama_canal
+				}
+				province_event = { id = closeable_canals_events.2 }
+			}
+			add_country_modifier = {
+					name = closed_canal_bad
+					duration = 1825
+			}
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	open_canal_decision_volga_canal = {
+		potential = {
+			OR = {
+				is_free_or_tributary_trigger = yes
+				ai = no
+			}
+			OR = {
+				AND = {
+					owns_or_vassal_of = 9504
+					
+				}
+				9504 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			9504 = {
+				has_great_project = { type = volga_canal }
+				has_province_modifier = canal_closed
+			}
+			NOT = { has_country_flag = is_opening_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 9504
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 9504
+					
+				}
+				9504 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			9504 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_CLOSED
+					has_province_modifier = canal_closed
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_opening_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = openable_country_canals_events.open4 }
+					}
+				}
+			}
+			9504 = {
+				hidden_effect = {
+					remove_province_modifier = canal_closed
+					add_canal = volga_canal
+				}
+				province_event = { id = closeable_canals_events.1 }
+			}
+			if = { 
+				limit = { 
+					has_country_modifier = closed_canal_bad
+				}
+				remove_country_modifier = closed_canal_bad
+			}
+			else_if = { 
+				limit = { 
+					NOT = {	has_country_modifier = closed_canal_bad }
+				}
+				add_country_modifier = {
+					name = closed_canal_good
+					duration = 1825
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		ai_importance = 1000
+	}
+
+	close_canal_decision_volga_canal = {
+		potential = {
+			ai = no
+			OR = {
+				AND = {
+					owns_or_vassal_of = 9504
+					
+				}
+				9504 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			9504 = {
+				has_great_project = { type = volga_canal }
+				NOT = { has_province_modifier = canal_closed }
+			}
+			NOT = { has_country_flag = is_closing_a_canal }
+		}
+		provinces_to_highlight = {
+			province_id = 9504
+		}
+		allow = {
+			adm_power = 100
+			OR = {
+				AND = {
+					owns_or_vassal_of = 9504
+					
+				}
+				9504 = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+				}
+			}
+			9504 = {
+				custom_trigger_tooltip = {
+					tooltip = CANAL_IS_NOT_CLOSED
+					NOT = { has_province_modifier = canal_closed }
+				}
+			}
+		}
+		effect = {
+			set_country_flag = is_closing_a_canal
+			add_adm_power = -100
+			hidden_effect = {
+				every_known_country = { 
+					if =  { 
+						limit = { 
+							FROM = { ai = no }
+						}
+						country_event = { id = closeable_country_canals_events.close4 }
+					}
+				}
+			}
+			9504 = {
+				hidden_effect = {
+					add_permanent_province_modifier = {
+						name = canal_closed
+						duration = -1
+					}
+					remove_canal = volga_canal
+				}
+				province_event = { id = closeable_canals_events.2 }
+			}
+			add_country_modifier = {
+					name = closed_canal_bad
+					duration = 1825
+			}
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+		
+	}
+
+}
+

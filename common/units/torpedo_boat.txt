@@ -1,0 +1,10 @@
+#Torpedo Boat Galley Level 11
+type = galley
+
+hull_size = 93
+base_cannons = 103
+sail_speed = 15
+
+blockade = 11
+
+sprite_level = 1

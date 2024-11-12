@@ -1,0 +1,68 @@
+﻿l_english:
+ WE_HAVE_BAD_OPINON_25:0 "We do not have a good relationship"
+ WE_HAVE_BAD_OPINON_50:0 "We do not have a good relationship"
+ WE_HAVE_BAD_OPINON_100:0 "We have ruined our relationship in general"
+ 
+ WE_HAVE_GOOD_OPINON_50:0 "Improving relationship"
+ WE_HAVE_GOOD_OPINON_100:0 "Good relationship"
+ WE_HAVE_GOOD_OPINON_150:0 "Great relationship"
+ 
+ MY_RIVAL_ALIIY_WITH_YOU:0 "Friendship with my Enemy"
+ 
+ RIVAL_WITH:0 "Rival"
+ WE_HAVE_VERY_BAD_OPINON:0 "Very bad opinion"
+ WE_HAVE_BAD_OPINON:0 "Bad opinion"
+ NOT_GOOD_OPINION:0 "Poor relationships"
+ MY_RIVAL_ALIIY_WITH_YOU:0 "Friendship with their rival"
+ 
+ bought_oil_1:0 "Purchased Fuel"
+ bought_electronics_1:0 "Purchased Electronics"
+ 
+ bought_uranium_1:0 "Yellow cake for 10% enrichment"
+ bought_uranium_2:0 "Yellow cake for 20% enrichment"
+ bought_uranium_3:0 "Yellow cake for 40% enrichment"
+ bought_uranium_4:0 "Yellow cake for 75% enrichment"
+ bought_uranium_5:0 "Yellow cake for 90% enrichment"
+ 
+ not_have_owne_electronic:0 "We need Electronics"
+ have_owne_fuel:0 "We are a fuel seller ourselves"
+ not_have_fuel:0 "We need Fuel"
+ 
+ fort_bonus_balance:0 "Maintenance balancer"
+ desc_fort_bonus_balance:0 "In order for the amount of income and the amount of expenses to be balanced, you have these bonuses and every few years your expenses will increase to reach the original amount."
+ 
+ tourist:0 "Tourism"
+ tourist_desc:0 "Tourist income has always been one of the most profitable parts of a country, manage it well"
+ touristDESC:0 "Tourist income has always been one of the most profitable parts of a country, manage it well"
+ antiquities:0 "Uninhabitable"
+ antiquities_desc:0 "The lands where the hydrogen bomb was hit will not be habitable for decades"
+ antiquitiesDESC:0 "The lands where the hydrogen bomb was hit will not be habitable for decades"
+
+ buy_electronics_dialog:0 "They want to buy Electronics"
+
+ oil_sel_0_1m:0 "§Y-2000 Dev§! Oil production more than §T100.000§! barrels"
+ oil_sel_0_2m:0 "§Y2000-2500 Dev§! Oil production more than §T200.000§! barrels"
+ oil_sel_0_3m:0 "§Y2500-3000 Dev§! Oil production more than §T300.000§! barrels"
+ oil_sel_0_4m:0 "§Y3000 Dev§! Oil production more than §T400.000§! barrels"
+ oil_sel_0_5m:0 "§Y1 Car or Electronic§! Oil production more than §T500.000§! barrels"
+ oil_sel_1m:0 "§Y2 Car or Electronic§! Oil production more than §T1.000.000§! barrels"
+ oil_sel_1_5m:0 "§Y3 Car or Electronic§! Oil production more than §T1.500.000§! barrels"
+ oil_sel_2m:0 "§Y4 Car or Electronic§! Oil production more than §T2.000.000§! barrels"
+ oil_sel_2_5m:0 "§Y5 Car or Electronic§! Oil production more than §T2.500.000§! barrels"
+ oil_sel_3m:0 "§Y6 Car or Electronic§! Oil production more than §T3.000.000§! barrels"
+ oil_sel_4m:0 "§Y7 Car or Electronic§! Oil production more than §T4.000.000§! barrels"
+ oil_sel_5m:0 "§Y8 Car or Electronic§! Oil production more than §T5.000.000§! barrels"
+ oil_sel_6m:0 "§Y9 Car or Electronic§! Oil production more than §T6.000.000§! barrels"
+ oil_sel_7m:0 "§Y10 Car or Electronic§! Oil production more than §T7.000.000§! barrels"
+
+ Have_Electronic:0 "We Have Electronic"
+ Have_Uranium:0 "We Have Uranium"
+ bought_oil:0 "Purchased oil"
+
+ uranium_ban_modifire_from_100:0 "Not having a §Y100% Uranium Embargo§!"
+
+ set_variable_oil.1t:0 "Set Oil 1"
+ set_variable_oil.1d:0 "Set Oil 2"
+ set_variable_oil.8.a:0 "ok"
+ set_variable_oil.2t:0 "Set Oil 3"
+ set_variable_oil.2d:0 "Set Oil 4"

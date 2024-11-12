@@ -1,0 +1,537 @@
+country_decisions = {
+
+	rajput_build_decision = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			NOT = { army_size_percentage = 1 }
+			if = {
+				limit = {
+					NOT = {	army_size = 50 }
+				}
+				NOT = { num_of_rajput = 5 }
+			}
+			if = {
+				limit = {
+					army_size = 50
+					NOT = {	army_size = 100 }
+				}
+				NOT = { num_of_rajput = 10 }
+			}
+			else_if = {
+				limit = {
+					army_size = 100
+					NOT = {	army_size = 150 }
+				}
+				NOT = { num_of_rajput = 15 }
+			}
+			else_if = {
+				limit = {
+					army_size = 150
+					NOT = {	army_size = 200 }
+				}
+				NOT = { num_of_rajput = 25 }
+			}
+			else_if = {
+				limit = {
+					army_size = 200
+					NOT = {	army_size = 250 }
+				}
+				NOT = { num_of_rajput = 30 }
+			}
+			else_if = {
+				limit = {
+					army_size = 250
+					NOT = {	army_size = 300 }
+				}
+				NOT = { num_of_rajput = 40 }
+			}
+			else_if = {
+				limit = {
+					army_size = 300
+					NOT = {	army_size = 400 }
+				}
+				NOT = { num_of_rajput = 50 }
+			}
+			else_if = {
+				limit = {
+					army_size = 400
+					NOT = {	army_size = 500 }
+				}
+				NOT = { num_of_rajput = 75 }
+			}
+			else_if = {
+				limit = {
+					army_size = 500
+					NOT = {	army_size = 600 }
+				}
+				NOT = { num_of_rajput = 90 }
+			}
+			else_if = {
+				limit = {
+					army_size = 600
+				}
+				NOT = { num_of_rajput = 100 }
+			}
+			treasury = 30000
+		}
+		effect = {
+			if = {
+				limit = {
+					any_capital_province = {
+						is_capital_of = root
+						controlled_by = root
+					}
+				}
+				add_treasury = -30000
+				random_owned_province = {
+					limit = {
+						is_capital = yes
+						controlled_by = root
+					}
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root	
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+					}
+				}
+				add_treasury = -30000
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+					}
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+					rajput_infantry = root
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 10
+	}
+	carolean_build_decision = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			NOT = { army_size_percentage = 1 }
+			if = {
+				limit = {
+					NOT = {	army_size = 50 }
+				}
+				NOT = { num_of_carolean = 5 }
+			}
+			if = {
+				limit = {
+					army_size = 50
+					NOT = {	army_size = 100 }
+				}
+				NOT = { num_of_carolean = 10 }
+			}
+			else_if = {
+				limit = {
+					army_size = 100
+					NOT = {	army_size = 150 }
+				}
+				NOT = { num_of_carolean = 15 }
+			}
+			else_if = {
+				limit = {
+					army_size = 150
+					NOT = {	army_size = 200 }
+				}
+				NOT = { num_of_carolean = 25 }
+			}
+			else_if = {
+				limit = {
+					army_size = 200
+					NOT = {	army_size = 250 }
+				}
+				NOT = { num_of_carolean = 30 }
+			}
+			else_if = {
+				limit = {
+					army_size = 250
+					NOT = {	army_size = 300 }
+				}
+				NOT = { num_of_carolean = 40 }
+			}
+			else_if = {
+				limit = {
+					army_size = 300
+					NOT = {	army_size = 400 }
+				}
+				NOT = { num_of_carolean = 50 }
+			}
+			else_if = {
+				limit = {
+					army_size = 400
+					NOT = {	army_size = 500 }
+				}
+				NOT = { num_of_carolean = 75 }
+			}
+			else_if = {
+				limit = {
+					army_size = 500
+					NOT = {	army_size = 600 }
+				}
+				NOT = { num_of_carolean = 90 }
+			}
+			else_if = {
+				limit = {
+					army_size = 600
+				}
+				NOT = { num_of_carolean = 100 }
+			}
+			treasury = 20000
+		}
+		effect = {
+			if = {
+				limit = {
+					any_capital_province = {
+						is_capital_of = root
+						controlled_by = root
+					}
+				}
+				add_treasury = -20000
+				random_owned_province = {
+					limit = {
+						is_capital = yes
+						controlled_by = root
+					}
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+					}
+				}
+				add_treasury = -20000
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+					}
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+					carolean_infantry = root
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 10
+	}
+	cawa_build_decision = {
+		potential = {
+			#ai = yes
+			always = no
+		}
+		allow = {
+			NOT = { army_size_percentage = 1 }
+			if = {
+				limit = {
+					NOT = {	army_size = 50 }
+				}
+				NOT = { num_of_cawa = 5 }
+			}
+			if = {
+				limit = {
+					army_size = 50
+					NOT = {	army_size = 100 }
+				}
+				NOT = { num_of_cawa = 10 }
+			}
+			else_if = {
+				limit = {
+					army_size = 100
+					NOT = {	army_size = 150 }
+				}
+				NOT = { num_of_cawa = 15 }
+			}
+			else_if = {
+				limit = {
+					army_size = 150
+					NOT = {	army_size = 200 }
+				}
+				NOT = { num_of_cawa = 25 }
+			}
+			else_if = {
+				limit = {
+					army_size = 200
+					NOT = {	army_size = 250 }
+				}
+				NOT = { num_of_cawa = 30 }
+			}
+			else_if = {
+				limit = {
+					army_size = 250
+					NOT = {	army_size = 300 }
+				}
+				NOT = { num_of_cawa = 40 }
+			}
+			else_if = {
+				limit = {
+					army_size = 300
+					NOT = {	army_size = 400 }
+				}
+				NOT = { num_of_cawa = 50 }
+			}
+			else_if = {
+				limit = {
+					army_size = 400
+					NOT = {	army_size = 500 }
+				}
+				NOT = { num_of_cawa = 75 }
+			}
+			else_if = {
+				limit = {
+					army_size = 500
+					NOT = {	army_size = 600 }
+				}
+				NOT = { num_of_cawa = 90 }
+			}
+			else_if = {
+				limit = {
+					army_size = 600
+				}
+				NOT = { num_of_cawa = 100 }
+			}
+			mil_power = 250
+		}
+		effect = {
+			
+			if = {
+				limit = {
+					any_capital_province = {
+						is_capital_of = root
+						controlled_by = root
+					}
+				}
+				add_mil_power = -250
+				random_owned_province = {
+					limit = {
+						is_capital = yes
+						controlled_by = root
+					}
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+					}
+				}
+				add_mil_power = -250
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+					}
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+					cawa_infantry = root
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 1
+	}
+	marine_build_decision = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			NOT = { army_size_percentage = 1 }
+			NOT = { manpower_percentage = 0.5 }
+			if = {
+				limit = {
+					NOT = {	army_size = 50 }
+				}
+				NOT = { num_of_marines = 5 }
+			}
+			if = {
+				limit = {
+					army_size = 50
+					NOT = {	army_size = 100 }
+				}
+				NOT = { num_of_marines = 10 }
+			}
+			else_if = {
+				limit = {
+					army_size = 100
+					NOT = {	army_size = 150 }
+				}
+				NOT = { num_of_marines = 15 }
+			}
+			else_if = {
+				limit = {
+					army_size = 150
+					NOT = {	army_size = 200 }
+				}
+				NOT = { num_of_marines = 25 }
+			}
+			else_if = {
+				limit = {
+					army_size = 200
+					NOT = {	army_size = 250 }
+				}
+				NOT = { num_of_marines = 30 }
+			}
+			else_if = {
+				limit = {
+					army_size = 250
+					NOT = {	army_size = 300 }
+				}
+				NOT = { num_of_marines = 40 }
+			}
+			else_if = {
+				limit = {
+					army_size = 300
+					NOT = {	army_size = 400 }
+				}
+				NOT = { num_of_marines = 50 }
+			}
+			else_if = {
+				limit = {
+					army_size = 400
+					NOT = {	army_size = 500 }
+				}
+				NOT = { num_of_marines = 75 }
+			}
+			else_if = {
+				limit = {
+					army_size = 500
+					NOT = {	army_size = 600 }
+				}
+				NOT = { num_of_marines = 90 }
+			}
+			else_if = {
+				limit = {
+					army_size = 600
+				}
+				NOT = { num_of_marines = 100 }
+			}
+			sailors = 25000
+		}
+		effect = {
+			if = {
+				limit = {
+					any_capital_province = {
+						is_capital_of = root
+						controlled_by = root
+						has_port = yes
+					}
+				}
+				add_sailors = -10000
+				random_owned_province = {
+					limit = {
+						is_capital = yes
+						controlled_by = root
+						has_port = yes
+					}
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						controlled_by = root
+						has_port = yes
+					}
+				}
+				add_sailors = -10000
+				random_owned_province = {
+					limit = {
+						controlled_by = root
+						has_port = yes
+					}
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+					marine_infantry = root
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				ai = yes
+			}
+		}
+	}
+}

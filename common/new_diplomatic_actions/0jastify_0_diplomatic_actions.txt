@@ -1,0 +1,86 @@
+#test_1111 = {
+#	category = influence
+#	require_acceptance = no
+#	is_visible = { 
+#		ai = no
+#	}
+#	is_allowed = {
+#		
+#	}
+#	on_accept = {
+#		FROM = {
+#			set_federation_leader = THIS
+#		}
+#	}
+#	ai_will_do = {  
+#		OR = {
+#			army_strength = {
+#				who = FROM
+#				value = 1.1
+#			}
+#			any_ally = {
+#				army_strength = {
+#					who = FROM
+#					value = 1.1
+#				}
+#			}
+#		}
+#	}
+#}
+#test_2222 = {
+#	category = influence
+#	require_acceptance = no
+#	is_visible = { 
+#		ai = no
+#	}
+#	is_allowed = {
+#		
+#	}
+#	on_accept = {
+#		FROM = {
+#			set_federation_leader = ROOT
+#		}
+#	}
+#	ai_will_do = {  
+#		OR = {
+#			army_strength = {
+#				who = FROM
+#				value = 1.1
+#			}
+#			any_ally = {
+#				army_strength = {
+#					who = FROM
+#					value = 1.1
+#				}
+#			}
+#		}
+#	}
+#}
+#test_3333 = {
+#	category = influence
+#	require_acceptance = no
+#	is_visible = { 
+#		ai = no
+#	}
+#	is_allowed = {
+#	}
+#	on_accept = {
+#		USA = {
+#			set_federation_leader = THIS
+#		}
+#	}
+#	ai_will_do = {  
+#		OR = {
+#			army_strength = {
+#				who = FROM
+#				value = 1.1
+#			}
+#			any_ally = {
+#				army_strength = {
+#					who = FROM
+#					value = 1.1
+#				}
+#			}
+#		}
+#	}
+#}

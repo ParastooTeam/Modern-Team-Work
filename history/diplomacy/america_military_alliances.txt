@@ -1,0 +1,99 @@
+#American Aliance
+alliance = {
+	first = PEU
+	second = URU
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+
+alliance = {
+	first = PEU
+	second = VNZ
+	start_date = 2020.2.5
+	end_date = 3005.12.1
+}
+
+alliance = {
+	first = PEU
+	second = SRN
+	start_date = 2020.2.6
+	end_date = 3005.12.1
+}
+
+alliance = {
+	first = PEU
+	second = GYA
+	start_date = 2020.2.7
+	end_date = 3005.12.1
+}
+alliance = {
+	first = PEU
+	second = BOL
+	start_date = 2020.2.8
+	end_date = 3005.12.1
+}
+############################################
+alliance = {
+	first = URU
+	second = VNZ
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = URU
+	second = SRN
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = URU
+	second = GYA
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = URU
+	second = BOL
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+###############################################
+alliance = {
+	first = VNZ
+	second = SRN
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = VNZ
+	second = GYA
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = VNZ
+	second = BOL
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+#################################################
+alliance = {
+	first = SRN
+	second = GYA
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+alliance = {
+	first = SRN
+	second = BOL
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+###################################################
+alliance = {
+	first = BOL
+	second = GYA
+	start_date = 2020.2.4
+	end_date = 3005.12.1
+}
+################################################

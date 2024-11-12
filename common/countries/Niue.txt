@@ -1,0 +1,69 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+
+random_nation_chance = 0
+
+color = { 219  219  32 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+		
+}
+
+monarch_names = {
+	"Shirley #0" = -10
+	"Siaosi #0" = 10
+	"Siosateki #0" = 10
+	"Sione #0" = 10
+	"Tevita #0" = 10
+	"Viliami #0" = 10
+	"Solomone #0" = 10
+	"Taufa'ahau #0" = 10
+	"Tu'i Pelehake #0" = 10
+	"Fatafehi #0" = 10
+	"Tu'ihala #0" = 10
+	"'Alipate #0" = 10
+	"'Aho'eitu #0" = 10
+	"'Unuaki'otonga #0" = 10
+	"Feleti #0" = 10
+	"Siale #0" = 10
+	"'Ataongo #0" = 10
+}
+
+leader_names = {
+	Tuku'aho Veikune Mateialona Tu'ivakano Mailefihi "Ula Ata" 
+	Tungi "Vaea Tupou" Sevele Kaho Tonga Ha'atakalaua Kanokupolu
+}
+
+ship_names = {
+	Adams Alfred Alliance "Andrew Doria" Argo Argus
+	Cabot Chesapeake Champion Columbus
+	Dolphin Deane Diligent 
+	Effingham Enterprise
+	Fly
+	Hampden Hancock Hornet
+	Lexington
+	Montgomery Mosquito
+	Nautilus
+	Pigot
+	Randolph Racehorse Ranger Reprisal Repulse Resistance Retaliation Revenge
+	Sachem Saratoga Serapis Siren Surprise
+	Trumbull
+	Viper Vixen
+	Warren Wasp 
+}
+
+

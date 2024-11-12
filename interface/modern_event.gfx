@@ -1,0 +1,741 @@
+spriteTypes = {
+	spriteType = {
+		name = "sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "sanctionX2_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/sanctionX2_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "sanctionX3_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/sanctionX3_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "sanctionX4_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/sanctionX4_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "STEALX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/STEALX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "Military_Support_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Military_Support_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "Naval_Support_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Naval_Support_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "teryak_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/teryak_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "send_manpower_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_manpower_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "send_aid_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_aid_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "send_money_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_money_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "oil_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/oil_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "aluminum_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/aluminum_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "cars_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cars_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "colth_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/colth_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "copper_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/copper_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "electronics_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/electronics_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "iron_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/iron_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "silk_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/silk_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "wool_sanctionX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/wool_sanctionX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "cyber_trade_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cyber_trade_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "cyber_fort_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cyber_fort_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "cyber_production_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cyber_production_eventPicture.dds"
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "cyber_attack_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cyber_attack_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "destroy_antiquities_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/destroy_antiquities_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Zombie_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Zombie_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MAIN_TIMER_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_TIMER/MAIN_TIMER_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Get_atomic_bomb_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Get_atomic_bomb_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Get_atomic_bombs_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Get_atomic_bombs_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "starrt_nuclear_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/starrt_nuclear_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "nuclear_10_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/nuclear_10_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "nuclear_20_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/nuclear_20_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "nuclear_40_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/nuclear_40_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "nuclear_75_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/nuclear_75_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "nuclear_90_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/nuclear_90_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "NUCLEAR_BOMB_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/NUCLEAR_BOMB_eventPicture.dds"
+		allwaystransparent = yes
+	}	
+	spriteType = {
+		name = "CITY_VIEW_ONE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CITY_VIEW_ONE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "CANAL_K_C_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_K_C_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_K_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_K_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_P_C_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_P_C_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_P_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_P_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_S_C_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_S_C_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_S_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_S_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_V_C_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_V_C_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_V_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_V_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CLOSE_EMBASSY_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CLOSE_EMBASSY_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "ADDCorrupt_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/ADDCorrupt_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "ADDSTABLITY_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/ADDSTABLITY_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "non_atomic_bombs_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/non_atomic_bombs_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "hidrogen_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/hidrogen_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "non_hidrogen_bombs_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/non_hidrogen_bombs_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_BOMB_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_BOMB_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_READY_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_READY_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_RANGE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_RANGE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_Number_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_Number_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "NUCLEAR_TARGET_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/NUCLEAR_TARGET_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "SEND_MISSILE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/SEND_MISSILE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "SEND_ATOMIC_BOMB_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/SEND_ATOMIC_BOMB_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "GIVE_ATOMIC_BOMB_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/GIVE_ATOMIC_BOMB_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_DEFENCE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_DEFENCE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "INFO_BOMB_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/INFO_BOMB_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "ATOMIC_DEFENCE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/ATOMIC_DEFENCE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_SATELLITE_DEFENCE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_SATELLITE_DEFENCE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_SATELLITE_CANT_DEFENCE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_SATELLITE_CANT_DEFENCE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_SATELLITE_CAN_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_SATELLITE_CAN_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "SATELLITE_TARGET_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/SATELLITE_TARGET_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "cyber_satellite_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/cyber_satellite_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Modern_Electronic_war_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Modern_Electronic_war_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "MISSILE_SATELLITE_OUR_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/MISSILE_SATELLITE_OUR_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "HONORSX1_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/HONORSX1_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "trade_modern_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/trade_modern_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "trade_modern_node_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/trade_modern_node_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "send_tank_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_tank_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "send_warmachine_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_warmachine_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "send_infantry_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_infantry_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "send_mixed_troop_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_mixed_troop_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "send_troop_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/send_troop_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "recive_troop_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/recive_troop_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "spy_information_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/spy_information_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "darvishi_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/darvishi_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "destroy_drugs_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/destroy_drugs_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "drug_farm_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/drug_farm_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "arms_company_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/arms_company_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "navalarms_company_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/navalarms_company_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "CANAL_TAX_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/CANAL_TAX_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "tax_increase_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/tax_increase_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "tax_1_increase_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/tax_1_increase_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "tax_2_increase_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/tax_2_increase_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "ECONOMY_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/ECONOMY_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "electronic_distroy_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/electronic_distroy_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "car_distroy_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/car_distroy_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "elect_factory_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/elect_factory_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "car_factory_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/car_factory_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "modern_build_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/modern_build_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "modern_airport_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/modern_airport_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "modern_fort_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/modern_fort_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "arms_distroy_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/arms_distroy_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "navalarms_distroy_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/navalarms_distroy_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "sailors_modern_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/sailors_modern_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "drug_distribution_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/drug_distribution_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "military_transport_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/military_transport_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "VETO_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/VETO_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "VOTE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/VOTE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Vote_negetive_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Vote_negetive_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Vote_positive_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Vote_positive_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "EU_laying_of_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/EU_laying_of_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "laying_of_EU_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/laying_of_EU_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Vote_Abstentions_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Vote_Abstentions_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "EU_Coalition_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/EU_Coalition_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "VOTE_COALITION_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/VOTE_COALITION_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "VOTE_TO_LEAVE_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/VOTE_TO_LEAVE_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Oil_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Oil_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "government_set_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/government_set_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "EU_Unite_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/EU_Unite_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Instagram_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/Instagram_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "deposit_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/deposit_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "withdraw_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/withdraw_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "modern_bank_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/modern_bank_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "target_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/target_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "aircraft_carrier_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/aircraft_carrier_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "war_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/war_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "trade_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/trade_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "transport_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_EUROPEAN/transport_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "cant_Missile_attack_aircroft_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/cant_Missile_attack_aircroft_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "kill_advisor_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/kill_advisor_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Missile_attack_aircroft_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Missile_attack_aircroft_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Missile_attack_battel_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Missile_attack_battel_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Missile_attack_trade_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Missile_attack_trade_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Missile_attack_transporter_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Missile_attack_transporter_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "cant_Missile_attack_battle_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/cant_Missile_attack_battle_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "cant_Missile_attack_trade_ship_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/cant_Missile_attack_trade_ship_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "cant_Missile_attack_transporter_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/cant_Missile_attack_transporter_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "military_base_know_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/military_base_know_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "faction_member_know_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/faction_member_know_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "justify_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/justify_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "retreat_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/retreat_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "justify_overlord_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/justify_overlord_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Modern_cyber_attack_tech_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Modern_cyber_attack_tech_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "Modern_cyber_attack_idea_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/Modern_cyber_attack_idea_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "force_cult_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/force_cult_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "arrow_party_Picture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/arrow_party_Picture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "kill_rule_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/kill_rule_eventPicture.dds"
+		allwaystransparent = yes
+	}
+	spriteType = {
+		name = "kill_rule_attemp_eventPicture"
+		texturefile = "gfx/event_pictures/event_pictures_MODERN/kill_rule_attemp_eventPicture.dds"
+		allwaystransparent = yes
+	}
+}

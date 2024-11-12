@@ -1,0 +1,3635 @@
+monarch_power = MIL
+
+# applied when a country is ahead of time in this technology
+# no bonus for MIL currently
+ahead_of_time = {
+	ahead_of_time_benefit_mil = 1
+}
+
+technology = {
+	# Tech 0
+	year = 2000
+
+
+	enable = zombies_unit
+	enable = native_clubmen
+	enable = mesoamerican_clubmen
+	enable = south_american_clubmen
+	enable = east_asian_ancient_infantry
+	enable = indian_ancient_infantry
+	enable = kanem-bornu_clubmen
+	
+	enable = high_american_clubmen
+	may_drill = yes
+	fort_et = yes
+	
+}
+
+technology = {
+	# Tech 1
+	year = 2001
+
+	combat_width = 4
+	
+	armory = yes	
+	
+	regimental_camp = yes
+	barracks = yes
+	
+	
+	cavalry_fire = 0.30
+	artillery_fire = 1.50
+	infantry_fire = 0.75
+	land_morale	= 2.5
+	#Spear
+	
+	fort_15th = yes
+	enable = germanic_spearman
+	enable = persian_spearmen_m
+	
+	enable = armenian_light_infantry
+	enable = roman_militia
+	enable = roman_auxilia
+	
+	
+}
+
+technology = {
+	# Tech 2
+	year = 2002
+
+	
+	weapons = yes
+	infantry_shock = 0.70
+	cavalry_shock = 1.10
+	artillery_shock = 0.15
+	
+	maneuver_value = 0.25
+	
+	fort_16th = yes	
+	#Archery
+	
+
+	
+	supply_limit = 0.5
+	
+		
+	enable = nomadic_bow
+	enable = nomadic_bow_en
+	enable = celtic_archers
+	enable = heriban
+	enable = hridriskara
+	
+	
+	
+	
+}
+
+technology = {
+	# Tech 3
+	year = 2003
+	enable = armenian_light_horsemen
+	enable = barbarian_horsemen
+	enable = nomadic_horsemen
+	enable = xiongnu_horsemen
+	enable = persian_light_cavalry
+	enable = roman_cavalry
+	enable = east_african_light_cavalry
+	enable = east_african_light_infantry
+	
+	sprite_level = 1
+}
+
+technology = {
+	# Tech 4
+	year = 2004
+	expects_institution = {
+		writing = 0.1
+	}
+	training_fields = yes
+	conscription_center = yes
+	
+	#Chariot
+	
+	
+	combat_width = 4
+	
+	enable = indian_chariot
+	enable = east_asian_chariot
+
+
+	sprite_level = 2
+	
+}
+
+technology = {
+	# Tech 5
+	year = 2005
+	expects_institution = {
+		writing = 0.1
+	}
+	#Battle Axe
+	
+	
+	
+	enable = frankish_axemen
+	sprite_level = 3
+	
+}
+
+technology = {
+	# Tech 6
+	year = 2015
+	expects_institution = {
+		writing = 0.1
+	}
+	enable = gothic_swordsmen
+	enable = alemanne
+
+	sprite_level = 4
+	
+}
+
+technology = {
+	# Tech 7
+	year = 2016
+	expects_institution = {
+		writing = 0.1
+	}
+	
+	
+	#Japan Infantry
+	
+	
+	
+	
+	
+	
+	#Parthian
+	enable = parthian_shot
+	enable = roman_legionary
+	enable = armenian_heavy_infantry
+	enable = nomadic_infantry
+	enable = nomadic_infantry_en
+	
+	enable = early_war_elephant
+	enable = south_asian_war_elephant
+	
+	
+	
+	
+}
+
+technology = {
+	# Tech 8
+	year = 2017
+	expects_institution = {
+		writing = 0.1
+	}
+	
+	#Parthian Tactics
+	
+	military_tactics 	= 	0.5
+	enable = clibanarii_e
+	enable = clibanarii_m
+	enable = clibanarii_o
+	enable = clibanarii_r
+	enable = armenian_horsemen
+	
+	
+}
+
+technology = {
+	# Tech 9
+	year = 2018
+	expects_institution = {
+		writing = 0.1
+	}
+
+	#Standing Army
+	infantry_shock = 0.04
+	cavalry_shock = 0.08
+	land_morale	= 0.25
+	artillery_fire = 0.10
+	enable = barbarian_raiders
+	
+	enable = nomadic_raiders
+	enable = nomadic_raiders_en
+	enable = sub-saharan_clubmen
+	enable = jaguar_warriors
+	enable = comitatenses
+	enable = limitanei
+	
+	enable = ha_jaguar_warriors
+	
+	
+	#Asb
+	
+	enable = heavy_cataphract_me
+	
+	
+	#toop
+	enable = houfnice
+	enable = indian_footsoldier	
+
+	enable = indian_archers
+	enable = mongol_steppe
+	enable = hun_horde
+	
+	
+	#China - Infantry
+	enable = east_asian_raider
+	#enable = east_asian_spearmen
+	enable = eastern_bow
+	
+	#Turkey - Infantry
+	enable = persian_spearmen_o
+	
+	
+	
+	#public - Infantry
+	enable = immortals
+	enable = huron_arquebusier
+
+	#public - Cavalry
+	enable = heavy_cataphract_m
+	enable = heavy_cataphract_o
+		
+	
+	combat_width = 4
+	
+}
+
+technology = {
+	# Tech 10
+	year = 2022
+	expects_institution = {
+		writing = 0.25
+	}
+
+	
+	#War Elephants
+	military_tactics = 0.10
+	
+	
+	maneuver_value = 0.25
+	artillery_shock = 0.013
+	
+
+	infantry_fire = 0.06
+	
+	
+	enable = composite_bowmen_r
+	enable = composite_bowmen_m
+	
+	
+	
+	#Public - Tank
+	enable = large_cast_bronze_mortar 
+	enable = western_ancient_infantry
+	
+	#Rusian - Infantry
+	enable = composite_bowmen_e
+	enable = heavy_cataphract_e
+	
+	#Public - Cavalry
+	enable = western_heavy_horsemen
+	enable = indian_archer
+
+	combat_width = 1
+	supply_limit = 0.5
+	
+}
+
+technology = {
+	# Tech 11
+	year = 2027
+	expects_institution = {
+		writing = 0.35
+	}
+
+	military_tactics = 0.10
+	cavalry_shock = 0.08
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	infantry_shock = 0.04
+	supply_limit = 0.05
+	
+
+	maneuver_value = 0.25
+	enable = migration_period_axemen_b
+	enable = migration_period_spearmen_b
+	enable = jian_swordsmen
+
+	#USA - Tank
+	enable = small_cast_iron_bombard
+	enable = roman_praetorian
+	#USA Cavalry	
+	
+	#Rusian - Infantry
+	enable = bardiche_infantry
+	
+	#Public - Infantry
+	enable = migration_period_axemen_w
+	enable = persian_footsoldier
+	
+	#Public - Cavalry
+	enable = stratioitai
+	enable = chinese_longspear
+	
+	combat_width = 1
+	
+}
+
+technology = {
+	# Tech 12
+	year = 2034
+	expects_institution = {
+		writing = 0.5
+	}
+	#Raiding
+	cavalry_shock = 0.08
+	
+	combat_width = 1
+	military_tactics = 0.10
+	artillery_fire = 0.06
+	
+	#Public Tank
+	enable = hun_infantry
+	enable = nomadic_horde
+
+
+	enable = turkic_nomad_infantry
+	enable = bolas_warriors
+	enable = native_warriors
+		
+	enable = rajput_hill_fighters	
+	enable = mongol_swarm
+	enable = late_mongol_bow
+	
+	supply_limit = 0.05
+	
+	#China - Infantry
+	enable = japanese_archer
+	enable = chinese_steppe	
+	
+	#Turkey - Infantry
+	enable = ottoman_yaya
+	enable = ottoman_musellem	
+	#Rusian - Infantry
+	enable = eastern_medieval_infantry
+	enable = cataphract_e
+	
+	#Public - Infantry
+	enable = migration_period_spearmen_w
+	enable = mamluk_archer
+	#Public - Cavalry
+	enable = muslim_cavalry_archers
+	
+}
+
+technology = {
+	# Tech 13
+	year = 2041
+	
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.20
+	}
+	
+	military_tactics = 0.10
+	#Composite Bow
+	infantry_fire = 0.06
+	land_morale	= 0.25
+	infantry_shock = 0.04
+	artillery_fire = 0.06
+	
+	enable = cataphract_m
+	
+	
+	enable = western_horsemen
+	enable = war_elephant
+	enable = east_asian_nomad_cavalry
+	enable = aztec_tribal_warfare	
+	enable = zapotec_tribal_warfare		
+	enable = songhai_tribal_warfare		
+	enable = niger_kongolese_tribal_warfare		
+	enable = bantu_tribal_warfare	
+	enable = mali_tribal_warfare	
+	enable = pueblo_ambush	
+	enable = native_indian_tribal_warfare
+	enable = algonkin_tomahawk_charge	
+	enable = indian_arquebusier	  
+	enable = inca_mountain_warfare	
+	enable = south_american_forest_warfare
+	enable = incan_slingshots
+	enable = incan_axemen	
+	enable = maya_tribal_warfare
+	enable = ha_reformed_xantican_warrior
+	enable = war_elephant_ea
+	
+	combat_width = 1
+	supply_limit = 0.05
+	
+	
+	#USA - Cavalry
+	enable = cataphract_r	
+	
+	#China - Infantry
+	enable = chinese_footsoldier
+	enable = japanese_samurai
+	
+	#Rusian - Infantry
+	enable = eastern_militia
+	enable = bulgarian_horsemen
+	
+	#Public - Infantry
+	enable = halberd_infantry
+
+	
+	
+	#Muslim - Infantry
+	enable = western_lancer
+	enable = persian_cavalry_charge
+
+}
+
+technology = {
+	# Tech 14
+	year = 2048
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.35
+	}
+	#Scale Armor
+	infantry_shock = 0.04
+	land_morale	= 0.15
+	military_tactics = 0.10
+	cavalry_fire = 0.05
+	artillery_fire = 0.06
+	enable = south_indian_musketeer	
+	enable = mughal_musketeer		
+	enable = steppe_raiders
+	enable = ha_xiuhtecuhtli_soldier
+	
+	#USA
+	enable = auxilia_palatina
+	enable = unnigardae
+	
+	
+	#Public - Tank
+	enable = japanese_footsoldier
+	
+	#Turkey - Infantry
+	enable = ottoman_azab
+	
+	#Rusian - Infantry
+	enable = byzantine_praetorian
+	enable = eastern_lancer
+	
+	#Public  Infantry
+	enable = mamluk_duel
+	enable = western_medieval_infantry
+	
+	
+	#Public - Cavalry
+	enable = mamluk_cavalry_charge
+	enable = crusade_knights
+
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 15
+	year = 2055
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+	}
+	combat_width = 1
+	supply_limit = 0.05	
+	
+	#Horde Tactics
+	cavalry_shock = 0.08
+	land_morale	= 0.15
+	military_tactics = 0.10
+	
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	infantry_fire = 0.06
+	
+	enable = maritime_warriors
+	
+	enable = middle_eastern_spearmen
+	
+	maneuver_value = 0.25
+	
+	
+	#USA - Cavalry
+	enable = bucellarii
+	enable = asian_charge_cavalry
+	enable = large_cast_iron_bombard
+	
+	
+	#China - Infantry
+	enable = east_asian_horsemen
+	
+	#Turkey - 
+	enable = cataphract_o
+
+	#Rusian - Infantry
+	enable = germanized_pike
+	enable = hungarian_horse_archers
+	
+	#Public - Infantry
+	enable = western_men_at_arms
+	
+	#Public - Cavalry
+	enable = shaybani
+	enable = western_medieval_knights
+	
+}
+
+technology = {
+	# Tech 16
+	year = 2062
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.15
+	}
+	land_morale	= 0.15
+	#Heavy Cavalry
+	cavalry_shock = 0.08
+	military_tactics = 0.10
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	
+	
+
+	
+	
+	#USA
+	enable = foederati
+	
+	#China - Infantry
+	enable = qiang_spearmen_ec
+	
+	#Rusian - Infantry
+	enable = byzantine_heavy_praetorian
+	
+	#Muslim - Infantry
+	enable = persian_shamshir
+	enable = middle_eastern_archers_m
+	
+	combat_width = 1
+	supply_limit = 0.05	
+
+}
+
+technology = {
+	# Tech 17
+	year = 2069
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.30
+	}
+	enable = armored_elephant_ei
+	enable = armored_elephant
+	enable = middle_eastern_archers
+	
+
+	#Fortifications
+	land_morale	= 0.15
+	military_tactics = 0.10
+	infantry_shock = 0.04
+	cavalry_fire = 0.05
+	infantry_fire = 0.06
+	supply_limit = 0.05
+
+	
+	fort_17th = yes
+	
+	#USA - Cavalry
+	enable = optimates
+	enable = heavy_cataphract_ea
+
+	#China - Infantry
+	enable = dao_swordsmen
+	enable = khmer_elephant
+	
+	#Turkey - Infantry
+	enable = ottoman_janissary	
+	enable = ottoman_spahi
+	
+	#Rusian - Infantry
+	
+	enable = early_eastern_knight
+	
+	#Public - Infantry
+	enable = western_longbow
+	enable = middle_eastern_spearmen_m
+
+	#Public - Cavalry
+	enable = late_western_knights
+	enable = early_knights	
+}
+
+technology = {
+	# Tech 18
+	year = 2076
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.40
+	}
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	
+	#Leadership
+	land_morale	= 0.15
+	military_tactics = 0.10
+	
+	combat_width = 1
+	supply_limit = 0.05	
+	enable = indian_longbow_ei
+	enable = indian_longbow
+	
+	enable = qiang_spearmen
+	enable = eagle_warriors
+	enable = barbarian_infantry
+	enable = ha_eagle_warriors
+	enable = camel_riders_ea
+	
+	#USA
+	enable = arithmoi
+	
+	#Rusian - Infantry
+	enable = byzantine_infantry
+	
+	#Public - Infantry
+	enable = gaelic_galloglaigh	
+	enable = caliphate_infantry	
+}
+
+technology = {
+	# Tech 19
+	year = 2083
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+	}
+	land_morale	= 0.15
+	maneuver_value = 0.25
+	
+	#Stirrup
+	cavalry_shock = 0.08
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	military_tactics = 0.10
+	
+	
+	
+	supply_limit = 0.05
+	
+	#USA - Cavalry
+	enable = hippo_akontistai
+	enable = culverin
+	
+	#China - Infantry
+	enable = dadao_swordsmen
+	#China - Cavalry
+	enable = yabusame
+	
+	#Turkey - Cavalry
+	enable = muslim_lance_cavalry_o
+	
+	#Rusian - Cavalry
+	enable = eastern_knights
+	
+	#Public - Infantry
+	enable = italian_condotta
+
+	#Public - Cavalry
+	enable = caliphate_cavalry
+	enable = chevauchee
+	
+}
+
+technology = {
+	# Tech 20
+	year = 2090
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.20
+	}
+	#Military Training
+	land_morale	= 0.15
+
+	enable = native_indian_horsemen
+	enable = dao_swordsmen_ec
+	military_tactics = 0.10
+	cavalry_fire = 0.05
+	infantry_fire = 0.06
+	#China - Infantry
+	enable = meteor_hammer
+	
+	
+	#Turkey - Infantry
+	enable = muslim_skirmishers_o
+	
+	#Rusian - Infantry
+	enable = bulgarian_man_at_arms
+	enable = late_eastern_knights
+	
+	#Public - Infantry
+	enable = swiss_landsknechten
+	enable = muslim_skirmishers_m
+	#public - Cavalry
+	enable = schwarze_reiter
+	enable = camel_riders_m
+	
+}
+
+technology = {
+	# Tech 21
+	year = 2097
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.35
+	}
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	#Ring Armor
+	infantry_shock = 0.04
+	land_morale	= 0.15
+	
+	
+	#Public Tank
+	enable = indian_elephant
+	enable = east_asian_horsemen_ec
+	
+	enable = nomadic_horse_archers
+	enable = nomadic_horse_archers_wn
+	enable = nomadic_horse_archers_en
+	
+	
+	
+	#USA
+	enable = hippo_toxotai
+	
+	#China - Cavalry
+	enable = mounted_samurai
+	
+	#Turkey - Cavalry
+	enable = ottoman_reformed_spahi	
+	
+	#Rusian - Cavalry
+	enable = druzhina_cavalry
+	
+	#Public - Infantry
+	enable = gaelic_mercenary
+	enable = akritai
+	#Oublic - Cavalry
+	enable = french_caracolle 
+}
+
+technology = {
+	# Tech 22
+	year = 2104
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+	}
+	#Improved Swords
+	infantry_shock = 0.04
+	land_morale	= 0.15
+	military_tactics = 0.10
+
+	enable = steppe_infantry
+	enable = steppe_infantry_wn
+	enable = steppe_infantry_en
+	enable = african_warriors
+	#USA - Infantry
+	enable = paramonai
+	
+	#China - Infantry
+	enable = chinese_polearm_infantry
+	
+	#Rusian - Infantry
+	enable = byzantine_tagmata
+	
+	#Public - Infantry
+	enable = frankish_infantry
+	enable = seljuq_infantry_m
+	
+	#Muslim - Infantry
+	
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 23
+	year = 2111
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.15
+	}
+	
+	#Mounted Archery Tactics
+	cavalry_shock = 0.08
+	land_morale	= 0.15
+	military_tactics = 0.10
+	cavalry_fire = 0.05
+	infantry_fire = 0.06
+
+	#China - Cavalry
+	enable = chinese_horsemen
+	
+	#Public - Infantry
+	enable = germanic_infantry
+	enable = skholai
+
+	#Public - Tank
+	enable = pedrero
+	enable = slavic_stradioti
+	enable = slavic_archers
+
+	#Muslim - Cavalry
+	enable = camel_archers
+	enable = swedish_gallop	
+}
+
+technology = {
+	# Tech 24
+	year = 2118
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.35
+	}
+	#Military Organization
+	land_morale	= 0.15
+
+	military_tactics = 0.10
+	combat_width = 1
+	
+	enable = camel_riders_e
+	supply_limit = 0.05
+	
+	#USA
+	
+	
+	#Turkey - Infantry
+	enable = seljuq_infantry_o
+	enable = ottoman_toprakli_hit_and_run
+	
+	#public - Infantry
+	enable = western_swordsmen
+	enable = pugnarii
+}
+
+technology = {
+	# Tech 25
+	year = 2125
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+	}
+	fort_18th	= yes
+	#Lance
+	cavalry_shock = 0.08
+	land_morale	= 0.15
+	infantry_shock = 0.04
+	artillery_fire = 0.06
+	enable = khanda
+	
+	#USA - Machine
+	enable = ascensoreshun
+
+	#China - Infantry
+	enable = samurai
+	enable = east_mongolian_steppe
+	
+	#Rusian - Infantry
+	enable = slavic_infantry
+	enable = hungarian_hussar
+	
+	#Public - Infantry
+	enable = housecarls
+	enable = muslim_archers_m
+
+	#Public - Cavalry
+	enable = swedish_arme_blanche	
+	enable = muslim_lance_cavalry_m
+	
+	
+}
+
+technology = {
+	# Tech 26
+	year = 2132
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+	}
+	#Camelry
+	land_morale	= 0.15
+	cavalry_fire = 0.05
+	artillery_shock = 0.013
+	combat_width = 1	
+	
+	enable = african_skirmishers
+	enable = steppe_archers
+	enable = atlatl
+	enable = spear_thrower
+	enable = slinger
+	enable = pecheneg_cavalry
+	enable = ha_atlatl
+	
+	
+	#Public - Infantry
+	enable = crossbow
+	enable = muslim_skirmishers_e
+	
+}
+
+technology = {
+	# Tech 27
+	year = 2139
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.20
+	}
+	#Tempered Steel
+	infantry_shock = 0.04
+	land_morale	= 0.15
+	cavalry_shock = 0.08
+	
+	
+	#Public - Tank
+	enable = chambered_demi_cannon
+	enable = cuman_horde
+	
+	#Rusian - Cavalry
+	enable = polish_hussar
+	
+	#Europa - Infantry
+	enable = gothic_infantry		
+	
+	#Muslim - Cavalry
+	enable = qizilbash_cavalry
+	enable = french_dragoon
+	artillery_fire = 0.06
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 28
+	year = 2146
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.35
+	}
+	#Skirmish Tactics
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	supply_limit = 0.05
+	cavalry_fire = 0.05
+	#USA
+	enable = skoutatoi
+	#USA
+	enable = heavy_cataphract_r
+	combat_width = 1
+	#China - Infantry
+	enable = chu-ko-nu
+	enable = manchu_banner	
+	
+	#Turkey - Infantry
+	enable = muslim_archers_o
+	enable = eastern_uhlan
+	
+	#Rusian - Infantry
+	enable = viking_axemen
+	enable = muscovite_caracolle
+		
+}
+
+technology = {
+	# Tech 29
+	year = 2153
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+	}
+	#Noble Soldiers
+	infantry_shock = 0.04
+	land_morale	= 0.15	
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	
+	
+	
+	#Public - Tank
+	enable = zaporoghian_cossack
+	enable = elephant_archers
+	
+
+	#Public - Infantry
+	enable = western_macemen
+	enable = longswordsmen
+
+	#Public - Cavalry
+	enable = austrian_hussar
+
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 30
+	year = 2160
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.10
+	}
+	#Bodkin Arrow
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	
+	
+	enable = mongol_horde
+	enable = mongol_infantry
+	enable = african_tribal_warriors
+	
+	#USA
+	enable = equites_promoti
+	
+
+	#Rusian - Infantry
+	enable = russian_mass
+	
+	  
+	#Public - Infantry
+	enable = western_pike
+
+	
+}
+
+technology = {
+	# Tech 31
+	year = 2167
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.35
+	}
+	#Royal Guard
+	land_morale	= 0.15
+	
+	enable = urumi
+	
+	
+	#USA
+	#Tank
+	enable = archontopoulai
+	enable = leather_cannon	
+	
+	enable = novaetestudo
+	#China - Infantry
+	enable = chinese_bowmen
+	enable = chinese_dragoon
+	
+	#Turkey - Infantry
+	enable = turk_swordsmen
+	enable = eastern_skirmisher
+	
+	#Rusian - Infantry
+	enable = byzantine_immortals
+	enable = polish_winged_hussar	
+	
+	#Public - Infantry
+	enable = gaelic_free_shooter
+	enable = mamluk_swordsmen
+	
+	#Public - Cavalry
+	enable = mamluk_musket_charge 
+	enable = prussian_uhlan
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 32
+	year = 2174
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+	}
+	#Chivalry
+	
+	land_morale	= 0.15
+	cavalry_fire = 0.05
+	enable = plumed_warriors_ma
+	enable = plumed_warriors_na
+	enable = plumed_warriors_sa
+	cavalry_shock = 0.08
+	
+	enable = ha_plumed_warriors
+	
+	
+	#Muslim - Infantry
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 33
+	year = 2181
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+	}
+	#Hit and Run Tactics
+	artillery_shock = 0.013
+	combat_width = 1
+	#USA
+	enable = equites_scutarii
+
+	land_morale	= 0.15
+	#Turkey - Cavalry
+	enable = ottoman_timariot
+	
+	#Rusian - Cavalry
+	enable = muscovite_cossack
+	
+	#Public - Infantry
+	enable = dutch_maurician
+	enable = irish_charge
+	
+	#Muslim - Cavalry
+	enable = afsharid_reformed
+	enable = british_hussar	
+	
+	
+	
+}
+
+technology = {
+	# Tech 34
+	year = 2188
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.15
+	}
+	#Shield Wall
+	infantry_shock = 0.04
+	land_morale	= 0.15	
+	cavalry_fire = 0.05
+	cavalry_shock = 0.08
+	artillery_fire = 0.06
+	
+	
+	enable = indian_horsemen
+	enable = steppe_cavalry
+	
+
+	#Europa - Infantry
+	enable = austrian_tercio   
+	enable = ghazi_warriors
+
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 35
+	year = 2195
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.30
+	}
+	#Crossbow
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	enable = mongol_bow
+
+	
+	
+	######Taghir yafte Iran
+	enable = reformed_mughal_mansabdar
+	
+	
+	#USA
+	enable = graeciprocur
+
+	#Public Tank
+	enable = kavalarioi
+	enable = swivel_cannon	
+	
+	
+	#China - Infantry
+	enable = yumi_bowmen
+	enable = reformed_asian_cavalry	
+	
+	#Turkey - Infantry
+	enable = ottoman_sekban	
+	enable = ottoman_toprakli_dragoon
+	
+	#Rusian - Infantry
+	enable = hungarian_infantry
+	enable = russian_lancer	
+		
+	
+	#Public - Cavalry
+	enable = muslim_dragoon
+	enable = french_carabinier
+
+	combat_width = 1
+	supply_limit = 0.05
+	
+	
+}
+
+technology = {
+	# Tech 36
+	year = 2202
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.40
+	}
+	#Crossguard
+	infantry_shock = 0.04	
+	land_morale	= 0.15
+	combat_width = 1
+	
+	
+	
+	enable = reformed_mughal_musketeer
+	enable = ha_xantican_warrior
+	
+	#Rusian - Cavalry
+	enable = tartar_cossack
+	
+	#Public - Infantry
+	enable = spanish_tercio	
+	enable = tofongchis_musketeer
+	
+	
+	#Muslim - Cavalry
+	enable = ali_bey_reformed_infantry
+	enable = open_order_cavalry
+	
+}
+
+technology = {
+	# Tech 37
+	year = 2209
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+	}
+	#Holy Warriors
+	land_morale	= 0.15
+	cavalry_fire = 0.05
+	artillery_shock = 0.013
+	enable = south_american_spearmen	
+	enable = mesoamerican_spearmen	
+	enable = native_indian_archer
+	enable = african_spearmen
+		
+	#Europa - Infantry
+	enable = scottish_highlander
+	enable = swedish_gustavian	
+	
+	#Muslim - Cavalry
+	enable = durrani_dragoon
+	enable = african_clubmen
+	
+	
+}
+
+technology = {
+	# Tech 38
+	year = 2216
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.20
+	}
+	#Mace
+	infantry_shock = 0.04
+	land_morale	= 0.15	
+	artillery_shock = 0.013
+	
+	
+	enable = camel_archers_ea
+	#Rusian - Cavalry
+	enable = russian_cuirassier	
+	
+    #Public - Cavalry
+	enable = topchis_artillery
+	enable = napoleonic_lancers	
+
+	
+}   
+
+technology = {
+	# Tech 39
+	year = 2223
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.35
+	}
+	#Advanced Cavalry
+	military_tactics = 0.10
+	combat_width = 1
+	land_morale	= 0.15
+		
+	#USA
+	enable = pronoiarioi
+	enable = skythikon
+	enable = coehorn_mortar	
+	
+	
+	
+	
+	#Turkey - Infantry
+	enable = ottoman_reformed_janissary
+	enable = ottoman_lancer 
+	
+	#Rusian - Infantry
+	enable = varangian
+	enable = russian_cossack
+	
+	#Public - Infantry
+	enable = swedish_caroline
+	cavalry_shock = 0.08
+}
+
+technology = {
+	# Tech 40
+	year = 2230
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+	}
+	#Longbow
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	cavalry_fire = 0.05
+	enable = african_abyssinian_light_cavalry
+	artillery_fire = 0.06
+	
+	
+	#Public -Cavalry
+	enable = durrani_swivel	
+	enable = french_cuirassier
+	
+	
+	combat_width = 1
+	supply_limit = 0.05
+	
+}
+
+technology = {
+	# Tech 41
+	year = 2237
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.1
+	}
+	#Longsword
+	infantry_shock = 0.04	
+	land_morale	= 0.15
+	cavalry_shock = 0.08
+	
+	#Late Medieval Military
+		
+	
+	#Europa - Infantry
+	enable = anglofrench_line
+	enable = austrian_grenzer
+	
+	#Rusian - Infantry
+	enable = eastern_macemen
+	
+
+		
+}
+
+technology = {
+	# Tech 42
+	year = 2244
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.25
+	}
+	#Brigandine
+	infantry_shock = 0.04	
+	land_morale	= 0.15
+	artillery_fire = 0.2
+	
+
+	combat_width = 1
+	supply_limit = 0.05
+	
+}
+
+technology = {
+	# Tech 43
+	year = 2251
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.5
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.35
+	}
+	#Pike
+	artillery_shock = 0.013
+	land_morale	= 0.15
+
+
+	
+	enable = african_somali_cavalry
+	enable = african_tuareg_cavalry
+		
+	
+	enable = central_american_horsemen
+	enable = south_american_horsemen	
+	enable = mughal_mansabdar	
+	 
+	
+	enable = high_american_horsemen
+	
+	
+	#USA
+	enable = mourtatoi
+	
+	#Public Tank
+	enable = royal_mortar
+	
+	#China - Infantry
+	enable = guandao
+	
+	#Turkey - Infantry
+	enable = ottoman_nizami_cedid
+	
+	#Rusian - Infantry
+	enable = eastern_pike
+	
+	#Public - Infantry
+	enable = austrian_white_coat
+	enable = afsharid_reformed_infantry
+	
+	#China - Infantry
+	enable = ashigaru
+	enable = reformed_manchu_rifle	
+	
+	#Public - Cavalry
+	enable = modern_cavalry
+}
+
+technology = {
+	# Tech 44
+	year = 2258
+
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+	}
+	# Plate Armor
+	military_tactics = 0.10
+	land_morale	= 0.15
+
+}
+
+# Pre-era techs
+technology = {
+	# Tech 45
+	year = 2265
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.20
+	}
+	#Cavalry Plate Armor
+	
+
+	cavalry_shock = 0.08
+	land_morale	= 0.15
+	cavalry_fire = 0.05	
+			
+	
+	#Rusian - Infantry
+	enable = polish_musketeer 
+	
+	#Public - Infantry
+	enable = british_redcoat	
+	enable = french_bluecoat	
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 46
+	year = 2272
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.35
+	}
+	infantry_shock = 0.04
+	artillery_fire = 0.2
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	#Late Medieval Military
+	
+	
+		
+	
+	enable = african_mossi_horsemen
+	enable = african_abyssinian_cavalry
+	enable = native_indian_mountain_warfare	
+	enable = aztec_hill_warfare	
+	enable = maya_forest_warfare	
+	enable = zapotec_plains_warfare
+	enable = south_american_gunpowder_warfare
+	enable = south_american_arquebusier	
+	enable = north_american_rifle_cavalry
+	enable = central_american_rifle_cavalry
+	enable = south_american_rifle_cavalry	
+		
+		
+		
+	enable = steppe_riders
+	enable = high_american_rifle_cavalry
+	
+	
+	supply_limit = 0.05
+	
+	#USA
+	enable = allagion
+	enable = mark_heavy_tank
+	
+	#China - Infantry
+	enable = han_banner	
+	
+	#Turkey - Infantry
+	enable = eastern_carabinier	
+	
+}
+
+technology = {
+	# Tech 47
+	year = 2279
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+	}
+	infantry_shock = 0.04
+	cavalry_shock = 0.08
+	combat_width = 1
+	supply_limit = 0.05
+	
+	enable = rajput_musketeer	
+	enable = bantu_plains_warfare	
+	enable = niger_kongolese_forest_warfare		
+	enable = african_hill_warfare	
+	enable = ethiopian_mountain_warfare		
+	enable = steppe_footmen
+	
+	
+	#USA - Tank
+	enable = flying_battery
+	enable = ha_xiuhtecuhtlian_infantry
+	
+	#Rusian - Infantry
+	enable = muscovite_musketeer
+	
+	#Public - Infantry
+	enable = prussian_frederickian
+	enable = durrani_rifled_musketeer
+}
+
+# The 30 big techs from here on
+
+technology = {
+	# Tech 48
+	year = 2286
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.10
+	}
+	#Earth Rampart
+	land_morale	= 0.15
+	
+
+	enable = african_hussar
+	
+	enable = creek_arquebusier	
+	enable = aztec_gunpowder_warfare		
+	enable = maya_gunpowder_warfare	
+	enable = zapotec_gunpowder_warfare	
+	enable = south_american_reformed_gunpowder_warfare	
+	enable = north_american_hussar
+	enable = central_american_hussar
+	enable = south_american_hussar
+	enable = steppe_lancers
+	enable = high_american_hussar
+	enable = camel_riders_i	
+
+	
+	
+	combat_width = 1
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 49
+	year = 2293
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.25
+	}
+	#Pike Square
+	land_morale	= 0.15
+	military_tactics = 0.10
+	cavalry_fire = 0.05
+	artillery_fire = 0.2
+	enable = bantu_gunpowder_warfare	
+	enable = niger_kongolese_gunpowder_warfare	
+	enable = adal_gunpowder_warfare		
+	enable = ethiopian_gunpowder_warfare	
+	enable = steppe_musketeers	
+	enable = african_cavalry
+	
+	#Rusian - Infantry
+	enable = muscovite_soldaty	
+	
+	#Europa - Infantry
+	enable = british_square
+	enable = french_impulse
+}
+
+technology = {
+	# Tech 50
+	year = 2300
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.35
+	}
+	#Standardised Pikes
+	infantry_shock = 0.04
+	cavalry_fire = 0.05
+	
+	supply_limit = 0.05
+	
+	#USA
+	enable = latinikon
+	enable = renault_light_tank
+	
+	
+	#China - Infantry
+	enable = asian_mass_infantry
+	
+	#Turkey - Infantry
+	enable = ottoman_new_model
+	
+	
+	#Muslim - Infantry
+	enable = muslim_mass_infantry
+}
+
+technology = {
+	# Tech 51
+	year = 2307
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+	}
+	
+	#Arquebu
+	military_tactics = 0.10
+	infantry_shock = 0.04
+	
+	
+	enable = maharathan_cavalry	
+	
+	enable = african_swarm
+	
+	
+
+	
+	#Public - Tank
+	enable = field_howitzer
+	enable = east_asian_spearmen
+	
+	
+	#Rusian - Infantry
+	enable = polish_tercio
+}
+
+technology = {
+	# Tech 52
+	year = 2314
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.20
+	}
+	#The limber
+	infantry_fire = 0.06
+	artillery_fire = 0.2
+	military_tactics = 0.10
+	
+	
+	
+	
+	enable = asian_musketeer
+	
+	#Rusian - Infantry
+	enable = saxon_infantry	
+	
+	#Public - Infantry
+	enable = prussian_drill	
+	enable = mixed_order_infantry	
+	
+	
+}
+
+technology = {
+	# Tech 53
+	year = 2321
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.35
+	}
+	
+	#Pike and Shot
+	infantry_fire = 0.06
+	military_tactics = 0.10
+	cavalry_shock = 0.08
+	
+	
+	
+	#Public - Cavalry
+	enable = fiat3000
+	enable = sikh_hit_and_run
+		
+	#Public - Infantry
+	enable = russian_petrine	
+	enable = austrian_jaeger
+	
+
+	
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 54
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+	}
+	year = 2328
+
+	cavalry_fire = 0.05
+	enable = talwar
+	#Ditch
+	
+	#China - Infantry
+	enable = reformed_asian_musketeer
+}
+
+technology = {
+	# Tech 55
+	year = 2335
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.1
+	}
+	#Reiter
+	maneuver_value = 0.25
+
+	
+	supply_limit = 0.05
+	enable = incan_guerilla_warfare	
+	enable = iroquois_rifle_scout
+	enable = peruvian_guerilla_warfare
+	enable = mexican_guerilla_warfare	
+	enable = maya_guerilla_warfare	
+	enable = commanche_swarm
+	enable = central_american_swarm
+	enable = south_american_swarm
+	
+	#Public
+	enable = assault_rifle
+	enable = russian_green_coat	
+
+	#Public - Tank
+	enable = armstrong_gun
+	enable = high_american_swarm
+	
+}
+
+technology = {
+	# Tech 56
+	year = 2342
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.35
+	}
+	#Matchlock Musket
+	infantry_shock = 0.04
+	cavalry_fire = 0.05
+	#USA - Cavalry
+	enable = 89chiro
+	
+
+	
+}
+	
+technology = {
+	# Tech 57
+	year = 2349
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+	}
+	#Spanish Square
+	supply_limit = 0.05
+	military_tactics = 0.10
+
+}
+
+technology = {
+	# Tech 58
+	year = 2356
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.15
+	}
+	#Trunnions
+	artillery_shock = 0.013
+	artillery_fire = 0.2
+	
+	
+				
+	enable = sioux_dragoon
+	enable = central_american_dragoon
+	
+	
+	enable = niger_kongolese_guerilla_warfare	
+	enable = adal_guerilla_warfare	
+	enable = ethiopian_guerilla_warfare
+	enable = indian_shock_cavalry	
+	
+	
+	enable = high_american_dragoon
+	
+	#Turkey - Infantry
+	#Public
+	enable = percussion_cap_musket
+	enable = ha_foreign_influenced_infantry
+
+}
+
+technology = {
+	# Tech 59
+	year = 2363
+	
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.15
+	}
+
+	infantry_fire = 0.06
+
+	#Public - Tank
+	enable = french_75
+
+	#USA - Cavalry
+	enable = churchill
+	enable = bhonsle_infantry	
+	
+	
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 60
+	year = 2370
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.35
+	}
+	#Maurician Infantry
+	land_morale	= 0.15
+	military_tactics = 0.10
+
+	
+	
+	enable = westernized_zapotec	
+	enable = westernized_incan	
+
+	#Public - Units
+	enable = steppe_rifles
+	enable = ha_reformed_influenced_infantry
+		
+}
+
+technology = {
+	# Tech 61
+	year = 2377
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+	}
+	#Standardisation of Calibre
+	artillery_shock = 0.013
+	artillery_fire = 0.2	
+
+	
+	enable = sikh_rifle
+	enable = bhonsle_cavalry
+	enable = steppe_uhlans
+
+	#Public - Infantry
+	enable = ak47
+	enable = african_cuirassier
+}
+
+technology = {
+	# Tech 62
+	year = 2384
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+	}
+	cavalry_shock = 0.08
+	supply_limit = 0.05
+	cavalry_fire = 0.05
+	
+	#USA - Cavalry
+	enable = tiger
+	enable = steppe_mounted_raiders
+	
+	
+}
+
+technology = {
+	# Tech 63
+	year = 2391
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.35
+	}
+	maneuver_value = 0.25
+		
+	
+	
+	
+	
+	supply_limit = 0.05
+	#Public - Tank
+	enable = katyusha_rocket
+	enable = westernized_south_american	
+}
+
+technology = {
+	# Tech 64
+	year = 2398
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+	}
+	#Gustavian Infantry
+	military_tactics = 0.10
+
+}
+
+technology = {
+	# Tech 65
+	year = 2405
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+	}	
+	#Killing Grounds
+	
+	infantry_fire = 0.06
+
+}
+
+technology = {
+	# Tech 66
+	year = 2412
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.15
+	}	
+	#Line Infantry
+	infantry_shock = 0.04
+
+	#Public - Infantry
+	enable = m16_rifle
+	enable = t38
+	enable = ha_xoloti
+}
+
+technology = {
+	# Tech 67
+	year = 2419
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.35
+	}	
+	#Cartridge	(1620)?)
+	cavalry_fire = 0.05
+	artillery_shock = 0.013
+	artillery_fire = 0.2
+
+	#Publc - Tank
+	enable = land_mattress
+	enable = south_american_dragoon
+		
+	
+}
+
+technology = {
+	# Tech 68
+	year = 2426
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+	}		
+	cavalry_shock = 0.08
+	cavalry_fire = 0.05
+	military_tactics = 0.10
+	maneuver_value = 0.25
+
+}
+
+technology = {
+	# Tech 69
+	year = 2433
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+	}	
+	
+	#Public - Cavalry
+	enable = m4_sherman
+	enable = tipu_sultan_rocket		
+
+	
+
+}
+
+technology = {
+	# Tech 70
+	year = 2440
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.20
+	}
+	
+	#Metallurgy
+	artillery_shock = 0.013
+	artillery_fire = 0.2
+
+
+
+	#Public - Infantry
+	enable = needle_gun
+	enable = westernized_adal
+	
+	
+		
+}
+
+technology = {
+	# Tech 71
+	year = 2447
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.35
+	}
+	land_morale	= 0.15
+
+	#USA - Cavalry
+	enable = carro_armato_p2640
+	enable = american_western_franchise_warfare	
+	enable = pzh_2000
+	enable = african_dragoon
+
+	enable = maharathan_guerilla_warfare
+	
+	
+}
+
+technology = {
+	# Tech 72
+	year = 2454
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+	}
+	#Bayonet
+	supply_limit = 0.05
+	infantry_fire = 0.06
+
+}
+
+technology = {
+	# Tech 73
+	year = 2461
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.15
+	}
+	#Cuirassier
+	maneuver_value = 0.25
+	infantry_shock = 0.04
+	military_tactics = 0.10
+
+}
+
+technology = {
+	# Tech 74
+	year = 2469
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.35
+	}
+
+	
+
+
+	#Public - Infantry
+	enable = chassepot_rifle
+	enable = westernized_bantu	
+	
+	
+	#PUblic - Cavalry
+	enable = m1_abrams
+	
+
+}
+
+technology = {
+	# Tech 75
+	year = 2476
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+	}
+	
+	military_tactics = 0.10
+	land_morale	= 0.15
+	maneuver_value = 0.25
+	
+	
+	#USA - Tank
+	enable = a2s19_msta
+
+}
+
+technology = {
+	# Tech 76
+	year = 2483
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+	}
+	#Rifle
+	cavalry_shock = 0.08
+	infantry_fire = 0.06
+	supply_limit = 0.05
+	
+	
+		
+	#Public - Infantry
+	enable = lever_action_rifle
+	enable = westernized_niger_kongolese
+	#Public - Cavalry
+	enable = leopard_2
+	enable = african_western_franchise_warfare
+
+	
+	
+}
+
+technology = {
+	# Tech 77
+	year = 2490
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.20
+	}
+	#Field Howitzer
+	artillery_shock = 0.013
+	artillery_fire = 0.2	
+	
+	
+
+	
+
+	
+}
+
+technology = {
+	# Tech 78
+	year = 2497
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.35
+	}
+	#Percussion Cap
+	infantry_fire = 0.06
+	land_morale	= 0.15
+	maneuver_value = 0.25
+}
+
+technology = {
+	# Tech 79
+	year = 2504
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+	}
+	maneuver_value = 0.25
+	#Breech-Loading Rifled Guns
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+	
+	
+	supply_limit = 0.05
+
+	
+		
+	#Public - Infantry
+	enable = bolt_action_rifle
+	enable = westernized_ethiopian	
+
+	enable = t64
+	enable = m270_mlrs
+
+	
+}
+
+technology = {
+	# Tech 80
+	year = 2511
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.1
+	}
+	#Chassepot
+	infantry_fire = 0.06
+	
+
+	
+}
+
+technology = {
+	# Tech 81
+	year = 2519
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.15
+	}
+	#Bolt Action
+	infantry_fire = 0.06
+	infantry_shock = 0.04
+	maneuver_value = 0.25
+	
+	#Public - Infantry
+	enable = land_warrior
+	enable = apache_guerilla
+
+	enable = type62
+	enable = westernized_mayan
+
+	
+	
+}
+
+technology = {
+	# Tech 82
+	year = 2526
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.35
+	}
+	#Artillery Recoil Mechanism
+	artillery_shock = 0.013
+	artillery_fire = 0.06
+
+
+	
+	
+}
+
+technology = {
+	# Tech 83
+	year = 2533
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+	}
+	military_tactics = 0.10
+	#Early Tanks
+	cavalry_shock = 0.08
+	cavalry_fire = 0.05
+	maneuver_value = 0.25
+	
+	
+	#Public - Cavalry
+	enable = type90
+	enable = reformed_westernized_incan		
+	
+
+
+	
+	supply_limit = 0.05
+}
+
+technology = {
+	# Tech 84
+	year = 2540
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.20
+	}
+	#Aerial Warfare
+	land_morale	= 0.15
+	
+	
+}
+
+technology = {
+	# Tech 85
+	year = 2547
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.35
+	}
+	#Gun Turret
+	cavalry_fire = 0.05
+	cavalry_shock = 0.08
+	
+	
+	#Public - Infantry
+	
+	enable = machine_gun_infantry
+	
+
+
+	enable = armata
+	enable = reformed_steppe_rifles
+
+	enable = ha_reformed_xoloti
+	
+	
+}
+
+technology = {
+	# Tech 86
+	year = 2554
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+	}
+	#Rocket Artillery
+	artillery_fire = 0.06
+	maneuver_value = 0.25
+
+	
+	
+}
+
+technology = {
+	# Tech 87
+	year = 2561
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.1
+	}
+	#Nuclear Bomb
+	land_morale	= 0.15
+	military_tactics = 0.10
+	
+	
+	
+}
+
+technology = {
+	# Tech 88
+	year = 2568
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.25
+	}
+	maneuver_value = 0.25
+	#Modern Assault Rifle
+	infantry_fire = 0.06
+	infantry_shock = 0.04
+	
+	
+	supply_limit = 0.05
+	
+}
+
+technology = {
+	# Tech 89
+	year = 2575
+
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+	}
+	#Main Battle Tanks
+	cavalry_fire = 0.05
+	cavalry_shock = 0.08
+	#Public - Cavalry
+	enable = m1a3_abrams
+}
+
+technology = {
+	# Tech 90
+	year = 2590
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+	}
+	maneuver_value = 0.25
+	#Missile Guidance System
+	cavalry_fire = 0.05
+	artillery_fire = 0.06
+	
+	enable = machine_gun
+	enable = indian_rifle
+
+}
+
+technology = {
+	# Tech 91
+	year = 2605
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+	}
+	#Exoskeletons
+	infantry_fire = 0.06
+	infantry_shock = 0.04
+	
+
+}
+
+technology = {
+	# Tech 92
+	year = 2620
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+	}
+	#Advanced Main Battle Tanks
+	cavalry_fire = 0.05
+	cavalry_shock = 0.08
+	
+	
+}
+
+technology = {
+	# Tech 93
+	year = 2635
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.25
+	}
+	#Future Military 2
+	land_morale	= 0.15
+}
+
+technology = {
+	# Tech 94
+	year = 2650
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+	}
+	military_tactics = 0.10
+	#Future Military 3
+	artillery_shock = 0.013
+	infantry_shock = 0.04
+	cavalry_shock = 0.08
+	
+	
+}
+
+technology = {
+	# Tech 95
+	year = 2665
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.1
+	}
+	#Future Military 4
+	supply_limit = 0.05
+	enable = westernized_aztec	
+}
+
+technology = {
+	# Tech 96
+	year = 2680
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.15
+	}
+	#Future Military 5
+	maneuver_value = 0.25
+	
+	
+}
+
+technology = {
+	# Tech 97
+	year = 2695
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.30
+	}
+	#Future Military 6
+	artillery_fire = 0.06
+	infantry_fire = 0.06
+	cavalry_fire = 0.05
+}
+
+technology = {
+	# Tech 98
+	year = 2710
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.5
+	}
+	military_tactics = 0.10
+	#Future Military 7
+	land_morale	= 0.15
+	
+}
+
+technology = {
+	# Tech 99
+	year = 2725
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.5
+	}
+	#Future Military 8
+	artillery_shock = 0.013
+	infantry_shock = 0.04
+	cavalry_shock = 0.08
+}

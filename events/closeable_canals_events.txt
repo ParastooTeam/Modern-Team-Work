@@ -1,0 +1,174 @@
+namespace = closeable_canals_events
+
+province_event = {
+	id = closeable_canals_events.1
+	title = closeable_canals_events.EVTNAME1
+	desc = {
+		trigger = {
+			province_id = 1775
+		}
+		desc = closeable_canals_events.EVTDESC1.1
+	}
+	desc = {
+		trigger = {
+			province_id = 4438
+		}
+		desc = closeable_canals_events.EVTDESC1.2
+	}
+	desc = {
+		trigger = {
+			province_id = 835
+		}
+		desc = closeable_canals_events.EVTDESC1.3
+	}
+	desc = {
+		trigger = {
+			province_id = 1971
+		}
+		desc = closeable_canals_events.EVTDESC1.4
+	}
+	picture = CITY_VIEW_ONE_eventPicture
+
+	goto = ROOT
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = closeable_canals_events1.EVTOPT1
+
+		#tooltip = {
+		#	if = {
+		#		limit = {
+		#			province_id = 1775
+		#		}
+		#		show_ambient_object = kiel_canal
+		#	
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 4438
+		#		}
+		#		show_ambient_object = suez_canal
+		#	
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 835
+		#		}
+		#		show_ambient_object = panama_canal
+		#	
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 1971
+		#		}
+		#		show_ambient_object = volga_canal
+		#	}
+		#}
+		
+	}
+
+	after = {
+		FROM = {
+			clr_country_flag = is_opening_a_canal
+		}
+	}
+}
+
+#######################################################################
+
+#######################################################################
+
+province_event = {
+	id = closeable_canals_events.2
+	title = closeable_canals_events.EVTNAME2
+	desc = {
+		trigger = {
+			province_id = 1775
+		}
+		desc = closeable_canals_events.EVTDESC2.1
+	}
+	desc = {
+		trigger = {
+			province_id = 4438
+		}
+		desc = closeable_canals_events.EVTDESC2.2
+	}
+	desc = {
+		trigger = {
+			province_id = 835
+		}
+		desc = closeable_canals_events.EVTDESC2.3
+	}
+	desc = {
+		trigger = {
+			province_id = 1971
+		}
+		desc = closeable_canals_events.EVTDESC2.4
+	}
+	picture = CITY_VIEW_eventPicture
+
+	goto = ROOT
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = closeable_canals_events2.EVTOPT1
+
+		#tooltip = {
+		#	if = {
+		#		limit = {
+		#			province_id = 1775
+		#		}
+		#		hide_ambient_object = kiel_canal
+		#		remove_canal = kiel_canal
+		#		destroy_great_project = {
+		#			type = kiel_canal
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 4438
+		#		}
+		#		hide_ambient_object = suez_canal
+		#		remove_canal = suez_canal
+		#		destroy_great_project = {
+		#			type = suez_canal
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 835
+		#		}
+		#		hide_ambient_object = panama_canal
+		#		remove_canal = panama_canal
+		#		destroy_great_project = {
+		#			type = panama_canal
+		#		}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			province_id = 1971
+		#		}
+		#		hide_ambient_object = volga_canal
+		#		remove_canal = volga_canal
+		#		destroy_great_project = {
+		#			type = volga_canal
+		#		}
+		#	}
+		#}
+		
+	}
+
+	after = {
+		FROM = {
+			clr_country_flag = is_closing_a_canal
+		}
+	}
+}
+
+###########################################################
+
+###########################################################

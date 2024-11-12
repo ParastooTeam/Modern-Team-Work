@@ -1,0 +1,298 @@
+# Do not change tags in here without changing every other reference to them.
+# Do not change tags in here without changing every other reference to them.
+# If adding new groups or ideas, make sure they are unique.
+
+HNN_ideas = {
+	start = {
+		land_morale = 0.15
+		cavalry_power = 0.2
+	}
+
+	bonus = {
+		land_maintenance_modifier = -0.25
+	}
+	
+	trigger = {
+		OR = {
+			tag = HNN
+		}
+	}
+	free = yes		#will be added at load.
+	
+	frontier_walls = {
+		cavalry_flanking = 0.5
+	}
+	road_network = {
+		movement_speed = 0.2
+		global_manpower_modifier = 0.2
+	}
+	roman_architecture = {
+		build_cost = -0.25
+	}
+	imperial_bureaucracy = {
+		land_attrition = -0.15
+	}
+	romanization = {
+		core_creation = -0.25
+	}
+	reform_the_legion = {
+		cavalry_shock = 0.1
+		#land_forcelimit_modifier = 0.35
+	}
+	legacy_of_rome = {
+		prestige = 2
+	}
+}
+
+AFE_ideas = {
+	start = {
+		#land_forcelimit_modifier = 0.20
+		manpower_recovery_speed = 0.25
+		land_attrition = -0.10
+	}
+	
+	bonus = {
+		global_tax_modifier = 0.5
+	}
+	
+	trigger = {
+		tag = AFE
+	}
+	free = yes		# will be added at load
+	
+	african_infantry_tradtions = {
+		infantry_power = 0.15
+	}
+	african_soilders = {
+		global_manpower_modifier = 0.2
+	}
+	african_church = {
+		tolerance_own = 2
+	}
+	african_cossacks = {
+		mercenary_cost = -0.25
+	}
+	african_ocean_trade = {
+		global_trade_power = 0.20
+	}
+	african_nationalism = {
+		land_morale = 0.1
+	}
+	african_rada = {
+		stability_cost_modifier = -0.1
+	}
+}
+
+TWN_ideas = {
+	start = {
+		#land_forcelimit_modifier = 0.20
+		morale_damage_received = -0.1
+		land_attrition = -0.10
+	}
+	
+	bonus = {
+		core_creation = -0.20
+	}
+	
+	trigger = {
+		OR = {
+			primary_culture = chimin
+			tag = FRM
+		}
+		
+	}
+	free = yes		# will be added at load
+	
+	taiwan_tradtions = {
+		idea_cost = -0.05
+		development_cost = -0.1
+	}
+	taiwan_rada = {
+		global_ship_cost = -0.0525
+	}
+	taiwan_soilders = {
+		global_manpower_modifier = 0.2
+	}
+	taiwan_production = {
+		production_efficiency = 0.15
+	}
+	taiwan_tech = {
+		technology_cost = -0.1
+	}
+	taiwan_trade = {
+		global_trade_power = 0.25
+	}
+	taiwan_nationalism = {
+		land_morale = 0.20
+	}
+	
+}
+
+SGA_ideas = {
+	start = {
+		#land_forcelimit_modifier = 0.20
+		morale_damage_received = -0.1
+		land_forcelimit_modifier = 0.1
+	}
+	
+	bonus = {
+		core_creation = -0.20
+	}
+	
+	trigger = {
+		tag = SGA
+	}
+	free = yes		# will be added at load
+
+	SGA_rada = {
+		global_trade_goods_size_modifier = 0.25
+	}
+	SGA_tradtions = {
+		idea_cost = -0.05
+		development_cost = -0.1
+	}
+	SGA_nationalism = {
+		land_morale = 0.20
+	}
+	SGA_soilders = {
+		global_manpower_modifier = 0.2
+	}
+	SGA_production = {
+		production_efficiency = 0.15
+	}
+	SGA_tech = {
+		technology_cost = -0.1
+	}
+	SGA_trade = {
+		global_trade_power = 0.25
+	}
+	
+}
+
+# This one is the first for the case that some country manages to become fully Norse.
+
+norse_ideas = {
+	start = {
+		land_morale = 0.15	
+		may_perform_slave_raid_on_same_religion = yes
+	}
+	
+	bonus = {
+		infantry_power = 0.15
+	}
+	
+	trigger = {
+		primary_culture = norse
+		religion = norse_pagan_reformed
+	}
+	free = yes
+	
+	norse_ideas_eternal_struggle = {
+		manpower_recovery_speed = 0.15
+		war_exhaustion = -0.03
+	}
+	norse_ideas_norse_seamen = {
+		naval_morale = 0.15		
+	}
+	norse_ideas_a_wall_of_shields_for_the_king = {
+		leader_land_shock = 1
+		leader_naval_shock = 1
+	}
+	norse_ideas_norse_artisans = {
+		development_cost = -0.1
+	}
+	norse_ideas_berserkir = {
+		discipline = 0.05	
+	}
+	norse_ideas_leifs_legacy = {
+		may_explore = yes
+		colonists = 1
+	}
+	norse_ideas_ancestral_faith = {
+		tolerance_own = 2
+	}
+}
+
+KUK_ideas = {
+	start = {
+		leader_land_manuever = 2
+		production_efficiency = 0.20
+		discipline = 0.08
+	}
+	trigger = {
+		tag = KUK
+	}
+	bonus = {
+		army_tradition = 0.8
+	}
+	free = yes
+	dual_monarchy = {
+		prestige = 3
+	}
+	multicultural_nation = {
+	  global_unrest = -1
+	}
+	large_empire = {
+	   core_creation = -0.25
+	}
+	two_armies = {
+	   land_morale = 0.1
+	}
+	hungarian_rights = {
+		global_unrest = -2
+	}
+	large_cities = {
+		global_own_trade_power = 0.30
+	}
+	austro_hungarian_army = {
+	   movement_speed = 0.12
+	   infantry_power = 0.15
+	}
+	former_leader_of_hre = {
+	   stability_cost_modifier = -0.20
+	}
+}
+
+NIG_ideas = {
+	start = {
+		production_efficiency = 0.1
+		infantry_power = 0.1
+	}
+
+	bonus = {
+		land_maintenance_modifier = -0.125
+	}
+	
+	trigger = {
+		OR = {
+			tag = NIG
+		}
+	}
+	free = yes		#will be added at load.
+	
+	frontier_walls = {
+		manpower_recovery_speed = 0.2
+	}
+	road_network = {
+		movement_speed = 0.1
+		global_manpower_modifier = 0.2
+	}
+	roman_architecture = {
+		build_cost = -0.25
+	}
+	imperial_bureaucracy = {
+		fire_damage = 0.1
+	}
+	romanization = {
+		core_creation = -0.25
+	}
+	reform_the_legion = {
+		cavalry_shock = 0.1
+		#land_forcelimit_modifier = 0.35
+	}
+	legacy_of_rome = {
+		land_morale = 0.1
+	}
+}
+	
+	

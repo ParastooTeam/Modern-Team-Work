@@ -1,0 +1,210 @@
+﻿l_english:
+
+ initiate_nuclear_research:0 "Start Nuclear Research"
+ initiate_nuclear_research:0 "Full Nuclear Research"
+ initiate_nuclear_research_title:0 "Start Nuclear Research"
+ initiate_nuclear_research_desc:0 "Try not to start this research as it will cause a world war III"
+ 
+ 
+ nuclear_10_research:0 "Uranium enrichment up to §R10%§!"
+ nuclear_10_research_title:0 "Uranium enrichment up to §R10%§!"
+ nuclear_10_research_desc:0 "Increase uranium enrichment to 10% and grow your peaceful research"
+ 
+ nuclear_20_research:0 "Uranium enrichment up to §R20%§!"
+ nuclear_20_research_title:0 "Uranium enrichment up to §R20%§!"
+ nuclear_20_research_desc:0 "Increase uranium enrichment to 20% and grow your peaceful research"
+ 
+ nuclear_40_research:0 "Uranium enrichment up to §R40%§!"
+ nuclear_40_research_title:0 "Uranium enrichment up to §R40%§!"
+ nuclear_40_research_desc:0 "Increase uranium enrichment to 40% and grow your peaceful research :)"
+ 
+ nuclear_75_research:0 "Uranium enrichment up to §R75%§!"
+ nuclear_75_research_title:0 "Uranium enrichment up to §R75%§!"
+ nuclear_75_research_desc:0 "Increase uranium enrichment to 75% and grow your peaceful research :)"
+ 
+ nuclear_90_research:0 "Uranium enrichment up to §R90%§!"
+ nuclear_90_research_title:0 "Uranium enrichment up to §R90%§!"
+ nuclear_90_research_desc:0 "Increase uranium enrichment to 90% and grow your peaceful research :)"
+ 
+ num_of_nuclear_weapons:0 "Number of Nuclear Weapons"
+ use_nuke_title:0 "Atomic Attack £atomic_bomb_icon£"
+ use_nuke_tooltip:0 "Use an Atomic Bomb to cause great devastation to a single enemy province as well as increase their war exhaustion. \nWe can launch atomic bomb with §Y500km§! missile from an Aircraft Carrier £big_ship_icon£"
+ use_nuke_desc:0 "By using nuclear weapons we can cause great devastation to a single enemy province as well as increase their war exhaustion making them more willing to accept peace. However, it will also make them much more willing to use their nukes on us, if they have any, so we should be careful when trying to nuke another nuclear power. \n\nWe can launch atomic bomb with §Y500km§! missile from an Aircraft Carrier £big_ship_icon£ \n\nThis action will not lunch the nuke straight away, but you will get to choose the target province first. \nIn order to know the range of your missiles and understand how far you can target with missiles, click on the question mark £aa_question_icon£ of building missiles in the decision section to show you the range of each missile on the map. \nWe have (§G[Root.num_of_nuclear_weapons.GetValue]§!) §YAtomic bombs§! \nWe have (§G[Root.missil_50.GetValue]§!) missiles with a range of §Y500 km§! \nWe have (§G[Root.missil_100.GetValue]§!) missiles with a range of §Y1000 km§! \nWe have (§G[Root.missil_150.GetValue]§!) missiles with a range of §Y1500 km§! \nWe have (§G[Root.missil_250.GetValue]§!) missiles with a range of §Y2500 km§! \nWe have (§G[Root.missil_350.GetValue]§!) missiles with a range of §Y3500 km§!  \nWe have (§G[Root.missil_500.GetValue]§!) missiles with a range of §Y5000 km§!  \nWe have (§G[Root.missil_700.GetValue]§!) missiles with a range of §Y7000 km§! \nWe have (§G[Root.missil_1000.GetValue]§!) missiles with a range of §Y10.000 km§! \nWe have (§G[Root.missil_1500.GetValue]§!) missiles with a range of §Y15.000 km§!"
+
+
+ #########################################################################
+
+
+
+
+
+
+
+
+ nuclear.1title:0 "Start Nuclear Research"
+ nuclear.1opt:0 "It's Great"
+ nuclear.1desc:0 "My $MONARCHTITLE$, We Start Nuclear Research. \nAnd we hope that this research will come to fruition."
+ 
+ nuclear.2title:0 "§R[From.Owner.GetName]§! Started Nuclear Research"
+ nuclear.2desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! have begun nuclear research. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ nuclear.2opt:0 "This Is Very Dangerous"
+ 
+ nuclear.3title:0 "Uranium enrichment up to §R10%§!"
+ nuclear.3desc:0 "My $MONARCHTITLE$, Uranium enrichment up to §R10%§!."
+
+ 
+ nuclear.4title:0 "§R[From.Owner.GetName]§! Uranium enrichment up to §R10%§!"
+ nuclear.4desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! increased uranium enrichment to §R10%§!. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ 
+ nuclear.5title:0 "Uranium enrichment up to §R20%§!"
+ nuclear.5desc:0 "My $MONARCHTITLE$, Uranium enrichment up to §R20%§!."
+
+ 
+ nuclear.6title:0 "§R[From.Owner.GetName]§! Uranium enrichment up to §R20%§!"
+ nuclear.6desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! increased uranium enrichment to §R20%§!. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ 
+ nuclear.7title:0 "Uranium enrichment up to §R40%§!"
+ nuclear.7desc:0 "My $MONARCHTITLE$, Uranium enrichment up to §R40%§!."
+
+ 
+ nuclear.8title:0 "§R[From.Owner.GetName]§! Uranium enrichment up to §R40%§!"
+ nuclear.8desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! increased uranium enrichment to §R40%§!. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ 
+ nuclear.9title:0 "Uranium enrichment up to §R75%§!"
+ nuclear.9desc:0 "My $MONARCHTITLE$, Uranium enrichment up to §R75%§!."
+
+ 
+ nuclear.10title:0 "§R[From.Owner.GetName]§! Uranium enrichment up to §R75%§!"
+ nuclear.10desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! increased uranium enrichment to §R75%§!. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ 
+ nuclear.11title:0 "Uranium enrichment up to §R90%§!"
+ nuclear.11desc:0 "My $MONARCHTITLE$, Uranium enrichment up to §R90%§!."
+
+ 
+ nuclear.12title:0 "§R[From.Owner.GetName]§! Uranium enrichment up to §R90%§!"
+ nuclear.12desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! increased uranium enrichment to §R90%§!. \nWe either have to stop them \nor \nwe have to start nuclear research to defend ourselves."
+ 
+ nuclear.13title:0 "Mass` production of Atomic Bombs"
+ nuclear.13desc:0 "My $MONARCHTITLE$, Now we have §G**[Root.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§! "
+
+ 
+ nuclear.14title:0 "§R[From.Owner.GetName]§! We made our §G**[Root.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§!"
+ nuclear.14desc:0 "My $MONARCHTITLE$,We made our own §G**[Root.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§! and now the world must be afraid of us."
+ 
+ 
+ nuclear.14title:0 "§R[From.Owner.GetName]§! They dropped an §RAtomic Bomb§! on our city"
+ nuclear.14desc:0 "My $MONARCHTITLE$,§R[From.Owner.GetName]§! dropped an §RAtomic Bomb§! on our city ."
+ nuclear.3opt:0 "Worst Possible"
+ 
+ nuclear.15title:0 "§G[From.Owner.GetName]§! built its first §RAtomic Bomb§!"
+ nuclear.15desc:0 "My $MONARCHTITLE$, We should have worked before they acquired the nuclear weapon. It is too late now, but we can still negotiate \n §G[From.Owner.GetName]§! has now built its first §RAtomic Bomb§!, and this is very harmful to our people."
+ nuclear.4opt:0 "Everyone should know"
+ 
+ nuclear.16title:0 "§G[From.Owner.GetName]§! is building a nuclear arsenal...!"
+ nuclear.16desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! now have §T**[From.Owner.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§! "
+ 
+ nuclear_research_modifire:0 "Initiate nuclear research"
+ research_nuclear_10_modifire:0 "10% uranium enrichment"
+ research_nuclear_20_modifire:0 "20% uranium enrichment"
+ research_nuclear_40_modifire:0 "40% uranium enrichment"
+ research_nuclear_75_modifire:0 "75% uranium enrichment"
+ research_nuclear_90_modifire:0 "90% uranium enrichment"
+ 
+ beginning_nuclear_research:0 "Initiate nuclear research"
+ nuclear_research_10:0 "10% uranium enrichment"
+ nuclear_research_20:0 "20% uranium enrichment"
+ nuclear_research_40:0 "40% uranium enrichment"
+ nuclear_research_75:0 "75% uranium enrichment"
+ nuclear_research_90:0 "90% uranium enrichment"
+ 
+ desiction_hidrogen_x1:0 "Making hydrogen bombs first §YX1%§!"
+ desiction_hidrogen_x1_title:0 "Making hydrogen bombs first §YX1%§!"
+ desiction_hidrogen_x1_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+ desiction_hidrogen_x2:0 "Build Hydrogen bomb §YDouble§! power §YX2§!"
+ desiction_hidrogen_x2_title:0 "Build Hydrogen bomb §YDouble§! power §YX2§!"
+ desiction_hidrogen_x2_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+ desiction_hidrogen_x3:0 "Build Hydrogen bomb §YThree times§! power §YX3§!"
+ desiction_hidrogen_x3_title:0 "Build Hydrogen bomb §YThree times§! power §YX3§!"
+ desiction_hidrogen_x3_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+ desiction_hidrogen_x4:0 "Build Hydrogen bomb §YFour times§! power §YX4§!"
+ desiction_hidrogen_x4_title:0 "Build Hydrogen bomb §YFour times§! power §YX4§!"
+ desiction_hidrogen_x4_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+ desiction_hidrogen_x5:0 "Build Hydrogen bomb §YFive times§! power §YX5§!"
+ desiction_hidrogen_x5_title:0 "Build Hydrogen bomb §YFive§! times power §YX5§!"
+ desiction_hidrogen_x5_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+ desiction_hidrogen_x6:0 "Build Hydrogen bomb §YSix times§! power §YX6§!"
+ desiction_hidrogen_x6_title:0 "Build Hydrogen bomb §YSix times§! power §YX6§!"
+ desiction_hidrogen_x6_desc:0 "Hydrogen bombs have more destructive power than atomic bombs"
+ 
+
+ hidrogen.1title:0 "§G[From.Owner.GetName]§! built its first §RHydrogen bomb§!"
+ hidrogen.1desc:0 "My $MONARCHTITLE$, We made our first §RHydrogen bomb§."
+ hidrogen.1opt:0 "No one should understand what we are doing"
+ hidrogen.2opt:0 "Everyone should know"
+ hidrogen.3opt:0 "We have to deal with them"
+ hidrogen.4opt:0 "Thanks God"
+ 
+ hidrogen.2title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.2desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested its first §RHydrogen bomb§!"
+ 
+ hidrogen.3title:0 "§G[From.Owner.GetName]§! built §RHydrogen bomb§!"
+ hidrogen.3desc:0 "My $MONARCHTITLE$, We tested a double-power or §RX2§! §RHydrogen bomb§!"
+ 
+ hidrogen.4title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.4desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested a double-power or §RX2§! §RHydrogen bomb§!"
+ 
+ hidrogen.5title:0 "§G[From.Owner.GetName]§! built §RHydrogen bomb§!"
+ hidrogen.5desc:0 "My $MONARCHTITLE$, We tested a triple-power or §RX3§! §RHydrogen bomb§!"
+ 
+ hidrogen.6title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.6desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested a triple-power or §RX3§! §RHydrogen bomb§!"
+ 
+ hidrogen.7title:0 "§G[From.Owner.GetName]§! built §RHydrogen bomb§!"
+ hidrogen.7desc:0 "My $MONARCHTITLE$, We tested a quadruple-power or §RX4§! §RHydrogen bomb§!"
+ 
+ hidrogen.8title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.8desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested a quadruple-power or §RX4§! §RHydrogen bomb§!"
+ 
+ hidrogen.9title:0 "§G[From.Owner.GetName]§! built §RHydrogen bomb§!"
+ hidrogen.9desc:0 "My $MONARCHTITLE$, We tested a five-fold-power or §RX5§! §RHydrogen bomb§!"
+ 
+ hidrogen.10title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.10desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested a five-fold-power or §RX5§! §RHydrogen bomb§!"
+ 
+ hidrogen.11title:0 "§G[From.Owner.GetName]§! built §RHydrogen bomb§!"
+ hidrogen.11desc:0 "My $MONARCHTITLE$, We tested a six-fold-power or §RX6§! §RHydrogen bomb§!"
+ 
+ hidrogen.12title:0 "§G[From.Owner.GetName]§! Built §RHydrogen bomb§!"
+ hidrogen.12desc:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§!tested a six-fold-power or §RX6§! §RHydrogen bomb§!"
+ 
+ hidrogen.13title:0 "§G[From.Owner.GetName]§! Stopooooped §RHydrogen bomb§!"
+ hidrogen.13desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Destroyed all §R[From.From.Owner.GetName]§!'s §RHydrogen research centers§!"
+ 
+ non_hidrogen_modifire_all:0 "Not allowed for hydrogen research"
+ 
+ hidrogen_x1:0 "Hydrogen Bomb X1"
+ hidrogen_x2:0 "Hydrogen Bomb X2"
+ hidrogen_x3:0 "Hydrogen Bomb X3"
+ hidrogen_x4:0 "Hydrogen Bomb X4"
+ hidrogen_x5:0 "Hydrogen Bomb X5"
+ hidrogen_x6:0 "Hydrogen Bomb X6"
+
+ atomed:0 "Nuclear attack Cooldown"
+ atomed_1:0 "Our city was hit by an atomic bomb"
+ atomed_desc:0 "The inability to launch atomic bombs due to the lack of missile attack technology"
+ atomed_root:0 "The inability to launch atomic bombs due to the lack of missile attack technology"
+ not_has_sign_pact_10:0 "We do not have a 10-year non-aggression pact with §Y[From.Owner.GetName]§!"
+ not_has_sign_pact_5:0 "We do not have a 5-year non-aggression pact with §Y[From.Owner.GetName]§!"
+ not_has_truce:0 "We do not have a peace treaty with §Y[From.Owner.GetName]§!"
+
+
+ ###############################################################################################################
+
+
+ NEED_CORE_TO_COLONIZE:0 "§OOnly the countries that previously owned it can occupy it§!"
+ NEED_ATOMED_TO_COLONIZE:0 "§OOnly the countries that previously controled it can occupy it§!"

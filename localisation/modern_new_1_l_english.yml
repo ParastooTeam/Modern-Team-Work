@@ -1,0 +1,212 @@
+﻿l_english:
+ support_fire_55:0 "Support Fire +10% £modern_fire£"
+ support_fire_55_desc:0 "We have an Arms Company and we can support the §YFire§! of §Y[From.Owner.GetName]§! \n§O[From.Owner.GetName]§! £modern_fire£ §YFire Damage§! : §G+10%§! \n§O[From.Owner.GetName]§! £modern_fire_recived£ §YFire Damage Received§! : §G-10%§!"
+ support_fire_55_title:0 "Support Fire +10% £modern_fire£"
+ support_fire_55_dialog:0 "They want to support the §YFire§! of our country"
+ support_fire_55_tooltip:0 "§ONote§! that with this option, only the §YFire§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_naval_limit_55:0 "Naval Limit +20%"
+ support_naval_limit_55_desc:0 "We have a Naval-Arms Company and we can increase the §YNaval Force Limit§! of the §Y[From.Owner.GetName]§! Navy by 10% \n§O[From.Owner.GetName]§! £naval_limit£ §YNaval Force Limit Modifier§! : §G+20%§!"
+ support_naval_limit_55_title:0 "Naval Limit +20% £naval_limit£"
+ support_naval_limit_55_dialog:0 "They want to support the §YNaval Force Limit§! of our country"
+ support_naval_limit_55_tooltip:0 "§ONote§! that with this option, only the §YNaval Force Limit§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_maintance_5:0 "Support Defenssive 20%"
+ support_maintance_5_desc:0 "We have an Arms Company and We can use tricks to Support Defenssive §Y[From.Owner.GetName]§! cities  \n\n§O[From.Owner.GetName]§! \n£army_maitance1£ §YFort Defense§! : §G+20%§! \n£army_garrison£ Garrison Size : §G+10%§!"
+ support_maintance_5_title:0 "Support Defense +20% £army_maitance1£"
+ support_maintance_5_dialog:0 "They want to support the §YDefenssive§! of our country"
+ support_maintance_5_tooltip:0 "§ONote§! that with this option, only the §YDefenssive§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_moral_navy_55:0 "S-Morale Navy +10% £modern_naval_morale£"
+ support_moral_navy_55_desc:0 "We have a Naval-Arms Company and we can increase the morale of the §Y[From.Owner.GetName]§! Navy by 10% \n§O[From.Owner.GetName]§! £modern_naval_morale£ §YMorale of Navies§! : §G+10%§!"
+ support_moral_navy_55_title:0 "S-Morale Navy +10% £modern_naval_morale£"
+ support_moral_navy_55_tooltip:0 "§ONote§! that with this option, only the §YMorale of Navies§! of §Y[From.Owner.GetName]§! will increase"
+ support_moral_navy_55_dialog:0 "They want to support the §YMorale of Navies§! of our country"
+ 
+ support_shok_55:0 "Support Shock +10%"
+ support_shok_55_desc:0 "We have an Arms Company and we can support the §YShock§! of §Y[From.Owner.GetName]§! \n§O[From.Owner.GetName]§! £modern_shock£ §YShock Damage§! : §G+10%§! \n§O[From.Owner.GetName]§! £modern_shock_recived£ §YShock Damage Received§! : §G-10%§!"
+ support_shok_55_title:0 "Support Shock +10% £modern_shock£"
+ support_shok_55_dialog:0 "They want to support the §YShock§! of our country"
+ support_shok_55_tooltip:0 "§ONote§! that with this option, only the §YShock§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_speed_55:0 "Support Speed +10%"
+ support_speed_55_desc:0 "We have an Arms Company and we can support the §YMovement Speed§! of §Y[From.Owner.GetName]§! \n§O[From.Owner.GetName]§! £speed_move£ §YMovement Speed§! : §G+10%§!"
+ support_speed_55_title:0 "Support Speed +10% £speed_move£"
+ support_speed_55_dialog:0 "They want to support the §YMovement Speed§! of our country"
+ support_speed_55_tooltip:0 "§ONote§! that with this option, only the §YMovement Speed§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_limit_55:0 "S-Army Limit +7.5%"
+ support_limit_55_desc:0 "We have an Arms Company and We can increase the Limit of §Y[From.Owner.GetName]§! forces \n§O[From.Owner.GetName]§! £land_limit£ §YLand Force Limit Modifier§! : §G+7.5%§!"
+ support_limit_55_title:0 "S-Army Limit +7.5% £land_limit£"
+ support_limit_55_dialog:0 "They want to support the §YLand Force Limit§! of our country"
+ support_limit_55_tooltip:0 "§ONote§! that with this option, only the §YLand Force Limit§! of §Y[From.Owner.GetName]§! will increase"
+
+ support_discipline_5:0 "Support Discipline +5% £modern_disciplie£"
+ support_discipline_5_desc:0 "We have an Arms Company and We can increase the §YDiscipline§! of §Y[From.Owner.GetName]§! forces \n§O[From.Owner.GetName]§! £modern_disciplie£ §YDiscipline§! : §G+5%§!"
+ support_discipline_5_title:0 "Support Discipline +5% £modern_disciplie£"
+ support_discipline_5_dialog:0 "They want to support the §YDiscipline§! of our country"
+ support_discipline_5_tooltip:0 "§ONote§! that with this option, only the §YDiscipline§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ support_moral_5:0 "Support Morale 10% "
+ support_moral_5_desc:0 "We have an Arms Company and We can increase the §YLand Morale§! of §Y[From.Owner.GetName]§! forces \n§O[From.Owner.GetName]§! £modern_morale£ §YLand Morale§! : §G+10%§!"
+ support_moral_5_title:0 "Support Morale 10% £modern_morale£"
+ support_moral_5_dialog:0 "They want to support the §YLand Morale§! of our country"
+ support_moral_5_tooltip:0 "§ONote§! that with this option, only the §YLand Morale§! of §Y[From.Owner.GetName]§! will increase"
+
+ support_moral_damage_5:0 "S-Morale Damage 10% "
+ support_moral_damage_5_desc:0 "We have an Arms Company and We can increase the §YMorale Damage§! of §Y[From.Owner.GetName]§! forces \n§O[From.Owner.GetName]§! £morale_damage_modern£ §YMorale Damage§! : §G+10%§! \n§O[From.Owner.GetName]§! £morale_damage_recivedmodern£ §YMorale Damage Received§! : §G-10%§!"
+ support_moral_damage_5_title:0 "S-Morale Damage 10% £morale_damage_modern£"
+ support_moral_damage_5_dialog:0 "They want to support the §YMorale Damage§! of our country"
+ support_moral_damage_5_tooltip:0 "§ONote§! that with this option, only the §YMorale Damage§! of §Y[From.Owner.GetName]§! will increase"
+ 
+ 
+ support_main_5:0 "Supported Defensive"
+ support_main_5_1:0 "Supported Defensive"
+ 
+ support_shok_5_1:0 "Support Shock 10%"
+ support_shok_5:0 "Supported Shock 10%"
+ 
+ support_fire_5_1:0 "Supported Fire 10%"
+ support_fire_5:0 "Supported Fire 10%"
+ 
+ support_moral_navy_5_1:0 "Supported Naval Morale +10%"
+ support_moral_navy_5:0 "Supported Morale +10%"
+
+ 
+ support_limit_5_1:0 "Army Limit +7.5%"
+ support_limit_5:0 "Army Limit +7.5%"
+ 
+ support_naval_limit_5_1:0 "Naval Limit +20%"
+ support_naval_limit_5:0 "Naval Limit +20%"
+ 
+ support_speed_5_1:0 "Supported Speed +20%"
+ support_speed_5:0 "Supported Speed +20%"
+ 
+ 
+ western_desc:0 "With the Modern technology group, technology levels are standard cost (100%)."
+ western:0 "Modern"
+ eastern_rus_desc:0 "With the Russian technology group, technology levels are 20% more expensive (120%)."
+ eastern_rus:0 "Russian"
+ ottoman_desc:0 "With the Turkish technology group, technology levels are 25% more expensive (125%)."
+ ottoman:0 "Turkish"
+ chinese_desc:0 "With the Chinse technology group, technology levels are 60% more expensive (160%)."
+ chinese:0 "Chinese"
+ 
+ feudalism_date:0 "2150"
+ renaissance_date:0 "2160"
+ new_world_i_date:0 "2170"
+ printing_press_date:0 "2180"
+ global_trade_date:0 "2190"
+ manufactories_date:0 "2200"
+ enlightenment_date:0 "2210"
+ imperialism_date:0 "2220"
+ industrialization_date:0 "2230"
+ 
+ 
+ teryak_bad:0 "Opium Distribution In Country"
+ teryak_bad_title:0 "Opium Distribution In Country"
+ 
+ djiboti:0 "Strait of Aden"
+ russian_canal:0 "Volga Canal"
+ singapor:0 "Singapore"
+ gibraltar:0 "Gibraltar"
+ suez_canal:0 "Suez Canal"
+ lubek_canal:0 "Lubeck Canal"
+ panama_canal:0 "Panama Canal"
+ Hurmuz:0 "Strait of Hurmuz"
+ france_help:0 "Help France"
+ germany_help:0 "Help Germany"
+ all_3_500:0 "All Country in 3 - 500 Dev"
+ all_500_1000:0 "All Country in 500 - 1000 Dev"
+ all_1000_2000:0 "All Country in 1000 - 2000 Dev"
+ all_3_250:0 "All Country in 3 - 250 Dev"
+ all_250_500:0 "All Country in 250 - 500 Dev"
+ marmara:0 "Sea of Marmara"
+ meditarane:0 "Mediterranean sea"
+ african_balance:0 "Help Africa"
+ north_korea:0 "North Korea Balance"
+ religion_humanist_ai:0 "Irreligious Balance AI"
+
+ 
+ all_player_2:0 "For All Player to Balance."
+
+ china_military:0 "The Militarization of China AI"
+ china_military_desc:0 "The militarization of China AI"
+ Iranian_ai:0 "Iran ai"
+ arab_empire_ai:0 "Arabian Empire ai"
+ arab_ai:0 "Arabian nation ai"
+ 
+ 
+ buy_speed_55:0 "Buy Speed +10%"
+ buy_speed_55_desc:0 "Because they have a Arms Company we can increase the §YMovement Speed§! of our army by +10%, or in other words buy from them. \n£speed_move£§YMovement Speed§! : §G+10%§!"
+ buy_speed_55_title:0 "Buy Speed +10% £speed_move£"
+ buy_speed_55_dialog:0 "They want to buy +10% Speed from us"
+ buy_speed_55_tooltip:0 "§ONote§! that with this option, only the §YMovement Speed§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+ 
+ buy_fire_55:0 "Buy Fire +10%"
+ buy_fire_55_desc:0 "Because they have a Arms Company we can increase the §YFire§! of our army by +10%, or in other words buy from them. \n£modern_fire£§YFire Damage§! : §G+10%§! \n£modern_fire_recived£ §YFire Damage Received§! : §G-10%§!"
+ buy_fire_55_title:0 "Buy Fire +10% £modern_fire£"
+ buy_fire_55_dialog:0 "They want to buy +10% Fire from us"
+ buy_fire_55_tooltip:0 "§ONote§! that with this option, only the §YFire§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+
+ buy_morale_5:0 "Buy Morale +10% £modern_morale£"
+ buy_morale_5_title:0 "Buy Morale +10% £modern_morale£"
+ buy_morale_5_desc:0 "Because they have a Arms Company we can increase the §YMorale§! of our army by +10%, or in other words buy from them. \n£modern_morale£§YMorale of Army§! : §G+10%§!"
+ buy_morale_5_tooltip:0 "§ONote§! that with this option, only the §YMorale§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+ buy_morale_5_dialog:0 "They want to buy +10% Morale from us"
+ WANTS_BUY_MORALE:0 "They want to buy +10% Morale from us"
+ buy_morale0_5_1:0 "Buy Morale"
+ buy_morale0_5:0 "Buy Morale"
+
+ buy_morale_damage_5:0 "Buy Morale Damage"
+ buy_morale_damage_5_1:0 "Buy Morale Damage"
+ buy_morale_dameage_5:0 "Buy Morale Damage"
+ buy_morale_dameage_5_title:0 "Buy Morale Damage £morale_damage_modern£"
+ buy_morale_dameage_5_desc:0 "Because they have a Arms Company we can increase the §YMorale Damage§! of our army by +10%, or in other words buy from them. \n£morale_damage_modern£ §YMorale Damage§! : §G+10%§! \n£morale_damage_recivedmodern£ §YMorale Damage Received§! : §G-10%§!"
+ buy_morale_dameage_5_dialog:0 "They want to buy +10% §YMorale Damage§! from us"
+ buy_morale_dameage_5_tooltip:0 "§ONote§! that with this option, only the §YMorale Damage§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+ 
+ buy_shok_55:0 "Buy Shock +10%"
+ buy_shok_55_desc:0 "Because they have a Arms Company we can increase the §YShock§! of our army by +10%, or in other words buy from them. \n£modern_shock£§YShock Damage§! : §G+10%§! \n£modern_shock_recived£ §YShock Damage Received§! : §G-10%§!"
+ buy_shok_55_title:0 "Buy Shock +10% £modern_shock£"
+ buy_shok_55_dialog:0 "They want to buy +10% Shock from us"
+ buy_shok_55_tooltip:0 "§ONote§! that with this option, only the §YShock§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+ 
+ buy_discipline_5:0 "Buy Discipline +5%"
+ buy_discipline_5_desc:0 "Because they have a Arms Company we can increase the §YDiscipline§! of our army by +5%, or in other words buy from them. \n£modern_disciplie£§YDiscipline§! : §G+5%§!"
+ buy_discipline_5_title:0 "Buy Discipline +5% £modern_disciplie£"
+ buy_discipline_5_dialog:0 "They want to buy +5% discipline from us"
+ buy_discipline_5_tooltip:0 "§ONote§! that with this option, only the §YDiscipline§! of our country will increase, that is, §Y[Root.Owner.GetName]§!"
+ 
+ buy__dsc_5_1:0 "Buy Discipline +5%"
+ buy__dsc_5:0 "Buy Discipline +5%"
+ 
+ buy_shok_5_1:0 "Buy Shock +10%"
+ buy_shok_5:0 "Buy Shock +10%"
+ 
+ buy_fire_5_1:0 "Buy Fire +10%"
+ buy_fire_5:0 "Buy Fire +10%"
+ 
+ buy_speed_5_1:0 "Buy Speed +20%"
+ buy_speed_5:0 "Buy Speed +20%"
+
+
+ close_panama:0 "Request close §YPanama Canal§!"
+ close_panama_desc:0 "With this request, they close the §YPanama Canal§! for 5 years to international shipping and no country can pass through it, but we have to pay for it. \n§O[Root.Owner.GetName]§! : §R-5000§! £icon_gold_font_medium£ \n§O[Root.Owner.GetName]§! : §R-100§! £adm£"
+ close_panama_title:0 "Request close §YPanama Canal§!"
+ close_panama_dialog:0 "They want us to close the Panama Canal to international shipping \n§OWe§! get: §G-1§! Diplomatic Reputation"
+ close_panama_tooltip:0 "§ONote§! With this option, international ships cannot pass through the §YPanama Canal§!, and if this strategy is in your favor, this spending will be very practical."
+
+ close_suez:0 "Request close §YSuez Canal§!"
+ close_suez_desc:0 "With this request, they close the §YSuez Canal§! for 5 years to international shipping and no country can pass through it, but we have to pay for it. \n§O[Root.Owner.GetName]§! : §R-5000§! £icon_gold_font_medium£ \n§O[Root.Owner.GetName]§! : §R-100§! £adm£"
+ close_suez_title:0 "Request close §YSuez Canal§!"
+ close_suez_dialog:0 "They want us to close the Panama Canal to international shipping \n§OWe§! get: §G-1§! Diplomatic Reputation"
+ close_suez_tooltip:0 "§ONote§! With this option, international ships cannot pass through the §YSuez Canal§!, and if this strategy is in your favor, this spending will be very practical."
+
+ close_volga:0 "Request close §YVolga Canal§!"
+ close_volga_desc:0 "With this request, they close the §YVolga Canal§! for 5 years to international shipping and no country can pass through it, but we have to pay for it. \n§O[Root.Owner.GetName]§! : §R-5000§! £icon_gold_font_medium£ \n§O[Root.Owner.GetName]§! : §R-100§! £adm£"
+ close_volga_title:0 "Request close §YVolga Canal§!"
+ close_volga_dialog:0 "They want us to close the Panama Canal to international shipping \n§OWe§! get: §G-1§! Diplomatic Reputation"
+ close_volga_tooltip:0 "§ONote§! With this option, international ships cannot pass through the §YVolga Canal§!, and if this strategy is in your favor, this spending will be very practical."
+ 
+ 

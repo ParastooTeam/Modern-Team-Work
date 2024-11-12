@@ -1,0 +1,57 @@
+#Country Name: See the Name of this File.
+
+graphical_culture = westerngfx
+
+color = { 89  141  140 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+		
+}
+
+monarch_names = {
+	"Nizam ul-Mulk Asaf Jah #0" = 10
+	"Muhammad Nasr Jang #0" = 10
+	"Asaf ud-Daula Jang #0" = 10
+	"Nizam Ali Khan #0" = 10
+	"Sikandar Jah #0" = 10
+	"Quli #0" = 10
+	"Jamshid #0" = 10
+	"Subhan #0" = 10
+	"Ibrahim #0" = 10
+	"Muhammad #0" = 10
+	"'Abdullah #0" = 10
+	"Abu'l-Hassan #0" = 10
+}
+
+leader_names = {
+	Haveli
+	Jah
+	Devi
+	Raya
+	Rao
+	Shetty
+	Banwasi
+	Naidu
+	Krishna
+	"ul Umra"
+	Netravalli
+}
+
+ship_names = {
+	Alia Aurangabad Devki Fatimah
+	Godvari Gulbargah Jalsena "Kala Jahazi"
+	Khan "Lal Jahazi" Nausena "Nav ka Yudh"
+	Niknaz "Nila Jahazi" Niloufa Sagar
+	Salima Suhalia Shameena Yasmine
+}
+
+
+

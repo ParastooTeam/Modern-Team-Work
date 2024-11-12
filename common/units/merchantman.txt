@@ -1,0 +1,16 @@
+#Merchantman Transport Level 6
+type = transport
+
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+hull_size = 8
+base_cannons = 10
+sail_speed = 10
+#blockade = 5
+
+sprite_level = 1

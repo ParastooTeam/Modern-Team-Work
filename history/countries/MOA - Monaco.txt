@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = free_city
+
+government_rank = 1 
+
+capital = 3928
+primary_culture = cosmopolitan_french
+religion = catholic
+
+technology_group = western 
+2019.5.30 = {
+	monarch = {
+		name = "Napoléon III"
+		birth_date = 1808.4.20
+		dynasty = "Bonaparte"
+		adm = 2
+		dip = 0
+		mil = 2
+	}
+}

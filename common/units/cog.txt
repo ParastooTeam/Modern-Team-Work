@@ -1,0 +1,16 @@
+#Cog Transport Level 4
+type = transport
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+
+hull_size = 5
+base_cannons = 6
+sail_speed = 8
+#blockade = 5
+
+sprite_level = 4

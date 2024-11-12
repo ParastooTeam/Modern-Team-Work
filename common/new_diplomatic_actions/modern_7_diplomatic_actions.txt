@@ -1,0 +1,3756 @@
+
+#######################################################
+
+request_receve_institution = {
+	category = economy
+	require_acceptance = yes
+	alert_index = 42 
+	alert_tooltip = ICON_KNOWLEDGESHARE_TO_US
+	is_visible = { 
+		NOT = {
+			has_opinion_modifier = { 
+				modifier = share_instut  
+				who = FROM 
+			} 
+		}
+		NOT = {
+			has_opinion_modifier = { 
+				modifier = share_instut_cancel 
+				who = FROM 
+			} 
+		}
+	}
+	is_allowed = {
+		OR = {
+			NOT = { has_country_modifier = not_offer_share_tech }
+			FROM = { overlord_of = ROOT }
+		}
+		if = {
+			limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+			treasury = 250
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			treasury = 500
+		}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			treasury = 1000
+		}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+			treasury = 2000
+		}
+		if = {
+			limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+			treasury = 4000
+		}
+		if = {
+			limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+			treasury = 7000
+		}
+		if = {
+			limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+			treasury = 10000
+		}
+		if = {
+			limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+			treasury = 16000
+		}
+		custom_trigger_tooltip = {
+			tooltip = NEIGHBOTS_OF_US
+			OR = {
+				AND = {
+					FROM = {
+						is_neighbor_of = ROOT					
+					}
+				}
+				AND = {
+					NOT = {
+						FROM = {
+							is_neighbor_of = ROOT					
+						}
+					}
+					FROM = {
+						NOT = {	border_distance = { who = ROOT distance = 75 } }
+					}
+				}
+			}
+			
+		}
+		#custom_trigger_tooltip = {
+		#	tooltip = THEY_HAVE_ISTITUTATION
+		#	FROM = {
+		#		has_institution = legalism
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = legalism }
+		#		}
+		#		ROOT = { NOT = { has_institution = legalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = ancient_imperialism }
+		#		}
+		#		ROOT = { NOT = { has_institution = ancient_imperialism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = caste_system }
+		#		}
+		#		ROOT = { NOT = { has_institution = caste_system } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = organized_religion }
+		#		}
+		#		ROOT = { NOT = { has_institution = organized_religion } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = serfdom }
+		#		}
+		#		ROOT = { NOT = { has_institution = serfdom } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = manorialism }
+		#		}
+		#		ROOT = { NOT = { has_institution = manorialism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = early_feudalism }
+		#		}
+		#		ROOT = { NOT = { has_institution = early_feudalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = crop_rotation }
+		#		}
+		#		ROOT = { NOT = { has_institution = crop_rotation } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = civil_service }
+		#		}
+		#		ROOT = { NOT = { has_institution = civil_service } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = manuscripts }
+		#		}
+		#		ROOT = { NOT = { has_institution = manuscripts } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = scholasticism }
+		#		}
+		#		ROOT = { NOT = { has_institution = scholasticism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = guilds }
+		#		}
+		#		ROOT = { NOT = { has_institution = guilds } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = medicine }
+		#		}
+		#		ROOT = { NOT = { has_institution = medicine } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = feudalism }
+		#		}
+		#		ROOT = { NOT = { has_institution = feudalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = renaissance }
+		#		}
+		#		ROOT = { NOT = { has_institution = renaissance } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = new_world_i }
+		#		}
+		#		ROOT = { NOT = { has_institution = new_world_i } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = printing_press }
+		#		}
+		#		ROOT = { NOT = { has_institution = printing_press } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = global_trade }
+		#		}
+		#		
+		#		ROOT = { NOT = { has_institution = global_trade } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = manufactories }
+		#		}
+		#		ROOT = { NOT = { has_institution = manufactories } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = enlightenment }
+		#		}
+		#		ROOT = { NOT = { has_institution = enlightenment } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = imperialism }
+		#		}
+		#		ROOT = { NOT = { has_institution = imperialism } }
+		#	}#####
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = industrialization }
+		#		}
+		#		ROOT = { NOT = { has_institution = industrialization } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = nationalism_institution }
+		#		}
+		#		ROOT = { NOT = { has_institution = nationalism_institution } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = electrification }
+		#		}
+		#		ROOT = { NOT = { has_institution = electrification } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = globalization }
+		#		}
+		#		ROOT = { NOT = { has_institution = globalization } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			FROM = { has_institution = internet }
+		#		}
+		#		ROOT = { NOT = { has_institution = internet } }
+		#	}
+		#}
+		custom_trigger_tooltip = {
+			tooltip = THEY_HAVE_ISTITUTATION
+			OR = {
+				AND = {
+					FROM = { has_institution = legalism }
+					ROOT = { NOT = { has_institution = legalism } }
+				}
+				AND = {
+					FROM = { has_institution = ancient_imperialism }
+					ROOT = { NOT = { has_institution = ancient_imperialism } }
+				}
+				AND = {
+					FROM = { has_institution = caste_system }
+					ROOT = { NOT = { has_institution = caste_system } }
+				}
+				AND = {
+					FROM = { has_institution = organized_religion }
+					ROOT = { NOT = { has_institution = organized_religion } }
+				}
+				AND = {
+					FROM = { has_institution = serfdom }
+					ROOT = { NOT = { has_institution = serfdom } }
+				}
+				AND = {
+					FROM = { has_institution = manorialism }
+					ROOT = { NOT = { has_institution = manorialism } }
+				}
+				AND = {
+					FROM = { has_institution = early_feudalism }
+					ROOT = { NOT = { has_institution = early_feudalism } }
+				}
+				AND = {
+					FROM = { has_institution = crop_rotation }
+					ROOT = { NOT = { has_institution = crop_rotation } }
+				}
+				AND = {
+					FROM = { has_institution = civil_service }
+					ROOT = { NOT = { has_institution = civil_service } }
+				}
+				AND = {
+					FROM = { has_institution = manuscripts }
+					ROOT = { NOT = { has_institution = manuscripts } }
+				}
+				AND = {
+					FROM = { has_institution = scholasticism }
+					ROOT = { NOT = { has_institution = scholasticism } }
+				}
+				AND = {
+					FROM = { has_institution = guilds }
+					ROOT = { NOT = { has_institution = guilds } }
+				}
+				AND = {
+					FROM = { has_institution = medicine }
+					ROOT = { NOT = { has_institution = medicine } }
+				}
+				AND = {
+					FROM = { has_institution = feudalism }
+					ROOT = { NOT = { has_institution = feudalism } }
+				}
+				AND = {
+					FROM = { has_institution = renaissance }
+					ROOT = { NOT = { has_institution = renaissance } }
+				}
+				AND = {
+					FROM = { has_institution = new_world_i }
+					ROOT = { NOT = { has_institution = new_world_i } }
+				}
+				AND = {
+					FROM = { has_institution = printing_press }
+					ROOT = { NOT = { has_institution = printing_press } }
+				}
+				AND = {
+					FROM = { has_institution = global_trade }
+					ROOT = { NOT = { has_institution = global_trade } }
+				}
+				AND = {
+					FROM = { has_institution = manufactories }
+					ROOT = { NOT = { has_institution = manufactories } }
+				}
+				AND = {
+					FROM = { has_institution = enlightenment }
+					ROOT = { NOT = { has_institution = enlightenment } }
+				}
+				AND = {
+					FROM = { has_institution = imperialism }
+					ROOT = { NOT = { has_institution = imperialism } }
+				}#####
+				AND = {
+					FROM = { has_institution = industrialization }
+					ROOT = { NOT = { has_institution = industrialization } }
+				}
+				AND = {
+					FROM = { has_institution = nationalism_institution }
+					ROOT = { NOT = { has_institution = nationalism_institution } }
+				}
+				AND = {
+					FROM = { has_institution = electrification }
+					ROOT = { NOT = { has_institution = electrification } }
+				}
+				AND = {
+					FROM = { has_institution = globalization }
+					ROOT = { NOT = { has_institution = globalization } }
+				}
+				AND = {
+					FROM = { has_institution = internet }
+					ROOT = { NOT = { has_institution = internet } }
+				}
+			}
+		}
+		
+	}
+	on_accept = {
+		if = {
+			limit = {
+				FROM = { has_institution = legalism }
+				ROOT = { NOT = { has_institution = legalism } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_legalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = legalism }
+				ROOT = { NOT = { has_institution = legalism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_legalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = ancient_imperialism }
+				ROOT = { NOT = { has_institution = ancient_imperialism } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_ancient_imperialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = ancient_imperialism }
+				ROOT = { NOT = { has_institution = ancient_imperialism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_ancient_imperialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = caste_system }
+				ROOT = { NOT = { has_institution = caste_system } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_caste_system
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = caste_system }
+				ROOT = { NOT = { has_institution = caste_system } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_caste_system
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = organized_religion }
+				ROOT = { NOT = { has_institution = organized_religion } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_organized_religion
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = organized_religion }
+				ROOT = { NOT = { has_institution = organized_religion } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_organized_religion
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = serfdom }
+				ROOT = { NOT = { has_institution = serfdom } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_serfdom
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = serfdom }
+				ROOT = { NOT = { has_institution = serfdom } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_serfdom
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = manorialism }
+				ROOT = { NOT = { has_institution = manorialism } } 
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manorialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = manorialism }
+				ROOT = { NOT = { has_institution = manorialism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manorialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = early_feudalism }
+				ROOT = { NOT = { has_institution = early_feudalism } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_early_feudalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = early_feudalism }
+				ROOT = { NOT = { has_institution = early_feudalism } }
+				
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_early_feudalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = crop_rotation }
+				ROOT = { NOT = { has_institution = crop_rotation } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_crop_rotation
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = crop_rotation }
+				ROOT = { NOT = { has_institution = crop_rotation } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_crop_rotation
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = civil_service }
+				ROOT = { NOT = { has_institution = civil_service } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_civil_service
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = civil_service }
+				ROOT = { NOT = { has_institution = civil_service } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_civil_service
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = manuscripts }
+				ROOT = { NOT = { has_institution = manuscripts } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manuscripts
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = manuscripts }
+				ROOT = { NOT = { has_institution = manuscripts } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manuscripts
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = scholasticism }
+				ROOT = { NOT = { has_institution = scholasticism } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_scholasticism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = scholasticism }
+				ROOT = { NOT = { has_institution = scholasticism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_scholasticism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = guilds }
+				ROOT = { NOT = { has_institution = guilds } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_guilds
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = guilds }
+				ROOT = { NOT = { has_institution = guilds } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_guilds
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = medicine }
+				ROOT = { NOT = { has_institution = medicine } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_medicine
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = medicine }
+				ROOT = { NOT = { has_institution = medicine } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_medicine
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = feudalism }
+				ROOT = { NOT = { has_institution = feudalism } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_feudalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = feudalism }
+				ROOT = { NOT = { has_institution = feudalism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_feudalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = renaissance }
+				ROOT = { NOT = { has_institution = renaissance } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_renaissance
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = renaissance }
+				ROOT = { NOT = { has_institution = renaissance } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_renaissance
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = new_world_i }
+				ROOT = { NOT = { has_institution = new_world_i } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_new_world_i
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = new_world_i }
+				ROOT = { NOT = { has_institution = new_world_i } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_new_world_i
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = printing_press }
+				ROOT = { NOT = { has_institution = printing_press } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_printing_press
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = printing_press }
+				ROOT = { NOT = { has_institution = printing_press } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_printing_press
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = global_trade }
+				ROOT = { NOT = { has_institution = global_trade } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_global_trade
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = global_trade }
+				ROOT = { NOT = { has_institution = global_trade } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_global_trade
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = manufactories }
+				ROOT = { NOT = { has_institution = manufactories } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manufactories
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = manufactories }
+				ROOT = { NOT = { has_institution = manufactories } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manufactories
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = enlightenment }
+				ROOT = { NOT = { has_institution = enlightenment } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_enlightenment
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = enlightenment }
+				ROOT = { NOT = { has_institution = enlightenment } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_enlightenment
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = imperialism }
+				ROOT = { NOT = { has_institution = imperialism } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_imperialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = imperialism }
+				ROOT = { NOT = { has_institution = imperialism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_imperialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = industrialization }
+				ROOT = { NOT = { has_institution = industrialization } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_industrialization
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = industrialization }
+				ROOT = { NOT = { has_institution = industrialization } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_industrialization
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = nationalism_institution }
+				ROOT = { NOT = { has_institution = nationalism_institution } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_nationalism_institution
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = nationalism_institution }
+				ROOT = { NOT = { has_institution = nationalism_institution } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_nationalism_institution
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = electrification }
+				ROOT = { NOT = { has_institution = electrification } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_electrification
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = electrification }
+				ROOT = { NOT = { has_institution = electrification } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_electrification
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = globalization }
+				ROOT = { NOT = { has_institution = globalization } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_globalization
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = globalization }
+				ROOT = { NOT = { has_institution = globalization } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_globalization
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				FROM = { has_institution = internet }
+				ROOT = { NOT = { has_institution = internet } }
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = ROOT
+					any_neighbor_province = {
+						owned_by = FROM
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_internet
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = { has_institution = internet }
+				ROOT = { NOT = { has_institution = internet } }
+			}
+			every_province = {
+				limit = {
+					owned_by = ROOT
+					
+					any_province = {
+						owned_by = FROM
+						controlled_by = FROM					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_internet
+					duration = 3650
+				}		
+			}
+		}
+		FROM = { 
+			add_opinion = { who = ROOT  modifier = share_instut  }
+		}
+		ROOT = {
+			add_opinion = { who = FROM  modifier = share_instut  }
+		}
+		if = {
+			limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+			add_treasury = -250
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_treasury = -500
+		}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_treasury = -1000
+		}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+			add_treasury = -2000
+		}
+		if = {
+			limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+			add_treasury = -4000
+		}
+		if = {
+			limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+			add_treasury = -7000
+		}
+		if = {
+			limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+			add_treasury = -10000
+		}
+		if = {
+			limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+			add_treasury = -16000
+		}
+		FROM = {
+			if = {
+				limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 250
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = 500
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = 1000
+			}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = 2000
+			}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_treasury = 4000
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_treasury = 7000
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				add_treasury = 10000
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+				add_treasury = 16000
+			}
+		}
+	}
+	ai_acceptance = {
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+			#multiply_variable = { which = ai_value value = -1 }
+		}		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_150
+			limit = { FROM = { has_opinion = { who = ROOT value = 150 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_100
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_50
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+			name = ALLY_WITH
+			limit = { FROM = { alliance_with = ROOT } } 
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		}
+		add_entry = {
+			name = YOU_WANT_OUR_LAND
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 40
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = RIVAL_WITH
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = RIVAL_WITH
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = { 
+				FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					}
+				}				
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+	}
+	ai_will_do = {  
+		OR = {
+			AND = {
+			
+				FROM = { alliance_with = ROOT }
+			}
+			AND = {
+				
+				any_rival_country = {
+					 is_rival = FROM 
+				}
+			}
+			AND = {
+				
+				any_rival_country = {
+					is_neighbor_of = FROM 
+				}
+			}
+			AND = {
+			
+				any_rival_country = {
+					war_with = FROM 
+				}
+			}
+			AND = {
+				
+				FROM = { is_great_power = yes }
+			}
+		
+			AND = {
+				
+				FROM = {
+					is_neighbor_of = ROOT 
+				}
+			}
+			AND = {
+				
+				FROM = {
+					ai = yes
+					NOT = { is_rival = ROOT }
+				}
+			}	
+		}
+	}
+	
+}
+
+share_knolog = {
+	category = economy
+	require_acceptance = yes
+	alert_index = 42 
+	alert_tooltip = ICON_KNOWLEDGESHARE_TO_THEIR
+	is_visible = { 
+		NOT = {
+			has_opinion_modifier = { 
+				modifier = share_instut  
+				who = FROM 
+			} 
+		}
+		NOT = {
+			has_opinion_modifier = { 
+				modifier = share_instut_cancel 
+				who = FROM 
+			} 
+		}
+	}
+	is_allowed = {
+		OR = {
+			NOT = { has_country_modifier = not_offer_share_tech }
+			FROM = { overlord_of = ROOT }
+		}
+		FROM = {
+			if = {
+				limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+				treasury = 250
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				treasury = 500
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				treasury = 1000
+			}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				treasury = 2000
+			}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				treasury = 4000
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				treasury = 7000
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				treasury = 10000
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+				treasury = 16000
+			}
+		}
+		custom_trigger_tooltip = {
+			tooltip = NEIGHBOTS_OF_US
+			OR = {
+				AND = {
+					FROM = {
+						is_neighbor_of = ROOT					
+					}
+				}
+				AND = {
+					NOT = {
+						FROM = {
+							is_neighbor_of = ROOT					
+						}
+					}
+					FROM = {
+						NOT = {	border_distance = { who = ROOT distance = 75 } }
+					}
+				}
+			}
+			
+		}
+		#custom_trigger_tooltip = {
+		#	tooltip = WE_HAVE_INSTITUTATION
+		#	ROOT = { has_institution = legalism }
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = legalism }
+		#		}
+		#		FROM = { NOT = { has_institution = legalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = ancient_imperialism }
+		#		}
+		#		FROM = { NOT = { has_institution = ancient_imperialism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = caste_system }
+		#		}
+		#		FROM = { NOT = { has_institution = caste_system } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = organized_religion }
+		#		}
+		#		FROM = { NOT = { has_institution = organized_religion } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = serfdom }
+		#		}
+		#		FROM = { NOT = { has_institution = serfdom } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = manorialism }
+		#		}
+		#		FROM = { NOT = { has_institution = manorialism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = early_feudalism }
+		#		}
+		#		FROM = { NOT = { has_institution = early_feudalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = crop_rotation }
+		#		}
+		#		FROM = { NOT = { has_institution = crop_rotation } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = civil_service }
+		#		}
+		#		FROM = { NOT = { has_institution = civil_service } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = manuscripts }
+		#		}
+		#		FROM = { NOT = { has_institution = manuscripts } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = scholasticism }
+		#		}
+		#		FROM = { NOT = { has_institution = scholasticism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = guilds }
+		#		}
+		#		FROM = { NOT = { has_institution = guilds } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = medicine }
+		#		}
+		#		FROM = { NOT = { has_institution = medicine } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = feudalism }
+		#		}
+		#		FROM = { NOT = { has_institution = feudalism } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = renaissance }
+		#		}
+		#		FROM = { NOT = { has_institution = renaissance } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = new_world_i }
+		#		}
+		#		FROM = { NOT = { has_institution = new_world_i } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = printing_press }
+		#		}
+		#		FROM = { NOT = { has_institution = printing_press } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = global_trade }
+		#		}
+		#		
+		#		FROM = { NOT = { has_institution = global_trade } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = manufactories }
+		#		}
+		#		FROM = { NOT = { has_institution = manufactories } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = enlightenment }
+		#		}
+		#		FROM = { NOT = { has_institution = enlightenment } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = imperialism }
+		#		}
+		#		FROM = { NOT = { has_institution = imperialism } }
+		#	}#####
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = industrialization }
+		#		}
+		#		FROM = { NOT = { has_institution = industrialization } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = nationalism_institution }
+		#		}
+		#		FROM = { NOT = { has_institution = nationalism_institution } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = electrification }
+		#		}
+		#		FROM = { NOT = { has_institution = electrification } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = globalization }
+		#		}
+		#		FROM = { NOT = { has_institution = globalization } }
+		#	}
+		#	if = {
+		#		limit = {
+		#			ROOT = { has_institution = internet }
+		#		}
+		#		FROM = { NOT = { has_institution = internet } }
+		#	}
+		#}
+		custom_trigger_tooltip = {
+			tooltip = WE_HAVE_INSTITUTATION
+			OR = {
+				AND = {
+					has_institution = legalism
+					FROM = { NOT = { has_institution = legalism } }
+				}
+				AND = {
+					has_institution = ancient_imperialism
+					FROM = { NOT = { has_institution = ancient_imperialism } }
+				}
+				AND = {
+					has_institution = caste_system
+					FROM = { NOT = { has_institution = caste_system } }
+				}
+				AND = {
+					has_institution = organized_religion
+					FROM = { NOT = { has_institution = organized_religion } }
+				}
+				AND = {
+					has_institution = serfdom
+					FROM = { NOT = { has_institution = serfdom } }
+				}
+				AND = {
+					has_institution = manorialism
+					FROM = { NOT = { has_institution = manorialism } }
+				}
+				AND = {
+					has_institution = early_feudalism
+					FROM = { NOT = { has_institution = early_feudalism } }
+				}
+				AND = {
+					has_institution = crop_rotation
+					FROM = { NOT = { has_institution = crop_rotation } }
+				}
+				AND = {
+					has_institution = civil_service
+					FROM = { NOT = { has_institution = civil_service } }
+				}
+				AND = {
+					has_institution = manuscripts
+					FROM = { NOT = { has_institution = manuscripts } }
+				}
+				AND = {
+					has_institution = scholasticism
+					FROM = { NOT = { has_institution = scholasticism } }
+				}
+				AND = {
+					has_institution = guilds
+					FROM = { NOT = { has_institution = guilds } }
+				}
+				AND = {
+					has_institution = medicine
+					FROM = { NOT = { has_institution = medicine } }
+				}
+				AND = {
+					has_institution = feudalism
+					FROM = { NOT = { has_institution = feudalism } }
+				}
+				AND = {
+					has_institution = renaissance
+					FROM = { NOT = { has_institution = renaissance } }
+				}
+				AND = {
+					has_institution = new_world_i
+					FROM = { NOT = { has_institution = new_world_i } }
+				}
+				AND = {
+					has_institution = printing_press
+					FROM = { NOT = { has_institution = printing_press } }
+				}
+				AND = {
+					has_institution = global_trade
+					FROM = { NOT = { has_institution = global_trade } }
+				}
+				AND = {
+					has_institution = manufactories
+					FROM = { NOT = { has_institution = manufactories } }
+				}
+				AND = {
+					has_institution = enlightenment
+					FROM = { NOT = { has_institution = enlightenment } }
+				}
+				AND = {
+					has_institution = imperialism
+					FROM = { NOT = { has_institution = imperialism } }
+				}#####
+				AND = {
+					has_institution = industrialization
+					FROM = { NOT = { has_institution = industrialization } }
+				}
+				AND = {
+					has_institution = nationalism_institution
+					FROM = { NOT = { has_institution = nationalism_institution } }
+				}
+				AND = {
+					has_institution = electrification
+					FROM = { NOT = { has_institution = electrification } }
+				}
+				AND = {
+					has_institution = globalization
+					FROM = { NOT = { has_institution = globalization } }
+				}
+				AND = {
+					has_institution = internet
+					FROM = { NOT = { has_institution = internet } }
+				}
+			}
+		}
+		
+	}
+	on_accept = {
+		if = {
+			limit = {
+				ROOT = { has_institution = legalism }
+				FROM = { NOT = { has_institution = legalism } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_legalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = legalism }
+				FROM = { NOT = { has_institution = legalism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_legalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = ancient_imperialism }
+				FROM = { NOT = { has_institution = ancient_imperialism } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_ancient_imperialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = ancient_imperialism }
+				FROM = { NOT = { has_institution = ancient_imperialism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_ancient_imperialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = caste_system }
+				FROM = { NOT = { has_institution = caste_system } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_caste_system
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = caste_system }
+				FROM = { NOT = { has_institution = caste_system } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_caste_system
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = organized_religion }
+				FROM = { NOT = { has_institution = organized_religion } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_organized_religion
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = organized_religion }
+				FROM = { NOT = { has_institution = organized_religion } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				
+				}
+				add_province_modifier = {
+					name = have_access_knologe_organized_religion
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = serfdom }
+				FROM = { NOT = { has_institution = serfdom } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_serfdom
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = serfdom }
+				FROM = { NOT = { has_institution = serfdom } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_serfdom
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = manorialism }
+				FROM = { NOT = { has_institution = manorialism } } 
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manorialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = manorialism }
+				FROM = { NOT = { has_institution = manorialism } } 
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manorialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = early_feudalism }
+				FROM = { NOT = { has_institution = early_feudalism } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_early_feudalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = early_feudalism }
+				FROM = { NOT = { has_institution = early_feudalism } }
+				
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_early_feudalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = crop_rotation }
+				FROM = { NOT = { has_institution = crop_rotation } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_crop_rotation
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = crop_rotation }
+				FROM = { NOT = { has_institution = crop_rotation } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_crop_rotation
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = civil_service }
+				FROM = { NOT = { has_institution = civil_service } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_civil_service
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = civil_service }
+				FROM = { NOT = { has_institution = civil_service } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_civil_service
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = manuscripts }
+				FROM = { NOT = { has_institution = manuscripts } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manuscripts
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = manuscripts }
+				FROM = { NOT = { has_institution = manuscripts } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manuscripts
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = scholasticism }
+				FROM = { NOT = { has_institution = scholasticism } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_scholasticism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = scholasticism }
+				FROM = { NOT = { has_institution = scholasticism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_scholasticism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = guilds }
+				FROM = { NOT = { has_institution = guilds } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_guilds
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = guilds }
+				FROM = { NOT = { has_institution = guilds } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_guilds
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = medicine }
+				FROM = { NOT = { has_institution = medicine } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_medicine
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = medicine }
+				FROM = { NOT = { has_institution = medicine } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_medicine
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = feudalism }
+				FROM = { NOT = { has_institution = feudalism } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_feudalism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = feudalism }
+				FROM = { NOT = { has_institution = feudalism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_feudalism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = renaissance }
+				FROM = { NOT = { has_institution = renaissance } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_renaissance
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = renaissance }
+				FROM = { NOT = { has_institution = renaissance } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_renaissance
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = new_world_i }
+				FROM = { NOT = { has_institution = new_world_i } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_new_world_i
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = new_world_i }
+				FROM = { NOT = { has_institution = new_world_i } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_new_world_i
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = printing_press }
+				FROM = { NOT = { has_institution = printing_press } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_printing_press
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = printing_press }
+				FROM = { NOT = { has_institution = printing_press } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_printing_press
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = global_trade }
+				FROM = { NOT = { has_institution = global_trade } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_global_trade
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = global_trade }
+				FROM = { NOT = { has_institution = global_trade } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_global_trade
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = manufactories }
+				FROM = { NOT = { has_institution = manufactories } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manufactories
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = manufactories }
+				FROM = { NOT = { has_institution = manufactories } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_manufactories
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = enlightenment }
+				FROM = { NOT = { has_institution = enlightenment } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_enlightenment
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = enlightenment }
+				FROM = { NOT = { has_institution = enlightenment } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_enlightenment
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = imperialism }
+				FROM = { NOT = { has_institution = imperialism } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_imperialism
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = imperialism }
+				FROM = { NOT = { has_institution = imperialism } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_imperialism
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = industrialization }
+				FROM = { NOT = { has_institution = industrialization } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_industrialization
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = industrialization }
+				FROM = { NOT = { has_institution = industrialization } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_industrialization
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = nationalism_institution }
+				FROM = { NOT = { has_institution = nationalism_institution } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_nationalism_institution
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = nationalism_institution }
+				FROM = { NOT = { has_institution = nationalism_institution } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_nationalism_institution
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = electrification }
+				FROM = { NOT = { has_institution = electrification } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_electrification
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = electrification }
+				FROM = { NOT = { has_institution = electrification } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_electrification
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = globalization }
+				FROM = { NOT = { has_institution = globalization } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_globalization
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = globalization }
+				FROM = { NOT = { has_institution = globalization } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_globalization
+					duration = 3650
+				}		
+			}
+		}
+		if = {
+			limit = {
+				ROOT = { has_institution = internet }
+				FROM = { NOT = { has_institution = internet } }
+				ROOT = {
+					is_neighbor_of = FROM
+				}
+			}
+			every_province = {
+				limit = { 
+					owned_by = FROM
+					any_neighbor_province = {
+						owned_by = ROOT
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_internet
+					duration = 3650
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				ROOT = { has_institution = internet }
+				FROM = { NOT = { has_institution = internet } }
+			}
+			every_province = {
+				limit = {
+					owned_by = FROM
+					
+					any_province = {
+						owned_by = ROOT
+						controlled_by = ROOT					
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+				}
+				add_province_modifier = {
+					name = have_access_knologe_internet
+					duration = 3650
+				}		
+			}
+		}
+		FROM = { 
+			add_opinion = { who = ROOT  modifier = share_instut  }
+		}
+		ROOT = {
+			add_opinion = { who = FROM  modifier = share_instut  }
+		}
+		if = {
+			limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+			add_treasury = 250
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_treasury = 500
+		}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_treasury = 1000
+		}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+			add_treasury = 2000
+		}
+		if = {
+			limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+			add_treasury = 4000
+		}
+		if = {
+			limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+			add_treasury = 7000
+		}
+		if = {
+			limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+			add_treasury = 10000
+		}
+		if = {
+			limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+			add_treasury = 16000
+		}	
+		FROM = {
+			if = {
+				limit = { ROOT = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = -250
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = -500
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = -1000
+			}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = -2000
+			}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_treasury = -4000
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_treasury = -7000
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				add_treasury = -10000
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 40000 } } }
+				add_treasury = -16000
+			}
+		}	
+	}
+	ai_acceptance = {
+		
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+			#multiply_variable = { which = ai_value value = -1 }
+		}
+					
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_150
+			limit = { FROM = { has_opinion = { who = ROOT value = 150 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_100
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON_50
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+			
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+			
+		}
+		
+		add_entry = {
+			name = YOU_WANT_OUR_LAND
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 40
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = RIVAL_WITH
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_rivalry } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = { 
+				FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					}
+				}				
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+	}
+	ai_will_do = {  
+		OR = {
+			AND = {
+			
+				FROM = { alliance_with = ROOT }
+			}
+			AND = {
+				
+				any_rival_country = {
+					 is_rival = FROM 
+				}
+			}
+			AND = {
+				
+				any_rival_country = {
+					is_neighbor_of = FROM 
+				}
+			}
+			AND = {
+			
+				any_rival_country = {
+					war_with = FROM 
+				}
+			}
+			AND = {
+				
+				FROM = { is_great_power = yes }
+			}
+		
+			AND = {
+				
+				FROM = {
+					is_neighbor_of = ROOT 
+				}
+			}
+			AND = {
+				
+				FROM = {
+					ai = yes
+					NOT = { is_rival = ROOT }
+				}
+			}	
+		}
+	}
+}
+
+taking_their_share_1 = {
+	category = economy
+	require_acceptance = no
+	is_visible = { 
+		has_opinion_modifier = { 
+			modifier = share_instut  
+			who = FROM 
+		}
+		NOT = {
+			has_opinion_modifier = { 
+				modifier = share_instut_cancel 
+				who = FROM 
+			} 
+		}		
+		ai = no
+		FROM = { is_neighbor_of = ROOT }
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		every_province = {
+			limit = { 
+				owned_by = FROM
+				any_neighbor_province = {
+					owned_by = ROOT
+				}
+			}
+			remove_province_modifier = have_access_knologe
+		}		
+		FROM = { 
+			remove_opinion = { who = ROOT  modifier = share_instut  }
+			add_opinion = { who = ROOT  modifier = share_instut_cancel  }
+		}
+		ROOT = {
+			remove_opinion = { who = FROM  modifier = share_instut  }
+			add_opinion = { who = FROM  modifier = share_instut_cancel  }
+		}		
+	}
+	ai_will_do = {  
+		
+	}
+}

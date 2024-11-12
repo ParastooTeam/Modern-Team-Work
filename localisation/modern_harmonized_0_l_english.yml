@@ -1,0 +1,15 @@
+﻿l_english:
+ harmonized_confucianism:0 "Harmonized_Confucianism"
+ desc_harmonized_confucianism:0 "Harmonized Confucianism"
+ 
+
+ harmonized_satanism:0 "Harmonized with Satanism"
+ desc_harmonized_satanism:0 "We have incorporated Satanism in our country and national ethos."
+
+ et_china.14.t:0 "Harmonization of the Confucianism Faith"
+ et_china.14.d:0 "Our efforts to integrate our [confucianism_province.Religion.GetName] subjects has now finally started to pay off. Our Confucianism subjects have begun to accept the ideals of Confucianism and our local officials have also integrated elements of the local religion and culture in our wider confucian corpus of ideals. As local bureaucrats enter our administration the Tai customs have to some extent began to filter upwards. Even among prominent officials in [Root.Capital.GetCapitalName] a small shrine can sometimes be found to Tai spirits.\Confucianism has joined the many religions of our Confucian [Root.GovernmentName]."
+ et_china.14.a:0 "'Submit the people of virtue, assimilate the people with enlightenment.'"
+
+ et_china.15.t:0 "Harmonization of the Satanism Faith"
+ et_china.15.d:0 "Our efforts to integrate our [satanism_province.Religion.GetName] subjects has now finally started to pay off. Our Satanism subjects have begun to accept the ideals of Satanism and our local officials have also integrated elements of the local religion and culture in our wider confucian corpus of ideals. As local bureaucrats enter our administration the Tai customs have to some extent began to filter upwards. Even among prominent officials in [Root.Capital.GetCapitalName] a small shrine can sometimes be found to Tai spirits.\Satanism has joined the many religions of our Confucian [Root.GovernmentName]."
+ et_china.15.a:0 "'Submit the people of virtue, assimilate the people with enlightenment.'"

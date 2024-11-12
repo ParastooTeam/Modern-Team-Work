@@ -1,0 +1,57 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 129  127  128 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Hyspaosines #0" = 10
+	"Apodakos #0" = 10
+	"Tiraios #0" = 20
+	"Artabazos #0" = 20
+	"Attambelos #0" = 80
+	"Abinergaios #0" = 20
+	"Orabazes #0" = 20
+	"Theonesios #0" = 40
+	"Pakoros #0" = 10
+	"Meredates #0" = 10
+	"Sagdodonakos #0" = 10
+	"Maga #0" = 10
+	"Abbinerigos #0" = 10
+		
+	"Thalassia #0" = -1
+	"Atossa #0" = -1
+	"Damaspia #0" = -1
+	"Parmys #0" = -1
+	"Stateira #0" = -1
+	"Musa #0" = -1
+}
+
+leader_names = {
+	Euergetes Eusebes Philopator Philoromaios Philadelphos Ktistes Euergetes Eupator Soter
+}
+
+ship_names = {
+	Charax
+	Mesene
+	Apologos
+	Hydra
+	Euergetes Eusebes Philopator Philoromaios Philadelphos Ktistes Euergetes Eupator Soter
+	Mikonios
+	Teredon
+	Herakles Nike Apollo
+}
+
+
+

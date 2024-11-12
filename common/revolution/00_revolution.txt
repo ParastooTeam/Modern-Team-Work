@@ -1,0 +1,22 @@
+revolution = {
+	# FROM = center of revolution
+	target_province_weights = {
+		factor = 0
+		
+		modifier = {
+			factor = 0
+		}
+	}
+
+	# Values at 100 Absolutism
+	revolution_province_modifiers = {
+		local_unrest = 0.25
+	}
+
+	# Values at 100 Revolutionary Zeal
+	zeal_modifiers = {
+		administrative_efficiency = 0.3
+		special_unit_forcelimit = 0.2
+		discipline = 0.05
+	}
+}

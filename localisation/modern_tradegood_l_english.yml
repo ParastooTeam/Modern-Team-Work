@@ -1,0 +1,50 @@
+﻿l_english:
+ et_tradegoods.10.t:0 "New life"
+ et_tradegoods.10.:0 "The city that was completely destroyed by the atomic bomb has now started to live again \nand wheat can be planted there."
+
+ cooldown_elect:0 "Cooldown make Electronic company"
+ cooldown_arms:0 "Cooldown make Arms company"
+ cooldown_navalarms:0 "Cooldown make Naval Arms company"
+ cooldown_cars:0 "Cooldown Cars company"
+ cooldown_tank:0 "Cooldown tech Tank"
+ wait_for_tank_tech_defence_1:0 "Cooldown diplomatic §Orequest tech§! up Tank"
+ wait_for_tank_tech_defence:0 "Cooldown diplomatic §Oupgrade tech§! up Tank"
+
+ add_electronics:0 "Construction of §TElectronic factory§!"
+ add_electronics_title:0 "Construction of §TElectronics factory§! £electronic_icon£"
+ add_electronics_desc:0 "With this decision, we can build an §TElectronic company§! in our country and use its income to become powerful, this is one of the best decisions to increase income."
+
+ add_cars:0 "Construction of §TCar factory§!"
+ add_cars_title:0 "Construction of §TCar factory§! £car_icon£"
+ add_cars_desc:0 "With this decision, we can build a §TCar manufacturing company§! in our country and use its income to become powerful, this is one of the best decisions to increase income."
+
+ 
+ add_arms:0 "Construction of §OArms factory§!"
+ add_arms_title:0 "Construction of §OArms factory§! £arms_icon£"
+ add_arms_desc:0 "With this decision, we can build a §TArms manufacturing company§! in our country and use its income to become powerful, this is one of the best decisions to increase income."
+ 
+ 
+
+ add_naval_arms:0 "Construction of §ONaval Arms factory§!"
+ add_naval_arms_title:0 "Construction of §ONaval Arms factory§! £naval_arms_icon£"
+ add_naval_arms_desc:0 "With this decision, we can build a §TNaval Arms manufacturing company§! in our country and use its income to become powerful, this is one of the best decisions to increase income."
+
+ building_event.1.t:0 "Structure selection"
+ building_event.1.d:0 "Choose the type of building you want to build in §Y[add_build_from.GetName]§!"
+ building_event.2.t:0 "Select a city"
+ building_event.2.d:0 "Select the city in which you want to build"
+ modern_building.1:0 "Construction of the §TFort§!"
+ modern_building.2:0 "Construction of the §YAirport§!"
+ 
+ MAKE_FORT_BUILDING:0 "Build a defensive Fort"
+ MAKE_AIRPORT_BUILDING:0 "Build a strategic Airport"
+ modern_building.12:0 "Cancel"
+
+ farmlands_goods:0 "Farmlands for goods"
+ grasslands_goods:0 "Grasslands for goods"
+ mountain_goods:0 "Mountain for goods"
+ highlands_goods:0 "Highlands for goods"
+ steppe_goods:0 "Steppe for goods"
+ hills_goods:0 "Hills for goods"
+ cooldown_first:0 "Cooldown 30 Days"
+ cooldown_capture:0 "Inability to transfer 25 years"

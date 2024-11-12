@@ -1,0 +1,32 @@
+namespace = ass
+
+country_event = {	# [From.GetName] destabilised us
+	id = ass.8
+	title = ass.8.t
+	desc = "ass.8.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ass.8.a
+		custom_tooltip = they_destabilised_us_tooltip
+	}
+}
+
+country_event = {	# [From.GetName] bribed our officials
+	id = ass.11
+	title = ass.11.t
+	desc = "ass.11.d"
+	picture = ADDCorrupt_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = ass.11.a
+		custom_tooltip = they_bribed_our_officials_tooltip
+	}
+}
+
+
+

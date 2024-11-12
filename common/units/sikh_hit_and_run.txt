@@ -1,0 +1,12 @@
+# Sikh - Hit and Run
+
+type = cavalry
+unit_type = western
+
+maneuver = 3
+offensive_morale = 3
+defensive_morale = 4
+offensive_fire = 4
+defensive_fire = 4
+offensive_shock = 7
+defensive_shock = 7

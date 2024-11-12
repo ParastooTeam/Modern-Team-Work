@@ -1,0 +1,751 @@
+namespace = attack_teryak
+country_event = {	# [From.GetName] bribed our officials
+	id = attack_teryak.1
+	title = "attack_teryak.1.t"
+	desc = "attack_teryak.1.d"
+	picture = drug_distribution_eventPicture
+
+	is_triggered_only =  yes
+	
+	
+	option = {
+		name = "attack_teryak.11.a"
+		ai_chance = {
+			factor = 100
+		}
+		if = {
+			limit = {
+				event_target:teryak_target_country = { has_country_modifier = teryak_defensive_1 }
+				drugs = 1
+				NOT = { drugs = 2 }
+			}
+			random_list = {
+				75 = { event_target:teryak_target_country = { country_event = { id = teryak.2 days = 25 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } } 
+					country_event = { id = teryak.3 days = 30 }
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = -250
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = -1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = -2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = -4000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = -8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -10000
+					}
+					add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+					reverse_add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+				}
+				25 = { 
+					event_target:teryak_target_country = { 
+						random_list = {
+							50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+							50 = { country_event = { id = teryak.4 days = 20 } }  
+						}
+					}
+						
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = 250
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = 500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = 1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = 2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = 4000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = 6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = 8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = 10000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				drugs = 1
+				NOT = { drugs = 2 }
+			}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 250
+			}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_treasury = 500
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_treasury = 1000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_treasury = 2000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_treasury = 4000
+				}
+			
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_treasury = 6000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_treasury = 8000
+				}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_treasury = 10000
+			}
+			event_target:teryak_target_country = { 
+				random_list = {
+					50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+					50 = { country_event = { id = teryak.4 days = 20 } }  
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:teryak_target_country = { has_country_modifier = teryak_defensive_1 }
+				drugs = 2
+				NOT = { drugs = 3 }
+			}
+			random_list = {
+				75 = { event_target:teryak_target_country = { country_event = { id = teryak.2 days = 25 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } } 
+					country_event = { id = teryak.3 days = 30 }
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = -500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = -2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = -4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = -6000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = -10000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -12000
+					}
+					add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+					reverse_add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+				}
+				25 = { 
+					event_target:teryak_target_country = { 
+						random_list = {
+							50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+							50 = { country_event = { id = teryak.4 days = 20 } }  
+						}
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = 500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = 1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = 2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = 4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = 6000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = 8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = 10000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = 12000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				drugs = 2
+				NOT = { drugs = 3 }
+			}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 500
+			}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_treasury = 1000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_treasury = 2000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_treasury = 4000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_treasury = 6000
+				}
+			
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_treasury = 8000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_treasury = 10000
+				}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_treasury = 12000
+			}
+			event_target:teryak_target_country = { 
+				random_list = {
+					50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+					50 = { country_event = { id = teryak.4 days = 20 } }  
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:teryak_target_country = { has_country_modifier = teryak_defensive_1 }
+				drugs = 3
+				NOT = { drugs = 6 }
+			}
+			random_list = {
+				75 = { event_target:teryak_target_country = { country_event = { id = teryak.2 days = 25 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 }  } 
+					country_event = { id = teryak.3 days = 30 }
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = -1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = -4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = -6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = -8000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -10000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = -13500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -15000
+					}
+					add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+					reverse_add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+				}
+				25 = { 
+					event_target:teryak_target_country = { 
+						random_list = {
+							50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+							50 = { country_event = { id = teryak.4 days = 20 } }  
+						}
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = 1000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = 2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = 4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = 6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = 8000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = 10000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = 13500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = 15000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				drugs = 3
+				NOT = { drugs = 6 }
+			}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 1000
+			}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_treasury = 2000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_treasury = 4000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_treasury = 6000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_treasury = 8000
+				}
+			
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_treasury = 10000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_treasury = 13500
+				}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_treasury = 15000
+			}
+			event_target:teryak_target_country = { 
+				random_list = {
+					50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+					50 = { country_event = { id = teryak.4 days = 20 } }  
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:teryak_target_country = { has_country_modifier = teryak_defensive_1 }
+				drugs = 6
+				NOT = { production_leader = { trade_goods = drugs } }
+				NOT = { 
+					trading_bonus = {
+						trade_goods = drugs
+						value = yes
+					} 
+				}
+			}
+			random_list = {
+				75 = { event_target:teryak_target_country = { country_event = { id = teryak.2 days = 25 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } } 
+					country_event = { id = teryak.3 days = 30 }
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = -1500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -3000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = -5000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = -7000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = -9500
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -11500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = -14500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -17000
+					}
+					add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+					reverse_add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+				}
+				25 = { 
+					event_target:teryak_target_country = { 
+						random_list = {
+							50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+							50 = { country_event = { id = teryak.4 days = 20 } }  
+						}
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = 1500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = 3000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = 5000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = 7000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = 9500
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = 11500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = 14500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = 17000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				drugs = 6
+				NOT = { production_leader = { trade_goods = drugs } }
+				NOT = { 
+					trading_bonus = {
+						trade_goods = drugs
+						value = yes
+					} 
+				}
+			}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 1500
+			}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_treasury = 3000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_treasury = 5000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_treasury = 7000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_treasury = 9500
+				}
+			
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_treasury = 11500
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_treasury = 14500
+				}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_treasury = 17000
+			}
+			event_target:teryak_target_country = { 
+				random_list = {
+					50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+					50 = { country_event = { id = teryak.4 days = 20 } }  
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				event_target:teryak_target_country = { has_country_modifier = teryak_defensive_1 }
+				OR = {
+					production_leader = { trade_goods = drugs }
+					trading_bonus = {
+						trade_goods = drugs
+						value = yes
+					}
+				}
+			}
+			random_list = {
+				75 = { event_target:teryak_target_country = { country_event = { id = teryak.2 days = 25 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } } 
+					country_event = { id = teryak.3 days = 30 }
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = -2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = -6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = -8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = -11000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -13500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = -17000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -20000
+					}
+					add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+					reverse_add_opinion = {
+						who = event_target:teryak_target_country
+						modifier = teryak_bad
+					}
+				}
+				25 = { 
+					event_target:teryak_target_country = { 
+						random_list = {
+							50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 } }
+							50 = { country_event = { id = teryak.4 days = 20 } }  
+						}
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+						add_treasury = 2000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = 4000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+						add_treasury = 6000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+						add_treasury = 8000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+						add_treasury = 11000
+					}
+				
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = 13500
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+						add_treasury = 17000
+					}
+					if = {
+						limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = 20000
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					production_leader = { trade_goods = drugs }
+					trading_bonus = {
+						trade_goods = drugs
+						value = yes
+					}
+				}
+			}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 3 NOT = { total_development = 500 } } }
+				add_treasury = 2000
+			}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_treasury = 4000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_treasury = 6000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_treasury = 8000
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_treasury = 11000
+				}
+			
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_treasury = 13500
+				}
+			if = {
+					limit = { event_target:teryak_target_country = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_treasury = 17000
+				}
+			if = {
+				limit = { event_target:teryak_target_country = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_treasury = 20000
+			}
+			event_target:teryak_target_country = { 
+				random_list = {
+					50 = { country_event = { id = teryak.1 days = 20 } add_casus_belli = { type = cb_attack_teryak target = ROOT months = 120 }  }
+					50 = { country_event = { id = teryak.4 days = 20 } }  
+				}
+			}
+		}
+		add_spy_network_in = {
+			who = event_target:teryak_target_country
+			value = -50
+		}
+		clear_global_event_target = teryak_target_country
+	}
+	option = {
+		name = "attack_teryak.12.a"
+		ai_chance = {
+			factor = 50
+		}
+		clear_global_event_target = teryak_target_country
+	}
+}
+
+
+
+

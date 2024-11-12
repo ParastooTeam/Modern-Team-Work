@@ -1,0 +1,1684 @@
+namespace = modern_tradegoods
+
+
+#######################################################################
+country_event = {
+	id = modern_tradegoods.1
+	title = "modern_tradegoods.NAME1"
+	desc = "modern_tradegoods.DESC.1"
+	picture = drug_farm_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 3
+			}
+			save_event_target_as =  farmlands_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 6
+			}
+			save_event_target_as = grasslands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 30
+			}
+			save_event_target_as = mountain_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 20
+			}
+			save_event_target_as = highlands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 10
+			}
+			save_event_target_as = steppe_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 15
+			}
+			save_event_target_as = hills_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods.OPT1"
+		goto = farmlands_goods
+		trigger = {
+			has_saved_event_target = farmlands_goods
+		}
+		event_target:farmlands_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.35
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.25
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.15
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.07
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT2"
+		goto = grasslands_goods
+		trigger = {
+			has_saved_event_target = grasslands_goods
+		}
+		event_target:grasslands_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.40
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.20
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.12
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT3"
+		goto = mountain_goods
+		trigger = {
+			has_saved_event_target = mountain_goods
+		}
+		event_target:mountain_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.65
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.55
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.35
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT4"
+		goto = highlands_goods
+		trigger = {
+			has_saved_event_target = highlands_goods
+		}
+		event_target:highlands_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.60
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.50
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.30
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT5"
+		goto = steppe_goods
+		trigger = {
+			has_saved_event_target = steppe_goods
+		}
+		event_target:steppe_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.50
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.20
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT6"
+		goto = hills_goods
+		trigger = {
+			has_saved_event_target = hills_goods
+		}
+		event_target:hills_goods = {
+			change_trade_goods = drugs
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.55
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.35
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.25
+		}
+	}
+}
+
+country_event = {
+	id = modern_tradegoods.2
+	title = "modern_tradegoods.NAME2"
+	desc = "modern_tradegoods.DESC.2"
+	picture = arms_company_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 50
+			}
+			save_event_target_as =  50_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 40
+				NOT = { development = 50 }
+			}
+			save_event_target_as = 40_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 30
+				NOT = { development = 40 }
+			}
+			save_event_target_as = 30_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 20
+				NOT = { development = 30 }
+			}
+			save_event_target_as = 20_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 10
+				NOT = { development = 20 }
+			}
+			save_event_target_as = 10_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { development = 10 }
+			}
+			save_event_target_as = 5_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods50.OPT"
+		goto = 50_goods
+		trigger = {
+			has_saved_event_target = 50_goods
+		}
+		event_target:50_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods40.OPT"
+		goto = 40_goods
+		trigger = {
+			has_saved_event_target = 40_goods
+		}
+		event_target:40_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods30.OPT"
+		goto = 30_goods
+		trigger = {
+			has_saved_event_target = 30_goods
+		}
+		event_target:30_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods20.OPT"
+		goto = 20_goods
+		trigger = {
+			has_saved_event_target = 20_goods
+		}
+		event_target:20_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods10.OPT"
+		goto = 10_goods
+		trigger = {
+			has_saved_event_target = 10_goods
+		}
+		event_target:10_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods5.OPT"
+		goto = 5_goods
+		trigger = {
+			has_saved_event_target = 5_goods
+		}
+		event_target:5_goods = {
+			change_trade_goods = arms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	
+}
+
+
+country_event = {
+	id = modern_tradegoods.3
+	title = "modern_tradegoods.NAME3"
+	desc = "modern_tradegoods.DESC.3"
+	picture = navalarms_company_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 50
+				has_port = yes
+			}
+			save_event_target_as =  50_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 40
+				NOT = { development = 50 }
+				has_port = yes
+			}
+			save_event_target_as = 40_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 30
+				NOT = { development = 40 }
+				has_port = yes
+			}
+			save_event_target_as = 30_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 20
+				NOT = { development = 30 }
+				has_port = yes
+			}
+			save_event_target_as = 20_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 10
+				NOT = { development = 20 }
+				has_port = yes
+			}
+			save_event_target_as = 10_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { development = 10 }
+				has_port = yes
+			}
+			save_event_target_as = 5_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods501.OPT"
+		goto = 50_goods
+		trigger = {
+			has_saved_event_target = 50_goods
+		}
+		event_target:50_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods401.OPT"
+		goto = 40_goods
+		trigger = {
+			has_saved_event_target = 40_goods
+		}
+		event_target:40_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods301.OPT"
+		goto = 30_goods
+		trigger = {
+			has_saved_event_target = 30_goods
+		}
+		event_target:30_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods201.OPT"
+		goto = 20_goods
+		trigger = {
+			has_saved_event_target = 20_goods
+		}
+		event_target:20_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods101.OPT"
+		goto = 10_goods
+		trigger = {
+			has_saved_event_target = 10_goods
+		}
+		event_target:10_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods51.OPT"
+		goto = 5_goods
+		trigger = {
+			has_saved_event_target = 5_goods
+		}
+		event_target:5_goods = {
+			change_trade_goods = navalarms
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	
+}
+
+#####################################################
+
+country_event = {
+	id = modern_tradegoods.4
+	title = "modern_tradegoods.NAME4"
+	desc = "modern_tradegoods.DESC.4"
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 50
+				
+			}
+			save_event_target_as =  50_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 40
+				NOT = { development = 50 }
+				
+			}
+			save_event_target_as = 40_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 30
+				NOT = { development = 40 }
+				
+			}
+			save_event_target_as = 30_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 20
+				NOT = { development = 30 }
+				
+			}
+			save_event_target_as = 20_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 10
+				NOT = { development = 20 }
+				
+			}
+			save_event_target_as = 10_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { development = 10 }
+				
+			}
+			save_event_target_as = 5_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods501.OPT"
+		goto = 50_goods
+		trigger = {
+			has_saved_event_target = 50_goods
+		}
+		event_target:50_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods401.OPT"
+		goto = 40_goods
+		trigger = {
+			has_saved_event_target = 40_goods
+		}
+		event_target:40_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods301.OPT"
+		goto = 30_goods
+		trigger = {
+			has_saved_event_target = 30_goods
+		}
+		event_target:30_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods201.OPT"
+		goto = 20_goods
+		trigger = {
+			has_saved_event_target = 20_goods
+		}
+		event_target:20_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods101.OPT"
+		goto = 10_goods
+		trigger = {
+			has_saved_event_target = 10_goods
+		}
+		event_target:10_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods51.OPT"
+		goto = 5_goods
+		trigger = {
+			has_saved_event_target = 5_goods
+		}
+		event_target:5_goods = {
+			change_trade_goods = electronics
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	
+}
+
+###########################################################
+
+country_event = {
+	id = modern_tradegoods.5
+	title = "modern_tradegoods.NAME5"
+	desc = "modern_tradegoods.DESC.5"
+	picture = TRADEGOODS_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 50
+				
+			}
+			save_event_target_as =  50_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 40
+				NOT = { development = 50 }
+				
+			}
+			save_event_target_as = 40_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 30
+				NOT = { development = 40 }
+				
+			}
+			save_event_target_as = 30_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 20
+				NOT = { development = 30 }
+				
+			}
+			save_event_target_as = 20_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				development = 10
+				NOT = { development = 20 }
+				
+			}
+			save_event_target_as = 10_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { development = 10 }
+				
+			}
+			save_event_target_as = 5_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods501.OPT"
+		goto = 50_goods
+		trigger = {
+			has_saved_event_target = 50_goods
+		}
+		event_target:50_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods401.OPT"
+		goto = 40_goods
+		trigger = {
+			has_saved_event_target = 40_goods
+		}
+		event_target:40_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods301.OPT"
+		goto = 30_goods
+		trigger = {
+			has_saved_event_target = 30_goods
+		}
+		event_target:30_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods201.OPT"
+		goto = 20_goods
+		trigger = {
+			has_saved_event_target = 20_goods
+		}
+		event_target:20_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods101.OPT"
+		goto = 10_goods
+		trigger = {
+			has_saved_event_target = 10_goods
+		}
+		event_target:10_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	option = {
+		name = "modern_tradegoods51.OPT"
+		goto = 5_goods
+		trigger = {
+			has_saved_event_target = 5_goods
+		}
+		event_target:5_goods = {
+			change_trade_goods = cars
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = 50_goods
+					has_saved_event_target = 40_goods
+					has_saved_event_target = 30_goods
+					has_saved_event_target = 20_goods
+					has_saved_event_target = 10_goods
+					has_saved_event_target = 5_goods
+				}
+			}
+			clear_global_event_target = 50_goods
+			clear_global_event_target = 40_goods
+			clear_global_event_target = 30_goods
+			clear_global_event_target = 20_goods
+			clear_global_event_target = 10_goods
+			clear_global_event_target = 5_goods
+		}
+	}
+	
+}

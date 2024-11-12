@@ -1,0 +1,184 @@
+##delete_un_sanctions_3 = {
+##	category = emperor
+##	require_acceptance = no
+##	is_visible = { 
+##		ai = no 
+##		has_country_flag = opened_sanction_diplomacy
+##		OR = {
+##		has_country_modifier = council_member
+##		has_country_modifier = perm_council_member
+##		production_leader = {
+##				trade_goods = gold    
+##			} 
+##	} 
+##		FROM = { has_country_modifier = has_sanction_3 }
+##	}
+##	is_allowed = {
+##		production_leader = {
+##			trade_goods = gold    
+##		}
+##		adm_power = 125
+##		dip_power = 125
+##		mil_power = 125
+##	}
+##	on_accept = {
+##		add_adm_power = -125
+##		add_dip_power = -125
+##		add_mil_power = -125
+##		remove_opinion = { who = FROM  modifier = opinion_sanction_4 }
+##		remove_country_modifier = sanction_did_3
+##		FROM = { 
+##			remove_country_modifier = has_sanction_3 
+##			remove_country_modifier = has_sanction_3_1
+##			remove_opinion = { who = ROOT  modifier = sunction_opinion_100 }  
+##			remove_opinion = { who = ROOT  modifier = opinion_sanction_4 }  
+##		}
+##	}
+##	ai_will_do = {  
+##		NOT = { 
+##			has_opinion = { 
+##				who = FROM value = -100 
+##			}   
+##		} 
+##	}
+##}
+################################################  Sanction X3    ###################################
+##
+##
+##delete_un_sanctions_2 = {
+##	category = emperor
+##	require_acceptance = no
+##	is_visible = { 
+##		ai = no 
+##		has_country_flag = opened_sanction_diplomacy
+##		OR = {
+##		has_country_modifier = council_member
+##		has_country_modifier = perm_council_member
+##		production_leader = {
+##				trade_goods = gold    
+##			} 
+##	} 
+##		FROM = { has_country_modifier = has_sanction_2 }
+##	}
+##	is_allowed = {
+##		production_leader = {
+##			trade_goods = gold    
+##		}
+##		adm_power = 75
+##		dip_power = 75
+##		mil_power = 75
+##	}
+##	on_accept = {
+##		add_adm_power = -75
+##		add_dip_power = -75
+##		add_mil_power = -75	
+##		remove_opinion = { who = FROM  modifier = opinion_sanction_3 }
+##		remove_country_modifier = sanction_did_2
+##		FROM = { 
+##			remove_country_modifier = has_sanction_2 
+##			remove_country_modifier = has_sanction_2_1
+##			remove_opinion = { who = ROOT  modifier = sunction_opinion_50 }  
+##			remove_opinion = { who = ROOT  modifier = opinion_sanction_3 }  
+##		}
+##	}
+##	ai_will_do = {  
+##		NOT = { 
+##			has_opinion = { 
+##				who = FROM value = -80
+##			}   
+##		} 
+##	}
+##}
+##
+##
+##
+################################################  Sanction X2    ###################
+##
+##
+##
+##
+##delete_un_sanctions_1 = {
+##	category = emperor
+##	require_acceptance = no
+##	is_visible = { 
+##		ai = no
+##		has_country_flag = opened_sanction_diplomacy 
+##		OR = {
+##			has_country_modifier = council_member
+##			has_country_modifier = perm_council_member
+##			production_leader = {
+##				trade_goods = gold    
+##			} 
+##		} 
+##		FROM = {has_country_modifier = has_sanction_1 }
+##	}
+##	is_allowed = {
+##		production_leader = {
+##			trade_goods = gold    
+##		}
+##		adm_power = 35
+##		dip_power = 35
+##		mil_power = 35
+##	}
+##	on_accept = {
+##		add_adm_power = -35
+##		add_dip_power = -35
+##		add_mil_power = -35	
+##		remove_opinion = { who = FROM  modifier = opinion_sanction_2 }
+##		remove_country_modifier = sanction_did_1
+##		FROM = { 
+##			remove_country_modifier = has_sanction_1 
+##			remove_country_modifier = has_sanction_1_1
+##			remove_opinion = { who = ROOT  modifier = sunction_opinion_25 }  
+##			remove_opinion = { who = ROOT  modifier = opinion_sanction_2 }  
+##		}
+##	}
+##	ai_will_do = {  
+##		NOT = { 
+##			has_opinion = { 
+##				who = FROM value = -60
+##			}   
+##		} 
+##	}
+##}
+##
+##
+#########################################################   Sanction X1
+##delete_un_sanctions = {
+##	category = emperor
+##	require_acceptance = no
+##	is_visible = { 
+##		ai = no 
+##		has_country_flag = opened_sanction_diplomacy 
+##		always = yes
+##		FROM = { has_country_modifier = has_sanction }
+##	}
+##	is_allowed = {
+##		production_leader = {
+##			trade_goods = gold    
+##		}
+##		adm_power = 10
+##		dip_power = 10
+##		mil_power = 10
+##	}
+##	on_accept = {
+##		add_adm_power = -10
+##		add_dip_power = -10
+##		add_mil_power = -10	
+##		remove_opinion = { who = FROM  modifier = opinion_sanction_1 }
+##		remove_country_modifier = sanction_did
+##		FROM = { 
+##			remove_country_modifier = has_sanction 
+##			remove_country_modifier = has_sanction_0_1
+##			remove_opinion = { who = ROOT  modifier = sunction_opinion_10 }  
+##			remove_opinion = { who = ROOT  modifier = opinion_sanction_1 }  
+##		}		
+##	}
+##	ai_will_do = {  
+##		NOT = { 
+##			has_opinion = { 
+##				who = FROM value = -40
+##			}   
+##		} 
+##	}
+##}

@@ -1,0 +1,1838 @@
+##country_decisions = {
+##	send_25 = {
+##		potential = {
+##			ai = yes
+##			NOT = { has_country_modifier = cooldown_send_troop_15 }
+##		}
+##		allow = {
+##			num_of_subjects = 1
+##			NOT = {  
+##				any_neighbor_country = {
+##					war_with = ROOT
+##					is_great_power = yes
+##				}
+##			}
+##			OR = {
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_neighbor_country = {
+##						war_with = ROOT
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						NOT = { is_neighbor_of = PREV }
+##						NOT = {	border_distance = { who = PREV distance = 150 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						border_distance = { who = PREV distance = 150 }
+##						NOT = {	border_distance = { who = PREV distance = 300 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##			}
+##			is_at_war = yes
+##			custom_trigger_tooltip = {
+##				tooltip = 25_units_send
+##				hidden_trigger = {
+##					any_owned_province = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = artillery
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##				}
+##			}
+##			
+##			
+##		}
+##		effect = {
+##			if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 5
+##					}
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 5
+##					}
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 5
+##					}
+##				}
+##			}
+##			
+##			add_country_modifier = {
+##				name = cooldown_send_troop_15
+##				duration = 180
+##			}
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##		ai_importance = 10
+##	}
+##	send_50 = {
+##		potential = {
+##			ai = yes
+##			NOT = { has_country_modifier = cooldown_send_troop }
+##		}
+##		allow = {
+##			num_of_subjects = 1
+##			NOT = {  
+##				any_neighbor_country = {
+##					war_with = ROOT
+##					is_great_power = yes
+##				}
+##			}
+##			OR = {
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_neighbor_country = {
+##						war_with = ROOT
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						NOT = { is_neighbor_of = PREV }
+##						NOT = {	border_distance = { who = PREV distance = 150 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						border_distance = { who = PREV distance = 150 }
+##						NOT = {	border_distance = { who = PREV distance = 300 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##			}
+##			is_at_war = yes
+##			custom_trigger_tooltip = {
+##				tooltip = 25_units_send
+##				hidden_trigger = {
+##					any_owned_province = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = infantry					
+##						}
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = artillery
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##				}
+##			}
+##			
+##			
+##		}
+##		effect = {
+##			if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root		
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 10
+##					}
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 10
+##					}
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						cavalry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 20
+##							who = root
+##							type = infantry
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = cavalry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 20
+##					}
+##					kill_units = {
+##						type = cavalry
+##						who = ROOT
+##						amount = 10
+##					}
+##				}
+##			}
+##			
+##			add_country_modifier = {
+##				name = cooldown_send_troop
+##				duration = 180
+##			}
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##		ai_importance = 10
+##	}
+##	send_50a = {
+##		potential = {
+##			ai = yes
+##			NOT = { has_country_modifier = cooldown_send_troop }
+##		}
+##		allow = {
+##			num_of_subjects = 1
+##			NOT = {  
+##				any_neighbor_country = {
+##					war_with = ROOT
+##					is_great_power = yes
+##				}
+##			}
+##			OR = {
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_neighbor_country = {
+##						war_with = ROOT
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						NOT = { is_neighbor_of = PREV }
+##						NOT = {	border_distance = { who = PREV distance = 150 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						border_distance = { who = PREV distance = 150 }
+##						NOT = {	border_distance = { who = PREV distance = 300 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##			}
+##			is_at_war = yes
+##			custom_trigger_tooltip = {
+##				tooltip = 25_units_send
+##				hidden_trigger = {
+##					any_owned_province = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = infantry					
+##						}
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = artillery
+##						}
+##					}
+##				}
+##			}
+##			
+##			
+##		}
+##		effect = {
+##			if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 25
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 25
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 25
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 25
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root	
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 25
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 25
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 25
+##					}
+##					
+##				}
+##			}
+##			
+##			add_country_modifier = {
+##				name = cooldown_send_troop
+##				duration = 180
+##			}
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##		ai_importance = 10
+##	}
+##	send_5 = {
+##		potential = {
+##			ai = yes
+##			NOT = { has_country_modifier = cooldown_send_troop_15 }
+##		}
+##		allow = {
+##			num_of_subjects = 1
+##			NOT = {  
+##				any_neighbor_country = {
+##					war_with = ROOT
+##					is_great_power = yes
+##				}
+##			}
+##			OR = {
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_neighbor_country = {
+##						war_with = ROOT
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						NOT = { is_neighbor_of = PREV }
+##						NOT = {	border_distance = { who = PREV distance = 150 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						border_distance = { who = PREV distance = 150 }
+##						NOT = {	border_distance = { who = PREV distance = 300 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##			}
+##			is_at_war = yes
+##			custom_trigger_tooltip = {
+##				tooltip = 25_units_send
+##				hidden_trigger = {
+##					any_owned_province = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = infantry					
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery
+##						}
+##					}
+##				}
+##			}
+##			
+##			
+##		}
+##		effect = {
+##			if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 5
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 5
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 5
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			
+##			add_country_modifier = {
+##				name = cooldown_send_troop_15
+##				duration = 180
+##			}
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##		ai_importance = 10
+##	}
+##	send_15 = {
+##		potential = {
+##			ai = yes
+##			NOT = { has_country_modifier = cooldown_send_troop_15 }
+##		}
+##		allow = {
+##			num_of_subjects = 1
+##			NOT = {  
+##				any_neighbor_country = {
+##					war_with = ROOT
+##					is_great_power = yes
+##				}
+##			}
+##			OR = {
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_neighbor_country = {
+##						war_with = ROOT
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						NOT = { is_neighbor_of = PREV }
+##						NOT = {	border_distance = { who = PREV distance = 150 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##				any_subject_country = {
+##					is_subject_of = root
+##					any_country = {
+##						war_with = root
+##						border_distance = { who = PREV distance = 150 }
+##						NOT = {	border_distance = { who = PREV distance = 300 } }
+##					}
+##					any_owned_province = {
+##						has_building = constable
+##						controller = {
+##							is_subject_of = root
+##						}
+##					}
+##				}
+##			}
+##			is_at_war = yes
+##			custom_trigger_tooltip = {
+##				tooltip = 25_units_send
+##				hidden_trigger = {
+##					any_owned_province = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry					
+##						}
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery
+##						}
+##					}
+##				}
+##			}
+##			
+##			
+##		}
+##		effect = {
+##			if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_neighbor_country = {
+##							war_with = ROOT
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							NOT = { is_neighbor_of = PREV }
+##							NOT = {	border_distance = { who = PREV distance = 150 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root					
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			else_if = {
+##				limit = {
+##					any_subject_country = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##				}
+##				random_subject_country = {
+##					limit = {
+##						is_subject_of = root
+##						any_country = {
+##							war_with = root
+##							border_distance = { who = PREV distance = 150 }
+##							NOT = {	border_distance = { who = PREV distance = 300 } }
+##						}
+##					}
+##					random_owned_province = {
+##						limit = {
+##							controller = {
+##								is_subject_of = root
+##							}
+##							has_building = constable
+##							any_neighbor_province = {
+##								is_city = yes
+##							}
+##						}
+##						
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						infantry = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root
+##						artillery = root			
+##					}
+##				}
+##				random_owned_province = {
+##					limit = {
+##						has_building = constable
+##						num_of_units_in_province = {
+##							amount = 5
+##							who = root
+##							type = artillery					
+##						}
+##						num_of_units_in_province = {
+##							amount = 10
+##							who = root
+##							type = infantry
+##						}
+##					}
+##					kill_units = {
+##						type = infantry
+##						who = ROOT
+##						amount = 10
+##					}
+##					kill_units = {
+##						type = artillery
+##						who = ROOT
+##						amount = 5
+##					}
+##					
+##				}
+##			}
+##			
+##			add_country_modifier = {
+##				name = cooldown_send_troop_15
+##				duration = 180
+##			}
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##		ai_importance = 10
+##	}
+##}

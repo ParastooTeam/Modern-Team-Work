@@ -1,0 +1,71 @@
+##namespace = great_project
+##
+###send_aid Point admin power X1
+##province_event = {
+##	id = great_project.1
+##	title = "great_project.1title"
+##	desc = "great_project.1desc"
+##	picture = send_aid_eventPicture
+##	#hidden = yes
+##	is_triggered_only = yes
+##	
+##	
+##	option = {
+##		name = "great_project.1opt"
+##		add_great_project = {
+##			type = suez_canal
+##		}
+##	}
+##}
+##province_event = {
+##	id = great_project.2
+##	title = "great_project.1title"
+##	desc = "great_project.1desc"
+##	picture = send_aid_eventPicture
+##	#hidden = yes
+##	is_triggered_only = yes
+##	
+##
+##	option = {
+##		name = "great_project.1opt"
+##		add_great_project = {
+##			type = panama_canal
+##		}
+##	}
+##}
+##province_event = {
+##	id = great_project.3
+##	title = "great_project.1title"
+##	desc = "great_project.1desc"
+##	picture = send_aid_eventPicture
+##	#hidden = yes
+##	is_triggered_only = yes
+##	
+##
+##	option = {
+##		name = "great_project.1opt"
+##		add_great_project = {
+##			type = kiel_canal
+##		}
+##	}
+##}
+##province_event = {
+##	id = great_project.4
+##	title = "great_project.1title"
+##	desc = "great_project.1desc"
+##	picture = send_aid_eventPicture
+##	#hidden = yes
+##	is_triggered_only = yes
+##	
+##	immediate = {
+##		
+##		
+##	}
+##	option = {
+##		name = "great_project.1opt"
+##		add_great_project = {
+##			type = volga_canal
+##		}
+##	}
+##}
+

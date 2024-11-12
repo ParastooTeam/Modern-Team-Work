@@ -1,0 +1,795 @@
+
+	
+	target_attack_3 = {
+		category = alliance
+		
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_3
+			NOT = { has_country_modifier = set_goal_3 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		}
+		on_accept = {
+				
+				add_country_modifier = {
+					name = set_goal_3
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = set_target_3
+					save_global_event_target_as = event_target_3
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+	target_attack_4 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_4
+			NOT = { has_country_modifier = set_goal_4 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = set_goal_4
+				duration = -1
+			}
+				FROM = {
+					set_country_flag = set_target_4
+					save_global_event_target_as = my_attack_target_4
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+	access_to_attack_1 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { ai = yes }
+			ROOT = {
+				has_country_modifier = can_set_goal_3
+			}
+			ROOT = {
+				has_country_modifier = set_goal_3
+			}
+			FROM = { NOT = { has_country_flag = access_to_missile_1 } }
+			overlord_of = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		is_allowed = {
+			FROM = {
+				OR = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+					check_variable = {
+						which = missil_100
+						value = 1
+					}
+					check_variable = {
+						which = missil_150
+						value = 1
+					}
+					check_variable = {
+						which = missil_250
+						value = 1
+					}
+					check_variable = {
+						which = missil_350
+						value = 1
+					}
+					check_variable = {
+						which = missil_500
+						value = 1
+					}
+					check_variable = {
+						which = missil_700
+						value = 1
+					}
+					check_variable = {
+						which = missil_1000
+						value = 1
+					}
+					check_variable = {
+						which = missil_1500
+						value = 1
+					}
+				}
+			}
+			reverse_has_opinion = { who = FROM value = 120  }
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 55
+				}
+			}
+			FROM = { NOT = { liberty_desire = 75 } }
+			FROM = { NOT = { alliance_with = event_target:event_target_3  }  }
+			FROM = { NOT = { truce_with = event_target:event_target_3  }  }
+			FROM = {
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = event_target:event_target_3   } }
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = event_target:event_target_3   } }
+			}
+		}
+		
+			on_accept = {
+				add_country_modifier = {
+					name = missile_access_1
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = access_to_missile_1
+				}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	access_to_attack_2 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { ai = yes }
+			ROOT = {
+				has_country_modifier = can_set_goal_4
+			}
+			ROOT = {
+				has_country_modifier = set_goal_4
+			}
+			FROM = { NOT = { has_country_flag = access_to_missile_2 } }
+			overlord_of = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		is_allowed = {
+			FROM = {
+				OR = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+					check_variable = {
+						which = missil_100
+						value = 1
+					}
+					check_variable = {
+						which = missil_150
+						value = 1
+					}
+					check_variable = {
+						which = missil_250
+						value = 1
+					}
+					check_variable = {
+						which = missil_350
+						value = 1
+					}
+					check_variable = {
+						which = missil_500
+						value = 1
+					}
+					check_variable = {
+						which = missil_700
+						value = 1
+					}
+					check_variable = {
+						which = missil_1000
+						value = 1
+					}
+					check_variable = {
+						which = missil_1500
+						value = 1
+					}
+				}
+			}
+			reverse_has_opinion = { who = FROM value = 120  }
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 55
+				}
+			}
+			FROM = { NOT = { liberty_desire = 75 } }
+			FROM = { NOT = { alliance_with = event_target:my_attack_target_4  }  }
+			FROM = { NOT = { truce_with = event_target:my_attack_target_4  }  }
+			
+		}
+		
+			on_accept = {
+				add_country_modifier = {
+					name = missile_access_2
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = access_to_missile_2
+				}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	#############################################################
+
+	clear_target_attack_1 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_3 
+					}
+					FROM = {
+						has_country_flag = set_target_3 
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_4
+					}
+					FROM = {
+						has_country_flag = set_target_4 
+					}
+				}
+			}
+			
+			
+
+		}
+		is_allowed = {	
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_3 
+					}
+					FROM = {
+						has_country_flag = set_target_3 
+					}
+				}				
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_4
+					}
+					FROM = {
+						has_country_flag = set_target_4 
+					}
+				}
+			}
+		}
+		on_accept = {
+					if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = set_goal_3
+							}
+						}
+						ROOT = {
+							remove_country_modifier = set_goal_3
+						}
+						FROM = {
+							clr_country_flag = set_target_3
+							clear_global_event_target = event_target_3
+						}
+					}
+					else_if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = set_goal_4
+							} 
+						}
+						ROOT = {
+							remove_country_modifier = set_goal_4
+						}
+						FROM = {
+							clr_country_flag = set_target_4
+							clear_global_event_target = my_attack_target_4
+						}
+					}				
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+
+	clear_access_to_attack_1 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = missile_access_1 
+					}
+					FROM = {
+						has_country_flag = access_to_missile_1
+
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = missile_access_2
+					}
+					FROM = {
+						has_country_flag = access_to_missile_2
+					}
+				}
+			}
+		}
+		is_allowed = {
+		}
+		on_accept = {
+			if = {
+				limit = { has_country_modifier = missile_access_1 }
+				remove_country_modifier = missile_access_1
+				FROM = {
+					clr_country_flag = access_to_missile_1
+				}
+			}
+			else_if = {
+				limit = { has_country_modifier = missile_access_2 }
+				remove_country_modifier = missile_access_2
+				FROM = {
+					clr_country_flag = access_to_missile_2
+				}
+			}
+								
+		}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	
+	########################################################################
+
+	target_atom_1 = {
+		category = alliance
+		
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_5
+			NOT = { has_country_modifier = set_goal_5 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+			
+		}
+		on_accept = {
+				add_country_modifier = {
+					name = set_goal_5
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = set_target_5
+					save_global_event_target_as = event_target_5
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+	target_atom_2 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_6
+			NOT = { has_country_modifier = set_goal_6 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = set_goal_6
+				duration = -1
+			}
+				FROM = {
+					set_country_flag = set_target_6
+					save_global_event_target_as = event_target_6
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+
+	access_to_atom_1 = {
+		category = alliance
+		require_acceptance = no
+		
+		is_visible = {
+			ai = no
+			FROM = { ai = yes }
+			ROOT = {
+				has_country_modifier = can_set_goal_5
+			}
+			ROOT = {
+				has_country_modifier = set_goal_5
+			}
+			FROM = { NOT = { has_country_flag = access_to_atom_5 } }
+			overlord_of = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		is_allowed = {
+			FROM = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+				OR = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+					check_variable = {
+						which = missil_100
+						value = 1
+					}
+					check_variable = {
+						which = missil_150
+						value = 1
+					}
+					check_variable = {
+						which = missil_250
+						value = 1
+					}
+					check_variable = {
+						which = missil_350
+						value = 1
+					}
+					check_variable = {
+						which = missil_500
+						value = 1
+					}
+					check_variable = {
+						which = missil_700
+						value = 1
+					}
+					check_variable = {
+						which = missil_1000
+						value = 1
+					}
+					check_variable = {
+						which = missil_1500
+						value = 1
+					}
+				}
+			}
+			reverse_has_opinion = { who = FROM value = 120  }
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 55
+				}
+			}
+			FROM = { NOT = { liberty_desire = 75 } }
+			FROM = { NOT = { alliance_with = event_target:event_target_5  }  }
+			FROM = { NOT = { truce_with = event_target:event_target_5  }  }
+			FROM = {
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = event_target:event_target_5   } }
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = event_target:event_target_5   } }
+			}
+		}
+		
+			on_accept = {
+				add_country_modifier = {
+					name = atom_access_1
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = access_to_atom_5
+				}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	access_to_atom_2 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { ai = yes }
+			ROOT = {
+				has_country_modifier = can_set_goal_4
+			}
+			ROOT = {
+				has_country_modifier = set_goal_4
+			}
+			FROM = { NOT = { has_country_flag = access_to_atom_6 } }
+			overlord_of = FROM
+			FROM = {
+				is_subject_of = ROOT
+			}
+		}
+		is_allowed = {
+			FROM = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+				OR = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+					check_variable = {
+						which = missil_100
+						value = 1
+					}
+					check_variable = {
+						which = missil_150
+						value = 1
+					}
+					check_variable = {
+						which = missil_250
+						value = 1
+					}
+					check_variable = {
+						which = missil_350
+						value = 1
+					}
+					check_variable = {
+						which = missil_500
+						value = 1
+					}
+					check_variable = {
+						which = missil_700
+						value = 1
+					}
+					check_variable = {
+						which = missil_1000
+						value = 1
+					}
+					check_variable = {
+						which = missil_1500
+						value = 1
+					}
+				}
+			}
+			reverse_has_opinion = { who = FROM value = 120  }
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 55
+				}
+			}
+			FROM = { NOT = { liberty_desire = 75 } }
+			FROM = { NOT = { alliance_with = event_target:my_attack_target_6  }  }
+			FROM = { NOT = { truce_with = event_target:my_attack_target_6  }  }
+			FROM = {
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = event_target:event_target_6   } }
+				NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = event_target:event_target_6   } }
+			}
+			
+		}
+		
+			on_accept = {
+				add_country_modifier = {
+					name = atom_access_2
+					duration = -1
+				}
+				FROM = {
+					set_country_flag = access_to_atom_6
+				}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+
+	#####################################################################
+
+	clear_access_atom = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = atom_access_1 
+					}
+					FROM = {
+						has_country_flag = access_to_atom_5 
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = atom_access_1
+					}
+					FROM = {
+						has_country_modifier = access_to_atom_6 
+					}
+				}
+			}
+		}
+		is_allowed = {	
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = atom_access_1 
+					}
+					FROM = {
+						has_country_flag = access_to_atom_5 
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = atom_access_1
+					}
+					FROM = {
+						has_country_modifier = access_to_atom_6 
+					}
+				}
+			}
+		}
+		on_accept = {
+					if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = atom_access_1 
+							}
+							FROM = {
+								has_country_flag = access_to_atom_5 
+							}
+						}
+						ROOT = {
+							remove_country_modifier = atom_access_1
+						}
+						FROM = {
+							clr_country_flag = access_to_atom_5
+							clear_global_event_target = event_target_5
+						}
+					}
+					else_if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = atom_access_2
+							}
+							FROM = {
+								has_country_flag = access_to_atom_6
+							}
+						}
+						ROOT = {
+							remove_country_modifier = atom_access_2
+						}
+						FROM = {
+							clr_country_flag = access_to_atom_6
+							clear_global_event_target = event_target_6
+						}
+					}				
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+
+	####################################################################
+
+	clear_target_to_atom = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_5 
+					}
+					FROM = {
+						has_country_flag = set_target_5
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_6
+					}
+					FROM = {
+						has_country_flag = set_target_6
+					}
+				}
+			}
+		}
+		is_allowed = {
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_5 
+					}
+					FROM = {
+						has_country_flag = set_target_5
+
+					}
+				}
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_6
+					}
+					FROM = {
+						has_country_flag = set_target_6
+					}
+				}
+			}
+		}
+		on_accept = {
+			if = {
+				limit = { has_country_modifier = set_goal_5 }
+				remove_country_modifier = set_goal_5
+				FROM = {
+					clr_country_flag = set_target_5
+					clear_global_event_target = event_target_5
+				}
+			}
+			else_if = {
+				limit = { has_country_modifier = set_goal_6 }
+				remove_country_modifier = set_goal_6
+				FROM = {
+					clr_country_flag = set_target_6
+					clear_global_event_target = event_target_6
+				}
+			}				
+		}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	
+	
+	
+	

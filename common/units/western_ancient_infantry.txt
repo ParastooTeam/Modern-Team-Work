@@ -1,0 +1,19 @@
+# Western Ancient Infantry
+
+type = artillery	
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 2
+	}
+}
+
+maneuver = 0
+offensive_morale = 0
+defensive_morale = 0
+offensive_fire = 1
+defensive_fire = 3
+offensive_shock = 0
+defensive_shock = 0

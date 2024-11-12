@@ -1,0 +1,7 @@
+spriteTypes = {
+	# Mod Icon:
+	spriteType = {
+		name = "GFX_modern_version_background"
+		texturefile = "gfx/interface/modern_version_background.dds"
+	}
+}

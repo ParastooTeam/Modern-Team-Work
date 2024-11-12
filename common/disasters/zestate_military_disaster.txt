@@ -1,0 +1,155 @@
+military_disaster = {
+	potential = {
+		NOT = { has_reform = military_government }
+		num_of_cities = 6	
+		ai = no
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		OR = {
+			NOT = { stability = 0 }
+			check_variable = {
+				which = government_military_variable
+				value = 70
+			}
+		}
+		is_at_war = no
+		hidden_trigger = {
+			is_year = 2030
+		}
+	}
+	
+	can_stop = {
+		#NOT = { has_reform = military_government }
+		AND = {
+			stability = 3
+			NOT = {
+				check_variable = {
+					which = government_military_variable
+					value = 70
+				}
+			}
+		}
+	}
+	
+	#down_progress = {
+	#	factor = 0
+	#	modifier = {
+	#		factor = 1
+	#		NOT = {
+	#			estate_influence = {
+	#				estate = estate_military
+	#				influence = 100
+	#			}
+	#		}
+	#	}
+	#}
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 5
+		} 
+		modifier = {
+			factor = 0.5
+			num_of_loans = 10
+			NOT = { num_of_loans = 25 }
+		}	
+		modifier = {
+			factor = 1
+			num_of_loans = 25
+		}	
+		modifier = {
+			factor = 2
+			is_bankrupt = yes
+		}		
+		modifier = {
+			factor = 1
+			NOT = { stability = -1 }
+		}	
+		modifier = {
+			factor = 2
+			NOT = { stability = -2 }
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				OR = {
+					has_reform = military_government
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				has_disaster = military_disaster
+			}
+		}
+		modifier = {
+			factor = 0.5
+			has_faction = national_socialist_party
+			faction_in_power = national_socialist_party
+		}	
+		modifier = {
+			factor = 2
+			is_at_war = yes
+			NOT = { war_score = -20 }
+		}
+		modifier = {
+			factor = 0.5
+			revanchism = 5
+		}
+		modifier = {
+			factor = 1
+			revanchism = 10
+		}
+		modifier = {
+			factor = 10
+			check_variable = {
+				which = government_military_variable
+				value = 70
+			}
+		}
+	}
+	
+	can_end = {
+		stability = 3
+		NOT = {
+			check_variable = {
+				which = government_military_variable
+				value = 70
+			}
+		}
+	}
+	
+	modifier = {	
+		global_unrest = 12
+		tolerance_heathen = -3
+		global_trade_power = -0.25
+		stability_cost_modifier = 0.25
+	}
+
+	on_start = modern_dis_mil.1
+	on_end = modern_dis_mil.4
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = modern_dis_mil.2
+			100 = modern_dis_mil.3
+			100 = dis_com.4
+			100 = revolution.7
+			100 = revolution.8
+		
+		}
+	}
+}
+

@@ -1,0 +1,52 @@
+namespace = modern_european_union
+
+
+
+country_event = {
+	id = modern_european_union.1
+	title = modern_european_union.29t
+	desc = modern_european_union.29d
+	picture = VOTE_eventPicture
+	hidden = yes
+	#
+	is_triggered_only = yes
+
+	immediate = {
+		every_owned_province = { set_in_empire = yes }
+		#every_country = {
+		#	limit = { ai = no }
+		#	country_event = { id = european_union.3 }
+		#}
+		set_variable = { which = positive_EU value = 0 }
+		random_country = {
+			limit = {
+				has_country_modifier = european_union
+				NOT = { is_great_power = yes }
+				NOT = { has_country_modifier = european_leader }
+			}
+			set_emperor = yes
+		}
+	}
+
+	option = { 
+		name = modern_european_union.2a   
+	}
+}
+
+country_event = {
+	id = modern_european_union.2
+	title = modern_european_union.29t
+	desc = modern_european_union.29d
+	picture = VOTE_eventPicture
+	hidden = yes
+	#
+	is_triggered_only = yes
+
+	immediate = {
+		country_event = { id = european_union.6 }
+	}
+
+	option = { 
+		name = modern_european_union.2a   
+	}
+}

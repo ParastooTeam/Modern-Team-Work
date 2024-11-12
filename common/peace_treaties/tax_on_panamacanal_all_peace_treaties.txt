@@ -1,0 +1,132 @@
+po_ziro_our_panamatax_all = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 1.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 20.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 20
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	is_visible = {
+		FROM = {
+			owns_or_subject_of = 835
+		}
+		FROM = { ai = no }
+		ai = no
+		any_country = {
+			NOT = { tag = ROOT }
+			OR = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				has_country_modifier = canal_tax_panama_18
+				has_country_modifier = canal_tax_panama_19
+				has_country_modifier = canal_tax_panama_20
+				has_country_modifier = canal_tax_panama_21
+				has_country_modifier = canal_tax_panama_22
+				has_country_modifier = canal_tax_panama_23
+			}
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	effect = {
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						has_country_modifier = canal_tax_panama
+						has_country_modifier = canal_tax_panama_2
+						has_country_modifier = canal_tax_panama_3
+						has_country_modifier = canal_tax_panama_4
+						has_country_modifier = canal_tax_panama_5
+						has_country_modifier = canal_tax_panama_6
+						has_country_modifier = canal_tax_panama_7
+						has_country_modifier = canal_tax_panama_8
+						has_country_modifier = canal_tax_panama_9
+						has_country_modifier = canal_tax_panama_10
+						has_country_modifier = canal_tax_panama_11
+						has_country_modifier = canal_tax_panama_12
+						has_country_modifier = canal_tax_panama_13
+						has_country_modifier = canal_tax_panama_14
+						has_country_modifier = canal_tax_panama_15
+						has_country_modifier = canal_tax_panama_16
+						has_country_modifier = canal_tax_panama_17
+						has_country_modifier = canal_tax_panama_18
+						has_country_modifier = canal_tax_panama_19
+						has_country_modifier = canal_tax_panama_20
+						has_country_modifier = canal_tax_panama_21
+						has_country_modifier = canal_tax_panama_22
+						has_country_modifier = canal_tax_panama_23
+					}
+				}
+				remove_country_modifier =canal_tax_panama
+				remove_country_modifier =canal_tax_panama_2
+				remove_country_modifier =canal_tax_panama_3
+				remove_country_modifier =canal_tax_panama_4
+				remove_country_modifier =canal_tax_panama_5
+				remove_country_modifier =canal_tax_panama_6
+				remove_country_modifier =canal_tax_panama_7
+				remove_country_modifier =canal_tax_panama_8
+				remove_country_modifier =canal_tax_panama_9
+				remove_country_modifier =canal_tax_panama_10
+				remove_country_modifier =canal_tax_panama_11
+				remove_country_modifier =canal_tax_panama_12
+				remove_country_modifier =canal_tax_panama_13
+				remove_country_modifier =canal_tax_panama_14
+				remove_country_modifier =canal_tax_panama_15
+				remove_country_modifier =canal_tax_panama_16
+				remove_country_modifier =canal_tax_panama_17
+				remove_country_modifier =canal_tax_panama_18
+				remove_country_modifier =canal_tax_panama_19
+				remove_country_modifier =canal_tax_panama_20
+				remove_country_modifier =canal_tax_panama_21
+				remove_country_modifier =canal_tax_panama_22
+				remove_country_modifier =canal_tax_panama_23
+			}
+		}
+		FROM = {
+			add_country_modifier = {
+				name = cool_down_tax
+				duration = 18250
+			}
+		}
+		
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+	}
+}
+
+
+
+

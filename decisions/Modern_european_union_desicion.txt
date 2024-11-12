@@ -1,0 +1,2517 @@
+country_decisions = {
+
+	
+	join_european_union1 = {
+		major = yes
+		potential = {
+			has_country_flag = show_EU_decision
+			if = {
+				limit = {
+					NOT = { tag = GEO }
+					NOT = { tag = ARM }
+					NOT = { tag = AZE }
+					NOT = { tag = ABK }
+				}
+				calc_true_if = {
+					all_owned_province = {
+						continent = europe
+					}
+					amount = 6
+				}
+			}
+			if = {
+				limit = {  
+					OR = {
+						tag = GEO
+						tag = ARM
+						tag = AZE
+						tag = ABK
+					}
+				}
+				any_owned_province = {
+					continent = europe
+				}
+			}
+			
+            any_country = { has_country_modifier = european_union }
+            NOT = { has_country_modifier = european_union }
+            NOT = { has_country_modifier = european_leader }
+			NOT = { has_country_modifier = cant_join_EU }
+            NOT = { has_global_flag = centralized_warfare_policy_enacted }
+            NOT = { has_country_flag = cant_join_EU_again }
+			is_part_of_hre = no
+			NOT = {
+				check_variable = { which = negetive_EU value = 1 }
+			}
+			NOT = {
+				check_variable = { which = lying_EU value = 1 }
+			}
+		}
+		allow = {
+			NOT = { has_global_flag = cooldown_EU_VOTE }
+			NOT = { has_country_modifier = cooldown_EU_Voting_modifire }
+			is_at_war = no
+			is_subject = no
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			stability = 1
+			custom_trigger_tooltip = {
+				tooltip = eu_not_access
+				NOT = {
+					check_variable = { which = eu_not_access_to_join value = 10 }
+				}
+			}
+			OR = {
+				has_reform = multi_party_system
+				has_reform = democracy_reform
+			}
+			if = { limit = { tag = GBR }
+				is_year = 2035
+			}
+			if = { 
+				limit = { ai = yes }
+				is_year = 2025
+			}
+		}
+		effect = {
+			save_global_event_target_as = whants_join_EU
+			set_global_flag = cooldown_EU_VOTE
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			add_country_modifier = {
+				name = cooldown_EU_Voting_modifire
+				duration = 1825
+			}
+			#hidden_effect = {
+			#	change_variable = {
+			#		which = eu_not_access_to_join
+			#		value = 1
+			#	}
+			#}
+			if = {
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = positive_EU
+							value = 1
+						} 
+					}
+				}
+				set_variable = {
+					which = positive_EU
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					which = positive_EU
+					value = 1
+				}
+			}
+			if = {
+				limit = {  
+					check_variable = {
+						which = positive_EU
+						value = 2
+					} 
+				}
+				country_event = {
+					id = european_union_vote.18 days = 1
+				}
+				every_owned_province = { set_in_empire = yes }
+				every_country = {
+					limit = { ai = no NOT = { tag = ROOT } }
+					country_event = { id = european_union.3 }
+				}
+				set_variable = { which = positive_EU value = 0 }
+				add_country_modifier = { name = cool_down_leave_EU duration = 5475 }
+			}
+			
+			#every_country = {
+			#	limit = { 
+			#		has_country_modifier = european_union 
+			#		NOT = { has_country_modifier = european_leader }
+			#	}
+			#	country_event = { id = european_union_vote.1 days = 2 }
+			#}
+			#every_country = {
+			#	limit = { has_country_modifier = european_leader  }
+			#	country_event = { id = european_union_vote.2 days = 365 }
+			#}
+			#if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 40
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 40
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 39
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 39
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 38
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 38
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 37
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 37
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 36
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 36
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 35
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 35
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 34
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 34
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 33
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 33
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 33
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 33
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 32
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 32
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 31
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 31
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 30
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 30
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 29
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 29
+			#	}	
+			#					
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 28
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 28
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 27
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 27
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 26
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 26
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 25
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 25
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 24
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 24
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 23
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 23
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 22
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 22
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 21
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 21
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 20
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 20
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 19
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 19
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 18
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 18
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 17
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 17
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 16
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 16
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 15
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 15
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 14
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 14
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 13
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 13
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 12
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 12
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 11
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 11
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 10
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 10
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 9
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 9
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 8
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 8
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 7
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 7
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 6
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 6
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 5
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 5
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 4
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 4
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 3
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 3
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 2
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 2
+			#	}	
+			#	
+			#}
+			#else = {
+			#	change_variable = {
+			#		which = NUM_of_EU value = 1
+			#	}					
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				tag = SWI
+				NOT = { inflation = 1 }
+			}
+			modifier = {
+				factor = 1
+				calc_true_if = {
+					all_owned_province = {
+						continent = europe
+					}
+					amount = 5
+				}
+			}
+			#modifier = {
+			#	factor = 0
+			#	OR = {
+			#		is_neighbor_of = SOV
+			#		is_neighbor_of = RUS
+			#	}
+			#}
+			modifier = {
+				factor = 0
+				tag = RUS			
+			}
+			modifier = {
+				factor = 0
+				tag = SOV			
+			}
+			modifier = {
+				factor = 0
+				RUS = {
+					NOT = {  
+						is_part_of_hre = yes
+					}
+				}
+				alliance_with = RUS			
+			}
+			modifier = {
+				factor = 0
+				SOV = {
+					NOT = {  
+						is_part_of_hre = yes
+					}
+				}				
+				alliance_with = SOV			
+			}
+		}
+	}
+	
+	leave_european_union1 = {
+		major = yes
+		potential = {
+			has_country_flag = show_EU_decision
+			has_country_modifier = european_union
+			NOT = { has_global_flag = centralized_warfare_policy_enacted }
+			NOT = { has_global_flag = eu_debate_happening }
+			OR = {
+				is_subject = no
+				overlord = { NOT = { has_country_modifier = european_union } }
+			}
+			is_part_of_hre = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = cool_down_leave_EU }
+			NOT = { has_global_flag = cooldown_EU_VOTE }
+			NOT = { has_country_modifier = cooldown_EU_Voting_modifire }
+			NOT = { has_country_modifier = european_leader }
+			is_at_war = no
+			stability = 2
+			adm_power = 50
+			dip_power = 50
+			mil_power = 50
+			if = { 
+				limit = { ai = yes }
+				is_year = 2025
+			}
+		}
+		effect = {
+			save_global_event_target_as = whants_leave_EU
+			set_global_flag = cooldown_EU_VOTE
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+			add_country_modifier = {
+				name = cooldown_EU_Voting_modifire
+				duration = 1825
+			}
+			if = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = negetive_EU
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = negetive_EU
+					value = 1
+				}
+			}
+			else = {
+				change_variable = {
+					which = negetive_EU
+					value = 1
+				}
+			}
+			if = {
+				limit = { 
+					check_variable = {
+						which = negetive_EU
+						value = 1
+					}
+				}
+				country_event = {
+					id = european_union_vote.38 days = 1
+				}
+				add_stability = -1
+				remove_country_modifier = european_union
+				hidden_effect = {
+					add_country_modifier = {
+						name = cant_join_EU
+						duration = 18250
+					}
+					every_owned_province = {
+						limit = { is_core = ROOT }
+						set_in_empire = no
+					}
+				}
+				
+				set_country_flag = cant_join_EU_again 
+			}
+			#every_country = {
+			#	limit = { 
+			#		has_country_modifier = european_union 
+			#		NOT = { has_country_modifier = european_leader }
+			#	}
+			#	country_event = { id = european_union_vote.21 days = 2 }
+			#}
+			#every_country = {
+			#	limit = { has_country_modifier = european_leader  }
+			#	country_event = { id = european_union_vote.22 days = 365 }
+			#}
+			#if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 40
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 40
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 39
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 39
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 38
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 38
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 37
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 37
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 36
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 36
+			#	}
+			#}
+			#
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 35
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 35
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 34
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 34
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 33
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 33
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 33
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 33
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 32
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 32
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 31
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 31
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 30
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 30
+			#	}
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 29
+			#		} 
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 29
+			#	}	
+			#					
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 28
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 28
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 27
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 27
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 26
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 26
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 25
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 25
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 24
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 24
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 23
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 23
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 22
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 22
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 21
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 21
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 20
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 20
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 19
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 19
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 18
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 18
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 17
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 17
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 16
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 16
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 15
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 15
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 14
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 14
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 13
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 13
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 12
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 12
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 11
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 11
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 10
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 10
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 9
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 9
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 8
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 8
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 7
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 7
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 6
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 6
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 5
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 5
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 4
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 4
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 3
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 3
+			#	}	
+			#	
+			#}
+			#else_if = {
+			#	limit = { 
+			#		calc_true_if = {
+			#			all_country = {
+			#					has_country_modifier = european_union 
+			#				}
+			#		amount = 2
+			#		}
+			#	}
+			#	change_variable = {
+			#		which = NUM_of_EU value = 2
+			#	}	
+			#	
+			#}
+			#else = {
+			#	change_variable = {
+			#		which = NUM_of_EU value = 1
+			#	}					
+			#}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_subject = no
+				OR = {
+					has_reform = parliamentary_reform
+					has_reform = constitutional_monarchy
+					has_reform = constitutional_republic
+					has_reform = multi_party_system
+					has_reform = democracy_reform
+				}
+			}
+			modifier = {
+				factor = 1
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							continent = europe
+						}
+						amount = 1
+					}
+				}
+			}
+			modifier = {
+				factor = 1
+				RUS = {
+					NOT = {  
+						is_part_of_hre = yes
+					}
+				}
+				trust = {
+					who = RUS
+					value = 75
+				}				
+				alliance_with = RUS			
+			}
+			modifier = {
+				factor = 1
+				SOV = {
+					NOT = {  
+						is_part_of_hre = yes
+					}
+				}
+				trust = {
+					who = SOV
+					value = 75
+				}				
+				alliance_with = SOV			
+			}
+		}
+		ai_importance = 1
+	}
+
+	dismantle_european_union = {
+		major = yes
+		potential = {
+           has_country_flag = show_EU_decision
+			NOT = { has_country_modifier = european_union }
+			OR = {
+				any_country = {
+					is_subject_of_type = eu_state
+				}
+				any_country = {
+					has_country_modifier = european_union
+				}
+			}
+			#ai = no
+		}
+		provinces_to_highlight = {
+			OR = {
+				has_province_flag = capital_europa_leader
+				has_province_flag = capital_europa
+			}
+            continent = europe
+            is_city = yes
+				
+		}
+		allow = {
+			NOT = {
+				ROOT = {
+					any_owned_province = {
+						has_province_flag = capital_europa_leader
+					}
+				}
+			}
+			any_province = {
+				has_province_flag = capital_europa_leader
+                    continent = europe
+                    is_city = yes
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+			}
+			if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 30
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 30
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 29
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 29
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 28
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 28
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 27
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 27
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 26
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 26
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 25
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 25
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 24
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 24
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 23
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 23
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 22
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 22
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 21
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 21
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 20
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 20
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 19
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 19
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 18
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 18
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 17
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 17
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 16
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 16
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 15
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 15
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 14
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 14
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 13
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 13
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 12
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 12
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 11
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 11
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 10
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 10
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 9
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 9
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 8
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 8
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 7
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 7
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 6
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 6
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 5
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 5
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 4
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 4
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 3
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 3
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 2
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 2
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_province = {
+							has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						}
+					amount = 1
+					} 
+				}
+				calc_true_if = {
+					all_province = {
+						has_province_flag = capital_europa
+                            continent = europe
+                            is_city = yes
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+					}
+				amount = 1
+				}
+			}
+					
+				
+				
+		}
+		effect = {
+			set_global_flag = eu_dismantled
+			add_prestige = 100
+			add_power_projection = {
+				type = humiliated_rival
+				amount = 30
+			}
+			add_country_modifier = {
+				name = great_army_in_the_world
+				duration = 18250
+			}
+			every_country = {
+				limit = { 
+					is_subject_of_type = eu_state
+				}
+				grant_independence = yes
+				capital_scope = {
+					clr_province_flag = capital_europa
+				}
+				add_country_modifier = {
+					name = cant_join_EU
+					duration = -1
+				}
+			}
+			every_country = { 
+				remove_country_modifier = european_union
+				remove_country_modifier = european_leader
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	adopt_the_euro = {
+		potential = {
+           has_country_flag = show_EU_decision
+			is_year = 1999
+			has_country_modifier = european_union
+			NOT = { has_country_modifier = monetary_union }
+			NOT = { has_country_modifier = cant_join_EU }
+		}
+		allow = {
+			monthly_income = 5
+			adm_power = 50
+		}
+		effect = {
+			add_adm_power = -50
+			add_country_modifier = {
+				name = monetary_union
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				tag = DAN
+				NOT = { inflation = 1 }
+			}
+			modifier = {
+				factor = 0
+				tag = GBR
+				NOT = { inflation = 1 }
+			}
+		}
+		ai_importance = 1
+	}
+	check_EU_leader = {
+		potential = {
+			has_country_flag = show_EU_decision
+			ai = no
+		}
+		provinces_to_highlight = {
+			has_province_modifier = capital_europa_leader			
+            continent = europe
+            is_city = yes
+		}
+		allow = {
+			custom_trigger_tooltip = {
+				tooltip = EU_leader_tooltip
+			}
+			#any_country = {
+			#	has_country_modifier = european_leader
+			#}
+		}
+		effect = {
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	#president_of_EU_ai = {
+	#	potential = {
+	#		always = no
+    #       has_country_flag = show_EU_decision
+	#		has_country_modifier = european_union
+	#		ai = yes
+	#		NOT = { has_country_modifier = cant_EU_leader_cooldown }
+	#		NOT = { has_country_modifier = cant_EU_leader_ai }
+	#	}
+	#	allow = {
+	#		monthly_income = 5
+	#		is_at_war = no
+	#		#is_subject = no
+	#		adm_power = 50
+	#		dip_power = 50
+	#		mil_power = 50
+	#		if = {
+	#			limit = {
+	#				check_variable = {
+	#					which = want_EU_leader_variable value = 1
+	#				}
+	#			}
+	#			has_country_modifier = european_leader
+	#		}
+	#		NOT = { has_country_modifier = cant_EU_leader_ai }
+	#	}
+	#	effect = {
+	#		add_adm_power = -50
+	#		add_dip_power = -50
+	#		add_mil_power = -50
+	#		add_country_modifier = {
+	#			name = cant_EU_leader_cooldown
+	#			duration = 1825
+	#		}
+	#		add_country_modifier = {
+	#			name = want_EU_leader
+	#			duration = -1
+	#			hidden = yes
+	#		}
+	#		if = {
+	#			limit = {
+	#				NOT = {
+	#					check_variable = {
+	#						which = want_EU_ai_leader_variable value = 2
+	#					}
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					has_country_modifier = european_union
+	#					ai = yes
+	#					NOT = { tag = ROOT }
+	#				}
+	#				add_country_modifier = {
+	#					name = cant_EU_leader_ai
+	#					duration = 1460
+	#					#hidden = yes
+	#				}
+	#			}
+	#			change_variable = {
+	#				which = want_EU_leader_ai_variable value = 1
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = { 
+	#				check_variable = {
+	#					which = want_EU_leader_ai_variable value = 2
+	#				}
+	#			}
+	#			every_country = {
+	#				limit = {
+	#					has_country_modifier = european_union
+	#					ai = yes
+	#					NOT = { tag = ROOT }
+	#				}
+	#				add_country_modifier = {
+	#					name = cant_EU_leader_ai
+	#					duration = 1460
+	#					#hidden = yes
+	#				}
+	#			}
+	#			add_country_modifier = {
+	#				name = cant_EU_leader
+	#				duration = 1825
+	#			}
+	#		}
+	#		
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#	}
+	#	#ai_importance = 400
+	#}
+
+	#president_of_EU = {
+	#	potential = {
+    #       has_country_flag = show_EU_decision
+	#		has_country_modifier = european_union
+	#		NOT = { has_country_modifier = cant_EU_leader_cooldown }
+	#	}
+	#	allow = {
+	#		#monthly_income = 5
+	#		is_at_war = no
+	#		adm_power = 50
+	#		dip_power = 50
+	#		mil_power = 50
+	#		NOT = {
+	#			any_country = {
+	#				has_country_modifier = want_EU_leader
+	#			}
+	#		}
+	#	}
+	#	effect = {
+	#		add_adm_power = -50
+	#		add_dip_power = -50
+	#		add_mil_power = -50
+	#		add_country_modifier = {
+	#			name = cant_EU_leader_cooldown
+	#			duration = 1825
+	#		}
+	#		add_country_modifier = {
+	#			name = want_EU_leader
+	#			duration = 2200
+	#			hidden = yes
+	#		}
+	#		random_country = {
+	#			limit = {
+	#				ai = yes
+	#				has_country_modifier = european_union
+	#			}
+	#			add_country_modifier = {
+	#				name = want_EU_leader
+	#				duration = 2200
+	#				hidden = yes
+	#			}
+	#		}			
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#	
+	#}
+
+}

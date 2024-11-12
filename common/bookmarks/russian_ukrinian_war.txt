@@ -1,0 +1,9 @@
+
+bookmark = {
+	name = "RUSSIAN_UKRINIAN_WAR_NAME"
+	desc = "RUSSIAN_UKRINIAN_WAR_DESC"
+	date = 2022.2.23
+	
+	country = RUS
+	country = UKR
+}

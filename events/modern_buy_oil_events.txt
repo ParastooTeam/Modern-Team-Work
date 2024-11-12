@@ -1,0 +1,950 @@
+	namespace = buy_oil
+	#UN Sanction 10%
+	country_event = {
+		id = buy_oil.1
+		title = "buy_oil.1t"
+		desc = "buy_oil.1d"
+		is_triggered_only = yes
+		#hidden = yes
+		picture = Oil_eventPicture
+		
+		option = {
+			name = buy_oil.10ma 	
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 10
+					treasury = 25000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 25000 }
+				}
+			}
+			trigger = {
+					check_variable = { which = 10milion_oil value = 1 }
+			}
+				
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_10milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 10milion_oil value = 0 }
+				set_variable = { which = 9_9milion_oil value = 0 }
+				set_variable = { which = 9_8milion_oil value = 0 }
+				set_variable = { which = 9_7milion_oil value = 0 }
+				set_variable = { which = 9_6milion_oil value = 0 }
+				set_variable = { which = 9_5milion_oil value = 0 }
+				set_variable = { which = 9_4milion_oil value = 0 }
+				set_variable = { which = 9_3milion_oil value = 0 }
+				set_variable = { which = 9_2milion_oil value = 0 }
+				set_variable = { which = 9_1milion_oil value = 0 }
+			}		
+		}
+		option = { 
+			name = buy_oil.9ma 	
+			ai_chance = {
+				factor = 9
+				modifier = {
+					factor = 9
+					treasury = 22500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 22500 }
+				}
+			}
+			trigger = {
+				check_variable = { which = 9milion_oil value = 1 }	
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_9milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 9milion_oil value = 0 }
+				set_variable = { which = 8_9milion_oil value = 0 }
+				set_variable = { which = 8_8milion_oil value = 0 }
+				set_variable = { which = 8_7milion_oil value = 0 }
+				set_variable = { which = 8_6milion_oil value = 0 }
+				set_variable = { which = 8_5milion_oil value = 0 }
+				set_variable = { which = 8_4milion_oil value = 0 }
+				set_variable = { which = 8_3milion_oil value = 0 }
+				set_variable = { which = 8_2milion_oil value = 0 }
+				set_variable = { which = 8_1milion_oil value = 0 }
+			}			
+		}
+		option = { 
+			name = buy_oil.8ma 	
+			ai_chance = {
+				factor = 8
+				modifier = {
+					factor = 8
+					treasury = 20000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 20000 }
+				}
+			}
+			trigger = {
+				check_variable = { which = 8milion_oil value = 1 }
+					
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_8milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 8milion_oil value = 0 }
+				set_variable = { which = 7_9milion_oil value = 0 }
+				set_variable = { which = 7_8milion_oil value = 0 }
+				set_variable = { which = 7_7milion_oil value = 0 }
+				set_variable = { which = 7_6milion_oil value = 0 }
+				set_variable = { which = 7_5milion_oil value = 0 }
+				set_variable = { which = 7_4milion_oil value = 0 }
+				set_variable = { which = 7_3milion_oil value = 0 }
+				set_variable = { which = 7_2milion_oil value = 0 }
+				set_variable = { which = 7_1milion_oil value = 0 }
+			} 	
+		}
+		option = { 
+			name = buy_oil.7ma 
+			ai_chance = {
+				factor = 7
+				modifier = {
+					factor = 7
+					treasury = 17500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 17500 }
+				}
+			}	
+			trigger = {
+					check_variable = { which = 7milion_oil value = 1 }
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_7milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 7milion_oil value = 0 }
+				set_variable = { which = 6_9milion_oil value = 0 }
+				set_variable = { which = 6_8milion_oil value = 0 }
+				set_variable = { which = 6_7milion_oil value = 0 }
+				set_variable = { which = 6_6milion_oil value = 0 }
+				set_variable = { which = 6_5milion_oil value = 0 }
+				set_variable = { which = 6_4milion_oil value = 0 }
+				set_variable = { which = 6_3milion_oil value = 0 }
+				set_variable = { which = 6_2milion_oil value = 0 }
+				set_variable = { which = 6_1milion_oil value = 0 }
+			}		
+		}
+		option = { 
+			name = buy_oil.6ma 	
+			ai_chance = {
+				factor = 6
+				modifier = {
+					factor = 6
+					treasury = 15000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 15000 }
+				}
+			}
+			trigger = {
+				check_variable = { which = 6milion_oil value = 1 }
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_6milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 6milion_oil value = 0 }
+				set_variable = { which = 5_9milion_oil value = 0 }
+				set_variable = { which = 5_8milion_oil value = 0 }
+				set_variable = { which = 5_7milion_oil value = 0 }
+				set_variable = { which = 5_6milion_oil value = 0 }
+				set_variable = { which = 5_5milion_oil value = 0 }
+				set_variable = { which = 5_4milion_oil value = 0 }
+				set_variable = { which = 5_3milion_oil value = 0 }
+				set_variable = { which = 5_2milion_oil value = 0 }
+				set_variable = { which = 5_1milion_oil value = 0 }
+			} 	
+		}
+		option = { 
+			name = buy_oil.5ma 	
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 5
+					treasury = 12500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 12500 }
+				}
+			}
+			trigger = {
+				check_variable = { which = 5milion_oil value = 1 }
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_5milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 5milion_oil value = 0 }
+				set_variable = { which = 4_9milion_oil value = 0 }
+				set_variable = { which = 4_8milion_oil value = 0 }
+				set_variable = { which = 4_7milion_oil value = 0 }
+				set_variable = { which = 4_6milion_oil value = 0 }
+				set_variable = { which = 4_5milion_oil value = 0 }
+				set_variable = { which = 4_4milion_oil value = 0 }
+				set_variable = { which = 4_3milion_oil value = 0 }
+				set_variable = { which = 4_2milion_oil value = 0 }
+				set_variable = { which = 4_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.4ma 	
+			ai_chance = {
+				factor = 4
+				modifier = {
+					factor = 4
+					treasury = 10000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 10000 }
+				}
+			}
+			trigger = {
+				check_variable = { which = 4milion_oil value = 1 }
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_4milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 4milion_oil value = 0 }
+				set_variable = { which = 3_9milion_oil value = 0 }
+				set_variable = { which = 3_8milion_oil value = 0 }
+				set_variable = { which = 3_7milion_oil value = 0 }
+				set_variable = { which = 3_6milion_oil value = 0 }
+				set_variable = { which = 3_5milion_oil value = 0 }
+				set_variable = { which = 3_4milion_oil value = 0 }
+				set_variable = { which = 3_3milion_oil value = 0 }
+				set_variable = { which = 3_2milion_oil value = 0 }
+				set_variable = { which = 3_1milion_oil value = 0 }
+			} 	
+		}
+		option = { 
+			name = buy_oil.3ma
+			ai_chance = {
+				factor = 3
+				modifier = {
+					factor = 3
+					treasury = 7500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 7500 }
+				}
+			} 	
+			trigger = {				
+				check_variable = { which = 3milion_oil value = 1 }
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_3milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 3milion_oil value = 0 }
+				set_variable = { which = 2_9milion_oil value = 0 }
+				set_variable = { which = 2_8milion_oil value = 0 }
+				set_variable = { which = 2_7milion_oil value = 0 }
+				set_variable = { which = 2_6milion_oil value = 0 }
+				set_variable = { which = 2_5milion_oil value = 0 }
+				set_variable = { which = 2_4milion_oil value = 0 }
+				set_variable = { which = 2_3milion_oil value = 0 }
+				set_variable = { which = 2_2milion_oil value = 0 }
+				set_variable = { which = 2_1milion_oil value = 0 }
+			}
+		}
+		option = { 
+			name = buy_oil.2ma
+			ai_chance = {
+				factor = 2
+				modifier = {
+					factor = 2
+					treasury = 5000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 5000 }
+				}
+			}
+			trigger = {			
+				check_variable = { which = 2milion_oil value = 1 }					
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_2milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 2milion_oil value = 0 }
+				set_variable = { which = 1_9milion_oil value = 0 }
+				set_variable = { which = 1_8milion_oil value = 0 }
+				set_variable = { which = 1_7milion_oil value = 0 }
+				set_variable = { which = 1_6milion_oil value = 0 }
+				set_variable = { which = 1_5milion_oil value = 0 }
+				set_variable = { which = 1_4milion_oil value = 0 }
+				set_variable = { which = 1_3milion_oil value = 0 }
+				set_variable = { which = 1_2milion_oil value = 0 }
+				set_variable = { which = 1_1milion_oil value = 0 }
+			}		
+		}
+		option = {
+			name = buy_oil.1ma 	
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 1
+					treasury = 2500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 2500 }
+				}
+			}
+			trigger = {			
+				OR = {
+					check_variable = { which = 1milion_oil value = 1 }
+					check_variable = { which = 0_9milion_oil value = 1 }
+					check_variable = { which = 0_8milion_oil value = 1 }
+					check_variable = { which = 0_7milion_oil value = 1 }
+					check_variable = { which = 0_6milion_oil value = 1 }
+					check_variable = { which = 0_5milion_oil value = 1 }
+					check_variable = { which = 0_4milion_oil value = 1 }
+					check_variable = { which = 0_3milion_oil value = 1 }
+					check_variable = { which = 0_2milion_oil value = 1 }
+					check_variable = { which = 0_1milion_oil value = 1 }
+				}	
+			}
+			country_event = {
+				id = buy_oil.11 days = 1
+			}			
+		}
+		option = { 
+			name = cancel.buy_oil.1
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 0
+					check_variable = { which = 1milion_oil value = 1 }
+				}
+				modifier = {
+					factor = 0
+					treasury = 2500
+				}
+			}
+			hidden_effect = {
+				set_variable = { which = 10milion_oil value = 0 }
+				set_variable = { which = 9_9milion_oil value = 0 }
+				set_variable = { which = 9_8milion_oil value = 0 }
+				set_variable = { which = 9_7milion_oil value = 0 }
+				set_variable = { which = 9_6milion_oil value = 0 }
+				set_variable = { which = 9_5milion_oil value = 0 }
+				set_variable = { which = 9_4milion_oil value = 0 }
+				set_variable = { which = 9_3milion_oil value = 0 }
+				set_variable = { which = 9_2milion_oil value = 0 }
+				set_variable = { which = 9_1milion_oil value = 0 }
+				set_variable = { which = 9milion_oil value = 0 }
+				set_variable = { which = 8_9milion_oil value = 0 }
+				set_variable = { which = 8_8milion_oil value = 0 }
+				set_variable = { which = 8_7milion_oil value = 0 }
+				set_variable = { which = 8_6milion_oil value = 0 }
+				set_variable = { which = 8_5milion_oil value = 0 }
+				set_variable = { which = 8_4milion_oil value = 0 }
+				set_variable = { which = 8_3milion_oil value = 0 }
+				set_variable = { which = 8_2milion_oil value = 0 }
+				set_variable = { which = 8_1milion_oil value = 0 }
+				set_variable = { which = 8milion_oil value = 0 }
+				set_variable = { which = 7_9milion_oil value = 0 }
+				set_variable = { which = 7_8milion_oil value = 0 }
+				set_variable = { which = 7_7milion_oil value = 0 }
+				set_variable = { which = 7_6milion_oil value = 0 }
+				set_variable = { which = 7_5milion_oil value = 0 }
+				set_variable = { which = 7_4milion_oil value = 0 }
+				set_variable = { which = 7_3milion_oil value = 0 }
+				set_variable = { which = 7_2milion_oil value = 0 }
+				set_variable = { which = 7_1milion_oil value = 0 }
+				set_variable = { which = 7milion_oil value = 0 }
+				set_variable = { which = 6_9milion_oil value = 0 }
+				set_variable = { which = 6_8milion_oil value = 0 }
+				set_variable = { which = 6_7milion_oil value = 0 }
+				set_variable = { which = 6_6milion_oil value = 0 }
+				set_variable = { which = 6_5milion_oil value = 0 }
+				set_variable = { which = 6_4milion_oil value = 0 }
+				set_variable = { which = 6_3milion_oil value = 0 }
+				set_variable = { which = 6_2milion_oil value = 0 }
+				set_variable = { which = 6_1milion_oil value = 0 }
+				set_variable = { which = 6milion_oil value = 0 }
+				set_variable = { which = 5_9milion_oil value = 0 }
+				set_variable = { which = 5_8milion_oil value = 0 }
+				set_variable = { which = 5_7milion_oil value = 0 }
+				set_variable = { which = 5_6milion_oil value = 0 }
+				set_variable = { which = 5_5milion_oil value = 0 }
+				set_variable = { which = 5_4milion_oil value = 0 }
+				set_variable = { which = 5_3milion_oil value = 0 }
+				set_variable = { which = 5_2milion_oil value = 0 }
+				set_variable = { which = 5_1milion_oil value = 0 }
+				set_variable = { which = 5milion_oil value = 0 }
+				set_variable = { which = 4_9milion_oil value = 0 }
+				set_variable = { which = 4_8milion_oil value = 0 }
+				set_variable = { which = 4_7milion_oil value = 0 }
+				set_variable = { which = 4_6milion_oil value = 0 }
+				set_variable = { which = 4_5milion_oil value = 0 }
+				set_variable = { which = 4_4milion_oil value = 0 }
+				set_variable = { which = 4_3milion_oil value = 0 }
+				set_variable = { which = 4_2milion_oil value = 0 }
+				set_variable = { which = 4_1milion_oil value = 0 }
+				set_variable = { which = 4milion_oil value = 0 }
+				set_variable = { which = 3_9milion_oil value = 0 }
+				set_variable = { which = 3_8milion_oil value = 0 }
+				set_variable = { which = 3_7milion_oil value = 0 }
+				set_variable = { which = 3_6milion_oil value = 0 }
+				set_variable = { which = 3_5milion_oil value = 0 }
+				set_variable = { which = 3_4milion_oil value = 0 }
+				set_variable = { which = 3_3milion_oil value = 0 }
+				set_variable = { which = 3_2milion_oil value = 0 }
+				set_variable = { which = 3_1milion_oil value = 0 }
+				set_variable = { which = 3milion_oil value = 0 }
+				set_variable = { which = 2_9milion_oil value = 0 }
+				set_variable = { which = 2_8milion_oil value = 0 }
+				set_variable = { which = 2_7milion_oil value = 0 }
+				set_variable = { which = 2_6milion_oil value = 0 }
+				set_variable = { which = 2_5milion_oil value = 0 }
+				set_variable = { which = 2_4milion_oil value = 0 }
+				set_variable = { which = 2_3milion_oil value = 0 }
+				set_variable = { which = 2_2milion_oil value = 0 }
+				set_variable = { which = 2_1milion_oil value = 0 }
+				set_variable = { which = 2milion_oil value = 0 }
+				set_variable = { which = 1_9milion_oil value = 0 }
+				set_variable = { which = 1_8milion_oil value = 0 }
+				set_variable = { which = 1_7milion_oil value = 0 }
+				set_variable = { which = 1_6milion_oil value = 0 }
+				set_variable = { which = 1_5milion_oil value = 0 }
+				set_variable = { which = 1_4milion_oil value = 0 }
+				set_variable = { which = 1_3milion_oil value = 0 }
+				set_variable = { which = 1_2milion_oil value = 0 }
+				set_variable = { which = 1_1milion_oil value = 0 }
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}
+		}
+	}
+	country_event = {
+		id = buy_oil.11
+		title = "buy_oil.1t"
+		desc = "buy_oil.1d"
+		is_triggered_only = yes
+		#hidden = yes
+		picture = Oil_eventPicture
+		option = { 
+			name = buy_oil.1ma 	
+			trigger = {			
+				check_variable = { which = 1milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 10
+					treasury = 2500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 2500 }
+				}
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_1milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}		
+		}
+		option = { 
+			name = buy_oil.0_9ma 	
+			trigger = {			
+				check_variable = { which = 0_9milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 9
+				modifier = {
+					factor = 9
+					treasury = 2250
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 2250 }
+				}
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_9milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}			
+		}
+		option = { 
+			name = buy_oil.0_8ma 
+			trigger = {			
+				check_variable = { which = 0_8milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 8
+				modifier = {
+					factor = 8
+					treasury = 2000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 2000 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_8milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}			
+		}
+		option = { 
+			name = buy_oil.0_7ma 
+			trigger = {			
+				check_variable = { which = 0_7milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 7
+				modifier = {
+					factor = 7
+					treasury = 1750
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 1750 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_7milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}			
+		}
+		option = { 
+			name = buy_oil.0_6ma 
+			trigger = {			
+				check_variable = { which = 0_6milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 6
+				modifier = {
+					factor = 6
+					treasury = 1500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 1500 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_6milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.0_5ma 
+			trigger = {			
+				check_variable = { which = 0_5milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 5
+				modifier = {
+					factor = 5
+					treasury = 1250
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 1250 }
+				}
+			}
+			add_country_modifier = {
+				name =  buy_0_5milion_oil 
+				duration = 60
+				hidden = yes
+			}
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_6milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.0_4ma 
+			trigger = {			
+				check_variable = { which = 0_4milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 4
+				modifier = {
+					factor = 4
+					treasury = 1000
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 1000 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_4milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.0_3ma 	
+			trigger = {			
+				check_variable = { which = 0_3milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 3
+				modifier = {
+					factor = 3
+					treasury = 750
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 750 }
+				}
+			}
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_3milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.0_2ma 
+			trigger = {			
+				check_variable = { which = 0_2milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 2
+				modifier = {
+					factor = 2
+					treasury = 500
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 500 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_2milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+		option = { 
+			name = buy_oil.0_1ma 
+			trigger = {			
+				check_variable = { which = 0_1milion_oil value = 1 }	
+			}
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 1
+					treasury = 250
+				}
+				modifier = {
+					factor = 0
+					NOT = { treasury = 250 }
+				}
+			}	
+			
+			hidden_effect = {
+				add_country_modifier = {
+					name =  buy_0_1milion_oil 
+					duration = 60
+					hidden = yes
+				}
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			} 			
+		}
+			
+		option = { 
+			name = cancel.buy_oil.1
+			ai_chance = {
+				factor = 1
+				modifier = {
+					factor = 1
+					NOT = { treasury = 250 }
+				}
+			}	
+			remove_country_modifier = show_oil_modifire
+			hidden_effect = {
+				set_variable = { which = 10milion_oil value = 0 }
+				set_variable = { which = 9_9milion_oil value = 0 }
+				set_variable = { which = 9_8milion_oil value = 0 }
+				set_variable = { which = 9_7milion_oil value = 0 }
+				set_variable = { which = 9_6milion_oil value = 0 }
+				set_variable = { which = 9_5milion_oil value = 0 }
+				set_variable = { which = 9_4milion_oil value = 0 }
+				set_variable = { which = 9_3milion_oil value = 0 }
+				set_variable = { which = 9_2milion_oil value = 0 }
+				set_variable = { which = 9_1milion_oil value = 0 }
+				set_variable = { which = 9milion_oil value = 0 }
+				set_variable = { which = 8_9milion_oil value = 0 }
+				set_variable = { which = 8_8milion_oil value = 0 }
+				set_variable = { which = 8_7milion_oil value = 0 }
+				set_variable = { which = 8_6milion_oil value = 0 }
+				set_variable = { which = 8_5milion_oil value = 0 }
+				set_variable = { which = 8_4milion_oil value = 0 }
+				set_variable = { which = 8_3milion_oil value = 0 }
+				set_variable = { which = 8_2milion_oil value = 0 }
+				set_variable = { which = 8_1milion_oil value = 0 }
+				set_variable = { which = 8milion_oil value = 0 }
+				set_variable = { which = 7_9milion_oil value = 0 }
+				set_variable = { which = 7_8milion_oil value = 0 }
+				set_variable = { which = 7_7milion_oil value = 0 }
+				set_variable = { which = 7_6milion_oil value = 0 }
+				set_variable = { which = 7_5milion_oil value = 0 }
+				set_variable = { which = 7_4milion_oil value = 0 }
+				set_variable = { which = 7_3milion_oil value = 0 }
+				set_variable = { which = 7_2milion_oil value = 0 }
+				set_variable = { which = 7_1milion_oil value = 0 }
+				set_variable = { which = 7milion_oil value = 0 }
+				set_variable = { which = 6_9milion_oil value = 0 }
+				set_variable = { which = 6_8milion_oil value = 0 }
+				set_variable = { which = 6_7milion_oil value = 0 }
+				set_variable = { which = 6_6milion_oil value = 0 }
+				set_variable = { which = 6_5milion_oil value = 0 }
+				set_variable = { which = 6_4milion_oil value = 0 }
+				set_variable = { which = 6_3milion_oil value = 0 }
+				set_variable = { which = 6_2milion_oil value = 0 }
+				set_variable = { which = 6_1milion_oil value = 0 }
+				set_variable = { which = 6milion_oil value = 0 }
+				set_variable = { which = 5_9milion_oil value = 0 }
+				set_variable = { which = 5_8milion_oil value = 0 }
+				set_variable = { which = 5_7milion_oil value = 0 }
+				set_variable = { which = 5_6milion_oil value = 0 }
+				set_variable = { which = 5_5milion_oil value = 0 }
+				set_variable = { which = 5_4milion_oil value = 0 }
+				set_variable = { which = 5_3milion_oil value = 0 }
+				set_variable = { which = 5_2milion_oil value = 0 }
+				set_variable = { which = 5_1milion_oil value = 0 }
+				set_variable = { which = 5milion_oil value = 0 }
+				set_variable = { which = 4_9milion_oil value = 0 }
+				set_variable = { which = 4_8milion_oil value = 0 }
+				set_variable = { which = 4_7milion_oil value = 0 }
+				set_variable = { which = 4_6milion_oil value = 0 }
+				set_variable = { which = 4_5milion_oil value = 0 }
+				set_variable = { which = 4_4milion_oil value = 0 }
+				set_variable = { which = 4_3milion_oil value = 0 }
+				set_variable = { which = 4_2milion_oil value = 0 }
+				set_variable = { which = 4_1milion_oil value = 0 }
+				set_variable = { which = 4milion_oil value = 0 }
+				set_variable = { which = 3_9milion_oil value = 0 }
+				set_variable = { which = 3_8milion_oil value = 0 }
+				set_variable = { which = 3_7milion_oil value = 0 }
+				set_variable = { which = 3_6milion_oil value = 0 }
+				set_variable = { which = 3_5milion_oil value = 0 }
+				set_variable = { which = 3_4milion_oil value = 0 }
+				set_variable = { which = 3_3milion_oil value = 0 }
+				set_variable = { which = 3_2milion_oil value = 0 }
+				set_variable = { which = 3_1milion_oil value = 0 }
+				set_variable = { which = 3milion_oil value = 0 }
+				set_variable = { which = 2_9milion_oil value = 0 }
+				set_variable = { which = 2_8milion_oil value = 0 }
+				set_variable = { which = 2_7milion_oil value = 0 }
+				set_variable = { which = 2_6milion_oil value = 0 }
+				set_variable = { which = 2_5milion_oil value = 0 }
+				set_variable = { which = 2_4milion_oil value = 0 }
+				set_variable = { which = 2_3milion_oil value = 0 }
+				set_variable = { which = 2_2milion_oil value = 0 }
+				set_variable = { which = 2_1milion_oil value = 0 }
+				set_variable = { which = 2milion_oil value = 0 }
+				set_variable = { which = 1_9milion_oil value = 0 }
+				set_variable = { which = 1_8milion_oil value = 0 }
+				set_variable = { which = 1_7milion_oil value = 0 }
+				set_variable = { which = 1_6milion_oil value = 0 }
+				set_variable = { which = 1_5milion_oil value = 0 }
+				set_variable = { which = 1_4milion_oil value = 0 }
+				set_variable = { which = 1_3milion_oil value = 0 }
+				set_variable = { which = 1_2milion_oil value = 0 }
+				set_variable = { which = 1_1milion_oil value = 0 }
+				set_variable = { which = 1milion_oil value = 0 }
+				set_variable = { which = 0_9milion_oil value = 0 }
+				set_variable = { which = 0_8milion_oil value = 0 }
+				set_variable = { which = 0_7milion_oil value = 0 }
+				set_variable = { which = 0_6milion_oil value = 0 }
+				set_variable = { which = 0_5milion_oil value = 0 }
+				set_variable = { which = 0_4milion_oil value = 0 }
+				set_variable = { which = 0_3milion_oil value = 0 }
+				set_variable = { which = 0_2milion_oil value = 0 }
+				set_variable = { which = 0_1milion_oil value = 0 }
+			}
+		}
+	}

@@ -1,0 +1,4710 @@
+	namespace = european_union_coalotion_vote
+	
+
+	country_event = {
+		id = european_union_coalotion_vote.1
+		title = "european_union_coalotion_vote.1t"
+		desc = "european_union_coalotion_vote.1d"
+		is_triggered_only = yes
+		picture = VOTE_COALITION_eventPicture
+	
+		#POOSITIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+		option = { 
+			name = european_union_coalotion_vote.1a 
+			
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						OR = {
+							is_rival = ROOT
+							is_enemy = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 9.5
+						OR = {
+							is_rival = event_target:EU_Coalition
+							is_enemy = event_target:EU_Coalition
+						}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						offensive_war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = nuked_us
+							}
+						}
+						overlord = {
+							event_target:EU_Coalition = {
+								has_opinion_modifier = {
+									who = event_target:EU_Coalition
+									modifier = nuked_us
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					event_target:EU_Coalition = {
+						war_with = ROOT
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition 
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_core_province = {
+						owned_by = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:EU_Coalition = {
+						NOT = {
+							has_opinion = {
+								value = -150
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					core_claim = event_target:EU_Coalition
+					
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						trade_embargo_by = event_target:EU_Coalition
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = oil_bane_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = aluminum_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = cars_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = copper_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = electronic_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = iron_ban_opinion
+						}
+					####################################################################
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = oil_bane_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = aluminum_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = cars_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = copper_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = electronic_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = iron_ban_opinion_50
+						}
+						##################################################################
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_10
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_25
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_100
+						}
+						
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_ally = {
+						war_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						alliance_with = ROOT
+						is_in_war = {
+							attackers = event_target:EU_Coalition
+							defenders = this
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_rival_country = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					OR = {
+						any_neighbor_country = {
+							guaranteed_by = event_target:EU_Coalition
+						}
+						any_rival_country = {
+							guaranteed_by = event_target:EU_Coalition
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						same_continent = ROOT
+						is_in_war = {
+							defender_leader = THIS 
+							attacker_leader = event_target:EU_Coalition 
+						}
+					}	
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					event_target:EU_Coalition = {
+						overlord = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						NOT = {
+							has_opinion = {
+								value = -100
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						OR = {
+							is_rival = event_target:EU_Coalition
+							is_enemy = event_target:EU_Coalition
+						}						
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						is_subject_of = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 0.75
+					overlord = {
+						event_target:EU_Coalition = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						NOT = {	capital_scope = { same_continent = ROOT } }
+						is_neighbor_of = ROOT
+						NOT = { alliance_with = ROOT }
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						war_with = ROOT
+						is_hiring_condottiere_from = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = babbling_buffoon_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = infertile_personality
+						ruler_has_personality = drunkard_personality
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = naive_personality
+						ruler_has_personality = craven_personality
+						ruler_has_personality = loose_lips_personality
+						ruler_has_personality = obsessive_perfectionist_personality
+						ruler_has_personality = malevolent_personality
+					}
+					
+					
+				}
+			}
+			
+			hidden_effect = {
+				event_target:EU_Coalition = { 
+					change_variable = {
+						which = vote_for_EU_positive
+						value = 1
+					}
+				}
+			}
+		}
+		#NEGETIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+		option = { 
+			name = european_union_coalotion_vote.1b
+			trigger = {
+				NOT = {
+					tag = event_target:EU_Coalition
+				}
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					alliance_with = event_target:EU_Coalition
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:EU_Coalition
+						}
+						event_target:EU_Coalition = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:EU_Coalition
+						}
+					}
+					event_target:EU_Coalition = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_ally = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 5.25
+					event_target:EU_Coalition = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:EU_Coalition		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:EU_Coalition	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+							 ####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+					}
+				
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					   factor = 0.25
+					   OR = {
+						   ruler_has_personality = just_personality
+						   ruler_has_personality = righteous_personality
+						   ruler_has_personality = tolerant_personality
+						   ruler_has_personality = kind_hearted_personality
+						   ruler_has_personality = free_thinker_personality
+						   ruler_has_personality = well_connected_personality
+						   ruler_has_personality = calm_personality
+						   ruler_has_personality = careful_personality
+						   ruler_has_personality = secretive_personality
+						   ruler_has_personality = intricate_web_weaver_personality
+						   ruler_has_personality = fertile_personality
+					   }
+			
+				}				
+			}
+			hidden_effect = {
+				event_target:EU_Coalition = { 
+					change_variable = {
+						which = vote_for_EU_negetive
+						value = 1
+					}
+				}
+			}
+		}
+		#VVVVVVVVETOOOOOOOOOOOOOOOOOOOOOOOOOOO
+		option = { 
+			name = european_union_coalotion_vote.1c
+			trigger = {
+				always = no
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = {
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = VETO_on_EU_Metting
+								value = 1
+							}
+						}
+					}
+				}
+				has_country_modifier = european_leader
+				NOT = { has_country_modifier = cool_down_veto }
+			}
+			ai_chance = {
+				factor = 2
+				modifier = {
+					factor = 1.9
+					alliance_with = event_target:EU_Coalition
+				}
+				modifier = {
+					factor = 1.9
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:EU_Coalition
+						}
+						event_target:EU_Coalition = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1.7
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:EU_Coalition
+						}
+					}
+					event_target:EU_Coalition = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 1.35
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 1.2
+					event_target:EU_Coalition = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:EU_Coalition		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:EU_Coalition	
+						}
+					}
+				}
+				modifier = {
+					factor = 1
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 1
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+							 ####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+					}
+				
+				}
+				modifier = {
+					factor = 0.25
+					event_target:EU_Coalition = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					   factor = 0.25
+					   OR = {
+						   ruler_has_personality = just_personality
+						   ruler_has_personality = righteous_personality
+						   ruler_has_personality = tolerant_personality
+						   ruler_has_personality = kind_hearted_personality
+						   ruler_has_personality = free_thinker_personality
+						   ruler_has_personality = well_connected_personality
+						   ruler_has_personality = calm_personality
+						   ruler_has_personality = careful_personality
+						   ruler_has_personality = secretive_personality
+						   ruler_has_personality = intricate_web_weaver_personality
+						   ruler_has_personality = fertile_personality
+					   }
+			
+				}				
+			}
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+			
+			hidden_effect = {
+				event_target:EU_Coalition = { 
+					change_variable = {
+						which = VETO_on_EU_Metting
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 3650
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 730
+					}
+				}
+			}
+		}
+	}
+	##################################################################################################################################
+	##################################################################################################################################
+	##################################################################################################################################
+	country_event = {
+		id = european_union_coalotion_vote.2
+		title = "european_union_coalotion_vote.1t"
+		desc = "european_union_coalotion_vote.1d"
+		is_triggered_only = yes
+	
+		picture = VOTE_COALITION_eventPicture
+		option = { 
+			#POSITIIIIIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+			name = european_union_coalotion_vote.1a 
+			trigger = {
+				NOT = {
+					tag = event_target:EU_Coalition
+				}
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						OR = {
+							is_rival = ROOT
+							is_enemy = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 9.5
+						OR = {
+							is_rival = event_target:EU_Coalition
+							is_enemy = event_target:EU_Coalition
+						}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:EU_Coalition = { 
+						offensive_war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = nuked_us
+							}
+						}
+						overlord = {
+							event_target:EU_Coalition = {
+								has_opinion_modifier = {
+									who = event_target:EU_Coalition
+									modifier = nuked_us
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					event_target:EU_Coalition = {
+						war_with = ROOT
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition 
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_core_province = {
+						owned_by = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:EU_Coalition = {
+						NOT = {
+							has_opinion = {
+								value = -150
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					core_claim = event_target:EU_Coalition
+					
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						trade_embargo_by = event_target:EU_Coalition
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = oil_bane_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = aluminum_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = cars_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = copper_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = electronic_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = iron_ban_opinion
+						}
+					####################################################################
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = oil_bane_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = aluminum_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = cars_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = copper_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = electronic_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = iron_ban_opinion_50
+						}
+						##################################################################
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_10
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_25
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:EU_Coalition
+							modifier = sunction_opinion_100
+						}
+						
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_ally = {
+						war_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						alliance_with = ROOT
+						is_in_war = {
+							attackers = event_target:EU_Coalition
+							defenders = this
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_rival_country = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					OR = {
+						any_neighbor_country = {
+							guaranteed_by = event_target:EU_Coalition
+						}
+						any_rival_country = {
+							guaranteed_by = event_target:EU_Coalition
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						same_continent = ROOT
+						is_in_war = {
+							defender_leader = THIS 
+							attacker_leader = event_target:EU_Coalition 
+						}
+					}	
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					event_target:EU_Coalition = {
+						overlord = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						NOT = {
+							has_opinion = {
+								value = -100
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						OR = {
+							is_rival = event_target:EU_Coalition
+							is_enemy = event_target:EU_Coalition
+						}						
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = {
+						event_target:EU_Coalition = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						is_subject_of = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 0.75
+					overlord = {
+						event_target:EU_Coalition = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						NOT = {	capital_scope = { same_continent = ROOT } }
+						is_neighbor_of = ROOT
+						NOT = { alliance_with = ROOT }
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						war_with = ROOT
+						is_hiring_condottiere_from = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = babbling_buffoon_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = infertile_personality
+						ruler_has_personality = drunkard_personality
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = naive_personality
+						ruler_has_personality = craven_personality
+						ruler_has_personality = loose_lips_personality
+						ruler_has_personality = obsessive_perfectionist_personality
+						ruler_has_personality = malevolent_personality
+					}
+					
+					
+				}
+			}		
+			if = {
+				limit = { 
+					event_target:EU_Coalition = {
+						check_variable = {
+							which = NUM_of_EU value = 1
+						}
+					}
+				}
+	
+				if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 40
+								} 
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 20
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 39
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 40
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 19
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 38
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 39
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 19
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 37
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 38
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 18
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 36
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 37
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 18
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}		
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 35
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 36
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 17
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 34
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 35
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 17
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 33
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 34
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 16
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 32
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 33
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 16
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 31
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 32
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 15
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}			
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 30
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 31
+									} 
+								}
+							}
+	
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 15
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}		
+					}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 29
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 30
+								}
+							}
+						}
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 14
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 28
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 29
+								}
+							}
+						}
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 14
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 27
+							}
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 28
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 13
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 26
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 27
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 13
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 25
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 26
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 12
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 24
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 25
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 12
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 23
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 24
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 11
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 22
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 23
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 11
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 21
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 22
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 10
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 20
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 21
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 10
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 19
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 20
+								}
+							}
+						}
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 9
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 18
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 19
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 9
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 17
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 18
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 8
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 16
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 17
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 8
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 15
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 16
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 7
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 14
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 15
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 7
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 13
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 14
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 6
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 12
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 13
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 6
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 11
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 12
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 5
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 10
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 11
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 5
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 9
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 10
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 4
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 8
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 9
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 4
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 7
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 8
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 3
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 6
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 7
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 3
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 5
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 6
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 2
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 4
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 5
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 2
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 3
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 4
+								}
+							}
+						}
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 1
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 2
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 3
+								}
+							}
+						} 
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 1
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}	
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 1
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 2
+								}
+							}
+						} 
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+				}
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					has_country_flag = show_EU_vote
+				}
+				country_event = {
+					id = european_union_coalotion_vote.33 days = 1
+				}
+			}
+			event_target:EU_Coalition = {
+				country_event = {
+					id = set_variable.38 days = 2
+				}
+			}
+			event_target:EU_Coalition = { 
+					change_variable = {
+						which = vote_for_EU_positive
+						value = 1
+					}
+			}
+				
+			
+			
+		}
+		
+		option = { 
+			#NNNNNNNNNNNNNNNNNEEEEEEEEEGETIIIIVEEEEEEEEEEEEEEEEEEEEEEE
+			name = european_union_coalotion_vote.1b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					alliance_with = event_target:EU_Coalition
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:EU_Coalition
+						}
+						event_target:EU_Coalition = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:EU_Coalition
+						}
+					}
+					event_target:EU_Coalition = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_ally = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 5.25
+					event_target:EU_Coalition = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:EU_Coalition		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:EU_Coalition	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+							 ####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+					}
+				
+				}
+				modifier = {
+					factor = 0.75
+					event_target:EU_Coalition = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					   factor = 0.25
+					   OR = {
+						   ruler_has_personality = just_personality
+						   ruler_has_personality = righteous_personality
+						   ruler_has_personality = tolerant_personality
+						   ruler_has_personality = kind_hearted_personality
+						   ruler_has_personality = free_thinker_personality
+						   ruler_has_personality = well_connected_personality
+						   ruler_has_personality = calm_personality
+						   ruler_has_personality = careful_personality
+						   ruler_has_personality = secretive_personality
+						   ruler_has_personality = intricate_web_weaver_personality
+						   ruler_has_personality = fertile_personality
+					   }
+			
+				}				
+			}
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+				has_country_flag = show_EU_vote
+				}
+				country_event = {
+					id = european_union_coalotion_vote.34 days = 1
+				}
+			}
+				
+			if = {
+				limit = { 
+					event_target:EU_Coalition = {
+						check_variable = {
+							which = NUM_of_EU value = 1
+						}
+					}
+				}
+				if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 40
+							} 
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 21
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 39
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 40
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 20
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 38
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 39
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 20
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 37
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 38
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 19
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 36
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 37
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 19
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 35
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 36
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 18
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 34
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 35
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 18
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 33
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 34
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 17
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 32
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 33
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 17
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 31
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 32
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 16
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+				else_if = {
+					limit = { 
+						event_target:EU_Coalition = {
+							check_variable = {
+								which = NUM_of_EU value = 30
+							} 
+							NOT = {
+								check_variable = {
+									which = NUM_of_EU value = 31
+								} 
+							}
+						}
+	
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = vote_for_EU_positive value = 16
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_EU_Metting value = 1
+								}
+							}
+						}
+					}
+					event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}			
+				}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 29
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 30
+									} 
+								}
+							}
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 15
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}				
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 28
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 29
+									} 
+								}
+							}
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 15
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 27
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 28
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 14
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 26
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 27
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 14
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 25
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 26
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 13
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 24
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 25
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 13
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 23
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 24
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 12
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 22
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 23
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 12
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 21
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 22
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 11
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 20
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 21
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 11
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 19
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 20
+									} 
+								}
+							}
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 10
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 18
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 19
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 10
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 17
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 18
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 9
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 16
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 17
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 9
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 15
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 16
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 8
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 14
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 15
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 8
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 13
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 14
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 7
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 12
+								}
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 13
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 7
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 11
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 12
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 6
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 10
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 11
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 6
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 9
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 10
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 5
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 8
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 9
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 5
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 7
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 8
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 4
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 6
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 7
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 4
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 5
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 6
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 3
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 4
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 5
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 3
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 3
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 4
+									} 
+								}
+							}
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 2
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 2
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 3
+									} 
+								}
+							} 
+							event_target:EU_Coalition = { 
+								check_variable = {
+									which = vote_for_EU_positive value = 2
+								}
+								NOT = {
+									check_variable = {
+										which = VETO_on_EU_Metting value = 1
+									}
+								}
+							}
+						}
+						event_target:EU_Coalition = {
+						country_event = {
+							id = european_union_coalotion_vote.3 days = 1
+						}
+						every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+					}
+					}
+					else_if = {
+						limit = { 
+							event_target:EU_Coalition = {
+								check_variable = {
+									which = NUM_of_EU value = 1
+								} 
+								NOT = {
+									check_variable = {
+										which = NUM_of_EU value = 2
+									} 
+								}
+							} 
+						}
+						event_target:EU_Coalition = {
+							country_event = {
+								id = european_union_coalotion_vote.3 days = 1
+							}
+							every_country = {
+							limit = {
+								has_country_modifier = european_union
+							}
+							add_opinion = { multiplier = 100  who = event_target:EU_Coalition modifier = aggressive_expansion }
+						}
+						}
+					}
+			}
+			event_target:EU_Coalition = {
+				country_event = {
+					id = set_variable.38 days = 2
+				}
+			}
+			event_target:EU_Coalition = { 
+					change_variable = {
+						which = vote_for_EU_negetive
+						value = 1
+					}
+			}
+			
+			
+		}
+		option = { 
+			#VVVVVVVETOOOOOOOOOOOO
+			name = european_union_coalotion_vote.1c
+			trigger = {
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = {
+						event_target:EU_Coalition = { 
+							check_variable = {
+								which = VETO_on_EU_Metting
+								value = 1
+							}
+						}
+					}
+				}
+				has_country_modifier = european_leader
+				NOT = { has_country_modifier = cool_down_veto }
+			}
+			ai_chance = {
+				factor = 2
+				modifier = {
+					factor = 1.9
+					alliance_with = event_target:EU_Coalition
+				}
+				modifier = {
+					factor = 1.9
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:EU_Coalition
+						}
+						event_target:EU_Coalition = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1.7
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:EU_Coalition
+						}
+					}
+					event_target:EU_Coalition = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						alliance_with = event_target:EU_Coalition
+					}
+				}
+				modifier = {
+					factor = 1.35
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 1.2
+					event_target:EU_Coalition = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:EU_Coalition		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:EU_Coalition	
+						}
+					}
+				}
+				modifier = {
+					factor = 1
+					event_target:EU_Coalition = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 1
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+							 ####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:EU_Coalition
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:EU_Coalition
+								modifier = sunction_opinion_100
+							}
+						
+						}
+					}
+				
+				}
+				modifier = {
+					factor = 0.25
+					event_target:EU_Coalition = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					   factor = 0.25
+					   OR = {
+						   ruler_has_personality = just_personality
+						   ruler_has_personality = righteous_personality
+						   ruler_has_personality = tolerant_personality
+						   ruler_has_personality = kind_hearted_personality
+						   ruler_has_personality = free_thinker_personality
+						   ruler_has_personality = well_connected_personality
+						   ruler_has_personality = calm_personality
+						   ruler_has_personality = careful_personality
+						   ruler_has_personality = secretive_personality
+						   ruler_has_personality = intricate_web_weaver_personality
+						   ruler_has_personality = fertile_personality
+					   }
+			
+				}				
+			}
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+			
+			every_country = {
+				limit = {
+					ai = no
+					NOT = { tag = ROOT }
+					has_country_flag = show_EU_vote
+				}
+				country_event = {
+					id = european_union_coalotion_vote.35 days = 1
+				}
+			}
+			hidden_effect = {
+				event_target:EU_Coalition = {
+					country_event = {
+						id = set_variable.38 days = 2
+					}
+				}
+				event_target:EU_Coalition = { 
+					change_variable = {
+						which = VETO_on_EU_Metting
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 3650
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 730
+					}
+				}
+			}
+			
+		}
+	}
+
+	country_event = {
+		id = european_union_coalotion_vote.3
+		title = european_union_coalotion_vote.3t
+		desc = european_union_coalotion_vote.3d
+		picture = EU_Coalition_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}
+
+	country_event = {
+		id = european_union_coalotion_vote.29
+		title = european_union_coalotion_vote.29t
+		desc = european_union_coalotion_vote.29d
+		picture = VOTE_COALITION_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_vote.2a   
+		}
+	}
+
+	country_event = {
+		id = european_union_coalotion_vote.33
+		title = european_union_coalotion_vote.33t
+		desc = european_union_coalotion_vote.33d
+		#
+		picture = Vote_positive_eventPicture
+		is_triggered_only = yes
+		
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}
+	country_event = {
+		id = european_union_coalotion_vote.34
+		title = european_union_coalotion_vote.34t
+		desc = european_union_coalotion_vote.34d
+		
+		picture = Vote_negetive_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}
+	country_event = {
+		id = european_union_coalotion_vote.35
+		title = european_union_coalotion_vote.35t
+		desc = european_union_coalotion_vote.35d
+		picture = VETO_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}
+	country_event = {
+		id = european_union_coalotion_vote.36
+		title = european_union_coalotion_vote.36t
+		desc = european_union_coalotion_vote.36d
+		
+		picture = Vote_Abstentions_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}
+	country_event = {
+		id = european_union_coalotion_vote.37
+		title = european_union_coalotion_vote.37t
+		desc = european_union_coalotion_vote.37d
+		picture = Vote_Abstentions_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = european_union_coalotion_vote.2a   
+		}
+	}

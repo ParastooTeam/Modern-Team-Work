@@ -1,0 +1,19 @@
+#High American Swarm Cavalry
+
+unit_type = western
+type = artillery
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 20
+	}
+}
+
+maneuver = 2
+offensive_morale = 4
+defensive_morale = 5
+offensive_fire = 8
+defensive_fire = 9
+offensive_shock = 3
+defensive_shock = 2

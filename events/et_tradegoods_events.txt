@@ -1,0 +1,126 @@
+namespace = et_tradegoods
+
+
+
+province_event = {
+	id = et_tradegoods.10
+	title = "et_tradegoods.10.t"
+	desc = "et_tradegoods.10.d"
+	goto = ROOT
+	picture = TRADEGOODS_eventPicture
+	
+	
+	trigger = {
+		
+		owner = {
+			dip_tech = 8
+		}
+		development = 15
+		trade_goods = antiquities
+		NOT = { has_province_modifier = province_nuked }
+	}
+
+	mean_time_to_happen = {
+		months = 10
+	}
+
+	option = {
+		name = "et_tradegoods.10.a"
+		owner = {
+			add_years_of_income = -0.35
+		}
+		change_trade_goods = unknown
+		add_base_production = 2
+		
+	}
+	option = {
+		name = "et_tradegoods.10.b"
+		owner = { add_prestige = -5 }
+	}
+}
+
+##province_event = {
+##	id = et_tradegoods.11
+##	title = "et_tradegoods.11.t"
+##	desc = "et_tradegoods.11.d"
+##	goto = ROOT
+##	picture = car_factory_eventPicture
+##	
+##	is_triggered_only = yes
+##
+##	option = {
+##		name = "et_tradegoods.10.a"
+##		owner = {
+##			add_years_of_income = -0.35
+##			add_adm_power = -100
+##		}
+##		change_trade_goods = cars
+##		if = {
+##            limit = {
+##                calc_true_if = {
+##                    all_province = { trade_goods = cars }
+##                    amount = 10
+##                }
+##            }
+##			owner = {
+##				set_global_flag = cars_are_ubiquitous
+##			}
+##        }
+##		add_base_production = 2
+##		hidden_effect = { 
+##			owner = {
+##				add_country_modifier = {
+##					name = cooldown_cars
+##					duration = 7300
+##				}
+##			}
+##		}
+##	}
+##	option = {
+##		name = "et_tradegoods.10.b"
+##		owner = { add_prestige = -10 }
+##	}
+##}
+##
+##province_event = {
+##	id = et_tradegoods.12
+##	title = "et_tradegoods.12.t"
+##	desc = "et_tradegoods.12.d"
+##	goto = ROOT
+##	picture = elect_factory_eventPicture
+##	
+##	is_triggered_only = yes
+##
+##	option = {
+##		name = "et_tradegoods.10.a"
+##		owner = {
+##			add_years_of_income = -0.35
+##			add_adm_power = -100
+##		}
+##		change_trade_goods = electronics
+##		if = {
+##            limit = {
+##                calc_true_if = {
+##                    all_province = { trade_goods = electronics }
+##                    amount = 10
+##                }
+##            }
+##           owner = {
+##				set_global_flag = electronics_are_ubiquitous
+##		   } 
+##        }
+##		add_base_production = 2
+##		hidden_effect = { 
+##			owner = {
+##				add_country_modifier = {
+##					name = cooldown_elect
+##					duration = 7300
+##				}
+##			}
+##		}
+##	}
+##	option = {
+##		name = "et_tradegoods.10.b"
+##		owner = { add_prestige = -10 }
+##	}
+##}

@@ -1,0 +1,56 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 188  153  65 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	mongol_bow
+	mongol_swarm
+	mongol_steppe
+}
+
+monarch_names = {
+	"Modu #0" = 20
+	"Laoshang #0" = 20
+	"Mulon #0" = 20
+	"Touman #0" = 20
+	"Gunchen #0" = 20
+	"Icihse #0" = 20
+	"Uwei #0" = 20
+	"Ushylu #0" = 20
+	"Err #0" = 20
+	"Adai #0" = 20
+	"Buguden #0" = 20
+}
+
+leader_names = { 
+	Orsolgene Chagan-cher "Tegus Burilgi" "Quara Temur"
+	"Batu Unegen" "Koke Gal" Nasantai Ulaganqan Qyugungge Maidari
+	Delgergene Subeqai
+}
+
+ship_names = {
+	"Ariq Boke"
+	Chengzong
+	Güyük
+	Hoelun Hulagu
+	Kublai Kiyad Külüg
+	Mongke
+	Olkunut Ögedei
+	Qabul Qaidu
+	"Sorghaghtani Beki"
+	Tolui
+	Yesugei 
+}
+
+
+

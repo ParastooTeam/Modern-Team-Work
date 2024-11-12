@@ -1,0 +1,190 @@
+# Order here is the priority for taking them, if trigger is true.
+
+ROM = {
+	always = yes
+}
+USA = {
+	always = yes
+}
+INI = {
+	always = yes
+}
+
+RUS = {
+	always = yes
+}
+SOV = {
+	always = yes
+}
+
+CHN = {
+	always = yes
+}
+GBR = {
+	always = yes
+}
+TKY = {
+	always = yes
+}
+IRA = {
+	always = yes
+}
+PER = {
+	always = yes
+}
+KOR = {
+	always = yes
+}
+JAP = {
+	always = yes
+}
+SKO = {
+	always = yes
+}
+NOK = {
+	always = yes
+}
+ISR = {
+	always = yes
+}
+ISG = {
+	always = yes
+}
+SAU = {
+	always = yes
+}
+LAP = {
+	always = yes
+}
+RSA = {
+	always = yes
+}
+NIG = {
+	always = yes
+}
+ALG = {
+	always = yes
+}
+AGL = {
+	always = yes
+}
+BRZ = {
+	always = yes
+}
+GER = {
+	always = yes
+}
+FRA = {
+	always = yes
+}
+FR2 = {
+	always = yes
+}
+COL = {
+	always = yes
+}
+MEX = {
+	always = yes
+}
+AUS = {
+	always = yes
+}
+IDN = {
+	always = yes
+}
+VTN = {
+	always = yes
+}
+EGY = {
+	always = yes
+}
+CAD = {
+	always = yes
+}
+POR = {
+	always = yes
+}
+BEL = {
+	always = yes
+}
+UKR = {
+	always = yes
+}
+KZK = {
+	always = yes
+}
+GRE = {
+	always = yes
+}
+ROW = {
+	always = yes
+}
+KHA = {
+	always = yes
+}
+NOR = {
+	always = yes
+}
+SYR = {
+	always = yes
+}
+IRE = {
+	always = yes
+}
+ARE = {
+	always = yes
+}
+PEE = {
+	always = yes
+}
+MXX = {
+	always = yes
+}
+IRQ = {
+	always = yes
+}
+AZE = {
+	always = yes
+}
+BOL = {
+	always = yes
+}
+AFG = {
+	always = yes
+}
+PAK = {
+	always = yes
+}
+CNG = {
+	always = yes
+}
+MOR = {
+	always = yes
+}
+BUL = {
+	always = yes
+}
+SPA = {
+	always = yes
+}
+HAB = {
+	always = yes
+}
+PRU = {
+	always = yes
+}
+NED = {
+	always = yes
+}
+BRA = {
+	always = yes
+}
+SWE = {
+	always = yes
+}
+POL = {
+	always = yes
+}
+FIN = {
+	always = yes
+}

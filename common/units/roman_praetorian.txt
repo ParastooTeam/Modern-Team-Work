@@ -1,0 +1,19 @@
+# Roman Praetorian Cohort
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 3
+	}
+}
+
+maneuver = 0
+offensive_morale = 0
+defensive_morale = 0
+offensive_fire = 2
+defensive_fire = 3
+offensive_shock = 0
+defensive_shock = 0

@@ -1,0 +1,10 @@
+#Early Galley Level 1
+type = galley
+
+hull_size = 10
+base_cannons = 11
+sail_speed = 6
+
+blockade = 11
+
+sprite_level = 1

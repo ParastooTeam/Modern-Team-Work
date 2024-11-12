@@ -1,0 +1,46 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 174 151 145 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	south_american_horsemen
+	
+	
+}
+
+leader_names = {
+	Sénaqué Sira Gununusa Puyucahua Mataojo Igualdad Yaró Guenoa Bohané Minuan
+}
+
+monarch_names = {
+	"Zapicán  #0" = 10
+	"Abayubá  #0" = 10
+	"Vaimaca Perú #0" = 10
+	"Senacua #0" = 0
+	"Tabaré #0" = 0
+	"Itanú, #0" = 0
+	"Yrupé, #0" = 0
+	"Jasymimbí, #0" = 0
+	"Tacuabé #0" = 0
+	"Vaimaca-Pirú #0" = 0
+	
+	"Jougousa #0" = -1
+	"Cambyaé #0" = -1
+	"Tacouavé #0" = -1
+}
+ 
+
+ship_names = {
+	Hue Guar Samayoi Ixou Ibad Carace Bohané Minuan Yaró Gununusa
+}

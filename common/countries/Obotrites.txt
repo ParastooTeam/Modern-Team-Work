@@ -1,0 +1,53 @@
+graphical_culture = westerngfx
+
+color = { 180  180  180 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Witzlaus #0" = 20
+	"Aribert #0" = 20
+	"Drozko #0" = 20
+	"Slavomir #0" = 20
+	"Caedrag #0" = 20
+	"Selibur #0" = 20
+	"Nakon #0" = 20
+	"Mstivoj #0" = 20
+	"Mieceslas #0" = 20
+	"Mstislav #0" = 20
+	"Udo #0" = 10
+        "Ratibor #0" = 10
+        "Gottschalk #0" = 10
+        "Budivoj #0" = 10
+	"Kruto #0" = 10
+	"Henry #0" = 10
+	"Canute #0" = 10
+	"Niklot #0" = 10
+}
+
+leader_names = { 
+	Obotrite Wagrian Warnower Polabian Linone Travnjan Drevjan
+}
+
+ship_names = {
+	Ariadne Habicht Adler Albatross Amazone
+	Arcona Basilisk Beowulf Biene Wespe Wolf
+	Nautilus Natter Otter Pelikan Pfeil Meteor
+	Möwe Mücke Luchs König Kaiser Eber Drache
+	Falke Frauenlob Freya Fuchs Gazelle Geier
+	Greif Condor Cormoran Comet Wacht Tiger
+	Seeadler Jaguar Hyäne Blitz Bremse Brummer
+	Bussard Vulkan
+}
+
+
+

@@ -1,0 +1,16 @@
+#Wargalleon
+#Heavy ship Level 4
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 195
+base_cannons = 216
+sail_speed = 7
+
+blockade = 30
+
+sprite_level = 4

@@ -1,0 +1,16 @@
+#East India Man Transport Level 8
+type = transport
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+
+hull_size = 13
+base_cannons = 16
+sail_speed = 12
+#blockade = 5
+
+sprite_level = 1

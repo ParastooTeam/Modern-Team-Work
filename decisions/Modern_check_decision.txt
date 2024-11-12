@@ -1,0 +1,29 @@
+country_decisions = {
+
+	modern_check_decision = {
+		
+		potential = { 
+			ai = no
+
+		 }
+
+		 allow = {
+			 always =  yes
+		 }
+
+		effect = {
+			country_event = {
+				id = modern_check_missil.1
+				tooltip = modern_check_desc
+			}
+		}
+		
+		
+		ai_will_do = {
+		factor = 0
+		}
+
+
+	}
+	
+}

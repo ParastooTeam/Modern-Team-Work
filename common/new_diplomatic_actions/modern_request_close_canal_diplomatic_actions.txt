@@ -1,0 +1,544 @@
+    close_panama =  {
+		category = economy
+		require_acceptance = yes
+		alert_index = 37  
+		alert_tooltip = THEY_WANT_WE_CLOSE_PANAMA
+		
+		is_visible = {	
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = {
+				owns_or_subject_of = 835
+			}
+			FROM = { is_subject = no }
+			FROM = { NOT = { has_country_modifier = panama_canal_closed } }
+		}
+		is_allowed = { 
+			#always = no
+			adm_power = 100
+			treasury = 5000
+			if = {
+				limit = {
+					ROOT = { ai = no }
+					FROM = { ai = no }
+				}
+			}
+			else = {
+				reverse_has_opinion = { 
+					who = FROM value = 25 
+				}	
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				} 
+			}
+		}
+		on_accept = {
+			FROM = { 
+				add_country_modifier = {
+					name = panama_canal_closed
+					duration = 1825
+					hidden = yes
+				}
+				set_country_flag = is_closing_a_canal
+				835 = {
+					hidden_effect = {
+						add_permanent_province_modifier = {
+							name = canal_closed
+							duration = -1
+						}
+						remove_canal = panama_canal
+						#destroy_great_project = {
+						#	type = panama_canal
+						#}
+					}
+					province_event = { id = closeable_canals_events.2 }
+				}
+				add_country_modifier = {
+						name = closed_canal_bad
+						duration = 1825
+				}
+				add_treasury = 3000
+			}
+			add_adm_power = -100
+			add_treasury = -2500
+		}
+		
+		ai_acceptance = {		
+		
+			add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+	
+			
+			
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 20
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+									add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+															add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		
+		}
+	}
+		ai_will_do = { 
+			always = no 
+			
+		}
+	}
+	close_suez =  {
+		category = economy
+		require_acceptance = yes
+		alert_index = 37  
+		alert_tooltip = THEY_WANT_WE_CLOSE_SUEZ
+		is_visible = {	
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = {
+				owns_or_subject_of = 4438
+			}
+			FROM = { is_subject = no }
+			FROM = { NOT = { has_country_modifier = suez_canal_closed } }
+		}
+		is_allowed = { 
+			adm_power = 100
+			treasury = 5000	
+			if = {
+				limit = {
+					ROOT = { ai = no }
+					FROM = { ai = no }
+				}
+			}
+			else = {
+				reverse_has_opinion = { 
+					who = FROM value = 25 
+				}	
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				} 
+			}
+		}
+		on_accept = {
+			FROM = { 
+				add_country_modifier = {
+					name = suez_canal_closed
+					duration = 1825
+					hidden = yes
+				}
+				set_country_flag = is_closing_a_canal
+				4438 = {
+					hidden_effect = {
+						add_permanent_province_modifier = {
+							name = canal_closed
+							duration = -1
+						}
+						remove_canal = suez_canal
+						#destroy_great_project = {
+						#	type = panama_canal
+						#}
+					}
+					province_event = { id = closeable_canals_events.2 }
+				}
+				add_country_modifier = {
+						name = closed_canal_bad
+						duration = 1825
+				}
+				add_treasury = 3000
+			}
+			add_adm_power = -100
+			add_treasury = -2500
+		}
+		ai_acceptance = {		
+		
+			add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 25
+				}
+			
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+			
+			}
+	
+			
+			
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 20
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+
+			}
+
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+									add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+															add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		
+		}
+	}
+		
+		ai_will_do = { 
+			always = no 
+		}
+	}
+#####################################################################
+
+close_volga =  {
+	category = economy
+	require_acceptance = yes
+	alert_index = 37  
+	alert_tooltip = THEY_WANT_WE_CLOSE_VOLGA
+	is_visible = {	
+		has_country_flag = opened_trade_diplomacy
+		ai = no	
+		FROM = {
+			owns_or_subject_of = 1971
+		}
+		FROM = { is_subject = no }
+		FROM = { NOT = { has_country_modifier = volga_canal_closed } }
+	}
+	is_allowed = { 
+		adm_power = 100
+		treasury = 5000	
+		if = {
+			limit = {
+				ROOT = { ai = no }
+				FROM = { ai = no }
+			}
+		}
+		else = {
+			reverse_has_opinion = { 
+				who = FROM value = 25 
+			}	
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			} 
+		}
+	}
+	on_accept = {
+		FROM = { 
+			add_country_modifier = {
+				name = volga_canal_closed
+				duration = 1825
+				hidden = yes
+			}
+			set_country_flag = is_closing_a_canal
+			1971 = {
+				hidden_effect = {
+					add_permanent_province_modifier = {
+						name = canal_closed
+						duration = -1
+					}
+					remove_canal = volga_canal
+					#destroy_great_project = {
+					#	type = panama_canal
+					#}
+				}
+				province_event = { id = closeable_canals_events.2 }
+			}
+			add_country_modifier = {
+					name = closed_canal_bad
+					duration = 1825
+			}
+			add_treasury = 3000
+		}
+		add_adm_power = -100
+		add_treasury = -2500
+	}
+	ai_acceptance = {		
+	
+		add_entry = {
+		name = Overlord
+		limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 25
+		}
+
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+		
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+		
+		}
+
+		
+		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+								add_entry = {
+		name = FRIENDLY_ATTITUDE
+		limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 5
+							}
+
+					}
+														add_entry = {
+		name = NEUTRAL_ATTITUDE
+		limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 5
+							}
+
+					}
+
+	add_entry = {
+		name = ALLIANCE
+		limit = { FROM = { alliance_with = ROOT } }
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 15
+		}
+	
+	}
+}
+	
+	ai_will_do = { 
+		always = no 
+	}
+}
+	
+
+
+	
+	

@@ -1,0 +1,19 @@
+# Small Cast Iron Bombard
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 3
+	}
+}
+
+maneuver = 0
+offensive_morale = 0
+defensive_morale = 0
+offensive_fire = 3
+defensive_fire = 2
+offensive_shock = 0
+defensive_shock = 0

@@ -1,0 +1,332 @@
+
+navalarms = {
+
+	color = { 0.3 0.91 0.4 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 8 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 60
+			owner = { innovativeness = 20 }
+		}
+		owner = { full_idea_group = maritime_ideas }
+		owner = { full_idea_group = naval_ideas }
+		has_building =  fusion_reactor
+		has_building =  naval_base
+		has_building =  naval_arsenal
+		
+	}
+	
+	modifier = {
+		dip_tech_cost_modifier = -0.1
+	}
+	
+	province = {
+		local_ship_cost = -0.05
+		ship_recruit_speed = -0.25
+		local_ship_repair = 0.25
+		global_ship_recruit_speed = -0.02
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+arms = {
+	color = { 1.0 0 1.0 }
+	
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 5 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 60
+			owner = { innovativeness = 20 }
+		}
+		
+		owner = { full_idea_group = defensive_ideas }
+		owner = { full_idea_group = offensive_ideas }
+		has_building =  fusion_reactor
+		has_building =  conscription_center
+		has_building =  training_fields
+		
+	}
+	
+	modifier = {
+		mil_tech_cost_modifier = -0.1
+	}
+	
+	province = {
+		local_regiment_cost = -1.0
+		regiment_recruit_speed = -0.20
+		global_regiment_recruit_speed = -0.02
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+titanium = {
+
+	color = { 0.0 1.0 1.0 }
+	is_latent = yes
+	is_valuable = yes
+
+	rnw_latent_chance = 8 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 60
+			owner = { innovativeness = 20 }
+		}
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = titanium_ban }
+		owner = { full_idea_group = titanium_research }
+		has_building =  fusion_reactor
+		has_building =  nuclear_plant
+		has_building =  factory
+	}
+	
+	modifier = {
+		artillery_fire = 0.15
+	}
+	
+	province = {
+		local_defensiveness = 0.15
+	}
+
+	chance = {
+		factor = 1
+	}
+}
+
+aluminum = {
+	color = { 0.6 0.6 0.6 }
+	is_latent = yes
+
+	rnw_latent_chance = 6 # Kind of on average how many provinces we want to spawn with it
+	
+	trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}
+		
+	}
+	
+	modifier = {
+		build_cost = -0.2 
+	}
+	
+	province = {
+		local_build_cost = -0.2
+	}
+	
+	chance = {
+		factor = 1
+	}
+}
+
+cars = {
+	color = { 0.99 0 0 }
+	
+	modifier = {
+		development_cost = -0.20
+	}
+	province = {
+		local_development_cost = -0.15
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+electronics = {
+	color = { 0.1 0.3 0.99 }
+	modifier = {
+		global_unrest = -2
+		diplomatic_upkeep = 1
+	}
+	province = {
+		spy_offence = 0.01
+	}
+	chance = {
+		factor = 0
+	}
+}
+
+# titanium
+coal = {
+		
+		color = { 0.3 0.99 0.3 }
+		is_latent = yes
+		#is_valuable = yes
+		
+		rnw_latent_chance = 8 # Kind of on average how many provinces we want to spawn with it
+	
+		trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}	
+		
+	}
+	
+	modifier = {
+		production_efficiency = 0.15
+	}
+	
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+		chance = {
+			factor = 0
+		}
+	}
+	
+# Arms company
+uranium = {
+
+		color = { 0.3 0.81 0.2 }
+		
+		is_latent = yes
+		is_valuable = yes
+		rnw_latent_chance = 10
+
+		
+		trigger = {
+		OR = {
+			development = 40
+			owner = { innovativeness = 20 }
+		}
+			
+	}
+	
+	modifier = {
+		land_morale = 0.1
+	}
+	
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+		chance = {
+			factor = 0
+		}
+	}
+	
+# Naval Arms Company
+oil = {
+		
+		color = { 0 0 0 }
+		is_latent = yes
+		is_valuable = yes
+
+		rnw_latent_chance = 6 # Kind of on average how many provinces we want to spawn with it
+	
+		trigger = {
+		OR = {
+			development = 25
+			owner = { innovativeness = 20 }
+		}
+	}
+	
+	modifier = {
+		global_trade_goods_size_modifier = 0.2
+	}
+	
+	province = {
+		local_state_maintenance_modifier = -0.2
+	}
+		chance = {
+			factor = 0
+		}
+	}
+#drugs
+drugs = {
+		color = { 0.3 0.81 1.0 }
+		
+		is_latent = yes
+		is_valuable = yes
+
+		rnw_latent_chance = 6 # Kind of on average how many provinces we want to spawn with it
+	
+		trigger = {
+		OR = {
+			development = 20
+			owner = { innovativeness = 20 }
+		}		
+		owner = { full_idea_group = spy_ideas }
+	}
+	
+	modifier = {
+		spy_offence = 0.15
+	}
+	
+	province = {
+		diplomatic_reputation = -0.1
+	}
+		chance = {
+			factor = 0
+		}
+	}
+	
+antiquities = {
+
+		color = { 0.3 0.81 0.2 }
+		
+		is_latent = yes
+		is_valuable = yes
+		rnw_latent_chance = 10
+
+		
+		trigger = {
+		OR = {
+			development = 40
+			owner = { innovativeness = 20 }
+		}		
+	}
+	
+	modifier = {
+		state_maintenance_modifier = 0.1
+	}
+	
+	province = {
+		local_state_maintenance_modifier = 0.5
+	}
+		chance = {
+			factor = 0
+		}
+}
+
+tourist = {
+		
+		color = { 0.3 0.05 0.1 }
+		is_latent = yes
+		is_valuable = yes
+
+		rnw_latent_chance = 6 # Kind of on average how many provinces we want to spawn with it
+	
+		trigger = {
+		OR = {
+			development = 25
+			owner = { innovativeness = 20 }
+		}
+	}
+	modifier = {
+		trade_efficiency = 0.2
+	}
+	
+	province = {
+		trade_goods_size_modifier = 0.50
+	}
+		chance = {
+			factor = 0
+		}
+	}

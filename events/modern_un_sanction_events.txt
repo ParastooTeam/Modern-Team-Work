@@ -1,0 +1,2468 @@
+	namespace = un_sanction_event
+	#UN Sanction 10%
+	#country_event = {
+	#	id = un_sanction_event.0
+	#	title = "un_sanction_event.0t"
+	#	desc = "un_sanction_event.0d"
+	#	is_triggered_only = yes
+	#	#hidden = yes
+	#	picture = TERRORISMATTACK_eventPicture
+	#	immediate = {
+	#		if = {
+	#			limit = { 
+	#				event_target:un_sanction_target = { 
+	#					has_country_modifier = un_sanction_modifire
+	#			 	} 
+	#			}
+	#			event_target:un_sanction_target = { 
+	#				set_variable = {
+	#					which = vote_for_un_positive
+	#					value = 1
+	#				}
+	#				set_variable = {
+	#					which = vote_for_un_negetive
+	#					value = 1
+	#				}
+	#			}
+	#		}
+	#		
+	#	}
+	#	option = { 
+	#		name = un_sanction_event.1a 			
+	#	}
+	#}
+	country_event = {
+		id = un_sanction_event.1
+		title = "un_sanction_event.1t"
+		desc = "un_sanction_event.1d"
+		is_triggered_only = yes
+		picture = VOTE_eventPicture
+
+		#POOSITIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+		option = { 
+			name = un_sanction_event.1a 
+			trigger = {
+				NOT = {
+					tag = event_target:un_sanction_target
+				}
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						OR = {
+							is_rival = ROOT
+							is_enemy = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 9.5
+						OR = {
+							is_rival = event_target:un_sanction_target
+							is_enemy = event_target:un_sanction_target
+						}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						offensive_war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = nuked_us
+							}
+						}
+						overlord = {
+							event_target:un_sanction_target = {
+								has_opinion_modifier = {
+									who = event_target:un_sanction_target
+									modifier = nuked_us
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					any_country = {
+						war_with = ROOT
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target 
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_core_province = {
+						owned_by = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:un_sanction_target = {
+						NOT = {
+							has_opinion = {
+								value = -150
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					core_claim = event_target:un_sanction_target
+					
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						trade_embargo_by = event_target:un_sanction_target
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = oil_bane_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = aluminum_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = cars_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = copper_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = electronic_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = iron_ban_opinion
+						}
+					####################################################################
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = oil_bane_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = aluminum_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = cars_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = copper_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = electronic_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = iron_ban_opinion_50
+						}
+						##################################################################
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_10
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_25
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_100
+						}
+						
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_ally = {
+						war_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_country = {
+						alliance_with = ROOT
+						is_in_war = {
+							attackers = event_target:un_sanction_target
+							defenders = this
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_rival_country = {
+						alliance_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					OR = {
+						any_neighbor_country = {
+							guaranteed_by = event_target:un_sanction_target
+						}
+						any_rival_country = {
+							guaranteed_by = event_target:un_sanction_target
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						same_continent = ROOT
+						is_in_war = {
+							defender_leader = THIS 
+							attacker_leader = event_target:un_sanction_target 
+						}
+					}	
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					event_target:un_sanction_target = {
+						overlord = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:un_sanction_target = {
+						NOT = {
+							has_opinion = {
+								value = -100
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						OR = {
+							is_rival = event_target:un_sanction_target
+							is_enemy = event_target:un_sanction_target
+						}						
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						is_subject_of = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 0.75
+					overlord = {
+						event_target:un_sanction_target = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:un_sanction_target = {
+						NOT = {	capital_scope = { same_continent = ROOT } }
+						is_neighbor_of = ROOT
+						NOT = { alliance_with = ROOT }
+					}
+				}
+				modifier = {
+					factor = 0.75
+					any_country = {
+						war_with = ROOT
+						is_hiring_condottiere_from = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = babbling_buffoon_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = infertile_personality
+						ruler_has_personality = drunkard_personality
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = naive_personality
+						ruler_has_personality = craven_personality
+						ruler_has_personality = loose_lips_personality
+						ruler_has_personality = obsessive_perfectionist_personality
+						ruler_has_personality = malevolent_personality
+					}
+					
+					
+				}
+			}
+			
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = mini_bad_relation
+			}
+			hidden_effect = {
+				change_variable = {
+					which = positive_UN value = 1
+				}
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = vote_for_un_positive
+						value = 1
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							has_country_flag = show_vote
+							tag = event_target:un_sanction_target
+						}
+						ai = no
+					}
+					country_event = {
+						id = un_sanction_event.11
+					}
+				}
+			}
+		}
+		option = { 
+			name = un_sanction_event.1b
+			#NEGETIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					alliance_with = event_target:un_sanction_target
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:un_sanction_target
+						}
+						event_target:un_sanction_target = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:un_sanction_target
+						}
+					}
+					event_target:un_sanction_target = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_ally = {
+						alliance_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:un_sanction_target = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 5.25
+					event_target:un_sanction_target = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:un_sanction_target		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:un_sanction_target	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:un_sanction_target = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:un_sanction_target
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion
+							}
+						     ####################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_100
+							}
+							
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:un_sanction_target
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_100
+							}
+							
+						}
+					}
+					
+				}
+				modifier = {
+					factor = 0.75
+					event_target:un_sanction_target = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = just_personality
+						ruler_has_personality = righteous_personality
+						ruler_has_personality = tolerant_personality
+						ruler_has_personality = kind_hearted_personality
+						ruler_has_personality = free_thinker_personality
+						ruler_has_personality = well_connected_personality
+						ruler_has_personality = calm_personality
+						ruler_has_personality = careful_personality
+						ruler_has_personality = secretive_personality
+						ruler_has_personality = intricate_web_weaver_personality
+						ruler_has_personality = fertile_personality
+					}
+					
+				}				
+			}
+			
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = mini_good_relation
+			}
+			hidden_effect = {
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = vote_for_un_negetive
+						value = 1
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							has_country_flag = show_vote
+							tag = event_target:un_sanction_target
+						}
+						ai = no
+					}
+					country_event = {
+						id = un_sanction_event.12
+					}
+				}
+			}
+		}
+		option = { 
+			#VVVVVVVVETOOOOOOOOOOOOOOOOOOOOOOOOOOO
+			name = un_sanction_event.1c
+			trigger = {
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = {
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = VETO_on_un_Metting
+								value = 1
+							}
+						}
+					}
+				}
+				NOT = { has_country_modifier = cool_down_veto }
+				NOT = { great_power_rank = 7 }
+			}
+			ai_chance = {
+				factor = 3
+				modifier = {
+					factor = 0
+					NOT = { adm_power = 100 }
+					NOT = { dip_power = 100 }
+					NOT = { mil_power = 100 }
+				}
+				modifier = {
+					factor = 0
+					check_variable = {
+						which = VETO_on_un_Metting
+						value = 1
+					}
+
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							ROOT = {
+								is_subject_of = event_target:un_sanction_target
+							}
+							event_target:un_sanction_target = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					NOT = {
+						OR = {
+							reverse_has_opinion = {
+								who = event_target:un_sanction_target
+								value = 150
+							}
+							has_opinion = {
+								who = event_target:un_sanction_target
+								value = 150
+							}
+						}
+					}
+					event_target:un_sanction_target = {
+						is_rival = ROOT
+				    }
+					NOT = {
+						OR = {
+							any_rival_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = THIS 
+										attacker_leader = event_target:un_sanction_target 
+									}
+								}
+							}
+							any_enemy_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = THIS 
+										attacker_leader = event_target:un_sanction_target 
+									}
+								}
+							}
+							any_rival_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = event_target:un_sanction_target  
+										attacker_leader = THIS
+									}
+								}
+							}
+							any_enemy_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = event_target:un_sanction_target  
+										attacker_leader = THIS
+									}
+								}
+							}
+						}
+					}
+					NOT = {
+						OR = {
+							any_enemy_country = {
+								any_neighbor_country = {
+									guaranteed_by = event_target:un_sanction_target
+								}
+							}
+							any_rival_country = {
+								any_neighbor_country = {
+									guaranteed_by = event_target:un_sanction_target
+								}
+							}
+						}
+					}
+					NOT = {
+						any_rival_country = {
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = missile_us
+							}
+						}
+					}
+					NOT = {
+						overlord = {
+							any_rival_country = {
+								has_opinion_modifier = {
+									who = event_target:un_sanction_target
+									modifier = missile_us
+								}
+							}						
+						}
+					}
+				}
+				modifier = {
+					factor = 3
+					tag = ROOT
+				}
+				modifier = {
+					factor = 2
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:un_sanction_target
+						}
+						event_target:un_sanction_target = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1
+					alliance_with = event_target:un_sanction_target
+					OR = {
+						reverse_has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+						has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+					}
+					adm_power = 500
+					dip_power = 500
+					mil_power = 500
+				}		
+				modifier = {
+					factor = 0.5
+					alliance_with = event_target:un_sanction_target
+					OR = {
+						reverse_has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+						has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+					}
+					adm_power = 300
+					dip_power = 300
+					mil_power = 300
+				}
+			}
+			add_adm_power = -250
+			add_dip_power = -250
+			add_mil_power = -250
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = good_relation
+			}
+			hidden_effect = {
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = VETO_on_un_Metting
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 3650
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 730
+					}
+				}
+				every_country = {
+					limit = {
+						has_country_flag = show_veto
+						ai = no
+					}
+					country_event = {
+						id = un_sanction_event.10
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = un_sanction_event.2
+		title = "un_sanction_event.1t"
+		desc = "un_sanction_event.1d"
+		is_triggered_only = yes
+		
+		picture = VOTE_eventPicture
+		option = { 
+			#POSITIIIIIVEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+			name = un_sanction_event.1a 
+			trigger = {
+				NOT = {
+					tag = event_target:un_sanction_target
+				}
+			}
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						OR = {
+							is_rival = ROOT
+							is_enemy = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 9.5
+						OR = {
+							is_rival = event_target:un_sanction_target
+							is_enemy = event_target:un_sanction_target
+						}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					event_target:un_sanction_target = { 
+						offensive_war_with = ROOT
+					}
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = nuked_us
+							}
+						}
+						overlord = {
+							event_target:un_sanction_target = {
+								has_opinion_modifier = {
+									who = event_target:un_sanction_target
+									modifier = nuked_us
+								}
+							}
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					any_country = {
+						war_with = ROOT
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target 
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_core_province = {
+						owned_by = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:un_sanction_target = {
+						NOT = {
+							has_opinion = {
+								value = -150
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					core_claim = event_target:un_sanction_target
+					
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						trade_embargo_by = event_target:un_sanction_target
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = oil_bane_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = aluminum_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = cars_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = copper_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = electronic_ban_opinion
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = iron_ban_opinion
+						}
+					####################################################################
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = oil_bane_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = aluminum_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = cars_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = copper_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = electronic_ban_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = iron_ban_opinion_50
+						}
+						##################################################################
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_10
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_25
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_50
+						}
+						has_opinion_modifier = {
+							who = event_target:un_sanction_target
+							modifier = sunction_opinion_100
+						}
+						
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_ally = {
+						war_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_country = {
+						alliance_with = ROOT
+						is_in_war = {
+							attackers = event_target:un_sanction_target
+							defenders = this
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					any_rival_country = {
+						alliance_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					OR = {
+						any_neighbor_country = {
+							guaranteed_by = event_target:un_sanction_target
+						}
+						any_rival_country = {
+							guaranteed_by = event_target:un_sanction_target
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						same_continent = ROOT
+						is_in_war = {
+							defender_leader = THIS 
+							attacker_leader = event_target:un_sanction_target 
+						}
+					}	
+				}
+				modifier = {
+					factor = 2.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					event_target:un_sanction_target = {
+						overlord = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:un_sanction_target = {
+						NOT = {
+							has_opinion = {
+								value = -100
+								who = ROOT
+							}	
+						}
+					}
+				}
+				modifier = {
+					factor = 1.5
+					any_ally = {
+						OR = {
+							is_rival = event_target:un_sanction_target
+							is_enemy = event_target:un_sanction_target
+						}						
+					}
+				}
+				modifier = {
+					factor = 1.5
+					NOT = {
+						event_target:un_sanction_target = {
+							alliance_with = ROOT
+						}
+					}
+					any_neighbor_country = {
+						is_subject_of = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 0.75
+					overlord = {
+						event_target:un_sanction_target = {
+							OR = {
+								is_rival = ROOT
+								is_enemy = ROOT
+							}
+							
+						}
+					}
+				}
+				modifier = {
+					factor = 0.75
+					event_target:un_sanction_target = {
+						NOT = {	capital_scope = { same_continent = ROOT } }
+						is_neighbor_of = ROOT
+						NOT = { alliance_with = ROOT }
+					}
+				}
+				modifier = {
+					factor = 0.75
+					any_country = {
+						war_with = ROOT
+						is_hiring_condottiere_from = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = babbling_buffoon_personality
+						ruler_has_personality = embezzler_personality
+						ruler_has_personality = infertile_personality
+						ruler_has_personality = drunkard_personality
+						ruler_has_personality = sinner_personality
+						ruler_has_personality = greedy_personality
+						ruler_has_personality = cruel_personality
+						ruler_has_personality = naive_personality
+						ruler_has_personality = craven_personality
+						ruler_has_personality = loose_lips_personality
+						ruler_has_personality = obsessive_perfectionist_personality
+						ruler_has_personality = malevolent_personality
+					}
+					
+					
+				}
+			}
+			
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = mini_bad_relation
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						OR = {
+							check_variable = {
+								which = vote_for_un_positive value = 1
+							}
+							check_variable = {
+								which = vote_for_un_negetive value = 1
+							}
+							check_variable = {
+								which = VETO_on_un_Metting value = 1
+							}
+							check_variable = {
+								which = vote_for_un_abstentions value = 1
+							}
+						}
+					}
+					country_event = {
+						id = set_variable.37 days = 2
+					}
+				}
+				every_country = {
+					limit = {
+						ai = no
+						NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = un_sanction_event.13 days = 1
+					}
+				}
+				change_variable = {
+					which = positive_UN value = 1
+				}
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = vote_for_un_positive
+						value = 1
+					}
+				}
+				if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 2
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 2
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 3
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}	
+					event_target:un_sanction_target = { 
+						add_country_modifier = {
+							name = has_sanction
+							duration = -1
+					}
+						country_event = { id = sanction.1x }
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = event_target:un_sanction_target }
+							NOT = { tag = ROOT }	
+						}
+						country_event = { id = sanction.2xevery }	
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 3
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 4
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+					event_target:un_sanction_target = { 
+						add_country_modifier = {
+							name = has_sanction_1
+							duration = -1
+						}
+						country_event = { id = sanction.3x }
+						#add_opinion = {
+						#	who = root
+						#	modifier = sunction_opinion_25
+						#}
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = ROOT }
+							NOT = { tag = event_target:un_sanction_target }
+						}
+							country_event = { id = sanction.4xevery }
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 4
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 5
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+						event_target:un_sanction_target = { 
+							add_country_modifier = {
+								name = has_sanction_2
+								duration = -1
+							}
+							country_event = { id = sanction.5x }
+							#add_opinion = {
+							#	who = root
+							#	modifier = sunction_opinion_50
+							#}
+						}
+						every_country = { 
+							limit = { 
+								ai = no
+								NOT = { tag = ROOT }
+								NOT = { tag = event_target:un_sanction_target }
+							}
+							country_event = { id = sanction.6xevery }
+						}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 5
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 6
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+						event_target:un_sanction_target = { 
+							add_country_modifier = {
+								name = has_sanction_3
+								duration = -1
+							}
+							country_event = { id = sanction.7x }
+							#add_opinion = {
+							#	who = root
+							#	modifier = sunction_opinion_100
+							#}
+						}
+						every_country = { 
+							limit = { 
+								ai = no
+								NOT = { tag = ROOT }
+								NOT = { tag = event_target:un_sanction_target }
+							}
+							country_event = { id = sanction.8xevery }
+						}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 7
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 6
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 7
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+					every_country = {
+						limit = {
+							check_variable = {
+								which = positive_UN value = 1
+							}
+						}
+						add_opinion = { multiplier = 100  who = event_target:un_sanction_target modifier = aggressive_expansion }
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = ROOT }
+							NOT = { tag = event_target:un_sanction_target }
+						}
+						country_event = { id = sanction.8xevery }
+					}
+				}
+			}
+			
+		}
+		option = { 
+			#NNNNNNNNNNNNNNNNNEEEEEEEEEGETIIIIVEEEEEEEEEEEEEEEEEEEEEEE
+			name = un_sanction_event.1b
+			ai_chance = {
+				factor = 10
+				modifier = {
+					factor = 9.5
+					alliance_with = event_target:un_sanction_target
+				}
+				modifier = {
+					factor = 9.5
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:un_sanction_target
+						}
+						event_target:un_sanction_target = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 8.5
+					ROOT = {
+						is_at_war = yes
+						NOT = {
+							war_with = event_target:un_sanction_target
+						}
+					}
+					event_target:un_sanction_target = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = opinion_support_army
+						}
+					}
+				}
+				modifier = {
+					factor = 7.5
+					any_ally = {
+						alliance_with = event_target:un_sanction_target
+					}
+				}
+				modifier = {
+					factor = 6.5
+					event_target:un_sanction_target = {
+						has_opinion = {
+							value = 150
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 5.25
+					event_target:un_sanction_target = {
+						NOT = { is_rival = ROOT }
+						NOT = { is_enemy = ROOT }
+					}
+					OR = {
+						any_rival_country = {
+							is_rival = event_target:un_sanction_target		
+						}
+						any_enemy_country = {
+							is_enemy = event_target:un_sanction_target	
+						}
+					}
+				}
+				modifier = {
+					factor = 2.5
+					event_target:un_sanction_target = {
+						has_opinion = {
+							value = 100
+							who = ROOT
+						}	
+					}
+				}
+				modifier = {
+					factor = 2.5
+					OR = {
+						any_rival_country = {
+							trade_embargo_by = event_target:un_sanction_target
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion
+							}
+						     ####################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_100
+							}
+							
+						}
+						any_enemy_country = {
+							trade_embargo_by = event_target:un_sanction_target
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion
+							}
+						####################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = oil_bane_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = aluminum_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = cars_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = copper_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = electronic_ban_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = iron_ban_opinion_50
+							}
+							##################################################################
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_10
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_25
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_50
+							}
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = sunction_opinion_100
+							}
+							
+						}
+					}
+					
+				}
+				modifier = {
+					factor = 0.75
+					event_target:un_sanction_target = {
+						is_hiring_condottiere_from = ROOT
+					}
+				}
+				modifier = {
+					factor = 0.25
+					OR = {
+						ruler_has_personality = just_personality
+						ruler_has_personality = righteous_personality
+						ruler_has_personality = tolerant_personality
+						ruler_has_personality = kind_hearted_personality
+						ruler_has_personality = free_thinker_personality
+						ruler_has_personality = well_connected_personality
+						ruler_has_personality = calm_personality
+						ruler_has_personality = careful_personality
+						ruler_has_personality = secretive_personality
+						ruler_has_personality = intricate_web_weaver_personality
+						ruler_has_personality = fertile_personality
+					}
+					
+				}				
+			}
+			
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = mini_good_relation
+			}
+			hidden_effect = {
+				if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 2
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 2
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 3
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}	
+					event_target:un_sanction_target = { 
+						add_country_modifier = {
+							name = has_sanction
+							duration = 3650
+					}
+						country_event = { id = sanction.1x }
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = event_target:un_sanction_target }
+							NOT = { tag = ROOT }	
+						}
+						country_event = { id = sanction.2xevery }	
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 3
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 4
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+					event_target:un_sanction_target = { 
+						add_country_modifier = {
+							name = has_sanction_1
+							duration = 3650
+						}
+						country_event = { id = sanction.3x }
+						#add_opinion = {
+						#	who = root
+						#	modifier = sunction_opinion_25
+						#}
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = ROOT }
+							NOT = { tag = event_target:un_sanction_target }
+						}
+							country_event = { id = sanction.4xevery }
+					}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 4
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 5
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+						event_target:un_sanction_target = { 
+							add_country_modifier = {
+								name = has_sanction_2
+								duration = 3650
+							}
+							country_event = { id = sanction.5x }
+							#add_opinion = {
+							#	who = root
+							#	modifier = sunction_opinion_50
+							#}
+						}
+						every_country = { 
+							limit = { 
+								ai = no
+								NOT = { tag = ROOT }
+								NOT = { tag = event_target:un_sanction_target }
+							}
+							country_event = { id = sanction.6xevery }
+						}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 5
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 6
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+						event_target:un_sanction_target = { 
+							add_country_modifier = {
+								name = has_sanction_3
+								duration = 3650
+							}
+							country_event = { id = sanction.7x }
+							#add_opinion = {
+							#	who = root
+							#	modifier = sunction_opinion_100
+							#}
+						}
+						every_country = { 
+							limit = { 
+								ai = no
+								NOT = { tag = ROOT }
+								NOT = { tag = event_target:un_sanction_target }
+							}
+							country_event = { id = sanction.8xevery }
+						}
+				}
+				else_if = {
+					limit = { 
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = vote_for_un_positive value = 8
+							}
+							
+							NOT = {
+								check_variable = {
+									which = VETO_on_un_Metting value = 1
+								}
+							}
+							check_variable = {
+								which = chapter_UN value = 6
+							}
+							NOT = {
+								check_variable = {
+									which = chapter_UN value = 7
+								}
+							}	
+						}	
+					}
+					event_target:un_sanction_target = {
+						add_country_modifier = {
+							name = cooldown_request_un
+							duration = 3650
+						}
+						change_variable = {
+							which = chapter_UN value = 1
+						}
+						country_event = { id = un_sanction_event.9 days = 2 }
+					}
+					every_country = {
+						limit = {
+							check_variable = {
+								which = positive_UN value = 1
+							}
+						}
+						add_opinion = { multiplier = 100  who = event_target:un_sanction_target modifier = aggressive_expansion }
+					}
+					every_country = { 
+						limit = { 
+							ai = no
+							NOT = { tag = ROOT }
+							NOT = { tag = event_target:un_sanction_target }
+						}
+						country_event = { id = sanction.8xevery }
+					}
+				}
+				every_country = {
+					limit = {
+						ai = no
+						NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = un_sanction_event.14 days = 1
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							check_variable = {
+								which = vote_for_un_positive value = 1
+							}
+							check_variable = {
+								which = vote_for_un_negetive value = 1
+							}
+							check_variable = {
+								which = VETO_on_un_Metting value = 1
+							}
+							check_variable = {
+								which = vote_for_un_abstentions value = 1
+							}
+						}
+					}
+					country_event = {
+						id = set_variable.37 days = 2
+					}
+				}
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = vote_for_un_negetive
+						value = 1
+					}
+				}
+			}
+		}
+		option = { 
+			#VVVVVVVETOOOOOOOOOOOO
+			name = un_sanction_event.1c
+			trigger = {
+				if = {
+					limit = {
+						ai = yes
+					}
+					NOT = {
+						event_target:un_sanction_target = { 
+							check_variable = {
+								which = VETO_on_un_Metting
+								value = 1
+							}
+						}
+					}
+				}
+				NOT = { has_country_modifier = cool_down_veto }
+				NOT = { great_power_rank = 7 }
+			}
+			ai_chance = {
+				factor = 3
+				modifier = {
+					factor = 0
+					NOT = { adm_power = 100 }
+					NOT = { dip_power = 100 }
+					NOT = { mil_power = 100 }
+				}
+				modifier = {
+					factor = 0
+					check_variable = {
+						which = VETO_on_un_Metting
+						value = 1
+					}
+
+				}
+				modifier = {
+					factor = 0
+					NOT = {
+						OR = {
+							ROOT = {
+								is_subject_of = event_target:un_sanction_target
+							}
+							event_target:un_sanction_target = {
+								is_subject_of = ROOT
+							}
+						}
+					}
+					NOT = {
+						OR = {
+							reverse_has_opinion = {
+								who = event_target:un_sanction_target
+								value = 150
+							}
+							has_opinion = {
+								who = event_target:un_sanction_target
+								value = 150
+							}
+						}
+					}
+					event_target:un_sanction_target = {
+						is_rival = ROOT
+				    }
+					NOT = {
+						OR = {
+							any_rival_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = THIS 
+										attacker_leader = event_target:un_sanction_target 
+									}
+								}
+							}
+							any_enemy_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = THIS 
+										attacker_leader = event_target:un_sanction_target 
+									}
+								}
+							}
+							any_rival_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = event_target:un_sanction_target  
+										attacker_leader = THIS
+									}
+								}
+							}
+							any_enemy_country = {
+								any_neighbor_country = {
+									is_in_war = {
+										defender_leader = event_target:un_sanction_target  
+										attacker_leader = THIS
+									}
+								}
+							}
+						}
+					}
+					NOT = {
+						OR = {
+							any_enemy_country = {
+								any_neighbor_country = {
+									guaranteed_by = event_target:un_sanction_target
+								}
+							}
+							any_rival_country = {
+								any_neighbor_country = {
+									guaranteed_by = event_target:un_sanction_target
+								}
+							}
+						}
+					}
+					NOT = {
+						any_rival_country = {
+							has_opinion_modifier = {
+								who = event_target:un_sanction_target
+								modifier = missile_us
+							}
+						}
+					}
+					NOT = {
+						overlord = {
+							any_rival_country = {
+								has_opinion_modifier = {
+									who = event_target:un_sanction_target
+									modifier = missile_us
+								}
+							}						
+						}
+					}
+				}
+				modifier = {
+					factor = 3
+					tag = ROOT
+				}
+				modifier = {
+					factor = 2
+					OR = {
+						ROOT = {
+							is_subject_of = event_target:un_sanction_target
+						}
+						event_target:un_sanction_target = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				modifier = {
+					factor = 1
+					alliance_with = event_target:un_sanction_target
+					OR = {
+						reverse_has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+						has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+					}
+					adm_power = 500
+					dip_power = 500
+					mil_power = 500
+				}		
+				modifier = {
+					factor = 0.5
+					alliance_with = event_target:un_sanction_target
+					OR = {
+						reverse_has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+						has_opinion = {
+							who = event_target:un_sanction_target
+							value = 150
+						}
+					}
+					adm_power = 300
+					dip_power = 300
+					mil_power = 300
+				}
+			}
+			add_adm_power = -250
+			add_dip_power = -250
+			add_mil_power = -250
+			reverse_add_opinion = {
+				who = event_target:un_sanction_target
+				modifier = good_relation
+			}
+			hidden_effect = {
+				every_country = {
+					limit = {
+						ai = no
+						NOT = { tag = ROOT }
+					}
+					country_event = {
+						id = un_sanction_event.15 days = 1
+					}
+				}
+				every_country = {
+					limit = {
+						OR = {
+							check_variable = {
+								which = vote_for_un_positive value = 1
+							}
+							check_variable = {
+								which = vote_for_un_negetive value = 1
+							}
+							check_variable = {
+								which = VETO_on_un_Metting value = 1
+							}
+							check_variable = {
+								which = vote_for_un_abstentions value = 1
+							}
+						}
+					}
+					country_event = {
+						id = set_variable.37 days = 2
+					}
+				}
+				event_target:un_sanction_target = { 
+					change_variable = {
+						which = VETO_on_un_Metting
+						value = 1
+					}
+				}
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 3650
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = cool_down_veto
+						duration = 730
+					}
+				}
+			}
+		}
+	}
+	country_event = {
+		id = un_sanction_event.9
+		title = un_sanction_event.9t
+		desc = un_sanction_event.9d
+		picture = VOTE_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.10
+		title = un_sanction_event.10t
+		desc = un_sanction_event.10d
+		picture = VETO_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.11
+		title = un_sanction_event.11t
+		desc = un_sanction_event.11d
+		#
+		picture = Vote_positive_eventPicture
+		is_triggered_only = yes
+		
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.12
+		title = un_sanction_event.12t
+		desc = un_sanction_event.12d
+		
+		picture = Vote_negetive_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.13
+		title = un_sanction_event.13t
+		desc = un_sanction_event.13d
+		#
+		picture = Vote_positive_eventPicture
+		is_triggered_only = yes
+		
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.14
+		title = un_sanction_event.14t
+		desc = un_sanction_event.14d
+		
+		picture = Vote_negetive_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.15
+		title = un_sanction_event.15t
+		desc = un_sanction_event.15d
+		picture = VETO_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.16
+		title = un_sanction_event.16t
+		desc = un_sanction_event.16d
+		
+		picture = Vote_Abstentions_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	country_event = {
+		id = un_sanction_event.17
+		title = un_sanction_event.17t
+		desc = un_sanction_event.17d
+		picture = Vote_Abstentions_eventPicture
+		#
+		is_triggered_only = yes
+	
+		option = { 
+			name = un_sanction_event.2a   
+		}
+	}
+	##free event slot
+	#country_event = {
+	#	id = un_sanction_event.3
+	#	title = un_sanction_event.3t
+	#	desc = un_sanction_event.3d
+	#	is_triggered_only = yes
+	#
+	#	trigger = {
+	#		overextension_percentage = 1
+	#		offensive_war_with = event_target:un_sanction_target
+	#	}
+	#	option = { 
+	#		name = un_sanction_event.3a  
+	#		
+	#	}
+	#}
+	##ruler assasinatio

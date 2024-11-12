@@ -1,0 +1,209 @@
+republican_revolution = {
+	potential = {
+		
+		NOT = { government = republic }
+		government = monarchy 
+		#AND = {
+		#	government = republic
+		#	NOT = { has_reform = democracy_reform }
+		#}
+		
+		num_of_cities = 6
+		ai = no
+	}
+	
+	
+	can_start = {
+		has_any_disaster = no
+		#if = {
+		#	limit = { government = monarchy }
+		#	OR = {
+		#		NOT = { legitimacy = 15 }
+		#		NOT = { stability = 0 }
+		#		check_variable = {
+		#			which = government_republic_variable
+		#			value = 70
+		#		}
+		#	}
+		#}
+		#if = {
+		#	limit = { government = theocracy }
+		#	OR = {
+		#		NOT = { devotion = 15 }
+		#		NOT = { stability = 0 }
+		#		check_variable = {
+		#			which = government_republic_variable
+		#			value = 70
+		#		}
+		#	}
+		#}
+		#if = {
+		#	limit =  { 
+		#		government = republic
+		#		NOT = { has_reform = democracy_reform }
+		#	}
+		#	NOT = { republican_tradition = 15 }
+		#	NOT = { stability = 0 }
+		#	check_variable = {
+		#		which = government_democracy_variable
+		#		value = 70
+		#	}
+		#}
+		OR = {
+			NOT = { legitimacy = 15 }
+			NOT = { stability = 0 }
+			check_variable = {
+				which = government_republic_variable
+				value = 70
+			}
+		}
+		hidden_trigger = {
+			is_year = 2030
+		}
+	}
+	
+	can_stop = { 
+		#NOT = { government = republic }
+		#if = {
+		#	limit = { government = monarchy }
+		#	legitimacy = 25
+		#}
+		#if = {
+		#	limit = { government = theocracy }
+		#	devotion = 25
+		#}
+		#if = {
+		#	limit = {
+		#		NOT = { has_reform = democracy_reform }
+		#	}
+		#}
+		#if = {
+		#	limit =  { 
+		#		government = republic
+		#		NOT = { has_reform = democracy_reform }
+		#	}
+		#	stability = 3
+		#	NOT = {
+		#		check_variable = {
+		#			which = government_democracy_variable
+		#			value = 70
+		#		}
+		#	}
+		#}
+		#if = {
+		#	limit = {
+		#		NOT = {
+		#			government = republic
+		#		}
+		#	}
+		#	stability = 3
+		#	NOT = {
+		#		check_variable = {
+		#			which = government_republic_variable
+		#			value = 70
+		#		}
+		#	}
+		#}
+		legitimacy = 25
+		stability = 3
+			NOT = {
+				check_variable = {
+					which = government_republic_variable
+					value = 70
+				}
+			}
+	}
+	
+	
+	progress = {
+		modifier = {
+			factor = 1
+			NOT = { prestige = 0 }
+		}
+		modifier = {
+			factor = 1
+			war_exhaustion = 5
+		} 
+		modifier = {
+			factor = 0.5
+			num_of_loans = 10
+			NOT = { num_of_loans = 25 }
+		}	
+		modifier = {
+			factor = 1
+			num_of_loans = 25
+		}	
+		modifier = {
+			factor = 5
+			is_bankrupt = yes
+		}	
+		modifier = {
+			factor = 1
+			NOT = { stability = -1 }
+		}	
+		modifier = {
+			factor = 2
+			NOT = { stability = -2 }
+		}	
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				government = monarchy
+			}
+		}	
+		modifier = {
+			factor = 2
+			any_neighbor_country = {
+				has_disaster = republican_revolution
+			}
+		}
+		#modifier = {
+		#	factor = 0.5
+		#	has_faction = communist_party
+		#	faction_in_power = communist_party
+		#}	
+		modifier = {
+			factor = 10
+			check_variable = {
+				which = government_republic_variable
+				value = 70
+			}
+		}
+	}
+	
+	can_end = {
+		stability = 3
+		NOT = { num_of_revolts = 1 }
+		NOT = {
+			check_variable = {
+				which = government_republic_variable
+				value = 70
+			}
+		}
+	}
+	
+
+	modifier = {
+		global_unrest = 12
+		stability_cost_modifier = 0.25
+	}	
+	
+	
+	on_start = modern_dis_republic.1
+	on_end = modern_dis_republic.4
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = modern_dis_republic.2
+			100 = modern_dis_republic.3
+			100 = dis_com.4
+			100 = revolution.7
+			100 = revolution.8
+		
+		}
+	}
+}
+

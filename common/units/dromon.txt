@@ -1,0 +1,10 @@
+#Dromon Galley Level 4
+type = galley
+
+hull_size = 19
+base_cannons = 21
+sail_speed = 8
+
+blockade = 11
+
+sprite_level = 4

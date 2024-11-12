@@ -1,0 +1,127 @@
+##namespace = closeable_country_canals_events
+
+
+#######################################################################
+#country_event = {
+#	id = closeable_country_canals_events.1
+#	title = "closeable_country_canals_events.NAME1"
+#	desc = "closeable_country_canals_events.DESC.1"
+#	picture = CANAL_K_C_eventPicture
+#
+#	
+#
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "closeable_country_canals_events2.OPT"
+#	}
+#
+#}
+#country_event = {
+#	id = closeable_country_canals_events.2
+#	title = "closeable_country_canals_events.NAME2"
+#	desc = "closeable_country_canals_events.DESC.2"
+#	picture = CANAL_S_C_eventPicture
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "closeable_country_canals_events2.OPT"
+#
+#	}
+#
+#}
+#country_event = {
+#	id = closeable_country_canals_events.3
+#	title = "closeable_country_canals_events.NAME3"
+#	desc = "closeable_country_canals_events.DESC.3"
+#	picture = CANAL_P_C_eventPicture
+#
+#	
+#
+#
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "closeable_country_canals_events2.OPT"
+#
+#	}
+#
+#}
+#country_event = {
+#	id = closeable_country_canals_events.4
+#	title = "closeable_country_canals_events.NAME4"
+#	desc = "closeable_country_canals_events.DESC.4"
+#	picture = CANAL_V_C_eventPicture
+#	
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "closeable_country_canals_events2.OPT"
+#
+#	}
+#
+#}
+############################################################
+#
+##country_event = {
+##	id = openable_country_canals_events.5
+##	title = "openable_country_canals_events.NAME1"
+##	desc = "openable_country_canals_events.DESC.1"
+##	
+##	picture = CANAL_K_eventPicture
+##
+##	
+##	is_triggered_only = yes
+##
+##	option = {
+##		name = "openable_country_canals_events1.OPT"
+##	}
+##
+##}
+#country_event = {
+#	id = openable_country_canals_events.6
+#	title = "openable_country_canals_events.NAME2"
+#	desc = "openable_country_canals_events.DESC.2"
+#	picture = CANAL_S_eventPicture
+#
+#	
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "openable_country_canals_events1.OPT"
+#
+#	}
+#
+#}
+#country_event = {
+#	id = openable_country_canals_events.7
+#	title = "openable_country_canals_events.NAME3"
+#	desc = "openable_country_canals_events.DESC.3"
+#	picture = CANAL_P_eventPicture
+#
+#	
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "openable_country_canals_events1.OPT"
+#
+#	}
+#
+#}
+#country_event = {
+#	id = openable_country_canals_events.8
+#	title = "openable_country_canals_events.NAME4"
+#	desc = "openable_country_canals_events.DESC.4"
+#	picture = CANAL_V_eventPicture
+#
+#	
+#	is_triggered_only = yes
+#
+#	option = {
+#		name = "openable_country_canals_events1.OPT"
+#
+#	}
+#
+#}

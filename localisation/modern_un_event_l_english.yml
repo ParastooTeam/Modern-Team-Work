@@ -1,0 +1,142 @@
+﻿l_english:
+
+
+ nuclear.13title:0 "Mass` production of Atomic Bombs"
+ nuclear.13desc:0 "My $MONARCHTITLE$, Now we have §G**[Root.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§! "
+
+ un_sanction_event.1t:0 "Security Council Voting"
+ un_sanction_event.1d:0 "My $MONARCHTITLE$, In the voting of the National Security Council, \n§B[From.Owner.GetName]§! complained about §B[From.From.Owner.GetName]§!, we must announce our vote  \n\n§GPositive Votes§! - (§G[From.From.Owner.vote_for_un_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_un_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_un_Metting.GetValue]§!)"
+
+ un_sanction_less_variable_event.1t:0 "Security Council Voting"
+ un_sanction_less_variable_event.1d:0 "My $MONARCHTITLE$, We are voting for §B[From.From.Owner.GetName]§! \n§GPositive Votes§! - (§G[From.From.Owner.vote_for_un_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_un_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_un_Metting.GetValue]§!)"
+
+ 
+
+ vote_for_un_positive:0 "§GPositive Votes§!"
+ vote_for_un_negetive:0 "§RNegative Votes§!"
+ VETO_on_un_Metting:0 "§TVETO§!"
+ vote_for_un_abstentions:0 "§gAbstentions Votes§!"
+
+ un_sanction_event.1a:0 "§GPositive Votes§!"
+ un_sanction_event.1b:0 "§RNegative Votes§!"
+ un_sanction_event.1c:0 "§TVETO§!"
+ un_sanction_event.1e:0 "§gAbstentions Votes§!"
+
+ un_sanction_event.10t:0 "One country §RVETOED§! the Vote"
+ un_sanction_event.10d:0 "§G[From.Owner.GetName]§! Vetoed the vote §B[From.From.From.Owner.GetName]§!"
+ un_sanction_event.2a: "OK..."
+
+ un_sanction_modifire:0 "The meeting has been held"
+ un_1_sanction_modifire:0 "The meeting has been held"
+
+ un_sanction_event.11t:0 "§G[From.Owner.GetName]§! Vote"
+ un_sanction_event.11d:0 "The §G[From.Owner.GetName]§! vote in the Security Council was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ un_sanction_event.12t:0 "§R[From.Owner.GetName]§! Vote"
+ un_sanction_event.12d:0 "The §R[From.Owner.GetName]§! vote in the Security Council was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ un_sanction_event.13t:0 "§G[From.Owner.GetName]§! Vote"
+ un_sanction_event.13d:0 "The §G[From.Owner.GetName]§! vote in the Security Council was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+
+ un_sanction_event.14t:0 "§R[From.Owner.GetName]§! Vote"
+ un_sanction_event.14d:0 "The §R[From.Owner.GetName]§! vote in the Security Council was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+ 
+ un_sanction_event.15t:0 "One country §RVETOED§! the Vote"
+ un_sanction_event.15d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+
+ un_sanction_event.16t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ un_sanction_event.16d:0 "The §B[From.Owner.GetName]§! vote in the Security Council was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ un_sanction_event.17t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ un_sanction_event.17d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+ un_sanction_event.2a: "OK..."
+ 
+ SHOW_VETO:0 "§gShow Vetos evens§!"
+ DONT_SHOW_VETO:0 "§RHide Vetos events§!"
+ DONT_SHOW_VOTE:0 "§RHide Votes events§!"
+ SHOW_VOTE:0 "§gShow Votes events§!"
+ DONT_SHOW_ALL_SIDE_DECISION:0 "§RHide side decisions§!"
+ SHOW_ALL_SIDE_DECISION:0 "§OShow side decisions§!"
+ SHOW_EU_DECISION:0 "Show all EU decision"
+ LEVEL_UP_TANK_TECH:0 "§OIncreasing§! §Y+1§! §Othe level of tank technology§! Now is (§Y[Root.tank_Support.GetValue]§!)"
+ LEVEL_UP_TANK_TECH_01:0 "Tank technology now is (§Y[Root.tank_Support.GetValue]§!)"
+ tank_Support:0 "Tank Technology"
+ DONT_SHOW_tank_technology:0 "Hide and reveal the level of our tank technology"
+ DONT_SHOW_TANK_DIP:0 "They can §Rno longer§! see the diplomatic decision of our tanks"
+ SHOW_TANK_DIP:0 "Now they can §Gsee§! the diplomatic decision of our tanks"
+
+ tank_tech_decision:0 "£artillery_icon_small£§TIncrease Tank Technology§!"
+ tank_tech_decision_title:0 "£artillery_icon_small£§TIncrease Tank Technology§!"
+ tank_tech_decision_desc:0 "With this option, we will get more advanced tanks and we will be more powerful in the wars" 
+ show_tank_diploaction_decision:0 "£eye_icon£§TShow/Hide§! Tank Diplomatic License"
+ show_tank_diploaction_decision_title:0 "£eye_icon£§TShow/Hide§! Tank Diplomatic License"
+ show_tank_diploaction_decision_desc:0 "With this option, we show the option of upgrading and requesting tank technology and its license to the public, after showing it, they can increase our technology or get a license from us."
+ 
+ SHOW_EU_VOTE1:0 "§gShow EU Votes§!"
+ DONT_SHOW_EU_VOTE:0 "§RHide EU Votes§!"
+
+ show_vote_desition_title:0 "£vote_icon_m£§gShow Vote§!"
+ show_vote_desition_desc:0 "By activating this option, when voting takes place in the Security Council, the Security Council voting results will be displayed for you."
+ show_veto_desition_title:0 "£vote_icon_m£§gShow Vetos§!"
+ show_veto_desition_desc:0 "By clicking on this option, the countries that veto the Security Council vote will be shown to you"
+
+ dont_show_vote_desition_title:0 "£vote_icon_m£§RHide Votes§!"
+ dont_show_vote_desition_desc:0 "It does not allow the Security Council posters to be displayed"
+ dont_show_veto_desition_title:0 "£vote_icon_m£§RHide Vetos§!"
+ dont_show_veto_desition_desc:0 "It does not allow the Security Council posters to be displayed"
+
+ un_sanction_event.9t:0 "Chapters of the Security Council"
+ un_sanction_event.9d:0 "We are now promoted to chapter (§R[Root.Owner.chapter_UN.GetValue]§!) of the Security Council"
+
+ un_sanction_less_variable_event.9t:0 "Chapters of the Security Council"
+ un_sanction_less_variable_event.9d:0 "We are now promoted to chapter (§R[Root.Owner.chapter_UN.GetValue]§!) of the Security Council \nWe went down in the Security Council for one season, this is good news, our country has turned to peace instead of war"
+ 
+
+ chapter_UN:0 "Chapter of the Security Council"
+ 
+ un_sanction_event.0t:0 "Test"
+ un_sanction_event.0d:0 "Desc Test"
+
+ show_all_dip_decision_title:0 "1-£eye_icon£Show §OSide§! decisions"
+ show_all_dip_decision_desc:0 "By activating this option, less frequently used settings will be opened for you. We made this selection to keep the tasamsat part organized so that it is not cluttered"
+
+ dont_show_EU_decision_title:0 "3-£eye_cant_icon£Hide §TEU§! decision"
+ dont_show_EU_decision_desc:0 "This option hides all decisions related to the European Union so that your decisions page is more organized \n§TUniting EU§! (§T[From.Owner.positive_EU_unite.GetValue]§!) \nExit number from the EU (§O[From.Owner.negetive_EU.GetValue]§!) \nEU entry number (§O[From.Owner.positive_EU.GetValue]§!) \n§OExpulsion number from the EU§! (§O[From.Owner.lying_EU.GetValue]§!) \nThe number of times permission to enter the European Union is (§G[From.Owner.eu_not_access_to_join.GetValue]§! out of §Y10§!)"
+
+ show_EU_decision_title:0 "3-£eye_icon£Show §TEU§! decision"
+ show_EU_decision_desc:0 "This option shows all decisions related to the European Union so that you can implement your decisions in the European Union \n§TUniting EU§! (§T[From.Owner.positive_EU_unite.GetValue]§!) \nExit number from the EU (§O[From.Owner.negetive_EU.GetValue]§!) \nEU entry number (§O[From.Owner.positive_EU.GetValue]§!) \n§OExpulsion number from the EU§! (§O[From.Owner.lying_EU.GetValue]§!) \nThe number of times permission to enter the European Union is (§G[From.Owner.eu_not_access_to_join.GetValue]§! out of §Y10§!)"
+
+ dont_show_all_dip_decision_title:0 "1-£eye_cant_icon£Hide §OSide§! decisions"
+ dont_show_all_dip_decision_desc:0 "By clicking on this option, all side decisions will be hidden. It is recommended to increase the speed in weak systems"
+
+ un_sanction_less_variable_event.11t:0 "§G[From.Owner.GetName]§! Vote"
+ un_sanction_less_variable_event.11d:0 "The §G[From.Owner.GetName]§! vote in the Security Council was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ un_sanction_less_variable_event.12t:0 "§R[From.Owner.GetName]§! Vote"
+ un_sanction_less_variable_event.12d:0 "The §R[From.Owner.GetName]§! vote in the Security Council was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ un_sanction_less_variable_event.13t:0 "§G[From.Owner.GetName]§! Vote"
+ un_sanction_less_variable_event.13d:0 "The §G[From.Owner.GetName]§! vote in the Security Council was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+
+ un_sanction_less_variable_event.14t:0 "§R[From.Owner.GetName]§! Vote"
+ un_sanction_less_variable_event.14d:0 "The §R[From.Owner.GetName]§! vote in the Security Council was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+ 
+ un_sanction_less_variable_event.15t:0 "One country §RVETOED§! the Vote"
+ un_sanction_less_variable_event.15d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+
+ un_sanction_less_variable_event.16t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ un_sanction_less_variable_event.16d:0 "The §B[From.Owner.GetName]§! vote in the Security Council was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ un_sanction_less_variable_event.17t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ un_sanction_less_variable_event.17d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_un_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_un_negetive.GetValue]§!) - §RNegative Votes§!  \n(§B[From.From.From.Owner.Owner.VETO_on_un_Metting.GetValue]§!) - §BVETO§!"
+ un_sanction_less_variable_event.2a: "OK..."
+
+ un_sanction_less_variable_event.1a:0 "§GPositive Votes§!"
+ un_sanction_less_variable_event.1b:0 "§RNegative Votes§!"
+ un_sanction_less_variable_event.1c:0 "§TVETO§!"
+
+ modern_UN_decision_title:0 "§OLowering§! the level in the §OSecurity Council§!"
+ modern_UN_decision_desc:0 "Our high level in the Security Council is very dangerous because in the seventh level a military alliance will be formed and a big war will happen against us with all the superpowers of the world, we should not allow a war to happen against us."
+ modern_UN_decision_tooltip:0 "Our high level in the Security Council is very dangerous because in the seventh level a military alliance will be formed and a big war will happen against us with all the superpowers of the world, we should not allow a war to happen against us."
+
+ 

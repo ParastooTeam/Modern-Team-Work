@@ -1,0 +1,17 @@
+name = "Ukraine separatist war"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 2612 #Grodno
+}
+
+2014.4.7 = {
+	add_attacker = UKR
+	add_defender = ZAZ
+}
+
+2026.11.1 = {
+	rem_attacker = AZE
+	rem_defender = ARM
+}

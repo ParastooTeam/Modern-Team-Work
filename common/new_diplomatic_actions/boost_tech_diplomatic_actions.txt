@@ -1,0 +1,7049 @@
+
+access_missile_up_them = {
+	category = dynasty
+
+	alert_index = 15  
+	alert_tooltip = WANT_ATTACK_MISSILE_UP
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy				
+		FROM = { ai = no }
+		ai = no
+		NOT = { has_country_flag = access_missile_up }
+	}
+	is_allowed = {	
+		
+	}
+	on_accept = {
+		set_country_flag = access_missile_up
+		FROM = { save_global_event_target_as = access_missile_up_event }
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		has_country_modifier = european_leader
+		
+	}
+}
+remove_access_missile_up_them = {
+	category = dynasty
+
+	alert_index = 15  
+	alert_tooltip = WANT_ATTACK_MISSILE_UP
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy				
+		FROM = { ai = no }
+		ai = no
+		has_country_flag = access_missile_up
+		FROM = { tag = event_target:access_missile_up_event }
+	}
+	is_allowed = {	
+		
+	}
+	on_accept = {
+		clr_country_flag = access_missile_up
+		clear_global_event_target = access_missile_up_event
+	}
+	on_decline = {
+
+	}
+
+	ai_acceptance = {				
+	}
+
+	ai_will_do = { # this is a trigger
+		has_country_modifier = european_leader
+		
+	}
+}
+
+# Create new diplomatic actions like this. AI will currently never send them.
+boost_attack_missile_tech = {
+	category = dynasty
+
+	alert_index = 15  
+	alert_tooltip = WANT_ATTACK_MISSILE_UP
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy				
+		#if = {
+		#	limit = {
+		#		FROM = { ai = yes }
+		#	}
+		#	FROM = { is_subject_of = ROOT }
+		#}
+		if = {
+			limit = {
+				FROM = { ai = no }
+				ai = no
+			}
+			OR = {
+				AND = {	
+					FROM = { has_country_flag = access_missile_up }
+					tag = event_target:access_missile_up_event
+				}
+				FROM = { is_subject_of = ROOT }
+			}
+		}
+		
+	}
+	is_allowed = {	
+		if = {
+			limit = { ai = yes }
+			NOT = {
+				war_with = FROM
+			}
+		}
+		full_idea_group = missil_research
+		FROM = { NOT = { has_country_modifier = wait_for_tech_attack_1 } }
+		check_variable = {
+			which = attack_missile_lev
+			value = 1
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 2
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 2
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 3
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 2
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 3
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 4
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 3
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 4
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 5
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 4
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 5
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 6
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 5
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 6
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 7
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 6
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 7
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 8
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 7
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 8
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 9
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 8
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 9
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 10
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 9
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 10
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 11
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 10
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 11
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 12
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 11
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 12
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 13
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 12
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 13
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 14
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 13
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 14
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 15
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 14
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 15
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 16
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 15
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 16
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 17
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 16
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 17
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 18
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 17
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 18
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 19
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 18
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 19
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 20
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 19
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 20
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 21
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 20
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 21
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 22
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 21
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 22
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 23
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 22
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 23
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 24
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 23
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 24
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 25
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 24
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 25
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 26
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 25
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 26
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 27
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 26
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 27
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 28
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 27
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 28
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 29
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 28
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 29
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 30
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 29
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 30
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 31
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 30
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 31
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 32
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 31
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 32
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 33
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 32
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 33
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 34
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 33
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 34
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 35
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 34
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 35
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 36
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 35
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 36
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 37
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 36
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 37
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 38
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 37
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 38
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 39
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 38
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 39
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 40
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 39
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 40
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 41
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 40
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 41
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 42
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 41
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 42
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 43
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 42
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 43
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 44
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 43
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 44
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 45
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 44
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 45
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 46
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 45
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 46
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 47
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 46
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 47
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 48
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 47
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 48
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 49
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 48
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 49
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 50
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 49
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 50
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 51
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 50
+					}
+				}
+			}
+		}
+		#######################################################################################
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 50
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 51
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 50
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 51
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 52
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 51
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 52
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 53
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 52
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 53
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 54
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 53
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 54
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 55
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 54
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 55
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 56
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 55
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 56
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 57
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 56
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 57
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 58
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 57
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 58
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 59
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 58
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 59
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 60
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 59
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 60
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 61
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 60
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 61
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 62
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 61
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 62
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 63
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 62
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 63
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 64
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 63
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 64
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 65
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 64
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 65
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 66
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 65
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 66
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 67
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 66
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 67
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 68
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 67
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 68
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 69
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 68
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 69
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 70
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 69
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 70
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 71
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 70
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 71
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 72
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 71
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 72
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 73
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 72
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 73
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 74
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 73
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 74
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 75
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 74
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 75
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 76
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 75
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 76
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 77
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 76
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 77
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 78
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 77
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 78
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 79
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 78
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 79
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 80
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 79
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 80
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 81
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 80
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 81
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 82
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 81
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 82
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 83
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 82
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 83
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 84
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 83
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 84
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 85
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 84
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 85
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 86
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 85
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 86
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 87
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 86
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 87
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 88
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 87
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 88
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 89
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 88
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 89
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 90
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 89
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 90
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 91
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 90
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 91
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 92
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 91
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 92
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 93
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 92
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 93
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 94
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 93
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 94
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 95
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 94
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 95
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 96
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 95
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 96
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 97
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 96
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 97
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 98
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 97
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 98
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 99
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 98
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 99
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 100
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 99
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 100
+				}
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 101
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 100
+					}
+				}
+			}
+		}
+		
+
+		if = {
+			limit = { 
+				any_country = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = attack_missile_lev
+								which = PREV
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				treasury = 1000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				treasury = 2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				treasury = 3000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				treasury = 4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				treasury = 5000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				treasury = 6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				treasury = 7000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				treasury = 8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				treasury = 9000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				treasury = 10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				treasury = 11000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				treasury = 12000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				treasury = 14000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				treasury = 15000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				treasury = 16000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				treasury = 17000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				treasury = 18000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				treasury = 19000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				treasury = 20000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				treasury = 21000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				treasury = 22000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				treasury = 23000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				treasury = 24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				treasury = 25000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				treasury = 26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				treasury = 27000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				treasury = 28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				treasury = 29000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				treasury = 30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				treasury = 31000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				treasury = 32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				treasury = 33000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				treasury = 34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				treasury = 35000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				treasury = 36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				treasury = 37000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				treasury = 38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				treasury = 39000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				treasury = 40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				treasury = 41000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				treasury = 42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				treasury = 43000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				treasury = 44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				treasury = 45000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				treasury = 46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				treasury = 47000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				treasury = 48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				treasury = 49000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				treasury = 50000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				treasury = 51000			
+			}
+		}
+		else = {
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				treasury = 2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				treasury = 4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				treasury = 6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				treasury = 8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				treasury = 10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				treasury = 12000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				treasury = 14000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				treasury = 16000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				treasury = 18000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				treasury = 20000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				treasury = 22000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				treasury = 24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				treasury = 28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				treasury = 30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				treasury = 32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				treasury = 34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				treasury = 36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				treasury = 38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				treasury = 40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				treasury = 42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				treasury = 44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				treasury = 46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				treasury = 48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				treasury = 50000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				treasury = 52000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				treasury = 54000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				treasury = 56000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				treasury = 58000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				treasury = 60000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				treasury = 62000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				treasury = 64000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				treasury = 66000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				treasury = 68000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				treasury = 70000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				treasury = 72000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				treasury = 74000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				treasury = 76000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				treasury = 78000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				treasury = 80000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				treasury = 82000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				treasury = 84000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				treasury = 86000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				treasury = 88000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				treasury = 90000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				treasury = 92000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				treasury = 94000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				treasury = 96000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				treasury = 98000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				treasury = 100000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				treasury = 102000			
+			}
+		}
+		
+	}
+	on_accept = {
+		if = {
+			limit = { 
+				any_country = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = attack_missile_lev
+								which = PREV
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				add_treasury = -1000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				add_treasury = -2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				add_treasury = -3000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				add_treasury = -4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				add_treasury = -5000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				add_treasury = -6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				add_treasury = -7000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				add_treasury = -8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				add_treasury = -9000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				add_treasury = -10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				add_treasury = -11000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				add_treasury = -12000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				add_treasury = -14000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				add_treasury = -15000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				add_treasury = -16000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				add_treasury = -17000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				add_treasury = -18000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				add_treasury = -19000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				add_treasury = -20000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				add_treasury = -21000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				add_treasury = -22000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				add_treasury = -23000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				add_treasury = -24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				add_treasury = -25000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				add_treasury = -26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				add_treasury = -27000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				add_treasury = -28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				add_treasury = -29000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				add_treasury = -30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				add_treasury = -31000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				add_treasury = -32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				add_treasury = -33000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				add_treasury = -34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				add_treasury = -35000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				add_treasury = -36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				add_treasury = -37000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				add_treasury = -38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				add_treasury = -39000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				add_treasury = -40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				add_treasury = -41000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				add_treasury = -42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				add_treasury = -43000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				add_treasury = -44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				add_treasury = -45000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				add_treasury = -46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				add_treasury = -47000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				add_treasury = -48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				add_treasury = -49000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				add_treasury = -50000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				add_treasury = -51000			
+			}
+		}
+		else = {
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				add_treasury = -2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				add_treasury = -4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				add_treasury = -6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				add_treasury = -8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				add_treasury = -10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				add_treasury = -12000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				add_treasury = -14000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				add_treasury = -16000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				add_treasury = -18000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				add_treasury = -20000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				add_treasury = -22000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				add_treasury = -24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				add_treasury = -28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				add_treasury = -30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				add_treasury = -32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				add_treasury = -34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				add_treasury = -36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				add_treasury = -38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				add_treasury = -40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				add_treasury = -42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				add_treasury = -44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				add_treasury = -46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				add_treasury = -48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				add_treasury = -50000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				add_treasury = -52000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				add_treasury = -54000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				add_treasury = -56000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				add_treasury = -58000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				add_treasury = -60000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				add_treasury = -62000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				add_treasury = -64000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				add_treasury = -66000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				add_treasury = -68000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				add_treasury = -70000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				add_treasury = -72000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				add_treasury = -74000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				add_treasury = -76000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				add_treasury = -78000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				add_treasury = -80000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				add_treasury = -82000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				add_treasury = -84000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				add_treasury = -86000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				add_treasury = -88000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				add_treasury = -90000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				add_treasury = -92000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				add_treasury = -94000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				add_treasury = -96000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				add_treasury = -98000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				add_treasury = -100000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				add_treasury = -102000			
+			}
+		}
+		if = {
+			limit = { 
+				any_country = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = attack_missile_lev
+								which = PREV
+							}
+						}
+					}
+				}
+			}
+			FROM = {
+				if = {
+					limit = { 
+						OR = {
+							has_country_flag = missile_state_50
+							check_variable = {
+								which = attack_missile_lev
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = missile_state_50 } }
+					set_country_flag = attack_missile_level
+					set_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				add_country_modifier = {
+					name = wait_for_tech_attack_1
+					duration = 730
+				}
+			}
+		}
+		else = {
+			FROM = {
+				if = {
+					limit = { 
+						OR = {
+							has_country_flag = missile_state_50
+							check_variable = {
+								which = attack_missile_lev
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_flag = missile_state_50 } }
+					set_country_flag = attack_missile_level
+					set_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				add_country_modifier = {
+					name = wait_for_tech_attack_1
+					duration = 1095
+				}
+			}
+		}
+			
+		
+		
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		#has_country_modifier = european_leader
+		NOT = {
+			reverse_has_opinion = { 
+				who = FROM value = -75 
+			}
+		}
+	}
+}
+##
+boost_defence_missile_tech = {
+	category = dynasty
+
+	alert_index = 15  
+	alert_tooltip = WANT_DEFENSE_MISSILE_UP
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		#has_country_flag = opened_logestic_diplomacy		
+		#if = {
+		#	limit = {
+		#		FROM = { ai = yes }
+		#	}
+		#	FROM = { is_subject_of = ROOT }
+		#}
+		if = {
+			limit = {
+				FROM = { ai = no }
+				ai = no
+			}
+			OR = {
+				AND = {	
+					FROM = { has_country_flag = access_missile_up }
+					tag = event_target:access_missile_up_event
+				}
+				FROM = { is_subject_of = ROOT }
+			}
+		}
+	}
+	is_allowed = {	
+		if = {
+			limit = { ai = yes }
+			NOT = {
+				war_with = FROM
+			}
+		}
+		full_idea_group = defence_missil_research
+		FROM = { NOT = { has_country_modifier = wait_for_tech_defence_1 } }
+		ROOT = {
+			check_variable = {
+				which = defense_missile_lev
+				value = 1
+			}
+		}
+		###############################################################
+		if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 1
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 2
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 1
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 2
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 3
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 2
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 3
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 4
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 3
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 4
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 5
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 4
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 5
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 6
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 5
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 6
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 7
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 6
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 7
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 8
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 7
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 8
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 9
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 8
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 9
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 10
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 9
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 10
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 11
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 10
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 11
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 12
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 11
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 12
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 13
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 12
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 13
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 14
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 13
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 14
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 15
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 14
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 15
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 16
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 15
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 16
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 17
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 16
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 17
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 18
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 17
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 18
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 19
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 18
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 19
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 20
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 19
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 20
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 21
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 20
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 21
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 22
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 21
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 22
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 23
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 22
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 23
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 24
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 23
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 24
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 25
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 24
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 25
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 26
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 25
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 26
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 27
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 26
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 27
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 28
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 27
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 28
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 29
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 28
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 29
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 30
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 29
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 30
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 31
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 30
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 31
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 32
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 31
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 32
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 33
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 32
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 33
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 34
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 33
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 34
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 35
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 34
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 35
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 36
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 35
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 36
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 37
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 36
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 37
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 38
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 37
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 38
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 39
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 38
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 39
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 40
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 39
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 40
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 41
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 40
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 41
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 42
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 41
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 42
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 43
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 42
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 43
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 44
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 43
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 44
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 45
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 44
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 45
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 46
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 45
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 46
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 47
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 46
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 47
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 48
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 47
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 48
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 49
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 48
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 49
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 50
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 49
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 50
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 51
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 50
+					}
+				}
+			}
+		}
+		#######################################################################################
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 50
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 51
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 50
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 51
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 52
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 51
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 52
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 53
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 52
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 53
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 54
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 53
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 54
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 55
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 54
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 55
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 56
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 55
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 56
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 57
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 56
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 57
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 58
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 57
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 58
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 59
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 58
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 59
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 60
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 59
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 60
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 61
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 60
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 61
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 62
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 61
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 62
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 63
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 62
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 63
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 64
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 63
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 64
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 65
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 64
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 65
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 66
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 65
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 66
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 67
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 66
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 67
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 68
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 67
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 68
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 69
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 68
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 69
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 70
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 69
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 70
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 71
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 70
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 71
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 72
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 71
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 72
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 73
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 72
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 73
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 74
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 73
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 74
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 75
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 74
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 75
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 76
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 75
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 76
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 77
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 76
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 77
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 78
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 77
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 78
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 79
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 78
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 79
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 80
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 79
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 80
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 81
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 80
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 81
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 82
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 81
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 82
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 83
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 82
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 83
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 84
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 83
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 84
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 85
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 84
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 85
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 86
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 85
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 86
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 87
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 86
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 87
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 88
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 87
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 88
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 89
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 88
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 89
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 90
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 89
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 90
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 91
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 90
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 91
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 92
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 91
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 92
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 93
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 92
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 93
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 94
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 93
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 94
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 95
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 94
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 95
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 96
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 95
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 96
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 97
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 96
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 97
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 98
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 97
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 98
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 99
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 98
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 99
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 100
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 99
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 100
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 101
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 100
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 101
+				}
+				NOT = {
+					check_variable = {
+						which = defense_missile_lev
+						value = 102
+					}
+				}
+			}
+			FROM = {
+				NOT = {
+					check_variable = {
+						which = attack_missile_lev
+						value = 101
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { 
+				any_country = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = defense_missile_lev
+								which = PREV
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				treasury = 1000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				treasury = 2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				treasury = 3000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				treasury = 4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				treasury = 5000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				treasury = 6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				treasury = 7000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				treasury = 8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				treasury = 9000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				treasury = 10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				treasury = 11000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				treasury = 12000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				treasury = 14000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				treasury = 15000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				treasury = 16000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				treasury = 17000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				treasury = 18000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				treasury = 19000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				treasury = 20000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				treasury = 21000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				treasury = 22000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				treasury = 23000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				treasury = 24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				treasury = 25000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				treasury = 26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				treasury = 27000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				treasury = 28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				treasury = 29000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				treasury = 30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				treasury = 31000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				treasury = 32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				treasury = 33000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				treasury = 34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				treasury = 35000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				treasury = 36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				treasury = 37000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				treasury = 38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				treasury = 39000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				treasury = 40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				treasury = 41000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				treasury = 42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				treasury = 43000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				treasury = 44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				treasury = 45000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				treasury = 46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				treasury = 47000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				treasury = 48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				treasury = 49000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				treasury = 50000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				treasury = 51000			
+			}
+		}
+		else = {
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				treasury = 2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				treasury = 4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				treasury = 6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				treasury = 8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				treasury = 10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				treasury = 12000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				treasury = 14000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				treasury = 16000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				treasury = 18000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				treasury = 20000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				treasury = 22000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				treasury = 24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				treasury = 26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				treasury = 28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				treasury = 30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				treasury = 32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				treasury = 34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				treasury = 36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				treasury = 38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				treasury = 40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				treasury = 42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				treasury = 44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				treasury = 46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				treasury = 48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				treasury = 50000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				treasury = 52000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				treasury = 54000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				treasury = 56000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				treasury = 58000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				treasury = 60000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				treasury = 62000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				treasury = 64000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				treasury = 66000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				treasury = 68000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				treasury = 70000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				treasury = 72000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				treasury = 74000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				treasury = 76000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				treasury = 78000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				treasury = 80000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				treasury = 82000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				treasury = 84000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				treasury = 86000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				treasury = 88000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				treasury = 90000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				treasury = 92000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				treasury = 94000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				treasury = 96000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				treasury = 98000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				treasury = 100000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				treasury = 102000			
+			}
+		}
+		##############################################################################
+	}
+	on_accept = {
+		if = {
+			limit = { 
+				any_country = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = defense_missile_lev
+								which = PREV
+							}
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				add_treasury = -1000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				add_treasury = -2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				add_treasury = -3000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				add_treasury = -4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				add_treasury = -5000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				add_treasury = -6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				add_treasury = -7000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				add_treasury = -8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				add_treasury = -9000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				add_treasury = -10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				add_treasury = -11000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				add_treasury = -12000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -13000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				add_treasury = -14000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				add_treasury = -15000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				add_treasury = -16000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				add_treasury = -17000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				add_treasury = -18000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				add_treasury = -19000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				add_treasury = -20000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				add_treasury = -21000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				add_treasury = -22000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				add_treasury = -23000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				add_treasury = -24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				add_treasury = -25000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				add_treasury = -26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				add_treasury = -27000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				add_treasury = -28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				add_treasury = -29000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				add_treasury = -30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				add_treasury = -31000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				add_treasury = -32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				add_treasury = -33000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				add_treasury = -34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				add_treasury = -35000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				add_treasury = -36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				add_treasury = -37000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				add_treasury = -38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				add_treasury = -39000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				add_treasury = -40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				add_treasury = -41000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				add_treasury = -42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				add_treasury = -43000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				add_treasury = -44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				add_treasury = -45000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				add_treasury = -46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				add_treasury = -47000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				add_treasury = -48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				add_treasury = -49000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				add_treasury = -50000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				add_treasury = -51000			
+			}
+		}
+		else = {
+			if = {
+				limit = { FROM = { NOT = { num_of_cities = 10 } } }
+				add_treasury = -2000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 20 } } }
+				add_treasury = -4000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 30 } } }
+				add_treasury = -6000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 40 } } }
+				add_treasury = -8000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 50 } } }
+				add_treasury = -10000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 60 } } }
+				add_treasury = -12000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 70 } } }
+				add_treasury = -14000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 80 } } }
+				add_treasury = -16000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 90 } } }
+				add_treasury = -18000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 100 } } }
+				add_treasury = -20000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 110 } } }
+				add_treasury = -22000
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 120 } } }
+				add_treasury = -24000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 130 } } }
+				add_treasury = -26000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 140 } } }
+				add_treasury = -28000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 150 } } }
+				add_treasury = -30000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 160 } } }
+				add_treasury = -32000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 170 } } }
+				add_treasury = -34000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 180 } } }
+				add_treasury = -36000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 190 } } }
+				add_treasury = -38000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 200 } } }
+				add_treasury = -40000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 210 } } }
+				add_treasury = -42000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 220 } } }
+				add_treasury = -44000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 230 } } }
+				add_treasury = -46000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 240 } } }
+				add_treasury = -48000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 250 } } }
+				add_treasury = -50000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 260 } } }
+				add_treasury = -52000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 270 } } }
+				add_treasury = -54000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 280 } } }
+				add_treasury = -56000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 290 } } }
+				add_treasury = -58000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 300 } } }
+				add_treasury = -60000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 310 } } }
+				add_treasury = -62000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 320 } } }
+				add_treasury = -64000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 330 } } }
+				add_treasury = -66000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 340 } } }
+				add_treasury = -68000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 350 } } }
+				add_treasury = -70000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 360 } } }
+				add_treasury = -72000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 370 } } }
+				add_treasury = -74000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 380 } } }
+				add_treasury = -76000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 390 } } }
+				add_treasury = -78000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 400 } } }
+				add_treasury = -80000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 410 } } }
+				add_treasury = -82000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 420 } } }
+				add_treasury = -84000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 430 } } }
+				add_treasury = -86000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 440 } } }
+				add_treasury = -88000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 450 } } }
+				add_treasury = -90000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 460 } } }
+				add_treasury = -92000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 470 } } }
+				add_treasury = -94000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 480 } } }
+				add_treasury = -96000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 490 } } }
+				add_treasury = -98000			
+			}
+			else_if = {
+				limit = { FROM = { NOT = { num_of_cities = 500 } } }
+				add_treasury = -100000			
+			}
+			else_if = {
+				limit = { num_of_cities = 500 }
+				add_treasury = -102000			
+			}
+		}
+			if = {
+				limit = { 
+					any_country = {
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = defense_missile_lev
+									which = PREV
+								}
+							}
+						}
+					}
+				}
+				FROM = {
+					if = {
+						limit = { 
+							OR = {
+								has_country_flag = missile_state_50
+								check_variable = {
+									which = defense_missile_lev
+									value = 1
+								}
+							}
+						}
+						change_variable = {
+							which = defense_missile_lev
+							value = 1
+						}
+					}
+					if = {
+						limit = { NOT = { has_country_flag = missile_state_50 } }
+						set_country_flag = defense_missile_lev
+						set_variable = {
+							which = defense_missile_lev
+							value = 1
+						}
+					}
+					add_country_modifier = {
+						name = wait_for_tech_defence_1
+						duration = 730
+					}
+				}
+			}
+			else = {
+				FROM = {
+					if = {
+						limit = { 
+							OR = {
+								has_country_flag = missile_state_50
+								check_variable = {
+									which = attack_missile_lev
+									value = 1
+								}
+							}
+						}
+						change_variable = {
+							which = attack_missile_lev
+							value = 1
+						}
+					}
+					if = {
+						limit = { NOT = { has_country_flag = missile_state_50 } }
+						set_country_flag = attack_missile_level
+						set_variable = {
+							which = attack_missile_lev
+							value = 1
+						}
+					}
+					add_country_modifier = {
+						name = wait_for_tech_defence_1
+						duration = 1095
+					}
+				}
+			}
+		
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		#has_country_modifier = european_leader
+		NOT = {
+			reverse_has_opinion = { 
+				who = FROM value = -75 
+			}
+		}
+	}
+}
+
+
+

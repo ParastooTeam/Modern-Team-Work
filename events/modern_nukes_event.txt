@@ -1,0 +1,74 @@
+namespace = everyone_nuke
+
+#everyone_nuke Point Warning X1
+country_event = {
+	id = everyone_nuke.1
+	title = "everyone_nuke.1title"
+	desc = "everyone_nuke.1desc"
+	picture = NUCLEAR_BOMB_eventPicture
+	goto = nuked_this_province
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "everyone_nuke.1noting"
+	}
+}
+
+
+
+#everyone_nuke Point Warning X2
+country_event = {
+	id = everyone_nuke.2
+	title = "everyone_nuke.2title"
+	desc = "everyone_nuke.2desc"
+	picture = NUCLEAR_BOMB_eventPicture
+	
+	is_triggered_only = yes
+	
+		
+	option = {
+		name = "everyone_nuke.2noting"
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = {
+					army_strength = {
+						who = event_target:attak_them
+						value = 0.75
+					}
+				}
+			}
+			modifier = {
+				factor = 0.3
+				NOT = { army_size_percentage = 0.75	}
+			}
+			modifier = {
+				factor = 1
+				army_size_percentage = 0.95
+			}
+		}
+		trigger = {
+			NOT = { war_with = event_target:attak_them }
+		}
+		event_target:attak_them = { declare_war_with_cb = { who = ROOT casus_belli = cb_stop_making_atomic_bombs } }
+		add_prestige = 50
+		clear_global_event_target = attak_them
+		random_country = {
+			limit = { has_country_flag = attack_us }
+			clr_country_flag = attack_us
+		}
+	}
+	option = {
+		name = "everyone_nuke.3noting"
+		ai_chance = {
+			factor = 1
+		}
+		clear_global_event_target = attak_them
+		random_country = {
+			limit = { has_country_flag = attack_us }
+			clr_country_flag = attack_us
+		}
+	}
+}

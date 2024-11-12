@@ -1,0 +1,709 @@
+
+administrative_ideas = {
+	category = ADM
+	
+	 trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		advisor_cost = -0.035
+		harsh_treatment_cost = -0.125
+		#governing_capacity_modifier = 0.1
+	}
+
+	organised_mercenary_payment = {
+		idea_cost = -0.03
+	}
+	adaptability = {
+		core_creation = -0.1
+	}
+	benefits_for_mercenaries = {
+		claim_duration = 0.25
+	}
+	bookkeeping = {
+		interest = -1
+	}
+	organised_mercenary_recruitment = {
+		governing_capacity_modifier = 0.15
+	}
+	administrative_efficiency_idea = {
+		administrative_efficiency = 0.03
+	}
+	civil_servants = {
+		great_project_upgrade_cost = -0.33
+		great_project_upgrade_time = -0.15
+	}
+
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+innovativeness_ideas = {
+	category = ADM
+
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+	}
+	
+	bonus = {
+		advisor_cost = -0.1
+	}
+
+	patron_of_art_2 = {
+		# <<WIKI>> global_institution_growth = 0.2
+		global_institution_spread = 0.05
+	}
+	pragmatism = {
+		idea_cost = -0.03
+	}
+	scientific_revolution = {
+		reform_progress_growth = 0.50
+	}
+	dynamic_court = {
+		innovativeness_gain = 0.15
+	}
+	resilient_state = {
+		technology_cost = -0.05
+	}
+	optimism = {
+		build_cost = -0.05
+	}
+	formalized_officer_corps = {
+		embracement_cost = -0.05
+	}
+
+	ai_will_do = {
+		factor = 2
+	}
+}
+
+
+
+gesundheit0 = {
+	category = ADM
+	
+	 trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 	
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		global_unrest = -1
+		
+	}
+		
+	
+	gesundheit1 = {
+		stability_cost_modifier = 0.1
+	}
+	gesundheit2 = {
+		defensiveness = 0.1
+	}
+	gesundheit3 = {
+		global_manpower_modifier = 0.1
+	}
+
+	gesundheit4 = {
+		global_spy_defence = 0.05
+	}
+
+	gesundheit5 = {
+		manpower_recovery_speed = 0.25
+	}
+	gesundheit6 = {
+		idea_cost = -0.03
+	}
+	gesundheit7 = {
+		global_tax_modifier = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0.2
+			NOT = { num_of_ports = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { num_of_ports = 4 }
+			num_of_cities = 4
+		}
+		
+		modifier = {
+			factor = 1.5
+			num_of_ports = 16
+		}
+	}
+}
+
+
+
+
+humanist_ideas = {
+	category = ADM
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3  
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		tolerance_heretic = 1
+		tolerance_own = 1
+	}
+
+	tolerance_idea_2 = {
+		religious_unity = 0.25
+		yearly_harmony = 0.25
+	}
+	local_traditions = {
+		culture_conversion_cost = -0.2
+		culture_conversion_time = -0.1
+	}
+	ecumenism = {
+		missionaries = 2
+	}
+	indirect_rule = {
+		global_missionary_strength = 0.04
+	}
+	cultural_ties_2 = {
+		num_accepted_cultures = 3
+		# <<WIKI>> morale_bonus_5_cultures = yes
+	}
+	benevolence = {
+		improve_relation_modifier = 0.25
+	}
+	humanist_tolerance = {
+		harmonization_speed = 0.33
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+			personality = ai_diplomat
+		}
+		
+	}
+}
+
+
+
+indoor_security_ideas = {
+	category = ADM
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3  
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		tolerance_heathen = 1
+		
+	}
+
+	early_tolerance = {
+		defensiveness = 0.1
+		garrison_size = 0.1
+	}
+	converting = {
+		global_unrest = -1
+	}
+	acceptance_of_differences = {
+		global_spy_defence = 0.1
+	}
+	religious_customs = {
+		stability_cost_modifier = -0.15
+	}
+	religious_education = {
+		republican_tradition = 1
+		legitimacy = 1
+		devotion = 0.5
+		horde_unity = 1
+		meritocracy = 1
+	}
+	divine_heritage = {
+		prestige_decay = -0.01
+	}
+	organized_religion = {
+		years_of_nationalism = -5
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 1
+			any_owned_province = { NOT = { religion = ROOT } }
+		}
+	}
+}
+
+staatsverwaltung0 = {
+	category = ADM
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		core_creation = -0.1
+	}
+		
+	
+	staatsverwaltung1 = {
+		expand_infrastructure_cost_modifier = -0.5		
+	}
+	staatsverwaltung2 = {
+		state_maintenance_modifier = -0.5
+	}
+	staatsverwaltung3 = {
+		caravan_power = 0.2
+		yearly_corruption = -0.15
+	}
+
+	staatsverwaltung4 = {
+		governing_capacity_modifier = 0.1
+	}
+
+	staatsverwaltung5 = {
+		global_institution_spread = 0.15
+	}
+	staatsverwaltung6 = {
+		embracement_cost = -0.25
+	}
+	staatsverwaltung7 = {
+		global_trade_goods_size_modifier = 0.15
+		merchants = 1
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		modifier = {
+			factor = 0.80
+			personality = ai_capitalist 
+		}
+	}
+}
+
+zentra0 = {
+	category = ADM
+
+	trigger = {
+		NOT = { tag = ZOM }
+		
+		NOT = {
+			has_idea_group = dezentra0
+			}	
+			adm_tech = 3 
+			
+		}
+	
+	bonus = {
+		defensiveness = 0.1
+	}
+		
+	
+	zentra1 = {
+		free_concentrate_development = yes
+		#build_time = -0.33
+	}
+	zentra2 = {	
+		global_trade_goods_size_modifier = 0.25
+	}
+	zentra3 = {
+		development_cost = -0.15
+		# <<WIKI>> development_cost_over_25 = yes
+	}
+
+	zentra4 = {
+		centralize_state_cost = -0.5
+		#autonomy_change_time = -0.5
+	}
+
+	zentra5 = {
+		global_allowed_num_of_buildings = 2
+		#global_manpower = 2.5
+		#global_sailors = 1250
+		# <<WIKI>> add_age_manpower = 2.5
+		# <<WIKI>> add_age_sailors = 1250
+	}
+	zentra6 = {
+		#merc_leader_army_tradition = 1
+		#build_cost = -0.1
+		#state_maintenance_modifier = -0.5
+		governing_capacity_modifier = 0.15
+	}
+	zentra7 = {
+		global_tax_modifier = 0.5
+		state_maintenance_modifier = -0.5
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+########################################################
+####### Dezentralismus Ideen / Decentralism Ideas
+########################################################
+
+
+dezentra0 = {
+	category = ADM
+	
+		trigger = {
+		NOT = { tag = ZOM }
+		
+		NOT = {
+			has_idea_group = zentra0
+		}	
+		adm_tech = 3 
+			
+		}
+	bonus = {
+		development_cost = -0.1
+	}
+		
+	
+	dezentra1 = {
+		build_cost = -0.05
+		# <<WIKI>> reduced_dev_malus = yes
+	}
+	dezentra2 = {
+		autonomy_change_time = -0.5
+	}
+	dezentra3 = {
+		trade_efficiency = 0.15
+	}
+
+	dezentra4 = {
+		idea_cost = -0.03
+	}
+
+	dezentra5 = {
+		global_trade_power = 0.05
+		#governing_capacity_modifier = 0.15	
+	}
+	dezentra6 = {
+		global_institution_spread = 0.15
+	}
+	dezentra7 = {
+		global_prov_trade_power_modifier = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+justiz0 = {
+	category = ADM
+
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { ai = yes }
+			has_idea_group = missil_research 
+			has_idea_group = defence_missil_research
+			has_idea_group = morale0
+			has_idea_group = discipline0
+			has_idea_group = defensive_ideas
+			has_idea_group = offensive_ideas
+			has_idea_group = generalstab0
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		} 
+	}
+	
+	bonus = {
+		ae_impact = -0.2
+
+	}
+	justiz1 = {
+		accept_vassalization_reasons = 25
+		#reform_progress_growth = 0.25
+	}
+	justiz2 = {
+		max_absolutism = 10
+		#ignore_coring_distance = yes
+		#yearly_corruption = -0.33
+	}
+	justiz3 = {
+		power_projection_from_insults = 1
+		#imperial_authority = 0.1
+	}
+
+	justiz4 = {
+		province_warscore_cost = -0.05
+		#global_autonomy = -0.05
+	}
+
+	justiz5 = {
+		annexation_relations_impact = -0.1
+		#interest = -1
+	}
+	justiz6 = {
+		move_capital_cost_modifier = -0.6
+		#core_creation = -0.1
+	}
+	justiz7 = {
+		enemy_core_creation = 0.1
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+religious_ideas = {
+	category = ADM
+
+	trigger = {
+		NOT = { tag = ZOM }
+	
+		adm_tech = 3 
+		NOT = { tag = PAP }
+		NOT = {
+			religion = catholic
+			religion = protestant
+			religion = reformed
+			religion = orthodox
+			religion_group  = muslim
+			religion  = shinto
+			religion = norse_pagan_reformed
+			religion = buddhism
+			religion  = confucianism
+			religion_group  = dharmic
+			religion = tengri_pagan_reformed
+			religion  = coptic
+			religion = romuva
+			religion = suomenusko
+			religion_group = jewish_group
+			religion = slavic
+			religion_group = hellenic
+			religion = animism
+			religion = manichaeism
+			religion = shamanism 
+			religion_group = african_pagan 
+			religion = zoroastrian 
+			religion = vajrayana
+			religion = mahayana
+			religion = anglican
+			religion = mesoamerican_religion
+			religion = inti
+			religion = totemism
+			religion = nahuatl
+		}
+		
+
+	}
+	
+	bonus = {
+		cb_on_religious_enemies = yes
+	}
+
+	deus_vult_1 = {
+		culture_conversion_cost = -0.15
+	}
+	missionary_schools = {
+		prestige = 1
+	}
+	church_attendance_duty = {
+		stability_cost_modifier = -0.25
+	}
+	divine_supremacy = {
+		global_missionary_strength = 0.05
+	}
+	devoutness = {
+		tolerance_own = 1
+		papal_influence = 2
+		devotion = 0.5
+		monthly_fervor_increase = 0.25
+		church_power_modifier = 0.1
+	}
+	religious_tradition = {
+		missionaries = 2
+	}
+	inquisition = {
+		missionary_maintenance_cost = -0.5
+		prestige_per_development_from_conversion = 0.1
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {			
+			factor = 1
+			any_rival_country = {
+				NOT = { religion = ROOT }
+			}
+		}	
+		modifier = {
+			factor = 1
+			has_dlc = "Common Sense"
+			NOT = { devotion = 70 }
+			OR = {
+				government = theocracy
+
+			}
+		}
+		modifier = {
+			factor = 1.33
+			NOT = { religious_unity = 0.9 }
+		}
+		modifier = {
+			factor = 1.4
+			NOT = { religious_unity = 0.8 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { religious_unity = 0.7 }
+		}
+		modifier = {
+			factor = 1
+			personality = ai_capitalist 
+		}
+				
+	}
+}
+
+parlimant_reaserch = {
+	category = ADM
+
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3  
+	}
+	
+	bonus = {
+		possible_adm_policy = 1
+
+	}
+	parlimant_reaserch1 = {
+		parliament_backing_chance = 0.15
+		
+	}
+	parlimant_reaserch2 = {
+		parliament_chance_of_decision = 0.25
+	}
+	parlimant_reaserch3 = {
+		parliament_debate_duration = 5
+	}
+
+	parlimant_reaserch4 = {
+		parliament_effect_duration = -5
+	}
+
+	parlimant_reaserch5 = {
+		num_of_parliament_issues = 5
+	}
+	parlimant_reaserch6 = {
+		can_revoke_parliament_seats = yes
+	}
+	parlimant_reaserch7 = {
+		max_possible_parliament_seats = 10
+	}
+	
+	ai_will_do = {
+		factor = 1
+	}
+}
+

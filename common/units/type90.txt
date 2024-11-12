@@ -1,0 +1,12 @@
+# Type 90 Kyu-maru
+
+type = cavalry
+unit_type = western
+
+maneuver = 5
+offensive_morale = 6
+defensive_morale = 5
+offensive_fire = 6
+defensive_fire = 5
+offensive_shock = 10
+defensive_shock = 9

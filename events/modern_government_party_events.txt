@@ -1,0 +1,535 @@
+namespace = government_party
+
+
+#######################################################################
+country_event = {
+	id = government_party.1
+	title = "government_party.NAME1"
+	desc = "government_party.DESC.1"
+	picture = arrow_party_Picture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "government_party.OPT1"
+		add_government_reform = multi_party_system
+		add_government_reform = oligarchic_reform
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT2"
+		add_government_reform = single_party_system
+		add_government_reform = oligarchic_reform
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = government_party.11
+	title = "government_party.NAME1"
+	desc = "government_party.DESC.1"
+	picture = arrow_party_Picture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "government_party.OPT0"
+		#add_government_reform = multi_party_system
+		#add_government_reform = democracy_reform
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT1"
+		add_government_reform = multi_party_system
+		add_government_reform = democracy_reform
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT2"
+		add_government_reform = single_party_system
+		add_government_reform = democracy_reform
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+}
+country_event = {
+	id = government_party.3
+	title = "government_party.NAME1"
+	desc = "government_party.DESC.3"
+	picture = arrow_party_Picture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "government_party.OPT2"
+		add_government_reform = single_party_system
+		add_government_reform = communist_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT3"
+		add_government_reform = authoritarian_rule
+		add_government_reform = communist_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 80
+			}
+		}
+	}
+}
+country_event = {
+	id = government_party.4
+	title = "government_party.NAME1"
+	desc = "government_party.DESC.3"
+	picture = arrow_party_Picture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "government_party.OPT2"
+		add_government_reform = single_party_system
+		add_government_reform = fascist_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT3"
+		add_government_reform = authoritarian_rule
+		add_government_reform = fascist_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 80
+			}
+		}
+	}
+}
+country_event = {
+	id = government_party.5
+	title = "government_party.NAME1"
+	desc = "government_party.DESC.3"
+	picture = arrow_party_Picture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = "government_party.OPT2"
+		add_government_reform = single_party_system
+		add_government_reform = military_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 80
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 5
+			}
+		}
+	}
+	option = {
+		name = "government_party.OPT3"
+		add_government_reform = authoritarian_rule
+		add_government_reform = military_government
+		hidden_effect = {
+			set_variable = {
+				which = multi_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = limited_party_gov
+				value = 5
+			}
+			set_variable = {
+				which = authority_party_gov
+				value = 80
+			}
+		}
+	}
+}
+country_event = {
+	id = government_party.2
+	title = "government_party.NAME2"
+	desc = "government_party.DESC.2"
+	picture = arrow_party_Picture
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "government_party.GOV1"
+		trigger = {
+			OR = {
+				has_reform = oligarchic_reform
+				has_reform = democracy_reform
+				#has_reform = communist_government
+				#has_reform = fascist_government
+				#has_reform = military_government 
+			}
+		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = multi_party_gov value = 97 }
+				}
+				set_variable = {
+					which = multi_party_gov
+					value = 100
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { check_variable = { which = multi_party_gov value = 97 } }
+				}
+				multiply_variable  = {
+					which = multi_party_gov
+					value = 1.30
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = authority_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = authority_party_gov value = 5 } }
+				divide_variable   = {
+					which = authority_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = limited_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = limited_party_gov value = 5 } }
+				divide_variable   = {
+					which = limited_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { which = multi_party_gov value = 70 }
+					NOT = { has_reform = multi_party_system }
+				}
+				add_stability = -1
+				add_government_reform = multi_party_system
+				set_variable = {
+					which = multi_party_gov
+					value = 80
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 5
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = "government_party.GOV2"
+		trigger = {
+			OR = {
+				has_reform = oligarchic_reform
+				has_reform = democracy_reform
+				has_reform = communist_government
+				has_reform = fascist_government
+				has_reform = military_government 
+			}
+		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = limited_party_gov value = 97 }
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 100
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { check_variable = { which = limited_party_gov value = 97 } }
+				}
+				multiply_variable  = {
+					which = limited_party_gov
+					value = 1.30
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = multi_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = multi_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = multi_party_gov value = 5 } }
+				divide_variable   = {
+					which = multi_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = authority_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = authority_party_gov value = 5 } }
+				divide_variable   = {
+					which = authority_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { which = limited_party_gov value = 70 }
+					NOT = { has_reform = single_party_system }
+				}
+				add_stability = -1
+				add_government_reform = single_party_system
+				set_variable = {
+					which = multi_party_gov
+					value = 5
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 80
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 5
+				}
+			}
+		}
+	}
+	option = {
+		name = "government_party.GOV3"
+		trigger = {
+			OR = {
+				#has_reform = oligarchic_reform
+				#has_reform = democracy_reform
+				has_reform = communist_government
+				has_reform = fascist_government
+				has_reform = military_government 
+			}
+		}
+		add_adm_power = -25
+		add_dip_power = -25
+		add_mil_power = -25
+		hidden_effect = {
+			if = {
+				limit = {
+					check_variable = { which = authority_party_gov value = 97 }
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 100
+				}
+			}
+			else_if = {
+				limit = {
+					NOT = { check_variable = { which = authority_party_gov value = 97 } }
+				}
+				multiply_variable  = {
+					which = authority_party_gov
+					value = 1.30
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = multi_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = multi_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = multi_party_gov value = 5 } }
+				divide_variable   = {
+					which = multi_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					NOT = { check_variable = { which = limited_party_gov value = 5 } }
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 5
+				}
+			}
+			else_if = {
+				limit = { check_variable = { which = limited_party_gov value = 5 } }
+				divide_variable   = {
+					which = limited_party_gov
+					value = 1.15
+				}
+			}
+			if = {
+				limit = {
+					check_variable = { which = authority_party_gov value = 70 }
+					NOT = { has_reform = authoritarian_rule }
+				}
+				add_stability = -1
+				add_government_reform = authoritarian_rule
+				set_variable = {
+					which = multi_party_gov
+					value = 5
+				}
+				set_variable = {
+					which = limited_party_gov
+					value = 5
+				}
+				set_variable = {
+					which = authority_party_gov
+					value = 80
+				}
+			}
+		}
+	}
+
+}

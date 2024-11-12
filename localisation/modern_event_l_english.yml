@@ -1,0 +1,162 @@
+﻿l_english:
+ steal.1title:0 "A Country Stealed Our Power"
+ steal.1desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Stealed From Any Power Of Our Country 25 Point. \nThis Is Too Bad. We Have To Give Them A Tough Answer!"
+ steal.1opt:0 "They Are Our Enemy"
+ steal.1noting:0 "We Need Them. They Are Still Our Friends"
+ 
+ steal.2title:0 "A Country Stealed Our Power"
+ steal.2desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Stealed From Any Power Of Our Country 50 Point. \nThis Is Too Bad. We Have To Give Them A Tough Answer!"
+ steal.2opt:0 "They Are Our Enemy"
+ steal.2noting:0 "We Need Them. They Are Still Our Friends"
+ 
+ steal_x1:0 "Steal 25 Point of Our Country"
+ steal_x2:0 "Steal 50 Point of Our Country"
+ 
+ sanction.1title:0 "We Were Sanctioned"
+ sanction.1desc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 10% Of Our World Trade! \nAfter 10 years, we can request a reduction of our level in the Security Council in the decisions section"
+ sanction.1opt:0 "OK I Understood"
+ 
+ sanction.1everytitle:0 "They boycotted their Trade"
+ sanction.1everydesc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 10% Of \n1-§R[From.From.From.Owner.GetName]§! World Trade!"
+ sanction.1everyopt:0 "OK I Understood"
+ 
+ sanction.2title:0 "We Were Sanctioned"
+ sanction.2desc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 20% Of Our World Trade! \nAfter 10 years, we can request a reduction of our level in the Security Council in the decisions section"
+ sanction.2opt:0 "OK I Understood"
+ 
+ sanction.2everytitle:0 "They boycotted their Trade"
+ sanction.2everydesc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 20% Of \n1-§R[From.From.From.Owner.GetName]§! World Trade!"
+ sanction.2everyopt:0 "OK I Understood"
+ 
+ sanction.3title:0 "We Were Sanctioned"
+ sanction.3desc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 30% Of Our World Trade! \nAfter 10 years, we can request a reduction of our level in the Security Council in the decisions section"
+ sanction.3opt:0 "OK I Understood"
+ 
+ sanction.3everytitle:0 "They boycotted their Trade"
+ sanction.3everydesc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 30% Of \n1-§R[From.From.From.Owner.GetName]§! World Trade!"
+ sanction.3everyopt:0 "OK I Understood"
+ 
+ sanction.4title:0 "We Were Sanctioned"
+ sanction.4desc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 50% Of Our World Trade! \nAfter 10 years, we can request a reduction of our level in the Security Council in the decisions section"
+ sanction.4opt:0 "OK I Understood"
+ 
+ sanction.4everytitle:0 "They boycotted their Trade"
+ sanction.4everydesc:0 "My $MONARCHTITLE$, §RSecurity Council§! It Has Sanctioned 50% Of \n1-§R[From.From.From.Owner.GetName]§! World Trade!"
+ sanction.4everyopt:0 "OK I Understood"
+ 
+ 
+ 
+ teryak.1title:0 "Drug Distribution"
+ teryak.1desc:0 "My $MONARCHTITLE$, §G[From.Owner.GetName]§! has made our people addicted to §RDrugs§! \nWe must stop the spread of drugs and not let our people be harmed!"
+ teryak.1.a:0 "Stop The Distribution Of Drugs"
+ teryak.2.b:0 "We Can Not Stop It Now"
+
+ teryak.3title:0 "§RDiscover drug shipments§!"
+ teryak.3desc:0 "My $MONARCHTITLE$, The §G[From.From.Owner.GetName]§! discovered our drug shipment has very serious consequences for us"
+ teryak.3.a:0 "We are weak"
+
+ teryak.2title:0 "§GDiscover drug shipments§!"
+ teryak.2desc:0 "My $MONARCHTITLE$, The §G[From.Owner.GetName]§! also wanted to distribute drugs in our country, \nbut our intelligence forces arrested him"
+ teryak.2.a:0 "We are power full"
+ 
+ 
+ send_aid.1title:0 "A Country Sent GAdministrative Point For Us"
+ send_aid.1desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §GAdministrative Points§! concessions."
+ send_aid.1opt:0 "Thanks"
+ 
+ send_aid.2title:0 "A Country Sent Diplomatic Point For Us"
+ send_aid.2desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §GDiplomatic Points§! concessions."
+ 
+ 
+ send_aid.3title:0 "A Country Sent Military Point For Us"
+ send_aid.3desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §GMilitary Points§! concessions."
+ 
+ 
+ 
+ send_aid.4title:0 "A Country Sent Manpower For Us"
+ send_aid.4desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §GManpower§! concessions."
+
+ send_aid.11title:0 "A Country Sent Sailors For Us"
+ send_aid.11desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §GSailors§! concessions."
+ 
+ 
+ send_aid.5title:0 "A Country Sent Manpower"
+ send_aid.5desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Manpower to §R[From.From.Owner.GetName]§! ."
+ send_aid.5opt:0 "It Is Interesting"
+
+ send_aid.12title:0 "A Country Sent Sailors"
+ send_aid.12desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Sailors to §R[From.From.Owner.GetName]§! ."
+
+ 
+ 
+ send_aid.6title:0 "A Country Sent Gift For Us"
+ send_aid.6desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §G25.000 Dollars§!."
+ 
+ send_aid.7title:0 "A Country Sent Gift For Us"
+ send_aid.7desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §G50.000 Dollars§!."
+ 
+ send_aid.8title:0 "A Country Sent Gift For Us"
+ send_aid.8desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §G100.000 Dollars§!."
+
+ send_aid.9title:0 "A Country Sent Gift For Us"
+ send_aid.9desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §G10.000 Dollars§!."
+ 
+ send_aid.10title:0 "A Country Sent Gift For Us"
+ send_aid.10desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! Has Sent Us §G5.000 Dollars§!."
+ 
+ et.EVTOPTLA28:0 "Irreligious"
+ et.EVTOPTLAS28:0 "Satanism"
+ 
+ close_embbasy.NAME1:0 "Close the Embassy"
+ close_embbasy.DESC.1:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§! closed it's embassy in our country"
+ close_embbasy.OPT1:0 "Thats bad for relationship"
+
+ close_embbasy.NAME2:0 "Close the Embassy"
+ close_embbasy.DESC.2:0 "My $MONARCHTITLE$, The §R[From.Owner.GetName]§! closed it's embassy in §R[From.From.Owner.GetName]§!'"
+ close_embbasy.OPT2:0 "It may cause war"
+
+ government_party.NAME1:0 "Determining the direction of government"
+ government_party.NAME2:0 "Choosing the type of governance system"
+ government_party.DESC.1:0 "We must determine whether we want a multi-party system or a single-party system. This is very important for the future of the country"
+ government_party.OPT0:0 "Just Republic"
+ government_party.OPT1:0 "Multi-party System"
+ government_party.OPT2:0 "Limited party System"
+ government_party.OPT3:0 "Authoritarian Ruler"
+
+
+ honors.1title:0 "Kneeling in front of the enemy"
+ honors.1desc:0 "My $MONARCHTITLE$,We knelt in front of the §R[From.From.Owner.GetName]§! to improve relations \n We lost §R35§! prestige"
+ honors.1opt:0 "we had to"
+ 
+ honors.2title:0 "They knelt in front of us"
+ honors.2desc:0 "My $MONARCHTITLE$,The ruler of §R[From.Owner.GetName]§! knelt before us,\n this historic event will never be forgotten \n We got §G35§! prestige"
+ honors.2opt:0 "The world must know"
+ 
+ honors.3title:0 "Kneel"
+ honors.3desc:0 "My $MONARCHTITLE$,The ruler of §R[From.Owner.GetName]§! had to kneel before the ruler of §R[From.From.Owner.GetName]§!"
+ honors.3opt:0 "how interesting"
+
+ destroy_trade_goods.NAME1:0 "Destruction of opium cultivation"
+ destroy_trade_goods.DESC.1:0 "My $MONARCHTITLE$,The ruler of §R[From.From.Owner.GetName]§! Destroyed all narcotics in §R[From.From.From.Owner.GetName]§!. \nThey now grow wheat instead of opium"
+ destroy_trade_goods.OPT1:0 "Ok"
+
+ destroy_trade_goods.NAME2:0 "Demolition of cars factories"
+ destroy_trade_goods.DESC.2:0 "My $MONARCHTITLE$,The ruler of §R[From.From.Owner.GetName]§! destroyed all §R[From.From.From.Owner.GetName]§! Car factories. \nNow they are planting wheat instead of producing cars"
+
+ destroy_trade_goods.NAME3:0 "Demolition of electronics factories"
+ destroy_trade_goods.DESC.3:0 "My $MONARCHTITLE$,The ruler of §R[From.From.Owner.GetName]§! destroyed all §R[From.From.From.Owner.GetName]§! Electronics factories. \nNow they are planting wheat instead of producing Electronics"
+
+ destroy_trade_goods.NAME4:0 "Demolition of arms compant"
+ destroy_trade_goods.DESC.4:0 "My $MONARCHTITLE$,The ruler of §R[From.From.Owner.GetName]§! destroyed all §R[From.From.From.Owner.GetName]§! Arms company. \nNow they are planting wheat instead of producing Arms"
+ 
+ DESTROY_ELECT:0 "Destroy Clectronics factory"
+ DESTROY_CAR:0 "Destroy Cars factory"
+
+ ideology_of_islam_title:0 "Choosing a religious method in Islam"
+ ideology_of_islam_desc:0 "In this decision, you can take your religion towards Sufism or Mullahism"
+ ideology_of_islam.NAME1:0 "Islamic law or way"
+ ideology_of_islam.DESC.1:0 "There are two types of thought in Islam, \none is Clerical and the other is Sufism, choose one of them"
+ ideology_of_islam1.OPT:0 "Sufism"
+ ideology_of_islam2.OPT:0 "Mullah"
+ 
+

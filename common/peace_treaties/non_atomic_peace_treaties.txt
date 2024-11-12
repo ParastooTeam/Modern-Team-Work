@@ -1,0 +1,121 @@
+po_non_atomic = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 25.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 25
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		FROM = { 
+			OR = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+				has_country_modifier = nuclear_state
+			}
+		}
+	}
+	is_allowed = {
+		FROM = { 
+			OR = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+				has_country_modifier = nuclear_state
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			remove_country_modifier = nuclear_state
+			set_variable = {
+					which = num_of_nuclear_weapons
+					value = 0
+			}
+			add_country_modifier = {
+				name = "non_atomic_modifire_all"
+				duration = 18250
+			}
+		}
+		every_known_country = { 
+			limit = { ai = no }
+			country_event = { id = non_atomic.1 }
+		}
+		add_country_modifier = {
+			name = "non_atomic_modifire"
+			duration = 3650
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+		limit = {
+			OR = {
+				check_variable = {
+					which = missil_50
+					value = 1
+				}
+				check_variable = {
+					which = missil_100
+					value = 1
+				}
+				check_variable = {
+					which = missil_150
+					value = 1
+				}
+				check_variable = {
+					which = missil_250
+					value = 1
+				}
+				check_variable = {
+					which = missil_350
+					value = 1
+				}
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			}
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			FROM = {
+				is_neighbor_of = ROOT
+			}
+
+		}
+	}
+}
+
+

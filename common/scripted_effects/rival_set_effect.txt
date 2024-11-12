@@ -1,0 +1,430 @@
+
+#Province Scope
+rivel_set_script_effect = {	
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		USA = {
+			add_rival = CHN
+			add_rival = RUS
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = NOK
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = INI
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = IDN
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = TKY
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = FR2
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		RUS = {
+			add_rival = USA
+			add_rival = JAP
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = CHN
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = NOK
+			}
+		}
+		CHN = {
+			add_rival = USA
+			add_rival = INI
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = RUS
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_domineering
+				who = PAK
+			}
+		}
+		UKR = {
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = USA
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = POL
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = GER
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = GBR
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = SWE
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = RMN
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = ITA
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = FR2
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = RUS
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = BLR
+			}	
+		}
+		IRA = {
+			add_rival = ISR
+			add_rival = SAU
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = CHN
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = RUS
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = NOK
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = AFG
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = AZE
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = UKR
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = USA
+			}
+			set_ai_attitude = {
+				attitude = attitude_neutral
+				who = PAK
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		SAU = {
+			add_rival = IRA
+			set_ai_attitude = {
+				attitude = attitude_neutral
+				who = ISR
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		PAK = {
+			add_rival = INI
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = TKY
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		INI = {
+			add_rival = PAK
+			add_rival = CHN
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = RUS
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = USA
+			}
+		}
+		TKY = {
+			add_rival = GRE
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = QTR
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = KRD
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = ARM
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = CYP
+			}
+			set_ai_attitude = {
+				attitude = attitude_neutral
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = USA
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		GRE = {
+			add_rival = TKY
+		}
+		ISR = {
+			add_rival = IRA
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = LEB
+			}
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = PLS
+			}
+		}
+		EGY = {
+			set_ai_attitude = {
+				attitude = attitude_neutral
+				who = ISR
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		UAE = {
+			set_ai_attitude = {
+				attitude = attitude_neutral
+				who = ISR
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		LEB = {
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = ISR
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		SYR = {
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = ISR
+			}
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		IRQ = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		AFG = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = PLS
+			}
+		}
+		AZE = {
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = ISR
+			}
+		}
+		GER = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		GBR = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		SWE = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		HUN = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		SPA = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		ITA = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		POL = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		NOR = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		JAP = {
+			add_rival = RUS
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		MEX = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		RMN = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		NED = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		BRZ = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		AUS = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		CAN = {
+			set_ai_attitude = {
+				attitude = attitude_protective
+				who = UKR
+			}
+		}
+		BLR = {
+			set_ai_attitude = {
+				attitude = attitude_hostile
+				who = UKR
+			}
+		}
+		PLS = {
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = IRA
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = SAU
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = SYR
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = EGY
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = UAE
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = IRQ
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = LEB
+			}
+			set_ai_attitude = {
+				attitude = attitude_friendly
+				who = TKY
+			}
+		}
+	}
+	
+	
+}

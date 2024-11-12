@@ -1,0 +1,10 @@
+#Trireme Galley Level 2
+type = galley
+
+hull_size = 12
+base_cannons = 13
+sail_speed = 6
+
+blockade = 11
+
+sprite_level = 2

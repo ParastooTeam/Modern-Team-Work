@@ -1,0 +1,175 @@
+po_revok_sanctions = {
+	category = 6
+	power_projection = embargoing_rival
+	power_cost_base = 1.23
+	prestige_base = 0.5
+	ae_base = 0.08
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 30.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 20
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+
+	is_visible = {
+		ROOT = { 
+			OR = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = oil_bane_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = oil_bane_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = electronic_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = electronic_ban_opinion_50
+				}				
+				has_opinion_modifier = {
+					who = FROM
+					modifier = cars_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = cars_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = aluminum_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = aluminum_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = iron_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = iron_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = copper_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = copper_ban_opinion_50
+				}
+			}
+		}
+		#ROOT = { has_country_modifier = oil_ban_modifire_from_100 }
+	}
+	is_allowed = {
+	}
+	effect = {
+		ROOT = {
+			add_country_modifier = {
+				name = cant_sanction_them
+				duration = 10950
+			}
+		}
+		ROOT = {
+			remove_country_modifier = oil_ban_modifire_from_100
+			remove_country_modifier = electronics_ban_modifire_from_100
+			remove_country_modifier = aluminum_ban_modifire_from_100
+			remove_country_modifier = cars_ban_modifire_from_100
+			remove_country_modifier = copper_ban_modifire_from_100
+			remove_country_modifier = iron_ban_modifire_from_100
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = oil_ban_100
+					has_province_modifier = oil_ban_50
+				}
+			}
+			remove_province_modifier = oil_ban_100
+			remove_province_modifier = oil_ban_50
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = electronics_ban_100
+					has_province_modifier = electronics_ban_50
+				}
+			}
+			remove_province_modifier = electronics_ban_100
+			remove_province_modifier = electronics_ban_50
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = aluminum_ban_100
+					has_province_modifier = aluminum_ban_50
+				}
+			}
+			remove_province_modifier = aluminum_ban_100
+			remove_province_modifier = aluminum_ban_50
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = cars_ban_100
+					has_province_modifier = cars_ban_50
+				}
+			}
+			remove_province_modifier = cars_ban_100
+			remove_province_modifier = cars_ban_50
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = copper_ban_100
+					has_province_modifier = copper_ban_50
+				}
+			}
+			remove_province_modifier = copper_ban_100
+			remove_province_modifier = copper_ban_50
+		}
+		every_owned_province = {
+			limit = {
+				OR = {
+					has_province_modifier = iron_ban_100
+					has_province_modifier = iron_ban_50
+				}
+			}
+			remove_province_modifier = iron_ban_100
+			remove_province_modifier = iron_ban_50
+		}
+	}
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 25
+		}
+		limit = {
+			FROM = {
+				home_trade_node = {
+					has_merchant = ROOT
+					calc_true_if = {
+						all_trade_node_member_province = {
+							owned_by = FROM
+							has_port = yes
+						}
+						amount = 3
+					}
+				}
+			}
+		}
+	}
+}

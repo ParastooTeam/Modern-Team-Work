@@ -1,0 +1,28 @@
+country_decisions = {
+
+	ideology_of_islam = {
+		potential = {
+            has_country_flag = open_all_decision    
+			
+			religion_group = muslim
+		}
+		allow = {
+			NOT = { has_country_modifier = set_ideology }
+		}
+		effect = {
+			add_country_modifier = {
+				name = set_ideology
+				duration = 9125
+			}
+			country_event = {
+				id = ideology_of_islam.1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+   
+
+}

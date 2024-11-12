@@ -1,0 +1,36 @@
+country_decisions = {
+
+	teryak_def = {
+		potential = {
+			
+				has_country_modifier = teryak_attack_1
+			
+		}
+		allow = {
+			NOT = { has_country_modifier = teryak_defensive_1 }
+			years_of_income = 0.2
+			mil_tech = 7
+			mil_power = 50
+		}
+		effect = {
+			add_years_of_income = -0.2
+			add_mil_power = -50
+			add_prestige = 15
+			
+			remove_country_modifier = teryak_attack_1
+			add_country_modifier = {
+				name = "teryak_defensive"
+				duration = 1000
+			}
+				
+			add_country_modifier = {
+				name = "teryak_defensive_1"
+				duration = 1000
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

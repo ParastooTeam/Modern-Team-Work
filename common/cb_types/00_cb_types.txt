@@ -1,0 +1,849 @@
+cb_trade_conflict = {
+	#valid_for_subject = no
+	prerequisites_self = {
+		NOT = { has_country_modifier = cooldown_cb }
+	}
+	prerequisites = {
+		ROOT = { 
+			OR = {
+				has_opinion_modifier = {
+					who = FROM
+					modifier = oil_bane_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = oil_bane_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = electronic_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = electronic_ban_opinion_50
+				}				
+				has_opinion_modifier = {
+					who = FROM
+					modifier = cars_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = cars_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = aluminum_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = aluminum_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = iron_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = iron_ban_opinion_50
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = copper_ban_opinion
+				}
+				has_opinion_modifier = {
+					who = FROM
+					modifier = copper_ban_opinion_50
+				}
+				trade_embargo_by = FROM
+			}
+		}
+		
+	}
+	#months = 24
+
+	war_goal = blockade_ports
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		#po_release_annexed
+		#po_become_vassal
+		#po_subjugate_vassal
+		po_form_personal_union
+		po_become_tributary_state
+		po_subjugate_tributary_state
+	}
+}
+# Rival Humiliate CB
+cb_humiliate_rotw = {
+	#valid_for_subject = no
+
+	prerequisites = {
+		NOT = {
+			truce_with = FROM
+		}
+		#ai = no
+		OR = {
+			FROM = {
+				is_rival = ROOT
+			}
+			is_rival = FROM
+		}
+		is_revolutionary = no
+	}
+
+	attacker_disabled_po = {
+		po_demand_provinces
+		#po_release_vassals
+		po_release_annexed
+		#po_return_cores
+		#po_become_vassal
+		po_subjugate_vassal
+		po_become_tributary_state
+		po_subjugate_tributary_state
+		po_form_personal_union
+		#po_transfer_vassals
+	}
+
+
+	war_goal = humiliate_rotw
+}
+# Forced our ally to break alliance
+cb_forced_break_alliance = {
+
+	#valid_for_subject = no
+	is_triggered_only = yes
+	months = 240
+	
+	war_goal = superiority_insult
+}
+# War of Honor
+cb_insult = {
+	#valid_for_subject = no
+
+	is_triggered_only = yes
+
+	months = 48
+
+	war_goal = superiority_insult_mutual
+}
+cb_hegemon = {
+	#valid_for_subject = no
+
+	prerequisites = {
+		is_hegemon = no
+		from = { is_hegemon = yes }
+	}
+
+	war_goal = take_capital_imperial
+}
+# Cancelled loan#################################################################################################################
+#cb_loan_cancelled = {
+#	#valid_for_subject = no
+#
+#	is_triggered_only = yes
+#	months = 12
+#
+#	war_goal = superiority_loan
+#}
+cb_conquest = {
+	
+	prerequisites = {
+		NOT = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = fabricate_for_attack_1
+				}
+			}
+		}
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		claim = FROM
+		is_revolution_target = no
+	}
+
+	war_goal = take_claim
+}
+
+
+
+# We can take core provinces at no badboy
+cb_core = {
+	prerequisites = {
+		#NOT = {
+		#	FROM = {
+		#		has_opinion_modifier = {
+		#			who = ROOT
+		#			modifier = justify_for_attack_1
+		#		}
+		#	}
+		#}
+		#FROM = {
+		#	has_opinion_modifier = {
+		#		who = ROOT
+		#		modifier = justify_for_attack
+		#	}
+		#}	
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		core_claim = FROM
+		is_revolution_target = no
+	}
+
+	war_goal = take_core
+}
+
+# Independence War
+cb_independence_war = {
+	exclusive = yes
+	independence = yes
+	prerequisites_self = {
+		is_subject = yes
+	}
+
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		is_subject_other_than_tributary_trigger = yes
+		is_subject_of = FROM
+		#NOT = { is_colonial_nation_of = FROM }
+		#OR = {
+		#	NOT = { has_reform = daimyo }
+		#	NOT = { from = { has_reform = shogunate } }
+		#}
+		is_revolution_target = no
+	}
+
+	war_goal = defend_capital_independence
+}
+
+cb_nationalist = {
+	prerequisites = {
+		NOT = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = justify_for_attack_1
+				}
+			}
+		}
+		FROM = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = justify_for_attack
+			}
+		}	
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		culture_group_claim = FROM
+		is_revolution_target = no
+	}
+	
+	war_goal = take_province_nationalist
+}
+
+# Napoleonic era imperialism
+#cb_imperial = {
+#	
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}		
+#		ROOT = {
+#			NOT = { has_reform = fascist_government }
+#			NOT = { has_reform = communist_government }
+#			NOT = { has_reform = military_government }
+#			has_reform = democracy_reform
+#			has_reform = multi_party_system
+#		}
+#		NOT = { tag = CHN }
+#		FROM = {
+#			NOT = { has_reform = democracy_reform }
+#			NOT = { has_reform = communist_government }
+#		}
+#		is_revolution_target = no
+#		is_revolution_target = no
+#	}
+#	war_goal = take_capital_imperial
+#}
+
+cb_super_badboy = {
+	coalition = yes
+
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		coalition_target = FROM
+		NOT = { FROM = { is_in_coalition_war = yes } }
+		num_of_coalition_members = 1
+		has_opinion_modifier = {
+			modifier = aggressive_expansion
+			who = FROM
+		}
+		is_revolution_target = no
+	}
+	
+	war_goal = superiority_punitive
+}
+# War in support of rebels
+cb_support_rebels = {
+	support_rebels = yes
+	#valid_for_subject = no
+
+	prerequisites = {
+		has_dlc = "Art of War"
+		has_spawned_supported_rebels = FROM
+	}
+
+	war_goal = take_capital_support_rebels
+}
+cb_stop_making_atomic_bombs = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	#if = {
+	#	#	limit = { is_part_of_hre = yes }
+	#	#	NOT = { FROM = { is_part_of_hre = yes } }
+	#	#}
+	#	#FROM = {
+	#	#	OR = {
+	#	#		check_variable = {
+	#	#			which = beginning_nuclear_research
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = nuclear_research_10
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = nuclear_research_20
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = nuclear_research_40
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = nuclear_research_75
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = nuclear_research_90
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_50
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_100
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_150
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_250
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_350
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_500
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_700
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_1000
+	#	#			value = 1
+	#	#		}
+	#	#		check_variable = {
+	#	#			which = missil_1500
+	#	#			value = 1
+	#	#		}
+	#	#	}
+	#	#}	
+	#	is_revolution_target = no
+	#}
+	war_goal = war_non_atomic	
+}
+
+cb_attack_command = {
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		always = no
+	}
+	
+
+	war_goal = order_take_capital
+}
+
+
+#cb_spread_military = {
+#	prerequisites_self = {
+#		has_reform = military_government
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}
+#		
+#		
+#		FROM = {
+#			NOT = { has_reform = military_government }	
+#		}
+#		is_revolution_target = no
+#	}
+#	war_goal = war_goal_spread_military	
+#}
+
+# Spread Communism
+#cb_spread_communism = {
+#	prerequisites_self = {
+#		has_reform = communist_government
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}
+#		
+#		FROM = {
+#			NOT = { has_reform = communist_government }
+#		}
+#		is_revolution_target = no
+#	}
+#
+#	war_goal = war_goal_spread_communism
+#}
+
+# Spread Fascism
+#cb_spread_fascism = {
+#	prerequisites_self = {
+#		has_reform = fascist_government
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}		
+#		
+#		FROM = {
+#			NOT = { has_reform = fascist_government }
+#		}
+#		is_revolution_target = no
+#	}
+#	war_goal = war_goal_spread_fascism
+#}
+
+# Holy War
+cb_crusade = {
+	prerequisites_self = {
+		NOT = { religion = secularism }
+		NOT = { religion = irreligious }
+		NOT = { religion = satanism }
+		government = theocracy
+	}
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		NOT = { religion_group = FROM }
+		NOT = {	has_matching_religion = FROM }
+		FROM = { NOT = { religion = secularism } }
+		is_revolution_target = no
+	}
+	
+	war_goal = superiority_crusade
+}
+# Holy War
+#cb_satan = {
+#	prerequisites_self = {
+#		NOT = { religion = irreligious }
+#		religion = satanism
+#		NOT = { religion = secularism }
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}
+#		NOT = { religion_group = FROM }
+#		NOT = {	has_matching_religion = FROM }
+#		
+#		#FROM = { NOT = { religion = secularism } }
+#		
+#		is_revolution_target = no
+#	}
+#	
+#	war_goal = superiority_satan
+#}
+
+#cb_crusade_chiris = {
+#	prerequisites_self = {
+#		religion_group = christian
+#		government = theocracy
+#	}
+#	prerequisites = {
+#		#if = {
+#		#	limit = { is_part_of_hre = yes }
+#		#	NOT = { FROM = { is_part_of_hre = yes } }
+#		#}
+#		NOT = { religion_group = FROM }
+#		NOT = {	has_matching_religion = FROM }
+#		is_revolution_target = no
+#	}
+#	war_goal = superiority_crusade
+#}
+
+cb_crusade_samanti = {
+	prerequisites_self = {
+		religion = satanism
+	}
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		NOT = {	has_matching_religion = FROM }
+		
+		is_revolution_target = no
+	}
+	war_goal = superiority_crusade
+}
+
+# Defender of the Faith
+cb_defender_of_the_faith = {
+	prerequisites_self = {
+		is_defender_of_faith = yes
+		religion = secularism
+	}
+	prerequisites = {
+		#if = {
+		#	limit = { is_part_of_hre = yes }
+		#	NOT = { FROM = { is_part_of_hre = yes } }
+		#}
+		NOT = {	has_matching_religion = FROM }
+		NOT = { FROM = { religion = secularism	} }
+		is_revolution_target = no	
+	}
+	
+	war_goal = defend_country_faith
+}
+
+
+######################################################################################################
+cb_guaranted_neighbors = {
+	#is_triggered_only = yes
+	prerequisites = {
+		any_neighbor_country = {
+			#same_continent = ROOT
+			guaranteed_by = FROM
+		}
+	}
+	war_goal = guaranted_neighbor
+}
+
+cb_missile_attack = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	OR = {
+	#		ROOT = {
+	#			has_opinion_modifier = {
+	#				who = FROM
+	#				modifier = missile_us
+	#			}
+	#		}
+	#		overlord = {
+	#			FROM = {
+	#				has_opinion_modifier = {
+	#					who = FROM
+	#					modifier = missile_us
+	#				}
+	#			}
+	#		}
+	#		
+	#	}		
+	#}
+	war_goal = missile_attack_to_us
+}
+cb_atomic_attack = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	OR = {
+	#		ROOT = {
+	#			has_opinion_modifier = {
+	#				who = FROM
+	#				modifier = missile_us
+	#			}
+	#		}
+	#		overlord = {
+	#			FROM = {
+	#				has_opinion_modifier = {
+	#					who = FROM
+	#					modifier = missile_us
+	#				}
+	#			}
+	#		}
+	#		
+	#	}		
+	#}
+	war_goal = atomic_attack
+}
+cb_missile_attack_military_base = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	OR = {
+	#		ROOT = {
+	#			has_opinion_modifier = {
+	#				who = FROM
+	#				modifier = missile_us
+	#			}
+	#		}
+	#		overlord = {
+	#			FROM = {
+	#				has_opinion_modifier = {
+	#					who = FROM
+	#					modifier = missile_us
+	#				}
+	#			}
+	#		}
+	#		
+	#	}		
+	#}
+	war_goal = missile_attack_to_our_mb
+}
+cb_offer_condottieri = {
+	#is_triggered_only = yes
+	prerequisites_self = {
+		is_at_war = yes
+	}
+	prerequisites = {
+		any_country = {
+			war_with = ROOT
+			is_hiring_condottiere_from = FROM
+		}	
+	}
+	war_goal = offer_condottieri_to_us
+}
+############
+cb_attack_to_neighbors = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	any_neighbor_country = {
+	#		same_continent = ROOT
+	#		is_in_war = {
+	#			defender_leader = THIS 
+	#			attacker_leader = FROM 
+	#		}
+	#	}		
+	#}
+	war_goal = defend_neighbor
+}
+
+cb_attack_to_neighbors_1 = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	FROM = {
+	#		NOT = {	capital_scope = { same_continent = ROOT } }
+	#		is_neighbor_of = ROOT
+	#	}
+	#	is_revolution_target = no
+	#}
+	
+
+	war_goal = defend_neighbor
+}
+####################
+##############
+cb_attack_to_our_subject = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	any_subject_country = {
+	#		is_subject_of = ROOT 
+	#		is_in_war = {
+	#			attackers = from
+	#			defenders = this
+	#		}
+	#	}
+	#}
+	war_goal = defend_our_subject
+}
+
+#############
+cb_neighbor_is_subject_of_from = {
+	#is_triggered_only = yes
+	prerequisites = {
+		NOT = {
+			is_subject_of = FROM
+		}
+		any_neighbor_country = {
+			is_subject_of = FROM
+		}
+	}
+	war_goal = neighbor_is_subject
+}
+
+#######################
+######################################
+#cb_attack_to_our_ally_1 = {
+#	#is_triggered_only = yes
+#	prerequisites = {
+#		any_country = {
+#			alliance_with = ROOT
+#			is_in_war = {
+#				attackers = from
+#				defenders = this
+#			}
+#		}	
+#	}
+#	months = 240
+#	war_goal = defend_ally
+#}
+cb_attack_to_our_ally = {
+	is_triggered_only = yes
+	prerequisites = {
+		any_country = {
+			alliance_with = ROOT
+			is_in_war = {
+				attackers = from
+				defenders = this
+			}
+		}	
+	}
+	war_goal = defend_ally
+}
+
+# Trade War
+cb_supported_our_enemy = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	any_country = {
+	#		war_with = ROOT
+	#		has_opinion_modifier = {
+	#			who = FROM 
+	#			modifier = opinion_support_army
+	#		}
+	#	}
+	#	is_revolution_target = no
+	#}
+	war_goal = supported_our_enemy
+}
+cb_oder_to_attack = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	any_country = {
+	#		war_with = ROOT
+	#		has_opinion_modifier = {
+	#			who = FROM 
+	#			modifier = opinion_support_army
+	#		}
+	#	}
+	#	is_revolution_target = no
+	#}
+	war_goal = order_take_capital
+}
+cb_oder_to_attack_1 = {
+	is_triggered_only = yes
+	#prerequisites = {
+	#	any_country = {
+	#		war_with = ROOT
+	#		has_opinion_modifier = {
+	#			who = FROM 
+	#			modifier = opinion_support_army
+	#		}
+	#	}
+	#	is_revolution_target = no
+	#}
+	war_goal = order_take_capital_1
+}
+#################################
+# Trade War
+
+cb_justifyed = {
+	#is_triggered_only = yes
+	prerequisites = {
+		NOT = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = justify_for_attack_1
+				}
+			}
+		}
+		FROM = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = justify_for_attack
+			}
+		}			
+	}
+	war_goal = take_capital_imperial
+}
+cb_justifyed_1 = {
+	#is_triggered_only = yes
+	prerequisites = {
+		OR = {
+			AND = {
+				any_subject_country = {
+					is_subject_of = root
+					NOT = {
+						reverse_has_opinion_modifier = {
+							who = FROM
+							modifier = justify_for_attack_3
+						}
+					}
+					reverse_has_opinion_modifier = {
+						who = FROM
+						modifier = justify_for_attack_2
+					}
+				}
+				any_subject_country = {
+					is_subject_of = root
+					reverse_has_opinion_modifier = {
+						who = FROM
+						modifier = justify_for_attack_2
+					}
+				}
+			}
+			AND = {
+				NOT = {
+					FROM = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = justify_for_attack_3
+						}
+					}
+				}
+				FROM = {
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = justify_for_attack_2
+					}
+				}	
+			}
+		}				
+	}
+	war_goal = take_capital_imperial
+}

@@ -1,0 +1,85 @@
+##namespace = modern_fort
+##
+###modern_fort Point admin power X1
+##country_event = {
+##	id = modern_fort.1
+##	title = "modern_fort.1title"
+##	desc = "modern_fort.1desc"
+##	picture = send_aid_eventPicture
+##	trigger = {
+##		army_professionalism = 0.8
+##		NOT = { has_country_flag = fort_set }
+##	}
+##
+##	mean_time_to_happen = {
+##		days = 1
+##	}
+##	
+##	option = {
+##		name = "modern_fort.4opt"
+##		every_province = {
+##			limit = {
+##				has_influencing_fort = yes
+##				owned_by = root
+##			}
+##			add_province_modifier = {
+##				name = attition_fort_0
+##				duration = -1
+##			}
+##			province_event = {
+##				id = modern_fort.2
+##			}
+##		}
+##		set_country_flag = fort_set
+##		clr_country_flag = fort_not_set
+##	}
+##}
+##
+##province_event = {
+##	id = modern_fort.2
+##	title = "modern_fort.1title"
+##	desc = "modern_fort.1desc"
+##
+##	is_triggered_only = yes
+##	option = {
+##		name = "modern_fort.4opt"
+##		area = {
+##			add_province_modifier = {
+##				name = attition_fort_1
+##				duration = -1
+##			}
+##		}
+##	}
+##}
+##country_event = {
+##	id = modern_fort.3
+##	title = "modern_fort.1title"
+##	desc = "modern_fort.1desc"
+##	picture = send_aid_eventPicture
+##	trigger = {
+##		NOT = { army_professionalism = 0.8 }
+##		NOT = { has_country_flag = fort_not_set }
+##		has_country_flag = fort_set
+##	}
+##	
+##	mean_time_to_happen = {
+##		days = 1
+##	}
+##
+##	option = {
+##		name = "modern_fort.4opt"
+##		every_province = {
+##			limit = {
+##				OR = {
+##					has_province_modifier = attition_fort_0
+##					has_province_modifier = attition_fort_1
+##				}
+##				owned_by = root
+##			}
+##			remove_province_modifier = attition_fort_0
+##			remove_province_modifier = attition_fort_1
+##		}
+##		set_country_flag = fort_not_set
+##		clr_country_flag = fort_set
+##	}
+##}

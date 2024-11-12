@@ -1,0 +1,590 @@
+country_decisions = {
+##	russian_empire = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = RUS
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = RUSIAN_EMPIRE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##			
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	china_empire = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = CHN
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 4000
+##		}
+##		effect = {
+##			override_country_name = CHINA_EMPIRE	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	indian_empire = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = INI
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = INDIA_EMPIRE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}		
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_italy = {	
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = ITA
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_ITALY	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_france = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = FR2
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_FRANCE	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_vietname = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = VTN
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_VIETNAME	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_australia = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = AUS
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_AUSTRALIA	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_indonesia = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = IDN
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_INDONESIA	
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_iran = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision 
+##			OR = {
+##				tag = IRA
+##				tag = IRN
+##			}   
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_IRAN
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	persian_empire1 = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			OR = {
+##				tag = PER
+##				tag = IRN
+##			}
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = PERSIAN_EMPIRE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}	
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	iranian_empire1 = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			OR = {
+##				tag = PER
+##				tag = IRA
+##				tag = IRN
+##			}
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = IRANIAN_EMPIRE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_germany = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = GER
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GERMAN_EMPIRE1
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+german_rich = {
+	#major = yes
+	provinces_to_highlight = {
+		area = hinter_pommern_area
+		area = neumark_area
+		area = lusatia_area
+		area = silesia_area
+		area = west_prussia_area
+		area = east_prussia_area
+	}
+	potential = {
+        has_country_flag = open_all_decision    
+		tag = GER
+		NOT = { has_country_flag = changed_name_to_empire }
+	}
+	allow = {
+		has_reform = fascist_government
+		hinter_pommern_area = {  
+			type = all
+			owned_by = ROOT
+		}
+		neumark_area = {  
+			type = all
+			owned_by = ROOT
+		}
+		lusatia_area = {  
+			type = all
+			owned_by = ROOT
+		}
+		silesia_area = {  
+			type = all
+			owned_by = ROOT
+		}
+		west_prussia_area = {  
+			type = all
+			owned_by = ROOT
+		}
+		east_prussia_area = {  
+			type = all
+			owned_by = ROOT
+		}
+
+	}
+	effect = {
+		override_country_name = GERMAN_REICH
+		hidden_effect = {
+			set_country_flag = changed_name_to_empire
+		}
+		if = {
+			limit = { has_custom_ideas = no }
+			country_event = { id = ideagroups.1 days = 1 } #Swap Ideas
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+##	great_brazil = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = BRZ
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_BRAZIL
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_japan = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = JAP
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_JAPAN
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_korea = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = KOR
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_KOREA
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_africa = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = RSA
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_AFRICA
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_turky = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = TKY
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_TURKY
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_scandinavia = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = SCA
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_SCANDINAVIA
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_spania = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = SPA
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_SPAIN
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_mexico = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = MEX
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_MEXICO
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_tailand = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = THL
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_THAILAND
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_grecce = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = GRE
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_GRRECE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_poland = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = POL
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_POLAND
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_egypt = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = EGY
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_EGYPT
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	great_canada = {
+##		#major = yes
+##		potential = {
+##            has_country_flag = open_all_decision    
+##			tag = CAN
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = GREAT_CANADA
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+##	british_empire_name = {
+##		#major = yes
+##		potential = {
+##           	has_country_flag = open_all_decision    
+##			tag = GBR
+##			NOT = { has_country_flag = changed_name_to_empire }
+##		}
+##		allow = {
+##			total_development = 3000
+##		}
+##		effect = {
+##			override_country_name = BRITISH_EMPIRE
+##			hidden_effect = {
+##				set_country_flag = changed_name_to_empire
+##			}
+##		}
+##		ai_will_do = {
+##			factor = 1
+##		}
+##	}
+}

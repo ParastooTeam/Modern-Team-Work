@@ -1,0 +1,4095 @@
+country_decisions = {
+
+
+	desiction_missil_enable = {
+		potential = {	
+			NOT = { has_country_modifier = enable_missil }
+			if = {
+				limit = {
+					ai = yes
+				}
+				full_idea_group = missil_research
+			}
+		}
+		allow = {
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = enable_missil
+				duration = -1
+			}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	desiction_missil_desable = {
+		potential = {	
+			has_country_modifier = enable_missil
+		}
+		allow = {
+			
+		}
+		effect = {
+			remove_country_modifier = enable_missil
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	desiction_missil_50 = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 50
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}		
+		}
+		allow = {
+			OR = {
+				full_idea_group = missil_research
+				full_idea_group = defence_missil_research
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.09
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.08
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.07
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.05
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.04
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.03
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.02		
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -0.10
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.09
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.08
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.07
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.05
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.04
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.03
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.02
+				}
+				
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_50
+							check_variable = {
+								which = missil_50
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_50
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_50 } }
+					add_country_modifier = {
+						name = "missile_state_50"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_50
+					value = 1
+					}
+				}
+			
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_missil_100 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_100
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 100
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.26
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.20
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.16
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.12
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.09
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.07
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.05
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.03			
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -0.26
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.20
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.16
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.12
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.09
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.07
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.05
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.03
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_100
+							check_variable = {
+								which = missil_100
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_100
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_100 } }
+					add_country_modifier = {
+						name = "missile_state_100"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_100
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+	
+	
+	desiction_missil_150 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_150
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 150
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.45
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.35
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.25
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.20
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.15
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.12
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.08
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.05	
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -0.45
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.35
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.25
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.20
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.15
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.12
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.08
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.05
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_150
+							check_variable = {
+								which = missil_150
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_150
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_150 } }
+					add_country_modifier = {
+						name = "missile_state_150"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_150
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_missil_250 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_250
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 250
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}			
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.65
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.50
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.40
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.25
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.20
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.15
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.11
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.07
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -0.65
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.50
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.40
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.25
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.20
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.15
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.11
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.07
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_250
+							check_variable = {
+								which = missil_250
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_250
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_250 } }
+					add_country_modifier = {
+						name = "missile_state_250"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_250
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_missil_350 = {
+		major = yes
+		potential = {	
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			NOT = { has_country_modifier = non_missil_modifire_less_350 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_350
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 350
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}			
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.90
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.70
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.57
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.40
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.30
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.23
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.16
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.1
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -0.90
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.70
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.57
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.40
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.30
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.23
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.16
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.1
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_350
+							check_variable = {
+								which = missil_350
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_350
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_350 } }
+					add_country_modifier = {
+						name = "missile_state_350"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_350
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_missil_500 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			NOT = { has_country_modifier = non_missil_modifire_less_350 }
+			NOT = { has_country_modifier = non_missil_modifire_less_500 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_500
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 500
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 1.05
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.90
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.72
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.59
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.42
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.31
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.23
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.14
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -1.05
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -0.90
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.72
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.59
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.42
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.31
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.23
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.14
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_500
+							check_variable = {
+								which = missil_500
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_500
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_500 } }
+					add_country_modifier = {
+						name = "missile_state_500"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_500
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+###################################################################################################	
+	
+	desiction_missil_700 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			NOT = { has_country_modifier = non_missil_modifire_less_350 }
+			NOT = { has_country_modifier = non_missil_modifire_less_500 }
+			NOT = { has_country_modifier = non_missil_modifire_less_700 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_700
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 700
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}		
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 1.25
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 1.05
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.90
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.72
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.59
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.42
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.30
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.18
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -1.25
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -1.05
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -0.90
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.72
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.59
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.42
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.30
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.18
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_700
+							check_variable = {
+								which = missil_700
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_700
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_700 } }
+					add_country_modifier = {
+						name = "missile_state_700"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_700
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+	
+	desiction_missil_1000 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			NOT = { has_country_modifier = non_missil_modifire_less_350 }
+			NOT = { has_country_modifier = non_missil_modifire_less_500 }
+			NOT = { has_country_modifier = non_missil_modifire_less_700 }
+			NOT = { has_country_modifier = non_missil_modifire_less_1000 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_1000
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 1000
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 1.55
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 1.25
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 1.05
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.90
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.72
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.59
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.42
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.27
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -1.55
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -1.25
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -1.05
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -0.90
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.72
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.59
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.42
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.27
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_1000
+							check_variable = {
+								which = missil_1000
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_1000
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_1000 } }
+					add_country_modifier = {
+						name = "missile_state_1000"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_1000
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+	
+	desiction_missil_1500 = {
+		major = yes
+		
+		potential = {		
+			NOT = { has_country_modifier = non_missil_modifire_all }
+			NOT = { has_country_modifier = non_missil_modifire_less_250 }
+			NOT = { has_country_modifier = non_missil_modifire_less_350 }
+			NOT = { has_country_modifier = non_missil_modifire_less_500 }
+			NOT = { has_country_modifier = non_missil_modifire_less_700 }
+			NOT = { has_country_modifier = non_missil_modifire_less_1000 }
+			NOT = { has_country_modifier = non_missil_modifire_less_1500 }
+			has_country_modifier = enable_missil
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					check_variable = {
+						which = missil_1500
+						value = 5
+					}
+				}
+			}
+		}
+		provinces_to_highlight = {
+			any_province = {
+				country_or_subject_holds = root
+				OR = {
+					controlled_by = root
+					controller = {
+						is_subject_of = root
+					}
+				}
+				OR = {
+					has_building = mass_transit_system
+					has_building = railroad
+				}
+				NOT = {
+					province_distance = {
+						who = prev
+						distance = 1500
+					}
+				}
+			}
+			is_city = yes
+			NOT = {
+				country_or_subject_holds = root
+			}
+		}
+		allow = {
+			full_idea_group = missil_research
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 2.00
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 1.65
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 1.35
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 1.05
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.90
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.72
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				years_of_income = 0.59
+			}
+		if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.35
+			}
+	
+
+	}
+	effect = {
+		
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					add_years_of_income = -2.00
+				}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -1.65
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -1.35
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -1.05
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.90
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.72
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.59
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					add_years_of_income = -0.35
+				}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_1500
+							check_variable = {
+								which = missil_1500
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+					which = missil_1500
+					value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_1500 } }
+					add_country_modifier = {
+						name = "missile_state_1500"
+						duration = -1
+					}
+					set_variable = {
+					which = missil_1500
+					value = 1
+					}
+				}
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+	
+############################################################################################################################################	
+
+use_missile_50_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_50 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT	
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 50
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_50
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_50
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+}
+######################################################################################################################
+use_missile_100_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_100
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_100 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT		
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}		
+			}			
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 100
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_100
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_100
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+
+####################################################################################################################
+use_missile_150_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_150
+					value = 1
+				}
+				
+			
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_150 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 150
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_150
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_150
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+
+
+######################################################################################################################
+use_missile_250_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_250
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_250 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 250
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_250
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_250
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+#######################################################################################################################
+use_missile_350_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_350
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_350 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 350
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_350
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_350
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+#######################################################################################################################
+use_missile_500_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_500 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 500
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_500
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+
+#######################################################################################################################
+use_missile_700_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_700 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 700
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_700
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_700
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+######################################################################################################################
+use_missile_1000_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_1000 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 1000
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1000
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_1000
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+	}
+######################################################################################################################
+use_missile_1500_ai = { #AI can't use custom diplomatic actions
+		potential = {
+			ai = yes
+			
+		}
+		allow = {
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			NOT = { has_country_modifier = missile_cooldown }
+			NOT = { has_country_modifier = missile_cant_find_target_1500 } 
+			is_at_war = yes
+			any_known_country = {
+				war_with = ROOT
+				OR = {
+					monthly_income = root
+					num_of_heavy_ship = root
+					army_size = root
+                    ai = no
+				}
+			}
+			any_owned_province = {
+				country_or_subject_holds = root
+				OR = {
+					has_building = road
+					has_building = mass_transit_system
+				}
+			}
+		}
+		effect = {
+			
+				random_country = {
+					limit = {
+						war_with = ROOT
+						OR = {
+							war_score = -25
+							reverse_has_opinion_modifier = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+					}
+					every_owned_province = {
+						limit = {
+							any_province = {
+								country_or_subject_holds = root
+								OR = {
+									has_building = road
+									has_building = mass_transit_system
+								}
+								NOT = {
+									province_distance = {
+										who = prev
+										distance = 1500
+									}
+								}
+							}
+						
+						}
+						set_province_flag = distance_city
+							
+					}
+					
+					if = {
+						limit = { any_owned_province = { has_building = mass_transit_system has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = mass_transit_system has_province_flag = distance_city }
+							province_event = { id = modern_missil.41 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = fusion_reactor has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = fusion_reactor has_province_flag = distance_city }
+							province_event = { id = modern_missil.42 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = nuclear_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = nuclear_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.43 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = coal_plant has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = coal_plant has_province_flag = distance_city }
+							province_event = { id = modern_missil.44 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = conscription_center has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = conscription_center has_province_flag = distance_city }
+							province_event = { id = modern_missil.45 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = regimental_camp has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = regimental_camp has_province_flag = distance_city }
+							province_event = { id = modern_missil.46 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = training_fields has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = training_fields has_province_flag = distance_city }
+							province_event = { id = modern_missil.47 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = factory has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = factory has_province_flag = distance_city }
+							province_event = { id = modern_missil.48 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = counting_house has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = counting_house has_province_flag = distance_city }
+							province_event = { id = modern_missil.49 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else_if = {
+						limit = { any_owned_province = { has_building = university has_province_flag = distance_city } }
+						random_owned_province = {
+							limit = { has_building = university has_province_flag = distance_city }
+							province_event = { id = modern_missil.501 }
+						}
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cooldown
+								duration = 230
+							}
+							change_variable = {
+								which = missil_1500
+								value = -1
+							}
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					else = {
+						ROOT = {
+							add_country_modifier = {
+								name = missile_cant_find_target_1500
+								duration = 2190
+							}
+						}
+					}
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}	
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 25
+}
+	
+}

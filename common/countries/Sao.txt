@@ -1,0 +1,78 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 120  161  72 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Tshéroma #0" = 10
+	"Madgashé #0" = 10
+	"Mat Kurtu #0" = 10
+	"Mortcho #0" = 10
+	"Dogo Arma #0" = 10
+	"Balkashé #0" = 10
+	"Saxair #0" = 10
+	"Mortcho #0" = 10
+	"Baikouma #0" = 10
+	"Djili #0" = 10
+	"Gadai #0" = 10
+	"Absakin #0" = 10
+	"Tschéroma #0" = 10
+	"Abba #0" = 10
+	"Haris #0" = 0
+	"Dikhoma #0" = 0
+	"Fanna #0" = 0
+	"Ariso #0" = 0
+	"Kader #0" = 0
+	"Waima #0" = 0
+	"Balwa #0" = 0
+	"Araki #0" = 0
+	"Beiso #0" = 0
+	"Dounouma #0" = 0
+	"Alio #0" = 0
+	"Brahim #0" = 0
+	"Abami #0" = 0
+	"Beyra #0" = 0
+	"Keda #0" = 10
+
+	"Aikaché #0" = -1
+	"Khadidja #0" = -1
+	"Aiché #0" = -1
+	"Fatimé #0" = -1
+}
+
+leader_names = {
+	Batoa
+	Burwa
+	Dalmawa
+	Tchalmawa
+	Wadawa
+	Djulwa
+	"N'guidjim"
+	Kassawa
+	Gaswa
+	Madawa
+	Fadwa
+	Kiliti
+	Argumba
+
+}
+
+ship_names = {
+	Dugu Fune Aritso Kature Ayoma Bulu
+	Arki Shu "Bad al-Djel" Hume Dunama
+	Biri Birkoru "Abd al-Djel Selma"
+	"Dunama Dibbalem" Kade "Kachim Biri"
+	Djil Dari "Kure Kura" "Kure Gana"
+}

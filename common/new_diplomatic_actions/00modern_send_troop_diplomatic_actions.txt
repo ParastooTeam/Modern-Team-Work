@@ -1,0 +1,407 @@
+    send_troops =  {
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			ai = no			
+		}
+		is_allowed = {
+			constable = 1
+			FROM = { constable = 1 }
+			if = {
+				limit = {
+					NOT = {
+						total_development = 1250
+					}
+				}
+				army_size_percentage = 0.5
+			}
+			else = {
+				army_size_percentage = 0.75
+			}	
+			FROM = {
+				NOT = {
+					army_size_percentage = 1.1
+				}
+			}
+			
+		}
+		on_accept = {
+			FROM = { save_event_target_as = get_name_from }
+			save_event_target_as = get_name_root
+			
+			every_province = {
+				limit = {
+					OR = {
+						controlled_by = root
+						controller = {
+							is_subject_of = root
+						}
+					}
+					has_building = constable
+					OR = {
+						num_of_units_in_province = {
+							amount = 5
+							who = root
+							type = artillery					
+						}
+						num_of_units_in_province = {
+							amount = 5
+							who = root
+							type = infantry
+						}
+						num_of_units_in_province = {
+							amount = 5
+							who = root
+							type = cavalry
+						}
+					}
+				}
+				save_event_target_as = air_plan_1
+			}
+			FROM = { 
+				save_global_event_target_as = send_troop_target_country 
+				if = {
+					limit = { 
+						any_owned_province = { 
+							has_building = constable has_province_flag = cpital_modifire controlled_by = FROM
+						}	
+					}
+					random_owned_province = {
+						limit = { controlled_by = FROM  has_building = constable has_province_flag = cpital_modifire }
+						save_event_target_as = capital_set
+					}
+				}
+				if = {
+					limit = { 
+						any_province = { 
+							has_building = constable NOT = { owned_by = event_target:send_troop_target_country } controlled_by = FROM
+						}
+					}
+					random_province = {
+						limit = { has_building = constable NOT = { owned_by = event_target:send_troop_target_country } controlled_by = FROM  }
+						save_event_target_as = occupied_city
+					}
+				
+				}
+				if = {
+					limit = { 
+						any_owned_province = { 
+							development = 50  has_building = constable controlled_by = FROM
+						}
+					}
+					random_owned_province = {
+						limit = { development = 50  has_building = constable controlled_by = FROM }
+						save_event_target_as = major_city
+					}
+				
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							development = 35  has_building = constable controlled_by = FROM
+						}			
+					}
+					random_owned_province = {
+						limit = { development = 35  has_building = constable controlled_by = FROM }
+						save_event_target_as = major_city
+					}
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							development = 25  has_building = constable controlled_by = FROM
+						}			
+					}
+					random_owned_province = {
+						limit = { development = 25  has_building = constable controlled_by = FROM }
+						save_event_target_as = major_city						
+					}
+				
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							development = 15  has_building = constable controlled_by = FROM
+						}				
+					}
+					random_owned_province = {
+						limit = { development = 15  has_building = constable controlled_by = FROM }
+						save_event_target_as = major_city					
+					}
+	
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							development = 5  has_building = constable controlled_by = FROM
+						}				
+					}
+					random_owned_province = {
+						limit = { development = 5  has_building = constable controlled_by = FROM }
+						save_event_target_as = major_city						
+					}
+	
+				}
+				if = {
+					limit = { 
+						any_owned_province = { 
+							province_has_center_of_trade_of_level = 3  has_building = constable controlled_by = FROM
+						}
+					}
+					random_owned_province = {
+						limit = { province_has_center_of_trade_of_level = 3 has_building = constable controlled_by = FROM }
+						save_event_target_as = center_of_trade					
+					}
+	
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							province_has_center_of_trade_of_level = 2  has_building = constable controlled_by = FROM
+						}
+					}
+					random_owned_province = {
+						limit = { province_has_center_of_trade_of_level = 2 has_building = constable controlled_by = FROM }
+						save_event_target_as = center_of_trade
+											
+					}
+	
+				}
+				else_if = {
+					limit = { 
+						any_owned_province = { 
+							province_has_center_of_trade_of_level = 1  has_building = constable controlled_by = FROM
+						}				
+					}
+					random_owned_province = {
+						limit = { province_has_center_of_trade_of_level = 1 has_building = constable controlled_by = FROM }
+						save_event_target_as = center_of_trade
+											
+					}
+	
+				}
+				if = {
+					limit = { 
+						any_owned_province = { 
+							fort_level = 2  has_building = constable controlled_by = FROM
+						}
+					}
+					random_owned_province = {
+						limit = { fort_level = 2 has_building = constable controlled_by = FROM }
+						save_event_target_as = fort
+											
+					}
+	
+				}
+				if = {
+					limit = { 
+						any_owned_province = { 
+							has_port = yes  has_building = constable controlled_by = FROM
+						}				
+					}
+					random_owned_province = {
+						limit = { has_port = yes has_building = constable controlled_by = FROM }
+						save_event_target_as = port 
+											
+					}
+	
+				}
+				if = {
+					limit = { 
+						any_owned_province = {  has_building = constable controlled_by = FROM }
+					}
+					random_owned_province = {
+						limit = { has_building = constable controlled_by = FROM }
+						save_event_target_as = random_province
+						
+					}
+					
+				}
+			}
+			country_event = {
+				id = send_troops.101
+				days = 1
+			}
+		}
+		
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 20
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+				name = NEUTRAL_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+	
+			}
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 25
+				}
+		
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+		
+			}
+			add_entry = {
+				name = WE_HAVE_BAD_OPINON_100
+				limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = WE_HAVE_BAD_OPINON_50
+				limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 10
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		
+			}
+			add_entry = {
+				name = WE_HAVE_BAD_OPINON_25
+				limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 5
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		
+			}
+			add_entry = {
+				name = MY_RIVAL_ALIIY_WITH_YOU
+				limit = {
+					FROM = {
+						any_rival_country = {
+							alliance_with = FROM 
+						}	
+					} 			
+				} 
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 30
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		
+			}
+			add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+			
+		}
+		ai_will_do = { 
+			always = no
+		}
+	}

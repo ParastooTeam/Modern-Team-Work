@@ -1,0 +1,628 @@
+namespace = bank
+
+country_event = {
+	id = bank.3
+	title = bank.TITLE
+	desc = bank.DESC
+	picture = modern_bank_eventPicture
+
+	
+	is_triggered_only = yes
+
+	option = {
+		name = bank_deposit.133
+		
+		custom_tooltip = diposit_page
+		hidden_effect = {
+			country_event = {
+				id = bank.1
+			}
+		}
+	}
+	option = {
+		name = bank_withdraw.133
+		custom_tooltip = withdrow_page
+		hidden_effect = {
+			country_event = {
+				id = bank.2
+			}
+		}
+		
+	}
+	option = {
+		name = bank_deposit.cancel
+	}
+}
+
+country_event = {
+	id = bank.1
+	title = bank_deposit.TITLE
+	desc = bank_deposit.DESC
+	picture = deposit_eventPicture
+
+	
+	is_triggered_only = yes
+
+	
+
+	option = {
+		name = bank_deposit.10
+		trigger = {
+			treasury = 1000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 1
+			}
+			add_treasury = -1000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 1
+			}
+			add_treasury = -1000
+		}
+	}
+	option = {
+		name = bank_deposit.20
+		trigger = {
+			treasury = 2000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 2
+			}
+			add_treasury = -2000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 2
+			}
+			add_treasury = -2000
+		}
+	}
+	option = {
+		name = bank_deposit.50
+		trigger = {
+			treasury = 5000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 5
+			}
+			add_treasury = -5000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 5
+			}
+			add_treasury = -5000
+		}
+	}
+	option = {
+		name = bank_deposit.100
+		trigger = {
+			treasury = 10000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 10
+			}
+			add_treasury = -10000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 10
+			}
+			add_treasury = -10000
+		}
+	}
+	option = {
+		name = bank_deposit.250
+		trigger = {
+			treasury = 25000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 25
+			}
+			add_treasury = -25000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 25
+			}
+			add_treasury = -25000
+		}
+	}
+	option = {
+		name = bank_deposit.500
+		trigger = {
+			treasury = 50000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 50
+			}
+			add_treasury = -50000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 50
+			}
+			add_treasury = -50000
+		}
+	}
+	option = {
+		name = bank_deposit.1000
+		trigger = {
+			treasury = 100000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 100
+			}
+			add_treasury = -100000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 100
+			}
+			add_treasury = -100000
+		}
+	}
+	option = {
+		name = bank_deposit.1500
+		trigger = {
+			treasury = 150000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 150
+			}
+			add_treasury = -150000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 150
+			}
+			add_treasury = -150000
+		}
+	}
+	option = {
+		name = bank_deposit.2000
+		trigger = {
+			treasury = 200000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 200
+			}
+			add_treasury = -200000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 200
+			}
+			add_treasury = -200000
+		}
+	}
+	option = {
+		name = bank_deposit.3000
+		trigger = {
+			treasury = 300000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 300
+			}
+			add_treasury = -300000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 300
+			}
+			add_treasury = -300000
+		}
+	}
+	option = {
+		name = bank_deposit.5000
+		trigger = {
+			treasury = 500000
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = bank_deposit
+						value = 0.01
+					}
+				}
+			}
+			set_variable = {
+				which = bank_deposit
+				value = 500
+			}
+			add_treasury = -500000
+		}
+		else = {
+			change_variable = {
+				which = bank_deposit
+				value = 500
+			}
+			add_treasury = -500000
+		}
+	}
+	option = {
+		name = bank_deposit.cancel
+	}
+}
+
+country_event = {
+	id = bank.2
+	title = bank_withdraw.TITLE
+	desc = bank_withdraw.DESC
+	picture = withdraw_eventPicture
+
+	
+	is_triggered_only = yes
+
+	
+
+	option = {
+		name = bank_withdraw.10
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 1
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 1
+			}
+			add_treasury = 1000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.20
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 2
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 2
+			}
+			add_treasury = 2000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.50
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 5
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 5
+			}
+			add_treasury = 5000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.100
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 10
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 10
+			}
+			add_treasury = 10000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.250
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 25
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 25
+			}
+			add_treasury = 25000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.500
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 50
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 50
+			}
+			add_treasury = 50000
+		}
+		
+	}
+	option = {
+		name = bank_withdraw.1000
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 100
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 100
+			}
+			
+			add_treasury = 100000
+		}
+	}
+	option = {
+		name = bank_withdraw.1500
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 150
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 150
+			}
+			
+			add_treasury = 150000
+		}
+	}
+	option = {
+		name = bank_withdraw.2000
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 200
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 200
+			}
+			
+			add_treasury = 200000
+		}
+	}
+	option = {
+		name = bank_withdraw.3000
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 300
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 300
+			}
+			
+			add_treasury = 300000
+		}
+	}
+	option = {
+		name = bank_withdraw.5000
+		trigger = {
+			check_variable = {
+				which = bank_deposit
+				value = 500
+			}
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = bank_deposit
+					value = 0.01
+				}
+			}
+			subtract_variable = {
+				which = bank_deposit
+				value = 500
+			}
+			
+			add_treasury = 500000
+		}
+	}
+	option = {
+		name = bank_withdraw.cancel
+	}
+}

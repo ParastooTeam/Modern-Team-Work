@@ -1,0 +1,71 @@
+
+namespace = et_satsana_phi
+
+#Spirit Houses
+
+#Phi Fa
+
+
+#Baci - Adm effect
+country_event = {
+	id = et_satsana_phi.3
+	title = et_satsana_phi.3.t
+	desc = et_satsana_phi.3.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = baci_ritual_adm }
+		NOT = { has_ruler_modifier = baci_ritual_dip }
+		NOT = { has_ruler_modifier = baci_ritual_mil }
+	}
+
+	option = {
+		name = et_satsana_phi.3.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = baci_ritual_adm
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.3.b
+		add_prestige = -2
+	}
+}
+
+#Baci - Mil effect
+country_event = {
+	id = et_satsana_phi.4
+	title = et_satsana_phi.4.t
+	desc = et_satsana_phi.4.d
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	trigger = {
+		religion = satsana_phi
+		has_regency = no
+		NOT = { has_ruler_modifier = baci_ritual_adm }
+		NOT = { has_ruler_modifier = baci_ritual_dip }
+		NOT = { has_ruler_modifier = baci_ritual_mil }
+	}
+
+	option = {
+		name = et_satsana_phi.4.a
+		add_years_of_income = -0.2
+		add_ruler_modifier = {
+			name = baci_ritual_mil
+		}
+	}
+
+	option = {
+		name = et_satsana_phi.4.b
+		add_prestige = -2
+	}
+}
+
+#Baci - Dip effect

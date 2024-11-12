@@ -1,0 +1,94 @@
+namespace = more_favors_action_remove_rival_events
+
+country_event = {
+	id = more_favors_action_remove_rival_events.1
+	title = more_favors_action_remove_rival_events.EVTNAME1
+	desc = more_favors_action_remove_rival_events.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	major = yes
+	major_trigger = {
+		tag = event_target:more_favors_action_remove_rival_target
+	}
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			event_target:more_favors_action_remove_rival_target = {
+				random_rival_country = {
+					save_event_target_as = remove_rival_target_1
+				}
+				random_rival_country = {
+					limit = {
+						NOT = { tag = event_target:remove_rival_target_1 }
+					}
+					save_event_target_as = remove_rival_target_2
+				}
+				random_rival_country = {
+					limit = {
+						NOT = { tag = event_target:remove_rival_target_1 }
+						NOT = { tag = event_target:remove_rival_target_2 }
+					}
+					save_event_target_as = remove_rival_target_3
+				}
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_rival_events1.EVTOPT1
+
+		trigger = {
+			has_saved_event_target = remove_rival_target_1
+		}
+
+		ai_chance = { factor = 0 }
+
+		event_target:more_favors_action_remove_rival_target = {
+			force_remove_rival = event_target:remove_rival_target_1
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_rival_events1.EVTOPT2
+
+		trigger = {
+			has_saved_event_target = remove_rival_target_2
+		}
+
+		ai_chance = { factor = 0 }
+
+		event_target:more_favors_action_remove_rival_target = {
+			force_remove_rival = event_target:remove_rival_target_2
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_rival_events1.EVTOPT3
+
+		trigger = {
+			has_saved_event_target = remove_rival_target_3
+		}
+
+		ai_chance = { factor = 0 }
+
+		event_target:more_favors_action_remove_rival_target = {
+			force_remove_rival = event_target:remove_rival_target_3
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_rival_events1.EVTOPT4
+
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+			event_target:more_favors_action_remove_rival_target = {
+				ROOT = { add_favors = { who = PREV amount = 20 } }
+			}
+			remove_country_modifier = more_favors_action_remove_rival_used_modifier
+			set_variable = { which = more_favors_action_remove_rival_year value = 0 }
+			set_variable = { which = more_favors_action_remove_rival_month value = 0 }
+		}
+	}
+}

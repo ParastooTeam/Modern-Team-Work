@@ -1,0 +1,16 @@
+#Trabakul Transport Level 7
+type = transport
+
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+hull_size = 10
+base_cannons = 13
+sail_speed = 11
+#blockade = 5
+
+sprite_level = 1

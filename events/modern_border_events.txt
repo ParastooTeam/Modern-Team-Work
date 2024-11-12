@@ -1,0 +1,260 @@
+namespace = border_event
+
+# Demilitarize Borders
+country_event = {
+	id = border_event.1
+	title = border_event.EVTNAME1
+	desc = border_event.EVTDESC1
+	picture = BAD_WITH_MONARCH_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+	trigger = {
+		exists = yes
+		exists = FROM
+	}
+
+	immediate = {
+		hidden_effect = {
+			FROM = {
+				every_owned_province = {
+					limit = {
+						any_neighbor_province = {
+							owned_by = ROOT
+							OR = {
+								has_building = fort_et
+								has_building = fort_15th
+								has_building = fort_16th
+								has_building = fort_17th
+								has_building = fort_18th
+								development = 3
+								area_for_scope_province = {
+									owned_by = ROOT
+									OR = {
+										has_building = fort_et
+										has_building = fort_15th
+										has_building = fort_16th
+										has_building = fort_17th
+										has_building = fort_18th
+										development = 3
+									}
+								}
+							}
+						}
+					}
+					every_neighbor_province = {
+						limit = {
+							owned_by = ROOT
+							OR = {
+								has_building = fort_et
+								has_building = fort_15th
+								has_building = fort_16th
+								has_building = fort_17th
+								has_building = fort_18th
+								development = 3
+								area_for_scope_province = {
+									owned_by = ROOT
+									OR = {
+										has_building = fort_et
+										has_building = fort_15th
+										has_building = fort_16th
+										has_building = fort_17th
+										has_building = fort_18th
+										development = 3
+									}
+								}
+							}
+						}
+						if = {
+							limit = {
+								has_building = fort_et
+							}
+							remove_building = fort_et
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								has_building = fort_15th
+							}
+							remove_building = fort_15th
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								has_building = fort_16th
+							}
+							remove_building = fort_16th
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								has_building = fort_17th
+							}
+							remove_building = fort_17th
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								has_building = fort_18th
+							}
+							remove_building = fort_18th
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								base_manpower = 2
+							}
+							add_base_manpower = -1
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								base_production = 2
+							}
+							add_base_production = -1
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						if = {
+							limit = {
+								base_tax = 2
+							}
+							add_base_tax = -1
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+						add_province_modifier = {
+							name = non_fort
+							duration = 9125
+						}
+						area = {
+							limit = {
+								owned_by = ROOT
+								OR = {
+									has_building = fort_et
+									has_building = fort_15th
+									has_building = fort_16th
+									has_building = fort_17th
+									has_building = fort_18th
+								}
+							}
+							if = {
+								limit = {
+									has_building = fort_et
+								}
+								remove_building = fort_et
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									has_building = fort_15th
+								}
+								remove_building = fort_15th
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									has_building = fort_16th
+								}
+								remove_building = fort_16th
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									has_building = fort_17th
+								}
+								remove_building = fort_17th
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									has_building = fort_18th
+								}
+								remove_building = fort_18th
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									base_manpower = 2
+								}
+								add_base_manpower = -1
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									base_production = 2
+								}
+								add_base_production = -1
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							if = {
+								limit = {
+									base_tax = 2
+								}
+								add_base_tax = -1
+								add_province_modifier = {
+									name = non_fort
+									duration = 9125
+								}
+							}
+							add_province_modifier = {
+								name = non_fort
+								duration = 9125
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = border_event1.EVTOPT1
+
+		ai_chance = { factor = 100 }
+	}
+}

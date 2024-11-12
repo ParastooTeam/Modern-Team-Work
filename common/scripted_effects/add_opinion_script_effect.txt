@@ -1,0 +1,169 @@
+
+add_opinion_script_effect = {
+	
+	if = {
+		limit = {
+			OR = {
+				started_in = 2022.2.22
+				started_in = 2022.2.23
+				started_in = 2023.5.16
+				started_in = 2023.12.23
+				started_in = 2024.8.21
+				started_in = 2025.8.21
+			}
+		}
+		IRA = {
+			country_event = {	
+				id = opinion2022.1
+			}
+		}
+		IRN = {
+			country_event = {	
+				id = opinion2022.34
+			}
+		}
+		PAK = {
+			country_event = {
+				id = opinion2022.2
+			}
+		}
+		ISR = {
+			country_event = {
+				id = opinion2022.3
+			}
+		}
+		JAP = {
+			country_event = {
+				id = opinion2022.4
+			}
+		}
+		SKO = {
+			country_event = {
+				id = opinion2022.5
+			}
+		}
+		NOK = {
+			country_event = {
+				id = opinion2022.6
+			}
+		}
+		SPA = {
+			country_event = {
+				id = opinion2022.7
+			}
+		}
+		GRE = {
+			country_event = {
+				id = opinion2022.8
+			}
+		}
+		TKY = {
+			country_event = {
+				id = opinion2022.9
+			}
+		}
+		PLS = {
+			country_event = {
+				id = opinion2022.10
+			}
+		}
+		USA = {
+			country_event = {
+				id = opinion2022.11
+			}
+		}
+		CHN = {
+			country_event = {
+				id = opinion2022.12
+			}
+		}
+		INI = {
+			country_event = {
+				id = opinion2022.13
+			}
+		}
+		TWN = {
+			country_event = {
+				id = opinion2022.14
+			}
+		}
+		UKR = {
+			country_event = {
+				id = opinion2022.16
+			}
+		}
+		VTN = {
+			country_event = {
+				id = opinion2022.25
+			}
+		}
+		KHA = {
+			country_event = {
+				id = opinion2022.33
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			NOT = { started_in = 2022.2.23 }
+		}
+		RUS = {
+			country_event = {
+				id = opinion2022.15
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				started_in = 2022.2.23
+				started_in = 2023.5.16
+				started_in = 2023.12.23
+				started_in = 2024.8.21
+				started_in = 2025.8.21
+			}
+		}
+		RUS = {
+			country_event = {
+				id = opinion2022.17
+			}
+		}
+		GER = {
+			country_event = {
+				id = opinion2022.18
+			}
+		}
+		GBR = {
+			country_event = {
+				id = opinion2022.19
+			}
+		}
+		FR2 = {
+			country_event = {
+				id = opinion2022.20
+			}
+		}
+		POL = {
+			country_event = {
+				id = opinion2022.21
+			}
+		}
+		SWE = {
+			country_event = {
+				id = opinion2022.22
+			}
+		}
+		ITA = {
+			country_event = {
+				id = opinion2022.23
+			}
+		}
+		NED = {
+			country_event = {
+				id = opinion2022.24
+			}
+		}
+		
+	}
+}

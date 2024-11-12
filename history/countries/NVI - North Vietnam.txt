@@ -1,0 +1,50 @@
+government = monarchy
+
+primary_culture = vietnamese
+religion = mahayana
+technology_group = early_chinese
+historical_rival = SVI
+capital = 616	# Hanoi
+
+100.1.1 = { add_government_reform = early_gov_reform_1 }
+230.1.1 = { add_government_reform = early_gov_reform_2 }
+360.1.1 = { add_government_reform = early_gov_reform_3 }
+490.1.1 = { add_government_reform = early_gov_reform_4 }
+620.1.1 = { add_government_reform = early_gov_reform_5 }
+750.1.1 = { add_government_reform = early_gov_reform_6 }
+750.1.1 = { technology_group = chinese }
+
+880.1.1 = { add_government_reform = early_gov_reform_7 }
+1010.1.1 = { add_government_reform = early_gov_reform_8 }
+1140.1.1 = { add_government_reform = early_gov_reform_9 }
+1270.1.1 = { add_government_reform = early_gov_reform_10 }
+1910.1.1 = { religion = secularism }
+1915.1.1 = { technology_group = chinese }
+1920.1.1 = { government = republic
+	
+	
+	
+	add_government_reform = single_party_system
+	add_government_reform = communist_government
+	add_government_reform = powerful_head_of_state
+	 }
+
+1945.9.2 = {
+	monarch = {
+		name = "Ho Chi Minh"
+		adm = 2
+		dip = 3
+		mil = 4
+		religion = mahayana
+	}
+}
+
+1969.9.2 = {
+	monarch = {
+		name = "Ton Duc Thang"
+		adm = 2
+		mil = 4
+		dip = 3
+		religion = mahayana
+	}
+}

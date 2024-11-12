@@ -1,0 +1,102 @@
+
+add_tank_script_effect = {
+	
+	if = {
+		limit = {
+			is_year = 2020
+			NOT = { is_year = 2030 }
+		}
+		every_country = {
+			limit = {
+				NOT = {	tag = GBR }
+				NOT = {	tag = SWE }
+				NOT = {	tag = GER }
+				NOT = {	tag = JAP }
+				NOT = {	tag = FR2 }
+				NOT = {	tag = SPA }
+				NOT = {	tag = ITA }
+				NOT = {	tag = BRZ }
+				NOT = {	tag = NOK }
+				NOT = {	tag = ISR }
+				NOT = {	tag = PAK }
+				NOT = {	tag = AUS }
+				NOT = {	tag = MEX }
+				NOT = {	tag = UKR }
+				NOT = {	tag = SKO }
+				NOT = {	tag = RSA }
+				NOT = {	tag = SAU }
+				NOT = {	tag = TKY }
+				NOT = {	tag = GRE }
+				NOT = {	tag = ALG }
+				NOT = {	tag = EGY }
+				NOT = {	tag = NOR }
+				NOT = {	tag = DAN }
+				NOT = {	tag = NED }
+				NOT = {	tag = POL }
+				NOT = {	tag = VTN }
+				NOT = {	tag = IRA }
+			}
+			set_variable = {
+				which = tank_Support
+				value = 1
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			is_year = 2020
+			NOT = { is_year = 2030 }
+			OR = {
+				tag = USA
+				tag = CHN
+				tag = INI
+				tag = RUS
+			}
+		}
+		set_variable = {
+			which = tank_Support
+			value = 3
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2020
+			NOT = { is_year = 2030 }
+			OR = {
+				tag = GBR
+				tag = SWE
+				tag = GER
+				tag = JAP
+				tag = FR2
+				tag = SPA
+				tag = ITA
+				tag = BRZ
+				tag = NOK
+				tag = ISR
+				tag = PAK
+				tag = AUS
+				tag = MEX
+				tag = UKR
+				tag = SKO
+				tag = RSA
+				tag = SAU
+				tag = TKY
+				tag = GRE
+				tag = ALG
+				tag = EGY
+				tag = NOR
+				tag = DAN
+				tag = NED
+				tag = POL
+				tag = VTN
+				tag = IRA
+			}
+		}
+		set_variable = {
+			which = tank_Support
+			value = 2
+		}
+	}
+	
+}

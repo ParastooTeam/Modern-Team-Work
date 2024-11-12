@@ -1,0 +1,1686 @@
+country_decisions = {
+	
+	modern_build_missile_site_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building }
+		}
+		allow = {
+			OR = {
+				has_idea_group = missil_research
+				has_idea_group = defence_missil_research
+				check_variable = {
+					which = missil_50
+					value = 1
+				}
+				check_variable = {
+					which = missil_100
+					value = 1
+				}
+				check_variable = {
+					which = missil_150
+					value = 1
+				}
+				check_variable = {
+					which = missil_250
+					value = 1
+				}
+				check_variable = {
+					which = missil_350
+					value = 1
+				}
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			}
+			if = {
+				limit = {
+					num_of_cities = 200
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 20
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 150
+					NOT = { num_of_cities = 200 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 15
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 100
+					NOT = { num_of_cities = 150 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 10
+					NOT = { num_of_cities = 100 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 3
+					NOT = { num_of_cities = 10 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 2
+					NOT = { num_of_cities = 3 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 2
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 1
+					NOT = { num_of_cities = 2 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = mass_transit_system
+						}
+						amount = 1
+					}
+				}
+			}
+			
+			treasury = 15000
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						NOT = { owned_by = root }
+					}
+					all_neighbor_province = {
+						NOT = { has_building = mass_transit_system }
+					}
+					NOT = { has_building = mass_transit_system }
+					NOT = { has_construction = highway }
+					NOT = { has_construction = road }
+					NOT = { has_construction = railroad }
+					NOT = { has_construction = mass_transit_system }
+				}
+				add_building_construction = {
+					building = mass_transit_system
+					cost = 1
+						speed = 1
+				}
+			}
+			add_country_modifier = {
+				name = cooldown_building
+				duration = 1100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 20000 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 20000
+			}
+			modifier = {
+				factor = 2
+				treasury = 40000
+			}
+			modifier = {
+				factor = 4
+				treasury = 60000
+			}
+			modifier = {
+				factor = 8
+				treasury = 100000
+			}
+			modifier = {
+				factor = 10
+				treasury = 200000
+			}
+		}
+	}
+	modern_build_atomic_site_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building }
+		}
+		allow = {
+			OR = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+				has_idea_group = nuclear_research
+			}
+			if = {
+				limit = {
+					num_of_cities = 200
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 20
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 150
+					NOT = { num_of_cities = 200 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 15
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 100
+					NOT = { num_of_cities = 150 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 10
+					NOT = { num_of_cities = 100 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 10
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 3
+					NOT = { num_of_cities = 10 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 2
+					NOT = { num_of_cities = 3 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 2
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					num_of_cities = 1
+					NOT = { num_of_cities = 2 }
+				}
+				NOT = {
+					calc_true_if = {
+						all_owned_province = {
+							has_building = railroad
+						}
+						amount = 1
+					}
+				}
+			}
+			treasury = 25000
+		}
+		effect = {
+			random_owned_province = {
+				limit = {
+					any_neighbor_province = {
+						NOT = { owned_by = root }
+					}
+					all_neighbor_province = {
+						NOT = { has_building = railroad }
+					}
+					NOT = { has_building = railroad }
+					NOT = { has_construction = highway }
+					NOT = { has_construction = road }
+					NOT = { has_construction = railroad }
+					NOT = { has_construction = mass_transit_system }
+				}
+				add_building_construction = {
+					building = railroad
+					cost = 1
+						speed = 1
+				}
+			}
+			add_country_modifier = {
+				name = cooldown_building
+				duration = 1100
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 20000 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 20000
+			}
+			modifier = {
+				factor = 2
+				treasury = 40000
+			}
+			modifier = {
+				factor = 4
+				treasury = 60000
+			}
+			modifier = {
+				factor = 8
+				treasury = 100000
+			}
+			modifier = {
+				factor = 10
+				treasury = 200000
+			}
+		}
+	}
+	modern_build_defense_missile_site_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building_2 }
+		}
+		allow = {
+			has_idea_group = defence_missil_research
+			any_owned_province = {
+				NOT = { has_building = road }
+			}	
+			treasury = 1000		
+		}
+		effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						development = 50
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 50
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			
+			add_country_modifier = {
+				name = cooldown_building_2
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 5000 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { monthly_income = 150 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 5000
+			}
+			modifier = {
+				factor = 2
+				treasury = 10000
+			}
+			modifier = {
+				factor = 4
+				treasury = 15000
+			}
+			modifier = {
+				factor = 8
+				treasury = 20000
+			}
+			modifier = {
+				factor = 10
+				treasury = 40000
+			}
+			modifier = {
+				factor = 10
+				tag = INI
+			}              
+		}
+	}
+	modern_build_defense_atomic_site_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building_3 }
+		}
+		allow = {
+			has_idea_group = defence_missil_research	
+			any_owned_province = {
+				NOT = { has_building = highway }
+			}
+			treasury = 2000
+		}
+		effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						development = 50
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 50
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			add_country_modifier = {
+				name = cooldown_building_3
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 5000 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { monthly_income = 200 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 7000
+			}
+			modifier = {
+				factor = 2
+				treasury = 12000
+			}
+			modifier = {
+				factor = 4
+				treasury = 17000
+			}
+			modifier = {
+				factor = 8
+				treasury = 25000
+			}
+			modifier = {
+				factor = 10
+				treasury = 50000
+			}
+		}
+	}
+
+	modern_build_defense_missile_site_INI_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building_2 }
+			tag = INI
+		}
+		allow = {
+			has_idea_group = defence_missil_research
+			any_owned_province = {
+				NOT = { has_building = road }
+			}	
+			treasury = 1000		
+		}
+		effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						development = 50
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 50
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = road }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome }
+					}
+					add_building_construction = {
+						building = road
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			
+			add_country_modifier = {
+				name = cooldown_building_2
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 5000 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { monthly_income = 150 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 5000
+			}
+			modifier = {
+				factor = 2
+				treasury = 10000
+			}
+			modifier = {
+				factor = 4
+				treasury = 15000
+			}
+			modifier = {
+				factor = 8
+				treasury = 20000
+			}
+			modifier = {
+				factor = 10
+				treasury = 40000
+			}
+			modifier = {
+				factor = 10
+				tag = INI
+			}              
+		}
+	}
+	modern_build_defense_atomic_site_ini_decision = {
+		potential = {
+			ai = yes
+			NOT = { has_country_modifier = cooldown_building_3 }
+			tag = INI
+		}
+		allow = {
+			has_idea_group = defence_missil_research	
+			any_owned_province = {
+				NOT = { has_building = highway }
+			}
+			treasury = 2000
+		}
+		effect = {
+			if = {
+				limit = {
+					any_owned_province = {
+						development = 50
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 50
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 40
+						NOT = { development = 50 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 30
+						NOT = { development = 40 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 20
+						NOT = { development = 30 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 10
+						NOT = { development = 20 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					any_owned_province = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+				}
+				random_owned_province = {
+					limit = {
+						development = 3
+						NOT = { development = 10 }
+						NOT = { has_building = highway }
+						NOT = { has_construction = highway }
+						NOT = { has_construction = road }
+						NOT = { has_construction = railroad }
+						NOT = { has_construction = mass_transit_system }
+						NOT = { has_province_modifier = iron_dome_atom }
+					}
+					add_building_construction = {
+						building = highway
+						cost = 1
+						speed = 1
+					}
+				}
+			}
+			add_country_modifier = {
+				name = cooldown_building_3
+				duration = 180
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				num_of_loans = 3
+			}
+			modifier = {
+				factor = 0
+				NOT = { treasury = 5000 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { monthly_income = 200 }
+			}
+			modifier = {
+				factor = 1
+				treasury = 7000
+			}
+			modifier = {
+				factor = 2
+				treasury = 12000
+			}
+			modifier = {
+				factor = 4
+				treasury = 17000
+			}
+			modifier = {
+				factor = 8
+				treasury = 25000
+			}
+			modifier = {
+				factor = 10
+				treasury = 50000
+			}
+		}
+	}
+	
+	#modern_build_airport_decision = {
+	#	potential = {
+	#		ai = yes
+	#		NOT = { has_country_modifier = cooldown_building_airport }
+	#	}
+	#	allow = {
+	#		#OR = {
+	#		#	has_idea_group = missil_research
+	#		#	has_idea_group = defence_missil_research
+	#		#}
+	#		if = {
+	#			limit = {
+	#				num_of_cities = 200
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 40
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 150
+	#				NOT = { num_of_cities = 200 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 30
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 100
+	#				NOT = { num_of_cities = 150 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 20
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 10
+	#				NOT = { num_of_cities = 100 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 10
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 3
+	#				NOT = { num_of_cities = 10 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 3
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 2
+	#				NOT = { num_of_cities = 3 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 2
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				num_of_cities = 1
+	#				NOT = { num_of_cities = 2 }
+	#			}
+	#			NOT = {
+	#				calc_true_if = {
+	#					all_owned_province = {
+	#						has_building = constable
+	#					}
+	#					amount = 1
+	#				}
+	#			}
+	#		}
+	#		
+	#		treasury = 7000
+	#	}
+	#	effect = {
+	#		add_country_modifier = {
+	#			name = cooldown_building_airport
+	#			duration = 1000
+	#		}
+	#		if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 50
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 50
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 40
+	#					NOT = { development = 50 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 40
+	#					NOT = { development = 50 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 30
+	#					NOT = { development = 40 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 30
+	#					NOT = { development = 40 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 20
+	#					NOT = { development = 30 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 20
+	#					NOT = { development = 30 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 10
+	#					NOT = { development = 20 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 10
+	#					NOT = { development = 20 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#		else_if = {
+	#			limit = {
+	#				any_owned_province = {
+	#					development = 3
+	#					NOT = { development = 10 }
+	#					
+	#				NOT = { has_building = constable }
+	#				NOT = { has_construction = constable }
+	#				NOT = { has_construction = highway }
+	#				NOT = { has_construction = road }
+	#				NOT = { has_construction = railroad }
+	#				NOT = { has_construction = mass_transit_system }
+	#				}
+	#			}
+	#			random_owned_province = {
+	#				limit = {
+	#					development = 3
+	#					NOT = { development = 10 }
+	#					all_neighbor_province = {
+	#						NOT = { has_building = constable }
+	#					}
+	#					NOT = { has_building = constable }
+	#					NOT = { has_construction = constable }
+	#					NOT = { has_construction = highway }
+	#					NOT = { has_construction = road }
+	#					NOT = { has_construction = railroad }
+	#					NOT = { has_construction = mass_transit_system }
+	#				}
+	#				add_building_construction = {
+	#					building = constable
+	#					cost = 1
+	#					speed = 1
+	#				}
+	#			}
+	#		}
+	#	}
+	#	ai_will_do = {
+	#		factor = 1
+	#		modifier = {
+	#			factor = 0
+	#			num_of_loans = 3
+	#		}
+#
+	#		modifier = {
+	#			factor = 1
+	#			treasury = 5000
+	#		}
+	#		modifier = {
+	#			factor = 2
+	#			treasury = 10000
+	#		}
+	#		modifier = {
+	#			factor = 4
+	#			treasury = 15000
+	#		}
+	#		modifier = {
+	#			factor = 8
+	#			treasury = 20000
+	#		}
+	#		modifier = {
+	#			factor = 10
+	#			treasury = 25000
+	#		}
+	#	}
+	#}
+}

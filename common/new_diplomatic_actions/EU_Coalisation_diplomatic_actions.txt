@@ -1,0 +1,803 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+coalition_EU = {
+	category = alliance
+
+	alert_index = 15  
+	alert_tooltip = WANT_MAKE_BUILDING
+
+	#require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		has_opinion_modifier = { 
+			modifier = attacked_to_EU  
+			who = FROM 
+		}
+		NOT = {
+			FROM = { has_country_modifier = vote_for_coalition }
+		}
+	}
+	is_allowed = {
+		has_opinion_modifier = { 
+			modifier = attacked_to_EU  
+			who = FROM
+		}	
+		has_country_modifier = european_leader
+		#has_opinion_modifier = {
+		#	modifier = aggressive_expansion
+		#	who = FROM
+		#	value = -50
+		#}
+		
+	}
+	on_accept = {
+		FROM  = { 
+			save_global_event_target_as = EU_Coalition 
+			add_country_modifier = {
+				name = vote_for_coalition
+				duration = 3650
+			}
+			set_variable = {
+				which = vote_for_EU_positive
+				value = 0
+			}
+			set_variable = {
+				which = vote_for_EU_negetive
+				value = 0
+			}
+			set_variable = {
+				which = VETO_on_EU_Metting
+				value = 0
+			}
+		}
+		FROM = {
+			if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 40
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 40
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 39
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 39
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 38
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 38
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 37
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 37
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 36
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 36
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 35
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 35
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 34
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 34
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 33
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 33
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 33
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 33
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 32
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 32
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 31
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 31
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 30
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 30
+				}
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 29
+					} 
+				}
+				change_variable = {
+					which = NUM_of_EU value = 29
+				}	
+								
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 28
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 28
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 27
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 27
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 26
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 26
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 25
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 25
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 24
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 24
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 23
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 23
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 22
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 22
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 21
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 21
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 20
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 20
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 19
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 19
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 18
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 18
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 17
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 17
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 16
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 16
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 15
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 15
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 14
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 14
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 13
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 13
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 12
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 12
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 11
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 11
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 10
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 10
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 9
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 9
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 8
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 8
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 7
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 7
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 6
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 6
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 5
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 5
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 4
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 4
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 3
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 3
+				}	
+				
+			}
+			else_if = {
+				limit = { 
+					calc_true_if = {
+						all_country = {
+								has_country_modifier = european_union 
+							}
+					amount = 2
+					}
+				}
+				change_variable = {
+					which = NUM_of_EU value = 2
+				}	
+				
+			}
+			else = {
+				change_variable = {
+					which = NUM_of_EU value = 1
+				}					
+			}
+		}
+
+		every_country = {
+			limit = { 
+				has_country_modifier = european_union 
+				NOT = { has_country_modifier = european_leader }
+			}
+			country_event = { id = european_union_coalotion_vote.1 days = 2 }
+		}
+		every_country = {
+			limit = { has_country_modifier = european_leader  }
+			country_event = { id = european_union_coalotion_vote.2 days = 90 }
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 70 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = {
+				FROM = {
+					any_rival_country = {
+						alliance_with = FROM 
+					}	
+				} 			
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = Hostile_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 50
+			}
+		multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+	}
+
+	ai_will_do = { # this is a trigger
+		has_country_modifier = european_leader
+	}
+}
+

@@ -1,0 +1,16 @@
+#Knarr Transport Level 2
+type = transport
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+
+hull_size = 3
+base_cannons = 4
+sail_speed = 6
+#blockade = 5
+
+sprite_level = 2

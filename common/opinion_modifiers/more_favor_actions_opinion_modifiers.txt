@@ -1,0 +1,53 @@
+more_favors_action_improve_opinion_opinion_positive = {
+	opinion = 50
+	max = 100
+	yearly_decay = 5
+}
+
+more_favors_action_improve_opinion_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_remove_rival_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_request_adm_power_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_request_dip_power_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_request_mil_power_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_request_religious_power_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_request_general_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}
+
+more_favors_action_remove_guarantee_opinion_negative = {
+	opinion = -10
+	min = -50
+	yearly_decay = 5
+}

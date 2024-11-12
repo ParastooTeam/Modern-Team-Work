@@ -1,0 +1,46 @@
+namespace = honors
+
+#honors Point Warning X1
+country_event = {
+	id = honors.1
+	title = "honors.1title"
+	desc = "honors.1desc"
+	picture = HONORSX1_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "honors.1opt"
+	}
+}
+
+
+
+#honors Point Warning X2
+country_event = {
+	id = honors.2
+	title = "honors.2title"
+	desc = "honors.2desc"
+	picture = HONORSX1_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "honors.2opt"
+	}
+}
+
+#honors Point Warning X2
+country_event = {
+	id = honors.3
+	title = "honors.3title"
+	desc = "honors.3desc"
+	picture = HONORSX1_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "honors.3opt"
+	}
+
+}

@@ -1,0 +1,109 @@
+po_stop_hidrogen = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 10.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 10
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		always = yes
+	}
+	is_allowed = {
+		FROM = {
+			OR = {
+				check_variable = {
+					which = hidrogen_x1
+					value = 1
+				}
+				check_variable = {
+					which = hidrogen_x2
+					value = 1
+				}
+				check_variable = {
+					which = hidrogen_x3
+					value = 1
+				}
+				check_variable = {
+					which = hidrogen_x4
+					value = 1
+				}
+				check_variable = {
+					which = hidrogen_x5
+					value = 1
+				}
+				check_variable = {
+					which = hidrogen_x6
+					value = 1
+				}
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			set_variable = {
+				which = hidrogen_x1
+				value = 0
+			}
+			set_variable = {
+				which = hidrogen_x2
+				value = 0
+			}
+			set_variable = {
+				which = hidrogen_x3
+				value = 0
+			}
+			set_variable = {
+				which = hidrogen_x4
+				value = 0
+			}
+			set_variable = {
+				which = hidrogen_x5
+				value = 0
+			}
+			set_variable = {
+				which = hidrogen_x6
+				value = 0
+			}
+			add_country_modifier = {
+				name = "non_hidrogen_modifire_all"
+				duration = 9125
+			}
+		}
+		every_known_country = { 
+			limit = { ai = no }
+			country_event = { id = hidrogen.13 }
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+		limit = {
+			OR = {
+				any_neighbor_country = {
+					is_subject_of = FROM
+				}
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+			}
+		}
+	}
+}
+
+

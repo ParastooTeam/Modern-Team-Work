@@ -1,0 +1,542 @@
+namespace = more_favors_action_remove_guarantee_events
+
+country_event = {
+	id = more_favors_action_remove_guarantee_events.1
+	title = more_favors_action_remove_guarantee_events.EVTNAME1
+	desc = more_favors_action_remove_guarantee_events.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			event_target:more_favors_action_remove_guarantee_target = {
+				random_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						guaranteed_by = PREV
+						is_at_war = no
+						is_emperor = no
+						NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+					}
+					save_event_target_as = remove_guarantee_target_1
+				}
+				random_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						guaranteed_by = PREV
+						is_at_war = no
+						is_emperor = no
+						NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+						NOT = { tag = event_target:remove_guarantee_target_1 }
+					}
+					save_event_target_as = remove_guarantee_target_2
+				}
+				random_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						guaranteed_by = PREV
+						is_at_war = no
+						is_emperor = no
+						NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+						NOT = { tag = event_target:remove_guarantee_target_1 }
+						NOT = { tag = event_target:remove_guarantee_target_2 }
+					}
+					save_event_target_as = remove_guarantee_target_3
+				}
+				random_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						guaranteed_by = PREV
+						is_at_war = no
+						is_emperor = no
+						NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+						NOT = { tag = event_target:remove_guarantee_target_1 }
+						NOT = { tag = event_target:remove_guarantee_target_2 }
+						NOT = { tag = event_target:remove_guarantee_target_3 }
+					}
+					save_event_target_as = remove_guarantee_target_4
+				}
+				random_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						guaranteed_by = PREV
+						is_at_war = no
+						is_emperor = no
+						NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+						NOT = { tag = event_target:remove_guarantee_target_1 }
+						NOT = { tag = event_target:remove_guarantee_target_2 }
+						NOT = { tag = event_target:remove_guarantee_target_3 }
+						NOT = { tag = event_target:remove_guarantee_target_4 }
+					}
+					save_event_target_as = remove_guarantee_target_5
+				}
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT1
+
+		trigger = {
+			has_saved_event_target = remove_guarantee_target_1
+			event_target:remove_guarantee_target_1 = {
+				NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = event_target:more_favors_action_remove_guarantee_target }
+					has_guaranteed = event_target:remove_guarantee_target_1
+				}
+				set_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_1
+			}
+			every_country = {
+				limit = {
+					guaranteed_by = event_target:remove_guarantee_target_1
+				}
+				set_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_1
+			}
+		}
+		event_target:more_favors_action_remove_guarantee_target = {
+			add_truce_with = event_target:remove_guarantee_target_1
+			custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT_1
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = event_target:remove_guarantee_target_1
+				subject_type = more_favor_actions_revoked_guarantee_subject
+			}
+			event_target:remove_guarantee_target_1 = {
+				grant_independence = yes
+				event_target:more_favors_action_remove_guarantee_target = {
+					clr_country_flag = revoked_guarantee_from_@PREV
+					set_country_flag = revoked_guarantee_from_@PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_1
+				}
+				clr_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_1
+				create_guarantee = event_target:remove_guarantee_target_1
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_1
+				}
+				clr_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_1
+				event_target:remove_guarantee_target_1 = {
+					create_guarantee = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+			event_target:remove_guarantee_target_1 = {
+				save_event_target_as = remove_guarantee_target_final
+			}
+			event_target:more_favors_action_remove_guarantee_target = {
+				country_event = { id = more_favors_action_remove_guarantee_events.3 }
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT2
+
+		trigger = {
+			has_saved_event_target = remove_guarantee_target_2
+			event_target:remove_guarantee_target_2 = {
+				NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = event_target:more_favors_action_remove_guarantee_target }
+					has_guaranteed = event_target:remove_guarantee_target_2
+				}
+				set_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_2
+			}
+			every_country = {
+				limit = {
+					guaranteed_by = event_target:remove_guarantee_target_2
+				}
+				set_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_2
+			}
+		}
+		event_target:more_favors_action_remove_guarantee_target = {
+			add_truce_with = event_target:remove_guarantee_target_2
+			custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT_2
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = event_target:remove_guarantee_target_2
+				subject_type = more_favor_actions_revoked_guarantee_subject
+			}
+			event_target:remove_guarantee_target_2 = {
+				grant_independence = yes
+				event_target:more_favors_action_remove_guarantee_target = {
+					clr_country_flag = revoked_guarantee_from_@PREV
+					set_country_flag = revoked_guarantee_from_@PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_2
+				}
+				clr_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_2
+				create_guarantee = event_target:remove_guarantee_target_2
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_2
+				}
+				clr_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_2
+				event_target:remove_guarantee_target_2 = {
+					create_guarantee = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+			event_target:remove_guarantee_target_2 = {
+				save_event_target_as = remove_guarantee_target_final
+			}
+			event_target:more_favors_action_remove_guarantee_target = {
+				country_event = { id = more_favors_action_remove_guarantee_events.3 }
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT3
+
+		trigger = {
+			has_saved_event_target = remove_guarantee_target_3
+			event_target:remove_guarantee_target_3 = {
+				NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = event_target:more_favors_action_remove_guarantee_target }
+					has_guaranteed = event_target:remove_guarantee_target_3
+				}
+				set_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_3
+			}
+			every_country = {
+				limit = {
+					guaranteed_by = event_target:remove_guarantee_target_3
+				}
+				set_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_3
+			}
+		}
+		event_target:more_favors_action_remove_guarantee_target = {
+			add_truce_with = event_target:remove_guarantee_target_3
+			custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT_3
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = event_target:remove_guarantee_target_3
+				subject_type = more_favor_actions_revoked_guarantee_subject
+			}
+			event_target:remove_guarantee_target_3 = {
+				grant_independence = yes
+				event_target:more_favors_action_remove_guarantee_target = {
+					clr_country_flag = revoked_guarantee_from_@PREV
+					set_country_flag = revoked_guarantee_from_@PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_3
+				}
+				clr_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_3
+				create_guarantee = event_target:remove_guarantee_target_3
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_3
+				}
+				clr_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_3
+				event_target:remove_guarantee_target_3 = {
+					create_guarantee = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+			event_target:remove_guarantee_target_3 = {
+				save_event_target_as = remove_guarantee_target_final
+			}
+			event_target:more_favors_action_remove_guarantee_target = {
+				country_event = { id = more_favors_action_remove_guarantee_events.3 }
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT4
+
+		trigger = {
+			has_saved_event_target = remove_guarantee_target_4
+			event_target:remove_guarantee_target_4 = {
+				NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = event_target:more_favors_action_remove_guarantee_target }
+					has_guaranteed = event_target:remove_guarantee_target_4
+				}
+				set_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_4
+			}
+			every_country = {
+				limit = {
+					guaranteed_by = event_target:remove_guarantee_target_4
+				}
+				set_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_4
+			}
+		}
+		event_target:more_favors_action_remove_guarantee_target = {
+			add_truce_with = event_target:remove_guarantee_target_4
+			custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT_4
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = event_target:remove_guarantee_target_4
+				subject_type = more_favor_actions_revoked_guarantee_subject
+			}
+			event_target:remove_guarantee_target_4 = {
+				grant_independence = yes
+				event_target:more_favors_action_remove_guarantee_target = {
+					clr_country_flag = revoked_guarantee_from_@PREV
+					set_country_flag = revoked_guarantee_from_@PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_4
+				}
+				clr_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_4
+				create_guarantee = event_target:remove_guarantee_target_4
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_4
+				}
+				clr_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_4
+				event_target:remove_guarantee_target_4 = {
+					create_guarantee = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+			event_target:remove_guarantee_target_4 = {
+				save_event_target_as = remove_guarantee_target_final
+			}
+			event_target:more_favors_action_remove_guarantee_target = {
+				country_event = { id = more_favors_action_remove_guarantee_events.3 }
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT5
+
+		trigger = {
+			has_saved_event_target = remove_guarantee_target_5
+			event_target:remove_guarantee_target_5 = {
+				NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		hidden_effect = {
+			every_country = {
+				limit = {
+					NOT = { tag = event_target:more_favors_action_remove_guarantee_target }
+					has_guaranteed = event_target:remove_guarantee_target_5
+				}
+				set_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_5
+			}
+			every_country = {
+				limit = {
+					guaranteed_by = event_target:remove_guarantee_target_5
+				}
+				set_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_5
+			}
+		}
+		event_target:more_favors_action_remove_guarantee_target = {
+			add_truce_with = event_target:remove_guarantee_target_5
+			custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT_5
+		}
+		hidden_effect = {
+			create_subject = {
+				subject = event_target:remove_guarantee_target_5
+				subject_type = more_favor_actions_revoked_guarantee_subject
+			}
+			event_target:remove_guarantee_target_5 = {
+				grant_independence = yes
+				event_target:more_favors_action_remove_guarantee_target = {
+					clr_country_flag = revoked_guarantee_from_@PREV
+					set_country_flag = revoked_guarantee_from_@PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_5
+				}
+				clr_country_flag = restore_guarantee_of_@event_target:remove_guarantee_target_5
+				create_guarantee = event_target:remove_guarantee_target_5
+			}
+			every_country = {
+				limit = {
+					has_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_5
+				}
+				clr_country_flag = restore_guarantee_from_@event_target:remove_guarantee_target_5
+				event_target:remove_guarantee_target_5 = {
+					create_guarantee = PREV
+				}
+			}
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+			event_target:remove_guarantee_target_5 = {
+				save_event_target_as = remove_guarantee_target_final
+			}
+			event_target:more_favors_action_remove_guarantee_target = {
+				country_event = { id = more_favors_action_remove_guarantee_events.3 }
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT6
+
+		trigger = {
+			event_target:more_favors_action_remove_guarantee_target = {
+				any_country = {
+					NOT = { tag = ROOT }
+					guaranteed_by = PREV
+					is_at_war = no
+					is_emperor = no
+					NOT = { tag = event_target:remove_guarantee_target_1 }
+					NOT = { tag = event_target:remove_guarantee_target_2 }
+					NOT = { tag = event_target:remove_guarantee_target_3 }
+					NOT = { tag = event_target:remove_guarantee_target_4 }
+					NOT = { tag = event_target:remove_guarantee_target_5 }
+					NOT = { has_country_flag = remove_guarantee_target_rejected_@ROOT }
+				}
+			}
+		}
+
+		ai_chance = { factor = 0 }
+
+		country_event = { id = more_favors_action_remove_guarantee_events.2 }
+		hidden_effect = {
+			every_country = {
+				limit = {
+					OR = {
+						tag = event_target:remove_guarantee_target_1
+						tag = event_target:remove_guarantee_target_2
+						tag = event_target:remove_guarantee_target_3
+						tag = event_target:remove_guarantee_target_4
+						tag = event_target:remove_guarantee_target_5
+					}
+				}
+				set_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+		}
+	}
+
+	option = {
+		name = more_favors_action_remove_guarantee_events1.EVTOPT7
+
+		ai_chance = { factor = 100 }
+
+		hidden_effect = {
+			event_target:more_favors_action_remove_guarantee_target = {
+				ROOT = { add_favors = { who = PREV amount = 50 } }
+			}
+			remove_country_modifier = more_favors_action_remove_guarantee_used_modifier
+			set_variable = { which = more_favors_action_remove_guarantee_year value = 0 }
+			set_variable = { which = more_favors_action_remove_guarantee_month value = 0 }
+			every_country = {
+				limit = {
+					has_country_flag = remove_guarantee_target_rejected_@ROOT
+				}
+				clr_country_flag = remove_guarantee_target_rejected_@ROOT
+			}
+		}
+	}
+}
+
+country_event = {
+	id = more_favors_action_remove_guarantee_events.2
+	title = more_favors_action_remove_guarantee_events.EVTNAME1
+	desc = more_favors_action_remove_guarantee_events.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+	option = {
+		name = more_favors_action_remove_guarantee_events2.EVTOPT1
+
+		ai_chance = { factor = 100 }
+
+		country_event = { id = more_favors_action_remove_guarantee_events.1 }
+	}
+}
+
+country_event = {
+	id = more_favors_action_remove_guarantee_events.3
+	title = more_favors_action_remove_guarantee_events.EVTNAME3
+	desc = more_favors_action_remove_guarantee_events.EVTDESC3
+	picture = DIPLOMACY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = more_favors_action_remove_guarantee_events3.EVTOPT1
+
+		ai_chance = { factor = 100 }
+
+		custom_tooltip = MORE_FAVOR_ACTIONS_REMOVE_GUARANTEE_TT
+	}
+}

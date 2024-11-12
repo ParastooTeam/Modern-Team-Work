@@ -1,0 +1,18 @@
+government = republic
+add_government_reform = free_city
+capital = 3898
+primary_culture = castillian
+religion = secularism
+add_accepted_culture = sicilian
+technology_group = western
+2019.5.30 = {
+	monarch = {
+		name = "Felipe VI"
+		dynasty = "de Bourbon"
+		birth_date = 1938.1.5
+		adm = 1
+		dip = 5
+		mil = 4
+		religion = catholic
+	}
+}

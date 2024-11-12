@@ -1,0 +1,67 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 50 110  110 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	gaelic_galloglaigh
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Ceretic #0" = 10
+	"Cinuit #0" = 10
+	"Dumnagual #0" = 30
+	"Clinoch #0" = 10
+	"Tutagual #0" = 10
+	"Riderch #0" = 20
+	"Neithon #0" = 10
+	"Beli #0" = 20
+	"Eugein #0" = 20
+	"Guret #0" = 10
+	"Elfin #0" = 10
+	"Teudebur #0" = 10
+	"Rotri #0" = 10
+	"Artgal #0" = 10
+}
+
+leader_names = {
+        Gul Oer Rheged Hen Taliesin Lydanwyn Guletic "map Beli" Hael Coluim
+}
+
+ship_names = {
+	Aedh
+	Baedan
+	Colman
+	Donal
+	Eocha Eogan 
+	Fergal Fergus
+	Niall
+	Omagh
+	Strabane Suibne
+}
+
+
+
+

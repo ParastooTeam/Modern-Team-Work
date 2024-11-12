@@ -1,0 +1,16 @@
+#Two-Decker
+#Heavy ship Level 5
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 244
+base_cannons = 270
+sail_speed = 8
+
+blockade = 30
+
+sprite_level = 1

@@ -1,0 +1,379 @@
+    dont_take_tax_panama =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		
+		is_visible = {	
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			OR = {
+				has_country_modifier = took_panama_canal
+				AND = {
+					NOT = {	has_country_modifier = captured_panama_canal }
+					owns_or_subject_of = 835
+				}
+			}
+			FROM = { NOT = { has_country_flag = dont_take_tax_panama } }
+		}
+		is_allowed = { 
+			#always = no
+		}
+		on_accept = {
+			FROM = { set_country_flag = dont_take_tax_panama }
+		}
+		
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+			
+		}
+	}
+	take_tax_panama =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			OR = {
+				has_country_modifier = took_panama_canal
+				AND = {
+					NOT = {	has_country_modifier = captured_panama_canal }
+					owns_or_subject_of = 835
+				}
+			}
+			FROM = { has_country_flag = dont_take_tax_panama }
+		}
+		is_allowed = { 
+			#always = no
+		}
+		on_accept = {
+			FROM = { clr_country_flag = dont_take_tax_panama }
+		}
+		
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+		}
+	}
+	dont_take_tax_suez =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy	
+			ai = no	
+			FROM = { ai = no }
+			OR = {
+				has_country_modifier = took_suez_canal
+				AND = {
+					NOT = {	has_country_modifier = captured_suez_canal }
+					owns_or_subject_of = 4438
+				}
+			}
+			FROM = { NOT = { has_country_flag = dont_take_tax_suez } }
+		}
+		is_allowed = { 
+			#always = no	
+		}
+		on_accept = {
+			FROM = { set_country_flag = dont_take_tax_suez }
+		}
+		
+		ai_will_do = { 
+			always = no 
+		}
+	}
+	take_tax_suez =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		is_visible = {	
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			OR = {
+				has_country_modifier = took_suez_canal
+				AND = {
+					NOT = {	has_country_modifier = captured_suez_canal }
+					owns_or_subject_of = 4438
+				}
+			}
+			FROM = { has_country_flag = dont_take_tax_suez }
+		}
+		is_allowed = { 
+			#always = no
+		}
+		on_accept = {
+			FROM = { clr_country_flag = dont_take_tax_suez }
+		}	
+		ai_will_do = { 
+			always = no 
+			
+		}
+	}
+#####################################################################
+
+	ziro_tax_suez =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		is_visible = {	
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			owns_or_subject_of = 4438
+			FROM = { has_country_flag = dont_take_tax_suez }
+		}
+		is_allowed = { 
+			FROM = {
+				OR = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					has_country_modifier = canal_tax_suez_19
+					has_country_modifier = canal_tax_suez_20
+					has_country_modifier = canal_tax_suez_21
+					has_country_modifier = canal_tax_suez_22
+				}
+			}
+		}
+		on_accept = {
+			FROM = { 
+				remove_country_modifier =canal_tax_suez
+				remove_country_modifier =canal_tax_suez_2
+				remove_country_modifier =canal_tax_suez_3
+				remove_country_modifier =canal_tax_suez_4
+				remove_country_modifier =canal_tax_suez_5
+				remove_country_modifier =canal_tax_suez_6
+				remove_country_modifier =canal_tax_suez_7
+				remove_country_modifier =canal_tax_suez_8
+				remove_country_modifier =canal_tax_suez_9
+				remove_country_modifier =canal_tax_suez_10
+				remove_country_modifier =canal_tax_suez_11
+				remove_country_modifier =canal_tax_suez_12
+				remove_country_modifier =canal_tax_suez_13
+				remove_country_modifier =canal_tax_suez_14
+				remove_country_modifier =canal_tax_suez_15
+				remove_country_modifier =canal_tax_suez_16
+				remove_country_modifier =canal_tax_suez_17
+				remove_country_modifier =canal_tax_suez_18
+				remove_country_modifier =canal_tax_suez_19
+				remove_country_modifier =canal_tax_suez_20
+				remove_country_modifier =canal_tax_suez_21
+				remove_country_modifier =canal_tax_suez_22
+				remove_country_modifier =canal_tax_suez_23
+			}
+		}	
+		ai_will_do = { 
+			always = no 
+			
+		}
+	}
+
+	ziro_tax_panama =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = SEND_TROOPS
+		
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			owns_or_subject_of = 835
+			FROM = { has_country_flag = dont_take_tax_panama }
+		}
+		is_allowed = { 
+			FROM = {
+				OR = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					has_country_modifier = canal_tax_panama_19
+					has_country_modifier = canal_tax_panama_20
+					has_country_modifier = canal_tax_panama_21
+					has_country_modifier = canal_tax_panama_22
+					has_country_modifier = canal_tax_panama_23
+				}
+			}
+		}
+		on_accept = {
+			FROM = { 
+				remove_country_modifier =canal_tax_panama
+				remove_country_modifier =canal_tax_panama_2
+				remove_country_modifier =canal_tax_panama_3
+				remove_country_modifier =canal_tax_panama_4
+				remove_country_modifier =canal_tax_panama_5
+				remove_country_modifier =canal_tax_panama_6
+				remove_country_modifier =canal_tax_panama_7
+				remove_country_modifier =canal_tax_panama_8
+				remove_country_modifier =canal_tax_panama_9
+				remove_country_modifier =canal_tax_panama_10
+				remove_country_modifier =canal_tax_panama_11
+				remove_country_modifier =canal_tax_panama_12
+				remove_country_modifier =canal_tax_panama_13
+				remove_country_modifier =canal_tax_panama_14
+				remove_country_modifier =canal_tax_panama_15
+				remove_country_modifier =canal_tax_panama_16
+				remove_country_modifier =canal_tax_panama_17
+				remove_country_modifier =canal_tax_panama_18
+				remove_country_modifier =canal_tax_panama_19
+				remove_country_modifier =canal_tax_panama_20
+				remove_country_modifier =canal_tax_panama_21
+				remove_country_modifier =canal_tax_panama_22
+				remove_country_modifier =canal_tax_panama_23
+			}
+		}
+		
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+		}
+	}
+
+	capture_suez =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = CAPTUR_SUEZ
+		
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			owns_or_subject_of = 4438
+			NOT = { has_country_modifier = captured_suez_canal }
+		}
+		is_allowed = { 
+			#always = yes
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = captured_suez_canal
+				duration = 18250
+			}
+			FROM = {
+				add_country_modifier = {
+					name = took_suez_canal
+					duration = 18250
+				}
+			}
+		}
+		
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+		}
+	}
+	capture_panama =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = CAPTURE_PANAMA
+		
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			owns_or_subject_of = 835
+			NOT = { has_country_modifier = captured_panama_canal }
+		}
+		is_allowed = { 
+			#always = yes
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = captured_panama_canal
+				duration = 18250
+			}
+			FROM = {
+				add_country_modifier = {
+					name = took_panama_canal
+					duration = 18250
+				}
+			}
+		}
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+		}
+	}
+	capture_volga =  {
+		category = economy
+		require_acceptance = no
+		alert_index = 37  
+		alert_tooltip = CAPTUR_VOLGA
+		
+		is_visible = {
+			has_country_flag = opened_trade_diplomacy
+			ai = no	
+			FROM = { ai = no }
+			owns_or_subject_of = 1971
+			NOT = { has_country_modifier = captured_volga_canal }
+		}
+		is_allowed = { 
+			#always = yes
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = captured_volga_canal
+				duration = 18250
+			}
+			FROM = {
+				add_country_modifier = {
+					name = took_volga_canal
+					duration = 18250
+				}
+			}
+		}
+		
+		ai_acceptance = {			
+		}
+		ai_will_do = { 
+			always = no 
+		}
+	}

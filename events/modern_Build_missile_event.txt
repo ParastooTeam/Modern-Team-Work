@@ -1,0 +1,353 @@
+##namespace = build_missile
+##
+###build_missile Point admin power X1
+##country_event = {
+##	id = build_missile.1
+##	title = "build_missile.1title"
+##	desc = "build_missile.1desc"
+##	picture = ATOMIC_DEFENCE_eventPicture
+##
+##	
+##	is_triggered_only = yes
+##	
+##	option = {
+##		name = "build_missile.1opt"
+##		trigger = {
+##			years_of_income = 0.1
+##		}
+##		add_years_of_income = -0.10
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##			which = missil_50
+##			value = 1
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##			which = missil_50
+##			value = 1
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##		
+##		
+##	}
+##	option = {
+##		name = "build_missile.2opt"
+##		trigger = {
+##			years_of_income = 0.2
+##		}
+##		add_years_of_income = -0.20
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 2
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 2
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.3opt"
+##		trigger = {
+##			years_of_income = 0.3
+##		}
+##		add_years_of_income = -0.30
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 3
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 3
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.4opt"
+##		add_years_of_income = -0.40
+##		trigger = {
+##			years_of_income = 0.4
+##		}
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 4
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 4
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.5opt"
+##		add_years_of_income = -0.50
+##		trigger = {
+##			years_of_income = 0.5
+##		}
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 5
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 5
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.6opt"
+##		add_years_of_income = -0.60
+##		trigger = {
+##			years_of_income = 0.6
+##		}
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 6
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 6
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.7opt"
+##		trigger = {
+##			years_of_income = 0.7
+##		}
+##		add_years_of_income = -0.70
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 7
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 7
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.8opt"
+##		trigger = {
+##			years_of_income = 0.8
+##		}
+##		add_years_of_income = -0.80
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 8
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 8
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.9opt"
+##		trigger = {
+##			years_of_income = 0.9
+##		}
+##		add_years_of_income = -0.90
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 9
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 9
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.10opt"
+##		trigger = {
+##			years_of_income = 1.0
+##		}
+##		add_years_of_income = -1.0
+##		if = {
+##			limit = { 
+##				has_country_flag = missile_state_50
+##				OR = {
+##					has_country_flag = missile_state_50
+##					check_variable = {
+##						which = missil_50
+##						value = 1
+##					}
+##				}
+##			}
+##			change_variable = {
+##				which = missil_50
+##				value = 10
+##			}
+##		}
+##		if = {
+##			limit = { NOT = { has_country_flag = missile_state_50 } }
+##			set_country_flag = missile_state_50
+##			
+##			set_variable = {
+##				which = missil_50
+##				value = 10
+##			}
+##		}
+##		custom_tooltip = missile_500_tooltip
+##	}
+##	option = {
+##		name = "build_missile.cancel"
+##	}
+##}
+
+
+
+
+

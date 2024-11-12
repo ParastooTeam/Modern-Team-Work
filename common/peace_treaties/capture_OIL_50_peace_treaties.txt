@@ -1,0 +1,311 @@
+po_capture_oils_50 = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 1.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 50.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 50
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	is_visible = {
+		FROM = { 
+			oil = 1
+			check_variable = {
+				which = oil_production
+				value = 1
+			}
+		}		
+	}
+	is_allowed = {
+		FROM = { 
+			check_variable = {
+				which = oil_production
+				value = 1
+			}
+		}
+	}
+	effect = {
+		if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 90
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 90 }
+			change_variable = { which = oil_var value = 90 }
+			FROM = { change_variable = { which = oil_var value = 90 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 80
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 80 }
+			change_variable = { which = oil_var value = 80 }
+			FROM = { change_variable = { which = oil_var value = 80 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 70
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 70 }
+			change_variable = { which = oil_var value = 70 }
+			FROM = { change_variable = { which = oil_var value = 70 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 60
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 60 }
+			change_variable = { which = oil_var value = 60 }
+			FROM = { change_variable = { which = oil_var value = 60 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 50
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 50 }
+			change_variable = { which = oil_var value = 50 }
+			FROM = { change_variable = { which = oil_var value = 50 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 40
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 40 }
+			change_variable = { which = oil_var value = 40 }
+			FROM = { change_variable = { which = oil_var value = 40 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 30
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 30 }
+			change_variable = { which = oil_var value = 30 }
+			FROM = { change_variable = { which = oil_var value = 30 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 20
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 20 }
+			change_variable = { which = oil_var value = 20 }
+			FROM = { change_variable = { which = oil_var value = 20 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 10
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 10 }
+			change_variable = { which = oil_var value = 10 }
+			FROM = { change_variable = { which = oil_var value = 10 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 9
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 9 }
+			change_variable = { which = oil_var value = 9 }
+			FROM = { change_variable = { which = oil_var value = 9 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 8
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 8 }
+			change_variable = { which = oil_var value = 8 }
+			FROM = { change_variable = { which = oil_var value = 8 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 7
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 7 }
+			change_variable = { which = oil_var value = 7 }
+			FROM = { change_variable = { which = oil_var value = 7 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 6
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 6 }
+			change_variable = { which = oil_var value = 6 }
+			FROM = { change_variable = { which = oil_var value = 6 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 5
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 5 }
+			change_variable = { which = oil_var value = 5 }
+			FROM = { change_variable = { which = oil_var value = 5 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 4
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 4 }
+			change_variable = { which = oil_var value = 4 }
+			FROM = { change_variable = { which = oil_var value = 4 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 3
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 3 }
+			change_variable = { which = oil_var value = 3 }
+			FROM = { change_variable = { which = oil_var value = 3 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 2
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 2 }
+			change_variable = { which = oil_var value = 2 }
+			FROM = { change_variable = { which = oil_var value = 2 } }
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					check_variable = {
+						which = oil_production
+						value = 1
+					}
+				}
+			}
+			change_variable = { which = oil_production value = 1 }
+			change_variable = { which = oil_var value = 1 }
+			FROM = { change_variable = { which = oil_var value = 1 } }
+		}
+		FROM = { 
+			set_variable = {
+				which = oil_production
+				value = 0
+			}
+			every_owned_province = {
+				limit = {
+					trade_goods = oil
+				}
+				add_province_modifier = {
+					name = oil_capture_100
+					duration = 5475
+				}	
+			}
+			country_event = {
+				id = set_variable.42
+				days = 5475
+			}
+		}
+		country_event = {
+			id = set_variable.41
+			days = 5475
+		}
+		country_event = {
+			id = oil.1
+			days = 2
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 40
+		}
+	}
+}
+
+
+
+

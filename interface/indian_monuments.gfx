@@ -1,0 +1,358 @@
+spriteTypes = {
+
+		spriteType = {
+		name = "GFX_great_project_kashi_vishwanath_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_kashi_vishwanath_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_pashupatinath_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_pashupatinath_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_mathura_vrindavan_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_mathura_vrindavan_complex.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_kedarnath_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_kedarnath_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_thanjai_periya_kovil"	
+		texturefile = "gfx//interface//great_projects//great_project_thanjai_periya_kovil.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_somnath_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_somnath_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_trimbakeshwar_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_trimbakeshwar_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_mahakaleshwar_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_mahakaleshwar_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_mt_kailash"	
+		texturefile = "gfx//interface//great_projects//great_project_mt_kailash.dds"
+	}
+		
+		spriteType = {
+		name = "GFX_great_project_meenakshi_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_meenakshi_temple.dds"
+	}
+		
+		spriteType = {
+		name = "GFX_great_project_kali_ghat_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_kali_ghat_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_dhakeshwari_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_dhakeshwari_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_kamakkha_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_kamakkha_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_shivharkaray_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_shivharkaray_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_lava_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_lava_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_puri_temple_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_puri_temple_complex.dds"
+	}
+		
+		spriteType = {
+		name = "GFX_great_project_ajanta_ellora_caves"	
+		texturefile = "gfx//interface//great_projects//great_project_ajanta_ellora_caves.dds"
+	}
+		
+		spriteType = {
+		name = "GFX_great_project_undavalli_caves"	
+		texturefile = "gfx//interface//great_projects//great_project_undavalli_caves.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_takht_i_bahi"	
+		texturefile = "gfx//interface//great_projects//great_project_takht_i_bahi.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_sanchi_stupa"	
+		texturefile = "gfx//interface//great_projects//great_project_sanchi_stupa.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_mahabodhi_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_mahabodhi_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_dwarkadhish_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_dwarkadhish_temple.dds"
+	}
+
+		spriteType = {
+		name = "GFX_great_project_ram_temple"	
+		texturefile = "gfx//interface//great_projects//great_project_ram_temple.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_hajo_temple_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_hajo_temple_complex.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_satras_temple_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_satras_temple_complex.dds"
+	}
+
+		spriteType = {
+		name = "GFX_great_project_tirupati_tirumala_temple_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_tirupati_tirumala_temple_complex.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_nalanda_university"	
+		texturefile = "gfx//interface//great_projects//great_project_nalanda_university.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_takshashila_university"	
+		texturefile = "gfx//interface//great_projects//great_project_takshashila_university.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_iron_pillar"	
+		texturefile = "gfx//interface//great_projects//great_project_iron_pillar.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_babri_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_babri_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_cheraman_jumma_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_cheraman_jumma_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_jama_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_jama_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_nizamuddin_dargah"	
+		texturefile = "gfx//interface//great_projects//great_project_nizamuddin_dargah.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_haji_ali_dargah"	
+		texturefile = "gfx//interface//great_projects//great_project_haji_ali_dargah.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_makkah_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_makkah_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_jamia_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_jamia_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_badshahi_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_badshahi_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_imamabara_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_imamabara_complex.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_shah_jahan_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_shah_jahan_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_mahabat_khan_masjid"	
+		texturefile = "gfx//interface//great_projects//great_project_mahabat_khan_masjid.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_bagherghat_masjid_complex"	
+		texturefile = "gfx//interface//great_projects//great_project_bagherghat_masjid_complex.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_paradesi_synagogue"	
+		texturefile = "gfx//interface//great_projects//great_project_paradesi_synagogue.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_iranshah_atash_behram"	
+		texturefile = "gfx//interface//great_projects//great_project_iranshah_atash_behram.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_basilica_bom_jesus"	
+		texturefile = "gfx//interface//great_projects//great_project_basilica_bom_jesus.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_malabar_church"	
+		texturefile = "gfx//interface//great_projects//great_project_malabar_church.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_charminar"	
+		texturefile = "gfx//interface//great_projects//great_project_charminar.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_golconda_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_golconda_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_bidar_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_bidar_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_lal_kila"	
+		texturefile = "gfx//interface//great_projects//great_project_lal_kila.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_garhwal_garh"	
+		texturefile = "gfx//interface//great_projects//great_project_garhwal_garh.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_fort_williams"	
+		texturefile = "gfx//interface//great_projects//great_project_fort_williams.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_st_george_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_st_george_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_hampi"	
+		texturefile = "gfx//interface//great_projects//great_project_hampi.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_thanjavur_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_thanjavur_palace.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_tamakkum_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_tamakkum_palace.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_thevally_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_thevally_palace.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_koyikkal_palace"	
+		texturefile = "gfx//interface//great_projects//great_project_koyikkal_palace.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_sindhudurg_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_sindhudurg_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_shanivarvada"	
+		texturefile = "gfx//interface//great_projects//great_project_shanivarvada.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_kaiserbagh"	
+		texturefile = "gfx//interface//great_projects//great_project_kaiserbagh.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_motijheel"	
+		texturefile = "gfx//interface//great_projects//great_project_motijheel.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_champaner"	
+		texturefile = "gfx//interface//great_projects//great_project_champaner.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_diu_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_diu_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_kumbhalgarh_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_kumbhalgarh_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_jaipur_city"	
+		texturefile = "gfx//interface//great_projects//great_project_jaipur_city.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_udaipur_city"	
+		texturefile = "gfx//interface//great_projects//great_project_udaipur_city.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_sonar_qila"	
+		texturefile = "gfx//interface//great_projects//great_project_sonar_qila.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_gwalior_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_gwalior_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_bala_hissar_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_bala_hissar_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_lahore_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_lahore_fort.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_great_project_leh_fort"	
+		texturefile = "gfx//interface//great_projects//great_project_leh_fort.dds"
+	}
+	
+}

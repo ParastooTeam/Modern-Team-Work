@@ -1,0 +1,10 @@
+#Chebeck Galley Level 9
+type = galley
+
+hull_size = 26
+base_cannons = 61
+sail_speed = 13
+
+blockade = 11
+
+sprite_level = 1

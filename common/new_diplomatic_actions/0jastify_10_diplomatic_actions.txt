@@ -1,0 +1,253 @@
+justify_for_attack = {
+	category = influence
+	require_acceptance = no
+	is_visible = { 
+		if = {
+			limit = { ai = yes }
+			NOT = { 
+				has_casus_belli = {
+					type = cb_justifyed
+					target = FROM
+				}	
+			}
+			NOT = { alliance_with = FROM }
+			OR = {
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_rivalry } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_hostile } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_threatened } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_outraged } }
+			}
+		}
+		NOT = { is_subject_of_type = vassal }
+		NOT = { is_subject_of_type = faction_member }
+		NOT = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = justify_for_attack_1
+				}
+			}
+		}
+		NOT = {
+			FROM = {
+				has_opinion_modifier = {
+					who = ROOT
+					modifier = justify_for_attack
+				}
+			}
+		}
+	}
+	is_allowed = {
+		if = {
+			limit = {
+				ai = no
+			}
+			dip_power = 50
+		}
+		NOT = { alliance_with = FROM }
+		if = {
+			limit = { ai = yes }
+			OR = {
+				FROM = { NOT = { overlord_of = ROOT } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_rivalry } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_hostile } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_threatened } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_outraged } }
+			}
+		}
+	}
+	on_accept = {
+		if = {
+			limit = {
+				ai = no
+			}
+			add_dip_power = -50
+		}
+		FROM = { add_opinion = { who = ROOT  modifier = justify_for_attack } }
+		FROM = { add_opinion = { who = ROOT  modifier = justify_for_attack_1 } }
+		ROOT = { add_opinion = { who = FROM  modifier = justify_for_attack_2 } }
+		ROOT = { add_opinion = { who = FROM  modifier = justify_for_attack_3 } }
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						FROM = { ai = no }
+						ai = no
+					}
+					AND = {
+						NOT = { great_power_rank = 10 }
+					}
+				}
+			}
+			FROM = { country_event = { id = great_power_know.3 } }
+		}
+		if = {
+			limit = {
+				ai = no
+			}
+			country_event = { id = great_power_know.5 days = 3650 }
+		}
+		if = {
+			limit = {
+				OR = {
+					AND = {
+						ai = no
+						FROM = {
+							overlord = {
+								ai = no
+							}
+						}
+					}
+					AND = {
+						NOT = { great_power_rank = 10 }
+					}
+				}
+			}
+			FROM = {
+				overlord = {
+					country_event = { id = great_power_know.6 }
+				}
+			}
+		}
+	}
+	ai_will_do = {  
+		OR = {
+			army_strength = {
+				who = FROM
+				value = 1.1
+			}
+			any_ally = {
+				army_strength = {
+					who = FROM
+					value = 1.1
+				}
+			}
+		}
+	}
+}
+remove_justify_for_attack = {
+	category = influence
+	require_acceptance = no
+	is_visible = { 
+		if = {
+			limit = { ai = yes }
+			NOT = {
+				army_strength = {
+					who = FROM
+					value = 0.9
+				}
+			}
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = FROM
+						value = 0.9
+					}
+				}
+			}
+			OR = {
+				alliance_with = FROM
+				overlord_of = FROM
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_friendly } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_neutral } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_overlord } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_loyal } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_allied } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_protective } }
+			}
+		}
+		FROM = {
+			has_opinion_modifier = {
+				who = ROOT
+				modifier = justify_for_attack_1
+			}
+		}
+		
+		
+	}
+	is_allowed = {
+		if = {
+			limit = { ai = yes }
+			OR = {
+				alliance_with = FROM
+				overlord_of = FROM
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_friendly } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_neutral } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_overlord } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_loyal } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_allied } }
+				ROOT = { ai_attitude = { who = FROM attitude = attitude_protective } }
+			}
+		}
+	}
+	on_accept = {
+		if = {
+			limit = { FROM = { ai = no } }
+			FROM = { country_event = { id = great_power_know.4 } }
+		}
+		remove_casus_belli = {
+			type = cb_justifyed
+			target = FROM
+		}
+		if = {
+			limit = {
+				ROOT = {
+					has_opinion_modifier = {
+						who = FROM
+						modifier = justify_for_attack_3
+					}
+				}
+			}
+			ROOT = {
+				remove_opinion = {
+					who = FROM
+					modifier = justify_for_attack_2
+				}
+				remove_opinion = {
+					who = FROM
+					modifier = justify_for_attack_3
+				}
+				
+			}
+			FROM = {
+				remove_opinion = {
+					who = ROOT
+					modifier = justify_for_attack
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = justify_for_attack_1
+				}
+			}
+		}
+		else = {
+			FROM = {
+				remove_opinion = {
+					who = ROOT
+					modifier = justify_for_attack
+				}
+				remove_opinion = {
+					who = ROOT
+					modifier = justify_for_attack_1
+				}
+			}
+		}
+	}
+	ai_will_do = { 
+		
+			NOT = {
+				army_strength = {
+					who = FROM
+					value = 0.9
+				}
+			}
+			NOT = {
+				any_ally = {
+					army_strength = {
+						who = FROM
+						value = 0.9
+					}
+				}
+			}		
+	}
+}

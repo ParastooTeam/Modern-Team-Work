@@ -1,0 +1,90 @@
+namespace = great_power_know
+
+#great_power_know Point admin power X1
+country_event = {
+	id = great_power_know.1
+	title = "great_power_know.1title"
+	desc = "great_power_know.1desc"
+	picture = military_base_know_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+#great_power_know Point admin power X1
+country_event = {
+	id = great_power_know.2
+	title = "great_power_know.2title"
+	desc = "great_power_know.2desc"
+	picture = faction_member_know_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+country_event = {
+	id = great_power_know.3
+	title = "great_power_know.3title"
+	desc = "great_power_know.3desc"
+	picture = justify_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+country_event = {
+	id = great_power_know.4
+	title = "great_power_know.4title"
+	desc = "great_power_know.4desc"
+	picture = retreat_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+country_event = {
+	id = great_power_know.5
+	title = "great_power_know.5title"
+	desc = "great_power_know.5desc"
+	picture = justify_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+country_event = {
+	id = great_power_know.6
+	title = "great_power_know.6title"
+	desc = "great_power_know.6desc"
+	picture = justify_overlord_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+country_event = {
+	id = great_power_know.7
+	title = "great_power_know.7title"
+	desc = "great_power_know.7desc"
+	picture = justify_overlord_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "great_power_know.1opt"
+	}
+}
+
+

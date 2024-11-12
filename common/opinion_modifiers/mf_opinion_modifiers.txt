@@ -1,0 +1,29 @@
+egy_opinion_caliph_relations = {
+	opinion = 30
+	years = 30
+	yearly_decay = 1
+}
+
+orthodoxy_denied = { 
+	
+	opinion = -30
+	years = 15
+	yearly_decay = 2
+	
+ }
+
+ started_war_to_force_abbdication = { 
+	opinion = -60
+	years = 15
+	yearly_decay = 2
+	
+ }
+ wanted_usurp_throne = { 
+	opinion = -30
+	years = 15
+	yearly_decay = 2
+ }
+ 
+ ###########################################################
+
+ 

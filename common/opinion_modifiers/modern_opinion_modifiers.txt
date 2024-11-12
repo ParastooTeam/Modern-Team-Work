@@ -1,0 +1,627 @@
+buy_oil_opinion_100 = {
+	opinion = 25
+	yearly_decay = 5
+}
+buy_oil_opinion_90 = {
+	opinion = 22
+	yearly_decay = 4.5
+}
+buy_oil_opinion_80 = {
+	opinion = 20
+	yearly_decay = 4
+}
+buy_oil_opinion_70 = {
+	opinion = 18
+	yearly_decay = 3.5
+}
+buy_oil_opinion_60 = {
+	opinion = 16
+	yearly_decay = 3
+}
+buy_oil_opinion_50 = {
+	opinion = 14
+	yearly_decay = 2.5
+}
+buy_oil_opinion_40 = {
+	opinion = 12
+	yearly_decay = 2
+}
+buy_oil_opinion_30 = {
+	opinion = 10
+	yearly_decay = 2
+}
+buy_oil_opinion_20 = {
+	opinion = 8
+	yearly_decay = 1.5
+}
+buy_oil_opinion = {
+	opinion = 6
+	yearly_decay = 1
+}
+########################### Instutation ##############################
+
+share_instut = {
+	opinion = 10
+	years = 20
+}
+share_instut_cancel = {
+	opinion = -20
+	yearly_decay = 1.5
+}
+
+########################### Gifts ####################################
+send_gift_5 = {
+	opinion = 2
+	yearly_decay = 2
+}
+
+send_gift_10 = {
+	opinion = 5
+	yearly_decay = 2
+}
+send_gift_25 = {
+	opinion = 12
+	yearly_decay = 5
+}
+send_gift_50 = {
+	opinion = 25
+	yearly_decay = 10
+}
+send_gift_100 = {
+	opinion = 50
+	yearly_decay = 15
+}
+inlunce_main = {
+	opinion = 1
+}
+inlunce_main1 = {
+	opinion = 10
+}
+
+############################ Atomic Bomb ##########################
+nuked_us = {
+	opinion = -100
+	yearly_decay = 2
+}
+nuked_used = {
+	opinion = -20
+	yearly_decay = 2
+}
+nuked_used_us = {
+	opinion = -20
+	yearly_decay = 1
+}
+cant_nuked_us = {
+	opinion = -35
+	yearly_decay = 2
+}
+try_nuked_used = {
+	opinion = -10
+	yearly_decay = 2
+}
+missile_us = {
+	opinion = -5
+	yearly_decay = 3
+}
+missile_used = {
+	opinion = -2
+	yearly_decay = 3
+}
+
+missile_our_ship_h = {
+	opinion = -5
+	yearly_decay = 3
+}
+missile_our_ship_t = {
+	opinion = -4
+	yearly_decay = 3
+}
+missile_our_ship_g = {
+	opinion = -4
+	yearly_decay = 3
+}
+missile_our_ship_tr = {
+	opinion = -2
+	yearly_decay = 3
+}
+###################### ############################ Relationship ###########################################
+
+very_bad_relation = {
+	opinion = -100
+	yearly_decay = 10
+}
+mini_bad_relation = {
+	opinion = -35
+	yearly_decay = 5
+}
+bad_relation = {
+	opinion = -50
+	yearly_decay = 5
+}
+mini_good_relation = {
+	opinion = 25
+	yearly_decay = 5
+}
+good_relation = {
+	opinion = 50
+	yearly_decay = 5
+}
+very_good_relation = {
+	opinion = 100
+	yearly_decay = 10
+}
+
+###################################################
+imperial_restoration_supported_rebels = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+helped_restore_emperor = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+increased_dominion_autonomy = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+dominion_autonomy_increase_blocked = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+####################Pupet Master #############
+
+pm_vpu_op = {
+    opinion = -200
+    min = -300
+    yearly_decay = 10
+}
+
+##################### Diplo Action modern ############################
+
+intived_into_hre = { 
+	
+	opinion = 30
+	years = 10
+	yearly_decay = 3
+
+ }
+
+sended_points = { opinion = 3 years = 3 yearly_decay = 5 }
+sended_points_2 = { opinion = 6 years = 3 yearly_decay = 5 }
+sended_points_3 = { opinion = 8 years = 3 yearly_decay = 5 }
+sended_points_4 = { opinion = 10 years = 3 yearly_decay = 5 }
+sended_points_5 = { opinion = 15 years = 3 yearly_decay = 5 }
+sended_points_6 = { opinion = 20 years = 3 yearly_decay = 5 }
+sended_points_7 = { opinion = 25 years = 3 yearly_decay = 5 }
+sended_points_8 = { opinion = 30 years = 3 yearly_decay = 5 }
+
+refused_signed_pact_of_non_agresion = { 
+	opinion = -20
+	years = 10
+	yearly_decay = 2
+  }
+
+refused_signed_pact_of_non_agresion_five = { 
+	opinion = -10
+	years = 5
+	yearly_decay = 2
+  }
+
+signed_pact_of_non_agresion = { 
+	opinion = 20
+	years = 10
+  }
+
+signed_pact_of_non_agresion_five = { 
+	opinion = 10
+	years = 5
+	
+  }
+
+  faction_member_opinion = { opinion = 30 }
+  faction_leader_opinion = { opinion = 30 }
+  terrorism_act_preformer = { 
+	opinion = -30
+	years = 15
+  }
+
+peacefull_conversion = {  
+  	opinion = 30
+	years = 15
+	yearly_decay = 2
+  }
+  started_raiding = {
+  	opinion = -40
+	years = 15
+  }
+
+create_embassy ={
+	opinion = 15
+}
+create_embassy_net = {
+
+	opinion = -15
+	years = 10
+	yearly_decay = 1
+
+}
+remove_embassy ={
+	opinion = -50
+}
+stability_added = {
+	
+	opinion = 20
+	years = 10
+	yearly_decay = 2
+
+}
+
+opinion_sanction_1 = {
+	opinion = -5 years = 10 
+	}
+opinion_sanction_2 = {
+	opinion = -10 years = 10 
+	}
+opinion_sanction_3 = {
+	opinion = -15 years = 10 
+	}
+opinion_sanction_4 = {
+	opinion = -20 years = 10 
+	}
+	
+	opinion_sanction_1_1 = {
+	opinion = 10 years = 10 
+	}
+	opinion_sanction_2_2 = {
+	opinion = 20 years = 10 
+	}
+	opinion_sanction_3_3 = {
+	opinion = 25 years = 10 
+	}
+	opinion_sanction_4_4 = {
+	opinion = 30 years = 10 
+	}
+
+  ruler_assasination_soupcious = {
+    opinion = -20
+	years = 10
+  }
+    attempt_ruler_assasination = {
+  	opinion = -60
+	years = 40
+  }
+	preformed_ruler_assasination = {
+  	opinion = -100
+	years = 40
+  }
+  honorus_letter_opinion = {  
+  	opinion = 40
+	years = 20
+	yearly_decay = 2
+  }
+  faction_refused = { opinion = -15 years = 10  }
+
+
+####################### Sended Manpower ###############
+
+
+sended_manpower = { opinion = 2 years = 5 yearly_decay = 5 }
+sended_manpower_2 = { opinion = 3 years = 5 yearly_decay = 5 }
+sended_manpower_3 = { opinion = 5 years = 5 yearly_decay = 5 }
+sended_manpower_4 = { opinion = 8 years = 5 yearly_decay = 5 }
+sended_manpower_5 = { opinion = 12 years = 5 yearly_decay = 5 }
+sended_manpower_6 = { opinion = 18 years = 5 yearly_decay = 5 }
+sended_manpower_7 = { opinion = 24 years = 5 yearly_decay = 5 }
+sended_manpower_8 = { opinion = 30 years = 5 yearly_decay = 5 }
+
+sended_sailor = { opinion = 1 years = 5 yearly_decay = 5 }
+sended_sailor_2 = { opinion = 2 years = 5 yearly_decay = 5 }
+sended_sailor_3 = { opinion = 3 years = 5 yearly_decay = 5 }
+sended_sailor_4 = { opinion = 4 years = 5 yearly_decay = 5 }
+sended_sailor_5 = { opinion = 5 years = 5 yearly_decay = 5 }
+sended_sailor_6 = { opinion = 6 years = 5 yearly_decay = 5 }
+sended_sailor_7 = { opinion = 7 years = 5 yearly_decay = 5 }
+sended_sailor_8 = { opinion = 8 years = 5 yearly_decay = 5 }
+
+strenghtened_dynasty = {
+	opinion = 30
+	years = 10
+	yearly_decay = 2.5
+}
+
+
+####################### Gameplay Extention #####################
+
+
+new_friend = {
+	opinion = 200
+	yearly_decay = 1
+}
+
+ffriend = {
+    opinion = 100
+	yearly_decay = 1
+}
+
+new_enemy = {
+	opinion = -200
+	yearly_decay = 1
+}
+
+eenemy = {
+    opinion = -100
+	yearly_decay = 1
+}
+
+
+###################################### More Rule Prosonalist #####################
+
+opinion_extravagant_party_reception = {
+	opinion = 25
+	yearly_decay = 2
+}
+
+
+################################ mf opinion modifiers ###############################
+
+opinion_caliph_relations = {
+	opinion = 30
+	years = 30
+	yearly_decay = 1
+}
+
+trp_senussi_movement = {
+	opinion = -25
+}
+
+trp_senussi_movement_denied = {
+	opinion = 25
+}
+friendly_government = { opinion = 25 }
+
+
+########################### Jadid #####################################
+
+aggressive_expansion = {
+	opinion = -1
+	months = 0
+	yearly_decay = 10	
+	min = -300
+}
+
+opinion_military_access = {
+	opinion = 15
+}
+
+opinion_fleet_access = {
+	opinion = 15
+}
+
+embargo = {
+	opinion = -35
+}
+
+historical_friend = {
+	opinion = 35
+}
+
+historical_rival = {
+	opinion = -35
+}
+
+transfers_trade_power = {
+	opinion = 25
+}
+
+getting_trade_power = {
+	opinion = 25
+}
+
+has_cb = {
+	opinion = -5
+}
+
+in_war_together = {
+	opinion = 30
+}
+###############################################religion#####################################
+
+republic_same_religion = {
+	opinion = 15
+}
+
+republic_different_religions_group = {
+	opinion = -15
+}
+
+republic_different_religion_same_group = {
+	opinion = -10
+}
+
+republic_different_religions_group_border = {
+	opinion = -15
+}
+
+republic_different_religion_same_group_border = {
+	opinion = -10
+}
+
+
+different_religions_group = {
+	opinion = -12
+}
+
+different_religions_group_border = {
+	opinion = -10
+}
+
+different_religion_same_group = {
+	opinion = -10
+}
+
+different_religion_same_group_border = {
+	opinion = -15
+}
+
+#################### New 1.31.5.2
+leniency_towards_cathars = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+supports_cathar_crusade = {
+	opinion = 50
+	yearly_decay = 1
+}
+
+no_support_cathar_crusade = {
+	opinion = -20
+	yearly_decay = 1
+}
+
+supports_cathar_crusade_cathar = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+
+################### Access Building
+
+cancel_access_building_OPINION = {
+	opinion = -100
+	yearly_decay = 5
+}
+
+condottieri_offer_opinion = {
+	opinion = 25
+	yearly_decay = 5
+}
+#######################Ban Opinion
+
+oil_bane_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+aluminum_ban_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+cars_ban_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+copper_ban_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+electronic_ban_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+iron_ban_opinion = {
+	opinion = -25
+	yearly_decay = 2
+}
+
+############################
+
+oil_bane_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+aluminum_ban_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+cars_ban_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+copper_ban_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+electronic_ban_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+iron_ban_opinion_50 = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+sunction_opinion_10 = {
+	opinion = -10
+	yearly_decay = 1
+}
+sunction_opinion_25 = {
+	opinion = -25
+	yearly_decay = 2
+}
+sunction_opinion_50 = {
+	opinion = -50
+	yearly_decay = 3
+}
+sunction_opinion_100 = {
+	opinion = -100
+	yearly_decay = 4
+}
+
+
+############################################
+
+opinion_support_army = {
+	opinion = 10
+	yearly_decay = 1
+}
+was_at_war_opinion = {
+	opinion = -10
+	years = 15
+}
+
+non_spy_opinion = {
+	opinion = 10
+	years = 25
+}
+
+##################################################
+
+share_node_10 = { opinion = 5 years = 10 }
+share_node_20 = { opinion = 7 years = 10 }
+share_node_30 = { opinion = 10 years = 10 }
+share_node_40 = { opinion = 15 years = 10 }
+share_node_60 = { opinion = 18 years = 10 }
+share_node_80 = { opinion = 21 years = 10 }
+share_node_100 = { opinion = 25 years = 10 }
+
+
+attack_to_our_miltary_base = { opinion = -75 years = 10 }
+
+attacked_to_EU = { opinion = -50 years = 5 }
+
+
+#################################################################
+
+condottieri_offer = { opinion = 25 years = 20 }
+condottieri_offer_1 = { opinion = 25 years = 20 }
+condottieri_offer_2 = { opinion = 25 years = 20 }
+condottieri_offer_3 = { opinion = 25 years = 20 }
+condottieri_offer_4 = { opinion = 25 years = 20 }
+condottieri_offer_5 = { opinion = 25 years = 20 }  
+
+###################################################################
+
+justify_for_attack = { opinion = -50 years = 30 }
+justify_for_attack_1 = { opinion = -1 years = 10 }
+justify_for_attack_2 = { opinion = -50 years = 25 }
+justify_for_attack_3 = { opinion = -1 years = 5 }
+
+fabricate_for_attack_1 = { opinion = -1 years = 5 }

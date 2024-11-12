@@ -1,0 +1,271 @@
+#######################
+# written by Aetherum #
+#######################
+
+########################
+# modified by Aetherum #
+########################
+
+country_decisions = {
+
+west_rome_formation = {
+	    major = yes
+		color = { 100 20 200 }
+		potential = {
+             has_country_flag = open_all_decision
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP } 
+			NOT = { tag = BYZ }	
+            NOT = { tag = HLR }			
+			NOT = { exists = ROW }
+			NOT = { exists = ROM }
+			OR = {
+			owns_core_province = 118
+            owns_core_province = 104
+            owns_core_province = 124
+            owns_core_province = 201
+			owns_core_province = 220
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 118
+				province_id = 104
+				province_id = 124
+				province_id = 201
+				province_id = 220
+				
+				region = france_region
+				region = italy_region
+				region = iberia_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no			
+			owns_core_province = 118
+            owns_core_province = 104
+            owns_core_province = 124
+            owns_core_province = 201
+			owns_core_province = 220		
+
+			
+			
+			france_region = {
+				type = all
+				owned_by = ROOT
+			}
+			italy_region  = {
+				type = all
+				owned_by = ROOT
+			}
+			iberia_region  = {
+				type = all
+				owned_by = ROOT
+			}
+
+			
+		}
+		effect = {
+			104 = {
+				move_capital_effect = yes
+			}
+			change_tag = ROW
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					has_custom_ideas = no
+				}
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+		}
+		ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	ge_advancement_of_true_religion_act = {
+		potential = {
+             has_country_flag = open_all_decision
+			NOT = { has_country_modifier = the_advancement_of_true_religion_act }
+			religion_group = christian
+		}
+		allow = {
+			adm_tech = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "the_advancement_of_true_religion_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { full_idea_group = religious_ideas  }
+				NOT = { government = theocracy }
+			}
+		}
+	}
+	
+	suffragan_bishop_act = {
+		potential = {
+             has_country_flag = open_all_decision
+			NOT = { has_country_modifier = the_suffragan_bishop_act }
+			religion_group = christian
+		}
+		allow = {
+			adm_tech = 8
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "the_suffragan_bishop_act"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+	church_tax = {
+			potential = {
+             has_country_flag = open_all_decision
+			NOT = { has_country_modifier = church_taxes }
+			religion_group = christian
+			NOT = { tag = PAP }
+			NOT = { government = republic }
+		}
+		allow = {
+			# Raises the king to be the legal authority in all religious matters
+			OR = {
+				NOT = { religion = catholic }
+				has_country_modifier = the_statue_in_restraint_of_appeals
+			}
+			advisor = theologian
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "church_taxes"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			modifier = { 
+				NOT = { revolt_percentage = 0 }
+				factor = 0 
+			}
+		}
+	}
+
+	superintendents = {
+		potential = {
+             has_country_flag = open_all_decision
+			NOT = { has_country_modifier = superintendent_office }
+			OR = {
+				religion = protestant
+				religion = reformed
+			}
+		}
+		allow = {
+			adm_tech = 12
+		}
+		effect = {	
+			add_country_modifier = {
+				name = "superintendent_office"
+				duration = -1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = { 
+				NOT = { stability = 2 }
+				factor = 0
+			}
+		}
+	}
+	
+	restore_the_hre = {
+	major = yes
+	potential = {
+             has_country_flag = open_all_decision 
+	     tag = HLR
+		has_country_modifier = fall_of_hre
+	}
+	allow =  {
+	    stability = 3
+	}
+	effect = {
+	
+		remove_country_modifier = fall_of_hre
+		add_prestige = 25
+		
+	}
+	ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	dismantle_the_hre = {
+	major = yes
+	potential = {
+             has_country_flag = open_all_decision
+	     tag = HLR
+		has_country_modifier = fall_of_hre
+	}
+	allow =  {
+	    stability = -3
+	}
+	effect = {
+		add_prestige = 25
+		remove_country_modifier = fall_of_hre
+	}
+	ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	ge_eng_corps_boost = {
+		potential = {
+             has_country_flag = open_all_decision
+			has_idea = engineer_corps
+			NOT = { has_country_modifier = improved_fort_defense }
+			NOT = { has_country_modifier = ge_forts }
+		}
+		allow = {
+			is_at_war = no
+			years_of_income = 1.0
+		}
+		effect = {
+			add_years_of_income = -1.0
+			add_country_modifier = {
+				name = "improved_fort_defense"
+				duration = 3650
+			}
+			hidden_effect = {
+			add_country_modifier = {
+				name = "ge_forts"
+				duration = 9125
+			}
+		    }
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

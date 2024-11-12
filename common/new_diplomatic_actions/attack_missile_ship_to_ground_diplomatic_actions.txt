@@ -1,0 +1,40 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+#ship_to_ground_missile = {
+#	category = influence
+#
+#	alert_index = 40
+#	alert_tooltip = demand_dummy_alert_tooltip
+#
+#	require_acceptance = no # Whether the recipient gets an option to decline
+#
+#	is_visible = {
+#		has_country_flag = opened_expotentional_diplomacy
+#		ai = no
+#	}
+#	is_allowed = {
+#		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = FROM   } }
+#		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = FROM   } }
+#		check_variable = {
+#			which = missil_50
+#			value = 1
+#		}
+#		num_of_heavy_ship = 1
+#	}
+#	on_accept = {
+#		FROM = { save_global_event_target_as = missil_from_ship_to_ground_target_country }	
+#		country_event = {
+#			id = modern_missil_ship_to_ground.50
+#		}	
+#	}
+#	on_decline = {
+#	}
+#
+#	ai_acceptance = {
+#	}
+#
+#	ai_will_do = { # this is a trigger
+#		always = no
+#	}
+#}
+############################################################################

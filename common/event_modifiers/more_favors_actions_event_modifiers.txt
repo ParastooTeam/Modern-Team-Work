@@ -1,0 +1,23 @@
+more_favors_action_improve_opinion_used_modifier = {
+}
+
+more_favors_action_remove_rival_used_modifier = {
+}
+
+more_favors_action_request_adm_power_used_modifier = {
+}
+
+more_favors_action_request_dip_power_used_modifier = {
+}
+
+more_favors_action_request_mil_power_used_modifier = {
+}
+
+more_favors_action_request_religious_power_used_modifier = {
+}
+
+more_favors_action_request_general_used_modifier = {
+}
+
+more_favors_action_remove_guarantee_used_modifier = {
+}

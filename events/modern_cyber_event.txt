@@ -1,0 +1,489 @@
+namespace = cyber
+#
+#cyber Point admin power X1
+country_event = {
+	id = cyber.1
+	title = "cyber.1title"
+	desc = "cyber.1desc"
+	picture = cyber_production_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+
+
+#cyber Point diplo power 
+country_event = {
+	id = cyber.2
+	title = "cyber.2title"
+	desc = "cyber.2desc"
+	picture = cyber_production_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+
+
+#cyber Point military power 
+country_event = {
+	id = cyber.3
+	title = "cyber.3title"
+	desc = "cyber.3desc"
+	picture = cyber_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+
+#cyber Point military power 
+country_event = {
+	id = cyber.4
+	title = "cyber.4title"
+	desc = "cyber.4desc"
+	picture = cyber_trade_ship_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+#cyber Point military power 
+country_event = {
+	id = cyber.5
+	title = "cyber.5title"
+	desc = "cyber.5desc"
+	picture = cyber_fort_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.5opt"
+	}
+}
+
+
+
+country_event = {
+	id = cyber.6
+	title = "cyber.6title"
+	desc = "cyber.6desc"
+	picture = cyber_fort_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+country_event = {
+	id = cyber.8
+	title = "cyber.8title"
+	desc = "cyber.8desc"
+	picture = cyber_satellite_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+country_event = {
+	id = cyber.9
+	title = "cyber.9title"
+	desc = "cyber.9desc"
+	picture = cyber_satellite_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+country_event = {
+	id = cyber.10
+	title = "cyber.10title"
+	desc = "cyber.10desc"
+	picture = Modern_Electronic_war_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+country_event = {
+	id = cyber.13
+	title = "cyber.13title"
+	desc = "cyber.13desc"
+	picture = Modern_cyber_attack_tech_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+country_event = {
+	id = cyber.14
+	title = "cyber.14title"
+	desc = "cyber.14desc"
+	picture = Modern_cyber_attack_idea_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.1opt"
+	}
+}
+
+
+
+country_event = {
+	id = cyber.7
+	title = "cyber.7title"
+	desc = "cyber.7desc"
+	picture = cyber_attack_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "cyber.2opt"
+		event_target:cyber_atack_temp = {
+			custom_tooltip = SET_SYBER_PRODUCT
+			hidden_effect = {
+				add_country_modifier = {
+					name = cyber1
+					duration = 180
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					random_list = {
+						90 = {}
+						10 = { add_country_modifier = { name = cyber_production duration = 912 } }
+					}
+				}
+				else = {
+					add_country_modifier = { name = cyber_production duration = 912 }
+				}
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					country_event = { id = cyber.1 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 }
+				}
+				else = {
+					random_list = {
+						75 = {}
+						25 = { country_event = { id = cyber.1 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 } }
+					}
+				}
+			}
+		}
+		hidden_effect = { add_spy_network_in = { who = event_target:cyber_atack_temp value = -55 } }
+		#ROOT = { country_event = { id = cyber.2 } }
+		
+		clear_global_event_target = cyber_atack_temp
+	}
+	
+	option = {
+		name = "cyber.3opt"
+		trigger = {
+			num_of_ports = 1
+		}
+		event_target:cyber_atack_temp = {
+			custom_tooltip = SET_SYBER_CORRUPT
+			hidden_effect = {
+				add_country_modifier = {
+					name = cyber1
+					duration = 180
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					random_list = {
+						90 = {}
+						10 = { add_country_modifier = { name = cyber_trade_ship duration = 912 } }
+					}
+				}
+				else = {
+					add_country_modifier = { name = cyber_trade_ship duration = 912 }
+				}
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					country_event = { id = cyber.3 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 }
+				}
+				else = {
+					random_list = {
+						75 = {}
+						25 = { country_event = { id = cyber.3 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 } }
+					}
+				}	
+			}		
+		}
+		hidden_effect = { add_spy_network_in = { who = event_target:cyber_atack_temp value = -55 } }
+		#ROOT = { country_event = { id = cyber.4 } }
+		
+		clear_global_event_target = cyber_atack_temp
+	}
+	
+	option = {
+		name = "cyber.4opt"
+		
+		event_target:cyber_atack_temp = {
+			custom_tooltip = SET_SYBER_FORT
+			hidden_effect = {
+				add_country_modifier = {
+					name = cyber1
+					duration = 180
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					random_list = {
+						90 = {}
+						10 = { add_country_modifier = { name = cyber_fort duration = 912 } }
+					}
+				}
+				else = {
+					add_country_modifier = { name = cyber_fort duration = 912 }
+				}
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					country_event = { id = cyber.5 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 }
+				}
+				else = {
+					random_list = {
+						75 = {}
+						25 = { country_event = { id = cyber.5 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 } }
+					}
+				}	
+			}		
+		}
+		hidden_effect = { add_spy_network_in = { who = event_target:cyber_atack_temp value = -55 } }
+		#ROOT = { country_event = { id = cyber.6 } }
+		
+		clear_global_event_target = cyber_atack_temp
+	}
+	option = {
+		name = "cyber.9opt"
+		
+		event_target:cyber_atack_temp = {
+			custom_tooltip = SET_SYBER_TECH
+			hidden_effect = {
+				add_country_modifier = {
+					name = cyber1
+					duration = 180
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					random_list = {
+						90 = {}
+						10 = { add_country_modifier = { name = cyber_tech duration = 912 } }
+					}
+				}
+				else = {
+					add_country_modifier = { name = cyber_tech duration = 912 }
+				}
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					country_event = { id = cyber.13 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 }
+				}
+				else = {
+					random_list = {
+						75 = {}
+						25 = { country_event = { id = cyber.13 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 } }
+					}
+				}
+			}			
+		}
+		hidden_effect = { add_spy_network_in = { who = event_target:cyber_atack_temp value = -55 } }
+		#ROOT = { country_event = { id = cyber.6 } }
+		
+		clear_global_event_target = cyber_atack_temp
+	}
+	option = {
+		name = "cyber.10opt"
+		
+		event_target:cyber_atack_temp = {
+			custom_tooltip = SET_SYBER_IDEA
+			hidden_effect = {
+				add_country_modifier = {
+					name = cyber1
+					duration = 180
+				}
+			}
+			hidden_effect = {
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					random_list = {
+						90 = {}
+						10 = { add_country_modifier = { name = cyber_ideas duration = 912 } }
+					}
+					
+				}
+				else = {
+					add_country_modifier = { name = cyber_ideas duration = 912 }
+				}
+				if = {
+					limit = {
+						event_target:cyber_atack_temp = {
+							OR = {
+								full_idea_group = indoor_security_ideas
+								full_idea_group = exploration_ideas
+							}
+						}
+					}
+					country_event = { id = cyber.14 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 }
+				}
+				else = {
+					random_list = {
+						75 = {}
+						25 = { country_event = { id = cyber.14 } add_casus_belli = { type = cb_cyber_attack target = ROOT months = 60 } }
+					}
+				}
+			}			
+		}
+		hidden_effect = { add_spy_network_in = { who = event_target:cyber_atack_temp value = -55 } }
+		#ROOT = { country_event = { id = cyber.6 } }
+		
+		clear_global_event_target = cyber_atack_temp
+	}
+	#option = {
+	#	name = "cyber.6opt"
+	#	trigger = {
+	#		has_spy_network_in = {
+	#			who = event_target:cyber_atack_temp
+	#			value = 80
+	#		}
+	#		event_target:cyber_atack_temp = { NOT = { has_country_modifier = Avoid_ignoring_Forts_modifire } }
+	#	}
+	#	event_target:cyber_atack_temp = {
+	#		custom_tooltip = Avoid_ignoring_Forts
+	#		add_country_modifier = {
+	#			name = Avoid_ignoring_Forts_modifire
+	#			duration = 912
+	#		}
+	#		add_casus_belli = {
+	#			type = cb_cyber_attack
+	#			target = ROOT
+	#			months = 120
+	#		}
+	#		country_event = { id = cyber.10 }
+	#	}
+	#	add_spy_network_in = { who = event_target:cyber_atack_temp value = -80 }
+	#	#ROOT = { country_event = { id = cyber.6 } }
+	#	
+	#	clear_global_event_target = cyber_atack_temp
+	#}
+
+	#option = {
+	#	name = "cyber.5opt"
+	#	FROM = {
+	#		custom_tooltip = SET_SYBER_SATELLITE
+	#		add_country_modifier = {
+	#			name = cyber1
+	#			duration = 180
+	#		}
+	#		add_country_modifier = {
+	#			name = cyber_satellite
+	#			duration = 912
+	#		}
+	#		country_event = { id = cyber.8 }
+	#	}
+	#	add_spy_network_in = { who = FROM value = -55 }
+	#	ROOT = { country_event = { id = cyber.9 } }
+	#	
+	#	clear_global_event_target = cyber_atack_temp
+	#}
+	
+	option = {
+		name = "cyber.6opt"
+		clear_global_event_target = cyber_atack_temp
+	}
+}

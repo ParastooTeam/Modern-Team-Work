@@ -1,0 +1,16 @@
+#Ironclad
+#Heavy ship Level 6
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 305
+base_cannons = 338
+sail_speed = 9
+
+blockade = 30
+
+sprite_level = 1

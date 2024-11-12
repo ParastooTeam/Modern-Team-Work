@@ -1,0 +1,16 @@
+#Heavy Frigate
+#Heavy ship Level 12
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 1163
+base_cannons = 1291
+sail_speed = 14
+
+blockade = 30
+
+sprite_level = 1

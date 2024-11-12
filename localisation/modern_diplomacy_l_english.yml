@@ -1,0 +1,120 @@
+﻿l_english:
+ 
+ guaranted_neighbor:0 "We take care of our neighbors ourselves, there is no need for you"
+ missile_attack_to_us:0 "You pay back the attack on our cities"
+ missile_attack_to_our_mb:0 "You pay for the attack on our interests"
+ offer_condottieri_to_us:0 "Providing military force to our enemies paid a heavy price"
+ defend_neighbor:0 "We support our neighbors, get out of our neighboring country"
+ defend_our_subject:0 "Attack on our military base??? You will be severely punished"
+ neighbor_is_subject:0 "We do not accept any military bases on our borders, stay away from our borders"
+ defend_ally:0 "Defense of our allies is our first priority"
+ supported_our_enemy:0 "Supported Our Enemy"
+ order_take_capital:0 "Ordered To Attack Our Country"
+ order_take_capital_1:0 "Attacked On The Orders Of Others"
+ atomic_attack:0 "Nuclear attack on the world"
+ 
+
+ desc_guaranted_neighbor:0 "We take care of our neighbors ourselves, there is no need for you"
+ desc_missile_attack_to_us:0 "You pay back the attack on our cities"
+ desc_missile_attack_to_our_mb:0 "You pay for the attack on our interests"
+ desc_offer_condottieri_to_us:0 "Providing military force to our enemies paid a heavy price"
+ desc_defend_neighbor:0 "We support our neighbors, get out of our neighboring country"
+ desc_defend_our_subject:0 "Attack on our military base??? You will be severely punished"
+ desc_neighbor_is_subject:0 "We do not accept any military bases on our borders, stay away from our borders"
+ desc_defend_ally:0 "Defense of our allies is our first priority"
+ desc_supported_our_enemy:0 "When we were unequal in a war, they wanted to defeat us in the war by supporting our enemies"
+ desc_order_take_capital:0 "They are punished so that they don't give these orders anymore"
+ desc_order_take_capital_1:0 "They obey others and attacked our country on their orders, they should be punished"
+ atomic_attack_desc:0 "We have to stop this danger, if we don't stop them, they will still use nuclear weapons to kill other people."
+
+ guaranted_neighbor_desc:0 "We take care of our neighbors ourselves, there is no need for you"
+ missile_attack_to_us_desc:0 "You pay back the attack on our cities"
+ missile_attack_to_our_mb_desc:0 "You pay for the attack on our interests"
+ offer_condottieri_to_us_desc:0 "Providing military force to our enemies paid a heavy price"
+ defend_neighbor_desc:0 "We support our neighbors, get out of our neighboring country"
+ defend_our_subject_desc:0 "Attack on our military base??? You will be severely punished"
+ neighbor_is_subject_desc:0 "We do not accept any military bases on our borders, stay away from our borders"
+ defend_ally_desc:0 "Defense of our allies is our first priority"
+ supported_our_enemy_desc:0 "When we were unequal in a war, they wanted to defeat us in the war by supporting our enemies"
+ order_take_capital_1_desc:0 "They obey others and attacked our country on their orders, they should be punished"
+ desc_atomic_attack:0 "We have to stop this danger, if we don't stop them, they will still use nuclear weapons to kill other people."
+
+ cb_satan:0 "Satan is God"
+ cb_satan_desc:0 "The whole world must be under Satan's rule"
+ superiority_satan:0 "Show them who God is"
+ superiority_satan_desc:0 "War goal is to show them superiority by winning battles."
+
+ war_goal_spread_fascism:0 "Change Their Government to Fascism"
+ war_goal_spread_fascism_desc:0 "War goal is to take the capital. You will be able to force them to change government form to the same as you."
+
+ war_goal_spread_communism:0 "Change Their Government to Communism"
+ war_goal_spread_communism_desc:0 "War goal is to take the capital. You will be able to force them to change government form to the same as you."
+
+ war_goal_spread_military:0 "Change Their Government to Military"
+ war_goal_spread_military_desc:0 "War goal is to take the capital. You will be able to force them to change government form to the same as you."
+
+ war_goal_spread_democracy:0 "Change Their Government to Democracy"
+ war_goal_spread_democracy_desc:0 "War goal is to take the capital. You will be able to force them to change government form to the same as you."
+ 
+ order_take_capital:0 "The order to attack has been given and we will execute it"
+ order_take_capital_desc:0 "The country that is our boss has given us an order to attack and we must obey"
+
+ cb_cancel_military_base:0 "Cancel the Military Base"
+ cb_cancel_military_base_desc:0 "They canceled our military base, they cost us a lot, they should be punished"
+ 
+ cb_attack_teryak:0 "Drug distribution"
+ cb_attack_teryak_desc:0 "Their drug cartels are starting to commit crimes in our country, we must stop them"
+
+ cb_cyber_attack: "cyber attack"
+ cb_cyber_attack_desc: "They have attacked our infrastructure, they must pay for these attacks"
+
+ cb_kill_advisor_event_attack: "Adviser Mann's Revenge"
+ cb_kill_advisor_event_attack_desc: "They have assassinated one of our best advisers, we must retaliate"
+
+ cb_kill_ruller: "The Assassination of Our Ruler"
+ cb_kill_ruller_desc: "Our leader has been killed, We must take revenge even at the cost of a world war"
+
+ justify_for_attack_title:0 "Justify §YMilitary Attack§! £justify_icon£"
+ justify_for_attack_desc:0 "When we don't have a good excuse to attack them, \nWe have to justify our attack in the international community, \nSo that we don't get negative reactions from them. \n\nRemember that public opinion should not be bad towards you. \nOur relationship with them will be bad and they will know about our action with Event \nRelations with them = §R-50§! \n£dip£Diplomatic Power = §R-50§! \n§YIt takes 10 years to justify the military attack, we have to wait§!"
+ justify_for_attack_dialog:0 ""
+ justify_for_attack_tooltip:0 "We need this option to justify attacking them"
+
+ remove_justify_for_attack_title:0 "Abolish the justification of war"
+ remove_justify_for_attack_desc:0 "There may be problems in our international relations and there is a need for us to withdraw from our actions, there is no problem, \nBut note that it will take 10 years to justify the war with them again."
+ remove_justify_for_attack_tooltip:0 "Retreating from the positions we have adopted"
+ remove_justify_for_attack_dialog:0 "Abolish the justification of war"
+
+
+ HAS_SPY_65:0 "We need a 65% spy network"
+
+ kill_advisor_modern:0 "Kill Advisor"
+ kill_advisor_modern_title:0 "Kill Advisor"
+ kill_advisor_modern_desc:0 "We can kill advisers who are a threat to us, \nThey may have advisers in wars who discipline their army or raise their army's morale, \nWe must attack them based on our strategy."
+ kill_advisor_modern_dialog:0 ""
+ kill_advisor_modern_tooltip:0 "If we kill their advisors, they can't find that advisor within 15 years"
+
+ THEY_HAVE_IDEA_COST_ADVISOR:0 "They have Researcher §G-10% Idea Cost§!"
+ THEY_HAVE_PROVINCE_WARSCORE_ADVISOR:0 "They have Lawyer §G-20% War Score Cost§!"
+ THEY_HAVE_DISCIPLINE_3_5_ADVISOR:0 "They have Commandant §G+3.5% Discipline§!"
+ THEY_HAVE_MORALE_7_5_ADVISOR:0 "They have Army Reformer §G+7.5% Morale of Army§!"
+ THEY_HAVE_MORALE_15_ADVISOR:0 "They have Martial Artist §G+15% Morale of Army§!"
+ THEY_HAVE_DISCIPLINE_7_ADVISOR:0 "They have Superintendent of troops §G+7% Discipline§!"
+ THEY_HAVE_ADVISOR:0 "They have the desired advisor"
+
+ admin_cooldown:0 "Cooldown Send Admin Power"
+ admin_cooldown_desc:0 ""
+ admin_cooldown_root:0 "Cooldown Send Admin Power"
+ admin_cooldown_root_desc:0 ""
+ 
+ diplo_cooldown:0 "Cooldown Send Diplomatic Power"
+ diplo_cooldown_desc:0 ""
+ diplo_cooldown_root:0 "Cooldown Send Diplomatic Power"
+ diplo_cooldown_root_desc:0 ""
+ military_cooldown:0 "Cooldown Send Military Power"
+ military_cooldown_desc:0 ""
+ military_cooldown_root:0 "Cooldown Send Military Power"
+ military_cooldown_root_desc:0 ""
+ mlitaty_cooldown:0 ""
+
+ border_garisson:0 "Reduction of the castle guards"
+ border_garisson_desc:0 "Reduction of castle guards by peace treaty"

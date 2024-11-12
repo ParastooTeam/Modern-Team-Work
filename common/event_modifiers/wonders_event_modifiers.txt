@@ -1,0 +1,18 @@
+natural_tourism = {
+local_tax_modifier = 0.05
+local_production_efficiency = 0.05
+trade_goods_size_modifier = 0.05
+province_trade_power_modifier = 0.05
+trade_value_modifier = 0.05
+}
+
+barbarian_homeland = {
+	local_manpower_modifier = 0.20
+	local_tax_modifier = 0.20
+}
+
+
+three_sons = {
+	prestige = 0.2
+	legitimacy = 0.4
+}

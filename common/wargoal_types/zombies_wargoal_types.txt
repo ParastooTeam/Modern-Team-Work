@@ -1,0 +1,38 @@
+
+stop_zombies = {
+	type = superiority
+	attacker = {
+		badboy_factor = 0.0
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_force_culture
+		}
+		
+		country_desc = ALL_SAFE_PEOPLE
+		prov_desc = ALL_PROVS
+	}
+	defender = {
+		badboy_factor = 0.0
+		prestige_factor = 1
+		peace_cost_factor = 0.5
+		
+		allowed_provinces = {
+			always = yes
+		}
+		
+		peace_options = {
+			po_force_culture
+		}
+		
+		country_desc = ALL_SAFE_PEOPLE
+		prov_desc = ALL_PROVS
+	}
+	
+	war_name = ZOMBIES_WAR_NAME	
+}

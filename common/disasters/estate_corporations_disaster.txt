@@ -1,0 +1,117 @@
+oligarchy_disaster = {
+	potential = {
+		NOT = { government = theocracy }
+		NOT = { has_reform = oligarchic_reform }
+		num_of_cities = 6
+		ai = no
+	}
+
+
+	can_start = {
+		has_any_disaster = no
+		OR = {
+			NOT = { stability = 0 }
+			check_variable = {
+				which = government_oligarchy_variable
+				value = 70
+			}
+			AND = {
+				inflation = 25
+				is_at_war = no
+			}
+		}
+		hidden_trigger = {
+			is_year = 2030
+		}
+	}
+	
+	can_stop = {	
+		#NOT = { has_reform = oligarchic_reform }		
+		AND = {
+			stability = 2
+			NOT = { inflation = 5 }
+			NOT = {
+				check_variable = {
+					which = government_oligarchy_variable
+					value = 70
+				}
+			}
+		}		
+	}
+	
+	down_progress = {
+		factor = 0
+		modifier = {
+			factor = 1
+			NOT = { inflation = 10 }
+		}
+	}
+	
+	progress = {
+		modifier = {
+			factor = 4
+			inflation = 25
+			is_at_war = no
+		}
+		modifier = {
+			factor = 3
+			inflation = 20
+			is_at_war = no
+		}
+		modifier = {
+			factor = 2
+			inflation = 15
+			is_at_war = no
+		}
+		modifier = {
+			factor = 5
+			inflation = 30
+			is_at_war = no
+		}
+		modifier = {
+			factor = 10
+			check_variable = {
+				which = government_oligarchy_variable
+				value = 70
+			}
+			
+		}
+	}
+	
+	can_end = {
+		stability = 3
+		NOT = { inflation = 5 }
+		NOT = {
+			check_variable = {
+				which = government_oligarchy_variable
+				value = 70
+			}
+		}
+	}
+	
+	modifier = {
+		global_tax_modifier = -1.0
+		production_efficiency = -0.25
+		trade_efficiency = -0.25
+		stability_cost_modifier = 0.25
+		global_unrest = 12
+	}
+
+	on_start = etf_event_disaster.1
+	on_end = etf_event_disaster.9
+	
+	on_monthly = {
+		events = {
+		}
+		random_events = { 
+			1000 = 0
+			100 = etf_event_disaster.3
+			100 = etf_event_disaster.4
+			100 = dis_com.4
+			100 = revolution.7
+			100 = revolution.8
+		
+		}
+	}
+}
+

@@ -1,0 +1,45 @@
+po_remove_subject_idea = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 40.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 40
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	
+	is_visible = {
+		FROM = { has_idea_group = kolonialimperium0 }
+	}
+	is_allowed = {
+		FROM = { has_idea_group = kolonialimperium0 }
+	}
+	effect = {
+		FROM = {
+			remove_idea_group = kolonialimperium0
+			add_country_modifier = {
+				name = cant_pick_subject_idea_group
+				duration = 5475
+			}
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+	}
+}
+
+

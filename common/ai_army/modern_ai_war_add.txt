@@ -1,0 +1,24 @@
+
+province = {
+    ai_army = {
+        active = { is_at_war = yes }
+        eval_add = {
+            factor = 50
+            modifier = {
+                factor = 50.0
+				
+				NOT = { controlled_by = root }
+				NOT = { controller = { is_subject_of = root } }
+				NOT = {
+					num_of_units_in_province = {
+						amount = 32
+						who = root
+						type = artillery					
+					}	
+				}
+				fort_level = 1
+                has_siege = yes
+            }
+        }
+    }
+}

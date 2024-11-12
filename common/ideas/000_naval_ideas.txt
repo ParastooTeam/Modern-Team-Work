@@ -1,0 +1,676 @@
+
+naval_ideas = {
+	category = DIP
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		
+	}
+
+	bonus = {
+		naval_forcelimit_modifier = 0.20
+	}
+
+	boarding_parties = {
+		own_coast_naval_combat_bonus = 1
+	}
+	improved_rams = {
+		ship_durability = 0.1
+	}
+	naval_cadets = {
+		sunk_ship_morale_hit_recieved = -0.20
+	}
+	naval_glory = {
+		navy_tradition = 0.5
+	}
+	press_gangs = {
+		global_sailors_modifier = 0.25
+		sailors_recovery_speed = 0.25
+	}
+	oak_forests_for_ships = {
+		naval_morale = 0.1	
+	}
+	superior_seamanship = {
+		global_naval_engagement_modifier = 0.1
+	}
+
+	ai_will_do = {
+		factor = 8
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 8
+			NOT = { num_of_ports = 5 }
+			num_of_cities = 5
+		}
+		modifier = {
+			factor = 8
+			OR = {
+				tag = GBB
+				tag = GBR
+				tag = USA
+				tag = JAP
+				tag = AUS
+				tag = IDN
+				tag = PHI
+			}
+		}
+		
+		
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 5 }
+		}
+		modifier = {
+			factor = 1
+			num_of_ports = 25
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 50
+		}
+		modifier = {
+			factor = 4
+			num_of_ports = 100
+		}
+		modifier = {
+			factor = 8
+			num_of_ports = 200
+		}	
+	}
+}
+
+
+maritime_ideas = {
+	category = DIP
+
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3 
+		NOT = { has_country_modifier = cant_pick_focus_on_ship }
+		
+	}
+
+	bonus = {
+		leader_naval_shock = 1
+		blockade_efficiency = 0.5
+	}
+
+	sea_hawks = {
+		naval_tradition_from_trade = 1.0
+	}
+	merchant_marine_2 = {
+		global_sailors_modifier = 0.5
+		sailors_recovery_speed = 0.10
+		# <<WIKI>> add_building = navymanpower_lvl_2
+	}
+	sheltered_ports = {
+		global_ship_repair = 0.5
+		sailor_maintenance_modifer = -0.2
+	}
+	grand_navy_2 = {
+		naval_forcelimit_modifier = 0.6
+		# <<WIKI>> add_building = navyforcelimit_lvl_2
+	}
+	ships_penny = {
+		global_ship_cost = -0.03
+	}
+	excellent_shipwrights = {
+		sea_repair = yes
+		leader_naval_manuever = 1
+	}
+	naval_fighting_instruction = {
+		leader_naval_fire = 1
+	}
+
+	ai_will_do = {
+		factor = 8
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 5 }
+			num_of_cities = 5
+		}
+		modifier = {
+			factor = 8
+			OR = {
+				tag = USA
+				tag = GBB
+				tag = GBR
+				tag = JAP
+				tag = BRZ
+				tag = PHI
+				tag = AUS
+				tag = IDN
+			}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 8 }
+			num_of_cities = 10
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				num_of_heavy_ship = 20
+				num_of_light_ship = 50
+				num_of_galley = 70
+			}
+		}
+	
+	}
+}
+
+
+leadernav0 = {
+	category = DIP
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3 
+		
+	}
+
+	bonus = {
+		max_admiral_siege = 1
+	}
+		
+	
+	leadernav1 = {
+		leader_naval_manuever = 1
+	}
+	leadernav2 = {
+		leader_naval_fire = 1
+	}
+	leadernav3 = {
+		leader_naval_shock = 1
+	}
+
+	leadernav4 = {
+		admiral_cost = -0.25
+	}
+
+	leadernav5 = {
+		max_admiral_fire = 1
+	}
+	leadernav6 = {
+		max_admiral_maneuver = 1
+	}
+	leadernav7 = {
+		max_admiral_shock = 1
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 3
+			num_of_heavy_ship = 2
+		}
+		modifier = {
+			factor = 4
+			num_of_heavy_ship = 4
+		}
+		modifier = {
+			factor = 5
+			num_of_heavy_ship = 8
+		}
+		modifier = {
+			factor = 6
+			num_of_heavy_ship = 10
+		}
+		modifier = {
+			factor = 8
+			num_of_heavy_ship = 20
+		}
+		modifier = {
+			factor = 8
+			OR = {
+				tag = USA
+				tag = GBB
+				tag = GBR
+				tag = JAP
+				tag = BRZ
+				tag = PHI
+				tag = AUS
+				tag = IDN
+			}
+		}
+	}
+}
+
+flottenbasis0 = {
+	category = DIP
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3  
+		
+	}
+
+	bonus = {
+		recover_navy_morale_speed = 0.15
+	}
+		
+	
+	flottenbasis2 = {
+		sailor_maintenance_modifer = -0.25
+		
+	}
+	flottenbasis3 = {
+		naval_forcelimit_modifier = 0.25
+	}
+	
+	flottenbasis1 = {
+		sailors_recovery_speed = 0.15
+	}
+
+	flottenbasis4 = {
+		global_sailors_modifier = 0.25
+		# <<WIKI>> add_age_sailors = 25000
+	}
+
+	flottenbasis5 = {
+		naval_morale = 0.15
+		navy_tradition_decay = -0.01
+	}
+	flottenbasis6 = {
+		has_marines = yes
+	}
+	flottenbasis7 = {
+		global_ship_repair = 0.2
+		ship_power_propagation = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			num_of_ports = 1
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 2 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 4 }
+			num_of_cities = 4
+		}
+		
+		modifier = {
+			factor = 9
+			num_of_ports = 20
+		}
+		modifier = {
+			factor = 10
+			num_of_ports = 40
+		}
+		
+		modifier = {
+			factor = 10
+			OR = {
+				num_of_heavy_ship = 12
+				num_of_light_ship = 18
+				num_of_galley = 28
+			}
+		}
+		modifier = {
+			factor = 8
+			OR = {
+				tag = USA
+				tag = GBB
+				tag = GBR
+				tag = JAP
+				tag = BRZ
+				tag = PHI
+				tag = AUS
+				tag = IDN
+			}
+		}
+		
+	}
+}
+
+
+gross0 = {
+	category = DIP
+
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3  
+	}
+	
+	bonus = {
+		recover_navy_morale_speed = 0.15
+		# <<WIKI>> extra_navy tradition_heavy_ships = yes
+	}
+		
+	
+	gross1 = {
+		heavy_ship_cost = -0.075
+	}
+	gross2 = {
+		heavy_ship_power = 0.15
+	}
+	gross3 = {
+		heavy_ship_hull_size = 0.1
+	}
+
+	gross4 = {
+		ship_power_propagation = 0.15
+	}
+
+	gross5 = {
+		capture_ship_chance = 0.2
+	}
+	gross6 = {
+		#heavy_ship_cannons = 0.1
+		heavy_ship_number_of_cannons_modifier = 0.05
+	}
+	gross7 = {
+		has_galleon = yes
+		allowed_galleon_fraction = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 5 }
+			num_of_cities = 5
+		}
+		
+		
+		modifier = {
+			factor = 0
+			num_of_ports = 1
+		}
+		modifier = {
+			factor = 1
+			num_of_ports = 2
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 5
+		}
+		modifier = {
+			factor = 5
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 10
+			num_of_ports = 20
+		}	
+		modifier = {
+			factor = 10
+			OR = {
+				tag = GBB
+				tag = GBR
+				tag = USA
+				tag = JAP
+				tag = AUS
+				tag = IDN
+				tag = PHI
+			}
+		}
+	}
+}
+
+
+
+galle0 = {
+	category = DIP
+
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3  
+		
+	}
+	
+	bonus = {
+		blockade_efficiency = 0.15
+		# <<WIKI>> extra_navy tradition_galley = yes
+	}
+		
+	
+	galle1 = {
+		galley_cost = -0.075
+		transport_cost = -0.075
+	}
+	galle2 = {
+		own_coast_naval_combat_bonus = 1
+	}
+	galle3 = {
+		galley_power = 0.15
+		transport_power = 0.2
+	}
+
+	galle7 = {
+		#galley_cannons = 0.15
+		#transport_cannons = 0.15
+		galley_number_of_cannons_modifier = 0.05
+	}
+
+	galle5 = {
+		galley_hullsize = 0.15
+		transport_hullsize = 0.15
+	}
+	galle6 = {
+		naval_morale_damage = 0.1
+		# <<WIKI>> add_age_forcelimit_naval = 50
+	}
+	galle4 = {
+		has_galleass = yes
+		allowed_galleass_fraction = 0.15
+		amount_of_galleass = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 8
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 3 }
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 5 }
+			num_of_cities = 5
+		}
+
+		modifier = {
+			factor = 5
+			num_of_galley = 25
+			
+		}
+		modifier = {
+			factor = 10
+			OR = {
+				tag = JAP
+				tag = GBB
+				tag = GBR
+				tag = AUS
+				tag = IDN				
+				tag = PHI								
+			}
+		}
+		modifier = {
+			factor = 5
+			capital_scope = {
+				OR = {
+					region = italy_region
+					region = baltic_region
+					region = balkan_region
+					region = maghreb_region
+					region = japan_region
+					region = anatolia_region
+					region = british_isles_region
+					region = persia_region
+					
+				}
+			}
+			#NOT = { technology_group = high_american }
+		}
+		
+	}
+}
+
+
+handel0 = {
+	category = DIP
+
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		adm_tech = 3 
+	}
+	
+	bonus = {
+		merchants = 3
+		justify_trade_conflict_cost = -0.25
+		# <<WIKI>> extra_navy tradition_light_ships = yes
+	}
+		
+	
+	handel1 = {
+		light_ship_cost = -0.075
+	}
+	handel2 = {
+		light_ship_power = 0.25
+	}
+	handel3 = {
+		global_ship_trade_power = 0.25
+	}
+
+	handel4 = {
+		#light_ship_cannons = 0.15
+		light_ship_hull_size = 0.15
+	}
+
+	handel5 = {
+		treasure_fleet_income = 0.25
+	}
+	handel6 = {
+		ship_power_propagation = 0.25	
+	}
+	handel7 = {
+		has_voc_indiamen = yes
+		allowed_voc_indiamen_fraction = 0.15
+	}
+	
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 2
+			num_of_ports = 1
+		}
+		modifier = {
+			factor = 3
+			num_of_ports = 5
+		}
+		modifier = {
+			factor = 4
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 5
+			num_of_ports = 15
+		}
+		modifier = {
+			factor = 6
+			num_of_ports = 20
+		}
+		modifier = {
+			factor = 7
+			num_of_ports = 40
+		}
+		
+	}
+}
+
+flagship0 = {
+	category = DIP
+	trigger = {
+		NOT = { tag = ZOM }
+		num_of_ports = 1
+		if = {
+			limit = { 
+				ai = yes 
+				num_of_ports = 1
+			}
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+	bonus = {
+		max_flagships = 3
+	}
+
+	flagship1 = {
+		flagship_cost = -0.05
+	}
+	flagship2 = {
+		flagship_durability = 0.1
+	}
+	flagship3 = {
+		flagship_morale = 0.1
+	}
+	flagship4 = {
+		max_flagships = 2
+	}
+	flagship5 = {
+		flagship_naval_engagement_modifier = 1
+	}
+	flagship6 = {
+		naval_maintenance_flagship_modifier = -0.20
+	}
+	flagship7 = {
+		number_of_cannons_flagship_modifier = 0.15
+	}
+
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 10 }
+		}
+		modifier = {
+			factor = 1
+			num_of_ports = 10
+		}
+		modifier = {
+			factor = 2
+			num_of_ports = 15
+		}
+		modifier = {
+			factor = 3
+			num_of_heavy_ship = 20
+		}
+	}
+}
+
+
+
+	

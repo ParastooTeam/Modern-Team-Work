@@ -1,0 +1,2271 @@
+namespace = trade_modern
+#
+#trade_modern Point admin power X1
+country_event = {
+	id = trade_modern.1
+	title = "trade_modern.1title"
+	desc = "trade_modern.1desc"
+	picture = trade_modern_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+			if = {
+				limit = {
+					any_trade_node = {
+						ROOT = {
+							trading_policy_in_node = {
+								node = PREV
+								policy = establish_communities
+							}
+						}
+						has_trader = ROOT
+						trade_share = {
+							country = ROOT
+							share = 10
+						}
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 15
+							}
+						}
+					}
+				}
+				
+				random_trade_node = {
+					
+					limit = {
+						ROOT = {
+							trading_policy_in_node = {
+								node = PREV
+								policy = establish_communities
+							}
+						}
+						has_trader = ROOT
+						trade_share = {
+							country = ROOT
+							share = 10
+						}
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 15
+							}
+						}
+					}
+					save_event_target_as = trade_share_10
+				}
+			}
+			if = {
+				limit = {
+					any_trade_node = {
+						ROOT = {
+							trading_policy_in_node = {
+								node = PREV
+								policy = establish_communities
+							}
+						}
+						has_trader = ROOT
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 20
+							}
+						}
+					}
+				}
+				random_trade_node = {
+					limit = {
+						ROOT = {
+							trading_policy_in_node = {
+								node = PREV
+								policy = establish_communities
+							}
+						}
+						has_trader = ROOT
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+						NOT = {
+							trade_share = {
+								country = ROOT
+								share = 20
+							}
+						}
+					}
+					save_event_target_as = trade_share_15
+				}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+				save_event_target_as = trade_share_20
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+				save_event_target_as = trade_share_30
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+				save_event_target_as = trade_share_40
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+				save_event_target_as = trade_share_50
+			}
+		}
+	}
+	
+
+	option = {
+		name = "trade_modern_10.1opt"
+		goto = trade_share_10
+		trigger = {
+			has_saved_event_target = trade_share_10
+		}
+		country_event = {
+			id = trade_modern.4
+		}
+		
+	}
+	option = {
+		name = "trade_modern_15.1opt"
+		goto = trade_share_15
+		trigger = {
+			has_saved_event_target = trade_share_15
+		}
+		country_event = {
+			id = trade_modern.4
+		}
+	}
+	option = {
+		name = "trade_modern_20.1opt"
+		goto = trade_share_20
+		trigger = {
+			has_saved_event_target = trade_share_20
+		}
+		country_event = {
+			id = trade_modern.4
+		}
+	}
+	option = {
+		name = "trade_modern_30.1opt"
+		goto = trade_share_30
+		trigger = {
+			has_saved_event_target = trade_share_30
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_40.1opt"
+		goto = trade_share_40
+		trigger = {
+			has_saved_event_target = trade_share_40
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+		
+	}
+	option = {
+		name = "trade_modern_50.1opt"
+		goto = trade_share_50
+		trigger = {
+			has_saved_event_target = trade_share_50
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+		
+	}
+	option = {
+		name = "trade_modern_more.1opt"
+		country_event = {
+			id = trade_modern.2
+			
+		}
+	
+	}
+	option = {
+		name = "trade_modern_cansel.1opt"
+		every_trade_node = {
+			limit = {
+				OR = {
+					
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+				clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+}
+
+#####################################################################
+
+country_event = {
+	id = trade_modern.2
+	title = "trade_modern.2title"
+	desc = "trade_modern.2desc"
+	picture = trade_modern_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+					}
+				}
+				save_event_target_as = trade_share_10_1
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 20
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT				
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 20
+						}
+					}
+				}
+				save_event_target_as = trade_share_15_1
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+				save_event_target_as = trade_share_20_1
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+				save_event_target_as = trade_share_30_1
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+				save_event_target_as = trade_share_40_1
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+				save_event_target_as = trade_share_50_1
+			}
+		}
+	}
+	
+	option = {
+		name = "trade_modern_101.1opt"
+		goto = trade_share_10_1
+		trigger = {
+			has_saved_event_target = trade_share_10_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+		
+	}
+	option = {
+		name = "trade_modern_151.1opt"
+		goto = trade_share_15_1
+		trigger = {
+			has_saved_event_target = trade_share_15_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+		
+	}
+	option = {
+		name = "trade_modern_201.1opt"
+		goto = trade_share_20_1
+		trigger = {
+			has_saved_event_target = trade_share_20_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_301.1opt"
+		goto = trade_share_30_1
+		trigger = {
+			has_saved_event_target = trade_share_30_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_401.1opt"
+		goto = trade_share_40_1
+		trigger = {
+			has_saved_event_target = trade_share_40_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_501.1opt"
+		goto = trade_share_50_1
+		trigger = {
+			has_saved_event_target = trade_share_50_1
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_more.1opt"
+		country_event = {
+			id = trade_modern.3
+			
+		}
+	
+	}
+	option = {
+		name = "trade_modern_cansel.1opt"
+		every_trade_node = {
+			limit = {
+				OR = {
+					
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+				clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+}
+
+country_event = {
+	id = trade_modern.3
+	title = "trade_modern.3title"
+	desc = "trade_modern.3desc"
+	picture = trade_modern_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 10
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 15
+						}
+					}
+				}
+				save_event_target_as = trade_share_10_2
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 20
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 15
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 20
+						}
+					}
+				}
+				save_event_target_as = trade_share_15_2
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 20
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 30
+						}
+					}
+				}
+				save_event_target_as = trade_share_20_2
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 30
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 40
+						}
+					}
+				}
+				save_event_target_as = trade_share_30_2
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 40
+					}
+					NOT = {
+						trade_share = {
+							country = ROOT
+							share = 50
+						}
+					}
+				}
+				save_event_target_as = trade_share_40_2
+			}
+			}
+			if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					trade_share = {
+						country = ROOT
+						share = 50
+					}
+				}
+				save_event_target_as = trade_share_50_2
+			}
+		}
+	}
+	
+	option = {
+		name = "trade_modern_102.1opt"
+		goto = trade_share_10_2
+		trigger = {
+			has_saved_event_target = trade_share_10_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_152.1opt"
+		goto = trade_share_15_2
+		trigger = {
+			has_saved_event_target = trade_share_15_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_202.1opt"
+		goto = trade_share_20_2
+		trigger = {
+			has_saved_event_target = trade_share_20_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_302.1opt"
+		goto = trade_share_30_2
+		trigger = {
+			has_saved_event_target = trade_share_30_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_402.1opt"
+		goto = trade_share_40_2
+		trigger = {
+			has_saved_event_target = trade_share_40_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_502.1opt"
+		goto = trade_share_50_2
+		trigger = {
+			has_saved_event_target = trade_share_50_2
+		}
+		country_event = {
+			id = trade_modern.4
+			
+		}
+	}
+	option = {
+		name = "trade_modern_more.1opt"
+		country_event = {
+			id = trade_modern.2
+			
+		}
+	
+	}
+	option = {
+		name = "trade_modern_cansel.1opt"
+		every_trade_node = {
+			limit = {
+				OR = {
+					
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+}
+
+
+
+
+
+
+#################################################################################
+
+country_event = {
+	id = trade_modern.4
+	title = "trade_modern.4title"
+	desc = "trade_modern.4desc"
+	picture = trade_modern_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		
+		if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_10_2
+					}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					OR = {
+						has_saved_event_target = trade_share_10
+						has_saved_event_target = trade_share_10_1
+						has_saved_event_target = trade_share_10_2
+					}
+				}
+				save_event_target_as = trade_share_10b
+			}
+		}
+		if = {
+			limit = {
+				any_trade_node = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					OR = {
+						has_saved_event_target = trade_share_15
+						has_saved_event_target = trade_share_15_1
+						has_saved_event_target = trade_share_15_2
+						}
+				}
+			}
+			random_trade_node = {
+				limit = {
+					ROOT = {
+						trading_policy_in_node = {
+							node = PREV
+							policy = establish_communities
+						}
+					}
+					has_trader = ROOT
+					OR = {
+						has_saved_event_target = trade_share_15
+						has_saved_event_target = trade_share_15_1
+						has_saved_event_target = trade_share_15_2
+						}
+				}
+				save_event_target_as = trade_share_15b
+			}
+		}
+		if = {
+		limit = {
+			any_trade_node = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				OR = {
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_20_2
+					}
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_20_2
+					}
+			}
+			save_event_target_as = trade_share_20b
+		}
+		}
+		if = {
+		limit = {
+			any_trade_node = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				OR = {
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_30_2
+					}
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_30_2
+					}
+			}
+			save_event_target_as = trade_share_30b
+		}
+		}
+		if = {
+		limit = {
+			any_trade_node = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				OR = {
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_40_2
+					}
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_40_2
+					}
+			}
+			save_event_target_as = trade_share_40b
+		}
+		}
+		if = {
+		limit = {
+			any_trade_node = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				OR = {
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_50_2
+					}
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_50_2
+					}
+			}
+			save_event_target_as = trade_share_50b
+		}
+	}
+}
+	option = {
+		name = "trade_modern.4_10opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_10b
+				has_saved_event_target = trade_share_15b
+				has_saved_event_target = trade_share_20b
+				has_saved_event_target = trade_share_30b
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_10b
+					has_saved_event_target = trade_share_15b
+					has_saved_event_target = trade_share_20b
+					has_saved_event_target = trade_share_30b
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -10
+				key = main_trade_share_10
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 10
+				key = main_trade_share_10_1
+			}	
+			save_event_target_as = show_node_10
+		}
+		add_dip_power = -10
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_10
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_10
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+				clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_20opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_10b
+				has_saved_event_target = trade_share_15b
+				has_saved_event_target = trade_share_20b
+				has_saved_event_target = trade_share_30b
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_10b
+					has_saved_event_target = trade_share_15b
+					has_saved_event_target = trade_share_20b
+					has_saved_event_target = trade_share_30b
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -20
+				key = main_trade_share_20
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 20
+				key = main_trade_share_20_1
+			}	
+			save_event_target_as = show_node_10
+		}
+		add_dip_power = -15
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_20
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_20
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2	
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_30opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_15b
+				has_saved_event_target = trade_share_20b
+				has_saved_event_target = trade_share_30b
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_15b
+					has_saved_event_target = trade_share_20b
+					has_saved_event_target = trade_share_30b
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -30
+				key = main_trade_share_30
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 30
+				key = main_trade_share_30_1
+			}	
+			save_event_target_as = show_node_15
+		}
+		add_dip_power = -20
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_30
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_30
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+				
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_40opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_20b
+				has_saved_event_target = trade_share_30b
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_20b
+					has_saved_event_target = trade_share_30b
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -40
+				key = main_trade_share_40
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 40
+				key = main_trade_share_40_1
+			}	
+			save_event_target_as = show_node_20
+		}
+		add_dip_power = -25
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_40
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_40
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+					
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_60opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_30b
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_30b
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -60
+				key = main_trade_share_60
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 60
+				key = main_trade_share_60_1
+			}	
+			save_event_target_as = show_node_30
+		}
+		add_dip_power = -35
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_60
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_60
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+				
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_80opt"
+		trigger = {
+			OR = {
+				has_saved_event_target = trade_share_40b
+				has_saved_event_target = trade_share_50b
+			}
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				OR = {
+					has_saved_event_target = trade_share_40b
+					has_saved_event_target = trade_share_50b
+				}
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -80
+				key = main_trade_share_80
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 80
+				key = main_trade_share_80_1
+			}	
+			save_event_target_as = show_node_40
+		}
+		add_dip_power = -42
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_80
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_80
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+				
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern.4_100opt"
+		trigger = {
+			has_saved_event_target = trade_share_50b
+		}
+		random_trade_node = {
+			limit = {
+				ROOT = {
+					trading_policy_in_node = {
+						node = PREV
+						policy = establish_communities
+					}
+				}
+				has_trader = ROOT
+				has_saved_event_target = trade_share_50b
+			}
+			add_trade_modifier = {
+				who = ROOT
+				duration = 5475
+				power = -100
+				key = main_trade_share_100
+			}	
+			add_trade_modifier = {
+				who = event_target:trade_target_temp
+				duration = 5475
+				power = 100
+				key = main_trade_share_100_1
+			}	
+			save_event_target_as = show_node_50
+		}
+		add_dip_power = -50
+		
+		add_opinion = {
+			who = event_target:trade_target_temp
+			modifier = share_node_100
+		}
+		event_target:trade_target_temp = {
+			add_opinion = {
+				who = ROOT
+				modifier = share_node_100
+			}
+		}
+		hidden_effect = {
+			event_target:trade_target_temp = {
+				country_event = {
+					id = trade_modern.5
+				}
+			}
+		}
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+					
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+			
+		}
+		clear_global_event_target = trade_target_temp
+	}
+	option = {
+		name = "trade_modern_cansel.1opt"
+		every_trade_node = {
+			limit = {
+				OR = {
+					has_saved_event_target = trade_share_10
+					has_saved_event_target = trade_share_15
+					has_saved_event_target = trade_share_20
+					has_saved_event_target = trade_share_30
+					has_saved_event_target = trade_share_40
+					has_saved_event_target = trade_share_50
+					has_saved_event_target = trade_share_10_1
+					has_saved_event_target = trade_share_15_1
+					has_saved_event_target = trade_share_20_1
+					has_saved_event_target = trade_share_30_1
+					has_saved_event_target = trade_share_40_1
+					has_saved_event_target = trade_share_50_1
+					has_saved_event_target = trade_share_10_2
+					has_saved_event_target = trade_share_15_2
+					has_saved_event_target = trade_share_20_2
+					has_saved_event_target = trade_share_30_2
+					has_saved_event_target = trade_share_40_2
+					has_saved_event_target = trade_share_50_2
+					
+				}
+			}
+			
+			clear_global_event_target = trade_share_10
+				clear_global_event_target = trade_share_15
+				clear_global_event_target = trade_share_20
+				clear_global_event_target = trade_share_30
+				clear_global_event_target = trade_share_40
+				clear_global_event_target = trade_share_50
+				clear_global_event_target = trade_share_10_1
+				clear_global_event_target = trade_share_15_1
+				clear_global_event_target = trade_share_20_1
+				clear_global_event_target = trade_share_30_1
+				clear_global_event_target = trade_share_40_1
+				clear_global_event_target = trade_share_50_1
+				clear_global_event_target = trade_share_10_2
+				clear_global_event_target = trade_share_15_2
+				clear_global_event_target = trade_share_20_2
+				clear_global_event_target = trade_share_30_2
+				clear_global_event_target = trade_share_40_2
+				clear_global_event_target = trade_share_50_2
+				
+		}
+		clear_global_event_target = trade_target_temp
+	}
+}
+
+
+country_event = {
+	id = trade_modern.5
+	title = "trade_modern.5title"
+	desc = "trade_modern.5desc"
+	picture = trade_modern_node_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "trade_modern.52opt"
+		goto = show_node_10
+		trigger = {
+			has_saved_event_target = show_node_10
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_10
+			}
+			clear_global_event_target = show_node_10			
+		}
+	}
+	option = {
+		name = "trade_modern.53opt"
+		goto = show_node_15
+		trigger = {
+			has_saved_event_target = show_node_15
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_15
+			}
+			clear_global_event_target = show_node_15			
+		}
+	}
+	option = {
+		name = "trade_modern.54opt"
+		goto = show_node_20
+		trigger = {
+			has_saved_event_target = show_node_20
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_20
+			}
+			clear_global_event_target = show_node_20			
+		}
+	}
+	option = {
+		name = "trade_modern.55opt"
+		goto = show_node_30
+		trigger = {
+			has_saved_event_target = show_node_30
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_30
+			}
+			clear_global_event_target = show_node_30		
+		}
+	}
+	option = {
+		name = "trade_modern.56opt"
+		goto = show_node_40
+		trigger = {
+			has_saved_event_target = show_node_40
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_40
+			}
+			clear_global_event_target = show_node_40			
+		}
+	}
+	option = {
+		name = "trade_modern.57opt"
+		goto = show_node_50
+		trigger = {
+			has_saved_event_target = show_node_50
+		}
+		every_trade_node = {
+			limit = {
+				has_saved_event_target = show_node_50
+			}
+			clear_global_event_target = show_node_50			
+		}
+	}
+}

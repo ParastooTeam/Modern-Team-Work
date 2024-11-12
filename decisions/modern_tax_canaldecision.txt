@@ -1,0 +1,298 @@
+country_decisions = {
+
+	dobble_canal_tax_1 = {
+		potential = {
+			has_country_flag = open_all_decision
+			OR = {  
+				has_country_modifier = took_suez_canal
+				AND = {
+					owns_or_subject_of = 4438
+					NOT = { has_country_modifier = captured_suez_canal }
+				}
+				has_country_modifier = took_panama_canal
+				AND = {
+					owns_or_subject_of = 835
+					NOT = { has_country_modifier = captured_panama_canal }
+				}
+			}
+			ai = no
+			NOT = {
+				check_variable = {
+					which = canal_tax_2
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = tax_idea
+			OR = {
+				835 = {
+					owned_by = ROOT
+					owner = { NOT = { has_country_modifier = captured_panama_canal } }
+					has_great_project = {
+						type = panama_canal
+						tier = 2
+					}
+				}
+				4438 = {
+					owned_by = ROOT
+					owner = { NOT = { has_country_modifier = captured_suez_canal } }
+					has_great_project = {
+						type = suez_canal
+						tier = 2
+					}
+				}
+			}
+			NOT = {
+				check_variable = {
+					which = canal_tax_2
+					value = 2
+				}
+			}
+			adm_power = 250
+		}
+		effect = {
+			add_adm_power = -250
+			if = {
+				limit = { 
+					OR = {
+						has_country_flag = tax_canal
+						check_variable = {
+							which = canal_tax_2
+							value = 1
+						}
+					}
+				}
+				change_variable = {
+					which = canal_tax_2
+					value = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_flag = tax_canal } }
+				set_country_flag = tax_canal
+				set_variable = {
+					which = canal_tax_2
+					value = 1
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					ai = no
+				}
+				country_event = {
+					id = tax_canal.2
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	dobble_canal_tax_2 = {
+		potential = {
+			has_country_flag = open_all_decision
+			OR = {  
+				has_country_modifier = took_suez_canal
+				AND = {
+					owns_or_subject_of = 4438
+					NOT = { has_country_modifier = captured_suez_canal }
+				}
+				has_country_modifier = took_panama_canal
+				AND = {
+					owns_or_subject_of = 835
+					NOT = { has_country_modifier = captured_panama_canal }
+				}
+			}
+			ai = no
+			check_variable = {
+				which = canal_tax_2
+				value = 1
+			}
+		}
+		allow = {
+			full_idea_group = tax_idea
+			OR = {
+				835 = {
+					owned_by = ROOT
+					owner = { NOT = { has_country_modifier = captured_panama_canal } }
+					has_great_project = {
+						type = panama_canal
+						tier = 3
+					}
+				}
+				4438 = {
+					owned_by = ROOT
+					owner = { NOT = { has_country_modifier = captured_suez_canal } }
+					has_great_project = {
+						type = suez_canal
+						tier = 3
+					}
+				}
+			}
+			NOT = {
+				check_variable = {
+					which = canal_tax_2
+					value = 3
+				}
+			}
+			adm_power = 500
+		}
+		effect = {
+			add_adm_power = -500
+			if = {
+				limit = { 
+					OR = {
+						has_country_flag = tax_canal
+						check_variable = {
+							which = canal_tax_2
+							value = 2
+						}
+					}
+				}
+				change_variable = {
+					which = canal_tax_2
+					value = 1
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					ai = no
+				}
+				country_event = {
+					id = tax_canal.2
+					days = 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	reduce_canal_taxes = {
+		potential = {
+			has_country_flag = open_all_decision
+			OR = {  
+				has_country_modifier = took_suez_canal
+				owns_or_subject_of = 4438
+				has_country_modifier = took_panama_canal
+				owns_or_subject_of = 835
+			}
+			ai = no
+			check_variable = {
+				which = canal_tax_2
+				value = 1
+			}
+		}
+		allow = {
+			adm_power = 100
+		}
+		effect = {
+			add_adm_power = -100
+			if = {
+				limit = { 
+					OR = {
+						has_country_flag = tax_canal
+						check_variable = {
+							which = canal_tax_2
+							value = 1
+						}
+					}
+				}
+				change_variable = {
+					which = canal_tax_2
+					value = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tax_suez_canal_decision = {
+		potential = { 
+			has_country_flag = open_all_decision
+			ai = no
+			OR = {  
+				has_country_modifier = took_suez_canal
+				owns_or_subject_of = 4438
+			}			
+			NOT = { has_country_modifier = cool_down_tax }
+		}
+		allow = {
+			if = {
+				limit = {
+					4438 = { owner = { is_subject_of = ROOT } }
+				}
+				4438 = { NOT = { owner = { ai = no	} } }
+			}
+			NOT = { has_country_modifier = captured_suez_canal }
+			NOT = { has_country_modifier = cooldown_suez_taxation }
+		}
+		effect = {
+			save_event_target_as = has_suez_canal
+			add_country_modifier = {
+				name = cooldown_suez_taxation
+				duration = 1825
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					ai = no
+				}
+				country_event = {
+					id = tax_canal.1
+				}
+			}	
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	tax_panama_canal_decision = {
+		potential = { 
+			has_country_flag = open_all_decision
+			ai = no
+			OR = {  
+				has_country_modifier = took_panama_canal
+				owns_or_subject_of = 835
+			}			
+			NOT = { has_country_modifier = cool_down_tax }
+		}
+		allow = {
+			if = {
+				limit = {
+					835 = { owner = { is_subject_of = ROOT } }
+				}
+				835 = { NOT = { owner = { ai = no	} } }
+			}
+			NOT = { has_country_modifier = captured_panama_canal }
+			NOT = { has_country_modifier = cooldown_panama_taxation }
+		}
+		effect = {
+			save_event_target_as = has_panama_canal
+			add_country_modifier = {
+				name = cooldown_panama_taxation
+				duration = 1825
+			}
+			every_country = {
+				limit = {
+					NOT = { tag = ROOT }
+					ai = no
+					NOT = { has_country_flag = dont_take_tax_panama }
+				}
+				country_event = {
+					id = tax_canal.3
+				}
+			}			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}	
+}

@@ -1,0 +1,304 @@
+
+
+#############Spy Idea 1
+spy_ideas = {
+	category = DIP
+
+
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { 
+				ai = yes 
+				num_of_ports = 1
+			}
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+	
+	bonus = {
+		advisor_cost = -0.035
+	}
+
+	efficient_spies = {
+		spy_offence = 0.10
+		
+	}	
+	
+	
+	agent_training = {
+		fabricate_claims_cost = -0.25
+		can_fabricate_for_vassals = yes
+		
+			
+	}
+
+	vetting = {
+		global_spy_defence = 0.10
+	}	
+	
+	additional_loyalist_recruitment_1 = {
+		reduced_liberty_desire = 10
+	}
+
+	
+	spion5 = {
+		ae_impact = -0.2
+	}
+
+	
+	privateers = {
+		can_chain_claim = yes
+		#capture_ship_chance = 0.25
+	}
+	
+	audit_checks = {
+		
+		rebel_support_efficiency = 1
+		discovered_relations_impact = -1
+	}
+
+
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 5
+			personality = ai_diplomat
+		}
+		
+		modifier = {
+			factor = 0.5
+			personality = ai_militarist 
+		}
+		modifier = {
+			factor = 1
+			has_reform = fascist_government
+		}
+		
+		modifier = {
+			factor = 1
+			has_reform = communist_government
+		}
+		modifier = {
+			factor = 1
+			any_neighbor_country = {
+				NOT = { has_idea_group = exploration_ideas }
+			}
+		}
+	}
+}
+
+######Spy Attack
+dynasty0 = {
+	category = DIP
+	
+	 trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { 
+				ai = yes 
+				num_of_ports = 1
+			}
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+	
+	bonus = {
+		
+		heir_chance = 0.5
+	}
+
+	
+	foreign_embassies_2 = {
+		diplomats = 3
+	}
+	establish_cadet_branches = {
+		spy_offence = 0.15
+	}
+	cabinet = {
+		liberty_desire_from_subject_development = -0.1
+	}
+	
+	diplomatic_corps_2 = {
+		culture_conversion_cost = -0.15
+	}
+	
+	benign_diplomats = {
+		improve_relation_modifier = 0.1
+	}
+	experienced_diplomats_1  = {
+		diplomatic_upkeep = 1
+	}
+	dynastie4 = {
+		siege_ability = 0.1
+		may_perform_slave_raid = yes
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 5
+			any_rival_country = {
+				has_idea_group = spy_ideas
+			}
+			NOT = { is_subject = yes }
+		}
+		modifier = {
+			factor = 4
+			OR = {
+				tag = USA
+				tag = ISR
+				tag = ISG
+				tag = GBR
+				tag = RUS
+				tag = CHN
+			}
+		}
+		modifier = {
+			factor = 2
+			personality = ai_diplomat 
+		}
+	}
+}
+#######Spy Defense
+exploration_ideas = {
+	category = DIP
+	
+	 trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+	}
+
+	bonus = {
+		reduced_stab_impacts = yes
+	}
+
+	colonial_ventures =  {
+		global_spy_defence = 0.15
+	}
+	quest_for_the_new_world	= {
+		improve_relation_modifier = 0.1
+	}
+	overseas_exploration = {
+		yearly_corruption = -0.15
+	}
+	land_of_opportunity = {
+		global_autonomy = -0.025
+	}
+	vice_roys  = {
+ 		global_unrest = -1
+ 	}
+	free_colonies = {
+		diplomatic_reputation = 1
+	}
+	global_empire = {
+		global_manpower_modifier = 0.05
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 5
+			any_rival_country = {
+				OR = {
+					has_idea_group = spy_ideas
+				has_idea_group = dynasty0
+				}
+			}
+			NOT = { is_subject = yes }
+		}
+		modifier = {
+			factor = 4
+			OR = {
+				tag = USA
+				tag = ISR
+				tag = ISG
+				tag = GBR
+				tag = RUS
+				tag = CHN
+			}
+		}
+		modifier = {
+			factor = 2
+			personality = ai_diplomat 
+		}
+	}
+}
+satellite_research = {
+	category = DIP
+	
+	trigger = {
+		NOT = { tag = ZOM }
+		adm_tech = 3 
+		if = {
+			limit = { 
+				ai = yes 
+				num_of_ports = 1
+			}
+			has_idea_group = naval_ideas
+			has_idea_group = maritime_ideas 
+			has_idea_group = leadernav0 
+			has_idea_group = flottenbasis0
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus = {
+		stability_cost_modifier = -0.2
+		
+	}
+
+	satellite_research_1 = {
+		diplomatic_annexation_cost = -0.25
+	}
+	satellite_research_2 = {
+		global_spy_defence = 0.15	
+	}
+	satellite_research_3 = {
+		improve_relation_modifier = 0.1
+	}
+	satellite_research_4 = {
+		unjustified_demands = -0.1
+	}
+	satellite_research_5 = {
+		culture_conversion_cost = -0.25
+	}
+	satellite_research_6 = {
+		fabricate_claims_cost = -0.15
+	}
+	satellite_research_7 = {
+		spy_offence = 0.15
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 1
+			personality = ai_diplomat 
+		}
+		modifier = {
+			factor = 5
+			monthly_income = 1000
+		}
+		modifier = {
+			factor = 0.5
+			ai = yes
+		}
+		
+
+	}	
+}

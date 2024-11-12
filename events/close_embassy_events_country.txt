@@ -1,0 +1,34 @@
+namespace = close_embbasy
+
+
+#######################################################################
+country_event = {
+	id = close_embbasy.1
+	title = "close_embbasy.NAME1"
+	desc = "close_embbasy.DESC.1"
+	picture = CLOSE_EMBASSY_eventPicture
+
+	
+
+
+	is_triggered_only = yes
+
+	option = {
+		name = "close_embbasy.OPT1"
+	}
+
+}
+country_event = {
+	id = close_embbasy.2
+	title = "close_embbasy.NAME2"
+	desc = "close_embbasy.DESC.2"
+	picture = CLOSE_EMBASSY_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "close_embbasy.OPT2"
+
+	}
+
+}

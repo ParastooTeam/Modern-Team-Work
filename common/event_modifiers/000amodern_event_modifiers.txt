@@ -1,0 +1,151 @@
+##################################################################################################
+# scriptable and usable for event-system below.
+##################################################################################################
+
+esu_resercher_modifire = {}
+esu_bandit_modifire = {}
+commandant_modifire = {}
+army_reformer_modifire = {}
+esu_curator_modifire = {}
+esu_colonial_modifire = {}
+cant_make_transporter = {}
+cooldown_refugees = {}
+
+Nationalist_morale = { land_morale = 0.05 }
+border_garisson = { garrison_size = -0.5 }
+support_m_damage_5 = { morale_damage = 0.1 morale_damage_received = -0.1 }
+support_m_damage_5_1 = {}
+
+panama_canal_closed = {}
+suez_canal_closed = {}
+volga_canal_closed = {}
+kiel_canal_closed = {}
+
+admin_cooldown = {}
+admin_cooldown_root = {}
+diplo_cooldown = {}
+diplo_cooldown_root = {}
+military_cooldown = {}
+military_cooldown_root = {}
+kill_advisor_event1 = {}
+kill_advisor_event_production = {}
+kill_advisor_event_trade_ship = {}
+kill_advisor_event_fort = {}
+kill_advisor_event_ideas = {}
+persia_persian_dominance = {}
+prt_arsacid_authority = {}
+tribute_of_the_vasels_et = {}
+fur_trade_et = {}
+strength_of_the_ancestors_et = {}
+man_of_diplomacy_et = {}
+
+access_to_atom_6 = {}
+access_to_atom_5 = {}
+access_to_atom_1 = {}
+access_to_atom_2 = {}
+
+cool_down_influance = {}
+cooldown_first = {}
+cooldown_capture = {}
+rebelion = {}
+attition_fort_0 = {
+	local_hostile_movement_speed = -0.8
+	local_hostile_attrition = 1
+	local_friendly_movement_speed = 0.8
+}
+attition_fort_1 = {
+	local_hostile_movement_speed = -0.25
+	local_friendly_movement_speed = 0.25
+	local_hostile_attrition = 1
+}
+test_1_modifire = {
+	#can_not_send_merchants = yes
+	can_chain_claim = yes
+	can_not_build_buildings = yes
+	can_not_declare_war = yes
+	can_bypass_forts = yes
+	can_transfer_vassal_wargoal = yes
+	development_cost_in_primary_culture = -0.5
+	state_governing_cost_increase = 10
+	spy_action_cost_modifier = 10
+}
+test_2_modifire = {
+	#can_not_send_merchants = yes
+	min_autonomy_in_territories = -100
+}
+test_3_modifire = {
+}
+Avoid_ignoring_Forts_modifire = {}
+cooldown_cb = {}
+
+more_tax_1 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_2 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_3 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_4 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_5 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_6 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_7 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_8 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_9 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_10 = { global_unrest = 1 global_tax_modifier = 1.0 }
+more_tax_11 = { global_unrest = 1 global_tax_modifier = 1.0 }
+
+more_tax_xx1 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx2 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx3 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx4 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx5 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx6 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx7 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx8 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx9 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx10 = { global_unrest = 2 global_tax_modifier = 2.0 }
+more_tax_xx11 = { global_unrest = 2 global_tax_modifier = 2.0 }
+
+cooldown_faction_member = {}
+have_access_knologe = { local_institution_spread = 0.01 }
+have_access_knologe_cooldown = {}
+not_offer_share_tech = {}
+
+cooldown_building = {}
+cooldown_building_2 = {}
+cooldown_building_3 = {}
+cooldown_send_troop = {}
+cooldown_send_troop_15 = {}
+cooldown_building_airport = {}
+titanium_ban = {}
+cant_sanction_them = {}
+parleman_lock = {}
+parleman_lock_1 = {}
+war_lock = {}
+
+more_peoplotion = { local_manpower_modifier = 0.25 }
+
+have_access_knologe_legalism = { local_institution_spread = 0.01 }
+have_access_knologe_ancient_imperialism = { local_institution_spread = 0.01 }
+have_access_knologe_caste_system = { local_institution_spread = 0.01 }
+have_access_knologe_organized_religion = { local_institution_spread = 0.01 }
+have_access_knologe_serfdom = { local_institution_spread = 0.01 }
+have_access_knologe_manorialism = { local_institution_spread = 0.01 }
+have_access_knologe_early_feudalism = { local_institution_spread = 0.01 }
+have_access_knologe_crop_rotation = { local_institution_spread = 0.01 }
+have_access_knologe_civil_service = { local_institution_spread = 0.01 }
+have_access_knologe_manuscripts = { local_institution_spread = 0.01 }
+have_access_knologe_scholasticism = { local_institution_spread = 0.01 }
+have_access_knologe_guilds = { local_institution_spread = 0.01 }
+have_access_knologe_medicine = { local_institution_spread = 0.01 }
+have_access_knologe_feudalism = { local_institution_spread = 0.01 }
+have_access_knologe_renaissance = { local_institution_spread = 0.01 }
+have_access_knologe_new_world_i = { local_institution_spread = 0.01 }
+have_access_knologe_printing_press = { local_institution_spread = 0.01 }
+have_access_knologe_global_trade = { local_institution_spread = 0.01 }
+have_access_knologe_manufactories = { local_institution_spread = 0.01 }
+have_access_knologe_enlightenment = { local_institution_spread = 0.01 }
+have_access_knologe_imperialism = { local_institution_spread = 0.01 }
+have_access_knologe_industrialization = { local_institution_spread = 0.01 }
+have_access_knologe_nationalism_institution = { local_institution_spread = 0.01 }
+have_access_knologe_electrification = { local_institution_spread = 0.01 }
+have_access_knologe_globalization = { local_institution_spread = 0.01 }
+have_access_knologe_internet = { local_institution_spread = 0.01 }
+
+

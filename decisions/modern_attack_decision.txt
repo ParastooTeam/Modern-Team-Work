@@ -1,0 +1,97 @@
+country_decisions = {
+
+	attack_decision_1 = {
+		potential = { 
+			has_country_flag = show_all_dip_decision
+			ai = no
+			ROOT = { NOT = { has_country_modifier = every_player_1 } }
+			ROOT = { NOT = { has_country_modifier = can_set_goal_1 } }
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		 }
+
+		 allow = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		 }
+
+		effect = {
+			custom_tooltip = attack_country_military_base
+			hidden_effect = {
+				ROOT = { 
+					add_country_modifier = {
+						name = can_set_goal_1
+						duration = 90
+					}
+				}
+				every_country = {
+					limit = {
+						NOT = { tag = ROOT }
+						ai = no
+					}
+					add_country_modifier = {
+						name = every_player_1
+						duration = 120
+					}
+				}
+			}
+		}
+		
+		
+		ai_will_do = {
+		factor = 0
+		}
+
+
+	}
+	
+	attack_decision_2 = {
+		
+		potential = { 
+			has_country_flag = show_all_dip_decision
+			ai = no
+			ROOT = { has_country_modifier = every_player_1 }
+			ROOT = { NOT = { has_country_modifier = can_set_goal_2 } }
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		 }
+
+		 allow = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		 }
+
+		effect = {
+			hidden_effect = {
+				ROOT = { 
+					add_country_modifier = {
+						name = can_set_goal_2
+						duration = 120
+					}
+				}
+			}
+			custom_tooltip = attack_country_military_base
+		}
+		
+		
+		ai_will_do = {
+		factor = 0
+		}
+
+
+	}
+
+	
+}

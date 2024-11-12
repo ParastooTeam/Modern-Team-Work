@@ -1,0 +1,17 @@
+#Battleship
+#Heavy ship Level 9
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+
+hull_size = 595
+base_cannons = 661
+sail_speed = 12
+
+blockade = 30
+
+sprite_level = 1

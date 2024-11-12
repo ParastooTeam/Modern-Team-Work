@@ -1,0 +1,20 @@
+# Culverin
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 8
+	}
+}
+
+
+maneuver = 0
+offensive_morale = 2
+defensive_morale = 1
+offensive_fire = 5
+defensive_fire = 4
+offensive_shock = 1
+defensive_shock = 0

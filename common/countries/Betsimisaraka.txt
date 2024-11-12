@@ -1,0 +1,47 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 220 58 58 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {		
+}
+
+monarch_names = {
+	"Ratsimilahoe #0" = 15
+	"Iavy #0" = 15
+	"Zanahary #0" = 10
+	"Ramanano #0" = 10
+	"Tsihala #0" = 10
+	
+	
+	"Matave #0" = -1
+	"Andrianaginarivo #0" = -1
+	"Tombola #0" = -1
+}
+
+leader_names = {
+	Antatsimo
+	Antavaratra
+	Betanimena
+	Tsikoa
+	Sicoua
+	Betanimena
+	Sihanaka
+	Antankanara
+	Tsimihety
+	Bezanozano
+}
+
+ship_names = {
+	Mananara Alaotra Mahavavy Mania Andriamaro
+	Mangoky Onilahy Ikopa Kinkony Ihotry Betsiboka
+}

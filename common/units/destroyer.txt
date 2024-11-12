@@ -1,0 +1,16 @@
+#Destroyer
+#Heavy ship Level 7
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 381
+base_cannons = 423
+sail_speed = 10
+
+blockade = 30
+
+sprite_level = 1

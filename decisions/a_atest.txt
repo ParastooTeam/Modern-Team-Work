@@ -1,0 +1,64 @@
+#country_decisions = {
+#	
+#	test = {
+#		major = yes
+#		color = { 110 190 40 }
+#		potential = {   
+#			
+#		}
+#		allow = {
+#			
+#
+#		}
+#		effect = {
+#			if = {
+#				limit = {
+#					NOT = {
+#						check_variable = {
+#							which = test_1
+#							value = 1
+#						}
+#					}
+#				}
+#				set_variable = {
+#					which = test_1
+#					value = 1
+#				}
+#			}
+#			else = {
+#				change_variable = {
+#					which = test_1
+#					value = 1
+#				}
+#			}
+#			
+#			
+#		}
+#		ai_will_do = {
+#			factor = 0
+#		}
+#	}
+#	test_1 = {
+#		major = yes
+#		color = { 110 190 40 }
+#		potential = {   
+#			
+#		}
+#		allow = {
+#			check_variable = {
+#				which = test_1
+#				value = 1
+#			}
+#		}
+#		effect = {
+#			export_to_variable = {
+#				which = test_1
+#				value = modifier:land_morale
+#			}
+#		}
+#		ai_will_do = {
+#			factor = 0
+#		}
+#	}
+#
+#}

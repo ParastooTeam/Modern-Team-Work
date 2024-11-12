@@ -1,0 +1,70 @@
+
+
+po_capture_electronics = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 1.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 40.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 40
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	is_visible = {
+		
+		FROM = { electronics = 1 }
+	}
+	is_allowed = {
+		NOT = { has_country_modifier = cooldown_capture }
+		FROM = { electronics = 1 }
+		FROM = {
+			any_owned_province = {
+				trade_goods = electronics
+				OR = {
+					controlled_by = ROOT
+					controller = {
+						is_subject_of = ROOT
+					}
+					AND = {
+						FROM = { ai = no }
+						controlled_by = FROM
+					}
+				}
+			}
+		}
+	}
+	effect = {
+		FROM = { 
+			random_owned_province = {
+				limit = {
+					trade_goods = electronics
+				}
+				change_trade_goods = unknown
+			}
+		}
+		country_event = {
+			id = modern_tradegoods.4
+			days = 2950
+		}
+		add_country_modifier = {
+			name = cooldown_capture
+			duration = 9125
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 40
+		}
+	}
+}

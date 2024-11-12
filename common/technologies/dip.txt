@@ -1,0 +1,2384 @@
+monarch_power = DIP
+
+# applied when a country is ahead of time in this technology
+ahead_of_time = {
+	trade_efficiency = 0.2
+	yearly_corruption = -0.05
+	ahead_of_time_benefit_dip = 1
+}
+
+technology = {
+	# Tech 0
+	year = 2000
+
+	#Trading
+	may_fabricate_claims = yes
+	merchants = yes
+	trade_range			=	1000
+	
+	
+	global_colonial_growth	= 	10
+	tradecompany = yes
+}
+
+technology = {
+	# Tech 1
+	year = 2001
+
+	#Ancient Seafaring
+	naval_morale = 3.0
+	
+	trade_efficiency 		= 	0.1
+	trade_range				=	1000
+	
+	may_build_flagships = yes
+	
+	#Building
+	road = yes
+	marketplace = yes 
+	dock = yes
+	shipyard = yes
+	trade_post = yes
+	trade_depot = yes 
+	drydock = yes
+	
+	grand_shipyard = yes 
+	treasury_office = yes
+	reduced_naval_attrition = yes
+	naval_arsenal = yes 
+	railroad = yes
+	mass_transit_system = yes
+	highway = yes
+	naval_base = yes
+	impressment_offices 	= yes
+	#New
+	wharf = yes
+	coastal_defence = yes
+	naval_battery = yes
+	naval_engagement_width = 2
+	naval_maintenance	= 0.05
+}
+
+technology = {
+	# Tech 2
+	year = 2002
+
+	naval_morale = 0.1
+	
+	#Diplomacy
+	may_steal_maps = yes
+	may_study_technology = yes
+	may_slander_merchants = yes
+	may_sabotage_recruitment = yes
+	may_sow_discontent = yes
+	may_sabotage_reputation = yes
+	allow_client_states = yes
+	may_corrupt_officials = yes
+	may_infiltrate_administration = yes
+	may_agitate_for_liberty = yes
+	stock_exchange = yes
+	
+	
+	num_accepted_cultures = 5
+	naval_maintenance	= 0.05
+	global_colonial_growth	= 	20
+}
+
+technology = {
+	# Tech 3
+	year = 2003
+
+	
+	
+	
+	
+}
+
+technology = {
+	# Tech 4
+	year = 2004
+	expects_institution = {
+		writing = 0.1
+	}
+
+	trade_range				=	1000
+	
+	range					=	1000
+}
+
+technology = {
+	# Tech 5
+	year = 2005
+	expects_institution = {
+		writing = 0.1
+	}
+	
+
+	#Alphabet
+	trade_range				=	200
+}
+
+technology = {
+	# Tech 6
+	year = 2015
+	expects_institution = {
+		writing = 0.1
+	}
+	global_colonial_growth	= 	50
+	
+
+	#Roadbuilding
+	
+	naval_maintenance	= 0.05
+}
+
+technology = {
+	# Tech 7
+	year = 2016
+	expects_institution = {
+		writing = 0.1
+	}
+	trade_efficiency 		= 	0.2
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+	
+	#Ship 0
+	enable = early_carrack
+	enable = barque
+	enable = early_galley
+	enable = transport
+	range					=	1000
+	
+}
+
+technology = {
+	# Tech 8
+	year = 2017
+	expects_institution = {
+		writing = 0.1
+	}
+	#Naval Ram
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 9
+	year = 2018
+	expects_institution = {
+		writing = 0.1
+	}
+	global_colonial_growth	= 	100
+	range					=	1000
+}
+
+technology = {
+	# Tech 10
+	year = 2022
+	expects_institution = {
+		writing = 0.25
+	}
+	naval_engagement_width = 2
+	naval_maintenance	= 0.05
+	trade_efficiency 		= 	0.05
+}
+
+technology = {
+	# Tech 11
+	year = 2027
+	expects_institution = {
+		writing = 0.35
+	}
+	global_colonial_growth	= 	20
+	naval_engagement_width = 2
+	
+}
+
+technology = {
+	# Tech 12
+	year = 2034
+	expects_institution = {
+		writing = 0.5
+	}
+	naval_maintenance	= 0.05
+	num_accepted_cultures = 3
+	naval_morale = 0.1
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 13
+	year = 2041
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.10
+	}
+	global_colonial_growth	= 	30
+	naval_morale = 0.1
+	trade_efficiency 		= 	0.05
+	enable = trireme
+}
+
+technology = {
+	# Tech 14
+	year = 2048
+	expects_institution = {
+		writing = 0.5
+		legalism = 0.35
+	}
+	naval_engagement_width = 2
+	trade_range				=	100
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 15
+	year = 2055
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+	}
+	global_colonial_growth	= 	20
+	naval_maintenance	= 0.05
+	naval_morale = 0.1
+	enable = knarr
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 16
+	year = 2062
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.15
+	}
+	trade_range		= 	100
+	naval_morale = 0.1
+	enable = early_frigate
+}
+
+technology = {
+	# Tech 17
+	year = 2069
+	naval_morale = 0.1
+	#Dromon
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.30
+	}
+	#ship 1
+	enable = carrack
+	naval_engagement_width = 2
+	
+	range					=	200
+}
+
+technology = {
+	# Tech 18
+	year = 2076
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.40
+	}
+	#Naval Raiding
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 19
+	year = 2083
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+	}
+	#Bridgebuilding
+	trade_efficiency 		= 	0.05
+	naval_morale = 0.1
+	naval_engagement_width = 2
+	enable = caravel
+}
+
+technology = {
+	# Tech 20
+	year = 2090
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.20
+	}
+	naval_maintenance	= 0.05
+	#Trade Ventures
+	trade_range		= 	100
+	naval_morale = 0.1
+	
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 21
+	year = 2097
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.35
+	}
+	naval_morale = 0.1
+	trade_efficiency 		= 	0.02
+	naval_engagement_width = 2
+	enable = longship
+}
+
+technology = {
+	# Tech 22
+	year = 2104
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+	}
+	naval_morale = 0.1
+	global_colonial_growth	= 	10
+	range					=	200
+	enable = brig
+}
+
+technology = {
+	# Tech 23
+	year = 2111
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.15
+	}
+	naval_engagement_width = 2
+	
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+}
+
+technology = {
+	# Tech 24
+	year = 2118
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.35
+	}
+	#Ship 2
+	enable = galleon
+	
+	
+	
+	
+	#Piracy
+	trade_efficiency 		= 	0.02
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 25
+	year = 2125
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+	}
+
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 26
+	year = 2132
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+	}
+	range					=	100
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+	enable = dromon
+}
+
+technology = {
+	# Tech 27
+	year = 2139
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.20
+	}
+	trade_efficiency 		= 	0.02
+	enable = merchant_ship
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 28
+	year = 2146
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.35
+	}
+	range					=	100
+	naval_maintenance		=	0.05
+	naval_morale = 0.1
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 29
+	year = 2153
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+	}
+	naval_morale = 0.1
+	enable = cog
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 30
+	year = 2160
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.10
+	}
+	#Tech Ship 3
+	enable = wargalleon
+	
+	
+	
+
+	
+	trade_efficiency 		= 	0.02
+}
+
+technology = {
+	# Tech 31
+	year = 2167
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.35
+	}
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 32
+	year = 2174
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+	}
+	naval_morale = 0.1
+	enable = galley
+}
+
+technology = {
+	# Tech 33
+	year = 2181
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+	}
+
+	naval_morale = 0.1
+	trade_efficiency 		= 	0.02
+}
+
+technology = {
+	# Tech 34
+	year = 2188
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.15
+	}
+
+	naval_morale = 0.1
+	trade_efficiency 		= 	0.02
+	enable = frigate
+}
+
+technology = {
+	# Tech 35
+	year = 2195
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.30
+	}
+	trade_efficiency 		= 	0.01
+	trade_range				=	10
+	naval_maintenance	= 0.05
+	enable = flute
+}
+
+technology = {
+	# Tech 36
+	year = 2202
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.40
+	}
+	#Bartering
+	trade_efficiency 		= 	0.02
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 37
+	year = 2209
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+	}
+	#Ship 4
+	enable = twodecker
+	
+	
+	
+
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 38
+	year = 2216
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.20
+	}
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+	
+	
+}
+
+technology = {
+	# Tech 39
+	year = 2223
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.35
+	}
+
+	naval_morale = 0.1
+	enable = galleass
+}
+
+technology = {
+	# Tech 40
+	year = 2230
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+	}
+	#Sternpost
+	trade_efficiency 		= 	0.02
+	enable = great_frigate
+}
+
+technology = {
+	# Tech 41
+	year = 2237
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.1
+	}
+	naval_engagement_width = 2
+	global_colonial_growth	= 	10
+	naval_maintenance	= 0.05
+}
+
+technology = {
+	# Tech 42
+	year = 2244
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.25
+	}
+	trade_efficiency 		= 	0.02
+	enable = merchantman
+
+}
+
+technology = {
+	# Tech 43
+	year = 2251
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.35
+	}
+
+	range					=	200
+	
+	#Ship 5
+	enable = threedecker
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 44
+	year = 2258
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+	}
+
+	naval_morale = 0.1
+	enable = war_galley
+}
+
+# Pre-era techs
+technology = {
+	# Tech 45
+	year = 2265
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.20
+	}
+
+	range					=	20
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+
+}
+
+technology = {
+	# Tech 46
+	year = 2272
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.35
+	}
+
+	trade_range				=	10
+	global_colonial_growth	= 	50
+	naval_morale = 0.1
+	enable = cruiser
+}
+
+technology = {
+	# Tech 47
+	year = 2279
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+	}
+	naval_morale = 0.1
+	enable = trabakul
+}
+
+# The 30 big techs from here on
+
+technology = {
+	# Tech 48
+	year = 2286
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.10
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05
+	range					= 	60
+	global_colonial_growth	= 	20
+}
+
+technology = {
+	# Tech 49
+	year = 2293
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.25
+	}	
+	#Ship 6
+	enable = ironclad
+	naval_engagement_width = 2
+	trade_range	= 10
+}
+
+technology = {
+	# Tech 50
+	year = 2300
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.35
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	10
+	naval_morale = 0.1
+	naval_engagement_width = 2
+}
+
+technology = {
+	# Tech 51
+	year = 2307
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+	}
+	naval_morale = 0.1
+	enable = galiot
+}
+
+technology = {
+	# Tech 52
+	year = 2314
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.20
+	}
+	naval_morale = 0.1
+	range					= 	115
+	naval_maintenance	= 0.05
+	enable = missile_cruiser
+}
+
+technology  = {
+	# Tech 53
+	year = 2321
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.35
+	}
+	num_accepted_cultures = 2
+
+	trade_range				=	10
+	naval_morale = 0.1
+	enable = eastindiaman
+}
+
+technology = {
+	# Tech 54
+	year = 2328
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05	
+	range					=	50
+	
+
+	
+}
+
+technology = {
+	# Tech 55
+	year = 2335
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.1
+	}
+	trade_efficiency		= 	0.05
+	trade_range				=	10
+	global_colonial_growth  = 	10
+	
+	#Ship 7
+	enable = destroyer
+}
+
+technology = {
+	# Tech 56
+	year = 2342
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.35
+	}
+	range					= 	100
+	
+}
+
+technology = {
+	# Tech 57
+	year = 2349
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+	}
+	naval_morale = 0.1
+	naval_maintenance	= 0.05
+	enable = dreadnought
+	
+
+
+}
+
+technology = {
+	# Tech 58
+	year = 2356
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.15
+	}
+	naval_morale = 0.1
+	enable = troopship
+}
+
+technology = {
+	# Tech 59
+	year = 2363
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.15
+	}
+
+	num_accepted_cultures = 2
+}
+
+technology = {
+	# Tech 60
+	year = 2370
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.35
+	}
+	naval_maintenance		= 	0.05	
+	range					=	50
+	global_colonial_growth  = 	15
+	
+	#Ship 8
+	enable = chebeck
+	
+	naval_engagement_width = 2
+	
+}
+
+technology = {
+	# Tech 61
+	year = 2377
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	10
+
+}
+
+technology = {
+	# Tech 62
+	year = 2384
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	20
+	range					=	50
+
+	naval_morale = 0.1
+	enable = archipelago_frigate
+}
+
+technology = {
+	# Tech 63
+	year = 2391
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.35
+	}
+	naval_morale = 0.1
+	
+}
+
+technology = {
+	# Tech 64
+	year = 2398
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+	}
+	naval_maintenance		= 	0.05	
+	range					=	50
+	
+	naval_morale = 0.1
+
+	
+}
+
+technology = {
+	# Tech 65
+	year = 2405
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	20
+	num_accepted_cultures = 1
+	
+	#Ship 9
+	enable = battleship
+	
+}
+
+technology = {
+	# Tech 66
+	year = 2412
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.15
+	}
+	naval_morale = 0.1
+	
+}
+
+technology = {
+	# Tech 67
+	year = 2419
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.35
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05
+
+
+	
+}
+
+technology = {
+	# Tech 68
+	year = 2426
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+	}		
+	global_colonial_growth  = 	25
+	range					=	150
+	naval_morale = 0.1
+	enable = missile_destroyer
+	
+}
+
+technology = {
+	# Tech 69
+	year = 2433
+
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+	}	
+	
+	trade_efficiency 		= 	0.05
+	trade_range				=	250
+	naval_morale = 0.1
+	
+}
+
+technology = {
+	# Tech 70
+	year = 2440
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.20
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05
+
+	trade_range				=	250
+
+	#Ship 10
+	enable = torpedo_boat
+	
+	
+}
+
+technology = {
+	# Tech 71
+	year = 2447
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.35
+	}
+	range					=	200
+	num_accepted_cultures = 1
+	naval_morale = 0.1
+	
+}
+
+technology = {
+	# Tech 72
+	year = 2454
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 73
+	year = 2461
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.15
+	}
+	trade_efficiency 		= 	0.05
+	naval_morale = 0.1
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 74
+	year = 2469
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.35
+	}
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05
+
+}
+
+technology = {
+	# Tech 75
+	year = 2476
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	250
+	naval_morale = 0.1
+	enable = heavy_frigate
+	
+}
+
+technology = {
+	# Tech 76
+	year = 2483
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+	}
+
+	naval_morale = 0.1
+	naval_maintenance		= 	0.05	
+	num_accepted_cultures = 1
+}
+
+technology = {
+	# Tech 77
+	year = 2490
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.20
+	}
+	trade_efficiency 		= 	0.05
+	trade_range				=	250
+	global_colonial_growth  = 	25
+}
+
+technology = {
+	# Tech 78
+	year = 2497
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.35
+	}
+	naval_morale = 0.1
+	trade_efficiency 		= 	0.05
+}
+
+technology = {
+	# Tech 79
+	year = 2504
+
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+	}
+
+	naval_maintenance	= 0.05
+	global_colonial_growth  = 	25
+	trade_range				=	250
+
+}
+
+technology = {
+	# Tech 80
+	year = 2511
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.1
+	}
+	naval_morale = 0.1
+	num_accepted_cultures = 1
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 81
+	year = 2519
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.15
+	}
+	range			= 200
+	trade_range				=	20
+
+	
+}
+
+technology = {
+	# Tech 82
+	year = 2526
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.35
+	}
+
+	trade_efficiency 	= 0.05
+	global_colonial_growth  = 	25
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 83
+	year = 2533
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+	}
+	trade_range				=	20
+
+	enable = threedecker
+}
+
+technology = {
+	# Tech 84
+	year = 2540
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.20
+	}
+	#Radar
+	naval_morale = 0.1
+
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 85
+	year = 2547
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.35
+	}
+	#Mass Media
+	trade_efficiency 	= 0.05
+	num_accepted_cultures = 1
+	trade_range				=	250
+}
+
+technology = {
+	# Tech 86
+	year = 2554
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+	}
+	#Battleships
+	naval_maintenance	= 0.05
+
+	
+}
+
+technology = {
+	# Tech 87
+	year = 2561
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.1
+	}
+	#International System of Units
+	trade_efficiency 	= 0.05
+	trade_range		= 250
+	naval_maintenance	= 0.05
+	
+}
+
+technology = {
+	# Tech 88
+	year = 2568
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.25
+	}
+	
+	trade_efficiency 	= 0.05
+	trade_range		= 250
+	range			= 200
+	
+}
+
+technology = {
+	# Tech 89
+	year = 2575
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+	}
+	#Naval Missiles
+
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 90
+	year = 2590
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+	}
+	#The Internet
+	trade_efficiency 	= 0.05
+	num_accepted_cultures = 1
+}
+
+technology = {
+	# Tech 91
+	year = 2605
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+	}
+	#Nanotechnology
+	trade_efficiency 	= 0.05
+	naval_morale = 0.1
+	
+}
+
+technology = {
+	# Tech 92
+	year = 2620
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+	}
+	#Future Diplomacy 1
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 93
+	year = 2635
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.25
+	}
+	#Future Diplomacy 2
+	trade_efficiency 	= 0.05
+}
+
+technology = {
+	# Tech 94
+	year = 2650
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+	}
+	#Future Diplomacy 3
+	naval_morale = 0.1
+
+}
+
+technology = {
+	# Tech 95
+	year = 2665
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.1
+	}
+	#Future Diplomacy 4
+	trade_range		= 20
+}
+
+technology = {
+	# Tech 96
+	year = 2680
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.15
+	}
+	#Future Diplomacy 5
+	range			= 200
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 97
+	year = 2695
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.30
+	}
+	#Future Diplomacy 6
+	num_accepted_cultures = 1
+}
+
+technology = {
+	# Tech 98
+	year = 2710
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.5
+	}
+	#Future Diplomacy 7
+	naval_morale = 0.1
+}
+
+technology = {
+	# Tech 99
+	year = 2725
+	expects_institution = {
+        writing = 0.5
+        legalism = 0.5  
+		ancient_imperialism = 0.5
+		caste_system = 0.5
+		organized_religion = 0.5
+		serfdom = 0.5
+		manorialism = 0.5
+		early_feudalism = 0.5
+		crop_rotation = 0.5
+		civil_service = 0.5
+		manuscripts = 0.5
+		scholasticism = 0.5
+		guilds = 0.5
+		medicine = 0.5
+		feudalism = 0.5
+		renaissance = 0.5
+		new_world_i = 0.5
+		printing_press = 0.5
+		global_trade = 0.5
+		manufactories = 0.5
+		enlightenment = 0.5
+		imperialism = 0.5
+		industrialization = 0.5
+		nationalism_institution = 0.5
+		electrification = 0.5
+		globalization = 0.5
+		internet = 0.5
+	}
+	#Future Diplomacy 8
+	trade_efficiency 	= 0.05
+	naval_maintenance	= 0.05
+	
+}

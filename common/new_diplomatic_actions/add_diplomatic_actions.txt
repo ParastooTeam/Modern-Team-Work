@@ -1,0 +1,890 @@
+
+	send_administrative_aid = {
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 36 
+		alert_tooltip = ICON_WANT_SHARE_ADMIN
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			#ai = no
+		}
+		is_allowed = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					any_country = {
+						adm_tech = ROOT
+					}
+				}
+				adm_power = 500
+				NOT = { is_at_war = yes }
+			}
+			FROM = { NOT = { has_country_modifier = admin_cooldown } }
+			ROOT = { NOT = { has_country_modifier = admin_cooldown_root } }
+		}	
+		on_accept = {
+			FROM = { 		
+				save_global_event_target_as = the_reciver_mypos 
+			}
+			ROOT = { country_event = { id = addip_events.5 }  }	
+		}
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+			}
+			add_entry = {
+				name = ALLICANCE_WITH_MY_RIVAL
+				limit = { 
+					FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+				}
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 200
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 75 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		
+	}
+		ai_will_do = {
+			any_rival_country = {
+				is_neighbor_of = FROM
+				NOT = {
+					FROM = {
+						adm_tech = PREV
+					}
+				}
+			}
+		}
+	}
+#not requiring accepance											
+	send_diplomatic_aid = {
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 36 
+		alert_tooltip = ICON_WANT_SHARE_DIP
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			#ai = no
+		}
+		is_allowed = { 
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					any_country = {
+						dip_tech = ROOT
+					}
+				}
+				dip_power = 500
+				NOT = { is_at_war = yes }
+			}
+			FROM = { NOT = { has_country_modifier = diplo_cooldown } }
+			ROOT = { NOT = { has_country_modifier = diplo_cooldown_root } }
+		}
+		on_accept = {
+			#small infromation how to create global to local call allowing to call multiple countries at once without any interferation problems
+			FROM = { 
+				save_global_event_target_as = the_reciver_mypos
+			} #global event target is set it needs to be set before the event-> 
+			ROOT = { 
+				country_event = { 
+					id = addip_events.6 
+				}  
+			} #calling event -> go to addip_events.6 event 
+		}
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+			}
+			add_entry = {
+				name = ALLICANCE_WITH_MY_RIVAL
+				limit = { 
+					FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+				}
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 200
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 75 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+			
+			}
+		
+		}
+		ai_will_do = {
+			any_rival_country = {
+				is_neighbor_of = FROM
+				NOT = {
+					FROM = {
+						dip_tech = PREV
+					}
+				}
+			}
+		}
+	}											
+	send_military_aid = {
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 36 
+		alert_tooltip = ICON_WANT_SHARE_MIL
+
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			#ai = no
+		}
+		is_allowed = { 
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = {
+					any_country = {
+						mil_tech = ROOT
+					}
+				}
+				mil_power = 500
+				NOT = { is_at_war = yes }
+			}
+			FROM = { NOT = { has_country_modifier = military_cooldown } }
+			ROOT = { NOT = { has_country_modifier = military_cooldown_root } }
+		}
+		on_accept = {
+			FROM = { 	
+				save_global_event_target_as = the_reciver_mypos
+			}
+			ROOT = { country_event = { id = addip_events.7 }  }	
+			}
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+			}
+			add_entry = {
+				name = ALLICANCE_WITH_MY_RIVAL
+				limit = { 
+					FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+				}
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 200
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 75 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+
+			}
+		
+		}
+		ai_will_do = {
+			FROM = {
+				any_war_enemy_country = {
+					is_rival = ROOT
+				}
+			}
+		}	
+	}
+
+
+	send_volunteers_to_ally = {   
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 36 
+		alert_tooltip = ICON_WANT_SHARE_MAN
+	
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			
+		}
+		is_allowed = {
+			ROOT = { manpower_percentage = 0.3  }	
+			FROM = { NOT = { manpower_percentage = 1.0 } }
+			if = {
+				limit = {
+					ai = yes
+				}
+				manpower_percentage = 0.85
+				FROM = { is_at_war = yes }
+				FROM = { manpower_percentage = 0.25 }
+				is_at_war = no
+			}
+			if = {
+				limit = {
+					ai = no
+				}
+				manpower_percentage = 0.50
+				
+			}
+		}
+		on_accept = {
+			FROM = {	
+				save_global_event_target_as = the_reciver_mypos
+			}
+			country_event = { id = addip_events.8 }  
+
+		}
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+			}
+			add_entry = {
+				name = ALLICANCE_WITH_MY_RIVAL
+				limit = { 
+					FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+				}
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 200
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 75 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+			}
+		}
+		ai_will_do = {
+			FROM = { alliance_with = ROOT }
+			FROM = { is_at_war = yes  }
+			FROM = {
+				any_war_enemy_country = {
+					is_rival = ROOT
+				}
+			}
+			#ruler_has_personality = kind_hearted_personality
+			NOT = { has_opinion_modifier = {  who = FROM  modifier = sended_manpower } }
+		}
+	}
+
+	send_sailor_to_ally = {   
+		category = dynasty
+		require_acceptance = yes
+		alert_index = 36 
+		alert_tooltip = ICON_WANT_SHARE_MAN
+	
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			ROOT = { num_of_ports = 1 }
+			FROM = { num_of_ports = 1 }
+			
+		}
+		is_allowed = {
+			#ROOT = { sailors_percentage = 0.25 }	
+			FROM = { NOT = { sailors_percentage = 1.0 } }
+			if = {
+				limit = {
+					ai = yes
+				}
+				sailors_percentage = 0.85
+			}
+			if = {
+				limit = {
+					ai = no
+				}
+				sailors_percentage = 0.50
+			}
+		}
+		on_accept = {
+			FROM = {	
+				save_global_event_target_as = the_reciver_mypos
+			}
+			country_event = { id = addip_events.10 }  
+
+		}
+		ai_acceptance = {		
+			add_entry = {
+				name = BASE_FACTION
+				limit = { always = yes }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+
+			}
+			add_entry = {
+				name = ALLICANCE_WITH_MY_RIVAL
+				limit = { 
+					FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+				}
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+				multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = TRUST
+				export_to_variable = {
+					variable_name = ai_value
+					value = trust
+					who = FROM
+					with = THIS
+				}
+				subtract_variable = { which = ai_value value = 50 }
+			}
+			add_entry = {
+					name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 15 }
+			}
+			add_entry = {
+				name = RIVAL_EMMBASY
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 200
+				}
+						multiply_variable = { which = ai_value value = -1 }
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+			}
+			add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+			}
+			add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+			add_entry = {
+				name = ALLIANCE
+				limit = { FROM = { alliance_with = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			
+			}
+			add_entry = {
+				name = Overlord
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = Loyal
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+
+			}
+			add_entry = {
+				name = WE_HAVE_GOOD_OPINON
+				limit = { FROM = { has_opinion = { who = ROOT value = 75 }   } }
+				export_to_variable = {
+						variable_name = ai_value 
+						value = 15
+				}
+			}
+		}
+		ai_will_do = {
+			FROM = { alliance_with = ROOT }
+			FROM = { is_at_war = yes  }
+			ruler_has_personality = kind_hearted_personality
+			NOT = { has_opinion_modifier = {  who = FROM  modifier = sended_manpower } }
+		}
+	}
+
+	strenghten_dynasty = {   
+		category = dynasty
+		require_acceptance = no
+		is_visible = {
+			has_country_flag = opened_logestic_diplomacy
+			ai = no
+	   		FROM = { marriage_with = ROOT }
+		}
+		is_allowed = {
+			legitimacy = 60
+		}
+		on_accept = {
+			FROM = { save_global_event_target_as = the_reciver_mypos }
+			country_event = { id = addip_events.9 }  
+		}										
+		ai_will_do = {
+			FROM = { alliance_with = ROOT }
+			has_opinion = { who = FROM value = 100 }
+			NOT = { has_opinion_modifier = {  who = FROM  modifier = strenghtened_dynasty } }
+		}
+	}
+#ET
+
+
+########################################################## Religion #######################################
+
+
+

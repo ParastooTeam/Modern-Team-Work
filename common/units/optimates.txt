@@ -1,0 +1,19 @@
+# Optimates
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 7
+	}
+}
+
+maneuver = 0
+offensive_morale = 1
+defensive_morale = 1
+offensive_fire = 5
+defensive_fire = 3
+offensive_shock = 1
+defensive_shock = 0

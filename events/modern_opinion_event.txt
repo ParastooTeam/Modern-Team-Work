@@ -1,0 +1,1364 @@
+namespace = opinion2022
+
+#opinion2022 Point admin power X1
+country_event = {
+	id = opinion2022.1
+	title = "opinion2022.1title"
+	desc = "opinion2022.1desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = ISR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = AZE
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = SAU
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = TKY
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = LEB
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = SYR
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = SNA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = IRQ
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = ARM
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = PLS
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+		
+	}
+}
+
+
+
+#opinion2022 Point diplo power 
+country_event = {
+	id = opinion2022.2
+	title = "opinion2022.2title"
+	desc = "opinion2022.2desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = INI
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = KHO
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = PLS
+			modifier = very_good_relation
+		}
+	}
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+
+
+
+#opinion2022 Point military power 
+country_event = {
+	id = opinion2022.3
+	title = "opinion2022.3title"
+	desc = "opinion2022.3desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+
+	immediate = {
+		reverse_add_opinion = {
+			who = IRA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = PLS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = LEB
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = SYR
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = SAU
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = UAE
+			modifier = good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+
+	}
+}
+
+
+#opinion2022 Point military power 
+country_event = {
+	id = opinion2022.4
+	title = "opinion2022.4title"
+	desc = "opinion2022.4desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = SKO
+			modifier = bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+
+#opinion2022 Point military power 
+country_event = {
+	id = opinion2022.5
+	title = "opinion2022.5title"
+	desc = "opinion2022.5desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = JAP
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = NOK
+			modifier = very_bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.5opt"
+	}
+}
+
+
+
+country_event = {
+	id = opinion2022.6
+	title = "opinion2022.6title"
+	desc = "opinion2022.6desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = SKO
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+
+country_event = {
+	id = opinion2022.7
+	title = "opinion2022.7title"
+	desc = "opinion2022.7desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = MOR
+			modifier = bad_relation
+		}
+	}
+	
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.8
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = TKY
+			modifier = very_bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.9
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = GRE
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = CYP
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = PLS
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = USA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = AZE
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.10
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = ISR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = IRA
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = SAU
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = TKY
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = EGY
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = SYR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = IRQ
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = KUW
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.11
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = ISR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = GBR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = CAN
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = INI
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = AUS
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = TKY
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = FR2
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = GER
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = ITA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = POL
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = GRE
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = JAP
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = SKO
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = TWN
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = NOK
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = AFG
+			modifier = bad_relation
+		}
+		every_country = {
+			limit = {
+				is_subject_of = ROOT
+			}
+			reverse_add_opinion = {
+				who = this
+				modifier = good_relation
+			}
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.12
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = INI
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = TWN
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = JAP
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = NPL
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = KHA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = MNM
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = VTN
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = NPL
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = AFG
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = IRA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = NKO
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.13
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = NPL
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.14
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = AUS
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.15
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = KHA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = GEO
+			modifier = bad_relation
+		}
+		reverse_add_opinion = {
+			who = IRA
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.16
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = GBR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = ITA
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = GER
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = SWE
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = FR2
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = POL
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = SPA
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = RMN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = NOR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = IRA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = BLR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.17
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = GBR
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = GER
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = NED
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = POL
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = SPA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = ITA
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = EST
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = FR2
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = SWE
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = IRA
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = KHA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = GEO
+			modifier = bad_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.18
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+		
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.19
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.20
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.21
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.22
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.23
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.24
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_bad_relation
+		}
+		reverse_add_opinion = {
+			who = UKR
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.25
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = CHN
+			modifier = good_relation
+		}	
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.26
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				#NOT = { FROM = { tag = CHN } }
+				#NOT = { FROM = { tag = USA } }
+				#NOT = { FROM = { tag = FRM } }
+				#NOT = { FROM = { tag = IRA } }
+				#NOT = { FROM = { tag = SAU } }
+				#NOT = { FROM = { tag = WSH } }
+				#NOT = { FROM = { tag = ROJ } }
+				#NOT = { FROM = { tag = KRD } }
+				#NOT = { FROM = { tag = ISR } }
+				#NOT = { FROM = { tag = SOU } }
+				#NOT = { FROM = { tag = ABK } }
+				num_of_cities = 1
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+		}
+	}
+}
+
+#USA
+country_event = {
+	id = opinion2022.27
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = IRA } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = WSH } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = IRA }
+				NOT = { tag = ABK }
+				NOT = { tag = WSH }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+		}
+	}
+}
+
+#Iran
+country_event = {
+	id = opinion2022.28
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = USA } }
+				NOT = { FROM = { tag = ISR } }
+				NOT = { FROM = { tag = SAU } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = USA }
+				NOT = { tag = ISR }
+				NOT = { tag = SAU }
+				NOT = { tag = ABK }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+		}
+	}
+}
+
+#China
+country_event = {
+	id = opinion2022.29
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = FRM } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = WSH } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = FRM }
+				NOT = { tag = ABK }
+				NOT = { tag = WSH }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+		}
+	}
+}
+
+#Taiwan
+country_event = {
+	id = opinion2022.30
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = CHN } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = WSH } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = CHN }
+				NOT = { tag = ABK }
+				NOT = { tag = WSH }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+		}
+	}
+}
+
+#Israil
+country_event = {
+	id = opinion2022.31
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = IRA } }
+				NOT = { FROM = { tag = SAU } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = WSH } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = IRA }
+				NOT = { tag = SAU }
+				NOT = { tag = ABK }
+				NOT = { tag = WSH }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+		}
+	}
+}
+
+
+#SAU
+country_event = {
+	id = opinion2022.32
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	is_triggered_only = yes
+	fire_only_once = yes
+	hidden = yes
+	option = {
+		name = "opinion2022.1opt"
+		every_country = {
+			limit = {
+				NOT = { FROM = { tag = IRA } }
+				NOT = { FROM = { tag = ISR } }
+				NOT = { FROM = { tag = SOU } }
+				NOT = { FROM = { tag = ABK } }
+				NOT = { FROM = { tag = WSH } }
+				NOT = { FROM = { tag = ROJ } }
+				NOT = { FROM = { tag = KRD } }
+				NOT = { tag = IRA }
+				NOT = { tag = ISR }
+				NOT = { tag = ABK }
+				NOT = { tag = WSH }
+				NOT = { tag = ROJ }
+				NOT = { tag = KRD }
+				NOT = { tag = SOU }
+			}
+			reverse_add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}
+			add_opinion = {
+				who = ROOT
+				modifier = create_embassy
+			}	
+		}
+	}
+}
+
+country_event = {
+	id = opinion2022.33
+	title = "opinion2022.8title"
+	desc = "opinion2022.8desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+
+	immediate = {
+		reverse_add_opinion = {
+			who = USA
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = CHN
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = very_good_relation
+		}
+		add_opinion = {
+			who = ROOT
+			modifier = good_relation
+		}
+		add_opinion = {
+			who = ROOT
+			modifier = very_good_relation
+		}
+		add_opinion = {
+			who = ROOT
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+	}
+}
+country_event = {
+	id = opinion2022.34
+	title = "opinion2022.1title"
+	desc = "opinion2022.1desc"
+	hidden = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		reverse_add_opinion = {
+			who = ISR
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = AZE
+			modifier = good_relation
+		}
+		#reverse_add_opinion = {
+		#	who = SAU
+		#	modifier = bad_relation
+		#}
+		#reverse_add_opinion = {
+		#	who = TKY
+		#	modifier = bad_relation
+		#}
+		#reverse_add_opinion = {
+		#	who = LEB
+		#	modifier = very_good_relation
+		#}
+		#reverse_add_opinion = {
+		#	who = CHN
+		#	modifier = very_good_relation
+		#}
+		reverse_add_opinion = {
+			who = RUS
+			modifier = bad_relation
+		}
+		#reverse_add_opinion = {
+		#	who = SYR
+		#	modifier = good_relation
+		#}
+		#reverse_add_opinion = {
+		#	who = SNA
+		#	modifier = good_relation
+		#}
+		reverse_add_opinion = {
+			who = IRQ
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = ARM
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = TJK
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = UZB
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = PAK
+			modifier = good_relation
+		}
+		reverse_add_opinion = {
+			who = TRK
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = KZK
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = KYR
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = GEO
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = INI
+			modifier = very_good_relation
+		}
+		reverse_add_opinion = {
+			who = USA
+			modifier = very_good_relation
+		}
+	}
+
+	option = {
+		name = "opinion2022.1opt"
+		
+	}
+}

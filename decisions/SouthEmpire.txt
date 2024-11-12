@@ -1,0 +1,124 @@
+country_decisions = {
+
+	south_empire = {
+		#major = yes
+		color = { 100 20 200 }
+		potential = {
+             has_country_flag = open_all_decision
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_brazilian_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				NOT = { exists = STH }
+			}
+			NOT = { tag = MUG }
+			NOT = { tag = TIM }
+			NOT = { tag = STH }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = TUR }
+			NOT = { tag = BYZ }
+			NOT = { tag = ARB }
+			capital_scope = {
+				continent = south_america
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				
+			
+				region = brazil_region
+				region = la_plata_region
+				region = upper_peru_region
+				region = peru_region
+				region = amazon_region
+				region = colombia_region
+				
+
+				
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			
+			is_nomad = no
+			is_at_war = no
+			is_tribal = no
+			NOT = { exists = STH }
+			
+			
+			brazil_region = {
+				type = all
+				owned_by = ROOT
+			}
+			la_plata_region = {
+				type = all
+				owned_by = ROOT
+			}
+			upper_peru_region = {
+				type = all
+				owned_by = ROOT
+			}
+			peru_region = {
+				type = all
+				owned_by = ROOT
+			}
+			amazon_region = {
+				type = all
+				owned_by = ROOT
+			}
+			colombia_region = {
+				type = all
+				owned_by = ROOT
+			}
+			
+			
+		}
+		effect = {
+			change_tag = STH
+			swap_non_generic_missions = yes
+			#remove_non_electors_emperors_from_empire_effect = yes
+			
+			
+						
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 100
+			if = {
+				limit = {
+					NOT = { primary_culture = iberi }
+				}
+				change_primary_culture = iberi
+			}
+			set_country_flag = formed_south_empire_flag
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 1
+	}
+	
+}

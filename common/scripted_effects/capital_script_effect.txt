@@ -1,0 +1,200 @@
+
+capital_script_effect = {
+	if = {
+		limit = {
+			ai = yes
+			NOT = { has_country_flag = opened_sanction_diplomacy }
+			NOT = { has_country_flag = opened_trade_diplomacy }
+			NOT = { has_country_flag = opened_expotentional_diplomacy }
+			NOT = { has_country_flag = opened_logestic_diplomacy }
+		}
+		set_country_flag = opened_sanction_diplomacy
+		set_country_flag = opened_trade_diplomacy
+		set_country_flag = opened_expotentional_diplomacy
+		set_country_flag = opened_logestic_diplomacy
+		set_country_flag = open_all_decision
+		set_country_flag = enable_missil
+		set_country_flag = show_all_dip_decision
+		set_country_flag = show_EU_decision
+	}
+	if = {
+		limit = {
+			ai = no
+			NOT = { has_country_flag = opened_sanction_diplomacy }
+			NOT = { has_country_flag = opened_trade_diplomacy }
+			NOT = { has_country_flag = opened_expotentional_diplomacy }
+			NOT = { has_country_flag = opened_logestic_diplomacy }
+		}
+		set_country_flag = opened_sanction_diplomacy
+		set_country_flag = opened_trade_diplomacy
+		set_country_flag = opened_expotentional_diplomacy
+		set_country_flag = opened_logestic_diplomacy
+	}
+	USA = {
+		every_owned_province = {
+			limit = { 
+				has_port = yes
+			}
+			add_building = naval_arsenal
+		}
+	}
+	if = {
+		limit = {
+			CHN = { ai = yes }
+			NOT = { is_year = 2924 }
+		}
+		CHN = {
+			every_owned_province = {
+				limit = { 
+					has_port = yes
+				}
+				add_building = naval_arsenal
+			}
+		}
+	}
+	
+	random_owned_province = {
+		limit = {
+			development = 15
+		}
+		add_building = constable
+	}
+	random_owned_province = {
+		limit = {
+			development = 20
+		}
+		add_building = constable
+	}
+	random_owned_province = {
+		limit = {
+			development = 25
+		}
+		add_building = constable
+	}
+	random_owned_province = {
+		limit = {
+			development = 30
+		}
+		add_building = constable
+	}
+	random_owned_province = {
+		limit = {
+			development = 35
+		}
+		add_building = constable
+	}
+	random_owned_province = {
+		limit = {
+			development = 40
+		}
+		add_building = constable
+	}
+	every_country = {
+		limit = { 
+			num_of_cities = 1
+		}
+		set_country_flag = enable_ruler_policy
+		capital_scope = {
+			add_building = constable
+			set_province_flag = cpital_modifire
+		}
+	}
+	#####
+	
+}
+
+capital_of_leader_of_eu = {
+	every_country = {
+		limit = { 
+			eu_state = 1			
+		}
+		capital_scope = {
+			set_province_flag = capital_europa_leader
+		}
+	}
+	every_country = {
+		limit = { 
+			NOT = {
+				eu_state = 1		
+			}
+		}
+		capital_scope = {
+			clr_province_flag = capital_europa_leader	
+		}
+	}
+}
+
+
+
+not_eu_member = {
+	every_country = {
+		limit = { 
+			NOT = { has_country_modifier = european_union }
+			NOT = { has_country_modifier = european_leader }
+			NOT = { is_subject_of_type = eu_state }
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = capital_europa
+			}
+			clr_province_flag = capital_europa
+		}
+	}
+	#####################
+	every_country = {
+		limit = { 
+			is_subject_of_type = eu_state
+		}
+		capital_scope = {
+			set_province_flag = capital_europa
+		}
+	}
+	
+	every_country = {
+		limit = { 
+			NOT = { is_subject_of_type = eu_state }
+		}
+		capital_scope = {
+			clr_province_flag = capital_europa
+		}
+	}
+	every_country = {
+		limit = { 
+			has_country_modifier = european_union
+			NOT = { is_subject_of_type = eu_state }
+		}
+		capital_scope = {
+			set_province_flag = capital_europa
+		}
+	}
+	every_country = {
+		limit = { 
+			NOT = { has_country_modifier = european_union }
+			NOT = { is_subject_of_type = eu_state }
+		}
+		every_owned_province = {
+			limit = {
+				has_province_flag = capital_europa
+			}
+			clr_province_flag = capital_europa
+		}
+	}
+}
+positive_eu_set_ziro = {
+	if = {
+		limit = {
+			has_country_modifier = european_union
+		}
+		set_variable = {
+			which = positive_EU value = 0
+		}
+	}
+	if = {
+		limit = {
+			check_variable = { which = negetive_EU value = 1 }
+		}
+		set_variable = {
+			which = positive_EU value = 0
+		}
+	}
+}

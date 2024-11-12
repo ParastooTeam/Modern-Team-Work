@@ -1,0 +1,17 @@
+
+bookmark = {
+	name = "FREE_IRAN_NAME"
+	desc = "FREE_IRAN_DESC"
+	date = 2025.8.21
+	
+	country = IRN
+	country = USA
+	country = ISR
+	country = PAK
+	country = TKY
+	country = INI
+	country = GRE
+	country = CHN
+	country = RUS
+
+}

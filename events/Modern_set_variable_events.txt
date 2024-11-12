@@ -1,0 +1,758 @@
+namespace = set_variable
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.1
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = heavy_check
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.12
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = heavy_check_2
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.13
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = heavy_check_3
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.14
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = heavy_check_4
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.15
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = heavy_check_5
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.2
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = galley_check
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.22
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = galley_check_2
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.23
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = galley_check_3
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.24
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = galley_check_4
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.25
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = galley_check_5
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.3
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = light_ship_check
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.32
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = light_ship_check_2
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.33
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = light_ship_check_3
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.34
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = light_ship_check_4
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.35
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = light_ship_check_5
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.36
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = transport_check
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.37
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = {
+			which = vote_for_un_negetive
+			value = 0
+		}
+		set_variable = {
+			which = vote_for_un_abstentions
+			value = 0
+		}
+		set_variable = {
+			which = VETO_on_un_Metting
+			value = 0
+		}
+		set_variable = {
+			which = vote_for_un_positive
+			value = 0
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.38
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		every_country = {
+			limit = {
+				OR = {
+					check_variable = { which = vote_for_EU_negetive value = 1 }
+					check_variable = { which = vote_for_EU_abstentions value = 1 }
+					check_variable = { which = VETO_on_EU_Metting value = 1 }
+					check_variable = { which = vote_for_EU_positive value = 1 }
+					check_variable = { which = NUM_of_EU value = 1 }
+				}
+			}
+			set_variable = {
+				which = vote_for_EU_negetive
+				value = 0
+			}
+			set_variable = {
+				which = vote_for_EU_abstentions
+				value = 0
+			}
+			set_variable = {
+				which = VETO_on_EU_Metting
+				value = 0
+			}
+			set_variable = {
+				which = vote_for_EU_positive
+				value = 0
+			}
+			set_variable = {
+				which = NUM_of_EU
+				value = 0
+			}
+		}
+		set_variable = {
+			which = vote_for_EU_negetive
+			value = 0
+		}
+		set_variable = {
+			which = vote_for_EU_abstentions
+			value = 0
+		}
+		set_variable = {
+			which = VETO_on_EU_Metting
+			value = 0
+		}
+		set_variable = {
+			which = vote_for_EU_positive
+			value = 0
+		}
+		set_variable = {
+			which = NUM_of_EU
+			value = 0
+		}	
+		country_event = {
+			id = set_variable.43 days = 180
+		}	
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.39
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		set_variable = { which = 10milion_oil value = 0 }
+		set_variable = { which = 9milion_oil value = 0 }
+		set_variable = { which = 8milion_oil value = 0 }
+		set_variable = { which = 7milion_oil value = 0 }
+		set_variable = { which = 6milion_oil value = 0 }
+		set_variable = { which = 5milion_oil value = 0 }
+		set_variable = { which = 4milion_oil value = 0 }
+		set_variable = { which = 3milion_oil value = 0 }
+		set_variable = { which = 2milion_oil value = 0 }
+		set_variable = { which = 1milion_oil value = 0 }
+
+
+		clr_country_flag = buy_1milion_oil
+		clr_country_flag = buy_0_9milion_oil
+		clr_country_flag = buy_0_8milion_oil
+		clr_country_flag = buy_0_7milion_oil
+		clr_country_flag = buy_0_6milion_oil
+		clr_country_flag = buy_0_5milion_oil
+		clr_country_flag = buy_0_4milion_oil
+		clr_country_flag = buy_0_3milion_oil
+		clr_country_flag = buy_0_2milion_oil
+		clr_country_flag = buy_0_1milion_oil
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.40
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		clr_global_flag = un_sanction_cooldown_modifire
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.41
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = { check_variable = { which = oil_var value = 200 } }
+			subtract_variable = { which = oil_production value = 200 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 180 } }
+			subtract_variable = { which = oil_production value = 180 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 160 } }
+			subtract_variable = { which = oil_production value = 160 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 140 } }
+			subtract_variable = { which = oil_production value = 140 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 120 } }
+			subtract_variable = { which = oil_production value = 120 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 100 } }
+			subtract_variable = { which = oil_production value = 100 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 90 } }
+			subtract_variable = { which = oil_production value = 90 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 80 } }
+			subtract_variable = { which = oil_production value = 80 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 70 } }
+			subtract_variable = { which = oil_production value = 70 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 60 } }
+			subtract_variable = { which = oil_production value = 60 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 50 } }
+			subtract_variable = { which = oil_production value = 50 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 40 } }
+			subtract_variable = { which = oil_production value = 40 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 30 } }
+			subtract_variable = { which = oil_production value = 30 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 20 } }
+			subtract_variable = { which = oil_production value = 20 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 10 } }
+			subtract_variable = { which = oil_production value = 10 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 9 } }
+			subtract_variable = { which = oil_production value = 9 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 8 } }
+			subtract_variable = { which = oil_production value = 8 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 7 } }
+			subtract_variable = { which = oil_production value = 7 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 6 } }
+			subtract_variable = { which = oil_production value = 6 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 5 } }
+			subtract_variable = { which = oil_production value = 5 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 4 } }
+			subtract_variable = { which = oil_production value = 4 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 3 } }
+			subtract_variable = { which = oil_production value = 3 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 2 } }
+			subtract_variable = { which = oil_production value = 2 }
+		}
+		else_if = {
+			limit = { check_variable = { which = oil_var value = 1 } }
+			subtract_variable = { which = oil_production value = 1 }
+		}		
+		
+
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.42
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		if = {
+			limit = {
+				oil = 1
+			}
+			if = {
+				limit = { check_variable = { which = oil_var value = 200 } }
+				change_variable = { which = oil_production value = 180 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 180 } }
+				change_variable = { which = oil_production value = 160 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 160 } }
+				change_variable = { which = oil_production value = 140 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 140 } }
+				change_variable = { which = oil_production value = 120 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 120 } }
+				change_variable = { which = oil_production value = 100 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 100 } }
+				change_variable = { which = oil_production value = 90 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 90 } }
+				change_variable = { which = oil_production value = 80 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 80 } }
+				change_variable = { which = oil_production value = 70 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 70 } }
+				change_variable = { which = oil_production value = 60 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 60 } }
+				change_variable = { which = oil_production value = 50 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 50 } }
+				change_variable = { which = oil_production value = 40 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 40 } }
+				change_variable = { which = oil_production value = 30 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 30 } }
+				change_variable = { which = oil_production value = 20 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 20 } }
+				change_variable = { which = oil_production value = 10 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 10 } }
+				change_variable = { which = oil_production value = 9 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 9 } }
+				change_variable = { which = oil_production value = 8 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 8 } }
+				change_variable = { which = oil_production value = 7 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 7 } }
+				change_variable = { which = oil_production value = 6 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 6 } }
+				change_variable = { which = oil_production value = 5 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 5 } }
+				change_variable = { which = oil_production value = 4 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 4 } }
+				change_variable = { which = oil_production value = 3 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 3 } }
+				change_variable = { which = oil_production value = 2 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 2 } }
+				change_variable = { which = oil_production value = 1 }
+			}
+			else_if = {
+				limit = { check_variable = { which = oil_var value = 1 } }
+				change_variable = { which = oil_production value = 1 }
+			}
+		}
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+country_event = {	# [From.GetName] destabilised us
+	id = set_variable.43
+	title = set_variable.1.t
+	desc = "set_variable.1.d"
+	picture = ADDSTABLITY_eventPicture
+
+	is_triggered_only = yes
+	hidden = yes
+	immediate = {
+		clr_global_flag = cooldown_EU_VOTE
+		clr_global_flag = cooldown_EU_VOTE_leave
+	}
+	option = {
+		name = set_variable.8.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}

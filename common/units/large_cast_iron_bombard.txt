@@ -1,0 +1,19 @@
+# Large Cast Iron Bombard
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 6
+	}
+}
+
+maneuver = 0
+offensive_morale = 1
+defensive_morale = 1
+offensive_fire = 3
+defensive_fire = 4
+offensive_shock = 0
+defensive_shock = 0

@@ -1,0 +1,17 @@
+name = "Libyan Revolution"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 356 #Grodno
+}
+
+2014.8.25 = {
+	add_attacker = TRP
+	add_defender = LBY
+}
+
+3000.11.1 = {
+	rem_attacker = TRP
+	rem_defender = LBY
+}

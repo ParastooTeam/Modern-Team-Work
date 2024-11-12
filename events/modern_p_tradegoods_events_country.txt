@@ -1,0 +1,66 @@
+namespace = destroy_trade_goods
+
+
+#######################################################################
+country_event = {
+	id = destroy_trade_goods.1
+	title = "destroy_trade_goods.NAME1"
+	desc = "destroy_trade_goods.DESC.1"
+	picture = destroy_drugs_eventPicture
+	is_triggered_only = yes
+
+	option = {
+		name = "destroy_trade_goods.OPT1"
+	}
+
+}
+country_event = {
+	id = destroy_trade_goods.2
+	title = "destroy_trade_goods.NAME2"
+	desc = "destroy_trade_goods.DESC.2"
+	picture = car_distroy_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "destroy_trade_goods.OPT1"
+
+	}
+}
+country_event = {
+	id = destroy_trade_goods.3
+	title = "destroy_trade_goods.NAME3"
+	desc = "destroy_trade_goods.DESC.3"
+	picture = electronic_distroy_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "destroy_trade_goods.OPT1"
+	}
+}
+country_event = {
+	id = destroy_trade_goods.4
+	title = "destroy_trade_goods.NAME4"
+	desc = "destroy_trade_goods.DESC.4"
+	picture = arms_distroy_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "destroy_trade_goods.OPT1"
+	}
+}
+country_event = {
+	id = destroy_trade_goods.5
+	title = "destroy_trade_goods.NAME5"
+	desc = "destroy_trade_goods.DESC.5"
+	picture = arms_distroy_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = "destroy_trade_goods.OPT1"
+	}
+}
+

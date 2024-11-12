@@ -1,0 +1,649 @@
+namespace = missile_build
+
+country_event = {
+	id = missile_build.500
+	title = missile_build.EVTNAME1
+	desc = missile_build.EVTDESC1
+	picture = MISSILE_Number_eventPicture
+
+	
+	is_triggered_only = yes
+
+
+	option = {
+		name = missile_build.EVTOPT1
+		ai_chance = { factor = 100 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.09
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 0.08
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 0.07
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.05
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.04
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.03
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.02		
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.10
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -0.09
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -0.08
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -0.07
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.05
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.04
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.03
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.02
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT2
+		ai_chance = { factor = 90 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.20
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.18
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 0.16
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 0.14
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.10
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.08
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.06
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.04	
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.20
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -0.18
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -0.16
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -0.14
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.10
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.08
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.06
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.04
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 2
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 2
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT4
+		ai_chance = { factor = 80 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.40
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.36
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 0.32
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 0.28
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.20
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.16
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.12
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.08
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.40
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -0.36
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -0.32
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -0.28
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.20
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.16
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.12
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.08
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 4
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 4
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT8
+		ai_chance = { factor = 70 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 0.80
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 0.72
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 0.64
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 0.56
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.40
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.32
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.24
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.16
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.80
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -0.72
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -0.64
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -0.56
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.40
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.32
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.24
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.16
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 8
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 8
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT16
+		ai_chance = { factor = 60 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 1.60
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 1.44
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 1.28
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 1.12
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.80
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.64
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.48
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.32
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -1.60
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -1.44
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -1.28
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -1.12
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.80
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.64
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.48
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.32
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 16
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 16
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT32
+		ai_chance = { factor = 50 }
+		trigger = {
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 3.20
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 2.88
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 2.56
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 2.24
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 1.60
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 1.28
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.96
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.64
+			}
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -3.20
+		}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -2.88
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -2.56
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -2.24
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -1.60
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -1.28
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.96
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.64
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+			}
+			set_variable = {
+				which = missil_50
+				value = 32
+			}
+		}
+		else = {
+			change_variable = {
+				which = missil_50
+				value = 32
+			}
+		}
+	}
+	option = {
+		name = missile_build.EVTOPT0
+		ai_chance = { factor = 0 }
+		trigger = {
+			ai = no
+		}
+		
+	}
+}
+country_event = {
+	id = missile_build.2
+	title = missile_build.EVTNAME1
+	desc = missile_build.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = missile_build.EVTOPT1
+		ai_chance = { factor = 100 }
+		if = { limit = { tag = INI } add_manpower = 1500 add_sailors = 300000 }
+		if = { limit = { tag = USA } add_manpower = 1000 add_sailors = 500000 }
+		if = { limit = { tag = CHN } add_manpower = 1700  add_sailors = 200000 }
+		if = { limit = { tag = BRZ } add_manpower = 300 add_sailors = 300000 }
+		if = { limit = { tag = PAK } add_manpower = 300 add_sailors = 100000 }
+		if = { limit = { tag = VTN } add_manpower = 150 add_sailors = 200000 }
+		if = { limit = { tag = NIG } add_manpower = 200 add_sailors = 150000 }
+		if = { limit = { tag = RUS } add_manpower = 350  add_sailors = 150000 }
+		if = { limit = { tag = IRA } add_manpower = 100 add_sailors = 75000 }
+		if = { limit = { tag = RSA } add_manpower = 200  add_sailors = 75000 }
+		if = { limit = { tag = UKR } add_manpower = 50  add_sailors = 20000 }
+		if = { limit = { tag = BGD } add_manpower = 150  add_sailors = 50000 }
+		if = { limit = { tag = AUS } add_manpower = 100  add_sailors = 200000 }
+		if = { limit = { tag = CAN } add_manpower = 100  add_sailors = 150000 }
+		if = { limit = { tag = FRM } add_manpower = 100  add_sailors = 100000 }
+		if = { limit = { tag = GBR } add_manpower = 100  add_sailors = 250000 }
+		if = { limit = { tag = JAP } add_manpower = 100  add_sailors = 250000 }
+		if = {
+			limit = {
+				NOT = { tag = INI }
+				NOT = { tag = USA }
+				NOT = { tag = CHN }
+				NOT = { tag = BRZ }
+				NOT = { tag = PAK }
+				NOT = { tag = VTN }
+				NOT = { tag = NIG }
+				NOT = { tag = RUS }
+				NOT = { tag = IRA }
+				NOT = { tag = RSA }
+				NOT = { tag = UKR }
+				NOT = { tag = BGD }
+				NOT = { tag = AUS }
+				NOT = { tag = CAN }
+				NOT = { tag = FRM }
+				NOT = { tag = GBR }
+				NOT = { tag = JAP }
+			}
+			add_manpower = 150
+			if = {
+				limit = { num_of_ports = 1 }
+				add_sailors = 80000
+			}
+		}
+	}
+}
+
+
+country_event = {
+	id = missile_build.3
+	title = missile_build.EVTNAME1
+	desc = missile_build.EVTDESC1
+	picture = DIPLOMACY_eventPicture
+
+	hidden = yes
+	is_triggered_only = yes
+
+
+	option = {
+		name = missile_build.EVTOPT1
+		ai_chance = { factor = 100 }
+		set_global_flag = fixed_manpower1
+	}
+}

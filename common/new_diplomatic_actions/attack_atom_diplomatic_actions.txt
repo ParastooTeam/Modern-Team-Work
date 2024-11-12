@@ -1,0 +1,167 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+use_nuke = {
+	category = influence
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+	}
+	is_allowed = {
+		custom_trigger_tooltip = {
+			tooltip = not_has_sign_pact_10
+			NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = FROM   } }
+		}
+		custom_trigger_tooltip = {
+			tooltip = not_has_sign_pact_5
+			NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = FROM   } }
+		}
+		custom_trigger_tooltip = {
+			tooltip = not_has_truce
+			NOT = { FROM = { truce_with = ROOT } }
+			NOT = { ROOT = { truce_with = FROM } }
+		}
+		#FROM = { NOT = { has_country_modifier = atomed } }
+		NOT = { has_country_modifier = atomed }
+		check_variable = {
+			which = num_of_nuclear_weapons
+			value = 1
+		}	
+		OR = {
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}
+	}
+	on_accept = {
+		save_global_event_target_as = us_nuke
+		FROM = { save_global_event_target_as = nuke_target_country }
+		country_event = {
+			id = et_nuke.121
+		}
+		#if = {
+		#	limit = {
+		#		FROM = { NOT = { has_country_modifier = atomed } }
+		#	}
+		#	
+		#}
+		#else = {}
+		if = {
+			limit = {
+				NOT = { war_with = FROM }
+			}
+			set_country_flag = attack_us
+			save_global_event_target_as = attak_them
+		}
+	
+	}
+	on_decline = {
+	}
+
+	
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+stop_use_nuke = {
+	category = influence
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { NOT = { ai = no } }
+		FROM = {
+			is_subject_of = ROOT
+		}
+		FROM = {
+			is_subject_of_type = access_building_on_state
+		}
+		NOT = { FROM = { has_country_flag = stop_use_nuke } }
+	}
+	is_allowed = {
+		FROM = { NOT = { liberty_desire = 50 } }		
+	}
+	on_accept = {
+		FROM = { set_country_flag = stop_use_nuke }
+	}
+	on_decline = {
+	}
+
+	
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+start_use_nuke = {
+	category = influence
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { NOT = { ai = no } }
+		FROM = {
+			is_subject_of = ROOT
+		}
+		FROM = {
+			is_subject_of_type = access_building_on_state
+		}
+		FROM = { has_country_flag = stop_use_nuke }
+	}
+	is_allowed = {
+
+	}
+	on_accept = {
+		FROM = { clr_country_flag = stop_use_nuke }
+	}
+	on_decline = {
+	}
+
+	
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}

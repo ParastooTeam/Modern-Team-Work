@@ -1,0 +1,38 @@
+﻿l_english:
+
+ they_cant_set_atom.1title:0 "Iron Dome on §Y[Root.GetName]§!"
+ modern_build_missile_site_decision_title:0 "Building a missile site"
+ modern_build_missile_site_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+
+ modern_build_atomic_site_decision_title:0 "Building a atomic site"
+ modern_build_atomic_site_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+
+ modern_build_defense_missile_site_decision_title:0 "Building a missile defense site"
+ modern_build_defense_missile_site_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+
+ 
+ modern_build_defense_atomic_site_decision_title:0 "Building a atomic defense site"
+ modern_build_defense_atomic_site_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+
+ modern_build_defense_atomic_site_ini_decision_title:0 "Building a atomic defense site"
+ modern_build_defense_atomic_site_ini_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+ 
+ modern_build_defense_missile_site_INI_decision_title:0 "Building a missile defense site"
+ modern_build_defense_missile_site_INI_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+
+ modern_build_airport_decision_title:0 "Building an Airport"
+ modern_build_airport_decision_desc:0 "Due to the lack of mass construction of these buildings by artificial intelligence in the main part, we had to design this decision"
+ 
+ rajput_build_decision_title:0 "Construction of special forces"
+ rajput_build_decision_desc:0 "We had to make this decision because artificial intelligence did not create special forces"
+
+ ###################
+ carolean_build_decision_title:0 "Construction of Mountain forces"
+ carolean_build_decision_desc:0 "We had to make this decision because artificial intelligence did not create special forces"
+
+ cawa_build_decision_title:0 "Construction of Commando forces"
+ cawa_build_decision_desc:0 "We had to make this decision because artificial intelligence did not create special forces"
+
+ marine_build_decision_title:0 "Construction of Marines forces"
+ marine_build_decision_desc:0 "We had to make this decision because artificial intelligence did not create special forces"
+ 

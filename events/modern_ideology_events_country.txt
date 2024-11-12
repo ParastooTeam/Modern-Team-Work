@@ -1,0 +1,44 @@
+namespace = ideology_of_islam
+
+
+#######################################################################
+country_event = {
+	id = ideology_of_islam.1
+	title = "ideology_of_islam.NAME1"
+	desc = "ideology_of_islam.DESC.1"
+	picture = darvishi_eventPicture
+
+	trigger = {
+		has_dlc = "Cradle of Civilization"
+		OR = {
+			religion = sunni
+			religion = shiite
+			religion = ibadi
+		}
+	}
+	is_triggered_only = yes
+
+	option = {
+		name = "ideology_of_islam1.OPT"
+		ai_chance = {
+			factor = 50
+		}
+		add_piety = -2
+		add_country_modifier = {
+			name = set_ideology
+			duration = 9215
+		}
+	}
+	option = {
+		name = "ideology_of_islam2.OPT"
+		ai_chance = {
+			factor = 50
+		}
+		add_piety = 2
+		add_country_modifier = {
+			name = set_ideology
+			duration = 9125
+		}
+	}
+
+}

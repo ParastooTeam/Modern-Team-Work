@@ -1,0 +1,16 @@
+
+bookmark = {
+	name = "BEFORE_ISR_LEB_WAR_NAME"
+	desc = "BEFORE_ISR_LEB_WAR_DESC"
+	date = 2024.9.29
+	
+	country = UKR
+	country = USA
+	country = IRA
+	country = JAP
+	country = GBR
+	country = FR2
+	country = ISR
+	country = CHN
+	country = RUS
+}

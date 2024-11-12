@@ -1,0 +1,298 @@
+	target_attack_1 = {
+		category = alliance
+		
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_1
+			NOT = { has_country_modifier = set_goal_1 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		}
+		on_accept = {
+				
+				add_country_modifier = {
+					name = set_goal_1
+					duration = 120
+				}
+				FROM = {
+					add_country_modifier = {
+						name = set_target_1
+						duration = 120
+					}
+					save_global_event_target_as = event_target_1
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+	target_attack_2 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			FROM = { NOT = { alliance_with = ROOT  }  }
+			NOT = {
+				overlord_of = FROM
+			}
+			has_country_modifier = can_set_goal_2
+			NOT = { has_country_modifier = set_goal_2 }
+		}
+		is_allowed = {
+			OR = {
+				vassal = 1
+				march = 1
+				access_building_on_state = 1
+			}
+		}
+		on_accept = {
+			add_country_modifier = {
+				name = set_goal_2
+				duration = 120
+			}
+				FROM = {
+					add_country_modifier = {
+						name = set_target_2
+						duration = 120
+					}
+					save_global_event_target_as = my_attack_target_2
+				}
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+
+	clear_target_attack = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			OR = {
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_1 
+					}
+					FROM = {
+						has_country_modifier = set_target_1 
+					}
+				}
+			
+			
+				AND = {
+					ROOT = {
+						has_country_modifier = set_goal_2
+					}
+					FROM = {
+						has_country_modifier = set_target_2 
+					}
+				}
+			}
+			
+			
+
+		}
+			is_allowed = {	
+				OR = {
+					AND = {
+						ROOT = {
+							has_country_modifier = set_goal_1 
+						}
+						FROM = {
+							has_country_modifier = set_target_1 
+						}
+					}
+				
+				
+					AND = {
+						ROOT = {
+							has_country_modifier = set_goal_2
+						}
+						FROM = {
+							has_country_modifier = set_target_2 
+						}
+					}
+				}
+			}
+		
+		on_accept = {
+					if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = set_goal_1
+							}
+							FROM = {
+								has_country_modifier = set_target_1
+							}
+						}
+						ROOT = {
+							remove_country_modifier = set_goal_1
+						}
+						FROM = {
+							remove_country_modifier = set_target_1
+							clear_global_event_target = event_target_1
+						}
+					}
+					else_if = { 
+						limit = { 
+							ROOT = {
+								has_country_modifier = set_goal_2
+							}
+							FROM = {
+								has_country_modifier = set_target_2
+							} 
+						}
+						ROOT = {
+							remove_country_modifier = set_goal_2
+						}
+						FROM = {
+							remove_country_modifier = set_target_2
+							clear_global_event_target = my_attack_target_2
+						}
+					}				
+		}
+		ai_will_do = {  
+			always = no
+		}
+	}
+
+	order_attack_1 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			ROOT = {
+				has_country_modifier = can_set_goal_1
+			}
+			ROOT = {
+				has_country_modifier = set_goal_1
+			}
+			overlord_of = FROM
+			FROM = {
+				is_subject_of_type = access_building_on_state
+				ai = yes
+			}
+		}
+		is_allowed = {
+			reverse_has_opinion = { who = FROM value = 180  }
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 75
+				}
+			}
+			FROM = { NOT = { liberty_desire = 70 } }
+			FROM = { NOT = { alliance_with = event_target:event_target_1  }  }
+			FROM = { NOT = { truce_with = event_target:event_target_1  }  }
+		}
+		
+			on_accept = {
+						ROOT = {
+							remove_country_modifier = set_goal_1								
+						}
+						ROOT = {
+							remove_country_modifier = can_set_goal_1
+						}
+						FROM = {
+							declare_war_with_cb = {
+								who = event_target:event_target_1
+								casus_belli = cb_attack_command
+							}
+						}
+						event_target:event_target_1 = {
+							add_casus_belli = {
+								type = cb_oder_to_attack_1
+								target = FROM
+								months = 360
+							}
+							add_casus_belli = {
+								type = cb_oder_to_attack
+								target = ROOT
+								months = 360
+							}
+							remove_country_modifier = set_target_1
+							clear_global_event_target = event_target_1
+						}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	order_attack_2 = {
+		category = alliance
+		require_acceptance = no
+		is_visible = {
+			ai = no
+			ROOT = {
+				has_country_modifier = can_set_goal_2
+			}
+			ROOT = {
+				has_country_modifier = set_goal_2
+			}
+			overlord_of = FROM
+			FROM = {
+				is_subject_of_type = access_building_on_state
+				ai = yes
+			}
+		}
+		is_allowed = {
+			reverse_has_opinion = { who = FROM value = 180  }
+			
+			FROM = {
+				trust = {
+					who = ROOT
+					value = 75
+				}
+			}
+			FROM = { NOT = { liberty_desire = 70 } }
+			FROM = { NOT = { alliance_with = event_target:my_attack_target_2  }  }
+			FROM = { NOT = { truce_with = event_target:my_attack_target_2  }  }
+			
+		}
+		
+			on_accept = {
+						ROOT = {
+							remove_country_modifier = set_goal_2								
+						}
+						ROOT = {
+							remove_country_modifier = can_set_goal_2
+						}
+						FROM = {
+							declare_war_with_cb = {
+								who = event_target:my_attack_target_2
+								casus_belli = cb_attack_command
+							}
+						}
+						event_target:my_attack_target_2 = {
+							add_casus_belli = {
+								type = cb_oder_to_attack_1
+								target = FROM
+								months = 360
+							}
+							add_casus_belli = {
+								type = cb_oder_to_attack
+								target = ROOT
+								months = 360
+							}
+							remove_country_modifier = set_target_2
+							clear_global_event_target = my_attack_target_2
+						}					
+			}
+		ai_will_do = {  
+			always = no	
+		}
+	}
+	
+	
+	
+	

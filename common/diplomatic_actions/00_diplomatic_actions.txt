@@ -1,0 +1,1653 @@
+# INSTRUCTIONS:
+#
+# condition				A diplomatic action can have any number of condition blocks, each with its own
+#						tooltip, potential and allow section
+#
+# 	tooltip					Sets a custom text string similar to the hardcoded limits
+# 							If no tooltip is scripted, the tooltip for the actual trigger will be shown
+#							Note that the custom tooltip is only shown if the allow trigger is NOT met
+#
+# 	potential				Determines if the trigger is applicable or not
+# 	allow					Determines if the action is valid or not
+#
+# effect				A diplomatic action can only have one effect block
+
+# ROOT					actor
+# FROM					target
+
+########################################
+# DIPLOMATIC ACTIONS
+########################################
+# royal_marriage
+# declarewar
+# requestpeace
+# support_independence_action
+# allianceaction
+# embargoaction
+# annexationaction
+# integrationaction
+# vassalaction
+# guaranteeaction
+# warningaction
+# threaten_war
+# milaccess
+# fleet_access
+# offer_fleet_access
+# offermilaccess
+# insultaction
+# giftaction
+# claimaction
+# callaction
+# offerloan
+# warsubsidy
+# sellprov
+# imperial_relations_action
+# imperial_realm_war_action
+# religious_unity_action
+# grant_electorate
+# remove_electorate
+# grant_freecity
+# remove_freecity
+# demand_unlawful_territory_action
+# call_crusade_action
+# excommunicate_action
+# enforce_peace
+# improve_relation
+# fabricate_claim
+# justify_trade_conflict
+# transfer_trade_power
+# infiltrate_administration
+# sabotage_reputation
+# support_rebels
+# sow_discontent
+# agitate_for_liberty
+# form_coalition
+# request_to_join_federation
+# invite_to_federation
+# support_heir
+# break_marriage
+# designate_march
+# ask_for_march
+# sell_ships_action
+# abandon_union
+# takeondebt
+# influence_nation
+# claim_states
+# steer_trade
+# stealmap
+# spy_network
+# invite_to_trade_league
+# request_to_join_trade_league
+# sharemap
+# intervene_in_war
+# break_alliance
+# tributary_state_action
+# ask_for_tributary_state_action
+# knowledge_sharing
+
+callaction = {
+	condition = {
+		potential = { ai = yes }
+		allow = {  
+			any_country = {
+				war_with = ROOT
+				army_strength = {
+					who = ROOT
+					value = 0.25
+				}
+			}			
+		}
+	}
+}
+
+fabricate_claim = {
+	condition = {
+		potential = { always = yes }
+		allow = { always = yes }
+	}
+	effect = {
+		FROM = {
+			add_opinion = {
+				who = ROOT
+				modifier = fabricate_for_attack_1
+			}
+		}
+	}
+}
+
+knowledge_sharing = {
+	condition = {
+		tooltip = Permission_from_the_leader
+		potential = { is_subject = yes }
+		allow = { NOT = { has_country_modifier = not_offer_share_tech } }
+	}
+	effect = {
+		if = {
+			limit = {
+				has_institution = legalism
+				FROM = { NOT = { has_institution = legalism } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = legalism
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = legalism
+							value = 100
+						}
+					}
+				}
+			}
+
+		}
+		else_if = {
+			limit = {
+				has_institution = ancient_imperialism
+				FROM = { NOT = { has_institution = ancient_imperialism } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = ancient_imperialism
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = ancient_imperialism
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = caste_system
+				FROM = { NOT = { has_institution = caste_system } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = caste_system
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = caste_system
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = organized_religion
+				FROM = { NOT = { has_institution = organized_religion } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = organized_religion
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = organized_religion
+							value = 100
+						}
+					}
+				}
+			}
+		}		
+		else_if = {
+			limit = {
+				has_institution = serfdom
+				FROM = { NOT = { has_institution = serfdom } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = serfdom
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = serfdom
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = manorialism
+				FROM = { NOT = { has_institution = manorialism } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = manorialism
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = manorialism
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = early_feudalism
+				FROM = { NOT = { has_institution = early_feudalism } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = early_feudalism
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = early_feudalism
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = crop_rotation
+				FROM = { NOT = { has_institution = crop_rotation } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = crop_rotation
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = crop_rotation
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = civil_service
+				FROM = { NOT = { has_institution = civil_service } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = civil_service
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = civil_service
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = manuscripts
+				FROM = { NOT = { has_institution = manuscripts } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = manuscripts
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = manuscripts
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = scholasticism
+				FROM = { NOT = { has_institution = scholasticism } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = scholasticism
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = scholasticism
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = guilds
+				FROM = { NOT = { has_institution = guilds } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = guilds
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = guilds
+							value = 100
+						}
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				has_institution = medicine
+				FROM = { NOT = { has_institution = medicine } }
+			}
+			FROM = {
+				capital_scope = {
+					add_institution_embracement = {
+						which = medicine
+						value = 60
+					}
+				}
+				if = {
+					limit = {
+						num_of_cities = 100
+					}
+					random_owned_province = {
+						add_institution_embracement = {
+							which = medicine
+							value = 100
+						}
+					}
+				}
+			}
+		}
+	}
+}
+influence_nation = {
+	condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+			NOT = { great_power_rank = 8 }
+		}
+	}
+}
+
+allianceaction = {
+    condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_MAKE_ALLIANCES
+		potential = {
+			has_government_attribute = cannot_form_alliances
+		}
+		allow = {
+			NOT = { has_government_attribute = cannot_form_alliances }
+		}
+	}
+	condition = {
+		tooltip = FROM_CANNOT_MAKE_ALLIANCES
+		potential = {
+			FROM = {
+				has_government_attribute = cannot_form_alliances
+			}
+		}
+		allow = {
+			NOT = { FROM = { has_government_attribute = cannot_form_alliances } }
+		}
+	}
+	condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+			NOT = {
+				reverse_has_opinion_modifier = {
+					who = FROM
+					modifier = nuked_us
+				}
+			}
+			NOT = {
+				reverse_has_opinion_modifier = {
+					who = ROOT
+					modifier = nuked_us
+				}
+			}
+		}
+	}
+	#condition = {
+	#	tooltip = ORDER_ATTACK_COMMAND_from
+	#	potential = {
+	#		ROOT = {
+	#			is_great_power = yes
+	#			NOT = { great_power_rank = 4 }
+	#		}
+    #       ROOT = { ai = yes }
+    #       FROM = { ai = yes }
+	#	}
+	#	allow = {
+	#		NOT = {
+	#			FROM = {
+	#				is_subject_of_type = access_building_on_state
+	#			}
+	#		}
+	#	}
+	#	
+	#}
+	
+	#condition = {
+	#	tooltip = ORDER_ATTACK_COMMAND_root
+	#	potential = {
+	#		ROOT = {
+	#			is_subject_of_type = access_building_on_state
+	#		}
+	#		ROOT = { ai = yes }
+	#		FROM = { ai = yes }
+	#	}
+	#	allow = {
+	#		NOT = {
+	#			FROM = {
+	#				is_great_power = yes
+	#				NOT = { great_power_rank = 4 }
+	#			}
+	#		}
+	#	
+	#	
+	#	}
+	#}
+}
+
+royal_marriage = {
+	condition = {
+		tooltip = MARWAR
+		potential = {
+		}
+		allow = {
+			NOT = { war_with = FROM }
+		}
+	}
+}
+
+infiltrate_administration = {
+	condition = {
+		tooltip = NEED_SATELLITE_1
+		potential = {
+			#ai = no
+			is_year = 2022
+		}
+		allow = {
+			if = { 
+				limit = { 
+					FROM = {
+						is_neighbor_of = ROOT					
+					}	
+				}
+				
+				check_variable = {
+					which = satellite_1
+					value = 4
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = NEED_SATELLITE_2
+		potential = {
+			#ai = no
+			is_year = 2022
+		}
+		allow = {
+			if = { 
+				limit = { 
+					NOT = {
+						FROM = {
+							is_neighbor_of = ROOT					
+						}
+					}
+					FROM = {
+						NOT = {	border_distance = { who = ROOT distance = 150 } }
+					}
+				}
+				OR = {
+					AND = { 
+						check_variable = {
+							which = satellite_1
+							value = 4
+						}
+						check_variable = {
+							which = satellite_2
+							value = 2
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = NEED_SATELLITE_3
+		potential = {
+			#ai = no
+			is_year = 2022
+		}
+		allow = {
+			if = { 
+				limit = { 
+					FROM = {
+						border_distance = { who = ROOT distance = 150 }
+					}
+				}
+				check_variable = {
+					which = satellite_1
+					value = 4
+				}
+				check_variable = {
+					which = satellite_2
+					value = 4
+				}
+			}
+		}
+	}
+}
+
+spy_network = {
+	condition = {
+		tooltip = NON_SPY
+		potential = {
+		}
+		allow = {
+			ROOT = {
+				NOT = {
+					has_opinion_modifier = {
+						who = FROM
+						modifier = non_spy_opinion
+					}
+				}
+			}
+		}
+	}
+}
+
+annexationaction = {
+	
+	condition = {
+		tooltip = ANNEX_TOO_LOW
+		potential = {
+			FROM = {
+				vassal_of = ROOT
+			}
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_ANNEX
+		potential = {
+			FROM = {
+				has_country_modifier = tur_mamlukian_administration
+			}
+		}
+		allow = {
+			FROM = {
+				NOT = { has_country_modifier = tur_mamlukian_administration }
+			}
+		}
+	}
+	condition = {
+		tooltip = NEEDS_50_CROWNLAND_TT
+		potential = {
+			has_government_attribute = need_crownland_to_annex
+			NOT = { crown_land_share = 50 }
+		}
+		allow = {
+			crown_land_share = 50
+		}
+	}
+	#condition = {
+	#	tooltip = ANNEXINVALID
+	#	potential = {
+	#		FROM = {
+	#			vassal_of = ROOT
+	#		}
+	#	}
+	#	allow = {
+	#		FROM = {
+	#			years_in_vassalage_under = {
+	#				who = ROOT
+	#				years = 10
+	#			}
+	#		}
+	#	}
+	#}
+}
+
+integrationaction = {
+	condition = {
+		tooltip = INTEGRATETOOLOWDESC
+		potential = {
+			senior_union_with = FROM
+		}
+		allow = {
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+		}
+	}
+	#condition = {
+	#	tooltip = INTEGRATEINVALID
+	#	potential = {
+	#		senior_union_with = FROM
+	#	}
+	#	allow = {
+	#		FROM = {
+	#			years_in_union_under = {
+	#				who = ROOT
+	#				years = 50
+	#			}
+	#		}
+	#	}
+	#}
+}
+
+vassalaction = {
+	condition = {
+		tooltip = VASSALINVALID
+		potential = {
+		}
+		allow = {
+			alliance_with = FROM
+			FROM = {
+				has_opinion = {
+					who = ROOT
+					value = 190
+				}
+			}
+			FROM = { is_at_war = no }
+		}
+	}
+}
+
+abandon_union = {
+	condition = {
+		potential = {
+		}
+		allow = {
+			ROOT = {
+				senior_union_with = FROM
+				is_at_war = no
+			}
+		}
+	}
+}
+
+requestpeace = {
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					FROM = { has_opinion_modifier = { modifier = attacked_to_EU  who = ROOT } }
+					has_opinion_modifier = { modifier = attacked_to_EU  who = FROM }
+				}
+				
+			}
+			remove_opinion = {
+				who = FROM
+				modifier = attacked_to_EU
+			}
+			FROM = {
+				remove_opinion = {
+					who = ROOT
+					modifier = attacked_to_EU
+				}
+			}
+		}
+	}
+}
+enforce_peace = {
+	effect = {
+		if = {
+			limit = {
+				OR = {
+					FROM = { has_opinion_modifier = { modifier = attacked_to_EU  who = ROOT } }
+					has_opinion_modifier = { modifier = attacked_to_EU  who = FROM }
+				}
+				
+			}
+			remove_opinion = {
+				who = FROM
+				modifier = attacked_to_EU
+			}
+			FROM = {
+				remove_opinion = {
+					who = ROOT
+					modifier = attacked_to_EU
+				}
+			}
+		}
+	}
+	pre_effect = {
+		if = {
+			limit = {
+				has_country_modifier = liv_protector_of_the_catholics
+				FROM = {
+					any_war_enemy_country = {
+						religion = catholic
+						is_in_war = {
+							defender_leader = THIS
+							attacker_leader = FROM
+						}
+					}
+				}
+			}
+			add_papal_influence = 25
+		}
+	}
+}
+ 
+form_coalition = {
+	condition = {
+		tooltip = MINAGGRESSIVEEXPANSION
+		potential = {	
+		}
+		allow = {
+			has_opinion_modifier = {
+				modifier = aggressive_expansion
+				who = FROM
+			}		
+			NOT = {
+				has_opinion_modifier = {
+					modifier = aggressive_expansion
+					who = FROM
+					value = -49
+				}
+			}
+		}
+	}
+}
+
+insultaction = {
+	effect = {
+		FROM = {
+			add_casus_belli = {
+				type = cb_insult
+				target = ROOT
+				months = 24
+			}	
+		}
+		
+	}
+}
+declarewar = {
+	condition = {
+		tooltip = XXX
+		potential = {	
+		}
+		allow = {
+			always = yes
+		}
+	}
+	condition = {
+		tooltip = AI_CANNOT_DECLARE_WHEN_STABILITY_LOSS
+		potential = {
+			ai = yes
+		}
+		allow = {
+			ai = yes
+			NOT = {
+				has_global_modifier_value = {
+					which = stability_cost_to_declare_war
+					value = 1
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = CANNOT_DECLARE_WARS_OTHER_THAN_INDEPENDENCE_WARS
+		potential = {
+			has_country_modifier = revoked_war_rights
+			FROM = { NOT = { overlord_of = ROOT } }
+		}
+		allow = {
+			OR = {
+				NOT = { has_country_modifier = revoked_war_rights }
+				FROM = { overlord_of = ROOT }
+			}
+		}
+	}
+	#condition = {
+	#	tooltip = AI_COOLDOWN_8_YEARS
+	#	potential = {	
+	#		ai = yes
+	#	}
+	#	allow = {
+	#		NOT = { had_recent_war = 8 }
+	#	}
+	#}
+	effect = {
+		on_war_declaration_effect = yes
+		#if = {
+		#	limit = {
+		#		OR = {
+		#			has_casus_belli = { type = cb_spread_communism target = FROM }
+		#			has_casus_belli = { type = cb_spread_fascism target = FROM }
+		#			has_casus_belli = { type = cb_spread_democracy target = FROM }
+		#		}
+		#	}
+		#	set_country_flag = forcing_government
+		#}
+		if = {
+			limit = { has_country_modifier = european_union FROM = { has_country_modifier = european_union } }
+			remove_country_modifier = european_union
+			set_country_flag = cant_join_EU_again
+			every_owned_province = {
+				limit = { is_core = ROOT }
+				set_in_empire = no
+			}
+		}
+		if = {
+			limit = { has_country_modifier = european_leader FROM = { has_country_modifier = european_union } }
+			random_country = {
+				limit = {
+					has_country_modifier = european_union
+				}
+				country_event = {
+					id = european_union.4
+					days = 1
+				}
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					is_subject = yes
+				}
+			}
+			FROM = {
+				overlord = {
+					add_opinion = {
+						who = root
+						modifier = attack_to_our_miltary_base
+					}
+					add_casus_belli = {
+						type = cb_attack_to_our_subject
+						target = ROOT
+						months = 240
+					}	
+				}
+			}
+			FROM = {
+				every_ally = {
+					overlord = {
+						add_opinion = {
+							who = root
+							modifier = attack_to_our_miltary_base
+						}
+						add_casus_belli = {
+							type = cb_attack_to_our_subject
+							target = ROOT
+							months = 240
+						}	
+					}
+				}	
+			}
+		}
+		FROM = {
+			every_neighbor_country = {
+				limit = {
+					same_continent = FROM
+				}
+				add_casus_belli = {
+					type = cb_attack_to_neighbors_1
+					target = ROOT
+					months = 240
+				}
+			}
+		}
+		FROM = {
+			every_ally = {
+				add_casus_belli = {
+					type = cb_attack_to_our_ally
+					target = ROOT
+					months = 240
+				}
+			}
+		}
+		#every_ally = {
+		#	#limit = {
+		#	#	war_with = ROOT
+		#	#}
+		#	every_ally = {
+		#		add_casus_belli = {
+		#			type = cb_attack_to_our_ally
+		#			target = ROOT
+		#			months = 240
+		#		}
+		#	}
+		#}
+		
+		if = {
+			limit = { 
+				FROM = {
+					has_country_modifier = european_union
+				} 
+			}
+			every_country = {
+				limit = {
+					has_country_modifier = european_union
+				}
+				add_opinion = {
+					who = ROOT
+					modifier = attacked_to_EU
+				}
+				reverse_add_opinion = {
+					who = ROOT
+					modifier = attacked_to_EU
+				}
+			}
+			
+		}
+
+		if = {
+			limit = {				
+				OR = {
+					AND = {
+						FROM = {
+							trading_bonus = {
+								trade_goods = oil
+								value = yes
+							}
+						}
+						production_leader = { trade_goods = oil }
+					}
+					AND = {
+						trading_bonus = {
+							trade_goods = oil
+							value = yes
+						}
+					FROM = {
+						production_leader = { trade_goods = oil }
+					}
+						
+					}
+				}
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR
+				value = 0.20
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					AND = {
+						production_leader = { trade_goods = oil }
+						FROM = {
+							is_great_power = yes
+						}
+					}
+					AND = {
+						FROM = {
+							production_leader = { trade_goods = oil }
+						}
+						is_great_power = yes	
+					}
+				}
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_1
+				value = 0.15
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {			
+				FROM = {
+					trading_bonus = {
+						trade_goods = oil
+						value = yes
+					}
+				}
+				trading_bonus = {
+					trade_goods = oil
+					value = yes
+				} 	
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_2
+				value = 0.10
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					FROM = {
+						trading_bonus = {
+							trade_goods = oil
+							value = yes
+						}
+					}
+					trading_bonus = {
+						trade_goods = oil
+						value = yes
+					} 
+				}
+				
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_3
+				value = 0.09
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 10
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_4
+				value = 0.07
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 7
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_5
+				value = 0.06
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 5
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_6
+				value = 0.05
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 3
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_7
+				value = 0.04
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				FROM = {
+					oil = 1
+				}
+				oil = 1
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_8
+				value = 0.04
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 2
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_9
+				value = 0.03
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = oil
+						development = 40
+					}
+						amount = 1
+				} 
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_10
+				value = 0.02
+				duration = 1825
+			}
+		}
+		else_if = {
+			limit = {
+				OR = {
+					oil = 1
+					FROM = { oil = 1 }
+				}
+			}
+			change_price = {
+				trade_goods = oil
+				key = OIL_WAR_11
+				value = 0.01
+				duration = 1825
+			}
+		}	
+	}
+	
+	
+	condition = {
+		tooltip = OVERLORD_NOT_ALLOW
+		potential = {
+		}
+		allow = {
+			OR = {
+				liberty_desire = 40
+				NOT = { has_country_flag = stop_use_nuke }
+			}
+		}
+	}
+	condition = {
+		tooltip = PACT_OF_NO_AGRESSION
+		potential = {
+		}
+		allow = {
+			FROM = {
+				NOT = {
+				has_opinion_modifier = {
+					modifier = signed_pact_of_non_agresion
+					who = ROOT
+					}
+				}
+			}
+			FROM = {
+					NOT = {
+					has_opinion_modifier = {
+						modifier = signed_pact_of_non_agresion_five
+						who = ROOT
+						}
+					}
+				}
+		}
+		
+	}
+	condition = {
+		tooltip = PACT_OF_NO_AGRESSION_WITH_OVERLORD
+		potential = {
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						has_opinion_modifier = {
+							modifier = signed_pact_of_non_agresion
+							who = ROOT
+						}
+					}
+				}
+			}	
+			NOT = {		
+				FROM = {
+					overlord = {
+						has_opinion_modifier = {
+							modifier = signed_pact_of_non_agresion_five
+							who = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = HAS_EMBASSY
+		potential = {
+			ROOT = { ai = no }
+		}
+		allow = {
+			NOT = {
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				}
+			}
+		}
+	}
+	condition = {
+		tooltip = OVEERLODR_TRUCE
+		potential = {
+		}
+		allow = {
+			NOT = {
+				FROM = {
+					overlord = {
+						truce_with = ROOT
+					}
+				}
+			}
+			
+		}
+	}
+	condition = {
+		tooltip = OVERLODR_OF_ROOT
+		potential = {
+		}
+		allow = {
+			OR = {
+				liberty_desire = 40
+				NOT = {
+					FROM = {
+						overlord = {
+							overlord_of = ROOT
+						}
+					}
+				}
+				has_country_flag = allow_war_military_base
+			}			
+		}
+	}
+	condition = {
+		tooltip = OVERLOD_ALLY_WITH_FROM
+		potential = {
+		}
+		allow = {
+			OR = {
+				liberty_desire = 40
+				NOT = {
+					ROOT = {
+						overlord = {
+							alliance_with = FROM
+						}
+					}
+				}
+				#has_country_flag = allow_war_military_base
+			}			
+		}
+	}
+	condition = {
+		tooltip = GAURANTEDBY_OVERLOD
+		potential = {
+		}
+		allow = {
+			OR = {
+				liberty_desire = 40
+				NOT = {
+					ROOT = {
+						overlord = {
+							guaranteed_by = PREV
+						}
+					}
+				}
+			}			
+		}
+	}
+	condition = {
+		tooltip = NOT_ALLOW_WAR_FIRST_GAME
+		potential = {
+			ai = yes
+		}
+		allow = {
+			is_year = 2025
+		}
+	}
+	condition = {
+		tooltip = IRON_LETTER_ATTACKER
+		potential = {
+		ROOT = { religion = FROM  }
+		}
+		allow = {
+			NOT = {
+				FROM = { has_country_modifier = the_iron_leatter_prottectorate  } 
+			}
+		}
+	}
+	condition = {
+		tooltip = IRON_LETTER_IAM
+		potential = {
+		FROM = { religion = ROOT  }
+		}
+		allow = {
+			NOT = {
+				ROOT = { has_country_modifier = the_iron_leatter_prottectorate  } 
+			}
+		}
+	}
+	
+}
+guaranteeaction = {
+	condition = {
+		tooltip = MORE_FAVOR_ACTIONS_REMOVED_GUARANTEE_TT
+		potential = {
+			has_country_flag = revoked_guarantee_from_@FROM
+		}
+		allow = {
+			had_country_flag = { flag = revoked_guarantee_from_@FROM days = 3650 }
+		}
+	}
+	effect = {
+		FROM = {
+			every_neighbor_country = {
+				#limit = {
+				#	same_continent = FROM
+				#}
+				add_casus_belli = {
+					type = cb_guaranted_neighbors
+					target = ROOT
+					#months = 240
+				}
+			}
+		}
+	}
+}
+request_to_join_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION_FROM
+		potential = {
+		}
+		allow = {
+			home_trade_node = {
+				trade_share = {
+					country = from
+					share = 1
+				}
+			}
+		}
+	}
+}
+
+invite_to_trade_league = {
+	condition = {
+		tooltip = NOT_RELEVANT_TRADE_REGION
+		potential = {
+		}
+		allow = {
+			from = {
+				home_trade_node = {
+					trade_share = {
+						country = root
+						share = 1
+					}
+				}
+			}
+		}
+	}
+}
+
+tributary_state_action = {
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			OR = {
+				NOT = { ROOT = { capital_scope = { superregion = china_superregion } } }
+				AND = {
+					ROOT = { capital_scope = { superregion = china_superregion } }
+					NOT = { FROM = { capital_scope = { superregion = china_superregion } } }
+				}
+			}
+			OR = {
+				NOT = { ROOT = { capital_scope = { region = japan_region } } }
+				AND = {
+					ROOT = { capital_scope = { region = japan_region } }
+					NOT = { FROM = { capital_scope = { region = japan_region } } }
+				}
+			}
+		}
+	}
+}
+
+
+ask_for_tributary_state_action = {
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			OR = {
+				NOT = { FROM = { capital_scope = { superregion = china_superregion } } }
+				AND = {
+					FROM = { capital_scope = { superregion = china_superregion } }
+					NOT = { ROOT = { capital_scope = { superregion = china_superregion } } }
+				}
+			}
+			OR = {
+				NOT = { FROM = { capital_scope = { region = japan_region } } }
+				AND = {
+					FROM = { capital_scope = { region = japan_region } }
+					NOT = { ROOT = { capital_scope = { region = japan_region } } }
+				}
+			}
+		}
+	}
+}
+
+giftaction = {
+	condition = {
+		potential = {
+			ai = yes
+		}
+		allow = {
+			OR = {
+				total_development = 500
+				monthly_income = 750
+			}
+		}
+	}
+}
+break_alliance = {
+	effect = {
+		on_alliance_broken_effect = yes
+	}
+}
+#offer_condottieri = {
+#	effect = {
+#		FROM = {
+#			add_opinion = {
+#				who = root
+#				modifier = condottieri_offer
+#			}
+#		}
+#	}
+#}
+#offercondottieri = {
+#	effect = {
+#		FROM = {
+#			add_opinion = {
+#				who = root
+#				modifier = condottieri_offer_1
+#			}
+#		}
+#	}
+#}
+#condottieri = {
+#	effect = {
+#		FROM = {
+#			add_opinion = {
+#				who = root
+#				modifier = condottieri_offer_2
+#			}
+#		}
+#	}
+#}
+#condottieri_action = {
+#	effect = {
+#		FROM = {
+#			add_opinion = {
+#				who = root
+#				modifier = condottieri_offer_3
+#			}
+#		}
+#	}
+#}
+#condottieriaction = {
+#	effect = {
+#		FROM = {
+#			add_opinion = {
+#				who = root
+#				modifier = condottieri_offer_4
+#			}
+#		}
+#	}
+#}
+
+justify_trade_conflict = {
+	condition = {
+		tooltip = HAS_SPY_65
+		potential = {
+		}
+		allow = {
+			has_spy_network_in = {
+				who = FROM
+				value = 65
+			}
+		}
+	}
+}
+

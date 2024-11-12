@@ -1,0 +1,135 @@
+country_decisions = {
+
+	restore_ottoman_empire = {
+		#major = yes
+		color = { 100 20 200 }
+		potential = {
+			if = {
+				limit = { ai = yes }
+				anatolia_region = {
+					type = all
+					owned_by = ROOT
+				}
+				balkan_region = {
+					type = all
+					owned_by = ROOT
+				}
+				mashriq_region = {
+					type = all
+					owned_by = ROOT
+				}
+			}
+            has_country_flag = open_all_decision
+			was_never_end_game_tag_trigger = yes
+			normal_or_historical_nations = yes
+			NOT = { has_country_flag = formed_ottoman_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = BYZ }
+			NOT = { exists = TUR }
+			NOT = { tag = HLR }
+			NOT = { tag = PER }
+			NOT = { tag = BYZ }
+			NOT = { tag = TUR }
+			NOT = { tag = PEE }
+			NOT = { tag = ROM }
+			NOT = { tag = ROW }
+			NOT = { tag = EUR }
+			OR = {
+				primary_culture = turkish
+				culture_group = oghuz
+				tag = TKY
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = anatolia_region
+				region = balkan_region
+				region = mashriq_region
+			}
+			NOT = { owned_by = ROOT }
+		}
+		allow = {
+			
+			anatolia_region = {
+				type = all
+				owned_by = ROOT
+			}
+			balkan_region = {
+				type = all
+				owned_by = ROOT
+			}
+			mashriq_region = {
+				type = all
+				owned_by = ROOT
+			}
+			is_at_war = no
+			
+			is_nomad = no
+		}
+		effect = {
+			
+			change_tag = TUR
+			swap_non_generic_missions = yes
+			every_province = {
+				limit = {
+					OR = {
+						
+						region = anatolia_region
+						region = mashriq_region
+						region = balkan_region
+					}
+					NOT = { is_core = TUR }
+				}
+				add_permanent_claim = TUR
+			}
+			random_owned_province = {
+				limit = { culture = turkish }
+				add_base_tax = 1
+			}
+			random_owned_province = {
+				limit = { culture = turkish }
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			TUR = {
+				add_core = 151 # Constantinople
+			}
+			#if = {
+			#	limit = {
+			#		is_part_of_hre = yes
+			#		NOT = { has_country_modifier = european_union }
+			#		is_elector = no
+			#	}
+			#	every_owned_province = {
+			#		limit = {
+			#			is_part_of_hre = yes
+			#		}
+			#		set_in_empire = no
+			#	}
+			#}
+			if = {
+				limit = { has_global_flag = hagia_sophia_now_mosque }
+				clr_global_flag = hagia_sophia_now_mosque
+			
+			}
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			set_country_flag = formed_ottoman_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		#ai_importance = 1
+	}
+	
+}

@@ -1,0 +1,459 @@
+
+have_owne_fuel = {
+	potential = {
+		
+				OR = {
+					
+					ROOT = { 
+						total_development = 5000 
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 40
+										}
+											amount = 10
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 45
+										}
+											amount = 9
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 50
+										}
+											amount = 8
+								}
+							} 
+						
+					}
+					ROOT = { 
+						total_development = 4000  NOT = { total_development = 5000 }
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 35
+										}
+											amount = 8
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 40
+										}
+											amount = 7
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 45
+										}
+											amount = 6
+								}
+							}  
+						
+					}
+					ROOT = { 
+						total_development = 3000 NOT = { total_development = 4000 }
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 30
+										}
+											amount = 6
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 35
+										}
+											amount = 5
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 40
+										}
+											amount = 4
+								}
+							} 
+						
+					}
+					ROOT = { 
+						total_development = 2000 NOT = { total_development = 3000 }
+						 
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 25
+										}
+											amount = 4
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 30
+										}
+											amount = 3
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 35
+										}
+											amount = 2
+								}
+							}  
+						 
+					}
+					ROOT = { 
+						total_development = 1000 NOT = { total_development = 2000 }
+						 
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 20
+										}
+											amount = 3
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 25
+										}
+											amount = 2
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = oil
+											development = 30
+										}
+											amount = 1
+								}
+							}
+						 
+					}
+					ROOT = { 
+						total_development = 500 NOT = { total_development = 1000 }
+						 
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = oil
+										development = 30
+									}
+										amount = 1
+							}  
+						 
+					}
+					ROOT = { 
+						total_development = 3 NOT = { total_development = 500 }
+						 
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = oil
+										development = 30
+									}
+										amount = 1
+										
+							}  
+						 
+					}
+				}
+	}
+
+	trigger = {
+		is_year = 2025
+	}
+	
+
+	movement_speed = 0.05
+	
+}
+
+
+
+Have_Electronic = {
+	potential = {
+				
+		OR = {
+					
+					ROOT = { 
+						total_development = 5000 
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 45
+										}
+											amount = 5
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 55
+										}
+											amount = 4
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 65
+										}
+											amount = 3
+								}
+							} 
+						
+					}
+					ROOT = { 
+						total_development = 4000  NOT = { total_development = 5000 }
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 35
+										}
+											amount = 5
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 45
+										}
+											amount = 4
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 55
+										}
+											amount = 3
+								}
+							}  
+						
+					}
+					ROOT = { 
+						total_development = 3000 NOT = { total_development = 4000 }
+						
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 25
+										}
+											amount = 5
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 35
+										}
+											amount = 4
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 45
+										}
+											amount = 3
+								}
+							} 
+						
+					}
+					ROOT = { 
+						total_development = 2000 NOT = { total_development = 3000 }
+						 
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 15
+										}
+											amount = 4
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 25
+										}
+											amount = 3
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 35
+										}
+											amount = 2
+								}
+							}  
+						 
+					}
+					ROOT = { 
+						total_development = 1000 NOT = { total_development = 2000 }
+						 
+							OR = {
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 10
+										}
+											amount = 3
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 15
+										}
+											amount = 2
+								} 
+								calc_true_if = {
+										all_owned_province = {
+											trade_goods = electronics
+											development = 25
+										}
+											amount = 1
+								}
+							}
+						 
+					}
+					ROOT = { 
+						total_development = 500 NOT = { total_development = 1000 }
+						 
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = electronics
+										development = 25
+									}
+										amount = 1
+							}  
+						 
+					}
+					ROOT = { 
+						total_development = 3 NOT = { total_development = 500 }
+						 
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = electronics
+										development = 25
+									}
+										amount = 1
+										
+							}  
+						 
+					}
+				}
+		
+	}
+
+	trigger = {
+		is_year = 2025
+	}
+	
+
+	culture_conversion_cost = -0.25
+	global_missionary_strength = 0.005
+	global_unrest = -1
+	
+}
+
+
+Have_Uranium = {
+	potential = {
+			OR = {
+				AND = {
+					ROOT = { 
+						
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = uranium 
+										development = 3
+										NOT = { development = 5 }
+									}
+										amount = 5
+							}  
+						
+					}
+				}
+				AND = {
+					ROOT = { 
+						
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = uranium 
+										development = 6
+										NOT = { development = 11 }
+									}
+										amount = 4
+							}  
+						 
+					}
+				}
+				AND = {
+					ROOT = { 
+						
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = uranium 
+										development = 12
+										NOT = { development = 24 }
+									}
+										amount = 3
+							}  
+						
+					}
+				}
+				AND = {
+					ROOT = { 
+						 
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = uranium 
+										development = 25
+										NOT = { development = 49 }
+									}
+										amount = 2
+							}  
+						
+					}
+				}
+				AND = {
+					ROOT = { 
+						
+							calc_true_if = {
+									all_owned_province = {
+										trade_goods = uranium 
+										development = 50
+										
+									}
+										amount = 1
+							}  
+						
+					}
+				}
+			}
+
+	}
+
+	trigger = {
+		full_idea_group = nuclear_research
+	}
+	land_morale = 0.02
+	
+}
+
+
+
+
+

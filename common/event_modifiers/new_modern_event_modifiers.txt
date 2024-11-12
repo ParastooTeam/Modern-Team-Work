@@ -1,0 +1,102 @@
+ army_manitance = { 
+	land_maintenance_modifier = -0.5
+ }
+ 
+ support_main_5 = { defensiveness = 0.20 garrison_size = 0.1 }
+ support_main_5_1 = {  }
+ 
+ support_shok_5_1 = {  }
+ support_shok_5 = { 
+	shock_damage = 0.10 
+	shock_damage_received = -0.1 
+ }
+ 
+ support_fire_5_1 = {  }
+ support_fire_5 = { 
+	fire_damage = 0.1 
+	fire_damage_received = -0.1 
+ }
+ 
+ support_moral_navy_5_1 = {  }
+ support_moral_navy_5 = { naval_morale = 0.10 }
+ 
+ support_m_5 = { land_morale = 0.1 }
+ support_m_5_1 = {  }
+
+ support_dsc_5 = { discipline = 0.05 }
+ support_dsc_5_1 = {  }
+ 
+ support_limit_5_1 = {  }
+ support_limit_5 = { land_forcelimit_modifier  = 0.075 }
+ 
+ support_naval_limit_5_1 = {  }
+ support_naval_limit_5 = { naval_forcelimit_modifier = 0.2 }
+ 
+ support_speed_5_1 = {  }
+ support_speed_5 = { movement_speed = 0.1 }
+ 
+
+spartan_traditions = {
+    discipline = 0.10
+	land_morale = 0.10
+	recover_army_morale_speed = 0.05
+}
+
+fall_of_hre = {
+global_unrest = 25
+stability_cost_modifier = 2.5
+reduced_liberty_desire = -100
+prestige_decay = 0.05
+}
+
+ge_forts = {
+}
+
+teryak_defensive = { global_spy_defence = 0.1 }
+teryak_defensive_1 = {  }
+teryak_attack = { global_manpower_modifier = -0.33 }
+teryak_attack_1 = {  }
+
+
+
+stability_added = { adm_tech_cost_modifier = -0.1 }
+stability_added_1 = {  }
+
+buy__dsc_5 = { discipline = 0.05 }
+buy__dsc_5_1 = {  }
+
+buy_shok_5 = { 
+	shock_damage = 0.10 
+	shock_damage_received = -0.1 
+}
+buy_shok_5_1 = {  }
+
+buy_fire_5_1 = {  }
+buy_fire_5 = {
+ fire_damage = 0.1
+ fire_damage_received = -0.1
+}
+
+buy_speed_5_1 = {}
+buy_speed_5 = { movement_speed = 0.1 }
+
+buy_dsc_5 = { discipline = 0.05 }
+buy_dsc_5_1 = {}
+
+buy_morale0_5 = { land_morale = 0.1 }
+buy_morale0_5_1 = {}
+ 
+buy_morale_damage_5 = { morale_damage = 0.1 morale_damage_received = -0.1 }
+buy_morale_damage_5_1 = {}
+
+dissatisfied_seat = {
+	local_tax_modifier = -0.10
+	local_production_efficiency = -0.10
+	local_unrest = 1
+}
+
+fight_with_corruption = {
+	advisor_cost = 0.15
+	state_maintenance_modifier = 0.10
+	yearly_corruption = -0.05
+}

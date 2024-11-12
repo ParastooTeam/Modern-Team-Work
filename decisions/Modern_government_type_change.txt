@@ -1,0 +1,28 @@
+country_decisions = {
+	
+	government_type_change = {	
+		potential = {
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			adm_power = 10
+			dip_power = 10
+			mil_power = 10
+			NOT = { has_country_modifier = cooldown_change_government }
+		}
+		effect = {
+			custom_tooltip = modern_government_tooltip
+			add_country_modifier = {
+				name = cooldown_change_government
+				duration = 60
+			}
+			country_event = {
+				id = government_type.10
+			}			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

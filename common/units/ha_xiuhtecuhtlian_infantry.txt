@@ -1,0 +1,20 @@
+# Xiuhtecuhtlian Infantry
+
+unit_type = western
+type = artillery
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 18
+	}
+}
+
+maneuver = 2
+offensive_fire = 8
+defensive_fire = 8
+offensive_shock = 2
+defensive_shock = 3
+offensive_morale = 4
+defensive_morale = 4
+

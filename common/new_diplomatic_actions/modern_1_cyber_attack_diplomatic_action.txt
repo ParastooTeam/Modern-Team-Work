@@ -1,0 +1,32 @@
+cyber_attack = {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		#ai = no
+	}
+	is_allowed = {
+		has_spy_network_in = { who = FROM  value = 55 }
+		FROM = { NOT = { has_country_modifier = cyber1 } }
+		OR = {
+			full_idea_group = spy_ideas
+			full_idea_group = dynasty0
+			full_idea_group = satellite_research
+		}
+	}
+	on_accept = {
+		
+		FROM = {
+			save_global_event_target_as = cyber_atack_temp
+		}
+		
+
+		country_event = { id = cyber.7 }
+		
+	}
+	ai_will_do = {  
+		FROM = { 
+			is_rival = ROOT  
+		}    
+	}
+}

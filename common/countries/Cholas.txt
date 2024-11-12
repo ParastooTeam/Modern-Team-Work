@@ -1,0 +1,74 @@
+#Country Name: See the Name of this File.
+
+graphical_culture = westerngfx
+
+color = { 169  189  100 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Vijayalaya #0" = 10
+	"Aditya #0" = 10
+	"Parantaka #0" = 10
+	"Gandaraditya #0" = 10
+	"Arinjaya #0" = 10
+	"Sundara #0" = 10
+	"Uttama #0" = 10
+	"Rajaraja #0" = 10
+	"Rajendra #0" = 10
+	"Rajadhiraja #0" = 10
+	"Virarajendra #0" = 10
+	"Athirajendra #0" = 10
+	"Kulotunga #0" = 10
+	"Vikrama #0" = 10
+	"Kulothunga #0" = 10
+	
+	"Padmavati #0" = -1
+	"Tirumala #0" = -1
+	"China Devi #0" = -1
+	"Lakshmi #0" = -1
+	"Jaganmohini #0" = -1
+	"Annapurna #0" = -1
+	"Rudramba #0" = -1
+	"Anitalli #0" = -1
+	"Rudramadevi #0" = -1
+}
+
+leader_names = {
+	Ghemawat
+	Dasari
+	Chatterji
+	Malini
+	Mallikarjun
+	Jeoomal
+	Mayekar
+	Padmesh
+	Satakarni
+	Pulamavi
+	Svami
+	Sakasena
+	Mallakarni
+	Chola
+}
+
+ship_names = {
+	Amirtha Amman Arul Bharatapuza
+	Bhavani Bhima Chellam Devi Durga
+	Gayatri Godavari Iniya Kabani
+	Kaveri Krishna Lakshmi Madhu
+	Meenakshi Nalini Pambar Parvati
+	Periyar Ponni Radha Ratri Sarasvati
+	Sita Tamarai Tungabhadra
+}
+
+
+

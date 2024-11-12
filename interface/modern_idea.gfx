@@ -1,0 +1,149 @@
+spriteTypes = {
+		
+	spriteType = {
+		name = "GFX_idea_tax_idea"
+		texturefile = "gfx//interface//ideas//idea_tax_idea.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_army_ideas"
+		texturefile = "gfx//interface//ideas//idea_army_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_artillery_ideas"
+		texturefile = "gfx//interface//ideas//idea_artillery_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_cavalry_ideas"
+		texturefile = "gfx//interface//ideas//idea_cavalry_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_military_base_ideas"
+		texturefile = "gfx//interface//ideas//idea_military_base_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_taxx2_idea"
+		texturefile = "gfx//interface//ideas//idea_taxx2_idea.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_leadernav0"
+		texturefile = "gfx//interface//ideas//idea_leadernav0.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_nuclear_research"
+		texturefile = "gfx//interface//ideas//idea_nuclear_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_hidrogen_research"
+		texturefile = "gfx//interface//ideas//idea_hidrogen_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_tradex2_ideas"
+		texturefile = "gfx//interface//ideas//idea_tradex2_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_indoor_security_ideas"
+		texturefile = "gfx//interface//ideas//idea_indoor_security_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_medical_research_ideas"
+		texturefile = "gfx//interface//ideas//idea_medical_research_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_medical_army_ideas"
+		texturefile = "gfx//interface//ideas//idea_medical_army_ideas.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_missil_research"
+		texturefile = "gfx//interface//ideas//idea_missil_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_defence_missil_research"
+		texturefile = "gfx//interface//ideas//idea_defence_missil_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_satellite_research"
+		texturefile = "gfx//interface//ideas//idea_satellite_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_soldier_households"
+		texturefile = "gfx//interface//buildings//soldier_households.tga"
+		loadType = "INGAME"
+	}
+	spriteType = {
+		name = "GFX_idea_oil_research"
+		texturefile = "gfx//interface//ideas//idea_oil_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	######
+	spriteType = {
+		name = "GFX_idea_car_research"
+		texturefile = "gfx//interface//ideas//idea_car_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_electronic_research"
+		texturefile = "gfx//interface//ideas//idea_electronic_research.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_idea_flagship0"
+		texturefile = "gfx//interface//ideas//idea_flagship0.dds"
+		noOfFrames = 1
+		
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

@@ -1,0 +1,46 @@
+country_decisions = {
+	
+	depasit = {
+		
+		potential = {
+    		has_country_flag = show_all_dip_decision 
+			ai = no
+		}
+		allow = {
+		}
+		effect = {
+			custom_tooltip = BALANCE_OF_US
+			hidden_effect = {
+				country_event = {
+					id = bank.3
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	modern_tax = {
+		
+		potential = {
+    		has_country_flag = show_all_dip_decision 
+			ai = no
+		}
+		allow = {
+			adm_power = 50
+			
+		}
+		effect = {
+			custom_tooltip = TAX_OF_US
+			hidden_effect = {
+				country_event = {
+					id = tax.1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

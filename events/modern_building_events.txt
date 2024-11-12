@@ -1,0 +1,21 @@
+namespace = bulding_event
+
+#bulding_event Point admin power X1
+province_event = {
+	id = bulding_event.1
+	title = "bulding_event.1title"
+	desc = "bulding_event.1desc"
+	picture = ATOMIC_DEFENCE_eventPicture
+	hidden = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		add_building = road
+		add_building = highway
+	}
+	
+	option = {
+		name = "bulding_event.1opt"
+	}
+}                                                                                                          

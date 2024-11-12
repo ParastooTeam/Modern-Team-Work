@@ -1,0 +1,2162 @@
+namespace = government_inflience_type
+#
+#government_inflience_type Point admin power X1
+
+country_event = {
+	id = government_inflience_type.10
+	title = "government_inflience_type.10t"
+	desc = "government_inflience_type.10d"
+	picture = government_set_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "government_inflience_type.01opt"
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					check_variable = { which = gov_set_republic value = 1 }
+					check_variable = { which = gov_set_monarchy value = 1 }
+					check_variable = { which = gov_set_theocracy value = 1 }
+				}
+				NOT = { check_variable = { which = gov_set_democracy value = 1 } }
+				NOT = { check_variable = { which = gov_set_communist value = 1 } }
+				NOT = { check_variable = { which = gov_set_military value = 1 } }
+				NOT = { check_variable = { which = gov_set_fascist value = 1 } }
+				NOT = { check_variable = { which = gov_set_oligarchic value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		country_event = {
+			id = government_inflience_type.1
+		}
+	}
+	option = {
+		name = "government_inflience_type.02opt"
+		trigger = {
+			event_target:influence_in_their_government = {
+				OR = {
+					has_reform = oligarchic_reform
+					has_reform = democracy_reform
+					has_reform = communist_government
+					has_reform = fascist_government
+					has_reform = military_government 
+				}
+			}
+			if = {
+				limit = {
+					ai = yes
+				}
+				OR = {
+					check_variable = { which = gov_set_democracy value = 1 }
+					check_variable = { which = gov_set_communist value = 1 }
+					check_variable = { which = gov_set_military value = 1 }
+					check_variable = { which = gov_set_fascist value = 1 }
+					check_variable = { which = gov_set_oligarchic value = 1 }
+				}
+				NOT = { check_variable = { which = gov_set_republic value = 1 } }
+				NOT = { check_variable = { which = gov_set_monarchy value = 1 } }
+				NOT = { check_variable = { which = gov_set_theocracy value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+		country_event = {
+			id = government_inflience_type.2
+		}
+	}
+	option = {
+		name = "government_inflience_type.4opt"
+		trigger = {
+			ai = no
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+}
+
+country_event = {
+	id = government_inflience_type.1
+	title = "government_inflience_type.1t"
+	desc = "government_inflience_type.1d"
+	picture = government_set_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "government_inflience_type.1opt"
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = { check_variable = { which = gov_set_monarchy value = 1 } }
+				NOT = { check_variable = { which = gov_set_theocracy value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes government = republic NOT = { check_variable = { which = gov_set_republic value = 1 } } }
+				set_variable = {
+					which = gov_set_republic
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_republic_variable value = 97 }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_republic_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_monarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_monarchy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_theocracy_variable value = 5 } }
+						divide_variable   = {
+							which = government_theocracy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_republic_variable value = 70 }
+							NOT = { government = republic }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = republic
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_republic_variable value = 97 }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_republic_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_monarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_monarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_theocracy_variable value = 5 } }
+						divide_variable   = {
+							which = government_theocracy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_republic_variable value = 70 }
+							NOT = { government = republic }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = republic
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+				}
+			}
+			
+		}
+		
+	}
+	option = {
+		name = "government_inflience_type.3opt"
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = { check_variable = { which = gov_set_republic value = 1 } }
+				NOT = { check_variable = { which = gov_set_monarchy value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes government = theocracy NOT = { check_variable = { which = gov_set_theocracy value = 1 } } }
+				set_variable = {
+					which = gov_set_theocracy
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_theocracy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_theocracy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_republic_variable value = 5 } }
+						divide_variable   = {
+							which = government_republic_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_monarchy_variable value = 5 } }
+							divide_variable   = {
+								which = government_monarchy_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_theocracy_variable value = 70 }
+							NOT = { government = theocracy }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = theocracy
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_theocracy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_theocracy_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_republic_variable value = 5 } }
+						divide_variable   = {
+							which = government_republic_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_monarchy_variable value = 5 } }
+							divide_variable   = {
+								which = government_monarchy_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_theocracy_variable value = 70 }
+							NOT = { government = theocracy }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = theocracy
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 5
+						}
+					}
+				}	
+			}
+			
+			
+			
+		}
+	}
+	option = {
+		name = "government_inflience_type.2opt"
+		trigger = {
+			if = {
+				limit = {
+					ai = yes
+				}
+				NOT = { check_variable = { which = gov_set_republic value = 1 } }
+				NOT = { check_variable = { which = gov_set_theocracy value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes government = monarchy NOT = { check_variable = { which = gov_set_monarchy value = 1 } } }
+				set_variable = {
+					which = gov_set_monarchy
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					event_target:influence_in_their_government = { OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas } }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_monarchy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_monarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_republic_variable value = 5 } }
+							divide_variable   = {
+								which = government_republic_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_theocracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_theocracy_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_monarchy_variable value = 70 }
+							NOT = { government = monarchy }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = monarchy
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 80
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_monarchy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_monarchy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_monarchy_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_republic_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_republic_variable value = 5 } }
+							divide_variable   = {
+								which = government_republic_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_theocracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_theocracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_theocracy_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_monarchy_variable value = 70 }
+							NOT = { government = monarchy }
+						}
+						if = {
+							limit = { ai = yes }
+							add_stability = -3
+							change_government = monarchy
+						}
+						
+						set_variable = {
+							which = government_republic_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_theocracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_monarchy_variable
+							value = 80
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	option = {
+		name = "government_inflience_type.4opt"
+		trigger = {
+			ai = no
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+}
+
+
+
+
+#####################################################################################################
+country_event = {
+	id = government_inflience_type.2
+	title = "government_inflience_type.2t"
+	desc = "government_inflience_type.2d"
+	picture = government_set_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "government_inflience_type.21opt"
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				NOT = { check_variable = { which = gov_set_communist value = 1 } }
+				NOT = { check_variable = { which = gov_set_military value = 1 } }
+				NOT = { check_variable = { which = gov_set_fascist value = 1 } }
+				NOT = { check_variable = { which = gov_set_oligarchic value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes has_reform = democracy_reform NOT = { check_variable = { which = gov_set_democracy value = 1 } } }
+				set_variable = {
+					which = gov_set_democracy
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_democracy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_democracy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+						divide_variable   = {
+							which = government_fashist_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_democracy_variable value = 70 }
+							#NOT = { has_reform = democracy_reform }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = multi_party_system }
+						#	}
+						#	add_government_reform = multi_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = democracy_reform
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_democracy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_democracy_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+						divide_variable   = {
+							which = government_fashist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_democracy_variable value = 70 }
+							#NOT = { has_reform = democracy_reform }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = multi_party_system }
+						#	}
+						#	add_government_reform = multi_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = democracy_reform
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+				}
+			}
+			
+			
+		}
+		
+	}
+	option = {
+		name = "government_inflience_type.22opt"
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				NOT = { check_variable = { which = gov_set_democracy value = 1 } }
+				NOT = { check_variable = { which = gov_set_communist value = 1 } }
+				NOT = { check_variable = { which = gov_set_military value = 1 } }
+				NOT = { check_variable = { which = gov_set_oligarchic value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes has_reform = fascist_government NOT = { check_variable = { which = gov_set_fascist value = 1 } } }
+				set_variable = {
+					which = gov_set_fascist
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_fashist_variable value = 97 }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_fashist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+						divide_variable   = {
+							which = government_democracy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+							divide_variable   = {
+								which = government_comonist_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_fashist_variable value = 70 }
+							#NOT = { has_reform = fascist_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = fascist_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_fashist_variable value = 97 }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_fashist_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+						divide_variable   = {
+							which = government_democracy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+							divide_variable   = {
+								which = government_comonist_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_fashist_variable value = 70 }
+							#NOT = { has_reform = fascist_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = fascist_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 80
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	option = {
+		name = "government_inflience_type.23opt"
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				NOT = { check_variable = { which = gov_set_democracy value = 1 } }
+				NOT = { check_variable = { which = gov_set_military value = 1 } }
+				NOT = { check_variable = { which = gov_set_fascist value = 1 } }
+				NOT = { check_variable = { which = gov_set_oligarchic value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes has_reform = communist_government NOT = { check_variable = { which = gov_set_communist value = 1 } } }
+				set_variable = {
+					which = gov_set_communist
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_comonist_variable value = 97 }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_comonist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_comonist_variable value = 70 }
+							#NOT = { has_reform = communist_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = communist_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 80
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_comonist_variable value = 97 }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_comonist_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_comonist_variable value = 70 }
+							#NOT = { has_reform = communist_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = communist_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 80
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+
+	############################################################################
+
+	option = {
+		name = "government_inflience_type.24opt"
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				NOT = { check_variable = { which = gov_set_democracy value = 1 } }
+				NOT = { check_variable = { which = gov_set_communist value = 1 } }
+				NOT = { check_variable = { which = gov_set_military value = 1 } }
+				NOT = { check_variable = { which = gov_set_fascist value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 2
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes has_reform = oligarchic_reform NOT = { check_variable = { which = gov_set_oligarchic value = 1 } } }
+				set_variable = {
+					which = gov_set_oligarchic
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_oligarchy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_oligarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_oligarchy_variable value = 70 }
+							#NOT = { has_reform = oligarchic_reform }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = multi_party_system }
+						#	}
+						#	add_government_reform = multi_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = oligarchic_reform
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 80
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_oligarchy_variable value = 97 }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_oligarchy_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_military_variable value = 5 } }
+						divide_variable   = {
+							which = government_military_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_oligarchy_variable value = 70 }
+							#NOT = { has_reform = oligarchic_reform }
+						}
+						#if = {
+						#	limit = {
+						#		ai = yes
+						#		NOT = { has_reform = multi_party_system }
+						#	}
+						#	add_government_reform = multi_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = oligarchic_reform
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 80
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	option = {
+		name = "government_inflience_type.25opt"
+		trigger = {
+			if = {
+				limit = { ai = yes }
+				NOT = { check_variable = { which = gov_set_democracy value = 1 } }
+				NOT = { check_variable = { which = gov_set_communist value = 1 } }
+				NOT = { check_variable = { which = gov_set_fascist value = 1 } }
+				NOT = { check_variable = { which = gov_set_oligarchic value = 1 } }
+			}
+		}
+		ai_chance = {
+			factor = 1
+		}
+		add_adm_power = -5
+		add_mil_power = -5
+		add_dip_power = -5
+		add_spy_network_in = {
+			who = event_target:influence_in_their_government
+			value = -10
+		}
+		hidden_effect = {
+			if = {
+				limit = { ai = yes has_reform = military_government NOT = { check_variable = { which = gov_set_military value = 1 } } }
+				set_variable = {
+					which = gov_set_military
+					value = 1
+				}
+				add_spy_network_in = {
+					who = event_target:influence_in_their_government
+					value = -50
+				}
+			}
+			if = {
+				limit = {
+					OR = { full_idea_group = exploration_ideas full_idea_group = indoor_security_ideas }
+				}
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_military_variable value = 97 }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_military_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.025
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.025
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_military_variable value = 70 }
+							#NOT = { has_reform = military_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = military_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 80
+						}
+					}
+				}
+			}
+			else = {
+				event_target:influence_in_their_government = {
+					if = {
+						limit = {
+							check_variable = { which = government_military_variable value = 97 }
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { check_variable = { which = government_military_variable value = 97 } }
+						}
+						multiply_variable  = {
+							which = government_military_variable
+							value = 1.10
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_democracy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_democracy_variable value = 5 } }
+							divide_variable   = {
+								which = government_democracy_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_fashist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_fashist_variable value = 5 } }
+							divide_variable   = {
+								which = government_fashist_variable
+								value = 1.05
+							}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_comonist_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_comonist_variable value = 5 } }
+						divide_variable   = {
+							which = government_comonist_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							NOT = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+					}
+					else_if = {
+						limit = { check_variable = { which = government_oligarchy_variable value = 5 } }
+						divide_variable   = {
+							which = government_oligarchy_variable
+							value = 1.05
+						}
+					}
+					if = {
+						limit = {
+							check_variable = { which = government_military_variable value = 70 }
+							#NOT = { has_reform = military_government }
+						}
+						#if = {
+						#	limit = {
+						#		NOT = { has_reform = single_party_system }
+						#	}
+						#	add_government_reform = single_party_system
+						#}
+						if = {
+							limit = { ai = yes }
+							add_stability = -2
+							add_government_reform = military_government
+						}
+						
+						set_variable = {
+							which = government_democracy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_fashist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_comonist_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_oligarchy_variable
+							value = 5
+						}
+						set_variable = {
+							which = government_military_variable
+							value = 80
+						}
+					}
+				}
+			}
+			
+			
+		}
+	}
+	option = {
+		name = "government_inflience_type.4opt"
+		trigger = {
+			ai = no
+		}
+		ai_chance = {
+			factor = 0
+		}
+	}
+	
+}

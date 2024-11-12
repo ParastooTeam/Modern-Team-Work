@@ -1,0 +1,94 @@
+country_decisions = {
+
+	Iranian_nation = {
+		major = yes
+		potential = {
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_persia_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				NOT = { exists = PER }
+				NOT = { exists = IRN }
+			}
+			NOT = { tag = MUG }
+			NOT = { tag = TIM }
+			NOT = { tag = PER }
+			NOT = { tag = IRN }
+			NOT = { tag = HLR }
+			NOT = { tag = ROM }
+			NOT = { tag = PAP }
+			NOT = { tag = TUR }
+			NOT = { tag = BYZ }
+			NOT = { tag = ARB }
+			NOT = { religion = zoroastrian }
+			OR = {
+				culture_group = iranian
+				primary_culture = azerbaijani
+				tag = AKK
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+		}
+		provinces_to_highlight = {
+			OR = {
+				region = persia_region
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			is_tribal = no
+			prestige = 25
+			NOT = {
+				government = theocracy
+			}
+			NOT = { exists = PER }
+			persia_region = {
+				NOT = { owned_by = IDE }
+				NOT = { is_core = IDE }
+			}
+		}
+		effect = {
+			change_tag = IRN
+			
+			change_technology_group = middle_eastern
+				
+				set_government_rank = 2
+					
+				add_prestige = 25
+				if = {
+					limit = {
+						NOT = { primary_culture = persian }
+					}
+					change_primary_culture = persian
+				}
+				set_country_flag = formed_persia_flag
+				if = {
+					limit = { has_custom_ideas = no }
+					country_event = { id = ideagroups.1 } #Swap Ideas
+				}
+		}
+	
+		ai_will_do = {
+			factor = 2
+		}
+		ai_importance = 400
+	}
+}
+

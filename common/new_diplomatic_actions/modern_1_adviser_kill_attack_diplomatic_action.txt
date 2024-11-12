@@ -1,0 +1,89 @@
+kill_advisor_modern = {
+	category = covert
+	require_acceptance = no
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+	}
+	is_allowed = {
+		has_spy_network_in = { who = FROM  value = 70 }
+		#FROM = { NOT = { has_country_modifier = cyber1 } }
+		treasury = 5000
+		OR = {
+			full_idea_group = spy_ideas
+			full_idea_group = dynasty0
+		}
+		custom_trigger_tooltip = {
+			tooltip = THEY_HAVE_ADVISOR
+			FROM = { 
+				OR = {
+					esu_researcher = 1
+					esu_bandit = 1
+					commandant = 1
+					army_reformer = 1
+					esu_curator = 1
+					esu_colonial_overseer = 1
+				}
+			}
+		}
+		if = {
+			limit = { FROM = { esu_researcher = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_IDEA_COST_ADVISOR
+				FROM = { esu_researcher = 1 }
+			}
+		}
+		if = {
+			limit = { FROM = { esu_bandit = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_PROVINCE_WARSCORE_ADVISOR
+				FROM = { esu_bandit = 1 }
+			}
+		}
+		if = {
+			limit = { FROM = { commandant = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_DISCIPLINE_3_5_ADVISOR
+				FROM = { commandant = 1 }
+			}
+		}
+		if = {
+			limit = { FROM = { esu_colonial_overseer = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_DISCIPLINE_7_ADVISOR
+				FROM = { esu_colonial_overseer = 1 }
+			}
+		}
+		if = {
+			limit = { FROM = { army_reformer = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_MORALE_7_5_ADVISOR
+				FROM = { army_reformer = 1 }
+			}
+		}
+		if = {
+			limit = { FROM = { esu_curator = 1 } }
+			custom_trigger_tooltip = {
+				tooltip = THEY_HAVE_MORALE_15_ADVISOR
+				FROM = { esu_curator = 1 }
+			}
+		}
+		
+		
+		
+		
+		
+				
+	}
+	on_accept = {
+		FROM = {
+			save_global_event_target_as = kill_advisor_temp
+		}
+		country_event = { id = kill_advisor_event.1 }
+	}
+	ai_will_do = {  
+		FROM = { 
+			is_rival = ROOT  
+		}    
+	}
+}

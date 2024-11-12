@@ -1,0 +1,120 @@
+country_decisions = {
+
+	
+	arabian_empire = {
+		#major = yes
+		color = { 100 20 200 }
+		potential = {
+             has_country_flag = open_all_decision
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_arabian_empire_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { exists = ARE }
+			NOT = { tag = HLR }
+			NOT = { tag = PAP }
+			NOT = { tag = ARE }
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			culture_group = turko_semitic #Arabic
+			NOT = { primary_culture = turkish }
+			
+		}
+		provinces_to_highlight = {
+			OR = {
+				province_id = 358			#Alexandria
+				province_id = 361			#Cairo
+				province_id = 377			#Aleppo
+				province_id = 379			#Jerusalem
+				province_id = 382			#Damascus
+				province_id = 384			#Medina
+				province_id = 385			#Mecca
+				province_id = 388			#Aden
+				province_id = 390			#Sanaa
+				province_id = 392			#Al-Arid
+				province_id = 394			#Qatif
+				province_id = 400			#Muscat
+				province_id = 403			#Nizwa
+				province_id = 410			#Baghdad
+				
+				region = arabia_region
+				region = mashriq_region
+				region = egypt_region
+				region = maghreb_region
+				region = iberia_region
+				region = persia_region
+								
+			}
+			OR = {
+				NOT = { owned_by = ROOT }
+				NOT = { is_core = ROOT }
+			}
+		}
+		allow = {
+			
+			is_at_war = no
+			adm_tech = 5
+			owns_core_province = 358			#Alexandria
+			owns_core_province = 361			#Cairo
+			owns_core_province = 377			#Aleppo
+			owns_core_province = 379			#Jerusalem
+			owns_core_province = 382			#Damascus
+			owns_core_province = 384			#Medina
+			owns_core_province = 385			#Mecca
+			owns_core_province = 388			#Aden
+			owns_core_province = 390			#Sanaa
+			owns_core_province = 392			#Al-Arid
+			owns_core_province = 394			#Qatif
+			owns_core_province = 400			#Muscat
+			owns_core_province = 403			#Nizwa
+			owns_core_province = 410			#Baghdad
+			
+			mashriq_region = {
+				type = all
+				owned_by = ROOT
+			}
+			
+		}
+		effect = {
+			#remove_non_electors_emperors_from_empire_effect = yes
+			
+			mashriq_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ARE
+			}
+			egypt_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ARE
+			}
+			arabia_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ARE
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			add_prestige = 50
+			set_country_flag = formed_arabian_empire_flag
+			change_tag = ARE
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,34 @@
+country_decisions = {
+
+	zombie_decision = {
+		major = yes
+		potential = {
+			ai = yes
+			NOT = { exists = ZOM }
+			NOT = { has_global_flag = zombie_flag }
+		}
+		allow = {
+			current_age = age_of_discovery
+			is_great_power = no
+			NOT = { oceania = { owned_by = ROOT } }
+			NOT = { north_america = { owned_by = ROOT } }
+			NOT = { south_america = { owned_by = ROOT } }
+			NOT = { japan_region = { owned_by = ROOT } }
+			NOT = { indonesia_region = { owned_by = ROOT } }
+			NOT = { british_isles_region = { owned_by = ROOT } }
+			#NOT = { ai = no }
+			NOT = { exists = ZOM }
+		}
+		effect = {
+			country_event = {
+				id = zi.1
+				#tooltip = modern_check_desc
+			}
+			set_global_flag = zombie_flag
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		ai_importance = 100
+	}
+}

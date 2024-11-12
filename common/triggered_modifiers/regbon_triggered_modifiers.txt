@@ -1,0 +1,1303 @@
+# Triggered modifiers are here.
+# these are checked for each countries once/month and then applied.
+#
+# Effects are fully scriptable here.
+
+###########################################
+# Regional Bonuses Mod
+###########################################
+france_region_ra_modifier = {
+	potential = {
+		france_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		france_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_manpower_modifier = 0.1
+
+}
+
+scandinavia_region_ra_modifier = {
+	potential = {
+		scandinavia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		scandinavia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	infantry_power = 0.05
+
+}
+
+low_countries_region_ra_modifier = {
+	potential = {
+		low_countries_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		low_countries_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_efficiency = 0.1
+
+}
+
+italy_region_ra_modifier = {
+	potential = {
+		italy_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		italy_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	technology_cost = -0.05
+
+}
+
+north_german_region_ra_modifier = {
+	potential = {
+		north_german_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		north_german_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	merc_maintenance_modifier = -0.1
+
+}
+
+south_german_region_ra_modifier = {
+	potential = {
+		south_german_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		south_german_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	diplomatic_reputation = 1
+
+}
+
+russia_region_ra_modifier = {
+	potential = {
+		russia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		russia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	land_forcelimit_modifier = 0.05
+
+}
+
+iberia_region_ra_modifier = {
+	potential = {
+		iberia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		iberia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_steering = 0.20
+
+}
+
+british_isles_region_ra_modifier = {
+	potential = {
+		british_isles_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		british_isles_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	heavy_ship_power=0.05
+
+}
+
+baltic_region_ra_modifier = {
+	potential = {
+		baltic_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		baltic_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_unrest = -1
+
+}
+
+poland_region_ra_modifier = {
+	potential = {
+		poland_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		poland_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	num_accepted_cultures = 1
+
+}
+
+ruthenia_region_ra_modifier = {
+	potential = {
+		ruthenia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		ruthenia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	shock_damage_received=-0.05
+
+}
+
+crimea_region_ra_modifier = {
+	potential = {
+		crimea_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		crimea_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	land_attrition = -0.10
+
+}
+
+balkan_region_ra_modifier = {
+	potential = {
+		balkan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		balkan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	shock_damage = 0.05
+
+}
+
+carpathia_region_ra_modifier = {
+	potential = {
+		carpathia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		carpathia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	free_leader_pool = 1
+
+}
+
+egypt_region_ra_modifier = {
+	potential = {
+		egypt_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		egypt_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_steering = 0.1
+
+}
+
+maghreb_region_ra_modifier = {
+	potential = {
+		maghreb_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		maghreb_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	privateer_efficiency = 0.15
+
+}
+
+mashriq_region_ra_modifier = {
+	potential = {
+		mashriq_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		mashriq_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	fire_damage = 0.05
+
+}
+
+anatolia_region_ra_modifier = {
+	potential = {
+		anatolia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		anatolia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	tolerance_heathen = 1
+
+}
+
+persia_region_ra_modifier = {
+	potential = {
+		persia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		persia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	land_morale = 0.05
+
+}
+
+khorasan_region_ra_modifier = {
+	potential = {
+		khorasan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		khorasan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	core_creation = -0.05
+
+}
+
+caucasia_region_ra_modifier = {
+	potential = {
+		caucasia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		caucasia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	defensiveness = 0.15
+
+}
+
+arabia_region_ra_modifier = {
+	potential = {
+		arabia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		arabia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_missionary_strength = 0.01
+
+}
+
+niger_region_ra_modifier = {
+	potential = {
+		niger_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		niger_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	merchants = 1
+
+}
+
+guinea_region_ra_modifier = {
+	potential = {
+		guinea_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		guinea_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_trade_power = 0.10
+
+}
+
+sahel_region_ra_modifier = {
+	potential = {
+		sahel_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		sahel_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	prestige = 1
+
+}
+
+horn_of_africa_region_ra_modifier = {
+	potential = {
+		horn_of_africa_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		horn_of_africa_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_autonomy = -0.05
+
+}
+
+east_africa_region_ra_modifier = {
+	potential = {
+		east_africa_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		east_africa_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	light_ship_cost = -0.1
+
+}
+
+central_africa_region_ra_modifier = {
+	potential = {
+		central_africa_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		central_africa_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	loot_amount = 0.15
+
+}
+
+kongo_region_ra_modifier = {
+	potential = {
+		kongo_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		kongo_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	improve_relation_modifier = 0.1
+
+}
+
+central_asia_region_ra_modifier = {
+	potential = {
+		central_asia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		central_asia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	spy_offence = 0.125
+
+}
+
+south_africa_region_ra_modifier = {
+	potential = {
+		south_africa_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		south_africa_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_steering = 0.20
+
+}
+
+west_siberia_region_ra_modifier = {
+	potential = {
+		west_siberia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		west_siberia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	unjustified_demands = -0.1
+
+}
+
+east_siberia_region_ra_modifier = {
+	potential = {
+		east_siberia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		east_siberia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	hostile_attrition = 1
+
+}
+
+mongolia_region_ra_modifier = {
+	potential = {
+		mongolia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		mongolia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	cavalry_power = 0.05
+
+}
+
+manchuria_region_ra_modifier = {
+	potential = {
+		manchuria_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		manchuria_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	army_tradition = 0.5
+
+}
+
+korea_region_ra_modifier = {
+	potential = {
+		korea_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		korea_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	dip_tech_cost_modifier = -0.05
+
+}
+
+tibet_region_ra_modifier = {
+	potential = {
+		tibet_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		tibet_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	stability_cost_modifier = -0.1
+
+}
+
+hindusthan_region_ra_modifier = {
+	potential = {
+		hindusthan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		hindusthan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	vassal_income = 0.15
+
+}
+
+bengal_region_ra_modifier = {
+	potential = {
+		bengal_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		bengal_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_efficiency = 0.05
+
+}
+
+west_india_region_ra_modifier = {
+	potential = {
+		west_india_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		west_india_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	prestige = 1
+
+}
+
+deccan_region_ra_modifier = {
+	potential = {
+		deccan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		deccan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	culture_conversion_cost = -0.1
+
+}
+
+coromandel_region_ra_modifier = {
+	potential = {
+		coromandel_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		coromandel_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	merc_maintenance_modifier = -0.10
+	
+}
+
+burma_region_ra_modifier = {
+	potential = {
+		burma_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		burma_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	mil_tech_cost_modifier = -0.05
+
+}
+
+japan_region_ra_modifier = {
+	potential = {
+		japan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		japan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	adm_tech_cost_modifier = -0.05
+
+}
+
+australia_region_ra_modifier = {
+	potential = {
+		australia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		australia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	light_ship_power = 0.1
+
+}
+
+south_china_region_ra_modifier = {
+	potential = {
+		south_china_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		south_china_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	diplomatic_reputation = 0.5
+
+}
+
+xinan_region_ra_modifier = {
+	potential = {
+		xinan_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		xinan_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	governing_capacity_modifier = 0.05
+
+}
+
+north_china_region_ra_modifier = {
+	potential = {
+		north_china_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		north_china_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_manpower_modifier = 0.1
+
+}
+
+brazil_region_ra_modifier = {
+	potential = {
+		brazil_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		brazil_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	envoy_travel_time = -0.25
+
+}
+
+la_plata_region_ra_modifier = {
+	potential = {
+		la_plata_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		la_plata_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	prestige_decay = -0.01
+
+}
+
+colombia_region_ra_modifier = {
+	potential = {
+		colombia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		colombia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_steering = 0.1
+
+}
+
+peru_region_ra_modifier = {
+	potential = {
+		peru_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		peru_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	navy_tradition_decay = -0.01
+
+}
+
+upper_peru_region_ra_modifier = {
+	potential = {
+		upper_peru_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		upper_peru_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	reinforce_speed = 0.1
+
+}
+
+malaya_region_ra_modifier = {
+	potential = {
+		malaya_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		malaya_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	idea_cost = -0.05
+
+}
+
+moluccas_region_ra_modifier = {
+	potential = {
+		moluccas_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		moluccas_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	sailor_maintenance_modifer = -0.05
+
+}
+
+indonesia_region_ra_modifier = {
+	potential = {
+		indonesia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		indonesia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_trade_goods_size_modifier = 0.05
+
+}
+
+oceanea_region_ra_modifier = {
+	potential = {
+		oceanea_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		oceanea_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	trade_steering = 0.20
+
+}
+
+indo_china_region_ra_modifier = {
+	potential = {
+		indo_china_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		indo_china_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	num_accepted_cultures = 1
+
+}
+
+canada_region_ra_modifier = {
+	potential = {
+		canada_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		canada_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	tolerance_heretic = 1
+
+}
+
+great_lakes_region_ra_modifier = {
+	potential = {
+		great_lakes_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		great_lakes_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_institution_spread = 0.1
+	
+}
+
+northeast_america_region_ra_modifier = {
+	potential = {
+		northeast_america_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		northeast_america_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	development_cost = -0.1
+
+}
+
+southeast_america_region_ra_modifier = {
+	potential = {
+		southeast_america_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		southeast_america_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_unrest = -1
+
+}
+
+mississippi_region_ra_modifier = {
+	potential = {
+		mississippi_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		mississippi_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	global_prov_trade_power_modifier = 0.10
+
+}
+
+great_plains_region_ra_modifier = {
+	potential = {
+		great_plains_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		great_plains_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	build_cost = -0.1
+
+}
+
+california_region_ra_modifier = {
+	potential = {
+		california_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		california_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	diplomatic_reputation = 0.5
+
+}
+
+cascadia_region_ra_modifier = {
+	potential = {
+		cascadia_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		cascadia_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	naval_maintenance_modifier = -0.1
+
+}
+
+hudson_bay_region_ra_modifier = {
+	potential = {
+		hudson_bay_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		hudson_bay_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	production_efficiency = 0.05
+
+}
+
+mexico_region_ra_modifier = {
+	potential = {
+		mexico_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		mexico_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	build_cost = -0.1
+
+}
+
+central_america_region_ra_modifier = {
+	potential = {
+		central_america_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		central_america_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	advisor_pool = 1
+
+}
+
+carribeans_region_ra_modifier = {
+	potential = {
+		carribeans_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		carribeans_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	colonists = 4
+
+}
+
+rio_grande_region_ra_modifier = {
+	potential = {
+		rio_grande_region = {
+			has_discovered = PREV
+		}
+	}
+	
+	trigger = {
+		rio_grande_region = {
+			type = all
+			country_or_non_sovereign_subject_holds = ROOT
+		}
+	}
+	
+	adm_tech_cost_modifier=-0.05
+
+}

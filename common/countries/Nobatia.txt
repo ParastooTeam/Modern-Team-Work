@@ -1,0 +1,60 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 114  50  180 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Zakharias #0" = 30
+	"Merkourios #0" = 20
+	"Simeon #0" = 20
+	"Abraham #0" = 20
+	"Markos #0" = 20
+	"Kyriakos #0" = 20
+	"Mikhael #0" = 20
+	"Georgios #0" = 40
+	"David #0" = 20
+	"Ioannes #0" = 20
+	"Basileios #0" = 20
+	"Solomon #0" = 20
+	"Qalidurut #0" = 20
+	"Murtashkar #0" = 20
+	"Shekanda #0" = 20
+	"Barak #0" = 20
+	"Semamun #0" = 20
+	"Ayay #0" = 20
+	"Kernabes #0" = 20
+	"Barschanbu #0" = 20
+}
+
+leader_names = {
+	Abboud
+	Fung
+	Garang
+	Kayra
+	Keira
+	Kelueljang
+	Lugor
+	Nuer
+	Shol
+	Taha
+}
+
+ship_names = {
+	Apedemak Bes Dedwen Arensnuphis Amon
+	Mandulis Amenirdis Taweret Mut Tefnut Khnum
+}
+
+
+

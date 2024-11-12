@@ -1,0 +1,82 @@
+po_destroy_cars = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 1.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 50.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 50
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	is_visible = {
+		
+		FROM = { cars = 1 }
+		NOT = { FROM = { cars = 4 } }
+	}
+	is_allowed = {
+		FROM = { cars = 1 }
+	}
+	effect = {
+		FROM = {
+			every_owned_province = {
+				limit = {
+					trade_goods = cars
+					OR = {
+						controlled_by = ROOT
+						controller = {
+							is_subject_of = ROOT
+						}
+					}
+				}
+				change_trade_goods = unknown
+			}	
+		}
+		if = {
+			limit = {
+				FROM = { cars = 5 }
+			}
+			clr_global_flag = cars_are_ubiquitous
+			change_price = {
+				trade_goods = cars
+				key = DESTROY_CAR
+				value = 0.25
+				duration = 3650
+			}
+		}		
+		every_known_country = { 
+			limit = { 
+				FROM = { ai = no }
+			}
+			country_event = { id = destroy_trade_goods.2 }
+		}
+		change_price = {
+			trade_goods = cars
+			key = DESTROY_CAR
+			value = 0.25
+			duration = 3650
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 80
+		}
+		limit = {
+			FROM = {
+				cars = 4
+				is_rival = ROOT
+			}
+		}
+	}
+}
+

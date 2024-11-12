@@ -1,0 +1,322 @@
+
+#Province Scope
+government_set_script_effect = {
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = authoritarian_rule
+		}
+		set_variable = {
+			which = multi_party_gov
+			value = 5
+		}
+		set_variable = {
+			which = limited_party_gov
+			value = 5
+		}
+		set_variable = {
+			which = authority_party_gov
+			value = 80
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = multi_party_system
+		}
+		set_variable = {
+			which = multi_party_gov
+			value = 80
+		}
+		set_variable = {
+			which = limited_party_gov
+			value = 5
+		}
+		set_variable = {
+			which = authority_party_gov
+			value = 5
+		}
+	}	
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = single_party_system
+		}
+		set_variable = {
+			which = multi_party_gov
+			value = 5
+		}
+		set_variable = {
+			which = limited_party_gov
+			value = 80
+		}
+		set_variable = {
+			which = authority_party_gov
+			value = 5
+		}
+	}	
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			government = republic
+		}
+		set_variable = {
+			which = government_republic_variable
+			value = 80			
+		}
+		set_variable = {
+			which = government_theocracy_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_monarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			NOT = { tag = IRA }
+			government = theocracy
+		}
+		set_variable = {
+			which = government_republic_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_theocracy_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_monarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			tag = IRA
+		}
+		set_variable = {
+			which = government_republic_variable
+			value = 50		
+		}
+		set_variable = {
+			which = government_theocracy_variable
+			value = 20
+		}
+		set_variable = {
+			which = government_monarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			government = monarchy
+		}
+		set_variable = {
+			which = government_republic_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_theocracy_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_monarchy_variable
+			value = 80
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = democracy_reform
+		}
+		set_variable = {
+			which = government_democracy_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_comonist_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_fashist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_military_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_oligarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = communist_government
+		}
+		set_variable = {
+			which = government_comonist_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_democracy_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_fashist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_military_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_oligarchy_variable
+			value = 10
+		}
+		if = {
+			limit = {
+				is_year = 2021
+			}
+			set_variable = {
+				which = government_republic_variable
+				value = 80			
+			}
+			set_variable = {
+				which = government_theocracy_variable
+				value = 10
+			}
+			set_variable = {
+				which = government_monarchy_variable
+				value = 10
+			}
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = fascist_government
+		}
+		set_variable = {
+			which = government_fashist_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_democracy_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_comonist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_military_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_oligarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = military_government
+		}
+		set_variable = {
+			which = government_military_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_democracy_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_comonist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_fashist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_oligarchy_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			has_reform = oligarchic_reform
+		}
+		set_variable = {
+			which = government_oligarchy_variable
+			value = 80
+		}
+		set_variable = {
+			which = government_democracy_variable
+			value = 10		
+		}
+		set_variable = {
+			which = government_comonist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_fashist_variable
+			value = 10
+		}
+		set_variable = {
+			which = government_military_variable
+			value = 10
+		}
+	}
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+			NOT = { has_reform = oligarchic_reform }
+			NOT = { has_reform = democracy_reform }
+			NOT = { has_reform = communist_government }
+			NOT = { has_reform = fascist_government }
+			NOT = { has_reform = military_government }
+		}
+		change_variable = {
+			which = government_oligarchy_variable
+			value = 5
+		}
+		change_variable = {
+			which = government_democracy_variable
+			value = 5	
+		}
+		change_variable = {
+			which = government_comonist_variable
+			value = 5
+		}
+		change_variable = {
+			which = government_fashist_variable
+			value = 5
+		}
+		change_variable = {
+			which = government_military_variable
+			value = 5
+		}
+	}
+	
+}

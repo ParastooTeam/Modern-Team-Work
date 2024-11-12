@@ -1,0 +1,291 @@
+country_decisions = {
+	defence_missil = {
+		major = yes
+		potential = {
+		}
+		allow = {
+			full_idea_group = defence_missil_research
+			NOT = { has_country_modifier = wait_for_tech_defence }
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					treasury = 20000
+				}
+				if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					treasury = 25000
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 1500 } } }
+					treasury = 30000
+				}
+				if = {
+					limit = { ROOT = { total_development = 1500 NOT = { total_development = 2000 } } }
+					treasury = 35000
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 2500 } } }
+					treasury = 40000
+				}
+				if = {
+					limit = { ROOT = { total_development = 2500 NOT = { total_development = 3000 } } }
+					treasury = 45000
+				}
+				if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 3500 } } }
+					treasury = 50000
+				}
+				if = {
+					limit = { ROOT = { total_development = 3500 NOT = { total_development = 4000 } } }
+					treasury = 53000
+				}
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					treasury = 55000
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+					treasury = 59000
+				}
+				if = {
+					limit = { ROOT = { total_development = 6000 NOT = { total_development = 7000 } } }
+					treasury = 62000
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					treasury = 65000			
+				}
+		
+
+		}
+		effect = {
+			
+					if = {
+						limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+						add_treasury = -20000
+					}
+					if = {
+						limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -25000
+					}
+				if = {
+						limit = { ROOT = { total_development = 1000 NOT = { total_development = 1500 } } }
+						add_treasury = -30000
+					}
+					if = {
+						limit = { ROOT = { total_development = 1500 NOT = { total_development = 2000 } } }
+						add_treasury = -35000
+					}
+				if = {
+						limit = { ROOT = { total_development = 2000 NOT = { total_development = 2500 } } }
+						add_treasury = -40000
+					}
+					if = {
+						limit = { ROOT = { total_development = 2500 NOT = { total_development = 3000 } } }
+						add_treasury = -45000
+					}
+				if = {
+						limit = { ROOT = { total_development = 3000 NOT = { total_development = 3500 } } }
+						add_treasury = -50000
+					}
+					if = {
+						limit = { ROOT = { total_development = 3500 NOT = { total_development = 4000 } } }
+						add_treasury = -53000
+					}
+				if = {
+						limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -55000
+					}
+				if = {
+						limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+						add_treasury = -59000
+					}
+					if = {
+						limit = { ROOT = { total_development = 6000 NOT = { total_development = 7000 } } }
+						add_treasury = -62000
+					}
+				if = {
+						limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -65000			
+					}
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_50
+							check_variable = {
+								which = defense_missile_lev
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+						which = defense_missile_lev
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_50 } }
+					add_country_modifier = {
+						name = "difence_missile"
+						duration = -1
+					}
+					set_variable = {
+						which = defense_missile_lev
+						value = 1
+					}
+				}
+				add_country_modifier = {
+					name = wait_for_tech_defence
+					duration = 550
+				}
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 20
+	}
+	attack_missil = {
+		major = yes
+		potential = {
+		}
+		allow = {
+			full_idea_group = missil_research
+			NOT = { has_country_modifier = wait_for_tech_attack }
+			if = {
+					limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+					treasury = 20000
+				}
+				if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					treasury = 25000
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 1500 } } }
+					treasury = 30000
+				}
+				if = {
+					limit = { ROOT = { total_development = 1500 NOT = { total_development = 2000 } } }
+					treasury = 35000
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 2500 } } }
+					treasury = 40000
+				}
+				if = {
+					limit = { ROOT = { total_development = 2500 NOT = { total_development = 3000 } } }
+					treasury = 45000
+				}
+				if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 3500 } } }
+					treasury = 50000
+				}
+				if = {
+					limit = { ROOT = { total_development = 3500 NOT = { total_development = 4000 } } }
+					treasury = 53000
+				}
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					treasury = 55000
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+					treasury = 59000
+				}
+				if = {
+					limit = { ROOT = { total_development = 6000 NOT = { total_development = 7000 } } }
+					treasury = 62000
+				}
+			if = {
+					limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+					treasury = 65000			
+				}
+		
+
+		}
+		effect = {
+			
+					if = {
+						limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+						add_treasury = -20000
+					}
+					if = {
+						limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+						add_treasury = -25000
+					}
+				if = {
+						limit = { ROOT = { total_development = 1000 NOT = { total_development = 1500 } } }
+						add_treasury = -30000
+					}
+					if = {
+						limit = { ROOT = { total_development = 1500 NOT = { total_development = 2000 } } }
+						add_treasury = -35000
+					}
+				if = {
+						limit = { ROOT = { total_development = 2000 NOT = { total_development = 2500 } } }
+						add_treasury = -40000
+					}
+					if = {
+						limit = { ROOT = { total_development = 2500 NOT = { total_development = 3000 } } }
+						add_treasury = -45000
+					}
+				if = {
+						limit = { ROOT = { total_development = 3000 NOT = { total_development = 3500 } } }
+						add_treasury = -50000
+					}
+					if = {
+						limit = { ROOT = { total_development = 3500 NOT = { total_development = 4000 } } }
+						add_treasury = -53000
+					}
+				if = {
+						limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+						add_treasury = -55000
+					}
+				if = {
+						limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+						add_treasury = -59000
+					}
+					if = {
+						limit = { ROOT = { total_development = 6000 NOT = { total_development = 7000 } } }
+						add_treasury = -62000
+					}
+				if = {
+						limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+						add_treasury = -65000			
+					}
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = missile_state_50
+							check_variable = {
+								which = attack_missile_lev
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = missile_state_50 } }
+					add_country_modifier = {
+						name = "attack_missile_level"
+						duration = -1
+					}
+					set_variable = {
+						which = attack_missile_lev
+						value = 1
+					}
+				}
+				add_country_modifier = {
+					name = wait_for_tech_attack
+					duration = 550
+				}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 20
+	}	
+}

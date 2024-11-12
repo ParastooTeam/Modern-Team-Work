@@ -1,0 +1,161 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+trade_share_us = {
+	category = economy
+	alert_index = 35
+	alert_tooltip = TRADE_NODE_SHARE
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	is_visible = {
+		has_country_flag = opened_trade_diplomacy
+		ai = no
+	}
+	is_allowed = {
+		OR = {
+			alliance_with = FROM
+			FROM = { is_subject_of = ROOT }
+			ROOT = { is_subject_of = FROM }
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}
+		}
+		dip_power = 50
+	}
+	on_accept = {
+		FROM = { save_global_event_target_as = trade_target_temp }
+		country_event = { id = trade_modern.1 }	
+	}
+	on_decline = {
+	}
+	ai_acceptance = {		
+		add_entry = {
+			name = BASE_FACTION
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+
+		add_entry = {
+		name = WE_HAVE_GOOD_OPINON
+		limit = { FROM = { has_opinion = { who = ROOT value = 30 }   } }
+		export_to_variable = {
+			variable_name = ai_value 
+			value = 10
+		}
+		}
+		add_entry = {
+			name = ALLICANCE_WITH_MY_RIVAL
+			limit = { 
+				FROM = {
+					any_rival_country = {
+						alliance_with = ROOT
+					} 
+				}
+			}
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 45
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+		}
+		add_entry = {
+				name = OPINION
+			export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 15 }
+		}
+		add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 200
+			}
+					multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+			}
+
+		}
+
+		add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		
+		}
+		add_entry = {
+			name = Overlord
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+
+		}
+		add_entry = {
+			name = Loyal
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+
+		}
+	
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+technology_group = middle_eastern
+primary_culture = uzbehk
+religion = sunni
+government = monarchy
+
+capital = 454 # Samarkand
+religious_school = hanafi_school
+
+100.1.1 = { add_government_reform = early_gov_reform_1 }
+230.1.1 = { add_government_reform = early_gov_reform_2 }
+360.1.1 = { add_government_reform = early_gov_reform_3 }
+490.1.1 = { add_government_reform = early_gov_reform_4 }
+620.1.1 = { add_government_reform = early_gov_reform_5 }
+650.1.1 = { technology_group = muslim }
+750.1.1 = { add_government_reform = early_gov_reform_6 }
+880.1.1 = { add_government_reform = early_gov_reform_7 }
+1010.1.1 = { add_government_reform = early_gov_reform_8 }
+1140.1.1 = { add_government_reform = early_gov_reform_9 }
+1270.1.1 = { add_government_reform = early_gov_reform_10 }
+1346.1.1 = {
+	monarch = {
+		name = "Danishmendji"
+		dynasty = "Chagatayid"
+		adm = 3
+		dip = 5
+		mil = 1
+	}
+}
+
+1348.1.1 = {
+	monarch = {
+		name = "Bayan Quli"
+		dynasty = "Chagatayid"
+		adm = 2
+		dip = 1
+		mil = 0
+	}
+}
+
+1358.1.1 = {
+	monarch = {
+		name = "Shah Temur"
+		dynasty = "Chagatayid"
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+
+1359.1.1 = {
+	monarch = {
+		name = "Buyan Suldus"
+		dynasty = "Tayichiud"
+		adm = 0
+		dip = 1
+		mil = 2
+	}
+}
+
+1363.1.1 = {
+	monarch = {
+		name = "Adil Sultan"
+		dynasty = "Chagatayid"
+		adm = 1
+		dip = 1
+		mil = 0
+	}
+}
+
+1364.1.1 = {
+	monarch = {
+		name = "Khabul Shah"
+		dynasty = "Chagatayid"
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}
+
+1370.1.1 = {
+	monarch = {
+		name = "Soyarghatmish Khan"
+		dynasty = "Chagatayid"
+		adm = 0
+		dip = 2
+		mil = 0
+	}
+}
+
+1384.1.1 = {
+	monarch = {
+		name = "Mahmud Khan"
+		dynasty = "Chagatayid"
+		adm = 0
+		dip = 1
+		mil = 0
+	}
+}
+
+#######################################
+# Timurid Empire
+#######################################
+
+1409.5.13 = {
+	monarch = {
+		name = "Ulugh Beg"
+		dynasty = "Timurid"
+		birth_date = 1394.1.1
+		claim = 50
+		adm = 3
+		dip = 5
+		mil = 4
+	}
+	clear_scripted_personalities = yes
+	add_ruler_personality = scholar_personality
+	add_ruler_personality = righteous_personality
+	add_ruler_personality = naive_personality
+	heir = {
+		name = "'Abd Allâh Mîrzâ"
+		monarch_name = "'Abd Allâh Mîrzâ"
+		dynasty = "Timurid"
+		birth_date = 1409.5.13
+		death_date = 1451.6.23
+		claim = 95
+		adm = 3
+		dip = 4
+		mil = 2
+	}
+	add_piety = -0.5
+}
+
+#1448.3.1 -> Ulugh Beg takes Herat and reunites the core of the Timurid Empire

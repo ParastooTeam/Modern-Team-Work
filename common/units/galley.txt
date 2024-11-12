@@ -1,0 +1,10 @@
+#Galley Galley Level 5
+type = galley
+
+hull_size = 24
+base_cannons = 27
+sail_speed = 9
+
+blockade = 11
+
+sprite_level = 1

@@ -1,0 +1,19 @@
+name = "War of Panjshir"
+
+war_goal = {
+	type = take_claim
+	casus_belli = cb_conquest
+	province = 4877 #Grodno
+}
+
+2021.5.1 = {
+	add_attacker = AFG
+	add_defender = KHO
+}
+
+
+2035.1.1 = {
+	rem_attacker = AFG
+	rem_defender = KHO
+}
+

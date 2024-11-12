@@ -1,0 +1,64 @@
+#Country Name: Please seefilename.
+
+graphical_culture = westerngfx
+
+color = { 232  121  145 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	ethiopian_mountain_warfare
+	ethiopian_gunpowder_warfare
+	westernized_ethiopian
+	ethiopian_guerilla_warfare
+	
+	
+	
+	
+		
+}
+
+monarch_names = {
+	"Pinchas #0" = 20
+	"Gideon #4" = 60
+	"Salômôn #5" = 40
+	"Joram #0" = 40
+	"Radi #0"= 40
+	"Caleb #0" = 20
+	"Radi #0" = 20
+	"Goshen #0" = 20
+	"Phineas #1" = 20
+	"Judith #0" = -1
+	"Hawwa #0" = -1
+	"Miriam #0" = -1
+	"Rebekah #0" = -1
+	"Esther #0" = -1
+}
+
+leader_names = {
+	Bayisa
+	Dereje
+	Ambo
+	Asres
+	Wami
+	Eshete
+	Ezana
+	Eyob
+	Kayla
+	Tebiban
+}
+
+ship_names = {
+	Yodit Shewa "Mara Takla" Lalibela
+	"Yekuno Amlak" Tigray Tatadum Seyum
+	"Kedus Harbe" "Na'akueto La'ab" Yetbarak
+}

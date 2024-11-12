@@ -1,0 +1,161 @@
+milaccess = {
+    condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+			OR = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 25
+					}
+				}
+				FROM = { ai = no }
+			}
+			OR = {
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				}
+				alliance_with = FROM
+				overlord_of = FROM
+				is_subject_of = FROM
+				AND = {
+					is_part_of_hre = yes
+					FROM = { is_part_of_hre = yes }
+				}
+				FROM = { ai = no }
+			}
+		}
+	}
+	condition = {
+		potential = {
+            is_subject = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = not_access_mil }
+	    }
+	}
+}
+
+offermilaccess = {
+    condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+            OR = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 25
+					}
+				}
+				FROM = { ai = no }
+			}
+			OR = {
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				}
+				alliance_with = FROM
+				overlord_of = FROM
+				is_subject_of = FROM
+				AND = {
+					is_part_of_hre = yes
+					FROM = { is_part_of_hre = yes }
+				}
+				FROM = { ai = no }
+			}
+		}
+	}
+	condition = {
+		potential = {
+            is_subject = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = not_offer_mil }
+	    }
+	}
+}
+fleet_access = {
+    condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+            OR = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 25
+					}
+				}
+				FROM = { ai = no }
+			}
+			OR = {
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				}
+				alliance_with = FROM
+				overlord_of = FROM
+				is_subject_of = FROM
+				AND = {
+					is_part_of_hre = yes
+					FROM = { is_part_of_hre = yes }
+				}
+				FROM = { ai = no }
+			}
+		}
+	}
+	condition = {
+		potential = {
+            is_subject = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = not_access_ship }
+	    }
+	}
+}
+offer_fleet_access = {
+    condition = {
+		potential = {
+            always = yes
+		}
+		allow = {
+            OR = {
+				FROM = {
+					has_opinion = {
+						who = ROOT
+						value = 25
+					}
+				}
+				FROM = { ai = no }
+			}
+			OR = {
+				has_opinion_modifier = { 
+					modifier = create_embassy  
+					who = FROM 
+				}
+				alliance_with = FROM
+				overlord_of = FROM
+				is_subject_of = FROM
+				AND = {
+					is_part_of_hre = yes
+					FROM = { is_part_of_hre = yes }
+				}
+				FROM = { ai = no }
+			}
+		}
+	}
+	condition = {
+		potential = {
+            is_subject = yes
+		}
+		allow = {
+			NOT = { has_country_modifier = not_offer_ship }
+	    }
+	}
+}

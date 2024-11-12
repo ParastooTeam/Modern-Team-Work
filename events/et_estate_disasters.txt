@@ -1,0 +1,282 @@
+namespace = etf_event_disaster
+
+#Capitalist coup
+country_event = {
+	id =  etf_event_disaster.1
+	title =  etf_event_disaster.1.t
+	desc =  etf_event_disaster.1.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = { 
+			limit = {
+				base_tax = 4
+			}
+			spawn_rebels = {
+				type = leadered_peasant_rebels
+				size = 3		
+				win = yes
+				unrest = 10
+			}
+			
+		}
+		add_stability = -3
+	
+	
+		set_country_flag = had_corporations_estate_in_power
+		set_country_flag = corporations_estate_in_power
+	}
+	immediate = {
+	}
+	
+	option = {
+		name = " etf_event_disaster.1.r"
+		#if = {
+		#	limit = {
+		#		government = monarchy
+		#	}
+		#	change_government = republic
+		#	add_government_reform = oligarchic_reform
+		#}
+		#add_government_reform = single_party_system
+		#add_government_reform = oligarchic_reform
+		#define_ruler = {
+		#	adm = 1
+		#	dip = 4
+		#	mil = 1
+		#}
+	}
+
+}
+
+#Capitalists lose power
+country_event = {
+	id =  etf_event_disaster.2
+	title =  etf_event_disaster.2.t
+	desc =  etf_event_disaster.2.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.2.r"
+	}
+}
+
+country_event = {
+	id = etf_event_disaster.3
+	title = "etf_event_disaster.EVTNAME2"
+	desc = "etf_event_disaster.EVTDESC2"
+	picture = REVOLUTION_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = minority_rights }
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		set_country_flag = minority_rights
+	}	
+	
+	option = {
+		name = "etf_event_disaster.EVTOPTA2"		# Restrict serfdom
+		ai_chance = { factor = 30 }
+		add_country_modifier = {
+			name = "minority_restrictions"
+			duration = -1
+			desc = "END_OF_REVOLUTION"
+		}
+	}
+	option = {
+		name = "etf_event_disaster.EVTOPTB2"		# Keep the masses in chains
+		ai_chance = { factor = 70 }
+		random_owned_province = { leadered_peasant_rebels = 2 }
+	}
+}
+
+# Social reform
+country_event = {
+	id = etf_event_disaster.4
+	title = "etf_event_disaster.EVTNAME3"
+	desc = "etf_event_disaster.EVTDESC3"
+	picture = REFORM_eventPicture
+	
+	trigger = {
+		NOT = { has_country_flag = fascist_thinkers }
+	}
+	
+	is_triggered_only = yes
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	immediate = { 
+		set_country_flag = fascist_thinkers
+	}
+	
+	option = {
+		name = "etf_event_disaster.EVTOPTA3"			# Suppress the free thinkers
+		ai_chance = { factor = 60 }
+		add_country_modifier = {
+			name = "suppress_fascist_thinkers"
+			duration = -1
+			desc = "END_OF_REVOLUTION"			
+		}
+	}
+	option = {
+		name = "etf_event_disaster.EVTOPTB3"			# They hardly pose a threat
+		ai_chance = { factor = 40 }
+		random_owned_province = { leadered_peasant_rebels = 1 }
+		random_owned_province = { leadered_peasant_rebels = 1 }
+		random_owned_province = { leadered_peasant_rebels = 1 }
+	}
+}
+
+#Military coup
+#country_event = {
+#	id =  etf_event_disaster.5
+#	title =  etf_event_disaster.5.t
+#	desc =  etf_event_disaster.5.d
+#	picture = ELECTION_REPUBLICAN_eventPicture
+#	
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		set_country_flag = military_estate_in_power
+#	}
+#	
+#	option = {
+#		name = " etf_event_disaster.5.r"
+#		add_government_reform = authoritarian_rule
+#		add_government_reform = military_government
+#		define_ruler = {
+#			adm = 1
+#			dip = 1
+#			mil = 4
+#		}
+#	}
+#}
+
+#Military loses power
+country_event = {
+	id =  etf_event_disaster.6
+	title =  etf_event_disaster.6.t
+	desc =  etf_event_disaster.6.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.6.r"
+	}
+}
+
+#Workers coup
+country_event = {
+	id =  etf_event_disaster.7
+	title =  etf_event_disaster.7.t
+	desc =  etf_event_disaster.7.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = workers_estate_in_power
+	}
+	
+	option = {
+		name = " etf_event_disaster.7.r"
+		if = {
+			limit = {
+				NOT = { government = republic }
+			}
+			change_government = republic
+		}
+		add_government_reform = single_party_system
+		add_government_reform = communist_government
+		define_ruler = {
+			adm = 4
+			dip = 1
+			mil = 1
+		}
+	}
+
+}
+
+#Workers lose power
+country_event = {
+	id =  etf_event_disaster.8
+	title =  etf_event_disaster.8.t
+	desc =  etf_event_disaster.8.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = " etf_event_disaster.8.r"
+	}
+}
+
+country_event = {
+	id = etf_event_disaster.9
+	title = "EVTNAME3019"
+	desc = "EVTDESC3019"
+	picture = REVOLUTION_eventPicture
+	
+	major = yes	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_country_flag = corporations_estate_in_power
+		had_country_flag = { flag = corporations_estate_in_power days = 1000 }
+	
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA3019"			# Restore order
+		country_event = { id = etf_event_disaster.10 }
+		add_stability = 2
+	}
+}
+
+country_event = {
+	id = etf_event_disaster.10
+	title = revolution.20.t
+	desc = revolution.20.d
+	picture = REVOLUTION_eventPicture
+
+	is_triggered_only = yes
+
+	option = {
+		name = revolution.20.a
+		if = {
+			limit = { has_disaster = oligarchy_disaster }
+			end_disaster = oligarchy_disaster
+		}
+		clr_country_flag = corporations_estate_in_power
+
+		clr_country_flag = minority_rights
+		clr_country_flag = fascist_thinkers
+		clr_country_flag = government_corruption
+		clr_country_flag = road_to_bankruptcy
+		clr_country_flag = financial_crisis		
+		remove_country_modifier = minority_restrictions
+		remove_country_modifier = suppress_fascist_thinkers
+		remove_country_modifier = corrupted_government
+		remove_country_modifier = mint_money
+		remove_country_modifier = fight_inflation
+		remove_country_modifier = disarmament
+		remove_country_modifier = financial_disaster
+	}
+}

@@ -1,0 +1,4804 @@
+namespace = modern_satellite
+
+
+
+
+country_event = {
+	id = modern_satellite.1
+	title = modern_satellite.2.t
+	desc = modern_satellite.2.d
+	picture = SATELLITE_TARGET_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Random Province
+		name = modern_satellite.1.satellite
+
+		trigger = { 
+			has_country_modifier = modifire_distance_350
+			event_target:missil_target_country = {
+				check_variable = {
+					which = satellite_1
+					value = 1
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:missil_target_country = {
+						OR = {
+							AND = {	
+									check_variable = {
+										which = defense_missile_lev
+										value = 1
+									}
+								
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 2
+									}
+								}
+								
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 2
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 2
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 3
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 3
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 3
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 4
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 4
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 4
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 5
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 5
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 5
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 6
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 6
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 6
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 7
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 7
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 7
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 8
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 8
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 8
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 9
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 9
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 9
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 10
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 10
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 10
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 11
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 11
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 11
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 12
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 12
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 12
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 13
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 13
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 13
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 14
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 14
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 14
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 15
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 15
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 15
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 16
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 16
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 16
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 17
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 17
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 17
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 18
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 18
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 18
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 19
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 19
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 19
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 20
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 20
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 20
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 21
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 21
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 21
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 22
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 22
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 22
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 23
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 23
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 23
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 24
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 24
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 24
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 25
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 25
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 25
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 26
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 26
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 26
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 27
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 27
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 27
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 28
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 28
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 28
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 29
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 29
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 29
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 30
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 30
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 30
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 31
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 31
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 31
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 32
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 32
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 32
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 33
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 33
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 33
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 34
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 34
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 34
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 35
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 35
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 35
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 36
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 36
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 36
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 37
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 37
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 37
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 38
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 38
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 38
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 39
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 39
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 39
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 40
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 40
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 40
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 41
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 41
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 41
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 42
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 42
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 42
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 43
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 43
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 43
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 44
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 44
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 44
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 45
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 45
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 45
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 46
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 46
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 46
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 47
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 47
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 47
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 48
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 48
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 48
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 49
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 49
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 49
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 50
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 50
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 50
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 51
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 51
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 51
+								}
+							
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 52
+								}
+							}
+							
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 52
+									}
+								}
+							}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 52
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 53
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 53
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 53
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 54
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 54
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 54
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 55
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 55
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 55
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 56
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 56
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 56
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 57
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 57
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 57
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 58
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 58
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 58
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 59
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 59
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 59
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 60
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 60
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 60
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 61
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 61
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 61
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 62
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 62
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 62
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 63
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 63
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 63
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 64
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 64
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 64
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 65
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 65
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 65
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 66
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 66
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 66
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 67
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 67
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 67
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 68
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 68
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 68
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 69
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 69
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 69
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 70
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 70
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 70
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 71
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 71
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 71
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 72
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 72
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 72
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 73
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 73
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 73
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 74
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 74
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 74
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 75
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 75
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 75
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 76
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 76
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 76
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 77
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 77
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 77
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 78
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 78
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 78
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 79
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 79
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 79
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 80
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 80
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 80
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 81
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 81
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 81
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 82
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 82
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 82
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 83
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 83
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 83
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 84
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 84
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 84
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 85
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 85
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 85
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 86
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 86
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 86
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 87
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 87
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 87
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 88
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 88
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 88
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 89
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 89
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 89
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 90
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 90
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 90
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 91
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 91
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 91
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 92
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 92
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 92
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 93
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 93
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 93
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 94
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 94
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 94
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 95
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 95
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 95
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 96
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 96
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 96
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 97
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 97
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 97
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 98
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 98
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 98
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 99
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 99
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 99
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 100
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 100
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 100
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 101
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 101
+										}
+									}
+								}
+							}
+						}
+					}
+					event_target:missil_target_country = { 
+						full_idea_group = defence_missil_research
+						check_variable = {
+							which = missil_350
+							value = 1
+						}
+					}
+				}
+				event_target:missil_target_country = {
+					country_event = {
+						id = they_cant_set_atom.3
+					}
+					change_variable = {
+						which = missil_350
+						value = -1
+					}
+				}
+				
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_350
+					}
+					change_variable = {
+						which = missil_350
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_350
+				}
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_700
+					}
+					change_variable = {
+						which = missil_700
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_700
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_350
+					}
+					change_variable = {
+						which = missil_350
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_350
+				}
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_700
+					}
+					change_variable = {
+						which = missil_700
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_700
+				}
+				
+				if = {
+					limit = { NOT = { has_country_modifier = used_missile } }
+					set_global_flag = missile_used
+					add_country_modifier = {
+						name = used_missile
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { has_country_modifier = used_missile }
+					
+					add_country_modifier = {
+						name = used_missile_2
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_3
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_4
+						duration = 730
+					}
+				}
+				############
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_5
+						duration = 730
+					}
+				}
+				##########
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+						has_country_modifier = used_missile_5
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_6
+						duration = 730
+					}
+				}
+				#############
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+						has_country_modifier = used_missile_5
+						has_country_modifier = used_missile_6
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_7
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+						has_country_modifier = used_missile_5
+						has_country_modifier = used_missile_6
+						has_country_modifier = used_missile_7
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_8
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+						has_country_modifier = used_missile_5
+						has_country_modifier = used_missile_6
+						has_country_modifier = used_missile_7
+						has_country_modifier = used_missile_8
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_9
+						duration = 730
+					}
+				}
+				else_if = { 
+					limit = { 
+						has_country_modifier = used_missile
+						has_country_modifier = used_missile_2
+						has_country_modifier = used_missile_3
+						has_country_modifier = used_missile_4
+						has_country_modifier = used_missile_5
+						has_country_modifier = used_missile_6
+						has_country_modifier = used_missile_7
+						has_country_modifier = used_missile_8
+						has_country_modifier = used_missile_9
+					 }
+					
+					add_country_modifier = {
+						name = used_missile_10
+						duration = 730
+					}
+				}
+				country_event = {
+					id = they_cant_set_atom.5
+				}
+				event_target:missil_target_country = {
+					country_event = {
+						id = they_cant_set_atom.4
+					}
+
+					if = {
+						limit = {
+							ai = yes
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = missile_us
+						}
+					}
+					change_variable = {
+						which = satellite_1
+						value = -1
+					}
+				}
+				every_country = { 
+					if = {
+						limit = { NOT = { tag = event_target:missil_target_country } }
+						add_opinion = {
+							who = ROOT
+							modifier = missile_used
+						}
+					}
+				}
+			}
+			event_target:missil_target_country = {
+				every_owned_province = {
+					limit = { has_province_flag = distance_city }
+					clr_province_flag = distance_city
+				}
+			}
+		}
+	}
+	option = { #Random Province
+		name = modern_satellite.2.satellite
+
+		trigger = { 
+			has_country_modifier = modifire_distance_700
+			event_target:missil_target_country = {
+				check_variable = {
+					which = satellite_2
+					value = 1
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					event_target:missil_target_country = { 
+						
+						OR = {
+							AND = {	
+									check_variable = {
+										which = defense_missile_lev
+										value = 1
+									}
+								
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 2
+									}
+								}
+								
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 2
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 2
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 3
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 3
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 3
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 4
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 4
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 4
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 5
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 5
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 5
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 6
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 6
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 6
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 7
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 7
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 7
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 8
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 8
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 8
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 9
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 9
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 9
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 10
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 10
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 10
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 11
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 11
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 11
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 12
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 12
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 12
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 13
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 13
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 13
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 14
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 14
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 14
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 15
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 15
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 15
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 16
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 16
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 16
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 17
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 17
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 17
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 18
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 18
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 18
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 19
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 19
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 19
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 20
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 20
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 20
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 21
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 21
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 21
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 22
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 22
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 22
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 23
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 23
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 23
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 24
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 24
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 24
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 25
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 25
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 25
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 26
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 26
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 26
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 27
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 27
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 27
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 28
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 28
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 28
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 29
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 29
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 29
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 30
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 30
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 30
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 31
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 31
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 31
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 32
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 32
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 32
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 33
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 33
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 33
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 34
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 34
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 34
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 35
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 35
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 35
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 36
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 36
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 36
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 37
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 37
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 37
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 38
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 38
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 38
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 39
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 39
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 39
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 40
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 40
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 40
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 41
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 41
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 41
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 42
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 42
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 42
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 43
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 43
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 43
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 44
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 44
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 44
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 45
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 45
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 45
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 46
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 46
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 46
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 47
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 47
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 47
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 48
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 48
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 48
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 49
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 49
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 49
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 50
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 50
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 50
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 51
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 51
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 51
+								}
+							
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 52
+								}
+							}
+							
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 52
+									}
+								}
+							}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 52
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 53
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 53
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 53
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 54
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 54
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 54
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 55
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 55
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 55
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 56
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 56
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 56
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 57
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 57
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 57
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 58
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 58
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 58
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 59
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 59
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 59
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 60
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 60
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 60
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 61
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 61
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 61
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 62
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 62
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 62
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 63
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 63
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 63
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 64
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 64
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 64
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 65
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 65
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 65
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 66
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 66
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 66
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 67
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 67
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 67
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 68
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 68
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 68
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 69
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 69
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 69
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 70
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 70
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 70
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 71
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 71
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 71
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 72
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 72
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 72
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 73
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 73
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 73
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 74
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 74
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 74
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 75
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 75
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 75
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 76
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 76
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 76
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 77
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 77
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 77
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 78
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 78
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 78
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 79
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 79
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 79
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 80
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 80
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 80
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 81
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 81
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 81
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 82
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 82
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 82
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 83
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 83
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 83
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 84
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 84
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 84
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 85
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 85
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 85
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 86
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 86
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 86
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 87
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 87
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 87
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 88
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 88
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 88
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 89
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 89
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 89
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 90
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 90
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 90
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 91
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 91
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 91
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 92
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 92
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 92
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 93
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 93
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 93
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 94
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 94
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 94
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 95
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 95
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 95
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 96
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 96
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 96
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 97
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 97
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 97
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 98
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 98
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 98
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 99
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 99
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 99
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 100
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 100
+										}
+									}
+								}
+							}
+							AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 100
+								}
+							
+								NOT = {
+									check_variable = {
+										which = defense_missile_lev
+										value = 101
+									}
+								}
+								ROOT = {
+									NOT = {
+										check_variable = {
+											which = attack_missile_lev
+											value = 101
+										}
+									}
+								}
+							}
+						}
+					}
+					event_target:missil_target_country = { 
+						full_idea_group = defence_missil_research
+						check_variable = {
+							which = missil_700
+							value = 1
+						}
+					}
+				}
+				event_target:missil_target_country = {
+					country_event = {
+						id = they_cant_set_atom.3
+					}
+					change_variable = {
+						which = missil_700
+						value = -1
+					}
+				}
+				
+			
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_350
+					}
+					change_variable = {
+						which = missil_350
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_350
+				}
+				if = {
+					limit = {
+						has_country_modifier = modifire_distance_700
+					}
+					change_variable = {
+						which = missil_700
+						value = -1
+					}
+					remove_country_modifier = modifire_distance_700
+				}
+			}
+			else = {
+					if = {
+						limit = {
+							has_country_modifier = modifire_distance_350
+						}
+						change_variable = {
+							which = missil_350
+							value = -1
+						}
+						remove_country_modifier = modifire_distance_350
+					}
+					if = {
+						limit = {
+							has_country_modifier = modifire_distance_700
+						}
+						change_variable = {
+							which = missil_700
+							value = -1
+						}
+						remove_country_modifier = modifire_distance_700
+					}
+					if = {
+						limit = { NOT = { has_country_modifier = used_missile } }
+						set_global_flag = missile_used
+						add_country_modifier = {
+							name = used_missile
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { has_country_modifier = used_missile }
+						
+						add_country_modifier = {
+							name = used_missile_2
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_3
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_4
+							duration = 730
+						}
+					}
+					############
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_5
+							duration = 730
+						}
+					}
+					##########
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+							has_country_modifier = used_missile_5
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_6
+							duration = 730
+						}
+					}
+					#############
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+							has_country_modifier = used_missile_5
+							has_country_modifier = used_missile_6
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_7
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+							has_country_modifier = used_missile_5
+							has_country_modifier = used_missile_6
+							has_country_modifier = used_missile_7
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_8
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+							has_country_modifier = used_missile_5
+							has_country_modifier = used_missile_6
+							has_country_modifier = used_missile_7
+							has_country_modifier = used_missile_8
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_9
+							duration = 730
+						}
+					}
+					else_if = { 
+						limit = { 
+							has_country_modifier = used_missile
+							has_country_modifier = used_missile_2
+							has_country_modifier = used_missile_3
+							has_country_modifier = used_missile_4
+							has_country_modifier = used_missile_5
+							has_country_modifier = used_missile_6
+							has_country_modifier = used_missile_7
+							has_country_modifier = used_missile_8
+							has_country_modifier = used_missile_9
+						 }
+						
+						add_country_modifier = {
+							name = used_missile_10
+							duration = 730
+						}
+					}
+					country_event = {
+						id = they_cant_set_atom.5
+					}
+					event_target:missil_target_country = {
+						country_event = {
+							id = they_cant_set_atom.4
+						}
+	
+						if = {
+							limit = {
+								ai = yes
+							}
+							add_opinion = {
+								who = ROOT
+								modifier = missile_us
+							}
+						}
+						change_variable = {
+							which = satellite_2
+							value = -1
+						}
+					}
+					every_country = { 
+						if = {
+							limit = { NOT = { tag = event_target:missil_target_country } }
+							add_opinion = {
+								who = ROOT
+								modifier = missile_used
+							}
+						}
+					}
+				event_target:missil_target_country = {
+					every_owned_province = {
+						limit = { has_province_flag = distance_city }
+						clr_province_flag = distance_city
+					}
+				}
+			}
+		}
+	}
+	option = { #Cancel
+		name = modern_satellite.2.m
+		event_target:missil_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_350
+			}
+			remove_country_modifier = modifire_distance_350
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_700
+			}
+			remove_country_modifier = modifire_distance_700
+		}
+		clear_global_event_target = missil_target_country
+	}
+}
+
+country_event = {
+	id = modern_satellite.2
+	title = modern_satellite.3.t
+	desc = modern_satellite.3.d
+	picture = MISSILE_SATELLITE_OUR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Random Province
+		name = modern_satellite.3.satellite
+	}
+}
+
+country_event = {
+	id = modern_satellite.3
+	title = modern_satellite.4.t
+	desc = modern_satellite.4.d
+	picture = MISSILE_SATELLITE_OUR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Random Province
+		name = modern_satellite.3.satellite
+	}
+}
+
+#########################################################
+country_event = {
+	id = modern_satellite.5
+	title = modern_satellite.5.t
+	desc = modern_satellite.5.d
+	picture = MISSILE_SATELLITE_OUR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Random Province
+		name = modern_satellite.4.satellite
+	}
+}
+
+country_event = {
+	id = modern_satellite.6
+	title = modern_satellite.6.t
+	desc = modern_satellite.6.d
+	picture = MISSILE_SATELLITE_OUR_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Random Province
+		name = modern_satellite.4.satellite
+	}
+}

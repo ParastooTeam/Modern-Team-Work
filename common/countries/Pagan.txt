@@ -1,0 +1,62 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 180  100  100 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+leader_names = {
+	Aung-Hla Aung-San 
+	Hla-Thein 
+	Khin-Nyunt Khun-Sa Kwan-Kywa 
+	Maung-Gyi Maung-Win Min-Tun 
+	Ohn-Myint 
+	Sein-Win 
+	Than-Htay Thet-Naung 
+	U-Nu 
+}
+
+monarch_names = {
+	"Zalahtinyan #0" = 10
+	"Sithukyawhtin #0" = 10
+	"Minkyinyo #0" = 10
+	"Tabinshwehti #0" = 10
+	"Thamindwut #0" = 10
+	"Thaminhatau #0" = 10
+	"Bayinnaug #0" = 10
+	"Handabayin #0" = 10
+	"Anaukpetlun #0" = 10
+	"Minradeippa #0" = 10
+	"Thalun #0" = 10
+	"Pindale #0" = 10
+	"Pye #0" = 10
+	"Narawara #0" = 10
+	"Minredyawdin #0" = 10
+	"Sane #0" = 10
+	"Taninganwe #0" = 10
+	"Hamdammayaza #0" = 10
+}
+
+ship_names = {
+	Ava Ayeyarwady Anawrahta Alaungsithu Ananda
+	Bagan Htilominlo Kyanzittha Kyaswa Kyawswa
+	Lokananda "Mali Hka" Narathu Naratheinkha
+	Narapatisithu Narathihapati Nyima "N'Mai Hka"
+	Pyinbya Pegu Sawlu Sawhnit Sawmunnit "Sula-mani"
+	"Sein-nyet Ama" "Shwe-gu-gyi" "Shwe-hsan-daw"
+	"Shwe-zigon" Toungoo Tambadipa Thamudarit Tharaba
+	"Tan-chi-daung Paya" "That-byin-nyu" Uzana
+}
+
+
+

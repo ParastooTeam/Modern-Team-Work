@@ -1,0 +1,102 @@
+po_capture_capture_atomic_bomb = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 1.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 40.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 40
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	is_visible = {
+		FROM = { 
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 4
+			} 
+		}
+		NOT = {
+			FROM = { 
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 5
+				} 
+			}
+		}
+	}
+	is_allowed = {
+		FROM = { 
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 4
+			} 
+		}
+		NOT = {
+			FROM = { 
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 5
+				} 
+			}
+		}
+	}
+	effect = {
+		while = {
+			limit = { 
+				FROM = { 
+					check_variable = {
+						which = num_of_nuclear_weapons
+						value = 1
+					} 
+				}
+			}
+			if = {
+				limit = { 
+					FROM = {
+						check_variable = {
+							which = num_of_nuclear_weapons
+							value = 1
+						} 
+					}
+				}
+				FROM = {  
+					change_variable = {
+						which = num_of_nuclear_weapons
+						value = -1
+					}
+				}
+				change_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+			}
+						
+		}
+	}
+	ai_weight = {
+		export_to_variable = {
+			variable_name = ai_value
+			value = 50
+		}
+		limit = {
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+		}
+	}
+}
+
+
+
+

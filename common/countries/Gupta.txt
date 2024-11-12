@@ -1,0 +1,77 @@
+#Country Name: See the Name of this File.
+
+graphical_culture = westerngfx
+
+color = { 150  154  215 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Sri-Gupta #0" = 20
+	"Ghatotkacha #0" = 20
+	"Chandragupta #0" = 40
+	"Samudragupta #0" = 20
+	"Rama-Gupta #0" = 20
+	"Kumaragupta #0" = 40
+	"Skandagupta #0" = 20
+	"Purugupta #0" = 20
+	"Budhagupta #0" = 20
+	"Vishnugupta #0" = 20
+	"Vainyagupta #0" = 20
+	
+	"Padmavati #0" = -1
+	"Tirumala #0" = -1
+	"China Devi #0" = -1
+	"Lakshmi #0" = -1
+	"Jaganmohini #0" = -1
+	"Annapurna #0" = -1
+	"Rudramba #0" = -1
+	"Anitalli #0" = -1
+	"Rudramadevi #0" = -1
+}
+
+leader_names = {
+	Rajabhushan
+	Naagesh
+	Meherhomji
+	Moidu
+	Nayudu
+	Naseer
+	Paramartha
+	Saklani
+	Tamragouri
+	Ghani
+}
+
+ship_names = {
+	Bagmati Budhi Devi Durga Falgu
+	Gandak Ganga Gayatri Jalsena
+	"Kali Nauk" Kosi Lakshmi "Lal Nauk"
+	"Loki Devi" "Manasa Devi" Parvati
+	Radha Ratri "Sagorer Bahini" Sarasvati
+	Shakti "Shaktir Nauk" "Shasti Ma" Sita
+	Son Trishool Uma
+}
+
+
+

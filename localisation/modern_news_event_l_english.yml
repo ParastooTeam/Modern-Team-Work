@@ -1,0 +1,21 @@
+﻿l_english:
+ news.1title:0 "Send Point"
+ news.1desc:0 "My $MONARCHTITLE$, §R[From.From.Owner.GetName]§! sent an Administrator Point to the §R[From.From.From.Owner.GetName]§!"
+
+
+ news.2title:0 "Send Point"
+ news.2desc:0 "My $MONARCHTITLE$, §R[From.From.Owner.GetName]§! sent an Diplomatic Point to the §R[From.From.From.Owner.GetName]§!"
+
+ news.3title:0 "Send Point"
+ news.3desc:0 "My $MONARCHTITLE$, §R[From.From.Owner.GetName]§! sent an Military Point to the §R[From.From.From.Owner.GetName]§!"
+
+ news.4title:0 "Send manpower"
+ news.4desc:0 "My $MONARCHTITLE$, §R[From.From.Owner.GetName]§! sent Send manpower to the §R[From.From.From.Owner.GetName]§!"
+
+ news.5title:0 "Send Money"
+ news.5desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! sent Money to the §R[From.From.Owner.GetName]§!"
+ news.4opt:0 "OK"
+ 
+ news.5title:0 "Send Sailors"
+ news.5desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! sent Sailors to the §R[From.From.Owner.GetName]§!"
+

@@ -1,0 +1,11 @@
+#Archipelago Frigate Galley Level 10
+type = galley
+
+hull_size = 74
+base_cannons = 82
+sail_speed = 14
+
+
+blockade = 11
+
+sprite_level = 1

@@ -1,0 +1,352 @@
+not_offer_to_share_tech = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { NOT = { has_country_modifier = not_offer_share_tech } }
+		overlord_of = FROM
+	}
+	is_allowed = {	
+		dip_power = 75
+	}
+	on_accept = {
+		add_dip_power = -75
+		FROM = { 
+			add_country_modifier = {
+				name = not_offer_share_tech
+				duration = -1
+			} 
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+allow_offer_to_share_tech = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { has_country_modifier = not_offer_share_tech }
+		overlord_of = FROM
+	}
+	is_allowed = {		
+		dip_power = 75
+	}
+	on_accept = {
+		add_dip_power = -75
+		FROM = { 
+			remove_country_modifier = not_offer_share_tech
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+######################################################################################################
+######################################################################################################
+######################################################################################################
+######################################################################################################
+# Create new diplomatic actions like this. AI will currently never send them.
+not_access_military = {
+	category = access
+	
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { NOT = { has_country_modifier = not_access_mil } }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			add_country_modifier = {
+				name = not_access_mil
+				duration = -1
+			} 
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+allow_access_to_military = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { has_country_modifier = not_access_mil }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			remove_country_modifier = not_access_mil
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+####################################################################
+not_offer_military = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { NOT = { has_country_modifier = not_offer_mil } }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			add_country_modifier = {
+				name = not_offer_mil
+				duration = -1
+			} 
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+allow_offer_to_military = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { has_country_modifier = not_offer_mil }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+		
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			remove_country_modifier = not_offer_mil
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+#####################################################################################
+
+not_access_to_ship = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { NOT = { has_country_modifier = not_access_ship } }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			add_country_modifier = {
+				name = not_access_ship
+				duration = -1
+			} 
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+allow_access_to_ship = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { has_country_modifier = not_access_ship }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			remove_country_modifier = not_access_ship
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+########################################################################
+not_offer_to_ship = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { NOT = { has_country_modifier = not_offer_ship } }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+		
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			add_country_modifier = {
+				name = not_offer_ship
+				duration = -1
+			} 
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+allow_offer_to_ship = {
+	category = access
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		ai = no
+		FROM = { has_country_modifier = not_offer_ship }
+		overlord_of = FROM
+	}
+	is_allowed = {
+		adm_power = 50
+		
+	}
+	on_accept = {
+		add_adm_power = -50
+		FROM = { 
+			remove_country_modifier = not_offer_ship
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+##################################################################################################
+

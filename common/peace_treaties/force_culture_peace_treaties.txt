@@ -1,0 +1,124 @@
+po_force_culture = {
+	category = 6
+	power_projection = vassalized_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 50.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 50
+	requires_demand_independence = yes
+	is_make_subject = no
+	requires_is_allowed = no
+	
+	is_visible = {
+		FROM = {
+			NOT = { culture_group = ROOT }
+		}
+		NOT = { primary_culture = FROM }
+		NOT = { FROM = { has_country_modifier = force_culture_modifire } }
+	}
+	is_allowed = {
+		NOT = { primary_culture = FROM }
+		FROM = {
+			any_owned_province = {
+				OR = {
+					controller = {
+						is_subject_of = ROOT
+					}
+					controlled_by = ROOT
+				}
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			add_country_modifier = { 
+				name = force_culture_modifire
+				duration = 7300
+			}
+		}
+		FROM = { change_primary_culture = ROOT }
+		FROM = {
+			random_list = {
+				33 = {
+					random_owned_province = {
+						limit = {
+							NOT = { culture_group = ROOT }
+							OR = {
+								controller = {
+									is_subject_of = ROOT
+								}
+								controlled_by = ROOT
+							}
+						}
+						province_event = {
+							id = modern_force_culture.1
+							days = 3650
+						}
+					}
+				}
+				33 = {
+					if = {
+						limit = {
+							capital_scope = {
+								NOT = { culture_group = ROOT }
+								OR = {
+									controller = {
+										is_subject_of = ROOT
+									}
+									controlled_by = ROOT
+								}
+							}
+						}
+						capital_scope = {
+							province_event = {
+								id = modern_force_culture.1
+								days = 3650
+							}
+						}
+					}
+				}
+				34 = {
+					random_owned_province = {
+						limit = {
+							NOT = { culture_group = ROOT }
+							OR = {
+								controller = {
+									is_subject_of = ROOT
+								}
+								controlled_by = ROOT
+							}
+							development = 30
+						}
+						province_event = {
+							id = modern_force_culture.1
+							days = 3650
+						}
+					}
+				}
+			}
+			
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+		limit = {
+			FROM = {
+				is_neighbor_of = ROOT
+				NOT = { primary_culture = ROOT }
+			}
+		}
+	}
+}

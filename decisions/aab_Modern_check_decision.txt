@@ -1,0 +1,149 @@
+country_decisions = {
+
+	modern_check_decision = {
+		major = yes
+		color = { 110 190 40 }
+		potential = {
+			ai = no
+		}
+		allow = {
+			
+			always =  yes
+		}
+		effect = {
+			country_event = {
+				id = modern_check_missil.1
+				tooltip = modern_check_desc
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	#test_0 = {
+	#	major = yes
+	#	potential = {
+	#		ai = no
+	#	}
+	#	
+	#	allow = {
+	#		
+	#	}
+	#	effect = {
+	#		REB = {
+	#			add_country_modifier = {
+	#				name = rbel_test
+	#				duration = -1
+	#			}
+	#		}
+	#					
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+	#test_1 = {
+	#	major = yes
+	#	potential = {
+	#		ai = no
+	#	}
+	#	allow = {
+	#		#118 = {
+	#		#	supply_limit = 1
+	#		#}
+	#		#land_morale = 1
+	#	}
+	#	effect = {
+	#		118 = {
+	#			spawn_rebels = {
+	#				size = 0.1
+	#				type = mahayana_rebels
+	#			}
+	#		}
+	#				
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+	#test_2 = {
+	#	major = yes
+	#	potential = {
+	#		ai = no
+	#	}
+	#	allow = {
+	#		#118 = {
+	#		#	supply_limit = 1
+	#		#}
+	#		#land_morale = 1
+	#	}
+	#	effect = {
+	#		ITA = {
+	#			REB = {
+	#				add_country_modifier = {
+	#					name = rbel_test_1
+	#					duration = -1
+	#				}
+	#			}
+	#		}			
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+	#test_2 = {
+	#	major = yes
+	#	potential = {
+	#		ai = no
+	#	}
+	#	allow = {
+	#		
+	#		always =  yes
+	#	}
+	#	effect = {
+	#		every_owned_province = {
+	#			limit = {
+	#				owned_by = ROOT
+	#			}
+	#			set_local_autonomy = -100
+	#			add_local_autonomy = -100
+	#			
+	#		}
+	#		#every_trade_node = {
+	#		#	limit = {
+	#		#		has_merchant = CHN
+	#		#	}
+	#		#	can_not_send_merchants = yes
+	#		#}
+	#		#every_active_trade_node = {
+	#		#	limit = {
+	#		#		has_merchant = USA
+	#		#	}
+	#		#	
+	#		#	add_country_modifier = {
+	#		#		name = test_2_modifire
+	#		#		duration = 30
+	#		#	}
+	#		#}
+	#		#add_country_modifier = {
+	#		#	name = test_1_modifire
+	#		#	duration = -1
+	#		#}
+	#		#kill_advisor = esu_recruiter
+	#	#
+	#		#kill_advisor_by_category_effect = {
+	#	#
+	#		#	ADM = yes
+	#		#}
+	#		#kill_advisor_by_category_effect = {
+	#		#	DIP = yes
+	#		#}
+	#		#kill_advisor_by_category_effect = {
+	#		#	MIL = yes
+	#		#}
+	#	}
+	#	ai_will_do = {
+	#		factor = 0
+	#	}
+	#}
+}

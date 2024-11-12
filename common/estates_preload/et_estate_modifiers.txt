@@ -1,0 +1,50 @@
+estate_corporations = {
+	modifier_definition = {
+		type = loyalty
+		key = capitalists_loyalty_modifier
+		trigger = {
+			has_estate = estate_corporations
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = capitalists_loyalty_modifier
+		trigger = {
+			has_estate = estate_corporations
+		}
+	}
+}
+
+estate_workers = {
+	modifier_definition = {
+		type = loyalty
+		key = workers_loyalty_modifier
+		trigger = {
+			has_estate = estate_workers
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = workers_influence_modifier
+		trigger = {
+			has_estate = estate_workers
+		}
+	}
+}
+
+estate_military = {
+	modifier_definition = {
+		type = loyalty
+		key = generals_loyalty_modifier
+		trigger = {
+			has_estate = estate_military
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = generals_loyalty_modifier
+		trigger = {
+			has_estate = estate_military
+		}
+	}
+}

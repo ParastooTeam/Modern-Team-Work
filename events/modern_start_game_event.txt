@@ -1,0 +1,23 @@
+namespace = start_game
+
+#send_aid Point admin power X1
+province_event = {
+	id = start_game.1
+	title = "start_game.1title"
+	desc = "start_game.1desc"
+	picture = send_aid_eventPicture
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		add_province_modifier = {
+			name = more_peoplotion
+			duration = -1
+		}
+		
+	}
+	option = {
+		name = "start_game.1opt"
+	}
+}
+

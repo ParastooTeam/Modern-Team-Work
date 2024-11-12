@@ -1,0 +1,129 @@
+po_stop_atomic = {
+	category = 6
+	power_projection = insulted_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 25.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 25
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = yes
+	
+	is_visible = {
+		FROM = {
+			OR = {
+				
+				has_country_modifier = nuclear_research_modifire
+				has_country_flag = research_nuclear_10_modifire
+				has_country_flag = research_nuclear_20_modifire
+				has_country_flag = research_nuclear_40_modifire
+				has_country_flag = research_nuclear_75_modifire
+				has_country_flag = research_nuclear_90_modifire
+			}
+		}
+	}
+	is_allowed = {
+		FROM = {
+			OR = {
+				has_country_modifier = nuclear_research_modifire
+				has_country_flag = research_nuclear_10_modifire
+				has_country_flag = research_nuclear_20_modifire
+				has_country_flag = research_nuclear_40_modifire
+				has_country_flag = research_nuclear_75_modifire
+				has_country_flag = research_nuclear_90_modifire
+			}
+		}
+	}
+	effect = {
+		FROM = {
+			if = { limit = { has_country_modifier = nuclear_research_modifire }
+				remove_country_modifier = nuclear_research_modifire
+			}
+			if = { limit = { has_country_flag = research_nuclear_10_modifire }
+				clr_country_flag = research_nuclear_10_modifire
+			}
+			if = { limit = { has_country_flag = research_nuclear_20_modifire }
+				clr_country_flag = research_nuclear_20_modifire
+			}
+			if = { limit = { has_country_flag = research_nuclear_40_modifire }
+				clr_country_flag = research_nuclear_40_modifire
+			}
+			if = { limit = { has_country_flag = research_nuclear_75_modifire }
+				clr_country_flag = research_nuclear_75_modifire
+			}
+			if = { limit = { has_country_flag = research_nuclear_90_modifire }
+				clr_country_flag = research_nuclear_90_modifire
+			}
+			remove_country_modifier = nuclear_state
+			set_variable = {
+				which = beginning_nuclear_research
+				value = 0
+			}
+			set_variable = {
+				which = nuclear_research_10
+				value = 0
+			}
+			set_variable = {
+				which = nuclear_research_20
+				value = 0
+			}
+			set_variable = {
+				which = nuclear_research_40
+				value = 0
+			}
+			set_variable = {
+				which = nuclear_research_75
+				value = 0
+			}
+			set_variable = {
+				which = nuclear_research_90
+				value = 0
+			}
+			add_country_modifier = {
+				name = "non_atomic_modifire_all"
+				duration = 9125
+			}
+		}
+		every_known_country = { 
+			limit = { ai = no }
+			country_event = { id = non_atomic.4 }
+			
+		}
+		add_country_modifier = {
+			name = "non_atomic_modifire"
+			duration = 3650
+		}
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 10
+		}
+		limit = {
+			OR = {
+				FROM = {
+					is_neighbor_of = ROOT
+				}
+				FROM = {
+					any_neighbor_country = {
+						is_rival = ROOT
+					}
+				}
+			}
+			
+
+		}
+	}
+}
+
+

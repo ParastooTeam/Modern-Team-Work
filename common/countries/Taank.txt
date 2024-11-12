@@ -1,0 +1,108 @@
+#Country Name: See the Name of this File.
+
+graphical_culture = westerngfx
+
+color = { 187  179  86 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+		
+}
+
+monarch_names = {
+	"Jassa Ahuwalia #0" = 20
+	"Lahina #0" = 20
+	"Ranjit #0" = 20
+	"Bhag #0" = 10
+	"Kharak #0" = 10
+	"Duleep #0" = 10
+	"Fateh #0" = 5
+	"Maha #0" = 5
+	"Sobha #0" = 5
+	"Narnak #0" = 5
+	"Angad #0" = 5
+	"Amar #0" = 5
+	"Ram #0" = 5
+	"Arjan #0" = 5
+	"Gobind #0" = 5
+	"Rai #0" = 5
+	"Krishan #0" = 5
+	"Bahadur #0" = 5
+	"Sardar Badar #0" = 1
+	"Balbir #0" = 0
+	"Bhalla #0" = 0
+	"Daya #0" = 0
+	"Dharem #0" = 0
+	"Fakir #0" = 0
+	"Gahunia #0" = 0
+	"Gian #0" = 0
+	"Granth #0" = 0
+	"Himmat #0" = 0
+	"Hoora #0" = 0
+	"Ishnar #0" = 0
+	"Jhol #0" = 0
+	"Jhotti #0" = 0
+	"Lohaar #0" = 0
+	"Mokham #0" = 0
+	"Nand #0" = 0
+	"Parmanand #0" = 0
+	"Rajsingh #0" = 0
+	"Sanlib #0" = 0
+	"Sardul #0" = 0
+	"Shabeg #0" = 0
+	"Shergill #0" = 0
+	"Sodhi #0" = 0
+	"Sohal #0" = 0
+	"Tara #0" = 0
+	"Udasi #0" = 0
+	
+	"Padmavati #0" = -1
+	"Tirumala #0" = -1
+	"China Devi #0" = -1
+	"Lakshmi #0" = -1
+	"Jaganmohini #0" = -1
+	"Annapurna #0" = -1
+	"Rudramba #0" = -1
+	"Anitalli #0" = -1
+	"Rudramadevi #0" = -1
+}
+
+leader_names = {
+	Bahadur
+	Bhalla
+	Das
+	Dev
+	Gahunia
+	Gobind
+	Granth
+	Hoora
+	Jhol
+	Jhotti
+	Krishan
+	Lohaar
+	Parmanand
+	Rajsingh
+	Shergill
+	Singh
+	Sodhi
+	Sohal
+	Rai
+	Udasi
+}
+
+ship_names = {
+	Beas Chenab Devi Gayatri Guru Indus
+	Jalsena Jhelum Lakshmi Nausena
+	"Nav ka Yudh" Parvati Radha Ratri
+	Ravi Sagar Sutlej Sarasvati Sita
+}
+
+
+

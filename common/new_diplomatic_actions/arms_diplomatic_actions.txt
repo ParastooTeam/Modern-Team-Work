@@ -1,0 +1,167 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+arms_cpture = {
+	category = great_powers
+	
+
+	alert_index = 15  
+	alert_tooltip = WANT_CAPTURE_ARMS
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+		FROM = { arms = 1 }
+	}
+	is_allowed = {
+		FROM = { arms = 1 }
+	}
+	on_accept = {
+		FROM = { 
+			random_owned_province = {
+				limit = {
+					trade_goods = arms
+				}
+				change_trade_goods = unknown
+			}
+		}
+		country_event = {
+			id = modern_tradegoods.2
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+navalarms_cpture = {
+	category = great_powers
+	
+	alert_index = 15  
+	alert_tooltip = WANT_CAPTURE_NAVALARMS
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy	
+		ai = no
+		FROM = { ai = no }
+		FROM = { navalarms = 1 }
+	}
+	is_allowed = {
+		FROM = { navalarms = 1 }	
+	}
+	on_accept = {
+		FROM = { 
+			random_owned_province = {
+				limit = {
+					trade_goods = navalarms
+				}
+				change_trade_goods = unknown
+			}
+		}
+		country_event = {
+			id = modern_tradegoods.3
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+
+electronic_cpture = {
+	category = great_powers
+	
+
+	alert_index = 15  
+	alert_tooltip = WANT_CAPTURE_ELECTRONICS
+
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+		FROM = { electronics = 1 }
+	}
+	is_allowed = {
+		FROM = { electronics = 1 }	
+	}
+	on_accept = {
+		FROM = { 
+			random_owned_province = {
+				limit = {
+					trade_goods = electronics
+				}
+				change_trade_goods = unknown
+			}
+		}
+		country_event = {
+			id = modern_tradegoods.4
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+cars_cpture = {
+	category = great_powers
+	
+	alert_index = 15  
+	alert_tooltip = WANT_CAPTURE_CARS
+	require_acceptance = yes # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+		FROM = { cars = 1 }
+	}
+	is_allowed = {
+		FROM = { cars = 1 }	
+	}
+	on_accept = {
+		FROM = { 
+			random_owned_province = {
+				limit = {
+					trade_goods = cars
+				}
+				change_trade_goods = unknown
+			}
+		}
+		country_event = {
+			id = modern_tradegoods.5
+		}
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}

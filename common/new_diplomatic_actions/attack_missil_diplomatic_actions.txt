@@ -1,0 +1,141 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+missile_attack = {
+	category = influence
+
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+
+	require_acceptance = no # Whether the recipient gets an option to decline
+
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+	}
+	is_allowed = {
+		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = FROM   } }
+		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = FROM   } }
+		OR = {
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}
+	}
+	on_accept = {
+		FROM = { save_global_event_target_as = missil_target_country }	
+		country_event = {
+			id = missile_select.1
+		}
+	
+	}
+	on_decline = {
+	}
+
+	
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+#missile_attack_10 = {
+#	category = influence
+#
+#	alert_index = 40
+#	alert_tooltip = demand_dummy_alert_tooltip
+#
+#	require_acceptance = no # Whether the recipient gets an option to decline
+#
+#	is_visible = {
+#		has_country_flag = opened_expotentional_diplomacy
+#		ai = no
+#	}
+#	is_allowed = {
+#		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion who = FROM   } }
+#		NOT = { has_opinion_modifier = { modifier = signed_pact_of_non_agresion_five who = FROM   } }
+#		OR = {
+#			check_variable = {
+#				which = missil_50
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_100
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_150
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_250
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_350
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_500
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_700
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_1000
+#				value = 10
+#			}
+#			check_variable = {
+#				which = missil_1500
+#				value = 10
+#			}
+#		}
+#	}
+#	on_accept = {
+#		FROM = { save_global_event_target_as = missil_target_country }	
+#		country_event = {
+#			id = modern_missil_10.1
+#		}
+#	
+#	}
+#	on_decline = {
+#	}
+#
+#	
+#	ai_will_do = { # this is a trigger
+#		always = no
+#	}
+#}

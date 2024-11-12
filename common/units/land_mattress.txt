@@ -1,0 +1,20 @@
+# Land Mattress
+
+type = artillery
+unit_type = western
+
+trigger = {
+	check_variable = {
+		which = tank_Support
+		value = 22
+	}
+}
+
+maneuver = 2
+offensive_morale = 5
+defensive_morale = 5
+offensive_fire = 10
+defensive_fire = 9
+offensive_shock = 3
+defensive_shock = 2
+

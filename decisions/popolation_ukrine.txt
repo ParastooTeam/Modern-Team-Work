@@ -1,0 +1,24 @@
+country_decisions = {
+
+		popolation_ukrine = {
+			potential = {
+             has_country_flag = open_all_decision 
+				NOT = { is_year = 2030 }
+				tag = UKR
+				NOT = { has_country_modifier = popolation_of_ukrine }
+			}
+			allow = {
+			}
+			effect = {
+				add_country_modifier = { 
+					name = popolation_of_ukrine
+					duration = 3650
+				}		
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+
+}
+	

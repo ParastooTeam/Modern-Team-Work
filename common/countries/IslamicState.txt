@@ -1,0 +1,76 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 60  60  60 } 
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Abu Bakr #0" = 20
+	"Abu Omar #0" = 20
+	"Abu Mohammad #0" = 20
+	"Abdullah #0" = 20
+	"Abu Musab #0" = 20
+	"Abu Muslim #0" = 20
+	"Abu Ali #0" = 20
+	"Abu Ayman #0" = 20
+	"Abu Waheeb #0" = 20
+	"Abu Yusaf #0" = 20
+	"Abu Ayyub #0" = 20
+	"Abu Abdullah #0" = 20
+	"Abu Anas #0" = 20
+	"Abu Azzam #0" = 20
+	"Abdul Hadi #0" = 15
+	"Hamid Juma #0" = 10
+	"Abu Yaqub #0" = 10
+	"Haitham #0" = 10
+	"Khaled #0" = 10
+	"Mahir #0" = 10
+	"Mohammad #0" = 10
+	"Huthaifa #0" = 10
+	"Abu Abdulrahman #0" = 10
+	"Haji Bakr #0" = 10
+	"Basir #0" = 0
+	"Fadl #0" = 0
+	"Ghayth #0" = 0
+	"Hatim #0" = 0
+	"Ilyas #0" = 0
+	"Jabir #0" = 0
+	"Nadim #0" = 0
+	"Nizar #0" = 0
+	"Qasim #0" = 0
+	"Sa'di #0" = 0
+	"Sayyid #0" = 0
+	"Yunus #0" = 0
+}
+
+leader_names = {
+	al-Baghdadi al-Turkmani al-Anbari al-Shishani al-Iraqi al-Naser al-Zarqawi
+	al-Masri al-Rashid al-Shami al-Kurdi Abd-al-Rahman al-Saeedi al-Badri
+	al-Mashhadani al-Zubaydi Moumou al-Batawi al-Bilawi
+}
+
+ship_names = {
+	"Zaher Barqooq" "Farag Ben Barqooq"
+	"Ben Barqooq" "Muyaid Sheikh" "Ahmen Muyaid" 
+	"Zaher Tatar" "Nasser Muhamed" "Ashraf Barsbay"
+	"Aziz Gamal" "Nahr an-Nil" "Al-Farafirah"
+	"Ad-Däkhilah" "Al-Kharijah" "Al-Ali" "Al-Bahriyah"
+	Rahman Rahim Malik Quddus Salam Mu'min Muhaymin
+	Aziz Jabbar Mutakabbir Khaliq Bari Musawwir 
+	Ghaffar Qahhar Wahhab Razzaq Fattah Alim Qabid
+	Basit Khafid Rafi Mu'izz Mudhill Sami Basir Hakam Adl
+}
+
+
+

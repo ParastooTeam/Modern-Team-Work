@@ -1,0 +1,40 @@
+country_decisions = {
+
+	trasporter_test = {	
+		potential = {    
+			ai = yes
+			is_at_war = yes
+			any_country = {
+				war_with = ROOT
+				NOT = { is_neighbor_of = ROOT }
+			}
+			is_great_power = yes
+		}
+		allow = {	
+			treasury = 25000
+			NOT = { num_of_transport = 150 }
+			NOT = { has_country_modifier = cooldown_transporter }
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_port = yes
+				}
+				add_unit_construction = {
+					type = transport
+					cost = 1
+					speed = 0.5
+					amount = 2
+				}
+			}
+			add_country_modifier = {
+				name = cooldown_transporter
+				duration = 3650
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

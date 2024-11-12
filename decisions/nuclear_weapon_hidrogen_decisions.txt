@@ -1,0 +1,429 @@
+country_decisions = {
+
+	desiction_hidrogen_x1 = {
+		major = yes
+		potential = {	
+
+			NOT = { has_country_modifier = non_hidrogen_modifire_all }
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x1
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			mil_power = 50
+			any_owned_province = { trade_goods = arms }
+			treasury = 150000
+		
+
+		}
+		effect = {
+			add_treasury = -150000
+			if = {
+				limit = {
+					ai = yes
+				}
+				add_country_modifier = {
+					name = not_allow_hidrogen
+					duration = 4380
+				}
+			}
+			if = {
+				limit = {
+					ai = no
+				}
+				add_country_modifier = {
+					name = not_allow_hidrogen
+					duration = 2190
+				}
+			}
+			country_event = { id = hidrogen.1 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_hidrogen_x2 = {
+		major = yes
+		potential = {		
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			check_variable = {
+				which = hidrogen_x1
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x2
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			mil_power = 150
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			any_owned_province = { trade_goods = arms }
+			treasury = 150000
+		
+
+		}
+		effect = {
+			add_treasury = -150000
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 4380
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 2190
+					}
+				}
+			country_event = { id = hidrogen.3 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+	
+	
+	desiction_hidrogen_x3 = {
+		major = yes
+		potential = {		
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			check_variable = {
+				which = hidrogen_x2
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x3
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			mil_power = 250
+			any_owned_province = { trade_goods = uranium }
+			any_owned_province = { trade_goods = arms }
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			treasury = 150000
+		
+
+		}
+		effect = {
+			add_treasury = -150000
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 4380
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 2190
+					}
+				}
+			country_event = { id = hidrogen.5 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_hidrogen_x4 = {
+		major = yes
+		potential = {		
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			check_variable = {
+				which = hidrogen_x3
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x4
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			mil_power = 350
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = arms
+						development = 50
+					}
+						amount = 1
+				}
+			}
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = uranium
+						development = 10
+					}
+						amount = 1
+				}
+			}
+			treasury = 150000
+		
+
+		}
+		effect = {
+			add_treasury = -150000
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 4380
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 2190
+					}
+				}
+			country_event = { id = hidrogen.7 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_hidrogen_x5 = {
+		major = yes
+		potential = {		
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			check_variable = {
+				which = hidrogen_x4
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x5
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			mil_power = 450
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = arms
+						development = 50
+					}
+						amount = 1
+				}
+			}
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = uranium
+						development = 25
+					}
+						amount = 1
+				}
+			}
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = titanium
+						development = 25
+					}
+						amount = 1
+				}
+			}
+			treasury = 150000
+		
+
+		}
+		effect = {
+			add_treasury = -150000
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 4380
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 2190
+					}
+				}
+			country_event = { id = hidrogen.9 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+############################################################################################################################################	
+
+	desiction_hidrogen_x6 = {
+		major = yes
+		potential = {		
+			check_variable = {
+				which = num_of_nuclear_weapons
+				value = 1
+			}
+			check_variable = {
+				which = hidrogen_x5
+				value = 1
+			}
+			NOT = { 
+				check_variable = {
+					which = hidrogen_x6
+					value = 1
+				}
+			}
+		}
+		allow = {
+			full_idea_group = hidrogen_research
+			mil_power = 550
+			NOT = { has_country_modifier = not_allow_hidrogen }
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = arms
+						development = 50
+					}
+						amount = 1
+				}
+			}
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = uranium
+						development = 50
+					}
+						amount = 1
+				}
+			}
+			ROOT = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = titanium
+						development = 50
+					}
+						amount = 1
+				}
+			}
+			treasury = 150000
+		
+
+		}
+		effect = {
+		
+			add_treasury = -150000
+				if = {
+					limit = {
+						ai = yes
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 4380
+					}
+				}
+				if = {
+					limit = {
+						ai = no
+					}
+					add_country_modifier = {
+						name = not_allow_hidrogen
+						duration = 2190
+					}
+				}
+			country_event = { id = hidrogen.11 }
+			
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 5
+	}
+	
+	
+	
+############################################################################################################################################	
+
+}

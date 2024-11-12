@@ -1,0 +1,10 @@
+#Galiot Galley Level 8
+type = galley
+
+hull_size = 47
+base_cannons = 52
+sail_speed = 12
+
+blockade = 11
+
+sprite_level = 1

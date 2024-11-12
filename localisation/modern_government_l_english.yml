@@ -1,0 +1,217 @@
+﻿l_english:
+
+ government_type.10t:0 "Choose the type of request"
+ government_type.10d:0 "By choosing one of the following options, you can strengthen your desired government in the society or bring your desired party to power and use its benefits."
+
+ government_type.01opt:0 "Strengthening §Ygovernment§! change"
+ government_type.02opt:0 "Strengthen §Yparty§! change"
+
+ government_type.2t:0 "Choose the party to strengthen"
+ government_type.2d:0 "Choose one of the following parties to get some strength in the country, we can change our government with long-term investment to get closer to our desired strategy in the world. \n§GDemocracy§! Party (§G[From.government_democracy_variable.GetValue]§!%) \n§GFascist§! Party (§G[From.government_fashist_variable.GetValue]§!%) \n§GCommunist§! Party (§G[From.government_comonist_variable.GetValue]§!%) \n§GOligarchy§! Party (§G[From.government_oligarchy_variable.GetValue]§!%) \n§GMilitary§! Party (§G[From.government_military_variable.GetValue]§!%)"
+
+ government_type.21opt:0 "Boost the §YDemocracy§! Party"
+ government_type.22opt:0 "Boost the §YFascist§! Party"
+ government_type.23opt:0 "Boost the §YCommunist§! Party"
+ government_type.24opt:0 "Boost the §YOligarchy§! Party"
+ government_type.25opt:0 "Boost the §YMilitary§! Party"
+
+
+ 
+
+
+
+
+ government_type.1t:0 "Boost the government you want"
+ government_type.1d:0 "We can change the government of our country if its acceptance in the country is above 75%, so we have to spend and plan for those years. We must be careful because enemies can also infiltrate our country and strengthen other factions \nRepublic faction (§R[From.government_republic_variable.GetValue]§!%) \nTheocracy faction (§R[From.government_theocracy_variable.GetValue]§!%) \nKingdom faction (§R[From.government_monarchy_variable.GetValue]§!%)"
+ 
+ government_type.1opt:0 "Boost the §GRepublican§! faction"
+ government_type.2opt:0 "Boost the §lKingdom§! faction"
+ government_type.3opt:0 "Boost the §YTheocracy§! faction"
+ government_type.4opt:0 "Cancel"
+
+ government_party.DESC.2:0 "We can change our party system in a short time and transfer it to our desired system \nWe need 70% Power to change system \nMulti-party system (§R[From.multi_party_gov.GetValue]§!%) \nLimited-party (§R[From.limited_party_gov.GetValue]§!%) \nAuthoritarian ruler (§R[From.authority_party_gov.GetValue]§!%)"
+ 
+ government_party.DESC.3:0 "We must determine the path of our sovereignty."
+ 
+ government_party.GOV1:0 "Boost the §GMulti-party§! system"
+ government_party.GOV2:0 "Boost the §YLimited-party§! system"
+ government_party.GOV3:0 "Boost the §OAuthoritarian ruler§!"
+
+ government_republic_variable:0 "§GRepublican§! faction"
+ government_monarchy_variable:0 "§lKingdom§! faction"
+ government_theocracy_variable:0 "§YTheocracy§! faction"
+ 
+ multi_party_gov:0 "Multi-party system"
+ limited_party_gov:0 "Limited-party system"
+ authority_party_gov:0 "Authoritarian ruler"
+
+ government_type.03opt:0 "The Type of §YGovernance System§!"
+ 
+ 
+ government_type_change_title:0 "£gov_fac_icon£§OBoost the Factions of the Government§!"
+ government_type_change_desc:0 "We can only change our government in this way. We must be careful so that the enemies cannot strengthen our opposing factions and change our government \n§GRepublican§! faction (§G[From.government_republic_variable.GetValue]§!%) \n§GKingdom§! faction (§G[From.government_monarchy_variable.GetValue]§!%) \n§GTheocracy§! faction (§G[From.government_theocracy_variable.GetValue]§!%) \n...........\n§YDemocracy§! Party (§Y[From.government_democracy_variable.GetValue]§!%) \n§YFascist§! Party (§Y[From.government_fashist_variable.GetValue]§!%) \n§YCommunist§! Party (§Y[From.government_comonist_variable.GetValue]§!%) \n§YOligarchy§! Party (§Y[From.government_oligarchy_variable.GetValue]§!%) \n§YMilitary§! Party (§Y[From.government_military_variable.GetValue]§!%)"
+ 
+ modern_government_tooltip:0 "\n§GRepublican§! faction (§G[From.government_republic_variable.GetValue]§!%) \n§GKingdom§! faction (§G[From.government_monarchy_variable.GetValue]§!%) \n§GTheocracy§! faction (§G[From.government_theocracy_variable.GetValue]§!%) \n...........\n§YDemocracy§! Party (§Y[From.government_democracy_variable.GetValue]§!%) \n§YFascist§! Party (§Y[From.government_fashist_variable.GetValue]§!%) \n§YCommunist§! Party (§Y[From.government_comonist_variable.GetValue]§!%) \n§YOligarchy§! Party (§Y[From.government_oligarchy_variable.GetValue]§!%) \n§YMilitary§! Party (§Y[From.government_military_variable.GetValue]§!%)"
+ 
+ cooldown_change_government:0 "Government Change cooldown"
+ 
+ n_S_korea:0 "Korean War"
+ n_S_korea_desc:0 "Korea must be formed in a war, this trigger is created for this reason"
+
+
+
+
+ 
+
+
+
+ #######################################################################################################
+
+
+ 
+ 
+ 
+
+
+ government_inflience_type.10t:0 "Choose the type of request"
+ government_inflience_type.10d:0 "By choosing one of the following options, you can strengthen your desired government in the society or bring §R[From.From.From.Owner.GetName]§! desired party to power and use its benefits."
+
+ government_inflience_type.01opt:0 "Strengthening §Ygovernment§! change"
+ government_inflience_type.02opt:0 "Strengthen §Yparty§! change"
+
+ government_inflience_type.2t:0 "Choose the party to strengthen"
+ government_inflience_type.2d:0 "Choose one of the following parties to get some strength in the §R[From.From.From.Owner.GetName]§! country, we can change our government with long-term investment to get closer to our desired strategy in the world. \n§GDemocracy§! Party (§G[From.From.From.government_democracy_variable.GetValue]§!%) \n§GFascist§! Party (§G[From.From.From.government_fashist_variable.GetValue]§!%) \n§GCommunist§! Party (§G[From.From.From.government_comonist_variable.GetValue]§!%) \n§GOligarchy§! Party (§G[From.From.From.government_oligarchy_variable.GetValue]§!%) \n§GMilitary§! Party (§G[From.From.From.government_military_variable.GetValue]§!%)"
+
+ government_inflience_type.21opt:0 "Boost the §YDemocracy§! Party"
+ government_inflience_type.22opt:0 "Boost the §YFascist§! Party"
+ government_inflience_type.23opt:0 "Boost the §YCommunist§! Party"
+ government_inflience_type.24opt:0 "Boost the §YOligarchy§! Party"
+ government_inflience_type.25opt:0 "Boost the §YMilitary§! Party"
+
+
+ 
+
+
+
+
+ government_inflience_type.1t:0 "Boost the government you want"
+ government_inflience_type.1d:0 "We can change the government of §R[From.From.From.Owner.GetName]§! country if its acceptance in their country is above 80%, so we have to spend and plan for those years. We must be careful because enemies can also infiltrate our country and strengthen other factions \nRepublic faction (§R[From.From.From.government_republic_variable.GetValue]§!%) \nTheocracy faction (§R[From.From.From.government_theocracy_variable.GetValue]§!%) \nKingdom faction (§R[From.From.From.government_monarchy_variable.GetValue]§!%)"
+ 
+ government_inflience_type.1opt:0 "Boost the §GRepublican§! faction"
+ government_inflience_type.2opt:0 "Boost the §lKingdom§! faction"
+ government_inflience_type.3opt:0 "Boost the §YTheocracy§! faction"
+ government_inflience_type.4opt:0 "Cancel"
+
+ influance_in_their_title:0 "Support Their Faction £gov_fac_icon£"
+ influance_in_their_desc:0 "With this option, we can penetrate into their country and change their government after a long time, this work requires long-term planning, we will bring a government to work in their country that will benefit us, in this case we must be careful. do \nWe must take care of our own country as well, it is very important that other countries cannot infiltrate our country \n§GRepublican§! faction (§G[From.government_republic_variable.GetValue]§!%) \n§GTheocracy§! faction (§G[From.government_theocracy_variable.GetValue]§!%) \n§GKingdom§! faction (§G[From.government_monarchy_variable.GetValue]§!%) \n...........\n§YDemocracy§! Party (§Y[From.government_democracy_variable.GetValue]§!%)                                                   \n§YFascist§! Party (§Y[From.government_fashist_variable.GetValue]§!%) \n§YCommunist§! Party (§Y[From.government_comonist_variable.GetValue]§!%) \n§YOligarchy§! Party (§Y[From.government_oligarchy_variable.GetValue]§!%) \n§YMilitary§! Party (§Y[From.government_military_variable.GetValue]§!%)"
+  
+ influance_in_their_tooltip:0 "\n§GRepublican§! faction (§G[From.government_republic_variable.GetValue]§!%) \n§GTheocracy§! faction (§G[From.government_theocracy_variable.GetValue]§!%) \n§GKingdom§! faction (§G [From.government_monarchy_variable.GetValue]§!%)  \n...........\n§YDemocracy§! Party (§Y[From.government_democracy_variable.GetValue]§!%) \n§YFascist§! Party (§Y[From.government_fashist_variable.GetValue]§!%) \n§YCommunist§! Party (§Y[From.government_comonist_variable.GetValue]§!%) \n§YOligarchy§!  Party (§Y[From.government_oligarchy_variable.GetValue]§!%) \n§YMilitary§! Party (§Y[From.government_military_variable.GetValue]§!%)"
+ influance_in_their_dialog:0 ""
+ cool_down_influance:0 "Cooldown 30 Days"
+
+ inlunce_main:0 "§TInluance of you§!"
+ 
+ arms_var:0 "Restrictions on the manufacture of weapons"
+ navalarms_var:0 "Shipbuilding restrictions"
+
+ cooldown_faction_member:0 "50-year limit before faction"
+ have_access_knologe:0 "Access to the institution is granted"
+ have_access_knologe_desc:0 "Our neighboring country has allowed us to use their institute in our country"
+ have_access_knologeDESC:0 "Our neighboring country has allowed us to use their institute in our country"
+
+ have_access_knologe_legalism:0 "Access to the institution is granted"
+ have_access_knologe_ancient_imperialism:0 "Access to the institution is granted"
+ have_access_knologe_caste_system:0 "Access to the institution is granted"
+ have_access_knologe_organized_religion:0 "Access to the institution is granted"
+ have_access_knologe_serfdom:0 "Access to the institution is granted"
+ have_access_knologe_manorialism:0 "Access to the institution is granted"
+ have_access_knologe_early_feudalism:0 "Access to the institution is granted"
+ have_access_knologe_crop_rotation:0 "Access to the institution is granted"
+ have_access_knologe_civil_service:0 "Access to the institution is granted"
+ have_access_knologe_manuscripts:0 "Access to the institution is granted"
+ have_access_knologe_scholasticism:0 "Access to the institution is granted"
+ have_access_knologe_guilds:0 "Access to the institution is granted"
+ have_access_knologe_medicine:0 "Access to the institution is granted"
+ have_access_knologe_feudalism:0 "Access to the institution is granted"
+ have_access_knologe_renaissance:0 "Access to the institution is granted"
+ have_access_knologe_new_world_i:0 "Access to the institution is granted"
+ have_access_knologe_printing_press:0 "Access to the institution is granted"
+ have_access_knologe_global_trade:0 "Access to the institution is granted"
+ have_access_knologe_manufactories:0 "Access to the institution is granted"
+ have_access_knologe_enlightenment:0 "Access to the institution is granted"
+ have_access_knologe_imperialism:0 "Access to the institution is granted"
+ have_access_knologe_industrialization:0 "Access to the institution is granted"
+ have_access_knologe_nationalism_institution:0 "Access to the institution is granted"
+ have_access_knologe_electrification:0 "Access to the institution is granted"
+ have_access_knologe_globalization:0 "Access to the institution is granted"
+ have_access_knologe_internet:0 "Access to the institution is granted"
+
+ share_knolog:0 "Sending Institutions cross-border"
+ share_knolog_title:0 "Sending Institutions"
+ share_knolog_desc:0 "We open our borders so that the §Yinstitutions§! can reach their countries and thus their growth and progress can be guaranteed \nWe pay for sharing based on development, which is as follows \nTotal development between §Y3 and 500§! = §Y250 Dollars§!£cash_picture£ \nTotal development between §Y500 and 1000§! = §O500 Dollars§!£cash_picture£ \nTotal development between §Y1000 and 2000§! = §O1.000 Dollars§!£cash_picture£ \nTotal development between §Y2000 and 3000§! = §O2.000 Dollars§!£cash_picture£ \nTotal development between §Y3000 and 4000§! = §O3.000 Dollars§!£cash_picture£ \nTotal development between §Y4000 and 5000§! = §O4.000 Dollars§!£cash_picture£ \nTotal development between §Y5000 and 6000§! = §O5.000 Dollars§!£cash_picture£ \nTotal development between §Y6000 and more§! = §O6.000 Dollars§!£cash_picture£"
+ share_knolog_tooltip:0 "Leaving the borders open to send institutions to their countries \n§OThis option opens the borders only for§! §Y[From.Owner.GetName]§!"
+ share_knolog_dialog:0 "They want to send their §Yinstitutions§! to us across the border, that would be great"
+
+ taking_their_share_1:0 "Cancel Share Institutions"
+ taking_their_share_1_title:0 "Cancel Share Institutions"
+ taking_their_share_1_desc:0 "We do not allow them access to our institutions, \nWe close our borders to them \n£adm£ §YAdministrator Power§! = §O-50§!"
+ taking_their_share_1_tooltip:0 "Closing borders on them to prevent access to institutions"
+ taking_their_share_1_dialog:0 "Cancel share institutions"
+
+ request_receve_institution:0 "Request institution"
+ request_receve_institution_title:0 "Request Institution"
+ request_receve_institution_desc:0 "We request them to share with us the institutes they have received, it will cost us \nWe have to pay the following fees to receive the institution through the borders \nTotal development between §Y3 and 500§! = §O1.000 Dollars§!£cash_picture£ \nTotal development between §Y500 and 1000§! = §O3.000 Dollars§!£cash_picture£ \nTotal development between §Y1000 and 2000§! = §YO.000 Dollars§!£cash_picture£ \nTotal development between §Y2000 and 3000§! = §O10.000 Dollars§!£cash_picture£ \nTotal development between §Y3000 and 4000§! = §O18.000 Dollars§!£cash_picture£ \nTotal development between §Y4000 and 5000§! = §O25.000 Dollars§!£cash_picture£ \nTotal development between §Y5000 and 6000§! = §O30.000 Dollars§!£cash_picture£ \nTotal development between §Y6000 and more§! = §O40.000 Dollars§!£cash_picture£"
+ request_receve_institution_tooltip:0 "Asking to share their institutions across our common borders"
+ request_receve_institution_dialog:0 "They want us to share our institutions with them"
+
+ share_instut:0 "§YExchange Institutions§!"
+ share_instut_cancel:0 "§RCanceled sharing of the institution§!"
+ ICON_KNOWLEDGESHARE_TO_THEIR:0 "want to share their institutions with §TUS§!"
+ ICON_KNOWLEDGESHARE_TO_US:0 "want us to share our institutions with §TThem§!"
+
+ INDIA_ai:0 "India AI"
+ WE_HAVE_INSTITUTATION:0 "The institutions we have are more up-to-date than them"
+ THEY_HAVE_ISTITUTATION:0 "The institutions they have are more up-to-date than ours"
+
+ allow_offer_to_share_tech:0 "Permission to share institution"
+ allow_offer_to_share_tech_title:0 "Permission to Share §YInstitution§!"
+ allow_offer_to_share_tech_desc:0 "They are under our control, we allow them to send their institutions to other countries and make money from it or use it for their strategic goals. \n£dip£ Diplomatic Power = §O-75§!"
+ allow_offer_to_share_tech_tooltip:0 "leaving them free to share institutions to other countries"
+ allow_offer_to_share_tech_dialog:0 ""
+
+ not_offer_to_share_tech:0 ""
+ not_offer_to_share_tech_title:0 "Not Allowing §YInstitution§! Sharing"
+ not_offer_to_share_tech_desc:0 "With this diplomatic choice, we limit them in sharing our institutions, this can be a strategic decision for us, if their neighbors are our enemies, we delay them in receiving institutions. \n£dip£ Diplomatic Power = §O-75§!"
+ not_offer_to_share_tech_tooltip:0 "Restricting them from sharing institutions, they can no longer send their institutions to anyone (except us)"
+ not_offer_to_share_tech_dialog:0 ""
+
+ Permission_from_the_leader:0 "Permission from the leader"
+ not_offer_share_tech:0 "Not allowing the sharing of the institution by the leader"
+ AI_COOLDOWN_8_YEARS:0 "AI has not attacked since the last war for 8 years"
+
+ NEIGHBOTS_OF_US:0 "We Are Neighbors"
+ NEIGHBOTS_OF_US_1:0 "We have close borders"
+
+ clear_titanium_title:0 "§TTitanium§! banding"
+ clear_titanium_desc:0 "A 25-year contract with §R[From.Owner.GetName]§! will be closed and the cities where there is Titanium will be removed and they will not be able to exploit those mines for 25 years. \nUse this option for long-term goals"
+ clear_titanium_tooltip:0 "They cannot exploit §TTitanium§! mines for §Y25 years§! \n§YYou can only contract with the player§!"
+ clear_titanium_dialog:0 "They want to sign a Titanium ban agreement with us for §Y25 years§! \nthis agreement will make us unable to exploit any of our titanium mines for the next §Y25 years§!."
+
+ involvement_in_war_title:0 "§OInvolvement in War§!"
+ involvement_in_war_desc:0 "Because the game has problems and when countries are at war, you can attack their military base without any problem, we created this option so that countries can defend their interests, \n§TNote§! : that this option is turned on when you go to the military base directly attacked"
+ involvement_in_war_tooltip:0 "§OIf our military base is attacked directly, we can go to war§!"
+ involvement_in_war_dialog:0 "They want to go to war and help us, that's great"
+
+ cant_again:0 "§TNote§! §Othat you can no longer select this option, this option is for those who made a mistake§!"
+ change_national_idea_title:0 "§TChanging the National Idea§!"
+ change_national_idea_desc:0 "§TYou can use this option only once§!, so be careful, if your ideas are good, don't click on it, because it may bring you random ideas that are nonsense."
+ 
+ OVERLORD_NOT_ALLOW:0 "Our overlord does not allow us to attack"
+
+ government_fashist_variable:0 "Fascist Party"
+ government_theocracy_variable:0 "Religious Party"
+ government_military_variable:0 "Military Party"
+ government_comonist_variable:0 "Communist Party"
+ government_oligarchy_variable:0 "Oligarch Party"
+ government_republic_variable:0 "Republican Party"
+ government_monarchy_variable:0 "Monarchist Party"

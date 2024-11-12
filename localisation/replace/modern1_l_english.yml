@@ -1,0 +1,477 @@
+﻿l_english:
+ TECH_TRESURY_TITLE:0 "Dollers"
+ INCOMETRADE:0 "Export"
+ INCOMEGOLD:0 "Tourism industry"
+ 
+ 
+ PEACE_po_force_culture:0 "Force Culture"
+ po_force_culture_desc:0 "Changes the culture of our enemy to [Root.Culture.GetName]"
+ cb_force_culture:0 "Force Culture"
+ CB_ALLOWED_cb_force_culture:0 "Force Culture"
+ ALL_FORCE_CULTURE:0 "We shall assimilate and integrate them into our culture!"
+ ALL_SAFE_PEOPLE:0 "The world is in danger, we must fight for survival"
+ CULTURE_WAR_NAME:0 "Cultural Imperialism"
+ 
+ army_limited_1:0 "Army & Navy Limited 10%"
+ army_limited_1_title:0 "Army & Navy Limited 10%"
+ 
+ army_limited_2:0 "Army & Navy Limited 20%"
+ army_limited_2_title:0 "Army & Navy Limited 20%"
+ 
+ PEACE_po_limited_army_10:0 "Limit Their Army §O-10%§!"
+ po_limited_army_10:0 "Limit Their Army §O-10%§!"
+ CB_ALLOWED_po_limited_army_10:0 "Limit Their Army §O-10%§!"
+ po_limited_army_10_desc:0 "This military contract limits them to §O-10%§! for 20 years \n§YAnd that they can no longer build more than their allowed limit until the end of the contract§!"
+
+ stop_zombies:0 "War With Zombies"
+ stop_zombies_desc:0 "The world is affected by disease and the people of the planet are all becoming zombies"
+ 
+ PEACE_po_make_military_base:0 "Make Military Base"
+ po_make_military_base:0 "Make Military Base"
+ CB_ALLOWED_po_make_military_base:0 "Make Military Base"
+ po_make_military_base_desc:0 "Make this country your military base"
+
+ PEACE_po_make_military_base_limited:0 "Make Subject Enclave Base"
+ po_make_military_base_limited:0 "Make Subject Enclave Base"
+ CB_ALLOWED_po_make_military_base_limited:0 "Make Subject Enclave Base"
+ po_make_military_base_limited_desc:0 "With the establishment of this military base, the limit of §Y[From.Owner.GetName]§! forces will decrease by -33% and they will lose the offensive power to attack."
+
+ PEACE_po_make_naval_base:0 "Make Naval Base"
+ po_make_naval_base:0 "Make Naval Base"
+ CB_ALLOWED_po_make_naval_base:0 "Make Naval Base"
+ po_make_naval_base_desc:0 "Naval base gives you more naval power, we need to expand our naval bases for our hegemony superiority."
+ 
+ PEACE_po_limited_army_20:0 "Limit Their Army §O-20%§!"
+ po_limited_army_20:0 "Limit Their Army §O-20%§!"
+ CB_ALLOWED_po_limited_army_20:0 "Limit Their Army §O-20%§!"
+ po_limited_army_20_desc:0 "This military contract limits them to §O-20%§! for 20 years \n§YAnd that they can no longer build more than their allowed limit until the end of the contract§!"
+
+ PEACE_po_limited_army_33:0 "Limit Their Army §O-33%§!"
+ po_limited_army_33:0 "Limit Their Army §O-33%§!"
+ CB_ALLOWED_po_limited_army_33:0 "Limit Their Army §O-33%§!"
+ po_limited_army_33_desc:0 "This military contract limits them to §O-33%§! for 20 years \n§YAnd that they can no longer build more than their allowed limit until the end of the contract§!"
+ 
+ PEACE_po_cancel_military_base:0 "Cancel Military Base "
+ po_cancel_military_base:0 "Cancel Military Base "
+ CB_ALLOWED_po_cancel_military_base:0 "Cancel Military Base "
+ po_cancel_military_base_desc:0 "We are expelling foreign forces from [From.Owner.GetName]"
+ 
+ PEACE_po_cancel_EU:0 "Exit from the EU"
+ po_cancel_EU:0 "Exit from the EU"
+ CB_ALLOWED_po_cancel_EU:0 "Exit from the EU"
+ po_cancel_EU_desc:0 "We are taking them out of the EU"
+
+ PEACE_po_cancel_EU_leader:0 "Removal from the presidency EU"
+ po_cancel_EU_leader:0 "Removal from the presidency EU"
+ CB_ALLOWED_po_cancel_EU_leader:0 "Removal from the presidency EU"
+ po_cancel_EU_leader_desc:0 "This option will remove all their achievements to reach the permanent presidency of the EU"
+ 
+ 
+ PEACE_po_cancel_EU_leader_x2:0 "Permanent expulsion from the EU"
+ po_cancel_EU_leader_x2:0 "Permanent expulsion from the EU"
+ CB_ALLOWED_po_cancel_EU_leader_x2:0 "Permanent expulsion from the EU"
+ po_cancel_EU_leader_x2_desc:0 "This option would take them out of the EU permanently and they would also be removed from the EU presidency"
+ 
+ 
+ PEACE_po_destroy_cars:0 "§YCars§! destruction"
+ po_destroy_cars:0 "§YCars§! destruction"
+ CB_ALLOWED_po_destroy_cars:0 "§YCars§! destruction"
+ po_destroy_cars_desc:0 "We are destroying all their cars factories to be a lesson to others"
+
+ PEACE_po_destroy_cars_x2:0 "§YCars§! destruction"
+ po_destroy_cars_x2:0 "§YCars§! destruction"
+ CB_ALLOWED_po_destroy_cars_x2:0 "§YCars§! destruction"
+ po_destroy_cars_x2_desc:0 "We are destroying all their cars factories to be a lesson to others"
+ 
+ PEACE_po_destroy_electronic:0 "§YElectronics§! destruction"
+ po_destroy_electronic:0 "§YElectronics§! destruction"
+ CB_ALLOWED_po_destroy_electronic:0 "§YElectronics§! destruction"
+ po_destroy_electronic_desc:0 "We are destroying all their electronics factories to be a lesson to others"
+
+ PEACE_po_destroy_electronic_x2:0 "§YElectronics§! destruction"
+ po_destroy_electronic_x2:0 "§YElectronics§! destruction"
+ CB_ALLOWED_po_destroy_electronic_x2:0 "§YElectronics§! destruction"
+ po_destroy_electronic_x2_desc:0 "We are destroying all their electronics factories to be a lesson to others"
+ 
+ PEACE_po_destroy_arms:0 "§OArms§! destruction"
+ po_destroy_arms:0 "§OArms§! destruction"
+ CB_ALLOWED_po_destroy_arms:0 "§OArms§! destruction"
+ po_destroy_arms_desc:0 "We are destroying all their arms company to be a lesson to others"
+
+ PEACE_po_destroy_arms_x2:0 "§OArms§! destruction"
+ po_destroy_arms_x2:0 "§OArms§! destruction"
+ CB_ALLOWED_po_destroy_arms_x2:0 "§OArms§! destruction"
+ po_destroy_arms_x2_desc:0 "We are destroying all their arms company to be a lesson to others"
+
+ PEACE_po_destroy_navalarms:0 "§ONaval Arms§! destruction"
+ po_destroy_navalarms:0 "§ONaval Arms§! destruction"
+ CB_ALLOWED_po_destroy_navalarms:0 "§ONaval Arms§! destruction"
+ po_destroy_navalarms_desc:0 "We are destroying all their naval arms company to be a lesson to others"
+
+ PEACE_po_destroy_navalarms_x2:0 "§ONaval Arms§! destruction"
+ po_destroy_navalarms_x2:0 "§ONaval Arms§! destruction"
+ CB_ALLOWED_po_destroy_navalarms_x2:0 "§ONaval Arms§! destruction"
+ po_destroy_navalarms_x2_desc:0 "We are destroying all their naval arms company to be a lesson to others"
+
+ PEACE_po_destroy_drugs:0 "Drug destruction"
+ po_destroy_drugs:0 "Drug destruction"
+ CB_ALLOWED_po_destroy_drugs:0 "Drug destruction"
+ po_destroy_drugs_desc:0 "We are destroying all the cities in which they grow drugs so that the world will be a more beautiful place"
+
+ PEACE_po_capture_electronics:0 "Capture an §YElectronic§!"
+ po_capture_electronics:0 "Capture an §YElectronic§!"
+ CB_ALLOWED_po_capture_electronics:0 "Capture an §YElectronic§!"
+ po_capture_electronics_desc:0 "With this option, we can capture one of their electronics"
+ 
+ PEACE_po_capture_cars:0 "Capture a §YCar Company§!"
+ po_capture_cars:0 "Capture a §YCar Company§!"
+ CB_ALLOWED_po_capture_cars:0 "Capture a §YCar Company§!"
+ po_capture_cars_desc:0 "With this option, we can capture one of their cars company"
+
+ PEACE_po_capture_arms:0 "Capture an §YArms Company§!"
+ po_capture_arms:0 "Capture an §YArms Company§!"
+ CB_ALLOWED_po_capture_arms:0 "Capture an §YArms Company§!"
+ po_capture_arms_desc:0 "With this option, we can capture one of their Arms Company"
+ 
+ PEACE_po_capture_navalarms:0 "Capture an §YNaval-Arms Company§!"
+ po_capture_navalarms:0 "Capture an §YNaval-Arms Company§!"
+ CB_ALLOWED_po_capture_navalarms:0 "Capture an §YNaval-Arms Company§!"
+ po_capture_navalarms_desc:0 "With this option, we can capture one of their Arms Company"
+
+ PEACE_po_capture_oils_100:0 "Taking their Oil §G+10m§!"
+ po_capture_oils_100:0 "Taking their Oil §G+10m§!"
+ CB_ALLOWED_po_capture_oils_100:0 "Taking their Oil §G+10m§!"
+ po_capture_oils_100_desc:0 "With this option, we will own all their oil for §Y15 years§!, and they will not have any income from their oil-rich cities."
+ 
+ PEACE_po_capture_oils_50:0 "Taking their Oil §R-10m§!"
+ po_capture_oils_50:0 "Taking their Oil §R-10m§!"
+ CB_ALLOWED_po_capture_oils_50:0 "Taking their Oil §R-10m§!"
+ po_capture_oils_50_desc:0 "With this option, we will own their oil for §Y15 years§!, and they will not have any income from their oil-rich cities."
+ 
+ 
+ 
+ PEACE_po_remove_fow_5:0 "Remove FOW §Y5 years§! £gps_icon£"
+ po_remove_fow_5:0 "Remove FOW §Y5 years§! £gps_icon£"
+ CB_ALLOWED_po_remove_fow_5:0 "Remove FOW §Y5 years§! £gps_icon£"
+ po_remove_fow_5_desc:0 "We can monitor their forces for 5 years"
+
+ PEACE_po_remove_fow_10:0 "Remove FOW §Y10 years§! £gps_icon£"
+ po_remove_fow_10:0 "Remove FOW §Y10 years§! £gps_icon£"
+ CB_ALLOWED_po_remove_fow_10:0 "Remove FOW §Y10 years§! £gps_icon£"
+ po_remove_fow_10_desc:0 "We can monitor their forces for 10 years"
+
+ PEACE_po_remove_fow_25:0 "Remove FOW §Y25 years§! £gps_icon£"
+ po_remove_fow_25:0 "Remove FOW §Y25 years§! £gps_icon£"
+ CB_ALLOWED_po_remove_fow_25:0 "Remove FOW §Y25 years§! £gps_icon£"
+ po_remove_fow_25_desc:0 "We can monitor their forces for 25 years"
+
+ PEACE_po_remove_fow_50:0 "Remove FOW §Y50 years§! £gps_icon£"
+ po_remove_fow_50:0 "Remove FOW §Y50 years§! £gps_icon£"
+ CB_ALLOWED_po_remove_fow_50:0 "Remove FOW §Y50 years§! £gps_icon£"
+ po_remove_fow_50_desc:0 "We can monitor their forces for 50 years"
+
+
+ PEACE_po_capture_capture_atomic_bomb:0 "Capture all §RAtomic Bombs§!"
+ po_capture_capture_atomic_bomb:0 "Capture all §RAtomic Bombs§!"
+ CB_ALLOWED_po_capture_capture_atomic_bomb:0 "Capture all §RAtomic Bombs§!"
+ po_capture_capture_atomic_bomb_desc:0 "With this option, we can capture all of their Atomic Bombs"
+
+ PEACE_po_capture_capture_atomic_bomb_x2:0 "Capture all §RAtomic Bombs§!"
+ po_capture_capture_atomic_bomb_x2:0 "Capture all §RAtomic Bombs§!"
+ CB_ALLOWED_po_capture_capture_atomic_bomb_x2:0 "Capture all §RAtomic Bombs§!"
+ po_capture_capture_atomic_bomb_x2_desc:0 "With this option, we can capture all of their Atomic Bombs"
+ 
+
+ PEACE_po_ziro_our_tax_suez:0 "Reduce all our §YSuezTaxes§!" 
+ po_ziro_our_tax_suez:0 "Reduce all our §YSuezTaxes§!" 
+ CB_ALLOWED_po_ziro_our_tax_suez:0 "Reduce all our §YSuezTaxes§!" 
+ po_ziro_our_tax_suez_desc:0 "All the taxes they imposed on us will now be reduced to zero"
+
+ PEACE_po_ziro_our_tax_panama:0 "Reduce all our §YPanama Taxes§!" 
+ po_ziro_our_tax_panama:0 "Reduce all our §YPanama Taxes§!" 
+ CB_ALLOWED_po_ziro_our_tax_panama:0 "Reduce all our §YPanama Taxes§!" 
+ po_ziro_our_tax_panama_desc:0 "All the taxes they imposed on us will now be reduced to zero"  
+
+ PEACE_po_capture_panama_canal:0 "Capturing the §YPanama Canal§!" 
+ po_capture_panama_canal:0 "Capturing the §YPanama Canal§!" 
+ CB_ALLOWED_po_capture_panama_canal:0 "Capturing the §YPanama Canal§!" 
+ po_capture_panama_canal_desc:0 "We collect all Panama Canal taxes for 50 years" 
+
+ PEACE_po_capture_suez_canal:0 "Capturing the §YSuez Canal§!" 
+ po_capture_suez_canal:0 "Capturing the §YSuez Canal§!" 
+ CB_ALLOWED_po_capture_suez_canal:0 "Capturing the §YSuez Canal§!" 
+ po_capture_suez_canal_desc:0 "We collect all Suez Canal taxes for 50 years" 
+
+ PEACE_po_capture_volga_canal:0 "Capturing the §YVolga Canal§!" 
+ po_capture_volga_canal:0 "Capturing the §YVolga Canal§!" 
+ CB_ALLOWED_po_capture_volga_canal:0 "Capturing the §YVolga Canal§!" 
+ po_capture_volga_canal_desc:0 "We collect all Volga Canal power for 50 years" 
+  
+
+ PEACE_po_ziro_our_sueztax_all:0 "Zero all §YSuez-Taxes for all Countries§!" 
+ po_ziro_our_sueztax_all:0 "Zero all §YSuez-Taxes for all Countries§!" 
+ CB_ALLOWED_po_ziro_our_sueztax_all:0 "Zero all §YSuez-Taxes for all Countries§!" 
+ po_ziro_our_sueztax_all_desc:0 "Any country that owes taxes will be reduced to zero except our own" 
+
+ PEACE_po_ziro_our_panamatax_all:0 "Zero all §YPanama-Taxes from all Countries§!" 
+ po_ziro_our_panamatax_all:0 "Zero all §YPanama-Taxes from all Countries§!" 
+ CB_ALLOWED_po_ziro_our_panamatax_all:0 "Zero all §YPanama-Taxes from all Countries§!" 
+ po_ziro_our_panamatax_all_desc:0 "Any country that owes taxes will be reduced to zero except our own" 
+ 
+ 
+ destroy_antiquities.2opt:0 "They destroyed our Antiquities"
+ destroy_antiquities.2opt_desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! destroyed our §GAntiquities§!"
+ 
+ 
+ destroy_antiquities.1title:0 "Destroyed Antiquities"
+ destroy_antiquities.1desc:0 "My $MONARCHTITLE$, §R[From.Owner.GetName]§! destroyed §R[From.From.Owner.GetName]§!'s Antiquities"
+ destroy_antiquities.1opt:0 "This is a Disaster"
+ 
+ PEACE_po_non_atomic:0 "Destroy of §YAtomic Bombs§!"
+ po_non_atomic:0 "Destroy of §YAtomic Bombs§!"
+ po_non_atomic_desc:0 "Destroy all their nuclear weapons"
+ CB_ALLOWED_po_non_atomic:0 "Destroy all §YAtomic Bombs§!"
+ 
+ PEACE_po_stop_atomic:0 "Destroy all §YNuclear Research§!"
+ po_stop_atomic:0 "Destroy all §YNuclear Research§!"
+ po_stop_atomic_desc:0 "Destroy all their Nuclear Research"
+ CB_ALLOWED_po_stop_atomic:0 "Destroy all §YNuclear Research§!"
+ 
+ PEACE_po_stop_hidrogen:0 "Destroy all §YHydrogen Research§!"
+ po_stop_hidrogen:0 "Destroy all §YHydrogen Research§!"
+ po_stop_hidrogen_desc:0 "Destroy all their Hydrogen Research"
+ CB_ALLOWED_po_stop_hidrogen:0 "Destroy all §YHydrogen Research§!"
+ 
+ PEACE_po_missile_bord_all:0 "0-§YLack of access to missiles§!"
+ po_missile_bord_all:0 "0-§YLack of access to missiles§!"
+ po_missile_bord_all_desc:0 "All their missiles will be destroyed with any range \nand they will not be allowed to build missiles for up to 25 years"
+ CB_ALLOWED_po_missile_bord_all:0 "§YLack of access to missiles§!"
+ 
+ PEACE_po_missile_bord_250:0 "1-Missile under §Y2500 km§!"
+ po_missile_bord_250:0 "1-Missile under §Y2500 km§!"
+ po_missile_bord_250_desc:0 "This option destroys all missiles over 2500 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_250:0 "Missile under §Y2500 km§!"
+
+ PEACE_po_missile_bord_350:0 "2-Missile under §Y3500 km§!"
+ po_missile_bord_350:0 "2-Missile under §Y3500 km§!"
+ po_missile_bord_350_desc:0 "This option destroys all missiles over 3500 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_350:0 "Missile under §Y3500 km§!" 
+
+ PEACE_po_missile_bord_500:0 "3-Missile under §Y5000 km§!"
+ po_missile_bord_500:0 "3-Missile under §Y5000 km§!"
+ po_missile_bord_500_desc:0 "This option destroys all missiles over 5000 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_500:0 "Missile under §Y5000 km§!" 
+
+ PEACE_po_missile_bord_700:0 "4-Missile under §Y7000 km§!"
+ po_missile_bord_700:0 "4-Missile under §Y7000 km§!"
+ po_missile_bord_700_desc:0 "This option destroys all missiles over 7000 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_700:0 "Missile under §Y7000 km§!"
+
+ PEACE_po_missile_bord_1000:0 "5-Missile under §Y10.000 km§!"
+ po_missile_bord_1000:0 "5-Missile under §Y10.000 km§!"
+ po_missile_bord_1000_desc:0 "This option destroys all missiles over 10.000 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_1000:0 "Missile under §Y10.000 km§!"
+ 
+ PEACE_po_missile_bord_1500:0 "6-Missile under §Y15.000 km§!"
+ po_missile_bord_1500:0 "6-Missile under §Y15.000 km§!"
+ po_missile_bord_1500_desc:0 "This option destroys all missiles over 15.000 km \nand does not allow them to build missiles above this range."
+ CB_ALLOWED_po_missile_bord_1500:0 "Missile under §Y15.000 km§!"
+ 
+ PEACE_po_remove_missile:0 "Remove §GMissile Ideas§!"
+ po_remove_missile:0 "Remove §GMissile Ideas§!"
+ po_remove_missile_desc:0 "After Remove §GMissile Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_missile:0 "Remove §GMissile Ideas§!"
+ 
+ PEACE_po_remove_hidrogen:0 "Remove §GHydrogen Ideas§!"
+ po_remove_hidrogen:0 "Remove §GHydrogen Ideas§!"
+ po_remove_hidrogen_desc:0 "After Remove §GHydrogen Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_hidrogen:0 "Remove §GHydrogen Ideas§!"
+ 
+ PEACE_po_remove_spy:0 "Remove §GSpy Ideas§!"
+ po_remove_spy:0 "Remove §GSpy Ideas§!"
+ po_remove_spy_desc:0 "After Remove §GSpy Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_spy:0 "Remove §GSpy Ideas§!"
+
+ PEACE_po_set_oils_0:0 "§REliminate§! oil production" 
+ po_set_oils_0:0 "§REliminate§! oil production" 
+ po_set_oils_0_desc:0 "All their oil production will be zero and they will not have the right to produce oil for 15 years" 
+ CB_ALLOWED_po_set_oils_0:0 "§REliminate§! oil production" 
+
+ PEACE_po_set_titaniom_0:0 "Not allowing §TTitanium§! mining" 
+ po_set_titaniom_0:0 "Not allowing §TTitanium§! mining" 
+ po_set_titaniom_0_desc:0 "This option does not allow them to mine titanium for 25 years and they have no income from titanium for 25 years." 
+ CB_ALLOWED_po_set_titaniom_0:0 "Not allowing §TTitanium§! mining"
+
+ PEACE_po_remove_subject_idea:0 "Remove §GSubject Reaserch Ideas§!"
+ po_remove_subject_idea:0 "Remove §GSubject Reaserch Ideas§!"
+ po_remove_subject_idea_desc:0 "After removing the idea of §GSubject Reaserch Ideas§!\n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_subject_idea:0 "Remove §GSubject Reaserch Ideas§!"
+ 
+ PEACE_po_remove_military_base:0 "Remove §GMilitary Base Ideas§!"
+ po_remove_military_base:0 "Remove §GMilitary Base Ideas§!"
+ po_remove_military_base_desc:0 "After removing the idea of §GMilitary Base Ideas§!\n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_military_base:0 "Remove §GMilitary Base Ideas§!"
+ 
+ PEACE_po_remove_focus_on_ship:0 "Remove §GFocus on Ship Ideas§!"
+ po_remove_focus_on_ship:0 "Remove §GFocus on Ship Ideas§!"
+ po_remove_focus_on_ship_desc:0 "After Remove §GFocus on Ship Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_focus_on_ship:0 "Remove §GFocus on Ship Ideas§!"
+ 
+
+ PEACE_po_revok_sanctions:0 "The removal of §YSanctions§!"
+ po_revok_sanctions:0 "The removal of §YSanctions§!"
+ po_revok_sanctions_desc:0 "They had imposed cruel sanctions against our people, we will remove the sanctions"
+ CB_ALLOWED_po_revok_sanctions:0 "The removal of §YSanctions§!"
+
+ PEACE_po_remove_nuclear:0 "Remove §GNuclear Ideas§!"
+ po_remove_nuclear:0 "Remove §GNuclear Ideas§!"
+ po_remove_nuclear_desc:0 "After Remove §GNuclear Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_nuclear:0 "Remove §GNuclear Ideas§!"
+
+ 
+ PEACE_po_remove_drfrnse_missile:0 "Remove §GDefense Missile Ideas§!"
+ po_remove_drfrnse_missile:0 "Remove §GDefense Missile Ideas§!"
+ po_remove_drfrnse_missile_desc:0 "After Remove §GDefense Missile Ideas§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_drfrnse_missile:0 "Remove §GDefense Missile Ideas§!"
+
+ PEACE_po_remove_satelite:0 "Remove §GSatellite Research§!"
+ po_remove_satelite:0 "Remove §GSatellite Research§!"
+ po_remove_satelite_desc:0 "After Remove §GSatellite Research§! \n§YCannot choose it for 15 years§!"
+ CB_ALLOWED_po_remove_satelite:0 "Remove §GSatellite Research§!"
+ 
+ PAP:0 "Vatican"
+ PAP_ADJ:0 "Italian"
+
+ PEACE_po_change_religion_modern:0 "Change their Religion"
+ po_change_religion_modern:0 "Change their Religion"
+ po_change_religion_modern_desc:0 "We change their official religion to our religion and bring them closer to God."
+ CB_ALLOWED_po_change_religion_modern:0 "Change their Religion"
+
+ PEACE_po_change_religion_secular:0 "Religious Freedom §Y(Secularism)§!"
+ po_change_religion_secular_desc:0 "In their country, all people should worship their God in complete freedom, no one should persecute them"
+ CB_ALLOWED_po_change_religion_secular:0 "Religious Freedom §Y(Secularism)§!"
+ po_change_religion_secular:0 "Religious Freedom §Y(Secularism)§!"
+
+ PEACE_po_non_spy:0 "Non-espionage contract"
+ po_non_spy:0 "Non-espionage contract"
+ po_non_spy_desc:0 "With a non-espionage contract, they can not spy in our country for 15 years"
+ CB_ALLOWED_po_non_spy:0 "Non-espionage contract"
+
+
+ PEACE_po_special_limited_army:0 "Not allowed to have §YSpecial forces§!"
+ po_special_limited_army:0 "Not allowed to have §YSpecial forces§!"
+ po_special_limited_army_desc:0 "We will not allow them to build §Yspecial forces§! for 30 years"
+ CB_ALLOWED_po_special_limited_army:0 "Not allowed to have §Yspecial forces§!"
+
+ special_limited_1:0 "Our specialized forces are limited"
+ changed_government_rec:0 "Selected the type of government"
+
+ adopt_military_government:0 "Change government to Military"
+ adopt_military_government_title:0 "Change government to Military"
+ adopt_military_government_desc:0 "Change government to Military"
+
+ adopt_democracy_reform:0 "Change government to Democracy"
+ adopt_democracy_reform_title:0 "Change government to Democracy"
+ adopt_democracy_reform_desc:0 "Change government to Democracy"
+
+
+ oligarchic_reform_modern:0 "Change government to Oligarchic"
+ oligarchic_reform_modern_title:0 "Change government to Oligarchic"
+ oligarchic_reform_modern_desc:0 "Change government to Oligarchic"
+ 
+
+
+ PEACE_po_capture_Galley_ship_1:0 "Capture §T1§! §YWar Ship§!"
+ po_capture_Galley_ship_1_desc:0 "With this option, we can capture one of their War Ship"
+ PEACE_po_capture_Galley_ship_2:0 "Capture §T2§! §YWar Ship§!"
+ po_capture_Galley_ship_2_desc:0 "With this option, we can capture 2 of their War Ship"
+ PEACE_po_capture_Galley_ship_4:0 "Capture §T4§! §YWar Ship§!"
+ po_capture_Galley_ship_4_desc:0 "With this option, we can capture 4 of their War Ship"
+ PEACE_po_capture_Galley_ship_7:0 "Capture §T7§! §YWar Ship§!"
+ po_capture_Galley_ship_7_desc:0 "With this option, we can capture 7 of their War Ship"
+ PEACE_po_capture_Galley_ship_15:0 "Capture §T15§! §YWar Ship§!"
+ po_capture_Galley_ship_15_desc:0 "With this option, we can capture 15 of their War Ship"
+
+ PEACE_po_capture_Trade_ship_1:0 "Capture §T1§! §YTrade Ship§!"
+ po_capture_Trade_ship_1_desc:0 "With this option, we can capture one of their Trade Ship"
+ PEACE_po_capture_Trade_ship_2:0 "Capture §T2§! §YTrade Ship§!"
+ po_capture_Trade_ship_2_desc:0 "With this option, we can capture 2 of their Trade Ship"
+ PEACE_po_capture_Trade_ship_4:0 "Capture §T4§! §YTrade Ship§!"
+ po_capture_Trade_ship_4_desc:0 "With this option, we can capture 4 of their Trade Ship"
+ PEACE_po_capture_Trade_ship_7:0 "Capture §T7§! §YTrade Ship§!"
+ po_capture_Trade_ship_7_desc:0 "With this option, we can capture 7 of their Trade Ship"
+ PEACE_po_capture_Trade_ship_15:0 "Capture §T15§! §YTrade Ship§!"
+ po_capture_Trade_ship_15_desc:0 "With this option, we can capture 15 of their Trade Ship"
+
+ PEACE_po_capture_Heavy_ship_1:0 "Capture §T1§! §YAircraft Carrier§!"
+ po_capture_Heavy_ship_1_desc:0 "With this option, we can capture one of their Aircraft Carrier"
+ PEACE_po_capture_Heavy_ship_2:0 "Capture §T2§! §YAircraft Carrier§!"
+ po_capture_Heavy_ship_2_desc:0 "With this option, we can capture 2 of their Aircraft Carrier"
+ PEACE_po_capture_Heavy_ship_3:0 "Capture §T3§! §YAircraft Carrier§!"
+ po_capture_Heavy_ship_3_desc:0 "With this option, we can capture 3 of their Aircraft Carrier"
+ PEACE_po_capture_Heavy_ship_4:0 "Capture §T4§! §YAircraft Carrier§!"
+ po_capture_Heavy_ship_4_desc:0 "With this option, we can capture 4 of their Aircraft Carrier"
+ PEACE_po_capture_Heavy_ship_5:0 "Capture §T5§! §YAircraft Carrier§!"
+ po_capture_Heavy_ship_5_desc:0 "With this option, we can capture 5 of their Aircraft Carrier"
+
+ PEACE_po_capture_Transporter_ship:0 "Capture All §YTransporter§!"
+ po_capture_Transporter_ship_desc:0 "With this option, we can capture All of their Transport Ship"
+
+ CANT_BUY_TRANSPORTER:0 "They can't buy our transporter"
+
+ PEACE_po_lomited_fleet:0 "Limit ther fleet §Y-50§!"
+ po_lomited_fleet:0 "Limit ther fleet §Y-50§!"
+ CB_ALLOWED_po_lomited_fleet:0 "Limit ther fleet §Y-50§!"
+ po_lomited_fleet_desc:0 "We will reduce their navy limit by 50%"
+ 
+ limited_fleet_modifier:0 "Limited Navy at War"
+ limited_fleet_modifier_desc:0 "Limited Navy at War"
+
+ PEACE_po_destabilize_nation:0 "Destabilize them §Y-2§!"
+ po_destabilize_nation:0 "Destabilize them §Y-2§!"
+ CB_ALLOWED_po_destabilize_nation:0 "Destabilize them §Y-2§!"
+ po_destabilize_nation_desc:0 "We destabilize their country"
+
+ PEACE_po_demilitarize_border:0 "§gDemilitarize Border§!"
+ po_demilitarize_border:0 "§gDemilitarize Border§!"
+ CB_ALLOWED_po_demilitarize_border:0 "§gDemilitarize Border§!"
+ po_demilitarize_border_desc:0 "We must destroy all military barriers between us and them, like Fort \nReduction of §YGarrisons Size§! §R-50%§! by peace treaty for 25 years \n§YAdd Prestige§! = §G+10%§!"
+ 
+ non_fort:0 "Demilitarize Border"
+ non_fort_desc:0 "We do not have the right to build a fort here"
+
+ vote_for_coalition:0 "Coalition voting"
+ vote_for_coalition_desc:0 "It means that voting has been done and voting will not be held for another 10 years"
+ 
+ cooldown_request_un:0 "Disallowing the Security Council"
+ cooldown_1_request_un:0 "Disallowing the Security Council"
+ cooldown_request_un_desc:0 "Not allowing the request of the Security Council"
+ cooldown_1_request_un_desc:0 "Not allowing the request of the Security Council"
+
+ PEACE_po_trade_treaty:0 "§GTrade Influence§!"
+ po_trade_treaty:0 "§GTrade Influence§!"
+ CB_ALLOWED_po_trade_treaty:0 "§GTrade Influence§!"
+ po_trade_treaty_desc:0 "We must have all the power in the areas we trade"
+
+ PEACE_po_trade_treaty_x2:0 "§GTrade Influence§! §YX2§!"
+ po_trade_treaty_x2:0 "§GTrade Influence§! §YX2§!"
+ CB_ALLOWED_po_trade_treaty_x2:0 "§GTrade Influence§! §YX2§!"
+ po_trade_treaty_x2_desc:0 "We must have all the power in the areas we trade"
+ 
+ unequal_treaty:0 "Commercial influence"
+ unequal_treaty_x2:0 "Commercial influence X2"
+
+ startup.NAME1:0 "§YParastoo§! advertising team"
+ startup.DESC.1:0 "Follow us on Instagram (§GT.M.Parastoo§!) \nCome to §RModern EU4§! Discord. The Discord link is available in the description mod on Steam \nSupport us so that this mod will be updated for years and you will see amazing changes in every update \n \nA word with the §GIranians§! : \nSalam va Durod be shoma Iranian Aziz, dostan ma yek tim hastim ke be soorat haftegi bazi mikonim mitonid baray hamahangi va peyvastan be ma dar Discord ya Instagram be ma payam bedin ta guroh bozorgi baray in bazi khob dashte bashim"
+ startup1.OPT:0 "Follow us"
+
+ cant_sanction_them:0 "Successful in the Trade War"
+ trade_war_secuess:0 "They attacked the country that had embargoed them and lifted the embargo"
+ 
+ parleman_lock:0 "15-year parliament lock"
+ parlrman_lock_level:0 "15-year parliament lock"
+ parleman_lock1:0 "To prevent abuse of parliamentary bonuses, this option is locked for 15 years"
+ war_lock:0 "Cancel re-entering their war"
+ parleman_lock_1:0 "15-year parliament lock"
+ 
+ 

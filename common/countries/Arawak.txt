@@ -1,0 +1,43 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 102 120 225 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+leader_names = {
+	Kapongong Makushi Korobahado Panapi Muritaro Fararinno Kafotay Mudaukaho Waia Madinina
+}
+
+monarch_names = {
+	"Wiwakaleme #0" = 10
+	"Haubariria #0" = 10
+	"Toratora #0" = 10
+	"Amorotahe Haubariria #0" = 10
+	"Kaigouchi #0" = 10
+	"Shoko Laliwa #0" = 10
+	
+	"Arah #0" = 10
+	"Pirijá #0" = 10
+	"Arata #0" = 10
+	"Toruí #0" = 10
+	"Mbicy #0" = 10
+	
+	"Takuiba #0" = -1
+	"Twengga #0" = -1
+	"Neyawa #0" = -1
+}
+
+ship_names = {
+	Adaiahuli Aiyunbana Waia Demerara "Koyaha Maka" Hairoun Camerhogne Kayryouacou Hiwanarau Kairi Madinina
+}

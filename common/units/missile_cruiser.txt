@@ -1,0 +1,11 @@
+#Cruiser Trade Ship Level 8
+type = light_ship
+
+hull_size = 8
+base_cannons = 8
+sail_speed = 12
+blockade = 0
+
+trade_power = 65.0
+
+sprite_level = 1

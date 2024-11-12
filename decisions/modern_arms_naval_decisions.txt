@@ -1,0 +1,367 @@
+country_decisions = {
+
+
+	add_arms = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			#NOT = { has_global_flag = cars_are_ubiquitous }
+		}
+		allow = {
+			any_owned_province = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				years_of_income = 1.0
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.85
+				}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.70
+				}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.55
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.40
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				years_of_income = 0.25
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ai = no }
+				mil_power = 500
+			}
+			if = {
+				limit = { ai = yes }
+				mil_power = 100
+			}
+			
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				NOT = { arms = 3 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 3
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				NOT = { arms = 4 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 4
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				NOT = { arms = 5 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 5
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				NOT = { arms = 6 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 6
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				NOT = { arms = 7 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 7
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				NOT = { arms = 8 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 8
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				NOT = { arms = 9 }
+				NOT = {
+					check_variable = {
+						which = arms_var
+						value = 9
+					}
+				}
+			}
+			is_at_war = no
+			NOT = { has_country_modifier = cooldown_arms }
+			full_idea_group = offensive_ideas
+			full_idea_group = defensive_ideas
+			OR = {
+				innovativeness = 30
+				AND = {
+					innovativeness = 20
+					full_idea_group = innovativeness_ideas
+				}
+			}
+			NOT = { has_country_modifier = cooldown_first }
+		}
+		effect = {
+			hidden_effect = {
+				add_country_modifier = {
+					name = cooldown_first
+					duration = 30
+				}
+			}
+			country_event = {
+				id = armsnaval_tradegoods.1
+				days = 1
+			}	
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = arms_var
+								value = 1
+							}
+						}
+					}
+					set_variable = {
+						which = arms_var
+						value = 1
+					}
+				}	
+				else = {
+					change_variable = {
+						which = arms_var
+						value = 1
+					}
+				}	
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	add_naval_arms = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			num_of_ports = 1
+		}
+		allow = {
+			any_owned_province = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				years_of_income = 1.0
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.85
+				}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.70
+				}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.55
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.40
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				years_of_income = 0.25
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ai = no }
+				dip_power = 500
+			}
+			if = {
+				limit = { ai = yes }
+				dip_power = 100
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				NOT = { navalarms = 3 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 3
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				NOT = { navalarms = 4 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 4
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				NOT = { navalarms = 5 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 5
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				NOT = { navalarms = 6 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 6
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				NOT = { navalarms = 7 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 7
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				NOT = { navalarms = 8 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 8
+					}
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				NOT = { navalarms = 9 }
+				NOT = {
+					check_variable = {
+						which = navalarms_var
+						value = 9
+					}
+				}
+			}
+			is_at_war = no
+			NOT = { has_country_modifier = cooldown_navalarms }
+			full_idea_group = maritime_ideas
+			full_idea_group = naval_ideas
+			OR = {
+				innovativeness = 30
+				AND = {
+					innovativeness = 20
+					full_idea_group = innovativeness_ideas
+				}
+			}
+			NOT = { has_country_modifier = cooldown_first }
+			
+		}
+		effect = {
+			hidden_effect = {
+				add_country_modifier = {
+					name = cooldown_first
+					duration = 30
+				}
+			}
+			country_event = {
+				id = armsnaval_tradegoods.2
+				days = 1
+			}	
+			hidden_effect = {
+				if = {
+					limit = {
+						NOT = {
+							check_variable = {
+								which = navalarms_var
+								value = 1
+							}
+						}
+					}
+					set_variable = {
+						which = navalarms_var
+						value = 1
+					}
+				}	
+				else = {
+					change_variable = {
+						which = navalarms_var
+						value = 1
+					}
+				}	
+			}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

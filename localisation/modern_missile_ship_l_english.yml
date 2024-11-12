@@ -1,0 +1,40 @@
+﻿l_english:
+ modern_ship_missil.1.t:0 "Select the target ship"
+ modern_ship_missil.1.d:0 "Here we have to select the type of ship we want to target so that we can target it with our missiles.\nThe number of our §R500 km§! missiles = §G[Root.missil_50.GetValue]§! \nThe number of our §R1.000 km§! missiles = §G[Root.missil_100.GetValue]§!"
+
+ modern_ship_missil.heavyship.1:0 "Aircraft Carrier £big_ship_icon£"
+ modern_ship_missil.galley.1:0 "War Ship £galley_icon£"
+ modern_ship_missil.tradeship.1:0 "Trade Ship £light_ship_icon£"
+ modern_ship_missil.transporter.1:0 "Transport Ship £transport_icon£"
+
+ modern_ship_missil.heavy_ship.a50:0 "§Y500 km§! missile launch"
+ modern_ship_missil.heavy_ship.a100:0 "§Y1.000 km§! missile launch"
+ modern_ship_missil.heavy_ship.a150:0 "§Y1.500 km§! missile launch"
+ 
+ modern_ship_missil.galley.a50:0 "§Y500 km§! missile launch"
+ modern_ship_missil.galley.a100:0 "§Y1.000 km§! missile launch"
+ modern_ship_missil.galley.a150:0 "§Y1.500 km§! missile launch"
+
+ modern_ship_missil.light_ship.a50:0 "§Y500 km§! missile launch"
+ modern_ship_missil.light_ship.a100:0 "§Y1.000 km§! missile launch"
+ modern_ship_missil.light_ship.a150:0 "§Y1.500 km§! missile launch"
+
+ modern_ship_missil.transport.a50:0 "§Y500 km§! missile launch"
+ modern_ship_missil.transport.a100:0 "§Y1.000 km§! missile launch"
+ modern_ship_missil.transport.a150:0 "§Y1.500 km§! missile launch"
+
+ modern_ship_missil.heavy_ship.t:0 "Aircraft Carrier £big_ship_icon£"
+ modern_ship_missil.heavy_ship.d:0 "Here we can target §R[From.From.From.Owner.GetName]§! §GAircraft Carrier§!, now we need to choose the type of missile we want to do this with, our treasury is as follows :\nThe number of our §R500 km§! missiles = §G[Root.missil_50.GetValue]§! \nThe number of our §R1.000 km§! missiles = §G[Root.missil_100.GetValue]§!"
+
+ modern_ship_missil.galley.t:0 "War Ship £galley_icon£"
+ modern_ship_missil.galley.d:0 "Here we can target §R[From.From.From.Owner.GetName]§! §GWar Ship§!, now we need to choose the type of missile we want to do this with, our treasury is as follows :\nThe number of our §R500 km§! missiles = §G[Root.missil_50.GetValue]§! \nThe number of our §R1.000 km§! missiles = §G[Root.missil_100.GetValue]§!"
+
+ ##
+
+ modern_ship_missil.trade_ship.t:0 "Trade Ship £light_ship_icon£"
+ modern_ship_missil_trade_ship.d:0 "Here we can target §R[From.From.From.Owner.GetName]§! §GTrade Ship§!, now we need to choose the type of missile we want to do this with, our treasury is as follows :\nThe number of our §R500 km§! missiles = §G[Root.missil_50.GetValue]§! \nThe number of our §R1.000 km§! missiles = §G[Root.missil_100.GetValue]§!"
+
+ ##
+
+ modern_ship_missil.transport.t:0 "Transport Ship £transport_icon£"
+ modern_ship_missil.transport.d:0 "Here we can target §R[From.From.From.Owner.GetName]§! §GTransport§!, now we need to choose the type of missile we want to do this with, our treasury is as follows :\nThe number of our §R500 km§! missiles = §G[Root.missil_50.GetValue]§! \nThe number of our §R1.000 km§! missiles = §G[Root.missil_100.GetValue]§!"

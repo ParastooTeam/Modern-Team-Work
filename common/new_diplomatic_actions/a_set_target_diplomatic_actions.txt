@@ -1,0 +1,103 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+##trade_lige1 = {
+##	category = alliance
+##
+##	alert_index = 40
+##	alert_tooltip = demand_dummy_alert_tooltip
+##
+##	require_acceptance = no # Whether the recipient gets an option to decline
+##
+##	is_visible = {
+##		has_country_flag = opened_expotentional_diplomacy
+##		ai = no
+##		
+##	}
+##	is_allowed = {
+##		
+##	}
+##	on_accept = {
+##		FROM = {
+##			join_trade_league = ROOT
+##		}
+##		
+##	
+##	}
+##	on_decline = {
+##	}
+##
+##	ai_acceptance = {
+##	}
+##
+##	ai_will_do = { # this is a trigger
+##		always = no
+##	}
+##
+##
+##rade_lige2 = {
+##	category = alliance
+##
+##	alert_index = 40
+##	alert_tooltip = demand_dummy_alert_tooltip
+##
+##	require_acceptance = no # Whether the recipient gets an option to decline
+##
+##	is_visible = {
+##		has_country_flag = opened_expotentional_diplomacy
+##		ai = no
+##		
+##	}
+##	is_allowed = {
+##		
+##	}
+##	on_accept = {
+##		ROOT = {
+##			join_trade_league = FROM
+##		}
+##		
+##	
+##	}
+##	on_decline = {
+##	}
+##
+##	ai_acceptance = {
+##	}
+##
+##	ai_will_do = { # this is a trigger
+##		always = no
+##	}
+##
+##
+##rade_lige3 = {
+##	category = alliance
+##
+##	alert_index = 40
+##	alert_tooltip = demand_dummy_alert_tooltip
+##
+##	require_acceptance = no # Whether the recipient gets an option to decline
+##
+##	is_visible = {
+##		has_country_flag = opened_expotentional_diplomacy
+##		ai = no
+##		
+##	}
+##	is_allowed = {
+##		
+##	}
+##	on_accept = {
+##		USA = {
+##			join_trade_league = FR2
+##		}
+##		
+##	
+##	}
+##	on_decline = {
+##	}
+##
+##	ai_acceptance = {
+##	}
+##
+##	ai_will_do = { # this is a trigger
+##		always = no
+##	}
+##

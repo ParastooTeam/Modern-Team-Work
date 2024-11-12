@@ -1,0 +1,6235 @@
+namespace = et_nuke
+
+country_event = {
+	id = et_nuke.121
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Major City
+		name = et_nuke.1.a50
+		trigger = { 
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+		custom_tooltip = use_by_aircoft_carrier
+		country_event = {
+			id = et_nuke.50
+		}
+		
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.a100
+		trigger = {
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+		}		
+		country_event = {
+			id = et_nuke.100
+		}
+		
+	}
+	option = { #Fortification
+		name = et_nuke.1.a150
+		trigger = {
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.150
+		}
+		
+	}
+	option = { #Port
+		name = et_nuke.1.a250
+		trigger = {
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.250
+		}
+		
+	}
+	option = { #Random Province
+		name = et_nuke.1.a350
+		trigger = {
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.350
+		}
+		
+	}
+	option = { #More options
+		name = et_nuke.1.a500
+		trigger = {
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.500
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.a700
+		trigger = {
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.700
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.a1000
+		trigger = {
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.1000
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.a1500
+		trigger = {
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}country_event = {
+			id = et_nuke.1500
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		clear_global_event_target = nuke_target_country
+	}
+}
+country_event = {
+	id = et_nuke.50
+	title = et_nuke.50.t
+	desc = et_nuke.50.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					OR = {
+						sea_superregion = {
+							heavy_ships_in_province = root
+							#OR = {
+							#	controlled_by = root
+							#	controller = {
+							#		is_subject_of = root
+							#	}
+							#}
+							NOT = {
+								province_distance = {
+									who = prev
+									distance = 50
+								}
+							}
+						}
+						any_province = {
+							country_or_subject_holds = root
+							has_building = railroad
+							OR = {
+								controlled_by = root
+								controller = {
+									is_subject_of = root
+								}
+							}
+							NOT = {
+								province_distance = {
+									who = prev
+									distance = 50
+								}
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 	
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a50
+		trigger = { 
+			check_variable = {
+				which = missil_50
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_50
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+#####################################
+country_event = {
+	id = et_nuke.100
+	title = et_nuke.100.t
+	desc = et_nuke.100.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 100
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a100
+		trigger = { 
+			check_variable = {
+				which = missil_100
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_100
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+#####################################################
+country_event = {
+	id = et_nuke.150
+	title = et_nuke.150.t
+	desc = et_nuke.150.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 150
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a150
+		trigger = { 
+			check_variable = {
+				which = missil_150
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_150
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+###################################################################################
+
+country_event = {
+	id = et_nuke.250
+	title = et_nuke.250.t
+	desc = et_nuke.250.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 250
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a250
+		trigger = { 
+			check_variable = {
+				which = missil_250
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_250
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+#############################################################################
+
+country_event = {
+	id = et_nuke.350
+	title = et_nuke.350.t
+	desc = et_nuke.350.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 350
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a350
+		trigger = { 
+			check_variable = {
+				which = missil_350
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_350
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+#######################################################################################
+country_event = {
+	id = et_nuke.500
+	title = et_nuke.500.t
+	desc = et_nuke.500.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 500
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a500
+		trigger = { 
+			check_variable = {
+				which = missil_500
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_500
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+###########################################################################################
+country_event = {
+	id = et_nuke.700
+	title = et_nuke.700.t
+	desc = et_nuke.700.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 700
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a700
+		trigger = { 
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_700
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+#######################################################################################
+country_event = {
+	id = et_nuke.1000
+	title = et_nuke.1000.t
+	desc = et_nuke.1000.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 1000
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+				
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a1000
+		trigger = { 
+			check_variable = {
+				which = missil_1000
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_1000
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+#############################################################################################
+country_event = {
+	id = et_nuke.1500
+	title = et_nuke.1500.t
+	desc = et_nuke.1500.d
+	picture = MISSILE_RANGE_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = {
+					any_province = {
+						country_or_subject_holds = root
+						has_building = railroad
+						OR = {
+							controlled_by = root
+							controller = {
+								is_subject_of = root
+							}
+						}
+						NOT = {
+							province_distance = {
+								who = prev
+								distance = 1500
+							}
+						}
+					}
+					is_city = yes
+				}
+				set_province_flag = distance_city 
+					
+			}
+		}
+	}
+	option = { #Major City
+		name = et_nuke.1.a1500
+		trigger = { 
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+		}
+		add_country_modifier = {
+			name = modifire_distance_1500
+			duration = -1
+		}
+		country_event = {
+			id = et_nuke.1
+		}
+		
+	}
+	option = { #Cancel
+		name = et_nuke.1.cansel
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+					has_province_flag = distance_city
+				}
+				clr_province_flag = distance_city
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+country_event = {
+	id = et_nuke.1
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_TARGET_eventPicture
+
+	is_triggered_only = yes
+
+	immediate = {event_target:nuke_target_country = {	
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						has_province_flag = distance_city has_province_flag = cpital_modifire
+					}	
+				}
+				random_owned_province = {
+					limit = {   has_province_flag = distance_city has_province_flag = cpital_modifire }
+					save_event_target_as = capital_set
+				}
+			}
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						development = 100  has_province_flag = distance_city 
+					}
+				}
+				random_owned_province = {
+					limit = { development = 100  has_province_flag = distance_city  }
+					save_event_target_as = major_city
+				}
+			
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						development = 60  has_province_flag = distance_city 
+					}			
+				}
+				random_owned_province = {
+					limit = { development = 60  has_province_flag = distance_city  }
+					save_event_target_as = major_city
+					
+				}
+				
+				
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						development = 40  has_province_flag = distance_city 
+					}			
+				}
+				random_owned_province = {
+					limit = { development = 40  has_province_flag = distance_city  }
+					save_event_target_as = major_city
+										
+				}
+			
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						development = 20  has_province_flag = distance_city
+					}				
+				}
+				random_owned_province = {
+					limit = { development = 20  has_province_flag = distance_city  }
+					save_event_target_as = major_city
+										
+				}
+
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						development = 10  has_province_flag = distance_city
+					}				
+				}
+				random_owned_province = {
+					limit = { development = 10  has_province_flag = distance_city  }
+					save_event_target_as = major_city
+										
+				}
+
+			}
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						province_has_center_of_trade_of_level = 3  has_province_flag = distance_city
+					}
+				}
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 3 has_province_flag = distance_city  }
+					save_event_target_as = center_of_trade
+										
+				}
+
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						province_has_center_of_trade_of_level = 2  has_province_flag = distance_city
+					}
+				}
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 2 has_province_flag = distance_city  }
+					save_event_target_as = center_of_trade
+										
+				}
+
+			}
+			else_if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						province_has_center_of_trade_of_level = 1  has_province_flag = distance_city
+					}				
+				}
+				random_owned_province = {
+					limit = { province_has_center_of_trade_of_level = 1 has_province_flag = distance_city  }
+					save_event_target_as = center_of_trade
+										
+				}
+
+			}
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						fort_level = 2  has_province_flag = distance_city
+					}
+				}
+				random_owned_province = {
+					limit = { fort_level = 2 has_province_flag = distance_city  }
+					save_event_target_as = fort
+										
+				}
+
+			}
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+						has_port = yes  has_province_flag = distance_city
+					}				
+				}
+				random_owned_province = {
+					limit = { has_port = yes has_province_flag = distance_city  }
+					save_event_target_as = port 
+										
+				}
+
+			}
+			if = {
+				limit = { 
+					any_owned_province = { 
+						controlled_by = event_target:nuke_target_country has_province_flag = distance_city }
+				}
+				random_owned_province = {
+					limit = { has_province_flag = distance_city  }
+					save_event_target_as = random_province
+					
+				}
+				
+			}
+		}
+	}
+	
+	option = { #Capital
+		name = et_nuke.1.a
+		goto = capital_set
+		trigger = { has_saved_event_target = capital_set }
+		event_target:capital_set = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #Major City
+		name = et_nuke.1.b
+		goto = major_city
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		goto = center_of_trade
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		goto = fort
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		goto = port
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		goto = random_province
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.4
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { has_province_flag = distance_city }
+				clr_province_flag = distance_city
+			}
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_50
+			}
+			remove_country_modifier = modifire_distance_50
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_100
+			}
+			remove_country_modifier = modifire_distance_100
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_150
+			}
+			remove_country_modifier = modifire_distance_150
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_250
+			}
+			remove_country_modifier = modifire_distance_250
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_350
+			}
+			remove_country_modifier = modifire_distance_350
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_500
+			}
+			remove_country_modifier = modifire_distance_500
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_700
+			}
+			remove_country_modifier = modifire_distance_700
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1000
+			}
+			remove_country_modifier = modifire_distance_1000
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1500
+			}
+			remove_country_modifier = modifire_distance_1500
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+country_event = {
+	id = et_nuke.2
+	title = et_nuke.2.t
+	desc = et_nuke.2.d
+	picture = MISSILE_READY_eventPicture
+
+	is_triggered_only = yes
+
+	option = { #Push the Big Red Button
+		name = et_nuke.2.a
+		goto = nuke_target_province
+		save_global_event_target_as = event_target:attak_them
+		add_country_modifier = {
+			name = atomed
+			duration = 180
+		}
+		every_country = {
+			add_casus_belli = {
+				type = cb_atomic_attack
+				target = ROOT
+				months = 240
+			}
+		}
+		hidden_effect = {
+		if = {
+			limit = {
+				event_target:nuke_target_country = {
+					NOT = { has_country_modifier = cyber_satellite }
+					OR = {
+						AND = {	
+								check_variable = {
+									which = defense_missile_lev
+									value = 1
+								}
+							
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 2
+								}
+							}
+							
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 2
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 2
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 3
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 3
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 3
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 4
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 4
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 4
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 5
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 5
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 5
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 6
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 6
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 6
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 7
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 7
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 7
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 8
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 8
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 8
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 9
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 9
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 9
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 10
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 10
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 10
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 11
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 11
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 11
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 12
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 12
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 12
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 13
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 13
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 13
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 14
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 14
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 14
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 15
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 15
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 15
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 16
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 16
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 16
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 17
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 17
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 17
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 18
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 18
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 18
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 19
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 19
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 19
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 20
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 20
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 20
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 21
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 21
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 21
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 22
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 22
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 22
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 23
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 23
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 23
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 24
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 24
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 24
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 25
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 25
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 25
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 26
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 26
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 26
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 27
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 27
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 27
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 28
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 28
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 28
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 29
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 29
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 29
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 30
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 30
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 30
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 31
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 31
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 31
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 32
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 32
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 32
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 33
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 33
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 33
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 34
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 34
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 34
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 35
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 35
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 35
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 36
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 36
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 36
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 37
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 37
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 37
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 38
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 38
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 38
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 39
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 39
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 39
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 40
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 40
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 40
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 41
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 41
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 41
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 42
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 42
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 42
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 43
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 43
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 43
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 44
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 44
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 44
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 45
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 45
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 45
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 46
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 46
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 46
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 47
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 47
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 47
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 48
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 48
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 48
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 49
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 49
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 49
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 50
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 50
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 50
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 51
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 51
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 51
+							}
+						
+							NOT = {
+							check_variable = {
+								which = defense_missile_lev
+								value = 52
+							}
+							}
+						
+							ROOT = {
+								NOT = {
+								check_variable = {
+									which = attack_missile_lev
+									value = 52
+								}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 52
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 53
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 53
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 53
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 54
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 54
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 54
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 55
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 55
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 55
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 56
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 56
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 56
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 57
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 57
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 57
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 58
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 58
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 58
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 59
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 59
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 59
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 60
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 60
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 60
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 61
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 61
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 61
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 62
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 62
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 62
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 63
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 63
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 63
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 64
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 64
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 64
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 65
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 65
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 65
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 66
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 66
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 66
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 67
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 67
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 67
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 68
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 68
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 68
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 69
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 69
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 69
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 70
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 70
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 70
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 71
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 71
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 71
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 72
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 72
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 72
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 73
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 73
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 73
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 74
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 74
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 74
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 75
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 75
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 75
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 76
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 76
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 76
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 77
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 77
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 77
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 78
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 78
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 78
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 79
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 79
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 79
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 80
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 80
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 80
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 81
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 81
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 81
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 82
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 82
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 82
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 83
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 83
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 83
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 84
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 84
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 84
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 85
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 85
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 85
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 86
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 86
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 86
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 87
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 87
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 87
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 88
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 88
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 88
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 89
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 89
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 89
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 90
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 90
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 90
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 91
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 91
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 91
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 92
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 92
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 92
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 93
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 93
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 93
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 94
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 94
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 94
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 95
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 95
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 95
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 96
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 96
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 96
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 97
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 97
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 97
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 98
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 98
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 98
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 99
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 99
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 99
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 100
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 100
+									}
+								}
+							}
+						}
+						AND = {	
+							check_variable = {
+								which = defense_missile_lev
+								value = 100
+							}
+						
+							NOT = {
+								check_variable = {
+									which = defense_missile_lev
+									value = 101
+								}
+							}
+							ROOT = {
+								NOT = {
+									check_variable = {
+										which = attack_missile_lev
+										value = 101
+									}
+								}
+							}
+						}
+					}
+				}
+				#OR = {
+				#	event_target:nuke_target_country = { 
+				#		full_idea_group = defence_missil_research
+				#	}
+				#	event_target:nuke_target_country = {
+				#		overlord = { 
+				#			full_idea_group = defence_missil_research
+				#		}
+				#	}
+				#}
+				event_target:nuke_target_country = {
+					check_variable = {
+						which = missil_50
+						value = 1
+					}
+				}
+				event_target:nuke_target_province = {
+					has_building = highway
+				}
+			}
+			
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_50
+				}
+				change_variable = {
+					which = missil_50
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_50
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_100
+				}
+				change_variable = {
+					which = missil_100
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_100
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_150
+				}
+				change_variable = {
+					which = missil_150
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_150
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_250
+				}
+				change_variable = {
+					which = missil_250
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_250
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_350
+				}
+				change_variable = {
+					which = missil_350
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_350
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_500
+				}
+				change_variable = {
+					which = missil_500
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_500
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_700
+				}
+				change_variable = {
+					which = missil_700
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_700
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_1000
+				}
+				change_variable = {
+					which = missil_1000
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_1000
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_1500
+				}
+				change_variable = {
+					which = missil_1500
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_1500
+			}
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = -1
+			}
+			event_target:nuke_target_province = {
+				province_event = {
+					id = they_cant_set_atom.1
+				}
+			}
+			event_target:nuke_target_country = {
+				change_variable = {
+					which = missil_50
+					value = -1
+				}
+			}
+			
+		}
+		else = {
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_50
+				}
+				change_variable = {
+					which = missil_50
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_50
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_100
+				}
+				change_variable = {
+					which = missil_100
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_100
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_150
+				}
+				change_variable = {
+					which = missil_150
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_150
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_250
+				}
+				change_variable = {
+					which = missil_250
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_250
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_350
+				}
+				change_variable = {
+					which = missil_350
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_350
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_500
+				}
+				change_variable = {
+					which = missil_500
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_500
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_700
+				}
+				change_variable = {
+					which = missil_700
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_700
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_1000
+				}
+				change_variable = {
+					which = missil_1000
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_1000
+			}
+			if = {
+				limit = {
+					has_country_modifier = modifire_distance_1500
+				}
+				change_variable = {
+					which = missil_1500
+					value = -1
+				}
+				remove_country_modifier = modifire_distance_1500
+			}
+			change_variable = {
+				which = num_of_nuclear_weapons
+				value = -1
+			}
+
+			if = {
+				limit = { NOT = { has_global_flag = nukes_used } }
+				set_global_flag = nukes_used
+				add_country_modifier = {
+					name = used_nukes
+					duration = 7300
+				}
+			}
+			else_if = { 
+				limit = { has_country_modifier = used_nukes }
+
+				add_country_modifier = {
+					name = used_nukes_2
+					duration = 7300
+				}
+			}
+			else_if = { 
+				limit = { 
+					has_country_modifier = used_nukes
+					has_country_modifier = used_nukes_2
+				 }
+			 
+				add_country_modifier = {
+					name = used_nukes_3
+					duration = 7300
+				}
+			}
+			
+			event_target:nuke_target_province = {
+				province_event = {
+					id = et_nuke.3
+				}
+				owner = {
+					add_opinion = {
+						who = ROOT
+						modifier = nuked_us
+					}
+				}
+			}			
+				every_known_country = { 
+					limit = {
+						NOT = { tag = event_target:nuke_target_country }
+					}
+					add_opinion = {
+						who = ROOT
+						modifier = nuked_used
+					}
+				}
+			}
+			#if = {
+			#	limit = {
+			#		NOT = {
+			#			check_variable = {
+			#				which = attack_missile_lev
+			#				value = 5
+			#			}
+			#		}
+			#	}
+			#	add_country_modifier = {
+			#		name = atomed_root
+			#		duration = 1460
+			#	}
+			#}
+			#else_if = {
+			#	limit = {
+			#		check_variable = {
+			#			which = attack_missile_lev
+			#			value = 5
+			#		}
+			#		NOT = {
+			#			check_variable = {
+			#				which = attack_missile_lev
+			#				value = 10
+			#			}
+			#		}
+			#	}
+			#	add_country_modifier = {
+			#		name = atomed_root
+			#		duration = 1095
+			#	}
+			#}
+			#else_if = {
+			#	limit = {
+			#		check_variable = {
+			#			which = attack_missile_lev
+			#			value = 10
+			#		}
+			#		NOT = {
+			#			check_variable = {
+			#				which = attack_missile_lev
+			#				value = 15
+			#			}
+			#		}
+			#	}
+			#	add_country_modifier = {
+			#		name = atomed_root
+			#		duration = 730
+			#	}
+			#}
+			#else_if = {
+			#	limit = {
+			#		check_variable = {
+			#			which = attack_missile_lev
+			#			value = 15
+			#		}
+			#		NOT = {
+			#			check_variable = {
+			#				which = attack_missile_lev
+			#				value = 20
+			#			}
+			#		}
+			#	}
+			#	add_country_modifier = {
+			#		name = atomed_root
+			#		duration = 365
+			#	}
+			#}
+		}
+		
+	}
+		
+	option = { #Abort Mission
+		name = et_nuke.2.b
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_50
+			}
+			remove_country_modifier = modifire_distance_50
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_100
+			}
+			remove_country_modifier = modifire_distance_100
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_150
+			}
+			remove_country_modifier = modifire_distance_150
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_250
+			}
+			remove_country_modifier = modifire_distance_250
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_350
+			}
+			remove_country_modifier = modifire_distance_350
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_500
+			}
+			remove_country_modifier = modifire_distance_500
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_700
+			}
+			remove_country_modifier = modifire_distance_700
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1000
+			}
+			remove_country_modifier = modifire_distance_1000
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1500
+			}
+			remove_country_modifier = modifire_distance_1500
+		}
+		clear_global_event_target = nuke_target_province
+	}
+}
+
+province_event = {
+	id = et_nuke.3
+	title = et_nuke.3.t
+	desc = et_nuke.3.d
+	picture = NUCLEAR_BOMB_eventPicture
+	goto = ROOT
+
+	is_triggered_only = yes
+
+
+	immediate = {
+		hidden_effect = {
+			add_devastation = 100
+			#decolonize = yes
+			owner = { 
+				add_war_exhaustion = 3 
+				add_country_modifier = {
+					name = atomed_1
+					duration = 3650
+					#hidden = yes
+				}
+				
+			}
+			if = {
+				limit = {
+					OR = {
+						trade_goods = cars
+						trade_goods = electronics
+						trade_goods = arms
+						trade_goods = navalarms
+					}
+				}
+				change_trade_goods = unknown
+			}
+			if = {
+				limit = {
+					has_great_project = {
+						type = suez_canal 
+					}
+				}
+				destroy_great_project = {
+					type = suez_canal
+				}
+
+				#province_event = {
+				#	id = great_project.1 days = 10
+				#}
+			}
+			if = {
+				limit = {
+					has_great_project = {
+						type = panama_canal 
+					}
+				}
+				destroy_great_project = {
+					type = panama_canal
+				}
+				#province_event = {
+				#	id = great_project.2 days = 10
+				#}
+			}
+			if = {
+				limit = {
+					has_great_project = {
+						type = kiel_canal 
+					}
+				}
+				destroy_great_project = {
+					type = kiel_canal
+				}
+				#province_event = {
+				#	id = great_project.3 days = 10
+				#}
+			}
+			if = {
+				limit = {
+					has_great_project = {
+						type = volga_canal 
+					}
+				}
+				destroy_great_project = {
+					type = volga_canal
+				}
+				#province_event = {
+				#	id = great_project.4 days = 10
+				#}
+			}
+			if = {
+				limit = {
+					trade_goods = oil
+					development = 3
+					NOT = { development = 10 }
+				}
+				change_price = {
+					trade_goods = oil
+					key = ATOM_ON_OIL
+					value = 0.02
+					duration = 425
+				}
+			}
+			else_if = {
+				limit = {
+					trade_goods = oil
+					development = 10
+					NOT = { development = 20 }
+				}
+				change_price = {
+					trade_goods = oil
+					key = ATOM_ON_OIL
+					value = 0.04
+					duration = 425
+				}
+			}
+			else_if = {
+				limit = {
+					trade_goods = oil
+					development = 20
+					NOT = { development = 40 }
+				}
+				change_price = {
+					trade_goods = oil
+					key = ATOM_ON_OIL
+					value = 0.08
+					duration = 425
+				}
+			}
+			else_if = {
+				limit = {
+					trade_goods = oil
+					development = 40
+					NOT = { development = 60 }
+				}
+				change_price = {
+					trade_goods = oil
+					key = ATOM_ON_OIL
+					value = 0.16
+					duration = 425
+				}
+			}
+			save_event_target_as = nuked_this_province
+			owner = {
+				hidden_effect = {
+					every_known_country = { 
+						limit = { 
+							ai = no 
+							NOT = { tag = event_target:us_nuke }
+						}
+						country_event = { id = everyone_nuke.1 }
+					}
+					every_known_country = { 
+						limit = {
+							NOT = { has_country_flag = access_to_atom_5 }
+							NOT = { has_country_flag = access_to_atom_6 }
+						}
+						add_opinion = {
+							who = ROOT
+							modifier = nuked_used_us
+						}
+					}
+					random_country = {
+						limit = {
+							OR = {
+								has_country_flag = access_to_atom_5
+								has_country_flag = access_to_atom_6
+							}
+						}
+						save_event_target_as = attak_them
+					}
+				}
+			}
+			if = { 
+				limit = {
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x1
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x2
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x3
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x4
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 10
+				}
+				else_if = {
+					limit = { base_tax = 15 }
+					set_base_tax = 7
+				}
+				else_if = {
+					limit = { base_tax = 10 }
+					set_base_tax = 3
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 10
+				}
+				else_if = {
+					limit = { base_production = 15 }
+					set_base_production = 7
+				}
+				else_if = {
+					limit = { base_production = 10 }
+					set_base_production = 3
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 10
+				}
+				else_if = {
+					limit = { base_manpower = 15 }
+					set_base_manpower = 7
+				}
+				else_if = {
+					limit = { base_manpower = 10 }
+					set_base_manpower = 3
+				}
+				else = { set_base_manpower = 1 }
+				add_province_modifier = {
+					name = province_nuked
+					duration = 365
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x1
+							value = 1
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x2
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x3
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x4
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 7
+				}
+				else_if = {
+					limit = { base_tax = 15 }
+					set_base_tax = 3
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 7
+				}
+				else_if = {
+					limit = { base_production = 15 }
+					set_base_production = 3
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 7
+				}
+				else_if = {
+					limit = { base_manpower = 15 }
+					set_base_manpower = 3
+				}
+				else = { set_base_manpower = 1 }
+				add_province_modifier = {
+					name = province_nuked
+					duration = 730
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x2
+							value = 1
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x3
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x4
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 3
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 3
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 3
+				}
+				else = { set_base_manpower = 1 }
+				add_province_modifier = {
+					name = province_nuked
+					duration = 1095
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x3
+							value = 1
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x4
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 1
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 1
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 1
+				}
+				else = { set_base_manpower = 1 }
+				decolonize = yes
+				every_neighbor_province = {
+					limit = {
+						NOT = { is_sea = yes }
+					}
+					kill_units = {
+						who = PREV
+						amount = 1
+					}
+					add_base_tax = -5
+					add_base_production = -5
+					add_base_manpower = -5
+					add_devastation = 10
+					add_province_modifier = {
+						name = province_nuked_1
+						duration = 365
+					}
+				}
+
+				add_province_modifier = {
+					name = province_nuked
+					duration = 1825
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x4
+							value = 1
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 1
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 1
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 1
+				}
+				else = { set_base_manpower = 1 }
+				decolonize = yes
+				every_neighbor_province = {
+					limit = {
+						NOT = { is_sea = yes }
+					}
+					kill_units = {
+						who = PREV
+						amount = 5
+					}
+					add_base_tax = -10
+					add_base_production = -10
+					add_base_manpower = -10
+					add_devastation = 30
+					add_province_modifier = {
+						name = province_nuked_1
+						duration = 720
+					}
+				}
+				every_neighbor_province = {
+					limit = {
+						is_sea = yes
+					}
+					kill_units = {
+						who = PREV
+						amount = 10
+					}
+					remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+				}
+				add_province_modifier = {
+					name = province_nuked
+					duration = 3650
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x5
+							value = 1
+						}
+					}
+					NOT = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 1
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 1
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 1
+				}
+				else = { set_base_manpower = 1 }
+				decolonize = yes
+				every_neighbor_province = {
+					limit = {
+						NOT = { is_sea = yes }
+					}
+					kill_units = {
+						who = PREV
+						amount = 30
+					}
+					set_base_tax = 1
+					set_base_production = 1
+					set_base_manpower = 1
+					
+					add_devastation = 100
+					add_province_modifier = {
+						name = province_nuked_1
+						duration = 1000
+					}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+				}
+				every_neighbor_province = {
+					limit = {
+						is_sea = yes
+					}
+					kill_units = {
+						who = PREV
+						amount = 30
+					}
+				}
+				add_province_modifier = {
+					name = province_nuked
+					duration = 7300
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			if = { 
+				limit = {
+					FROM = {
+						check_variable = {
+							which = hidrogen_x6
+							value = 1
+						}
+					}
+				}
+				if = {
+					limit = { base_tax = 20 }
+					set_base_tax = 1
+				}
+				else = { set_base_tax = 1 }
+				if = {
+					limit = { base_production = 20 }
+					set_base_production = 1
+				}
+				else = { set_base_production = 1 }
+				if = {
+					limit = { base_manpower = 20 }
+					set_base_manpower = 1
+				}
+				else = { set_base_manpower = 1 }
+				decolonize = yes
+				every_neighbor_province = {
+					limit = {
+						NOT = { is_sea = yes }
+					}
+					kill_units = {
+						who = PREV
+						amount = 50
+					}
+					set_base_tax = 1
+					set_base_production = 1
+					set_base_manpower = 1
+					decolonize = yes
+					add_devastation = 100
+					add_province_modifier = {
+						name = province_nuked_1
+						duration = 1825
+					}
+					remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+				}
+				every_neighbor_province = {
+					limit = {
+						is_sea = yes
+					}
+					kill_units = {
+						who = PREV
+						amount = 50
+					}
+				}
+				if = { 
+					limit = { 
+						NOT = { trade_goods = oil }
+						NOT = { trade_goods = coal }
+						NOT = { trade_goods = uranium }
+						NOT = { trade_goods = aluminum }
+						NOT = { trade_goods = titanium }
+					}
+					change_trade_goods = antiquities
+				}
+				add_province_modifier = {
+					name = province_nuked
+					duration = 9125
+				}
+				add_province_modifier = {
+					name = province_nuked_1
+					duration = 3650
+				}
+				remove_building = storehouse
+				remove_building = windmill
+				remove_building = workshop
+				remove_building = counting_house
+				remove_building = factory
+				remove_building = coal_plant
+				remove_building = nuclear_plant
+				remove_building = fusion_reactor
+				remove_building = coastal_defence
+				remove_building = naval_battery
+				remove_building = marketplace
+				remove_building = trade_post
+				remove_building = trade_depot
+				remove_building = treasury_office
+				remove_building = stock_exchange
+				remove_building = constable
+				remove_building = tax_assessor
+				remove_building = courthouse
+				remove_building = town_hall
+				remove_building = armory
+				remove_building = barracks
+				remove_building = training_fields
+				remove_building = regimental_camp
+				remove_building = conscription_center
+				remove_building = dock
+				remove_building = drydock
+				remove_building = naval_arsenal
+				remove_building = shipyard
+				remove_building = grand_shipyard
+				remove_building = naval_base
+				remove_building = university
+				remove_building = fort_et
+				remove_building = fort_15th
+				remove_building = fort_16th
+				remove_building = fort_17th
+				remove_building = fort_18th
+				remove_building = road
+				remove_building = highway
+				remove_building = railroad
+				remove_building = mass_transit_system
+				remove_building = glorious_monument
+				remove_building = temple
+				remove_building = cathedral
+				remove_building = manufactory
+				remove_building = wharf
+				remove_building = weapons
+				remove_building = textile
+				remove_building = plantations
+				remove_building = tradecompany
+				remove_building = farm_estate
+				remove_building = mills
+				remove_building = furnace
+				remove_building = ramparts
+				remove_building = soldier_households
+				remove_building = impressment_offices
+				remove_building = state_house
+				cancel_construction = yes
+			}
+			every_country = {
+				limit = {
+					exists = yes
+				}
+				ROOT = {
+					if = { 
+						limit = {
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x1
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x2
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x3
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x4
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x5
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 10
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x1
+									value = 1
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x2
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x3
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x4
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x5
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 20
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x2
+									value = 1
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x3
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x4
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x5
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 30
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x3
+									value = 1
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x4
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x5
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+
+						kill_units = {
+							who = PREV
+							amount = 40
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x4
+									value = 1
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x5
+										value = 1
+									}
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 50
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+							NOT = {
+								FROM = {
+									check_variable = {
+										which = hidrogen_x6
+										value = 1
+									}
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 60
+						}
+					}
+					if = { 
+						limit = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+						kill_units = {
+							who = PREV
+							amount = 75
+						}
+					}
+				}
+			}
+			if = {
+				limit = {
+					OR = {
+						controlled_by = REB
+						controlled_by = event_target:nuke_target_country
+					}
+				}
+				if = { 
+					limit = {
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x1
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x2
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x3
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x4
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 10
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x1
+								value = 1
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x2
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x3
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x4
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 20
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x2
+								value = 1
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x3
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x4
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 30
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x3
+								value = 1
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x4
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+
+					kill_units = {
+						who = PREV
+						amount = 40
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x4
+								value = 1
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x5
+									value = 1
+								}
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 50
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x5
+								value = 1
+							}
+						}
+						NOT = {
+							FROM = {
+								check_variable = {
+									which = hidrogen_x6
+									value = 1
+								}
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 60
+					}
+				}
+				if = { 
+					limit = {
+						FROM = {
+							check_variable = {
+								which = hidrogen_x6
+								value = 1
+							}
+						}
+					}
+					kill_units = {
+						who = PREV
+						amount = 75
+					}
+				}	
+			}
+		}
+	}		
+
+	
+	option = { #
+		name = et_nuke.3.a
+		if = {
+			limit = {
+				any_country = {
+					OR = {
+						has_country_flag = attack_us
+						has_country_flag = access_to_atom_5
+						has_country_flag = access_to_atom_6
+					}
+				}
+			}
+			owner = { 
+				country_event = {
+					id = everyone_nuke.2 days = 1
+				} 
+			}
+		}
+	}	
+}
+country_event = {
+	id = et_nuke.4
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_TARGET_eventPicture
+
+	is_triggered_only = yes
+
+	
+	immediate = {
+    	event_target:nuke_target_country = {
+        
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 100  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+                    
+            }
+            random_owned_province = {
+                limit = { development = 100  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target
+            }
+        
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 60  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }			
+            }
+            random_owned_province = {
+                limit = { development = 60  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target
+            }
+            
+            
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 40  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }			
+            }
+            random_owned_province = {
+                limit = { development = 40  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+        
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 20  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { development = 20  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 10  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { development = 10  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 3  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 3 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 2  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 2 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 1  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 1 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    fort_level = 2  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { fort_level = 2 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = fort
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    has_port = yes  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { has_port = yes has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = port 
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+            }
+            random_owned_province = {
+                limit = { has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = random_province
+                set_province_flag = nuke_target
+            }
+            
+        }
+    }
+	}
+	option = { #Major City
+		name = et_nuke.1.b
+		goto = major_city
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		goto = center_of_trade
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		goto = fort
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		goto = port
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		goto = random_province
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.5
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_50
+			}
+			remove_country_modifier = modifire_distance_50
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_100
+			}
+			remove_country_modifier = modifire_distance_100
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_150
+			}
+			remove_country_modifier = modifire_distance_150
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_250
+			}
+			remove_country_modifier = modifire_distance_250
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_350
+			}
+			remove_country_modifier = modifire_distance_350
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_500
+			}
+			remove_country_modifier = modifire_distance_500
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_700
+			}
+			remove_country_modifier = modifire_distance_700
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1000
+			}
+			remove_country_modifier = modifire_distance_1000
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1500
+			}
+			remove_country_modifier = modifire_distance_1500
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}
+
+country_event = {
+	id = et_nuke.5
+	title = et_nuke.1.t
+	desc = et_nuke.1.d
+	picture = NUCLEAR_TARGET_eventPicture
+
+	is_triggered_only = yes
+
+	
+	immediate = {
+		event_target:nuke_target_country = {
+        
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 100  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+                    
+            }
+            random_owned_province = {
+                limit = { development = 100  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target
+            }
+        
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 60  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }			
+            }
+            random_owned_province = {
+                limit = { development = 60  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target
+            }
+            
+            
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 40  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }			
+            }
+            random_owned_province = {
+                limit = { development = 40  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+        
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 20  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { development = 20  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    development = 10  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { development = 10  has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = major_city
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 3  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 3 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 2  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 2 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        else_if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    province_has_center_of_trade_of_level = 1  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { province_has_center_of_trade_of_level = 1 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = center_of_trade
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    fort_level = 2  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }
+            }
+            random_owned_province = {
+                limit = { fort_level = 2 has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = fort
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country
+                    has_port = yes  has_province_flag = distance_city NOT = { has_province_flag = nuke_target }
+                }				
+            }
+            random_owned_province = {
+                limit = { has_port = yes has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = port 
+                set_province_flag = nuke_target					
+            }
+
+        }
+        if = {
+            limit = { 
+                any_owned_province = { 
+						controlled_by = event_target:nuke_target_country has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+            }
+            random_owned_province = {
+                limit = { has_province_flag = distance_city NOT = { has_province_flag = nuke_target } }
+                save_event_target_as = random_province
+                set_province_flag = nuke_target
+            }
+            
+        }
+    }
+ }
+	option = { #Major City
+		name = et_nuke.1.b
+		goto = major_city
+		trigger = { has_saved_event_target = major_city }
+		event_target:major_city = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Center of Trade
+		name = et_nuke.1.c
+		goto = center_of_trade
+		trigger = { has_saved_event_target = center_of_trade }
+		event_target:center_of_trade = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Fortification
+		name = et_nuke.1.dd
+		goto = fort
+		trigger = { has_saved_event_target = fort }
+		event_target:fort = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Port
+		name = et_nuke.1.e
+		goto = port
+		trigger = { has_saved_event_target = port }
+		event_target:port = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #Random Province
+		name = et_nuke.1.f
+		goto = random_province
+		trigger = { has_saved_event_target = random_province }
+		event_target:random_province = {
+			custom_tooltip = SET_AS_NUKE_TARGET
+			save_event_target_as = nuke_target_province
+		}
+		country_event = {
+			id = et_nuke.2
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		
+	}
+	option = { #More options
+		name = et_nuke.1.g
+		country_event = {
+			id = et_nuke.4
+		}
+	}
+	option = { #Cancel
+		name = et_nuke.1.h
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_50
+			}
+			remove_country_modifier = modifire_distance_50
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_100
+			}
+			remove_country_modifier = modifire_distance_100
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_150
+			}
+			remove_country_modifier = modifire_distance_150
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_250
+			}
+			remove_country_modifier = modifire_distance_250
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_350
+			}
+			remove_country_modifier = modifire_distance_350
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_500
+			}
+			remove_country_modifier = modifire_distance_500
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_700
+			}
+			remove_country_modifier = modifire_distance_700
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1000
+			}
+			remove_country_modifier = modifire_distance_1000
+		}
+		if = {
+			limit = {
+				has_country_modifier = modifire_distance_1500
+			}
+			remove_country_modifier = modifire_distance_1500
+		}
+		event_target:nuke_target_country = {
+			every_owned_province = {
+				limit = { 
+                    OR = {
+                        has_province_flag = distance_city 
+                        has_province_flag = nuke_target
+                    }
+                }
+				clr_province_flag = distance_city
+                clr_province_flag = nuke_target
+			}
+		}
+		clear_global_event_target = nuke_target_country
+	}
+}

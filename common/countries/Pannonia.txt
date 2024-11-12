@@ -1,0 +1,54 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 92  42  92 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+	hungarian_hussar
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Pribina #0" = 30
+	"Kotsel #0" = 30
+	"Braslav #0" = 30
+	"Muncimir #0" = 20
+	"Mojmir #0" = 20
+	"Rastislav #0" = 20
+	"Slavomir #0" = 20
+	"Slatopluk #0" = 20
+	"Predslav #0" = 20
+}
+
+leader_names = {
+        Blatno Panonske Ratpot Zalavar Nitrava
+}
+
+ship_names = {
+	Blatnograd Zala Ptuj Dudlebia Etgar Drava Tisa Syrmia
+}
+
+
+

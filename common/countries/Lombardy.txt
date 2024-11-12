@@ -1,0 +1,84 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 166  108  146 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	italian_condotta
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Alboin #0" = 20
+	"Gisulf #0" = 20
+	"Autari #0" = 20
+	"Agilulf #0" = 20
+	"Theudelinda #0" = -20
+	"Arioald #0" = 20
+	"Rotari #0" = 20
+	"Adaloald #0" = 20
+	"Aripert #0" = 15
+	"Grimoald #0" = 10
+	"Romuald #0" = 10
+	"Garibald #0" = 10
+	"Cunipert #0" = 10
+	"Raginpert #0" = 10
+	"Liutpert #0" = 10
+	"Ansprand #0" = 5
+	"Liutprand #0" = 5
+	"Hildeprand #0" = 5
+	"Aistulf #0" = 5
+	"Adalgis #0" = 5
+	"Godepert #0" = 0
+	"Perctarit #0" = 0
+	"Faroald #0" = 0
+	
+	"Rodelinda #0" = -1
+	"Chlothsind #0" = -1
+	"Rosamund #0" = -1
+	"Theodelinda #0" = -1
+	"Gundeberga #0" = -1
+	"Theodarada #0" = -1
+	"Aurona #0" = -1
+}
+
+leader_names = {
+        Hunding Langobard Pemmo Alahis Alagis Aimone Euin Zaban Vallari Ratchis
+}
+
+ship_names = {
+	Alliata "Ariberto d'Intimiano" Ansperto "Azzone Visconti"
+	Celentano "come Angilberto" Como "Corrado II" Cremona
+	"Filippo Maria" "Fiumi Lambro" "Fiumi l'Olona" "Fiume Seveso" "Francesco Sforza"
+	"Gian Galeazzo Visconti"
+	Lecco Lodi Lombardia
+	Pavia
+	"Re Alboino"
+	"San Babila" "San Bernardino alle Ossa" "San Cristoforo sul Naviglio" "San Giovanni in Conca" "San Gottardo" "San Lorenzo" "San Marco" "San Nazaro Maggiore" "San Simpliciano" "San Satiro" "Santa Maria dei Miracoli" Sant'Agostino Sant'Ambrogio Sant'Eustorgio "Santo Stefano" Sondrio
+	Terragni Teodolinda Torriani
+	Valperto Varese Virgilio
+}
+
+
+

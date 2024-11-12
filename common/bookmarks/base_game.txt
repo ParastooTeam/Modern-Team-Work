@@ -1,0 +1,17 @@
+
+#bookmark = {
+#	name = "BASE_GAME_NAME"
+#	desc = "BASE_GAME_DESC"
+#	date = 2022.2.22
+#
+#	country = IRA
+#	country = SAU
+#	country = JAP
+#	country = GBR
+#	country = FR2
+#	country = GER
+#	country = ITA
+#	country = USA
+#	country = RUS
+#	country = CHN
+#}

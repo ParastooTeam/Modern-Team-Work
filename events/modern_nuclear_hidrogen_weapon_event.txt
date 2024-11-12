@@ -1,0 +1,463 @@
+namespace = hidrogen
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.1
+	title = "hidrogen.1title"
+	desc = "hidrogen.1desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x1
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x1
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x1
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x1
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"		
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.2 }
+		}
+		add_mil_power = -50
+		add_prestige = 5
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+			add_mil_power = -150
+			add_prestige = 15
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.2
+	title = "hidrogen.2title"
+	desc = "hidrogen.2desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+
+
+###############################################  X2 ##########################################
+
+
+#hidrogen Point admin power X2
+country_event = {
+	id = hidrogen.3
+	title = "hidrogen.3title"
+	desc = "hidrogen.3desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x2
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x2
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x2
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x2
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"
+		add_mil_power = -100
+		add_prestige = 10
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.4 }
+		}
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+		
+			add_mil_power = -200
+			add_prestige = 20
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.4
+	title = "hidrogen.4title"
+	desc = "hidrogen.4desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+
+###############################################  X3 ##########################################
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.5
+	title = "hidrogen.5title"
+	desc = "hidrogen.5desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x3
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x3
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x3
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x3
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"
+		add_mil_power = -150
+		add_prestige = 15
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.6 }
+		}
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+		
+			add_mil_power = -300
+			add_prestige = 30
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.6
+	title = "hidrogen.6title"
+	desc = "hidrogen.6desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+
+
+###############################################  X4 ##########################################
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.7
+	title = "hidrogen.7title"
+	desc = "hidrogen.7desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x4
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x4
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x4
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x4
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"
+		add_mil_power = -200
+		add_prestige = 20
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.8 }
+		}
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+		
+			add_mil_power = -400
+			add_prestige = 40
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.8
+	title = "hidrogen.8title"
+	desc = "hidrogen.8desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+
+###############################################  X5 ##########################################
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.9
+	title = "hidrogen.9title"
+	desc = "hidrogen.9desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x5
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x5
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x5
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x5
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"
+		add_mil_power = -250
+		add_prestige = 25
+		
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.10 }
+		}
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+		
+			add_mil_power = -500
+			add_prestige = 50
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.10
+	title = "hidrogen.10title"
+	desc = "hidrogen.10desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+
+
+###############################################  X6 ##########################################
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.11
+	title = "hidrogen.11title"
+	desc = "hidrogen.11desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	immediate = {
+		hidden_effect = {
+			if = { 
+				limit = { 
+					NOT = {
+						check_variable = {
+							which = hidrogen_x6
+							value = 1
+						}
+					}
+				}
+				set_variable = {
+					which = hidrogen_x6
+					value = 1
+				}
+			}
+			if = { 
+				limit = { 
+					check_variable = {
+						which = hidrogen_x6
+						value = 1
+					}
+				}
+				change_variable = {
+					which = hidrogen_x6
+					value = 1
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = "hidrogen.2opt"
+		add_mil_power = -300
+		add_prestige = 30
+		
+		every_known_country = { 
+			limit = { ai = no }
+				country_event = { id = hidrogen.12 }
+		}
+		
+	}
+	
+	option = {
+		name = "hidrogen.1opt"
+		
+			add_mil_power = -600
+			add_prestige = 60
+	}
+	
+}
+
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.12
+	title = "hidrogen.12title"
+	desc = "hidrogen.12desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.3opt"
+	}
+}
+############################################### All Country #########################
+#hidrogen Point admin power X1
+country_event = {
+	id = hidrogen.13
+	title = "hidrogen.13title"
+	desc = "hidrogen.13desc"
+	picture = hidrogen_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "hidrogen.4opt"
+	}
+}

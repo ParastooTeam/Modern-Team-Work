@@ -1,0 +1,179 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+allow_them = {
+	category = access
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		FROM = { NOT = { has_country_flag = allow_war_military_base } }
+		ai = no
+		FROM = { is_subject_of = ROOT }
+	}
+	is_allowed = {
+		dip_power = 50 
+	}
+	on_accept = {
+		FROM = { set_country_flag = allow_war_military_base }	
+		add_dip_power = -50 
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+    
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+stop_them = {
+	category = access
+	alert_index = 40
+	alert_tooltip = demand_dummy_alert_tooltip
+	require_acceptance = no # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		FROM = { has_country_flag = allow_war_military_base }
+		ai = no
+		FROM = { is_subject_of = ROOT }
+	}
+	is_allowed = {
+		dip_power = 50 
+	}
+	on_accept = {
+		FROM = { clr_country_flag = allow_war_military_base }	
+		add_dip_power = -50 
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+ask_allow_us = {
+	category = access
+	alert_index = 37  
+	alert_tooltip = ACCESS_ATTACK
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ROOT = { NOT = { has_country_flag = allow_war_military_base } }
+		ai = no
+		FROM = { overlord_of = ROOT }
+	}
+	is_allowed = {
+		dip_power = 50 
+	}
+	on_accept = {
+		ROOT = { set_country_flag = allow_war_military_base }	
+		add_dip_power = -50 
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+    
+       add_entry = {
+           name = BASE_EMMBASY
+           limit = { always = yes }
+           export_to_variable = {
+               variable_name = ai_value 
+               value = 30
+           }
+           multiply_variable = { which = ai_value value = -1 }
+       }
+       
+       add_entry = {
+               name = RIVAL_WITH
+               limit = { FROM = { is_rival = ROOT } }
+               export_to_variable = {
+                   variable_name = ai_value 
+                   value = 100
+               }
+               multiply_variable = { which = ai_value value = -1 }
+       }
+       
+       add_entry = {
+           name = FRIENDLY_ATTITUDE
+           limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+               export_to_variable = {
+                   variable_name = ai_value 
+                   value = 15
+               }
+    
+       }
+       
+       add_entry = {
+           name = NEUTRAL_ATTITUDE
+           limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+           export_to_variable = {
+               variable_name = ai_value 
+               value = 10
+           }
+    
+       }
+       add_entry = {
+           name = ALLY_WITH
+           limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+           export_to_variable = {
+               variable_name = ai_value 
+               value = 25
+           }
+    
+       }
+       add_entry = {
+           name = ALLY_WITH
+           limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+           export_to_variable = {
+               variable_name = ai_value 
+               value = 25
+           }
+    
+       }
+       
+       add_entry = {
+           name = WE_HAVE_GOOD_OPINON
+           limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+           export_to_variable = {
+                   variable_name = ai_value 
+                   value = 15
+           }
+    
+       }
+       add_entry = {
+               name = OPINION
+               export_to_variable = {
+                   variable_name = ai_value
+                   value = opinion
+                   who = FROM
+                   with = THIS
+               }
+               divide_variable = { which = ai_value value = 5 }
+           }
+       
+       add_entry = {
+               name = ALLY_WITH
+               limit = { FROM = { alliance_with = ROOT } } 
+               export_to_variable = {
+                   variable_name = ai_value 
+                   value = 15
+               }
+       
+       }
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+

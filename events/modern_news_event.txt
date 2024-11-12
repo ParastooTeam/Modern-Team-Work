@@ -1,0 +1,128 @@
+namespace = news
+
+#news Point admin power X1
+country_event = {
+	id = news.1
+	title = "news.1title"
+	desc = "news.1desc"
+	picture = send_aid_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}
+
+
+
+#news Point diplo power 
+country_event = {
+	id = news.2
+	title = "news.2title"
+	desc = "news.2desc"
+	picture = send_aid_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}
+
+
+			
+#news Point diplo power 
+country_event = {
+	id = news.3
+	title = "news.3title"
+	desc = "news.3desc"
+	picture = send_aid_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"	
+	}
+}
+
+#news Point admin power X1
+country_event = {
+	id = news.4
+	title = "news.4title"
+	desc = "news.4desc"
+	picture = send_manpower_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}
+
+#news Point diplo power 
+country_event = {
+	id = news.5
+	title = "news.5title"
+	desc = "news.5desc"
+	picture = send_money_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"	
+	}
+}
+
+#news Point diplo power 
+country_event = {
+	id = news.6
+	title = "news.6title"
+	desc = "news.6desc"
+	picture = send_aid_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}
+
+
+country_event = {
+	id = news.7
+	title = "news.7title"
+	desc = "news.7desc"
+	picture = non_hidrogen_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"	
+	}
+}
+
+country_event = {
+	id = news.8
+	title = "news.8title"
+	desc = "news.8desc"
+	picture = non_hidrogen_bombs_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}
+country_event = {
+	id = news.9
+	title = "news.9title"
+	desc = "news.9desc"
+	picture = sailors_modern_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "news.4opt"
+	}
+}

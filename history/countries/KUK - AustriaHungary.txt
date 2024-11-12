@@ -1,0 +1,6 @@
+government = monarchy
+mercantilism = 1
+primary_culture = austrian
+religion = secularism
+technology_group = western
+capital = 134	# Wien

@@ -1,0 +1,47 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 102  72  42 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Bayan #0" = 20
+	"Kubrat #0" = 20
+	"Batbayan #0" = 20
+	"Kuber #0" = 20
+	"Asparuh #0" = 20
+	"Altsek #0" = 20
+	"Kotrag #0" = 20
+	"Organa #0" = 20
+	"Bulan #0" = 20
+	"Obadiah #0" = 20
+}
+
+leader_names = { 
+	Butilin Leuthari Haming Lantachar Magnachar Vaefar Theodefrid 
+	Leutfred Uncilin Gunzo Gotfrid Willehari Lantfrid 
+	Theudebald Martel Oppas Tulga Ardo
+}
+
+ship_names = {
+	Ariadne Habicht Adler Albatross Amazone
+	Arcona Basilisk Beowulf Biene Wespe Wolf
+	Nautilus Natter Otter Pelikan Pfeil Meteor
+	Möwe Mücke Luchs König Kaiser Eber Drache
+	Falke Frauenlob Freya Fuchs Gazelle Geier
+	Greif Condor Cormoran Comet Wacht Tiger
+	Seeadler Jaguar Hyäne Blitz Bremse Brummer
+	Bussard Vulkan
+}
+

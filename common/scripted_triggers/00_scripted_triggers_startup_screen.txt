@@ -1,0 +1,33 @@
+#These tags use the plural form of their names
+tag_with_plural_name_trigger = {
+	OR = {
+		tag = IRA
+		tag = USA
+		tag = RUS
+		tag = SAU
+		tag = PAK
+		tag = INI
+		tag = CHN
+		tag = FR2
+		tag = GER
+		tag = BRZ
+		tag = MEX
+		tag = TKY
+		tag = INI
+		tag = GBR
+		tag = SPA
+		tag = AUS
+		tag = ALG
+		tag = RSA
+		tag = THL
+		tag = VTN
+		tag = JAP
+		tag = NOK
+		tag = SKO
+		tag = LAP
+		tag = CAN
+		tag = ITA
+		tag = POL
+		tag = NOR
+	}
+}

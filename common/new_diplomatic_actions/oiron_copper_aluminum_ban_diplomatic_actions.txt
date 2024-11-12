@@ -1,0 +1,557 @@
+	iron_ban_action =  {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			has_country_flag = opened_sanction_diplomacy
+			OR = {
+				production_leader = { trade_goods = iron }
+				production_leader = { trade_goods = gold }
+			}
+			
+			FROM = { iron = 1 }
+			NOT = { FROM = { has_country_modifier = iron_ban_modifire_from_100 } }
+		}
+		
+		is_allowed = {	
+			custom_trigger_tooltip = {
+				tooltip = trade_war_secuess
+				FROM = { NOT = { has_country_modifier = cant_sanction_them } }
+			}	
+			adm_power = 120
+			mil_power = 120
+			is_great_power = yes
+			if = { 
+				limit = {  
+					ai = yes
+				}
+				FROM = {
+					is_at_war = yes
+				}
+				OR = {
+					any_subject_country = {
+						is_subject_of = ROOT 
+						war_with = FROM
+					}
+					any_ally = {
+						war_with = FROM 
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_has_truce
+				NOT = { FROM = { truce_with = ROOT } }
+				NOT = { ROOT = { truce_with = FROM } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = iron_trader
+				NOT = { 
+					FROM = { 
+						trading_bonus = {
+							trade_goods = iron
+							value = yes
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = iron_prodocer_leader
+				NOT = { FROM = { production_leader = { trade_goods = iron } } }
+			}
+			
+			OR = {
+				AND = {
+					ROOT = { production_leader = { trade_goods = gold } }
+					#ROOT = { hegemon_strength = 50 }
+				}
+				AND = {
+					production_leader = { trade_goods = iron }
+					NOT = { inflation = 5 }
+				}
+			}
+			if = {
+				limit = { 
+					ai = yes 
+					FROM = { is_subject_of = ROOT }
+				}
+				OR = {
+					NOT = { FROM = { has_opinion = { who = ROOT value = -125 }	} }
+					NOT = {ROOT = { has_opinion = { who = FROM value = -125 }	}	}
+				}
+			}			
+			NOT = {
+				FROM = { 
+					production_leader = { trade_goods = gold }
+				}
+			}
+		}
+		
+		on_accept = {
+			
+			country_event = { id = iron_sanction.1x }
+			
+			FROM = { save_global_event_target_as = iron_embargo_temp }
+		}
+
+		ai_will_do = { 
+			OR = {
+				NOT = { FROM = { has_opinion = { who = ROOT value = -50 }	} }
+				NOT = {ROOT = { has_opinion = { who = FROM value = -50 }	}	}
+				}
+		}
+
+	}
+
+	revoke_iron_ban_action = {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			ai = no
+			FROM = { 
+				OR = {
+					AND = {
+						production_leader = { trade_goods = iron }
+						FROM = { has_country_modifier = iron_ban_modifire_from_100 }
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = iron_ban_opinion
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = iron_ban_opinion_50
+					}
+				}
+			}
+		}
+		
+		is_allowed = {	
+			
+		}
+		
+		on_accept = {
+			
+			FROM = {
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = iron_ban_opinion
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = iron_ban_50
+						}
+						remove_province_modifier = iron_ban_50
+					}
+					remove_opinion = {
+						who = ROOT
+						modifier = iron_ban_opinion
+					}
+				}
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = iron_ban_opinion_50
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = iron_ban_100
+						}
+						remove_province_modifier = iron_ban_100
+					}
+					remove_country_modifier = iron_ban_modifire_from_100
+					remove_opinion = {
+						who = ROOT
+						modifier = iron_ban_opinion_50
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			
+		}
+	}
+	
+	
+	aluminum_ban_action =  {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			OR = {
+				production_leader = { trade_goods = aluminum }
+				production_leader = { trade_goods = gold }
+			}
+			has_country_flag = opened_sanction_diplomacy
+			FROM = { aluminum = 1 }
+			NOT = { FROM = { has_country_modifier = aluminum_ban_modifire_from_100 } }
+		}
+		
+		is_allowed = {	
+			custom_trigger_tooltip = {
+				tooltip = trade_war_secuess
+				FROM = { NOT = { has_country_modifier = cant_sanction_them } }
+			}		
+			adm_power = 120
+			mil_power = 120
+			is_great_power = yes
+			if = { 
+				limit = {  
+					ai = yes
+				}
+				FROM = {
+					is_at_war = yes
+				}
+				OR = {
+					any_subject_country = {
+						is_subject_of = ROOT 
+						war_with = FROM
+					}
+					any_ally = {
+						war_with = FROM 
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_has_truce
+				NOT = { FROM = { truce_with = ROOT } }
+				NOT = { ROOT = { truce_with = FROM } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = aluminum_trader
+				NOT = { 
+					FROM = { 
+						trading_bonus = {
+							trade_goods = aluminum
+							value = yes
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = aluminum_prodocer_leader
+				NOT = { FROM = { production_leader = { trade_goods = aluminum } } }
+			}
+			
+			OR = {
+				AND = {
+					ROOT = { production_leader = { trade_goods = gold } }
+					#ROOT = { hegemon_strength = 50 }
+				}
+				AND = {
+					production_leader = { trade_goods = aluminum }
+					NOT = { inflation = 5 }					
+				}
+			}
+			if = {
+				limit = { 
+					ai = yes 
+					FROM = { is_subject_of = ROOT }
+				}
+				OR = {
+					NOT = { FROM = { has_opinion = { who = ROOT value = -125 }	} }
+					NOT = {ROOT = { has_opinion = { who = FROM value = -125 }	}	}
+				}
+			}			
+			NOT = {
+				FROM = { 
+					production_leader = { trade_goods = gold }
+				}
+			}
+		}
+		
+		on_accept = {
+			country_event = { id = aluminum_sanction.1x }
+			FROM = { save_global_event_target_as = aluminum_embargo_temp }
+		}
+
+		ai_will_do = { 
+			OR = {
+				NOT = { FROM = { has_opinion = { who = ROOT value = -50 }	} }
+				NOT = {ROOT = { has_opinion = { who = FROM value = -50 }	}	}
+				}
+		}
+	
+		
+	}
+	
+	revoke_aluminum_ban_action = {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			ai = no
+			FROM = { 
+				OR = {
+					AND = {
+						production_leader = { trade_goods = aluminum }
+						FROM = { has_country_modifier = aluminum_ban_modifire_from_100 }
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = aluminum_ban_opinion
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = aluminum_ban_opinion_50
+					}
+				}
+			}
+		}
+		
+		is_allowed = {	
+			
+		}
+		
+		on_accept = {
+			
+			FROM = {
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = aluminum_ban_opinion
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = aluminum_ban_50
+						}
+						remove_province_modifier = aluminum_ban_50
+					}
+					remove_opinion = {
+						who = ROOT
+						modifier = aluminum_ban_opinion
+					}
+				}
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = aluminum_ban_opinion_50
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = aluminum_ban_100
+						}
+						remove_province_modifier = aluminum_ban_100
+					}
+					remove_country_modifier = aluminum_ban_modifire_from_100
+					remove_opinion = {
+						who = ROOT
+						modifier = aluminum_ban_opinion_50
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			
+		}
+	}
+
+
+	copper_ban_action =  {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			has_country_flag = opened_sanction_diplomacy
+			OR = {
+				production_leader = { trade_goods = copper }
+				production_leader = { trade_goods = gold }
+			}
+			FROM = { copper = 1 }
+			NOT = { FROM = { has_country_modifier = copper_ban_modifire_from_100 } }
+		}
+		
+		is_allowed = {	
+			custom_trigger_tooltip = {
+				tooltip = trade_war_secuess
+				FROM = { NOT = { has_country_modifier = cant_sanction_them } }
+			}		
+			adm_power = 120
+			mil_power = 120
+			is_great_power = yes
+			if = { 
+				limit = {  
+					ai = yes
+				}
+				FROM = {
+					is_at_war = yes
+				}
+				OR = {
+					any_subject_country = {
+						is_subject_of = ROOT 
+						war_with = FROM
+					}
+					any_ally = {
+						war_with = FROM 
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = not_has_truce
+				NOT = { FROM = { truce_with = ROOT } }
+				NOT = { ROOT = { truce_with = FROM } }
+			}
+			custom_trigger_tooltip = {
+				tooltip = copper_trader
+				NOT = { 
+					FROM = { 
+						trading_bonus = {
+							trade_goods = copper
+							value = yes
+						}
+					}
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = copper_prodocer_leader
+				NOT = { FROM = { production_leader = { trade_goods = copper } } }
+			}
+			
+			OR = {
+				AND = {
+					ROOT = { production_leader = { trade_goods = gold } }
+					#ROOT = { hegemon_strength = 50 }
+				}
+				AND = {
+					production_leader = { trade_goods = copper }
+					NOT = { inflation = 5 }
+				}
+			}
+			
+			if = {
+			limit = { 
+				ai = yes 
+				FROM = { is_subject_of = ROOT }
+			}
+			OR = {
+				NOT = { FROM = { has_opinion = { who = ROOT value = -125 }	} }
+				NOT = {ROOT = { has_opinion = { who = FROM value = -125 }	}	}
+			}
+		}
+			
+			
+			NOT = {
+				FROM = { 
+					production_leader = { trade_goods = gold }
+				}
+			}
+		}
+		
+		on_accept = {
+			
+			country_event = { id = copper_sanction.1x }
+			
+			FROM = { save_global_event_target_as = copper_embargo_temp }
+		}
+
+		ai_will_do = { 
+			OR = {
+				NOT = { FROM = { has_opinion = { who = ROOT value = -50 }	} }
+				NOT = {ROOT = { has_opinion = { who = FROM value = -50 }	}	}
+				}
+		}
+	
+		
+	}
+
+
+	revoke_copper_ban_action = {
+		category = emperor
+		require_acceptance = no
+		alert_index = 15  
+		alert_tooltip = ICON_FEDERATIONINVITE
+		
+		is_visible = {
+			ai = no
+			FROM = { 
+				OR = {
+					AND = {
+						production_leader = { trade_goods = copper }
+						FROM = { has_country_modifier = copper_ban_modifire_from_100 }
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = copper_ban_opinion
+					}
+					has_opinion_modifier = {
+						who = ROOT
+						modifier = copper_ban_opinion_50
+					}
+				}
+			}
+		}
+		
+		is_allowed = {	
+			
+		}
+		
+		on_accept = {
+			
+			FROM = {
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = copper_ban_opinion
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = copper_ban_50
+						}
+						remove_province_modifier = copper_ban_50
+					}
+					remove_opinion = {
+						who = ROOT
+						modifier = copper_ban_opinion
+					}
+				}
+				if = {
+					limit = {
+						has_opinion_modifier = {
+							who = ROOT
+							modifier = copper_ban_opinion_50
+						}
+					}
+					every_owned_province = {
+						limit = {
+							has_province_modifier = copper_ban_100
+						}
+						remove_province_modifier = copper_ban_100
+					}
+					remove_country_modifier = copper_ban_modifire_from_100
+					remove_opinion = {
+						who = ROOT
+						modifier = copper_ban_opinion_50
+					}
+				}
+			}
+		}
+
+		ai_will_do = { 
+			
+		}
+	}
+	
+	

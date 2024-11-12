@@ -1,0 +1,38 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 201 197 124 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {	
+	"Koshamain #0" = 15
+	"Shakushain #0" = 15
+	"Kamokutain #0" = 15
+	"Onibishi #0" = 15
+	"Penri #0" = 15
+	"Piripos #0" = 15
+	"Takatsuki #0" = 15
+	
+	"Monashir #0" = -1
+	"Etunrachich #0" = -1
+	"Toitoi #0" = -1
+}
+
+leader_names = {
+	Shibushari Hae Betsu Shiraoi Kurasi Kakizaki Ponyanpe Shirokani Otona Ekashi Saru Usu
+}
+
+ship_names = {
+	Monashir Etunrachich Toitoi Shiratekka Menkakush Horpecha Huisak Opere Unkatuye Umoshmatek
+}

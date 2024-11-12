@@ -1,0 +1,58 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 220  193  88 } 
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	mongol_bow
+	mongol_swarm
+	mongol_steppe
+}
+
+monarch_names = {
+	"Hedan #0" = 30
+	"Tadun #0" = 30
+	"Qiuliju #0" = 30
+	"Louban #0" = 30
+	"Modu #0" = 10
+	"Laoshang #0" = 10
+	"Mulon #0" = 10
+	"Touman #0" = 10
+	"Gunchen #0" = 10
+	"Icihse #0" = 10
+	"Uwei #0" = 10
+	"Ushylu #0" = 10
+	"Err #0" = 10
+	"Adai #0" = 10
+	"Buguden #0" = 10
+}
+
+leader_names = {
+	Qadir
+	Tabghach
+	Tamghach
+	Chaghri
+	Jahan
+	Nyuan
+	Khwaja
+	Turmush
+	Bairam
+}
+
+ship_names = {
+	Khitai Balasagun Khujand Herat
+	Kura Sumgait Bazard'uz'u Sevan
+	Agdam K'urdamir Udzary
+}
+
+
+

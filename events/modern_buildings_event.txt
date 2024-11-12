@@ -1,0 +1,764 @@
+##namespace = building_event
+##
+##
+##country_event = {
+##	id = building_event.1
+##	title = building_event.1.t
+##	desc = building_event.1.d
+##	picture = modern_build_eventPicture
+##
+##	is_triggered_only = yes
+##
+##	immediate = {
+##		event_target:add_build_from = {
+##			if = {
+##				limit = { 
+##					any_owned_province = { 
+##						has_province_flag = cpital_modifire NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}	
+##				}
+##				random_owned_province = {
+##					limit = { has_province_flag = cpital_modifire NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = capital_set
+##				}
+##			}
+##			if = {
+##				limit = { 
+##					any_owned_province = { 
+##						development = 100 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}
+##				}
+##				random_owned_province = {
+##					limit = { development = 100 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = major_city
+##				}
+##			
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						development = 60  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } 
+##					}			
+##				}
+##				random_owned_province = {
+##					limit = { development = 60 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = major_city
+##
+##				}
+##
+##
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						development = 40  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }  
+##					}			
+##				}
+##				random_owned_province = {
+##					limit = { development = 40 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = major_city
+##
+##				}
+##			
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						development = 20 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }  
+##					}				
+##				}
+##				random_owned_province = {
+##					limit = { development = 20 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = major_city
+##
+##				}
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						NOT = { development = 20 } NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } 
+##					}				
+##				}
+##				random_owned_province = {
+##					limit = { NOT = { development = 20 } NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = major_city
+##
+##				}
+##			}
+##			if = {
+##				limit = { 
+##					any_owned_province = { 
+##						province_has_center_of_trade_of_level = 3  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}
+##				}
+##				random_owned_province = {
+##					limit = { province_has_center_of_trade_of_level = 3 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = center_of_trade
+##
+##				}
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						province_has_center_of_trade_of_level = 2 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } 
+##					}
+##				}
+##				random_owned_province = {
+##					limit = { province_has_center_of_trade_of_level = 2 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = center_of_trade
+##
+##				}
+##			}
+##			else_if = {
+##				limit = { 
+##					any_owned_province = { 
+##						province_has_center_of_trade_of_level = 1  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}				
+##				}
+##				random_owned_province = {
+##					limit = { province_has_center_of_trade_of_level = 1 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = center_of_trade
+##
+##				}
+##			}
+##			if = {
+##				limit = { 
+##					any_owned_province = { 
+##						fort_level = 2  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}
+##				}
+##				random_owned_province = {
+##					limit = { fort_level = 2 NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = fort
+##
+##				}
+##			}
+##			if = {
+##				limit = { 
+##					any_owned_province = { 
+##						has_port = yes  NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 }
+##					}				
+##				}
+##				random_owned_province = {
+##					limit = { has_port = yes NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = port 
+##				}
+##			}
+##			if = {
+##				limit = { 
+##					any_owned_province = { NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##				}
+##				random_owned_province = {
+##					limit = { NOT = { has_construction = constable } NOT = { has_construction = fort_et } NOT = { has_construction = fort_15th } NOT = { has_construction = fort_16th } NOT = { has_construction = fort_17th } NOT = { has_construction = fort_18th } NOT = { has_building = constable } NOT = { fort_level = 12 } }
+##					save_event_target_as = random_province
+##
+##				}
+##			}
+##		}
+##	}
+##	option = {
+##		#Forts
+##		name = modern_building.1
+##		country_event = {
+##			id = building_event.2
+##		}
+##	}
+##	option = {
+##		#Airport
+##		name = modern_building.2
+##		country_event = {
+##			id = building_event.3
+##		}
+##	}
+##	option = {
+##		#Airport
+##		name = et_nuke.1.cansel
+##		
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##}
+##
+##
+##country_event = {
+##	id = building_event.2
+##	title = building_event.2.t
+##	desc = building_event.2.d
+##	picture = modern_fort_eventPicture
+##
+##	is_triggered_only = yes
+##
+##	
+##	option = { #Capital
+##		name = et_nuke.1.a
+##		goto = capital_set
+##		trigger = { 
+##			has_saved_event_target = capital_set 
+##		}
+##		event_target:add_build_from = {
+##			event_target:capital_set = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Major City
+##		name = et_nuke.1.b
+##		goto = major_city
+##		trigger = { has_saved_event_target = major_city }
+##		event_target:add_build_from = {
+##			event_target:major_city = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}	
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Center of Trade
+##		name = et_nuke.1.c
+##		goto = center_of_trade
+##		trigger = { has_saved_event_target = center_of_trade }
+##		event_target:add_build_from = {
+##			event_target:center_of_trade = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Fortification
+##		name = et_nuke.1.dd
+##		goto = fort
+##		trigger = { has_saved_event_target = fort }
+##		event_target:add_build_from = {
+##			event_target:fort = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Port
+##		name = et_nuke.1.e
+##		goto = port
+##		trigger = { has_saved_event_target = port }
+##		event_target:add_build_from = {
+##			event_target:port = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Random Province
+##		name = et_nuke.1.f
+##		goto = random_province
+##		trigger = { has_saved_event_target = random_province }
+##		event_target:add_build_from = {
+##			event_target:random_province = {
+##				custom_tooltip = MAKE_FORT_BUILDING
+##				if = {
+##					limit = {
+##						mil_tech = 25
+##						has_building = fort_17th
+##					}
+##					add_building_construction = {
+##						building = fort_18th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						mil_tech = 17
+##						has_building = fort_16th
+##					}
+##					add_building_construction = {
+##						building = fort_17th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_15th
+##					}
+##					add_building_construction = {
+##						building = fort_16th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else_if = {
+##					limit = {
+##						has_building = fort_et
+##					}
+##					add_building_construction = {
+##						building = fort_15th
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##				else = {
+##					add_building_construction = {
+##						building = fort_et
+##						speed = 1.5
+##						cost = 1
+##					}
+##				}
+##			}
+##		}
+##		add_treasury = -3200
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = {
+##		#Airport
+##		name = et_nuke.1.cansel
+##	}
+##}
+##country_event = {
+##	id = building_event.3
+##	title = building_event.1.t
+##	desc = building_event.1.d
+##	picture = modern_airport_eventPicture
+##
+##	is_triggered_only = yes
+##
+##	
+##	option = { #Capital
+##		name = et_nuke.1.a
+##		goto = capital_set
+##		trigger = { has_saved_event_target = capital_set }
+##		event_target:add_build_from = {
+##			event_target:capital_set = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Major City
+##		name = et_nuke.1.b
+##		goto = major_city
+##		trigger = { has_saved_event_target = major_city }
+##		event_target:add_build_from = {
+##			event_target:major_city = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Center of Trade
+##		name = et_nuke.1.c
+##		goto = center_of_trade
+##		trigger = { has_saved_event_target = center_of_trade }
+##		event_target:add_build_from = {
+##			event_target:center_of_trade = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Fortification
+##		name = et_nuke.1.dd
+##		goto = fort
+##		trigger = { has_saved_event_target = fort }
+##		event_target:add_build_from = {
+##			event_target:fort = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Port
+##		name = et_nuke.1.e
+##		goto = port
+##		trigger = { has_saved_event_target = port }
+##		event_target:add_build_from = {
+##			event_target:port = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = { #Random Province
+##		name = et_nuke.1.f
+##		goto = random_province
+##		trigger = { has_saved_event_target = random_province }
+##		event_target:add_build_from = {
+##			event_target:random_province = {
+##				custom_tooltip = MAKE_AIRPORT_BUILDING
+##				add_building_construction = {
+##					building = constable
+##					speed = 1
+##					cost = 1
+##				}
+##			}
+##		}
+##		add_treasury = -6000
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##	option = {
+##		#Airport
+##		name = et_nuke.1.cansel
+##		clear_global_event_target = add_build_from
+##		clear_global_event_target = capital_set
+##		clear_global_event_target = major_city
+##		clear_global_event_target = center_of_trade
+##		clear_global_event_target = fort
+##		clear_global_event_target = port
+##		clear_global_event_target = random_province
+##	}
+##}

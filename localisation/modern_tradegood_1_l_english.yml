@@ -1,0 +1,68 @@
+﻿l_english:
+ modern_tradegoods.NAME1:0 "Select a city"
+ modern_tradegoods.DESC.1:0 "To cultivate drugs, choose one of the following cities that has a suitable land"
+ 
+ modern_tradegoods.OPT1:0 "§TDevelopment +3§! = §Y[farmlands_goods.GetName]§! (Farmlands)"
+ modern_tradegoods.OPT2:0 "§TDevelopment +10§! = §Y[grasslands_goods.GetName]§! (Grasslands)"
+ modern_tradegoods.OPT3:0 "§TDevelopment +30§! = §Y[mountain_goods.GetName]§! (Mountain)"
+ modern_tradegoods.OPT4:0 "§TDevelopment +25§! = §Y[highlands_goods.GetName]§! (Highlands)"
+ modern_tradegoods.OPT5:0 "§TDevelopment +15§! = §Y[steppe_goods.GetName]§! (Steppe)"
+ modern_tradegoods.OPT6:0 "§TDevelopment +20§! = §Y[hills_goods.GetName]§! (Hills)"
+
+ modern_tradegoods.NAME2:0 "Choosing a city for an Arms company"
+ modern_tradegoods.DESC.2:0 "Choose one of the cities whose infrastructure is suitable for arms production"
+ 
+ modern_tradegoods50.OPT:0 "§TDevelopment +50§! = §Y[50_goods.GetName]§!"
+ modern_tradegoods40.OPT:0 "§TDevelopment +40§! = §Y[40_goods.GetName]§!"
+ modern_tradegoods30.OPT:0 "§TDevelopment +30§! = §Y[30_goods.GetName]§!"
+ modern_tradegoods20.OPT:0 "§TDevelopment +20§! = §Y[20_goods.GetName]§!"
+ modern_tradegoods10.OPT:0 "§TDevelopment +10§! = §Y[10_goods.GetName]§!"
+ modern_tradegoods5.OPT:0 "§TDevelopment +3§! = §Y[5_goods.GetName]§!"
+
+ modern_tradegoods.NAME3:0 "Choosing a city for an Naval-arms company"
+ modern_tradegoods.DESC.3:0 "Choose one of the cities whose infrastructure is suitable for shipbuilding"
+ 
+ modern_tradegoods501.OPT:0 "§TDevelopment +50§! = §Y[50_goods.GetName]§!"
+ modern_tradegoods401.OPT:0 "§TDevelopment +40§! = §Y[40_goods.GetName]§!"
+ modern_tradegoods301.OPT:0 "§TDevelopment +30§! = §Y[30_goods.GetName]§!"
+ modern_tradegoods201.OPT:0 "§TDevelopment +20§! = §Y[20_goods.GetName]§!"
+ modern_tradegoods101.OPT:0 "§TDevelopment +10§! = §Y[10_goods.GetName]§!"
+ modern_tradegoods51.OPT:0 "§TDevelopment +3§! = §Y[5_goods.GetName]§!"
+
+ WANT_CAPTURE_NAVALARMS:0 "They want to take our Naval-Arms company"
+ WANT_CAPTURE_ARMS:0 "They want to take our Arms company"
+ WANT_CAPTURE_ELECTRONICS:0 "They want to take our Electronics"
+ WANT_CAPTURE_CARS:0 "They want to take our Cars"
+ 
+
+ arms_cpture_desc:0 "Here we bring one of their arms companies into our country"
+ arms_cpture_title:0 "Get an §TArms§! company"
+ arms_cpture_dialog:0 "Get an §TArms§! company"
+ arms_cpture_tooltip:0 "With this option, one of the arms companies will capture them and bring them to our country."
+
+ navalarms_cpture_desc:0 "Here we bring one of their naval-arms companies into our country"
+ navalarms_cpture_title:0 "Get a §TNaval-Arms§! company"
+ navalarms_cpture_dialog:0 "Get a §TNaval-Arms§! company"
+ navalarms_cpture_tooltip:0 "With this option, one of the naval-arms companies will capture them and bring them to our country."
+
+ electronic_cpture_desc:0 "Here we bring one of their Electronic companies into our country"
+ electronic_cpture_title:0 "Get an §TElectronic§! company"
+ electronic_cpture_dialog:0 "Get an §TElectronic§! company"
+ electronic_cpture_tooltip:0 "With this option, one of the electronics companies will capture them and bring them to our country."
+
+ cars_cpture_desc:0 "Here we bring one of their cars companies into our country"
+ cars_cpture_title:0 "Get a §TCar§! company"
+ cars_cpture_dialog:0 "Get a §TCar§! company"
+ cars_cpture_tooltip:0 "With this option, one of the cars companies will capture them and bring them to our country."
+
+ modern_tradegoods.NAME4:0 "Choosing a city for an Electronic"
+ modern_tradegoods.DESC.4:0 "For Electronic-construction, choose one of the following cities that has a good infrastructure"
+
+ modern_tradegoods.NAME5:0 "Choosing a city for an Cars"
+ modern_tradegoods.DESC.5:0 "For Cars-construction, choose one of the following cities that has a good infrastructure"
+
+
+ 
+
+ 
+ 

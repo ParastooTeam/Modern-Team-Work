@@ -1,0 +1,1200 @@
+naval_base_diplomacy =  {
+	category = favors
+	require_acceptance = yes
+	alert_index = 32          
+	alert_tooltip = ICON_ACCESS_BUILDING
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		FROM = { is_subject = no }
+		FROM = { num_of_ports = 1 }
+	}
+	is_allowed = {
+
+		if = {
+			limit = {
+			   NOT = { naval_base = 1 } 
+			}
+			has_idea = vassal_tribute
+		}
+		else_if = {
+			limit = {
+				naval_base = 1
+			}
+			OR = {
+				full_idea_group = military_base_ideas
+				full_idea_group = kolonialimperium0
+			}
+		}
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				treasury = 5000
+				adm_power = 50
+				dip_power = 50
+				mil_power = 50
+		}
+		if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				treasury = 10000
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+		}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				treasury = 15000
+				adm_power = 150
+				dip_power = 150
+				mil_power = 150
+		}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				treasury = 20000
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+		}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				treasury = 25000
+				adm_power = 250
+				dip_power = 250
+				mil_power = 250
+		}
+		if = {
+			limit = {
+				FROM = { ai = yes }
+			}
+			FROM = { owes_favors = { who = ROOT value = 50 } }
+		}
+		if = {
+			limit = {
+				FROM = { ai = no }
+			}
+			FROM = { owes_favors = { who = ROOT value = 10 } }
+		}
+		reverse_has_opinion = { who = FROM value = 120  }
+		ROOT = { is_great_power = yes }
+		FROM = { NOT = { total_development = 1000 }  }
+		NOT = {	FROM = { is_at_war = yes  } }
+	}
+	on_accept = {
+		ROOT = {
+		create_subject = {
+			subject_type = naval_base
+			subject = FROM
+			}
+		}
+		FROM = { 
+			add_country_modifier = {
+				name = cooldown_faction_member
+				duration = 18250
+			} 
+		}
+		add_favors = { who = FROM amount = -50 }
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				add_treasury = -5000
+				add_adm_power = -50
+				add_dip_power = -50
+				add_mil_power = -50
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = -10000
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = -15000
+				add_adm_power = -150
+				add_dip_power = -150
+				add_mil_power = -150
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = -20000
+				add_adm_power = -200
+				add_dip_power = -200
+				add_mil_power = -200
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				add_treasury = -15000
+				add_adm_power = -250
+				add_dip_power = -250
+				add_mil_power = -250
+		}
+		
+	}
+	on_decline = {
+		add_favors = { who = FROM amount = -50 }
+		if = {
+			limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+			add_treasury = -5000
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+		}
+		if = {
+			limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_treasury = -10000
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+		}
+	if = {
+			limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_treasury = -15000
+			add_adm_power = -150
+			add_dip_power = -150
+			add_mil_power = -150
+		}
+	if = {
+			limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+			add_treasury = -20000
+			add_adm_power = -200
+			add_dip_power = -200
+			add_mil_power = -200
+		}
+	if = {
+			limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+			add_treasury = -15000
+			add_adm_power = -250
+			add_dip_power = -250
+			add_mil_power = -250
+	}
+		FROM = {
+			add_opinion = {
+				modifier = reject_request_military_base  
+				who = ROOT
+			}
+		}
+		ROOT = {
+			add_opinion = {
+				modifier = reject_request_military_base  
+				who = FROM
+			}
+		}
+		
+	}
+	ai_acceptance = {	
+
+			add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 165 }   } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 25
+			}
+
+		}
+
+			add_entry = {
+			name = TRUST
+			export_to_variable = {
+				variable_name = ai_value
+				value = trust
+				who = FROM
+				with = THIS
+			}
+			subtract_variable = { which = ai_value value = 50 }
+			}
+				add_entry = {
+				name = OPINION
+				export_to_variable = {
+				variable_name = ai_value
+				value = opinion
+				who = FROM
+				with = THIS
+			}
+			divide_variable = { which = ai_value value = 5 }
+			}
+			add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 20
+								}
+			multiply_variable = { which = ai_value value = -1 }
+						}
+			add_entry = {
+			name = RIVAL_EMMBASY
+			limit = { FROM = { is_rival = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 100
+								}
+			multiply_variable = { which = ai_value value = -1 }
+						}
+									add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+								}
+
+						}
+															add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 5
+								}
+
+						}
+
+	add_entry = {
+			name = ALLIANCE
+			limit = { FROM = { alliance_with = ROOT } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 15
+			}
+		
+	}
+
+
+
+
+
+ }
+	
+	ai_will_do = { 
+		ROOT = { is_great_power = yes  }
+		FROM = { is_great_power = no  } 
+	}
+}
+
+cancel_naval_base =  {
+	category = favors
+	require_acceptance = no
+	alert_index = 32          
+	alert_tooltip = ICON_CONDOTTIERI
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		overlord_of = FROM
+		FROM = {
+			is_subject_of_type = naval_base
+		}
+	}
+	is_allowed = {
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				treasury = 5000
+				adm_power = 50
+				dip_power = 50
+				mil_power = 50
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				treasury = 10000
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				treasury = 15000
+				adm_power = 150
+				dip_power = 150
+				mil_power = 150
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				treasury = 20000
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				treasury = 25000
+				adm_power = 250
+				dip_power = 250
+				mil_power = 250
+			}
+	}
+	on_accept = {
+	
+		FROM = {
+			add_truce_with = ROOT
+		}
+		ROOT = {
+			add_truce_with = FROM
+		}
+	
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				add_treasury = -5000
+				add_adm_power = -50
+				add_dip_power = -50
+				add_mil_power = -50
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = -10000
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = -15000
+				add_adm_power = -150
+				add_dip_power = -150
+				add_mil_power = -150
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = -20000
+				add_adm_power = -200
+				add_dip_power = -200
+				add_mil_power = -200
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				add_treasury = -15000
+				add_adm_power = -250
+				add_dip_power = -250
+				add_mil_power = -250
+			}
+	
+		add_trust = {
+			who = FROM
+			value = -35
+			mutual = yes
+		}
+		FROM = {
+			grant_independence = yes
+		}
+	}
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+					
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+	
+		}
+		add_entry = {
+			name = Strategic_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 150 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = { 
+				FROM = {
+				any_rival_country = {
+					alliance_with = ROOT
+				} 
+			}				
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+	}
+	ai_will_do = {
+		liberty_desire = 75
+	}
+}
+
+leave_naval_base =  {
+	category = favors
+	require_acceptance = yes
+	alert_index = 32          
+	alert_tooltip = ICON_CONDOTTIERI
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		FROM = { overlord_of = ROOT }
+		ROOT = {
+			is_subject_of_type = naval_base
+		}
+	}
+	is_allowed = {
+		if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				treasury = 10000
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				treasury = 20000
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				treasury = 30000
+				adm_power = 300
+				dip_power = 300
+				mil_power = 300
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				treasury = 40000
+				adm_power = 400
+				dip_power = 400
+				mil_power = 400
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 40000 } } }
+				treasury = 50000
+				adm_power = 500
+				dip_power = 500
+				mil_power = 500
+			}
+	}
+	on_accept = {
+	
+		FROM = {
+		add_truce_with = ROOT
+		}
+		ROOT = {
+		add_truce_with = FROM
+		}
+	
+		
+		if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				add_treasury = -10000
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = -20000
+				add_adm_power = -200
+				add_dip_power = -200
+				add_mil_power = -200
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = -30000
+				add_adm_power = -300
+				add_dip_power = -300
+				add_mil_power = -300
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = -40000
+				add_adm_power = -400
+				add_dip_power = -400
+				add_mil_power = -400
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 40000 } } }
+				add_treasury = -50000
+				add_adm_power = -500
+				add_dip_power = -500
+				add_mil_power = -500
+			}
+		FROM = { add_prestige = -15 }
+	
+		add_trust = {
+			who = FROM
+			value = -30
+			mutual = yes
+		}
+		ROOT = {
+			grant_independence = yes
+		}
+	}
+	on_decline = {
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_treasury = -2500
+			add_adm_power = -50
+			add_dip_power = -50
+			add_mil_power = -50
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_treasury = -5000
+			add_adm_power = -75
+			add_dip_power = -75
+			add_mil_power = -75
+		}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_treasury = -7500
+			add_adm_power = -100
+			add_dip_power = -100
+			add_mil_power = -100
+		}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+			add_treasury = -10000
+			add_adm_power = -125
+			add_dip_power = -125
+			add_mil_power = -125
+		}
+		if = {
+			limit = { ROOT = { total_development = 3000 NOT = { total_development = 40000 } } }
+			add_treasury = -15000
+			add_adm_power = -150
+			add_dip_power = -150
+			add_mil_power = -150
+		}
+		add_liberty_desire = 50
+	}
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+					
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+	
+		}
+		add_entry = {
+			name = Strategic_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 150 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = { 
+				FROM = {
+				any_rival_country = {
+					alliance_with = ROOT
+				} 
+			}				
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+	}
+	
+	ai_will_do = {
+
+			liberty_desire = 75
+	}
+}
+################################################## Cansel Powers ###############
+
+
+cancel_naval_base_great_power =  {
+	category = favors     
+	require_acceptance = yes
+	alert_index = 32          
+	alert_tooltip = ICON_CANCEL_MILITARY_BASE
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ROOT = {	
+			NOT = {
+				overlord_of = FROM
+			}
+		}
+		FROM = {
+			is_subject_of_type =  naval_base
+		}
+	}
+	is_allowed = {
+		FROM = {
+			trust = {
+				who = ROOT
+				value = 55
+			}	
+		}
+		NOT = {
+			FROM = {
+				overlord = {
+					has_opinion_modifier = {
+						modifier = signed_pact_of_non_agresion
+						who = ROOT
+					}
+				}
+			}
+		}	
+		NOT = {		
+			FROM = {
+				overlord = {
+					has_opinion_modifier = {
+						modifier = signed_pact_of_non_agresion_five
+						who = ROOT
+					}
+				}
+			}
+		}
+		NOT = {
+			FROM = {
+				overlord = {
+					truce_with = ROOT
+				}
+			}
+		}
+		FROM = {
+			owes_favors = { who = ROOT value = 40 }
+		}
+		ROOT = { is_great_power = yes }
+		FROM = { NOT = { is_at_war = yes } }
+		
+		
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				treasury = 10000
+				adm_power = 100
+				dip_power = 100
+				mil_power = 100
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				treasury = 20000
+				adm_power = 200
+				dip_power = 200
+				mil_power = 200
+			}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				treasury = 30000
+				adm_power = 300
+				dip_power = 300
+				mil_power = 300
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				treasury = 40000
+				adm_power = 400
+				dip_power = 400
+				mil_power = 400
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				treasury = 50000
+				adm_power = 500
+				dip_power = 500
+				mil_power = 500
+			}
+		
+
+	}
+	on_accept = {
+		add_trust = {
+			who = FROM
+			value = -1
+			mutual = yes
+		}
+		add_favors = { who = FROM amount = -40 }
+		FROM = {
+			add_truce_with = ROOT
+		}
+		ROOT = {
+			add_truce_with = FROM
+		}
+		FROM = {
+			overlord = {
+				add_casus_belli = {
+					type = cb_cancel_military_base
+					target = ROOT
+					months = 240
+				}
+				add_truce_with = FROM
+				add_opinion = {
+					modifier = cancel_access_building_OPINION  
+					who = ROOT
+				}
+				country_event = { id = great_power_know.1 }
+			}
+		}
+		if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				add_treasury = -10000
+				add_adm_power = -100
+				add_dip_power = -100
+				add_mil_power = -100
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = -20000
+				add_adm_power = -200
+				add_dip_power = -200
+				add_mil_power = -200
+			}
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = -30000
+				add_adm_power = -300
+				add_dip_power = -300
+				add_mil_power = -300
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = -40000
+				add_adm_power = -400
+				add_dip_power = -400
+				add_mil_power = -400
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				add_treasury = -50000
+				add_adm_power = -500
+				add_dip_power = -500
+				add_mil_power = -500
+			}
+		FROM = {
+			grant_independence = yes
+		}
+		
+		FROM = { 	
+			if = {
+				limit = { FROM = { total_development = 5 NOT = { total_development = 500 } } }
+				add_treasury = 10000
+				add_adm_power = 100
+				add_dip_power = 100
+				add_mil_power = 100
+			}
+			if = {
+				limit = { FROM = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_treasury = 20000
+				add_adm_power = 200
+				add_dip_power = 200
+				add_mil_power = 200
+			}                   
+		if = {
+				limit = { FROM = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_treasury = 30000
+				add_adm_power = 300
+				add_dip_power = 300
+				add_mil_power = 300
+			}
+		if = {
+				limit = { FROM = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_treasury = 40000
+				add_adm_power = 400
+				add_dip_power = 400
+				add_mil_power = 400
+			}
+		if = {
+				limit = { FROM = { total_development = 3000 NOT = { total_development = 40000 } } }
+				add_treasury = 50000
+				add_adm_power = 500
+				add_dip_power = 500
+				add_mil_power = 500
+			} 
+		}
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+		}
+					
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+				}
+	
+		}
+		add_entry = {
+			name = Strategic_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 150 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 100 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+	
+		}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 50 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 50
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = Hostile_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = FROM attitude = attitude_hostile } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 75
+				}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_100
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -100 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_50
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -50 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = WE_HAVE_BAD_OPINON_25
+			limit = { NOT = { FROM = { has_opinion = { who = ROOT value = -25 } } } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 5
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+		add_entry = {
+			name = MY_RIVAL_ALIIY_WITH_YOU
+			limit = { 
+				FROM = {
+				any_rival_country = {
+					alliance_with = ROOT
+				} 
+			}				
+			} 
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 30
+			}
+			multiply_variable = { which = ai_value value = -1 }
+	
+		}
+	}
+	
+	ai_will_do = {
+		OR = {
+			has_opinion = { 
+				who = FROM 
+				value = 140
+			}
+			has_opinion = { 
+				who = ROOT 
+				value = 140
+			}
+			
+			
+		}
+	}
+}

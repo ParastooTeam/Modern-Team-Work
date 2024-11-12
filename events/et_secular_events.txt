@@ -1,0 +1,327 @@
+# Secularism Abandoned
+country_event = {
+	id = et.28
+	title = "et.EVTNAME28"
+	desc = "et.EVTDESC28"
+	picture = RELIGION_eventPicture
+
+	is_triggered_only = yes
+	
+	option = {
+		name = "et.EVTOPTA28"
+		trigger = {
+			any_owned_province = {
+				religion = catholic
+			}
+		}
+		change_religion = catholic
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTA29"
+		trigger = {
+			any_owned_province = {
+				religion = anglican
+			}
+		}
+		change_religion = anglican
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTB28"
+		trigger = {
+			any_owned_province = {
+				religion = protestant
+			}
+		}
+		change_religion = protestant
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTC28"
+		trigger = {
+			any_owned_province = {
+				religion = reformed
+			}
+		}
+		change_religion = reformed
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTD28"
+		trigger = {
+			any_owned_province = {
+				religion = orthodox
+			}
+		}
+		change_religion = orthodox
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTE28"
+		trigger = {
+			any_owned_province = {
+				religion = coptic
+			}
+		}
+		change_religion = coptic
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTF28"
+		trigger = {
+			any_owned_province = {
+				religion = nestorian
+			}
+		}
+		change_religion = nestorian
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTG28"
+		trigger = {
+			any_owned_province = {
+				religion = shiite
+			}
+		}
+		change_religion = shiite
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTH28"
+		trigger = {
+			any_owned_province = {
+				religion = ibadi
+			}
+		}
+		change_religion = ibadi
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTI28"
+		trigger = {
+			any_owned_province = {
+				religion = mahayana
+			}
+		}
+		change_religion = mahayana
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTJ28"
+		trigger = {
+			any_owned_province = {
+				religion = buddhism
+			}
+		}
+		change_religion = buddhism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTK28"
+		trigger = {
+			any_owned_province = {
+				religion = vajrayana
+			}
+		}
+		change_religion = vajrayana
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTL28"
+		trigger = {
+			any_owned_province = {
+				religion = hinduism
+			}
+		}
+		change_religion = hinduism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTM28"
+		trigger = {
+			any_owned_province = {
+				religion = confucianism
+			}
+		}
+		change_religion = confucianism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTN28"
+		trigger = {
+			any_owned_province = {
+				religion = shinto
+			}
+		}
+		change_religion = shinto
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTO28"
+		trigger = {
+			any_owned_province = {
+				religion = jewish
+			}
+		}
+		change_religion = jewish
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTP28"
+		trigger = {
+			OR = {
+				tag = IRN
+				tag = PER
+				tag = PEE
+				any_owned_province = {
+					religion = zoroastrian
+				}
+			}
+			
+		}
+		change_religion = zoroastrian
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTR28"
+		trigger = {
+			any_owned_province = {
+				religion = arianism
+			}
+		}
+		change_religion = arianism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTS28"
+		trigger = {
+			any_owned_province = {
+				religion = sunni
+			}
+		}
+		change_religion = sunni
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTT28"
+		trigger = {
+			any_owned_province = {
+				religion = sikhism
+			}
+		}
+		change_religion = sikhism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTU28"
+		trigger = {
+			any_owned_province = {
+				religion = jainism
+			}
+		}
+		change_religion = jainism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTV28"
+		trigger = {
+			any_owned_province = {
+				religion = tibetan_bon
+			}
+		}
+		change_religion = tibetan_bon
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTW28"
+		trigger = {
+			any_owned_province = {
+				religion = muism
+			}
+		}
+		change_religion = muism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTX28"
+		trigger = {
+			any_owned_province = {
+				religion = tengri_pagan_reformed
+			}
+		}
+		change_religion = tengri_pagan_reformed
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTY28"
+		trigger = {
+			any_owned_province = {
+				religion = hellenism
+			}
+		}
+		change_religion = hellenism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTZ28"
+		trigger = {
+			any_owned_province = {
+				religion = norse_pagan_reformed
+			}
+		}
+		change_religion = norse_pagan_reformed
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.SHEITAN28"
+		trigger = {
+			OR = {
+				ai = no				
+				ruler_has_personality = senile_personality
+				ruler_has_personality = immature_personality
+				ruler_has_personality = infertile_personality
+				ruler_has_personality = drunkard_personality
+				ruler_has_personality = sinner_personality
+				ruler_has_personality = cruel_personality
+				ruler_has_personality = craven_personality
+			}
+		}
+		change_religion = satanism
+		set_prestige_to_zero = yes
+		clr_country_flag = secularism_abolished
+	}
+	option = {
+		name = "et.EVTOPTQ28"
+		clr_country_flag = secularism_abolished
+	}
+}
+
+
+

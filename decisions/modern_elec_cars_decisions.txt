@@ -1,0 +1,302 @@
+country_decisions = {
+
+
+	add_cars = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			NOT = { has_global_flag = cars_are_ubiquitous }
+		}
+		allow = {
+			any_owned_province = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				years_of_income = 1.0
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.85
+				}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.70
+				}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.55
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.40
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				years_of_income = 0.25
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ai = no }
+				dip_power = 300
+			}
+			if = {
+				limit = { ai = yes }
+				dip_power = 100
+			}
+			
+			NOT = { cars = 10 }
+			is_at_war = no
+			NOT = { has_country_modifier = cooldown_elect }
+			full_idea_group = car_research
+			OR = {
+				innovativeness = 30
+				AND= {
+					innovativeness = 20
+					full_idea_group = innovativeness_ideas
+				}
+			}
+			#if = {
+			#	limit = { has_idea = formalized_officer_corps }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 10
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = optimism }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 5
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = resilient_state }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 4
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = dynamic_court }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 3
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = scientific_revolution }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 2
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = pragmatism }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = cars
+			#			}
+			#			amount = 1
+			#		}
+			#	}
+			#}
+			#has_idea = patron_of_art_2
+		}
+		effect = {
+			country_event = {
+				id = carelect_tradegoods.2
+				days = 1
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}	
+
+	add_electronics = {
+		potential = {
+            has_country_flag = show_all_dip_decision
+			NOT = { has_global_flag = electronics_are_ubiquitous }
+		}
+		allow = {
+			any_owned_province = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 1000 } } }
+				years_of_income = 1.0
+			}
+			if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				years_of_income = 0.85
+				}
+			if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				years_of_income = 0.70
+				}
+			if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				years_of_income = 0.55
+			}
+			if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				years_of_income = 0.40
+			}
+			if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 6000 } } }
+				years_of_income = 0.25
+			}
+			if = {
+				limit = { ROOT = { total_development = 6000 NOT = { total_development = 100000 } } }
+				years_of_income = 0.10
+			}
+			if = {
+				limit = { ai = no }
+				dip_power = 300
+			}
+			if = {
+				limit = { ai = yes }
+				dip_power = 100
+			}
+			NOT = { electronics = 10 }
+			is_at_war = no
+			NOT = { has_country_modifier = cooldown_elect }
+			full_idea_group = electronic_research
+			OR = {
+				innovativeness = 30
+				AND= {
+					innovativeness = 20
+					full_idea_group = innovativeness_ideas
+				}
+			}
+			#if = {
+			#	limit = { has_idea = formalized_officer_corps }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 10
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = optimism }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 5
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = resilient_state }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 4
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = dynamic_court }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 3
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = scientific_revolution }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 2
+			#		}
+			#	}
+			#}
+			#else_if = {
+			#	limit = { has_idea = pragmatism }
+			#	NOT = {
+			#		calc_true_if = {
+			#			all_owned_province = {
+			#				trade_goods = electronics
+			#			}
+			#			amount = 1
+			#		}
+			#	}
+			#}
+			#has_idea = patron_of_art_2
+		}
+		effect = {
+			country_event = {
+				id = carelect_tradegoods.1
+				days = 1
+			}			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

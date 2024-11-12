@@ -1,0 +1,70 @@
+po_cancel_EU_leader_x2 = {
+	category = 6
+	power_projection = vassalized_rival
+	power_cost_base = 0.0
+	prestige_base = 0.1
+	ae_base = 0
+	warscore_cost = {
+		all_provinces = 0.0
+		no_provinces = 85.0
+		owner_keeps = 0.0
+		conquered = 0.0
+		returned_core = 0.0
+		released_nation = 0.0
+		cancelled_subject = 0.0
+		concede_colonial_region = 0.0
+	}
+	warscore_cap = 85
+	requires_demand_independence = no
+	is_make_subject = no
+	requires_is_allowed = no
+	
+	is_visible = {
+		FROM = {
+			has_country_modifier = european_leader
+		}
+		OR = {
+			has_global_flag = take_over_parliament
+			has_global_flag = take_over_commission
+			has_global_flag = take_over_council
+			has_global_flag = centralized_warfare_policy_enacted
+		}
+	}
+	is_allowed = {
+		always = yes
+	}
+	effect = {
+		clr_global_flag = take_over_parliament
+		clr_global_flag = take_over_commission
+		clr_global_flag = take_over_council
+		clr_global_flag = centralized_warfare_policy_enacted
+			FROM = {
+				remove_country_modifier = european_union
+				add_country_modifier = {
+					name = cant_join_EU
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				random_country = {
+					limit = {
+						has_country_modifier = european_union
+						NOT = { tag = FROM }
+					}
+					country_event = {
+						id = european_union.6
+					}
+				}
+				every_owned_province = {
+					limit = { is_core = FROM }
+					set_in_empire = no
+				}
+			}		
+	}
+	ai_weight = { # Defaults to always evaluate to 0
+		export_to_variable = {
+			variable_name = ai_value # Mandatory to have entry called "ai_value". Its value at the end of the ai_weight scope is what will be used
+			value = 60
+		}
+	}
+}

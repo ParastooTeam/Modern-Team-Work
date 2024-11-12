@@ -1,0 +1,127 @@
+#po_capture_Heavy_ship_5 = {
+#	category = 6
+#	power_projection = insulted_rival
+#	power_cost_base = 1.0
+#	prestige_base = 0.1
+#	ae_base = 0
+#	warscore_cost = {
+#		all_provinces = 0.0
+#		no_provinces = 50.0
+#		owner_keeps = 0.0
+#		conquered = 0.0
+#		returned_core = 0.0
+#		released_nation = 0.0
+#		cancelled_subject = 0.0
+#		concede_colonial_region = 0.0
+#	}
+#	warscore_cap = 50
+#	requires_demand_independence = no
+#	is_make_subject = no
+#	requires_is_allowed = no
+#	is_visible = {
+#		FROM = { num_of_heavy_ship = 5 }
+#	}
+#	is_allowed = {
+#		FROM = { num_of_heavy_ship = 5 }
+#	}
+#	effect = {
+#		while = {
+#			limit = { 
+#				FROM = {
+#					NOT = {
+#						check_variable = {
+#							which = heavy_check_5
+#							value = 5
+#						}
+#					}
+#				}
+#			}
+#		
+#			if = {
+#				limit = { 
+#					FROM = {
+#						NOT = {
+#							check_variable = {
+#								which = heavy_check_5
+#								value = 5
+#							}
+#						}
+#					}
+#					sea_superregion = { 
+#						heavy_ships_in_province = FROM
+#					}
+#				}
+#				sea_superregion = {
+#					limit = {
+#						heavy_ships_in_province = FROM					
+#					}
+#					if = {
+#						limit = {
+#							heavy_ships_in_province = FROM
+#							NOT = {
+#								check_variable = {
+#									which = heavy_check_5
+#									value = 5
+#								}
+#							}
+#						}
+#						kill_units = { who = from type = heavy_ship amount = 1 }
+#						heavy_ship = ROOT
+#
+#
+#					}
+#				}
+#				if = {
+#					limit = { 
+#						FROM = {
+#							has_country_flag = heavy_set
+#							OR = {
+#								has_country_flag = heavy_set
+#								check_variable = {
+#									which = heavy_check_5
+#									value = 1
+#								}
+#							}
+#						}
+#					}
+#					FROM = {
+#						change_variable = {
+#							which = heavy_check_5
+#							value = 1
+#							}
+#					}
+#				}
+#				if = {
+#					limit = { FROM = { NOT = { has_country_flag = heavy_set } } }
+#					FROM = {
+#						set_country_flag = heavy_set
+#						set_variable = {
+#							which = heavy_check_5
+#							value = 1
+#						}
+#					}
+#				}
+#			}
+#			
+#		}
+#		FROM = { 
+#			country_event = {
+#				id = set_variable.15
+#				days = 3			
+#			} 
+#		}
+#	}
+#	ai_weight = {
+#		export_to_variable = {
+#			variable_name = ai_value
+#			value = 50
+#		}
+#		limit = {
+#			NOT = { navy_size_percentage = 1.0 }
+#		}
+#	}
+#}
+
+
+
+

@@ -1,0 +1,213 @@
+
+#Province Scope
+eu_script_effect = {	
+	if = {
+		limit = {
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		random_country = {
+			limit = { 
+				capital_scope = {
+					continent = europe
+				}
+				has_country_modifier = european_union 
+			}
+			country_event = { id = european_union.34 }
+		}
+	}
+	#if = {
+	#	limit = { 
+	#		ai = yes
+	#	}
+	#	set_country_flag = have_access_knologe
+	#}
+	TKY = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	UKR = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	MAC = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	GEO = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	ICE = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	SER = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	MON = {
+		set_variable = {
+			which = positive_EU
+			value = 1
+		}
+	}
+	
+}
+
+eu_join = {
+	if = {
+		limit = {			
+			is_part_of_hre = yes
+		}
+		add_country_modifier = {
+			name = european_union
+			duration = -1
+		}
+	}
+}
+
+eu_leave = {
+	if = {
+		limit = {			
+			is_part_of_hre = no
+			has_country_modifier = european_union
+		}
+		every_owned_province = { set_in_empire = yes }
+	}
+}
+
+#eu_emperor = {
+#	if = {
+#		limit = {			
+#			total_development = 3000
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 2500
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 2000
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 1700
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 1500
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 1250
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 1000
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 750
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 600
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 500
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 400
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 300
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 200
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			total_development = 100
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#	else_if = {
+#		limit = {			
+#			num_of_cities = 2
+#			has_country_modifier = european_union
+#			is_subject = no
+#		}
+#		set_emperor = yes
+#	}
+#}

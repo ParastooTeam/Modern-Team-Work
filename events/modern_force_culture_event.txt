@@ -1,0 +1,19 @@
+namespace = modern_force_culture
+
+#modern_force_culture Point admin power X1
+
+
+province_event = {
+	id = modern_force_culture.1
+	title = "modern_force_culture.1title"
+	desc = "modern_force_culture.1desc"
+	picture = force_cult_eventPicture
+	goto = root
+	#hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = "modern_force_culture.4opt"
+		change_culture = FROM
+	}
+}
+

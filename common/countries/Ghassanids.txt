@@ -1,0 +1,55 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 100  145  40 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Jabalah #0" = 30
+	"'Amr #0" = 30
+	"Al-Harith #0" = 30
+	"al-Nu'man #0" = 20
+	"Jafnah #0" = 10
+	"Sharahil #0" = 10
+	"al-Airam #0" =  5
+	"Hijr #0" = 5
+	"Abu Kirab #0" = 5
+	
+	"Rajya #0" = -1
+	"Nadiyya #0" = -1
+	"Jawhara #0" = -1
+	"Noura #0" = -1
+	"Wadhah #0" = -1
+	"Munira #0" = -1
+	"Hessah #0" = -1
+	"Fatima #0" = -1
+	"Aisha #0" = -1
+}
+
+leader_names = {
+	"Al Ansi" "Ba Abbad" Ba'amer Bamatraf "Al Bayti" "Al Amry" "Bin Sawwad" "Bin Jabal"
+	"Bin Shahbal" "Al Attas" "Al Nahdi" Ahlamid Alsree
+	
+}
+
+ship_names = {
+	Hijaz Jeddah Mecca Medina "Jabal Baydan"
+	"Jabal Sawda" "Jabal Abu Hasan" "Jabal al-Jurayrah" 
+	"Harrat Al-Kishb" "Harrat Rahat" "Harrat Nawasif"
+	"Harrat Hadan" "Harrat Al-Buqum" "Harrat Khaybar"
+	"Harrat Kurama" "Harrat al-Unayyir"
+}
+
+
+

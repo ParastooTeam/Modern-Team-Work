@@ -1,0 +1,66 @@
+#Merya
+
+graphical_culture = westerngfx
+
+color = { 180  174  40 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+leader_names = {
+	Mari Meshchera Mordvin Merya Muroma Perm
+}
+
+ship_names = {
+	Áidná Álgen Állet Èuvje Biellá Biergá Buohttá Duojá Gealá Gierá Giste 
+	Juoksáhkká Leandu Máidna Násti Naná Njáves Oajá Sáráhkká Sealggá 
+	Seará Soabá Sojá Suoinná Suonjar Uksáhkká
+}
+
+monarch_names = {
+	"Chichayka #0" = 10
+	"Chumbulat #0" = 10
+	"Deryab #0" = 10
+	"Erziya #0" = 10
+	"Inzhay #0" = 10
+	"Kezhapa #0" = 10
+	"Kezhevat #0" = 10
+	"Kubrat #0" = 10
+	"Malyaka #0" = 10
+	"Meltsayka #0" = 10
+	"Mordvinko #0" = 10
+	"Nalka #0" = 10
+	"Nuyaksha #0" = 10
+	"Nuyat #0" = 10
+	"Pakstyan #0" = 10
+	"Pokshayka #0" = 10
+	"Setyamka #0" = 10
+	"Syrka #0" = 10
+	"Tikshayka #0" = 10
+	"Uchva #0" = 10
+	"Varaka #0" = 10
+	"Virdyan #0" = 10
+	"Anava #0" = -10
+	"Elyuva #0" = -10
+	"Kunava #0" = -10
+	"Valdava #0" = -10
+}

@@ -1,0 +1,42 @@
+﻿l_english:
+ kill_advisor_event.1title:0 "Killing Their Advisers"
+ kill_advisor_event.1desc:0 "My lord, we can kill the advisors of §R[kill_advisor_temp.GetName]§!'s who are in service, \nThese advisors make their growth and development very fast, \nWe must stop them."
+ ADM_ADVISOR.1:0 "Researcher §G-10% Idea Cost§!"
+ DIP_ADVISOR.1:0 "Lawyer §G-20% War Score Cost§!"
+ MIL_ADVISOR.1:0 "Commandant §G+3.5% Discipline§!"
+ MIL_ADVISOR.2:0 "Army Reformer §G+7.5% Morale of Army§!"
+ MIL_ADVISOR.3:0 "Martial Artist §G+15% Morale of Army§!"
+ MIL_ADVISOR.4:0 "Superintendent of troops §G+7% Discipline§!"
+ kill_advisor_event.1opt:0 "Cancel"
+
+ esu_resercher_modifire:0 "The Researcher was killed"
+ esu_bandit_modifire:0 "The Lawyer was killed"
+ commandant_modifire:0 "The Commandant was killed"
+ army_reformer_modifire:0 "The Army Reformer was killed"
+ esu_curator_modifire:0 "The Martial Artist was killed"
+ esu_colonial_modifire:0 "The Superintendent of troops was killed"
+ 
+ kill_advisor_event.2title:0 "Our Advisor Has Been §RKilled§!"
+ kill_advisor_event.2desc:0 "The spies of §R[From.Owner.GetName]§! killed our adviser, we must take revenge"
+ kill_advisor_event.2opt:0 "Certainly"
+
+ kill_advisor_event.3title:0 "Successful Attack on Their Advisor"
+ kill_advisor_event.3desc:0 "Our spies managed to kill the §R[kill_advisor_temp.GetName]§! country adviser, we congratulate you on this victory"
+ kill_advisor_event.3opt:0 "Great" 
+ 
+ kill_advisor_event.4title:0 "Our Advisor Was Assassinated"
+ kill_advisor_event.4desc:0 "My lord, a country attacked and assassinated our advisor, unfortunately we lost him"
+ kill_advisor_event.4opt:0 "This is a disaster"
+
+ kill_advisor_event.5title:0 "Attempting to Assassinate our Advisor"
+ kill_advisor_event.5desc:0 "An unknown country wanted to assassinate our adviser, \n§GFortunately§! with the defense measures of our intelligence organization, this assassination was foiled"
+
+ missile_build.EVTNAME1:0 "Building a missile with a range of 500 km"
+ missile_build.EVTDESC1:0 "Here you can easily make as many as you need, just have enough money in your treasury and spend on rockets.\nBuild a missile with a range of §G500 km§! so that you can defend your country and use it to attack\nOur missiles in the arsenal (§T[Root.missil_50.GetValue]§!)."
+ missile_build.EVTOPT1:0 "Build §O1§! missile, "
+ missile_build.EVTOPT2:0 "Build §O2§! missile"
+ missile_build.EVTOPT4:0 "Build §O4§! missile"
+ missile_build.EVTOPT8:0 "Build §O8§! missile"
+ missile_build.EVTOPT16:0 "Build §O16§! missile"
+ missile_build.EVTOPT32:0 "Build §O32§! missile"
+ missile_build.EVTOPT0:0 "§YCanceling the construction of rockets§!"

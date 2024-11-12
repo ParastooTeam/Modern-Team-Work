@@ -1,0 +1,85 @@
+country_decisions = {
+        
+		AustriaHungary = {
+		    major = yes
+			color = { 100 20 200 }
+			provinces_to_highlight = {
+				OR = {
+					province_id = 134 # Wien
+					province_id = 1770 # Ostmarch
+					province_id = 76 # Salzburg
+					province_id = 110 # Trent
+					province_id = 73 # Tirol
+					province_id = 266 # Bohemia
+					province_id = 4360 # Olomouc
+					province_id = 1772 # Pozsony
+					province_id = 262 # Krakow
+					province_id = 3114 # Lwow
+					province_id = 153 # Pest
+					province_id = 4248 # Szolnok
+					province_id = 135 # Sopron
+					province_id = 4363 # Fejer
+					province_id = 1954 # Torontal
+					province_id = 1951 # Hunyad
+					province_id = 4251 # Kiralyfold
+					province_id = 137 # Ragusa
+					province_id = 131 # Zagorje
+				}		
+			}
+			potential = {
+				has_country_flag = open_all_decision
+			    normal_or_historical_nations = yes
+				 OR = {
+				      ai = no
+					  is_playing_custom_nation = no
+				 }
+				 OR = {
+					tag = AUS
+					tag = HUN
+				 }
+				
+				 OR = {
+				    ai = no
+					AND = {
+					     ai = yes
+						 num_of_cities = 15
+						 }
+					}
+				}
+			allow = {
+				adm_tech = 79
+				stability = 3
+				is_at_war = no
+				owns_core_province = 134 # Wien
+				owns_core_province = 1770 # Ostmarch
+				owns_core_province = 76 # Salzburg
+				owns_core_province = 110 # Trent
+				owns_core_province = 73 # Tirol
+				owns_core_province = 266 # Bohemia
+				owns_core_province = 4360 # Olomouc
+				owns_core_province = 1772 # Pozsony
+				owns_core_province = 262 # Krakow
+				owns_core_province = 3114 # Lwow
+				owns_core_province = 153 # Pest
+				owns_core_province = 4248 # Szolnok
+				owns_core_province = 135 # Sopron
+				owns_core_province = 4363 # Fejer
+				owns_core_province = 1954 # Torontal
+				owns_core_province = 1951 # Hunyad
+				owns_core_province = 4251 # Kiralyfold
+				owns_core_province = 137 # Ragusa
+				owns_core_province = 131 # Zagorje						
+			    }
+			effect = {
+				add_prestige = 50
+				change_tag = KUK
+				set_capital = 134 # Wien
+			}
+			ai_will_do = {
+				        factor = 0
+			}
+		}
+	}
+				
+					
+						

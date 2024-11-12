@@ -1,0 +1,258 @@
+﻿l_english:
+
+ cant_join_EU:0 "Brexit"
+ cooldown_EU_VOTE:0 "They are voting"
+ cooldown_EU_Voting_modifire:0 "Membership application review"
+ cooldown_EU_Voting_modifireDESC:0 "Membership application review"
+ cooldown_EU_Voting_modifire_desc:0 "Membership application review"
+
+ nuclear.13title:0 "Mass` production of Atomic Bombs"
+ nuclear.13desc:0 "My $MONARCHTITLE$, Now we have §G**[Root.num_of_nuclear_weapons.GetValue]**§! §RAtomic Bomb§! "
+
+ european_union_vote.1t:0 "EU membership vote"
+ european_union_vote.1d:0 "My $MONARCHTITLE$,We are voting for §B[From.From.Owner.GetName]§! membership in the European Union \n§GPositive Votes§! - (§G[From.From.Owner.vote_for_EU_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_EU_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_EU_Metting.GetValue]§!)"
+
+ vote_for_EU_positive:0 "§GPositive Votes§!"
+ vote_for_EU_negetive:0 "§RNegative Votes§!"
+ VETO_on_EU_Metting:0 "§TVETO§!"
+ vote_for_EU_abstentions:0 "§gAbstentions Votes§!"
+
+ european_union_vote.1a:0 "§GPositive Votes§!"
+ european_union_vote.1b:0 "§RNegative Votes§!"
+ european_union_vote.1c:0 "§TVETO§!"
+ european_union_vote.1e:0 "§gAbstentions Votes§!"
+
+ european_union_vote.10t:0 "One country §RVETOED§! the Vote"
+ european_union_vote.10d:0 "§G[From.Owner.GetName]§! Vetoed the vote §B[From.From.From.Owner.GetName]§!"
+ european_union_vote.2a:0 "OK..."
+
+ european_union_vote.11t:0 "§G[From.Owner.GetName]§! Vote"
+ european_union_vote.11d:0 "The §G[From.Owner.GetName]§! vote in the European Union was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ european_union_vote.12t:0 "§R[From.Owner.GetName]§! Vote"
+ european_union_vote.12d:0 "The §R[From.Owner.GetName]§! vote in the European Union was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ european_union_vote.13t:0 "§G[From.Owner.GetName]§! Vote"
+ european_union_vote.13d:0 "The §G[From.Owner.GetName]§! vote in the European Union was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_vote.14t:0 "§R[From.Owner.GetName]§! Vote"
+ european_union_vote.14d:0 "The §R[From.Owner.GetName]§! vote in the European Union was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ 
+ european_union_vote.15t:0 "One country §RVETOED§! the Vote"
+ european_union_vote.15d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_vote.16t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ european_union_vote.16d:0 "The §B[From.Owner.GetName]§! vote in the European Union was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ european_union_vote.17t:0 "§g[From.Owner.GetName]§! Abstentions Votes"
+ european_union_vote.17d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ european_union_vote.2a:0 "OK..."
+
+ ######################################################################
+
+ european_union_vote_unite.1a:0 "§GPositive Votes§!"
+ european_union_vote_unite.1b:0 "§RNegative Votes§!"
+ european_union_vote_unite.1c:0 "§TVETO§!"
+ european_union_vote_unite.1e:0 "§gAbstentions Votes§!"
+
+ european_union_vote_unite.1t:0 "EU leadership"
+ european_union_vote_unite.1d:0 "My $MONARCHTITLE$,We are voting for §B[From.Owner.GetName]§! leadership in the European Union \n§GPositive Votes§! - (§G[From.Owner.vote_for_EU_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.Owner.vote_for_EU_negetive.GetValue]§!)"
+
+ european_union_vote_unite.9t:0 "EU leadership level"
+ european_union_vote_unite.9d:0 "The result of the voting for our leadership as the President of the European Union was positive and now our level for leadership is (§G[Root.Owner.positive_EU_unite.GetValue]§!). \nWe need §G5§! levels to be elected as the permanent leader of the European Union"
+ 
+ positive_EU_unite:0 "Positive EU Unite"
+
+ european_union_vote_unite.10t:0 "One country §RVETOED§! the Vote"
+ european_union_vote_unite.10d:0 "§G[From.Owner.GetName]§! Vetoed the vote §B[From.From.From.Owner.GetName]§!"
+ european_union_vote_unite.2a:0 "OK..."
+
+ european_union_vote_unite.11t:0 "§G[From.Owner.GetName]§! Vote for leadership"
+ european_union_vote_unite.11d:0 "The §G[From.Owner.GetName]§! vote in the European Union was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§!"
+
+ european_union_vote_unite.12t:0 "§R[From.Owner.GetName]§! Vote for leadership"
+ european_union_vote_unite.12d:0 "The §R[From.Owner.GetName]§! vote in the European Union was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! So that they are not elected as the leader of the union"
+
+ european_union_vote_unite.13t:0 "§G[From.Owner.GetName]§! Vote for leadership"
+ european_union_vote_unite.13d:0 "The §G[From.Owner.GetName]§! vote in the European Union was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result of voting for the unification of the countries and going under the leadership of §G[From.Owner.GetName]§! as the head of the European Union \nTo confirm the voting, there must be between 51% and 75% positive votes \n(§G[From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+
+ european_union_vote_unite.14t:0 "§R[From.Owner.GetName]§! Vote for leadership"
+ european_union_vote_unite.14d:0 "The §R[From.Owner.GetName]§! vote in the European Union was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+ 
+ european_union_vote_unite.15t:0 "One country §RVETOED§! the Vote"
+ european_union_vote_unite.15d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+
+ european_union_vote_unite.16t:0 "§B[From.From.From.Owner.GetName]§! Abstentions Votes"
+ european_union_vote_unite.16d:0 "The §B[From.Owner.GetName]§! vote in the European Union was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ european_union_vote_unite.17t:0 "§B[From.From.From.Owner.GetName]§! EU leadership level"
+ european_union_vote_unite.17d:0 "§G[From.Owner.GetName]§! the vote for the permanent leadership of §B[From.From.From.Owner.GetName]§! in the European Union was positive \nThey are now at level (§G[From.From.From.Owner.positive_EU_unite.GetValue]§!). \nThey need §G5§! levels to be chosen as a permanent and official leader"
+ european_union_vote_unite.2a:0 "OK..."
+
+ european_union_vote_unite.18t:0 "§B[From.From.From.Owner.GetName]§! EU leadership level"
+ european_union_vote_unite.18d:0 "§G[From.Owner.GetName]§! the vote for the permanent leadership of §B[From.From.From.Owner.GetName]§! in the European Union was positive \nThey are now at level (§G[From.From.From.Owner.positive_EU_unite.GetValue]§!). \nThey need §G5§! levels to be chosen as a permanent and official leader"
+ european_union_vote_unite.2a:0 "OK..."
+
+##############################################################################################
+
+
+ dont_show_vote_desition_title:0 "£vote_icon_m£§RHide Votes§!"
+ dont_show_vote_desition_desc:0 "It does not allow the European Union posters to be displayed"
+ dont_show_veto_desition_title:0 "£vote_icon_m£§RHide Vetos§!"
+ dont_show_veto_desition_desc:0 "It does not allow the European Union posters to be displayed"
+
+ show_EU_vote_desition_title:0 "£vote_icon_m£§gShow EU Votes§!"
+ show_EU_vote_desition_desc:0 "This option shows you the final vote of each country in the European Union. Note that the activation of this option slows down the game, so if you have a weak system, do not click on it"
+ dont_EU_show_vote_desition_title:0 "£vote_icon_m£§RHide EU Votes§!"
+ dont_EU_show_vote_desition_desc:0 "This option will not show you the final result of voting in the European Union. Recommended for weak systems"
+
+ european_union_vote.9t:0 "EU membership level"
+ european_union_vote.9d:0 "Our candidacy level for EU membership was changed to (§R[Root.Owner.positive_EU.GetValue]§!) \nWe need level 3 to enter the European Union"
+
+ european_union_vote.18t:0 "Entry into the European Union"
+ european_union_vote.18d:0 "We have successfully entered the European Union. Congratulations to all the people of our country"
+
+ european_union_vote.38t:0 "Leaving the European Union"
+ european_union_vote.38d:0 "We managed to get out of the European Union. This strategic decision will certainly contribute to the growth and development of our country"
+ 
+ european_union_vote.21t:0 "Vote to leave the European Union"
+ european_union_vote.21d:0 "My $MONARCHTITLE$, §B[From.From.Owner.GetName]§! wants to leave the European Union, we must vote \nVotes that other countries have given so far \n§GPositive Votes§! - (§G[From.From.Owner.vote_for_EU_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_EU_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_EU_Metting.GetValue]§!)"
+ 
+ european_union_vote.29t:0 "EU Vote to leave"
+ european_union_vote.29d:0 "Our voting Our voting phase for leaving the EU is (§R[Root.Owner.positive_EU.GetValue]§!) for leaving the EU is \nWe need level (2) to leave the European Union"
+ european_union_vote.0t:0 "Test"
+ european_union_vote.0d:0 "Desc Test"
+
+
+ european_union_vote.30t:0 "One country §RVETOED§! the Vote to leave"
+ european_union_vote.30d:0 "§G[From.Owner.GetName]§! Vetoed the votes for §B[From.From.From.Owner.GetName]§! to leave the European Union"
+ european_union_vote.2a:0 "OK..."
+
+ european_union_vote.31t:0 "§G[From.Owner.GetName]§!  Vote to leave"
+ european_union_vote.31d:0 "The §G[From.Owner.GetName]§! vote for §B[From.From.From.Owner.GetName]§!'s exit from the European Union was §GPositive Votes§!"
+
+ european_union_vote.32t:0 "§R[From.Owner.GetName]§! Vote to leave"
+ european_union_vote.32d:0 "The §R[From.Owner.GetName]§! vote for §B[From.From.From.Owner.GetName]§!'s exit from the European Union was  §RNegative Votes§!"
+
+ european_union_vote.33t:0 "§G[From.Owner.GetName]§! Vote to leave"
+ european_union_vote.33d:0 "The §G[From.Owner.GetName]§! vote in the European Union was §GPositive Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result of the vote to leave the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_vote.34t:0 "§R[From.Owner.GetName]§! Vote to leave"
+ european_union_vote.34d:0 "The §R[From.Owner.GetName]§! vote in the European Union was §RNegative Votes§! for §B[From.From.From.Owner.GetName]§! \nThe final result of the vote to leave the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ 
+ european_union_vote.35t:0 "One country §RVETOED§! the Vote to leave"
+ european_union_vote.35d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result of the vote to leave the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_vote.36t:0 "§g[From.Owner.GetName]§! Abstentions Vote to leave"
+ european_union_vote.36d:0 "The §B[From.Owner.GetName]§! vote in the European Union was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ european_union_vote.37t:0 "§g[From.Owner.GetName]§! Abstentions Vote to leave"
+ european_union_vote.37d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ european_union_vote.2a:0 "OK..."
+
+
+ 
+
+
+ european_union_coalotion_vote.1t:0 "EU coalition vote"
+ european_union_coalotion_vote.1d:0 "My $MONARCHTITLE$,We are voting for a coalition against §B[From.From.Owner.GetName]§! they have attacked a member of the European Union, we may be their next attack, we must stop them. \n§GPositive Votes§! - (§G[From.From.Owner.vote_for_EU_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_EU_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_EU_Metting.GetValue]§!)"
+
+
+ european_union_coalotion_vote.1a:0 "§GPositive Votes§!"
+ european_union_coalotion_vote.1b:0 "§RNegative Votes§!"
+ european_union_coalotion_vote.1c:0 "§TVETO§!"
+ european_union_coalotion_vote.1e:0 "§gAbstentions Votes§!"
+
+
+ european_union_laying_of_vote.1t:0 "Voting to expel from the European Union"
+ european_union_laying_of_vote.1d:0 "My $MONARCHTITLE$,This is a vote to kick §B[From.From.Owner.GetName]§! out of the EU, they don't deserve to be in such a society, we should kick them out of the EU. \n§GPositive Votes§! - (§G[From.From.Owner.vote_for_EU_positive.GetValue]§!) \n§RNegative Votes§! - (§R[From.From.Owner.vote_for_EU_negetive.GetValue]§!)  \n§BVETO§! - (§B[From.From.Owner.VETO_on_EU_Metting.GetValue]§!)"
+ 
+ european_union_laying_of_vote.1a:0 "§GPositive Votes§!"
+ european_union_laying_of_vote.1b:0 "§RNegative Votes§!"
+ european_union_laying_of_vote.1c:0 "§TVETO§!"
+
+ EU_laying_off_title:0 "Expulsion from EU £EU_icon£"
+ EU_laying_off_desc:0 "With this option, we will form a vote among EU members, and if approved, we will expel them from the EU \nThey must be level §R2§! to be kicked out of the union \n§TUniting EU§! (§T[From.Owner.positive_EU_unite.GetValue]§!) \nExit number from the EU (§O[From.Owner.negetive_EU.GetValue]§!) \nEU entry number (§O[From.Owner.positive_EU.GetValue]§!) \n§OExpulsion number from the EU§! (§O[From.Owner.lying_EU.GetValue]§!) \nThe number of times permission to enter the European Union is (§G[From.Owner.eu_not_access_to_join.GetValue]§! out of §Y10§!) \n......................................."
+ EU_laying_off_dialog:0 ""
+ EU_laying_off_tooltip:0 "With this option, we will form a vote among EU members, and if approved, we will expel them from the EU \nThey must be level §R2§! to be kicked out of the union \n§TUniting EU§! (§T[From.Owner.positive_EU_unite.GetValue]§!) \nExit number from the EU (§O[From.Owner.negetive_EU.GetValue]§!) \nEU entry number (§O[From.Owner.positive_EU.GetValue]§!) \n§OExpulsion number from the EU§! (§O[From.Owner.lying_EU.GetValue]§!) \nThe number of times permission to enter the European Union is (§G[From.Owner.eu_not_access_to_join.GetValue]§! out of §Y10§!) \n......................................."
+
+ leave_eu_eu:0 "Want to leave EU"
+ 
+ 
+
+ european_union_laying_of_vote.33t:0 "Expulsion of §G[From.Owner.GetName]§! from the Union"
+ 
+ european_union_laying_of_vote.33d:0 "The §G[From.Owner.GetName]§! has voted §GPositive Votes§! to expel Belgium from the European Union \nThe final result for expulsion from the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+
+ european_union_laying_of_vote.34t:0 "Expulsion of §G[From.Owner.GetName]§! from the Union"
+ european_union_laying_of_vote.34d:0 "The §R[From.Owner.GetName]§! has voted §RNegative Votes§! for the coalition against for §B[From.From.From.Owner.GetName]§! \nThe final result of the vote for the coalition has been determined \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+ 
+ european_union_laying_of_vote.35t:0 "One country §RVETOED§! the coalition vote"
+ european_union_laying_of_vote.35d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result of the vote to leave the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+
+ european_union_laying_of_vote.36t:0 "Expulsion of §G[From.Owner.GetName]§! from the Union"
+ european_union_laying_of_vote.36d:0 "The §B[From.Owner.GetName]§! vote in the European Union was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ european_union_laying_of_vote.37t:0 "Expulsion of §G[From.Owner.GetName]§! from the Union"
+ european_union_laying_of_vote.37d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§!"
+ european_union_laying_of_vote.2a:0 "OK..."
+
+
+ european_union_laying_of_vote.3t:0 "The final result of the EU coalition"
+ european_union_laying_of_vote.3d:0 "In the European Union Parliament, they decided with a majority vote to form a coalition against us and attack us. This is very dangerous, we have a tough war ahead of us"
+
+
+ european_union_laying_of_vote.29t:0 "The final result of the EU coalition"
+ european_union_laying_of_vote.29d:0 "In the European Union Parliament, they decided with a majority vote to form a coalition against us and attack us. This is very dangerous, we have a tough war ahead of us"
+
+
+
+ european_union_coalotion_vote.33t:0 "§G[From.Owner.GetName]§! the coalition vote"
+ european_union_coalotion_vote.33d:0 "The §G[From.Owner.GetName]§! has voted §GPositive Votes§! for the coalition against §B[From.From.From.Owner.GetName]§! \nThe final result of the vote for the coalition has been determined \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_coalotion_vote.34t:0 "§R[From.Owner.GetName]§! the coalition vote"
+ european_union_coalotion_vote.34d:0 "The §R[From.Owner.GetName]§! has voted §RNegative Votes§! for the coalition against for §B[From.From.From.Owner.GetName]§! \nThe final result of the vote for the coalition has been determined \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ 
+ european_union_coalotion_vote.35t:0 "One country §RVETOED§! the coalition vote"
+ european_union_coalotion_vote.35d:0 "§G[From.Owner.GetName]§! Vetoed the vote \nThe final result of the vote to leave the European Union \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+
+ european_union_coalotion_vote.36t:0 "§g[From.Owner.GetName]§! the coalition vote"
+ european_union_coalotion_vote.36d:0 "The §B[From.Owner.GetName]§! vote in the European Union was §gAbstentions Votes§! §B[From.From.From.Owner.GetName]§!"
+ 
+ european_union_coalotion_vote.37t:0 "§g[From.Owner.GetName]§! the coalition vote"
+ european_union_coalotion_vote.37d:0 "§G[From.Owner.GetName]§! §gAbstentions Votes§! \nThe final result is based on this \n(§G[From.From.From.Owner.vote_for_EU_positive.GetValue]§!) - §GPositive Votes§! \n(§R[From.From.From.Owner.vote_for_EU_negetive.GetValue]§!) - §RNegative Votes§! \n(§B[From.From.From.Owner.Owner.VETO_on_EU_Metting.GetValue]§!) - §BVETO§!"
+ european_union_coalotion_vote.2a:0 "OK..."
+
+
+ european_union_coalotion_vote.3t:0 "The final result of the EU coalition"
+ european_union_coalotion_vote.3d:0 "In the European Union Parliament, they decided with a majority vote to form a coalition against us and attack us. This is very dangerous, we have a tough war ahead of us"
+
+
+ european_union_coalotion_vote.29t:0 "The final result of the EU coalition"
+ european_union_coalotion_vote.29d:0 "In the European Union Parliament, they decided with a majority vote to form a coalition against us and attack us. This is very dangerous, we have a tough war ahead of us"
+
+ NUM_of_EU:0 "European Union members"
+
+ EU_leader_tooltip:0 "§GClick to show§!  you the capital of the country that is the president of the European Union"
+
+ check_EU_leader_title:0 "Find the European Union Leader"
+ check_EU_leader_desc:0 "By clicking on the question mark, this decision of the capital of the EU President will be shown to you and you can use it in politics"
+
+ great_power_in_europa:0 "§lWe must be the most powerful country in the EU in terms of economy, development, land force and navy in order to make a claim as the leader of the EU.§!"
+
+ great_encome_in_europa:0 "The most powerful §YEconomy§! in the European Union"
+ great_army_in_europa:0 "The most powerful §YArmy§! in the European Union"
+ great_navy_in_europa:0 "The most powerful §YNavy§! in the European Union"
+ great_develpment_in_europa:0 "The most §YDevelopment§! in the European Union"
+ great_power_in_eu:0 "We must be a §YGreat Power§!"
+ Unite_EU_cooldown:0 "Leadership voting"
+
+ vote_for_laying_off:0 "Vote to leave the European Union"
+ vote_for_laying_off_cooldown:0 "Voting to leave the EU"
+ be_leader_EU:0 "Only the §TEU leader§! can apply"
+ cool_down_leave_EU:0 "No immediate exit"
+
+ lying_EU:0 "laying off from EU"
+ eu_not_access_to_join:0 "Application times to enter the European Union"
+ eu_not_access:0 "The number of times permission to enter the European Union is (§G[From.Owner.eu_not_access_to_join.GetValue]§! out of §Y10§!)"
+ 

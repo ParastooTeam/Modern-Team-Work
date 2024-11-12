@@ -1,0 +1,17 @@
+
+bookmark = {
+	name = "BEFORE_RUSSIAN_UKRINIAN_WAR_NAME"
+	desc = "BEFORE_RUSSIAN_UKRINIAN_WAR_DESC"
+	date = 2022.2.22
+	
+	country = RUS
+	country = UKR
+	country = JAP
+	country = GBR
+	country = ISR
+	country = GER
+	country = ITA
+	country = USA
+	country = IRA
+	country = CHN
+}

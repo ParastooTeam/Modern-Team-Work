@@ -1,0 +1,51 @@
+﻿l_english:
+
+ they_cant_set_atom.1title:0 "Iron Dome on §Y[Root.GetName]§!"
+ they_cant_set_atom.1desc:0 "Our missile defense system called the Iron Dome \nWas able to prevent the §R[From.Owner.GetName]§! nuclear attack on §R[Root.GetName]§!"
+ they_cant_set_atom.2title:0 "Iron Dome on §Y[Root.GetName]§!"
+ they_cant_set_atom.2desc:0 "Our missile defense system called the Iron Dome \nWas able to prevent the §R[From.Owner.GetName]§! Missile attack on §R[Root.GetName]§!"
+ they_cant_set_atom.1opt:0 "HaHaHa we are powerful"
+ cant_nuked_us:0 "Try hit us by atomic bomb"
+ try_nuked_used:0 "Try hit by atomic bomb"
+ defence_missil:0 "Upgrade missile defense technology"
+ defence_missil_title:0 "£upgrade_icon_defense£§GUpgrade§! Anti missile"
+ defence_missil_desc:0 "By activating missile defense, we can prevent nuclear and missile attacks in our cities \nTo defend against missiles, \n+we must have built a missile defense building in our target city \n+To defend against nuclear attacks, we must have built a nuclear attack building \n+Our §Gdefense missile research§! has been completed"
+ difence_missile:0 "Defence missile attack"
+ attack_missil:0 "Upgrade missile technology for attack"
+ attack_missil_title:0 "£upgrade_icon_attack£§GUpgrade§! missile technology for attack"
+ attack_missil_desc:0 "£upgrade_icon_attack£Upgrade missile technology for attack"
+
+ modern_check_decision:0 "§TChecking our country information§!"
+ modern_check_decision_title:0 "£info£§TChecking our country information§!"
+ modern_check_decision_desc:0 "Checking our country information"
+
+ allow_share_tech_title:0 "Publication permission of the institution"
+ allow_share_tech_desc:0 "We allow neighboring countries to use our technology and develop rapidly"
+
+ dont_allow_share_tech_title:0 "§ONon-authorization§! of publication of institution"
+ dont_allow_share_tech_desc:0 "Neighboring countries do not have the right to use our technology"
+
+ defense_level_missil_tooltip:0 "\nOur missile §ODefense§! technology is level (§T[Root.defense_missile_lev.GetValue]§!)"
+ attack_level_missil_tooltip:0 "\nOur missile §OAttack§! technology is level (§T[Root.attack_missile_lev.GetValue]§!)"
+
+ great_power_know.1title:0 "Cut off access to the our Military Base"
+ great_power_know.1desc:0 "§R[From.Owner.GetName]§! cut off our access to our §GMilitary Base§! by infiltrating §R[From.From.Owner.GetName]§!, \nthis is very dangerous, now we have no influence in that country."
+
+ great_power_know.2title:0 "Cut off access to the our Faction Member"
+ great_power_know.2desc:0 "§R[From.Owner.GetName]§! cut off our access to our §GFaction Member§! by infiltrating §R[From.From.Owner.GetName]§!, \nthis is very dangerous, now we have no influence in that country."
+ great_power_know.1opt:0 "Ok"
+ 
+ great_power_know.3title:0 "Justifying the war against us"
+ great_power_know.3desc:0 "§R[From.Owner.GetName]§! is considering a war against us,\nThey can attack us militarily in 10 years from today, \nWe must prepare ourselves for a full-scale war."
+
+ great_power_know.4title:0 "Retreat from justifying the attack"
+ great_power_know.4desc:0 "§R[From.Owner.GetName]§! wanted to go to war against us and they were justifying this war, \nBut it seems that they have changed their mind and backed away from this decision, \nWhich is good news."
+
+ great_power_know.5title:0 "Our justification has come"
+ great_power_know.5desc:0 "Now we have a plausible justification for attacking §R[From.From.Owner.GetName]§!, \nTake the troops to the edge of their borders, \nBang on the war drum, \nEverything is ready."
+
+ great_power_know.6title:0 "Justifying the attack on our military base"
+ great_power_know.6desc:0 "§R[From.Owner.GetName]§! has started justifying an attack on our military base, §R[From.From.Owner.GetName]§!, \nTake the necessary measures, it will be very dangerous"
+
+ great_power_know.7title:0 "Their overlord's involvement in our war"
+ great_power_know.7desc:0 "This is a disaster, we are now at war with a world power, their overlord is at war, measure our strength and end the war as quickly as possible if necessary."

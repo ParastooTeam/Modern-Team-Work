@@ -1,0 +1,63 @@
+#Country Name: See the Name of this File.
+
+graphical_culture = westerngfx
+
+color = { 99  159  99 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+}
+
+monarch_names = {
+	"Achyuta #0" = 10
+	"Jatavarman #0" = 10
+	"Kok-kalimurkha #0" = 10
+	"Kokkanadan #0" = 10
+	"Kulottunga #0" = 10
+	"Maravarman #0" = 10
+	"Nanjarayan #0" = 10
+	"Parakesari #0" = 10
+	"Rajakesari #0" = 10
+	"Vira #0" = 10
+}
+
+leader_names = {
+	Dasari
+	Chatterji
+	Malini
+	Mallikarjun
+	Mayekar
+	Satakarni
+	Pulamavi
+	Svami
+	Sakasena
+	Mallakarni
+	Sundara
+	Pandyan
+	Narana
+	Virarajendran
+	Cholan
+	Somisvaran
+	Vallalan
+	Vikrama
+}
+
+ship_names = {
+	Amirtha Amman Arul Bharatapuza
+	Bhavani Bhima Chellam Devi Durga
+	Gayatri Godavari Iniya Kabani
+	Kaveri Krishna Lakshmi Madhu
+	Meenakshi Nalini Pambar Parvati
+	Periyar Ponni Radha Ratri Sarasvati
+	Sita Tamarai Tungabhadra
+}
+
+
+

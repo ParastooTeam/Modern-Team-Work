@@ -1,0 +1,184 @@
+	namespace = addip_events_extime
+	#terrorism attack
+	country_event = {
+		id = addip_events_extime.1
+		title = addip_events_extime.1t
+		desc = addip_events_extime.1d
+		is_triggered_only = yes
+		picture = TERRORISMATTACK_eventPicture
+		option = { name = addip_events_extime.1a 
+			if = {
+				limit = { 
+					OR = {
+						full_idea_group = indoor_security_ideas
+						full_idea_group = exploration_ideas
+					}
+				}
+				random_owned_province = { 
+					random_list = { 
+						60 = {} 
+						10 = { add_base_tax = -1 } 
+						10 = { add_base_manpower = -1 } 10 = { add_base_production = -1 } 
+						5 = { add_base_tax = -1 add_base_production = -1 add_base_manpower = -1 } 
+						5 = { add_base_tax = -2 add_base_production = -2 add_base_manpower = -2 } 
+					}
+				}
+				add_country_modifier = { name = terrorism_reacttion duration = 2920  } 
+			}
+			else = {
+				random_owned_province = {  
+					random_list = { 
+						20 = {} 
+						20 = { add_base_tax = -1 } 
+						20 = { add_base_manpower = -1 } 
+						20 = { add_base_production = -1 } 
+						10 = { add_base_tax = -1 add_base_production = -1 add_base_manpower = -1 } 
+						10 = { add_base_tax = -2 add_base_production = -2 add_base_manpower = -2 }
+					}
+				}
+				add_country_modifier = { name = terrorism_reacttion duration = 2920  } 
+			}									
+		}
+	}
+	#free event slot
+	country_event = {
+		id = addip_events_extime.2
+		title = addip_events_extime.2t
+		desc = addip_events_extime.2d
+		picture = kill_rule_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = addip_events_extime.2a   
+		}
+	}
+	#free event slot
+	country_event = {
+		id = addip_events_extime.3
+		title = addip_events_extime.3t
+		desc = addip_events_extime.3d
+		picture = kill_rule_attemp_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = addip_events_extime.3a  
+		}
+	}
+	country_event = {
+		id = addip_events_extime.6
+		title = addip_events_extime.6t
+		desc = addip_events_extime.6d
+		picture = kill_rule_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = addip_events_extime.6a   
+		}
+	}
+	country_event = {
+		id = addip_events_extime.7
+		title = addip_events_extime.7t
+		desc = addip_events_extime.7d
+		picture = kill_rule_attemp_eventPicture
+		is_triggered_only = yes
+	
+		option = { 
+			name = addip_events_extime.3a   
+		}
+	}
+	#ruler assasination
+	country_event = {
+		id = addip_events_extime.4
+		title = addip_events_extime.4t
+		desc = addip_events_extime.4d
+		is_triggered_only = yes
+		picture = kill_rule_eventPicture
+		hidden = yes
+		immediate = {
+			if = {
+				limit = {  
+					NOT = { full_idea_group = exploration_ideas }
+					NOT = { full_idea_group = indoor_security_ideas }
+				}
+				random_list = {
+					40 = { country_event = { id = addip_events_extime.3 } }
+					10 = { every_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } }  remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } } country_event = { id = addip_events_extime.3 }  }
+					20 = { every_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } }  remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } add_opinion = { modifier = attempt_ruler_assasination who = THIS  } } country_event = { id = addip_events_extime.7 } }
+					25 = {  kill_ruler = yes add_casus_belli = { type = cb_kill_ruller target = event_target:terorist_temp months = 300 } every_known_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } } remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } ROOT = { add_opinion = { modifier = preformed_ruler_assasination  who = THIS  } } } country_event = { id = addip_events_extime.2 } }
+					5 = { kill_ruler = yes add_casus_belli = { type = cb_kill_ruller target = event_target:terorist_temp months = 300 } every_known_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } } remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } } country_event = { id = addip_events_extime.6 } }	
+				}
+			}
+			else_if = {
+				limit = { 
+					OR = {
+						full_idea_group = exploration_ideas
+						full_idea_group = indoor_security_ideas
+					}
+				}
+				random_list = {
+					28 = { country_event = { id = addip_events_extime.3 } }
+					33 = { every_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } }  remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } } country_event = { id = addip_events_extime.3 }  }
+					33 = { every_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } }  remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } add_opinion = { modifier = attempt_ruler_assasination who = THIS  } } country_event = { id = addip_events_extime.7 } }
+					5 = {  kill_ruler = yes add_casus_belli = { type = cb_kill_ruller target = event_target:terorist_temp months = 300 } every_known_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } } remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } ROOT = { add_opinion = { modifier = preformed_ruler_assasination  who = THIS  } } } country_event = { id = addip_events_extime.2 } }
+					1 = { kill_ruler = yes add_casus_belli = { type = cb_kill_ruller target = event_target:terorist_temp months = 300 } every_known_country = { limit = { has_opinion_modifier = { modifier = ruler_assasination_soupcious who = ROOT } } remove_opinion = { modifier = ruler_assasination_soupcious who = THIS  } } country_event = { id = addip_events_extime.6 } }	
+				}
+			}
+			
+		}
+		option = { 
+			name = addip_events_extime.4a  
+		}
+	}
+#RAID
+#country_event = {
+#id = addip_events_extime.5
+#title = addip_events_extime.5t
+#desc = addip_events_extime.5d
+#is_triggered_only = yes
+#picture = Viking_ride_eventPicture
+#option = { name = addip_events_extime.5a   
+#random_list = { 25 = { add_treasury = -10 FROM = { add_treasury = 10 } } 25 = { add_treasury = -20 FROM = { add_treasury = 20 } } 25 = { add_treasury = -30 FROM = { add_treasury = 30 } } 25 = { add_treasury = -40 FROM = { add_treasury = 40 } } } 
+#clr_country_flag = raiders_incoming_to_do_some_serious_shit
+#random_owned_province = { random_list = { 
+#50 = { spawn_rebels = { friend = FROM type = raiding_party_group size = 1  } }
+#50 = { spawn_rebels = { friend = FROM type = raiding_party_group size = 2  } }
+#} 
+#}
+#}
+#
+#}
+#country_event = {
+#id = addip_events_extime.6
+#title = addip_events_extime.6t
+#desc = addip_events_extime.6d
+#is_triggered_only = yes
+#picture = Viking_ride_eventPicture
+#option = { name = addip_events_extime.6a random_country = { limit = { has_country_flag = raiders_incoming_to_do_some_serious_shit } country_event = { id = addip_events_extime.5 } } }
+#
+#}
+#
+#country_event = {
+#id = addip_events_extime.7
+#title = addip_events_extime.7t
+#desc = addip_events_extime.7d
+#is_triggered_only = yes
+#
+#
+#
+#option = { name = addip_events_extime.7a random_country = { limit = { has_country_flag = target_of_misionary_peacefull_conversion  } country_event = { id = addip_events_extime.8 } } }
+#
+#}
+
+
+
+
+
+
+
+
+
+		
+		
+
+
+

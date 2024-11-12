@@ -1,0 +1,6271 @@
+# Do not change tags in here without changing every other reference to them.
+# If adding new buildings, make sure they are uniquely named.
+
+# cost = x #==> cost in $ to build (subject to other modifiers)
+# time = x #==> number of months to build.
+# modifier = m # a modifier on the province that the building gives
+# trigger = t # an and trigger that needs to be fullfilled to build and keep the building
+# one_per_country = yes/no # if yes, only one of these can exist in a country
+# manufactory = { trade_good trade_good } # list of trade goods that get a production bonus
+# onmap = yes/no # show as a sprite on the map
+
+# FROM = owner
+# ROOT = province
+
+# Building AI is now mainly hard-coded. The AI will estimate how much it gains yearly from each building,
+# convert the value to ducats, and take the building with biggest yearly return as a percentage of the build cost.
+# If lower than 1%, the AI will not consider the yearly return worth it.
+# It will also require higher yearly return if the economy in not in prime shape.
+# Forts' value also get converted to a yearly return based on terrain and strategic position, as well as available budget for fort maintenance.
+
+# AI can still be modded though; it will multiply the yearly return with the value of ai_will_do.
+# If you don't want the AI to build a building at all, make ai_will_do become 0.
+# AI will consider each building to be worth 0.01 ducats per year as a base, so making ai_will_do above cost will have them build it at some point.
+# It will still check whether it can afford a building before doing so though, but may save up to it.
+
+
+#on_construction_started = { } #Fires when you start the construction,  ROOT - Province FROM - Country that started
+#on_construction_canceled = { } #Fires when you cancel the construction, ROOT - Province FROM - Country that canceled
+
+
+################################################
+# Fort
+################################################
+fort_et = {
+	cost = 2000
+	time = 30
+	modifier = {
+		#supply_limit = 1
+		fort_level = 2
+	}
+	
+	build_trigger = {
+		#if = {
+		#	limit = { FROM = { ai = yes } }
+		#	all_neighbor_province = {
+		#		NOT = {	
+		#			has_influencing_fort = yes
+		#		}
+		#	}
+		#}
+		if = {
+			limit = {
+				FROM = {
+					ai = no
+				}
+			}
+			OR = {
+				has_port = yes
+				any_neighbor_province = {
+					NOT = { owned_by = ROOT }
+				} 
+				NOT = {
+					area_for_scope_province = {
+						is_in_capital_area = yes
+						OR = {
+							has_construction = fort_et
+							has_influencing_fort = yes
+						}
+					}
+				}				
+			}	
+		}
+					
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = non_fort }
+	}
+	onmap = yes
+	
+	on_construction_started = { } #Fires when you start the construction,  ROOT - Province FROM - Country that started
+	on_construction_canceled = { } #Fires when you cancel the construction, ROOT - Province FROM - Country that canceled
+	on_destroyed = {
+		remove_province_modifier = attition_fort_0
+		area = {
+			remove_province_modifier = attition_fort_1
+		}
+	}
+	influencing_fort = yes
+	
+	ai_will_do = {
+		factor = 10.0
+		
+		modifier = {
+			factor = 2.0
+			any_neighbor_province = {
+				is_city = yes
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 6.5
+			owner = { treasury = 10000 }
+		}
+		modifier = {
+			factor = 10.0
+			ROOT = { 
+				NOT = {
+					any_neighbor_province = {
+						is_core = FROM
+					}
+				}
+			}
+		}
+	}
+}
+fort_15th = {
+	cost = 4000
+	time = 30
+	make_obsolete = fort_et
+	modifier = {
+		#supply_limit = 2
+		fort_level = 4
+	}
+	
+	build_trigger = {
+		if = {
+			limit = {
+				FROM = {
+					ai = no
+				}
+			}
+			has_building = fort_et
+		}
+		
+		#if = {
+		#	limit = { FROM = { ai = yes } }
+		#	all_neighbor_province = {
+		#		NOT = {
+		#			has_influencing_fort = yes
+		#		}
+		#	}
+		#}
+		#NOT = {
+		#	area_for_scope_province = {
+		#		has_influencing_fort = yes
+		#		is_in_capital_area = yes
+		#	}
+		#}
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = non_fort }
+	}
+	
+	onmap = yes
+	
+	influencing_fort = yes
+	
+	ai_will_do = {
+		factor = 10.0
+		
+		modifier = {
+			factor = 2.0
+			any_neighbor_province = {
+				is_city = yes
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 6.5
+			owner = { treasury = 10000 }
+		}
+	}
+}
+fort_16th = {
+	cost = 6000
+	time = 30
+	make_obsolete = fort_15th
+	modifier = {
+		#supply_limit = 3
+		fort_level = 6
+	}
+	
+
+	build_trigger = {
+		if = {
+			limit = {
+				FROM = {
+					ai = no
+				}
+			}
+			has_building = fort_15th
+		}
+		
+		#if = {
+		#	limit = { FROM = { ai = yes } }
+		#	all_neighbor_province = {
+		#		NOT = {
+		#				has_influencing_fort = yes
+		#		}
+		#	}
+		#}
+		#NOT = {
+		#	area_for_scope_province = {
+		#		has_influencing_fort = yes
+		#		is_in_capital_area = yes
+		#	}
+		#}
+		
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = non_fort }
+	}
+
+	onmap = yes
+	
+	influencing_fort = yes
+	
+	ai_will_do = {
+		factor = 10.0
+		
+		modifier = {
+			factor = 2.0
+			any_neighbor_province = {
+				is_city = yes
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 6.5
+			owner = { treasury = 10000 }
+		}
+	}
+}
+fort_17th = {
+	cost = 8000
+	time = 30
+	
+	make_obsolete = fort_16th
+	
+	modifier = {
+		#supply_limit = 4
+		fort_level = 8
+	}
+	
+	build_trigger = {
+		if = {
+			limit = {
+				FROM = {
+					ai = no
+				}
+			}
+			has_building = fort_16th
+		}
+		
+		#if = {
+		#	limit = { FROM = { ai = yes } }
+		#	all_neighbor_province = {
+		#		NOT = {						
+		#			has_influencing_fort = yes
+		#		}
+		#	}
+		#}
+		#NOT = {
+		#	area_for_scope_province = {
+		#		has_influencing_fort = yes
+		#		is_in_capital_area = yes
+		#	}
+		#}
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = non_fort }
+	}
+
+	onmap = yes
+	
+	influencing_fort = yes
+	
+	ai_will_do = {
+		factor = 10.0
+		
+		modifier = {
+			factor = 2.0
+			any_neighbor_province = {
+				is_city = yes
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 6.5
+			owner = { treasury = 10000 }
+		}
+	}
+}
+fort_18th = {
+	cost = 12000
+	time = 30
+	
+	
+	make_obsolete = fort_17th
+	
+	modifier = {
+		#supply_limit = 5
+		fort_level = 12
+	}
+	
+	build_trigger = {
+		if = {
+			limit = {
+				FROM = {
+					ai = no
+				}
+			}
+			has_building = fort_17th
+		}
+		
+		#if = {
+		#	limit = { FROM = { ai = yes } }
+		#	all_neighbor_province = {
+		#		NOT = {
+		#			has_influencing_fort = yes
+		#		}
+		#	}
+		#}
+		#NOT = {
+		#	area_for_scope_province = {
+		#		has_influencing_fort = yes
+		#		is_in_capital_area = yes
+		#	}
+		#}
+		NOT = { has_province_modifier = province_nuked }
+		NOT = { has_province_modifier = non_fort }
+	}
+
+	onmap = yes
+	
+	influencing_fort = yes
+	
+	ai_will_do = {
+		factor = 10.0
+		
+		modifier = {
+			factor = 2.0
+			any_neighbor_province = {
+				is_city = yes
+			}
+		}
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+		modifier = {
+			factor = 2.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 6.5
+			owner = { treasury = 10000 }
+		}
+	}
+}
+
+################################################
+# Transportation
+################################################
+
+road = {
+	cost = 500
+	time = 4
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_friendly_movement_speed = 0.15
+		allowed_num_of_buildings = 1
+	}
+	on_built = {
+		add_province_modifier = {
+			name = iron_dome
+			duration = -1
+		}		
+	}
+	keep_trigger = {
+		has_province_modifier = iron_dome
+	}
+	on_destroyed = {
+		remove_province_modifier = iron_dome
+	}
+	ai_will_do = {
+		factor = 10 #Lots of logic in code instead, that multiplies with this value
+		modifier = {
+			factor = 0
+			owner = {  NOT = { full_idea_group = defence_missil_research } }
+		}
+		modifier = {
+			factor = 5
+			owner = { has_idea_group = defence_missil_research }
+		}
+		modifier = {
+			factor = 10
+			owner = { full_idea_group = defence_missil_research }
+		}
+	} 
+
+}
+
+highway = {
+	cost = 1500
+	time = 8
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_friendly_movement_speed = 0.3	
+		allowed_num_of_buildings = 1
+	}
+	keep_trigger = {
+		has_province_modifier = iron_dome_atom
+	}
+	on_built = {
+		add_province_modifier = {
+			name = iron_dome_atom
+			duration = -1
+		}		
+	}
+	on_destroyed = {
+		remove_province_modifier = iron_dome_atom
+	}
+	ai_will_do = {
+		factor = 10 #Lots of logic in code instead, that multiplies with this value
+		modifier = {
+			factor = 0
+			owner = {  NOT = { full_idea_group = defence_missil_research } }
+		}
+		modifier = {
+			factor = 5
+			owner = { has_idea_group = defence_missil_research }
+		}
+		modifier = {
+			factor = 10
+			owner = { full_idea_group = defence_missil_research }
+		}
+		
+	}
+
+	 
+}
+
+railroad = {
+	cost = 20000
+	time = 36
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_hostile_attrition = 1
+		allowed_num_of_buildings = 1
+	}
+
+	ai_will_do = {
+		factor = 8.0
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_50 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_100 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_150 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_250 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_350 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_500 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_700 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_1000 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_1500 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = num_of_nuclear_weapons value = 1 } } }
+		}
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		modifier = {
+			factor = 2.6
+			owner = { is_great_power = yes }
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+		modifier = {
+			factor = 100.0
+			any_neighbor_province = {
+				NOT = { owned_by = root }
+			}
+		}
+		modifier = {
+			factor = 100.0
+			has_port = yes
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_50 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_100 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_150 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_250 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_350 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_500 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_700 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_1000 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_1500 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = num_of_nuclear_weapons value = 1 } }
+		}
+	}
+}
+
+mass_transit_system = {
+	cost = 10000
+	time = 36
+
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_hostile_attrition = 2
+		allowed_num_of_buildings = 1
+	}
+	
+	ai_will_do = {
+		factor = 8.0
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_50 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_100 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_150 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_250 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_350 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_500 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_700 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_1000 value = 1 } } }
+		}
+		modifier = {
+			factor = 0
+			owner = {  NOT = { check_variable = { which = missil_1500 value = 1 } } }
+		}
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		modifier = {
+			factor = 2.6
+			owner = { is_great_power = yes }
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+		modifier = {
+			factor = 100.0
+			any_neighbor_province = {
+				NOT = { owned_by = root }
+			}
+		}
+		modifier = {
+			factor = 100.0
+			has_port = yes
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_50 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_100 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_150 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_250 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_350 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_500 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_700 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_1000 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = missil_1500 value = 1 } }
+		}
+		modifier = {
+			factor = 100
+			owner = { check_variable = { which = num_of_nuclear_weapons value = 1 } }
+		}
+	} 
+}
+
+################################################
+# Production
+################################################
+
+storehouse = {
+	cost = 250
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_production_efficiency = 0.25
+	}
+	on_built = {
+		add_development_from_building = {
+			building = marketplace
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = marketplace
+			type = production
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+
+	
+
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+	}
+
+}
+
+windmill = {
+	cost = 500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = storehouse
+	modifier = {
+		local_production_efficiency = 0.5
+	}
+	on_built = {
+		add_development_from_building = {
+			building = workshop
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = workshop
+			type = production
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	
+
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+workshop = {
+	cost = 750
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = windmill
+	modifier = {
+		local_production_efficiency = 0.75
+	}
+	
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = 3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
+		add_development_from_building = {
+			building = temple
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = -3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
+		}
+		remove_development_from_building = {
+			building = temple
+			type = tax
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+counting_house = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = workshop
+	modifier = {
+		local_production_efficiency = 1
+	}	
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = counting_house
+			obsolete_building = workshop
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = counting_house
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	
+	
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+factory = {
+	cost = 1250
+	time = 18
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = counting_house
+	modifier = {
+		local_production_efficiency = 1.25
+		local_development_cost = -0.05
+	}	
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = factory
+			obsolete_building = counting_house
+			type = production
+			value = 4
+			upgrade_value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = factory
+			type = production
+			value = 4
+		}
+	}
+	on_obsolete = {
+	}
+	
+	
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+coal_plant = {
+	cost = 2000
+	time = 24
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_production_efficiency = 0.1
+		local_tax_modifier = 0.1
+		trade_goods_size = 0.12
+		local_development_cost = -0.1
+	}	
+	on_built = {
+		add_development_from_building = {
+			building = coal_plant
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = coal_plant
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+nuclear_plant = {
+	cost = 4000
+	time = 48
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_production_efficiency = 0.2
+		local_tax_modifier = 0.2
+		trade_goods_size = 0.25
+		local_development_cost = -0.15
+	}	
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = nuclear_plant
+			type = production
+			value = 4
+			upgrade_value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = nuclear_plant
+			type = production
+			value = 4
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+fusion_reactor = {
+	cost = 6000
+	time = 48
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_production_efficiency = 0.4
+		local_tax_modifier = 0.4
+		trade_goods_size = 0.45
+		local_development_cost = -0.20
+	}	
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = fusion_reactor
+			type = production
+			value = 6
+			upgrade_value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = fusion_reactor
+			type = production
+			value = 6
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 8.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+
+		#TRADE GOODS
+		
+		
+		
+	}
+}
+
+################################################
+# Coastal
+################################################
+
+coastal_defence = {
+
+	cost = 2000
+	time = 12
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	
+	modifier = {
+		blockade_force_required = 0.5
+		hostile_disembark_speed = 1.0
+		hostile_fleet_attrition = 3
+	}
+	
+	ai_will_do = {
+		factor = 1.0
+		
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 8000 }
+		}
+		
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+	}
+}
+
+naval_battery = {
+
+	make_obsolete = coastal_defence
+	cost = 4000
+	time = 24
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		blockade_force_required = 1.0
+		hostile_disembark_speed = 2.0
+		hostile_fleet_attrition = 6
+	}
+
+	ai_will_do = {
+		factor = 1.5
+		
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 8000 }
+		}
+		
+		modifier = {
+			factor = 2.5
+			is_capital = yes
+		}
+	}
+}
+
+################################################
+# Trade
+################################################
+marketplace = {
+	cost = 100
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		province_trade_power_modifier = 0.25
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = trade_depot
+			obsolete_building = marketplace
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = trade_depot
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { province_has_center_of_trade_of_level = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#MODIFIERS
+		modifier = {
+			factor = 2.0
+			has_river_estuary_trigger = yes
+		}
+		#TRADE CENTER
+		modifier = {
+			factor = 10.0
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 20.0
+			province_has_center_of_trade_of_level = 2
+		}
+		modifier = {
+			factor = 30.0
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+}
+
+trade_post = {
+	cost = 250
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = marketplace
+	modifier = {
+		province_trade_power_modifier = 0.5
+	}
+	on_built = {
+		add_development_from_building = {
+			building = trade_post
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = trade_post
+			type = production
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { province_has_center_of_trade_of_level = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#MODIFIERS
+		modifier = {
+			factor = 2.0
+			has_river_estuary_trigger = yes
+		}
+		#TRADE CENTER
+		modifier = {
+			factor = 10.0
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 20.0
+			province_has_center_of_trade_of_level = 2
+		}
+		modifier = {
+			factor = 30.0
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+}
+
+trade_depot = {
+	cost = 500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = trade_post
+	
+	modifier = {
+		province_trade_power_modifier = 0.75
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = trade_depot
+			obsolete_building = trade_post
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = trade_depot
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { province_has_center_of_trade_of_level = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#MODIFIERS
+		modifier = {
+			factor = 2.0
+			has_river_estuary_trigger = yes
+		}
+		#TRADE CENTER
+		modifier = {
+			factor = 10.0
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 20.0
+			province_has_center_of_trade_of_level = 2
+		}
+		modifier = {
+			factor = 30.0
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+}
+
+treasury_office = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = trade_depot
+	
+	modifier = {
+		province_trade_power_modifier = 1
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = treasury_office
+			obsolete_building = trade_depot
+			type = production
+			value = 3
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = treasury_office
+			type = production
+			value = 3
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { province_has_center_of_trade_of_level = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#MODIFIERS
+		modifier = {
+			factor = 2.0
+			has_river_estuary_trigger = yes
+		}
+		#TRADE CENTER
+		modifier = {
+			factor = 10.0
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 20.0
+			province_has_center_of_trade_of_level = 2
+		}
+		modifier = {
+			factor = 30.0
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+}
+
+stock_exchange = {
+	cost = 2000
+	time = 18
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = treasury_office
+	
+	modifier = {
+		province_trade_power_modifier = 1.25
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = stock_exchange
+			obsolete_building = treasury_office
+			type = production
+			value = 4
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = stock_exchange
+			type = production
+			value = 4
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { province_has_center_of_trade_of_level = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#MODIFIERS
+		modifier = {
+			factor = 2.0
+			has_river_estuary_trigger = yes
+		}
+		#TRADE CENTER
+		modifier = {
+			factor = 10.0
+			province_has_center_of_trade_of_level = 1
+		}
+		modifier = {
+			factor = 20.0
+			province_has_center_of_trade_of_level = 2
+		}
+		modifier = {
+			factor = 30.0
+			province_has_center_of_trade_of_level = 1
+		}
+	}
+}
+
+################################################
+# Government
+################################################
+
+constable = {		
+	cost = 5000
+	time = 24
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+		NOT = {
+			area_for_scope_province = {
+				is_in_capital_area = yes
+				has_building = constable
+			}
+		}		
+	}
+	modifier = {
+		local_friendly_movement_speed = 0.25
+		local_institution_spread = 0.05
+		trade_steering = 0.005
+	}
+	on_built = {
+		add_development_from_building = {
+			building = constable
+			type = tax
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = constable
+			type = tax
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+tax_assessor = {
+
+	cost = 500
+	time = 12
+
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_tax_modifier = 0.6
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = tax_assessor
+			obsolete_building = constable
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = tax_assessor
+			type = production
+			value = 2
+		}
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+courthouse = {
+	cost = 500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_state_maintenance_modifier = -0.25
+		local_autonomy = -0.1
+		allowed_num_of_buildings = 1
+		local_governing_cost_increase = -7
+		local_governing_cost = -0.05
+	}
+	on_built = {
+		add_development_from_building = {
+			building = courthouse
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = courthouse
+			type = tax
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+town_hall = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = courthouse
+	
+	modifier = {
+		local_state_maintenance_modifier = -0.5
+		local_autonomy = -0.2
+		allowed_num_of_buildings = 2
+		local_governing_cost_increase = -15
+		local_governing_cost = -0.1
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = town_hall
+			obsolete_building = courthouse
+			type = tax
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = town_hall
+			type = tax
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+################################################
+# Army
+################################################
+
+armory = {
+	cost = 500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_manpower_modifier = 0.2
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_government_attribute = manpower_sailors_on_build
+				}
+			}
+			FROM = {
+				add_manpower = 1
+			}
+		}
+		add_development_from_building = {
+			building = armory
+			type = manpower
+			value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_government_attribute = manpower_sailors_on_build
+				}
+			}
+			FROM = {
+				add_manpower = -1
+			}
+		}
+		remove_development_from_building = {
+			building = armory
+			type = manpower
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 3.5
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 250 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 250 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_manpower = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_mil_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = { personality = ai_militarist }
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 2.5
+			has_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+	}
+}
+
+barracks = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = armory
+
+	modifier = {
+		local_manpower_modifier = 0.35
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_manpower = 1
+			}
+		}
+		add_development_from_building = {
+			building = barracks
+			type = manpower
+			value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_manpower = -1
+			}
+		}
+		remove_development_from_building = {
+			building = barracks
+			type = manpower
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 3.5
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 250 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 250 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_manpower = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_mil_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = { personality = ai_militarist }
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 2.5
+			has_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+	}
+}
+
+training_fields = {
+	cost = 1500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = barracks
+	
+	modifier = {
+		local_manpower_modifier = 0.75
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = military_government
+				}
+			}
+			FROM = {
+				add_manpower = 1
+			}
+		}
+		add_development_from_upgrading_or_building = {
+			building = training_field
+			obsolete_building = barracks
+			type = manpower
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = military_government
+				}
+			}
+			FROM = {
+				add_manpower = -1
+			}
+		}
+	}
+	on_obsolete = {
+		remove_development_from_building = {
+			building = training_field
+			type = manpower
+			value = 2
+		}
+	}
+	ai_will_do = {
+		factor = 3.5
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 250 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 250 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_manpower = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_manpower = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_mil_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = { personality = ai_militarist }
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 2.5
+			has_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+	}
+}
+
+regimental_camp = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		land_forcelimit = 1
+		#supply_limit = 1
+		regiment_recruit_speed = -0.1
+	}
+	on_built = {
+		add_development_from_building = {
+			building = regimental_camp
+			type = manpower
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = regimental_camp
+			type = manpower
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 250 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 250 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 10000 }
+		}
+		#ARMY SIZE
+		modifier = {
+			factor = 8
+			owner = { army_size_percentage = 0.8 }
+		}
+		modifier = {
+			factor = 9.0
+			owner = { army_size_percentage = 0.9 }
+		}
+		modifier = {
+			factor = 10
+			owner = { army_size_percentage = 1 }
+		}
+		#BUILDINGS
+	
+	}
+}
+
+conscription_center = {
+	cost = 2000
+	time = 12
+
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	make_obsolete = regimental_camp
+
+	modifier = {
+		land_forcelimit = 2
+		#supply_limit = 3
+		regiment_recruit_speed = -0.2
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = conscription_center
+			obsolete_building = regimental_camp
+			type = manpower
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = conscription_center
+			type = manpower
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 250 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 250 }
+		}
+		modifier = {
+			factor = 3.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 4.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 5.4
+			owner = { treasury = 10000 }
+		}
+		#ARMY SIZE
+		modifier = {
+			factor = 8.0
+			owner = { army_size_percentage = 0.8 }
+		}
+		modifier = {
+			factor = 9.0
+			owner = { army_size_percentage = 0.9 }
+		}
+		modifier = {
+			factor = 10.0
+			owner = { army_size_percentage = 1 }
+		}
+		#BUILDINGS
+		
+	}
+}
+		
+################################################
+# Navy
+################################################
+
+dock = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	
+	modifier = {
+		local_sailors_modifier = 0.75
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = 200
+			}
+		}
+		add_development_from_building = {
+			building = dock
+			type = production
+			value = 1
+		}
+	}
+	
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = -200
+			}
+		}
+		remove_development_from_building = {
+			building = dock
+			type = production
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.95 }
+		}
+	}
+}
+
+drydock = {
+	cost = 2000
+	time = 12
+
+	make_obsolete = dock
+
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+
+	modifier = {
+		local_sailors_modifier = 1.0
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = 200
+			}
+		}
+		add_development_from_upgrading_or_building = {
+			building = drydock
+			obsolete_building = dock
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = -200
+			}
+		}
+		remove_development_from_building = {
+			building = drydock
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.95 }
+		}
+	}
+}
+
+naval_arsenal = {
+	cost = 4000
+	time = 12
+	
+	make_obsolete = drydock
+	
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	
+	modifier = {
+		local_sailors_modifier = 2.0	
+	}	
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = 200
+			}
+		}
+		add_development_from_upgrading_or_building = {
+			building = naval_arsenal
+			obsolete_building = drydock
+			type = production
+			value = 3
+			upgrade_value = 1
+		}
+	}
+	
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					has_reform = democracy_reform
+				}
+			}
+			FROM = {
+				add_sailors = -200
+			}
+		}
+		remove_development_from_building = {
+			building = naval_arsenal
+			type = production
+			value = 3
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { sailors_percentage = 0.95 }
+		}
+	}
+}
+
+shipyard = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		naval_forcelimit = 3
+		ship_recruit_speed = -0.1
+		local_ship_repair = 0.1
+		local_has_man_of_war = yes
+		local_has_galleass = yes
+		local_has_voc_indiamen = yes
+	}
+	on_built = {
+		add_development_from_building = {
+			building = shipyard
+			type = production
+			value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = shipyard
+			type = production
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+	}
+}
+
+grand_shipyard = {
+	cost = 2000
+	time = 12
+	
+	make_obsolete = shipyard
+	
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		naval_forcelimit = 6
+		ship_recruit_speed = -0.25
+		local_ship_repair = 0.25
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = grand_shipyard
+			obsolete_building = shipyard
+			type = production
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = grand_shipyard
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+	}
+}
+
+naval_base = {
+	cost = 4000
+	time = 12
+	
+	make_obsolete = grand_shipyard
+	
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		naval_forcelimit = 8
+		ship_recruit_speed = -0.5
+		local_ship_repair = 0.5
+	}
+	on_built = {
+		add_development_from_upgrading_or_building = {
+			building = naval_base
+			obsolete_building = grand_shipyard
+			type = production
+			value = 3
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = naval_base
+			type = production
+			value = 3
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 1.1
+			local_autonomy = 50
+		}
+		modifier = {
+			factor = 1.1 # Little above build cost
+			FROM = { navy_size_percentage = 0.1 }
+		}
+		modifier = {
+			factor = 2.5 # Little above build cost
+			FROM = { navy_size_percentage = 0.25 }
+		}
+		modifier = {
+			factor = 5 # Little above build cost
+			FROM = { navy_size_percentage = 0.5 }
+		}
+		modifier = {
+			factor = 7 # Little above build cost
+			FROM = { navy_size_percentage = 0.75 }
+		}
+		modifier = {
+			factor = 10 # Little above build cost
+			FROM = { navy_size_percentage = 0.95 }
+		}
+	}
+}
+
+################################################
+# Education
+################################################
+
+
+university = {
+	cost = 1000
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_development_cost = -0.30
+		local_institution_spread = 0.1
+		allowed_num_of_buildings = 1
+	}
+	on_built = {
+		add_development_from_building = {
+			building = university
+			type = tax
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = university
+			type = tax
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+
+################################################
+# Religion
+################################################
+
+glorious_monument = {		
+	cost = 500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_unrest = -1
+		local_missionary_strength = 0.01
+	}
+	
+	ai_will_do = {
+		factor = 4.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		modifier = {
+			factor = 0.75
+			has_production_building_trigger = no
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_tax = 3
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 10.0
+			AND = {
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+			}
+		}
+	}
+}
+
+temple = {		
+	make_obsolete = glorious_monument
+
+	cost = 800
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_unrest = -2
+		local_missionary_strength = 0.02
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = 3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
+		add_development_from_building = {
+			building = temple
+			type = tax
+			value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = -3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
+		}
+		remove_development_from_building = {
+			building = temple
+			type = tax
+			value = 1
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 4.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		modifier = {
+			factor = 0.75
+			has_production_building_trigger = no
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_tax = 3
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 10.0
+			AND = {
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+			}
+		}
+	}
+}
+
+cathedral = {
+	make_obsolete = temple
+	
+	cost = 1500
+	time = 12
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+	}
+	modifier = {
+		local_unrest = -3
+		local_missionary_strength = 0.03
+	}
+	on_built = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = 3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = 3
+			}
+		}
+		add_development_from_upgrading_or_building = {
+			building = cathedral
+			obsolete_building = church
+			type = tax
+			value = 2
+			upgrade_value = 1
+		}
+	}
+	on_destroyed = {
+		if = {
+			limit = {
+				FROM = {
+					OR = {
+						religion = buddhism
+						religion = mahayana
+						religion = vajrayana
+					}
+					has_estate_privilege = estate_church_karma_temples
+				}
+			}
+			FROM = {
+				add_karma = -3
+			}
+		}
+		if = {
+			limit = {
+				FROM = {
+					religion = catholic
+					has_estate_privilege = estate_church_influence_temples
+				}
+			}
+			FROM = {
+				add_papal_influence = -3
+			}
+		}
+		remove_development_from_building = {
+			building = cathedral
+			type = tax
+			value = 3
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 4.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.5
+			has_no_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 2000 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		modifier = {
+			factor = 0.75
+			has_production_building_trigger = no
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.1
+			owner = { treasury = 2000 }
+		}
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 4000 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 6000 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 8000 }
+		}
+		modifier = {
+			factor = 1.5
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_tax = 3
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_tax = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 2.5
+			development = 10
+		}
+		modifier = {
+			factor = 2.5
+			development = 20
+		}
+		
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_manufactory_trigger = yes
+		}
+		modifier = {
+			factor = 10.0
+			AND = {
+				has_manufactory_trigger = yes
+				has_production_building_trigger = yes
+			}
+		}
+	}
+}
+
+################################################
+# Manufactories
+################################################
+manufactory = {
+	cost = 500
+	time = 60
+	modifier = {
+		trade_goods_size = 1.0
+	}
+	
+	build_trigger = {
+		has_building = storehouse
+		NOT = { has_province_modifier = province_nuked }
+	}
+	
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+wharf = {
+	manufactory = {
+		naval_supplies
+		fish
+		salt
+		navalarms
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+weapons = {
+	manufactory = {
+		arms
+		navalarms
+		cars
+		electronics
+	}
+	onmap = yes	
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+textile = {
+	manufactory = {
+		wool
+		cloth
+		silk
+		dyes
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+plantations = {
+	manufactory = {
+		coffee
+		cotton
+		sugar
+		tobacco
+		tea
+		cocoa
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+tradecompany = {
+	manufactory = {
+		ivory
+		slaves
+		spices
+		fur
+		incense
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+farm_estate = {
+	manufactory = {
+		grain
+		livestock
+		wine
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+mills = {
+	manufactory = {
+		paper
+		gems
+		tropical_wood
+		glass
+		chinaware
+	}
+	onmap = yes
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+furnace = {
+	manufactory = {
+		coal
+		oil
+		uranium
+		aluminum		
+		copper
+		iron
+		titanium
+	}
+
+	potential = {
+		has_dlc = "Rule Britannia"
+	}
+
+	modifier = {
+		global_trade_goods_size_modifier = 0.05 #National Bonus
+	}
+	onmap = yes
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 10.0
+		#LIMIT
+		modifier = {
+			factor = 0
+			owner = { num_of_loans = 3 }
+		}
+		modifier = {
+			factor = 0.3
+			owner = { num_of_loans = 2 }
+		}
+		modifier = {
+			factor = 0.5
+			owner = { num_of_loans = 1 }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { NOT = { treasury = 500 } }
+		}
+		modifier = {
+			factor = 0.75
+			owner = { is_in_deficit = yes }
+		}
+		#TREASURY
+		modifier = {
+			factor = 1.2
+			owner = { treasury = 500 }
+		}
+		modifier = {
+			factor = 1.3
+			owner = { treasury = 750 }
+		}
+		modifier = {
+			factor = 1.4
+			owner = { treasury = 10000 }
+		}
+		#BASE
+		modifier = {
+			factor = 1.5
+			base_production = 2
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 4
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 6
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 8
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 10
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 12
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 14
+		}
+		modifier = {
+			factor = 1.5
+			base_production = 15
+		}
+
+		#AI
+		modifier = {
+			factor = 2.0
+			owner = { ruler_has_good_adm_personality = yes }
+		}
+		modifier = {
+			factor = 2.0
+			owner = {
+				OR = {
+					personality = ai_capitalist
+					personality = ai_balanced
+				}
+			}
+		}
+
+		#PROVINCE IMPORTANCE
+		modifier = {
+			factor = 3.5
+			development = 10
+		}
+		modifier = {
+			factor = 3.5
+			development = 20
+		}
+
+		
+		#TERRAIN
+		
+
+		#BUILDINGS
+		modifier = {
+			factor = 5.0
+			has_no_manufactory_trigger = yes
+		}
+		
+		#TRADE GOODS
+		
+		
+	}
+}
+
+ramparts = {
+	manufactory = {
+		all
+	}
+	modifier = {
+		local_hostile_attrition = 1
+		local_defensiveness = 0.15
+		local_defender_dice_roll_bonus = 1
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 5
+			ROOT = {
+				fort_level = 1
+			}
+		}
+	}
+}
+
+soldier_households = {
+	manufactory = {
+		all
+	}
+
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		grain
+		fish
+		livestock
+		wine
+	}
+
+	modifier = {
+		local_manpower = 0.75
+	}
+	bonus_modifier = {
+		local_manpower = 0.75
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	on_built = {
+		add_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = manufactory
+			type = production
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+impressment_offices = {
+	manufactory = {
+		all
+	}
+
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		salt
+		fish
+		naval_supplies
+		tropical_wood
+	}
+
+	build_trigger = {
+		has_port = yes
+		NOT = { has_province_modifier = province_nuked }
+	}
+
+	modifier = {
+		local_sailors = 250
+	}
+	bonus_modifier = {
+		local_sailors = 250
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	on_built = {
+		add_development_from_building = {
+			building = impressment_offices
+			type = manpower
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = impressment_offices
+			type = manpower
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}
+
+
+state_house = {
+	manufactory = {
+		all
+	}
+
+	bonus_manufactory = { # Will apply an extra modifier if these goods
+		paper
+		glass
+		gems
+	}
+
+	build_trigger = {
+		NOT = { has_province_modifier = province_nuked }
+		#NOT = {
+		#	area_for_scope_province = {
+		#		owner = {
+		#			tag = ROOT
+		#		}
+		#		OR = {
+		#			has_building = state_house
+		#			has_construction = state_house
+		#		}
+		#	}
+		#}
+	}
+	
+	keep_trigger = {
+		#NOT = {
+		#	area_for_scope_province = {
+		#		NOT = { province_id = root }
+		#		owner = {
+		#			tag = ROOT
+		#		}
+		#		OR = {
+		#			has_building = state_house
+		#			has_construction = state_house
+		#		}
+		#	}
+		#}
+	}
+
+	modifier = {
+		#statewide_governing_cost = -0.2
+		#min_local_autonomy = -5
+		local_garrison_size = 0.25
+	}
+	bonus_modifier = {
+		statewide_governing_cost = -0.2
+		min_local_autonomy = -5
+	}
+	onmap = no
+	show_separate = yes # Means as a manufactory it will be shown according to the old way
+	on_built = {
+		add_development_from_building = {
+			building = state_house
+			type = tax
+			value = 2
+		}
+	}
+	on_destroyed = {
+		remove_development_from_building = {
+			building = state_house
+			type = tax
+			value = 2
+		}
+	}
+	on_obsolete = {
+	}
+	ai_will_do = {
+		factor = 1
+	}
+}

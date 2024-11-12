@@ -1,0 +1,731 @@
+
+transport_script_effect = {
+
+		if = {
+			limit = { 
+				ai = no
+				num_of_ports = 1
+				is_year = 2021
+				#NOT = { is_year = 2924 }
+				NOT = { tag = USA }
+				NOT = { tag = IRA }
+				NOT = { tag = IRN }
+			}
+			random_owned_province = {
+				limit = { has_port = yes }
+				build_to_forcelimit = {
+					transport = 0.30
+				}
+			}
+			
+		}
+		
+}
+transport_ai_script_effect = { 
+	if = {
+			limit = { 
+				ai = yes
+				NOT = { tag = USA }
+				NOT = { tag = JAP }
+				NOT = { tag = ZOM }
+				num_of_ports = 1
+				is_year = 2023
+			}
+			random_owned_province = {
+				limit = { has_port = yes }
+				build_to_forcelimit = {
+					transport = 0.03
+				}
+			}
+		}
+		if = {
+			limit = { 
+				ai = yes
+				OR = {
+					tag = JAP
+					tag = USA
+				}
+				
+				is_year = 2023
+			}
+			random_owned_province = {
+				limit = { has_port = yes }
+				build_to_forcelimit = {
+					transport = 0.03
+					
+				}
+			}
+		}
+}
+
+navy_scripted_effect = { 
+	if = {
+		limit = {
+			tag = USA 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			heavy_ship = USA
+			
+		}
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.07
+			}
+		}
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.12
+				
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			tag = FR2 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = FR2
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.2
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	if = {
+		limit = {	
+			tag = GBR 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			
+			heavy_ship = GBR
+			heavy_ship = GBR
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.2
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			
+			tag = CHN 
+			
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			
+			heavy_ship = CHN
+			heavy_ship = CHN
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.1
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = INI 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = INI
+			heavy_ship = INI
+		}
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = AUS 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.1
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = JAP 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = JAP
+			heavy_ship = JAP
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.1
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.15
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = SKO 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {	
+			tag = NED 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = RUS 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = RUS
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.11
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {	
+			tag = ITA 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = ITA
+			heavy_ship = ITA
+		}
+		
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.1
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.25
+				
+			}
+		}
+	}
+	
+	if = {
+		limit = {
+			tag = VTN 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			
+			heavy_ship = VTN
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = BRZ 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = TKY 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = TKY
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {	
+			tag = GER 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = SPA 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = THL
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.03
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.1
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = SPA 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			heavy_ship = SPA
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = ISR 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.02
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.1
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = NOK 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.10
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {	
+			OR = {
+			tag = CAN
+			tag = CHL
+			tag = SAU
+			tag = NOR
+			tag = NZL
+			tag = LAP
+			tag = SGA
+			tag = DAN
+			}
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.08
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+			tag = MEX
+			tag = IRE
+			tag = PHI
+			}
+			
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			tag = IDN			
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				galley = 0.05
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				light_ship = 0.33
+				
+			}
+		}
+		random_owned_province = {
+			limit = { has_port = yes }
+			build_to_forcelimit = {
+				transport = 0.20
+				
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				tag = IRA
+				tag = IRN
+			} 
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		431 = {
+			build_to_forcelimit = {
+				transport = 0.65
+			}
+			build_to_forcelimit = {
+				galley = 0.20
+			}
+
+		}
+	}
+	if = {
+		limit = {
+			tag = SWE
+			is_year = 2021
+			#NOT = { is_year = 2924 }
+		}
+		1 = {
+			build_to_forcelimit = {
+				galley = 0.05
+			}
+
+		}
+	}
+
+}

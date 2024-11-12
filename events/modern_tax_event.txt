@@ -1,0 +1,4242 @@
+namespace = tax_canal
+
+#tax_canal Point Warning X1
+country_event = {
+	id = tax_canal.1
+	title = "tax_canal.1title"
+	desc = "tax_canal.1desc"
+	picture = CANAL_TAX_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "tax_canal.1noting"
+		if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				NOT = { has_country_modifier = canal_tax_suez_2 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_2
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_country_modifier = canal_tax_suez }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_suez
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				NOT = { has_country_modifier = canal_tax_suez_3 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_3
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				NOT = { has_country_modifier = canal_tax_suez_4 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_4
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				NOT = { has_country_modifier = canal_tax_suez_5 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_5
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				NOT = { has_country_modifier = canal_tax_suez_6 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_6
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				NOT = { has_country_modifier = canal_tax_suez_7 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_7
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				NOT = { has_country_modifier = canal_tax_suez_8 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_8
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				NOT = { has_country_modifier = canal_tax_suez_9 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_9
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				NOT = { has_country_modifier = canal_tax_suez_10 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_10
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				NOT = { has_country_modifier = canal_tax_suez_11 }	
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_11
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				NOT = { has_country_modifier = canal_tax_suez_12 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_12
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				NOT = { has_country_modifier = canal_tax_suez_13 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_13
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				NOT = { has_country_modifier = canal_tax_suez_14 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_14
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				NOT = { has_country_modifier = canal_tax_suez_15 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_15
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				NOT = { has_country_modifier = canal_tax_suez_16 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_16
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				NOT = { has_country_modifier = canal_tax_suez_17 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_17
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				has_country_modifier = canal_tax_suez_17
+				NOT = { has_country_modifier = canal_tax_suez_18 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_18
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				has_country_modifier = canal_tax_suez_17
+				has_country_modifier = canal_tax_suez_18
+				NOT = { has_country_modifier = canal_tax_suez_19 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_19
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				has_country_modifier = canal_tax_suez_17
+				has_country_modifier = canal_tax_suez_18
+				has_country_modifier = canal_tax_suez_19
+				NOT = { has_country_modifier = canal_tax_suez_20 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_20
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				has_country_modifier = canal_tax_suez_17
+				has_country_modifier = canal_tax_suez_18
+				has_country_modifier = canal_tax_suez_19
+				has_country_modifier = canal_tax_suez_20
+				NOT = { has_country_modifier = canal_tax_suez_21 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_21
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				has_country_modifier = canal_tax_suez_2
+				has_country_modifier = canal_tax_suez_3
+				has_country_modifier = canal_tax_suez_4
+				has_country_modifier = canal_tax_suez_5
+				has_country_modifier = canal_tax_suez_6
+				has_country_modifier = canal_tax_suez_7
+				has_country_modifier = canal_tax_suez_8
+				has_country_modifier = canal_tax_suez_9
+				has_country_modifier = canal_tax_suez_10
+				has_country_modifier = canal_tax_suez_11
+				has_country_modifier = canal_tax_suez_12
+				has_country_modifier = canal_tax_suez_13
+				has_country_modifier = canal_tax_suez_14
+				has_country_modifier = canal_tax_suez_15
+				has_country_modifier = canal_tax_suez_16
+				has_country_modifier = canal_tax_suez_17
+				has_country_modifier = canal_tax_suez_18
+				has_country_modifier = canal_tax_suez_19
+				has_country_modifier = canal_tax_suez_20
+				has_country_modifier = canal_tax_suez_21
+				NOT = { has_country_modifier = canal_tax_suez_22 }
+			}
+			add_country_modifier = {
+				name = canal_tax_suez_22
+				duration = -1
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = canal_tax_suez_23
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = tax_not
+						value = 1
+					}
+				} 
+			}
+			set_variable = {
+				which = tax_not
+				value = 1
+			}
+		}
+		else = {
+			change_variable = {
+				which = tax_not
+				value = 1
+			}
+		}
+		event_target:has_suez_canal = { 
+			country_event = {
+				id = tax_canal.5
+				days = 1
+			}
+		}
+		clear_global_event_target = has_suez_canal
+	}
+	option = {
+		name = "tax_canal.2noting"
+			set_variable = {
+			which = tax_not
+			value = 0
+		}
+			if = {
+				limit = {
+					NOT = { has_country_modifier = canal_tax_suez }	
+				}
+				add_treasury = -250
+				event_target:has_suez_canal = { add_treasury = 250 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -250
+					event_target:has_suez_canal = { add_treasury = 250 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -250
+					event_target:has_suez_canal = { add_treasury = 250 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -500
+					event_target:has_suez_canal = { add_treasury = 500 }
+				}
+			}
+			if = {
+			limit = {
+				has_country_modifier = canal_tax_suez
+				NOT = { has_country_modifier = canal_tax_suez_2 }
+			}
+			hidden_effect = {
+				remove_country_modifier =canal_tax_suez
+			}
+			add_treasury = -500
+			event_target:has_suez_canal = { add_treasury = 500 }
+			if = {
+				limit = {
+					event_target:has_suez_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 1
+						}
+					}
+				}
+				add_treasury = -500
+				event_target:has_suez_canal = { add_treasury = 500 }
+			}
+			if = {
+				limit = {
+					event_target:has_suez_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 2
+						}
+					}
+				}
+				add_treasury = -500
+				event_target:has_suez_canal = { add_treasury = 500 }
+			}
+			if = {
+				limit = {
+					event_target:has_suez_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 3
+						}
+					}
+				}
+				add_treasury = -1000
+				event_target:has_suez_canal = { add_treasury = 1000 }
+			}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					NOT = { has_country_modifier = canal_tax_suez_3 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+				}
+				add_treasury = -800
+				event_target:has_suez_canal = { add_treasury = 800 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -800
+					event_target:has_suez_canal = { add_treasury = 800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -800
+					event_target:has_suez_canal = { add_treasury = 800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -1600
+					event_target:has_suez_canal = { add_treasury = 1600 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					NOT = { has_country_modifier = canal_tax_suez_4 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+				}
+				add_treasury = -1100
+				event_target:has_suez_canal = { add_treasury = 1100 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1100
+					event_target:has_suez_canal = { add_treasury = 1100 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1100
+					event_target:has_suez_canal = { add_treasury = 1100 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -2200
+					event_target:has_suez_canal = { add_treasury = 2200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					NOT = { has_country_modifier = canal_tax_suez_5 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+				}
+				add_treasury = -1400
+				event_target:has_suez_canal = { add_treasury = 1400 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1400
+					event_target:has_suez_canal = { add_treasury = 1400 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1400
+					event_target:has_suez_canal = { add_treasury = 1400 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -2800
+					event_target:has_suez_canal = { add_treasury = 2800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					NOT = { has_country_modifier = canal_tax_suez_6 }					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+				}
+				add_treasury = -1900
+				event_target:has_suez_canal = { add_treasury = 1900 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1900
+					event_target:has_suez_canal = { add_treasury = 1900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1900
+					event_target:has_suez_canal = { add_treasury = 1900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -3800
+					event_target:has_suez_canal = { add_treasury = 3800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					NOT = { has_country_modifier = canal_tax_suez_7 }
+					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+				}
+				add_treasury = -2500
+				event_target:has_suez_canal = { add_treasury = 2500 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -2500
+					event_target:has_suez_canal = { add_treasury = 2500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -2500
+					event_target:has_suez_canal = { add_treasury = 2500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -5000
+					event_target:has_suez_canal = { add_treasury = 5000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					NOT = { has_country_modifier = canal_tax_suez_8 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+				}
+				add_treasury = -3200
+				event_target:has_suez_canal = { add_treasury = 3200 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -3200
+					event_target:has_suez_canal = { add_treasury = 3200 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -3200
+					event_target:has_suez_canal = { add_treasury = 3200 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -6400
+					event_target:has_suez_canal = { add_treasury = 6400 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					NOT = { has_country_modifier = canal_tax_suez_9 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+				}
+				add_treasury = -4000
+				event_target:has_suez_canal = { add_treasury = 4000 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -4000
+					event_target:has_suez_canal = { add_treasury = 4000 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -4000
+					event_target:has_suez_canal = { add_treasury = 4000 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -8000
+					event_target:has_suez_canal = { add_treasury = 8000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					NOT = { has_country_modifier = canal_tax_suez_10 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+				}
+				add_treasury = -4900
+				event_target:has_suez_canal = { add_treasury = 4900 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -4900
+					event_target:has_suez_canal = { add_treasury = 4900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -4900
+					event_target:has_suez_canal = { add_treasury = 4900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -9800
+					event_target:has_suez_canal = { add_treasury = 9800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					NOT = { has_country_modifier = canal_tax_suez_11 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+				}
+				add_treasury = -5900
+				event_target:has_suez_canal = { add_treasury = 5900 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -5900
+					event_target:has_suez_canal = { add_treasury = 5900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -5900
+					event_target:has_suez_canal = { add_treasury = 5900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -11800
+					event_target:has_suez_canal = { add_treasury = 11800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					NOT = { has_country_modifier = canal_tax_suez_12 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+				}
+				add_treasury = -7000
+				event_target:has_suez_canal = { add_treasury = 7000 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -7000
+					event_target:has_suez_canal = { add_treasury = 7000 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -7000
+					event_target:has_suez_canal = { add_treasury = 7000 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -14000
+					event_target:has_suez_canal = { add_treasury = 14000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					NOT = { has_country_modifier = canal_tax_suez_13 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+				}
+				add_treasury = -8200
+				event_target:has_suez_canal = { add_treasury = 8200 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -8200
+					event_target:has_suez_canal = { add_treasury = 8200 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -8200
+					event_target:has_suez_canal = { add_treasury = 8200 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -16400
+					event_target:has_suez_canal = { add_treasury = 16400 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					NOT = { has_country_modifier = canal_tax_suez_14 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+				}
+				add_treasury = -9500
+				event_target:has_suez_canal = { add_treasury = 9500 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -9500
+					event_target:has_suez_canal = { add_treasury = 9500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -9500
+					event_target:has_suez_canal = { add_treasury = 9500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -19000
+					event_target:has_suez_canal = { add_treasury = 19000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					NOT = { has_country_modifier = canal_tax_suez_15 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+				}
+				add_treasury = -10900
+				event_target:has_suez_canal = { add_treasury = 10900 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -10900
+					event_target:has_suez_canal = { add_treasury = 10900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -10900
+					event_target:has_suez_canal = { add_treasury = 10900 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -21800
+					event_target:has_suez_canal = { add_treasury = 21800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					NOT = { has_country_modifier = canal_tax_suez_16 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+				}
+				add_treasury = -12500
+				event_target:has_suez_canal = { add_treasury = 12500 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -12500
+					event_target:has_suez_canal = { add_treasury = 12500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -12500
+					event_target:has_suez_canal = { add_treasury = 12500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -25000
+					event_target:has_suez_canal = { add_treasury = 25000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					NOT = { has_country_modifier = canal_tax_suez_17 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+				}
+				add_treasury = -14100
+				event_target:has_suez_canal = { add_treasury = 14100 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -14100
+					event_target:has_suez_canal = { add_treasury = 14100 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -14100
+					event_target:has_suez_canal = { add_treasury = 14100 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -28200
+					event_target:has_suez_canal = { add_treasury = 28200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					NOT = { has_country_modifier = canal_tax_suez_18 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+				}
+				add_treasury = -15800
+				event_target:has_suez_canal = { add_treasury = 15800 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -15800
+					event_target:has_suez_canal = { add_treasury = 15800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -15800
+					event_target:has_suez_canal = { add_treasury = 15800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -31600
+					event_target:has_suez_canal = { add_treasury = 31600 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					NOT = { has_country_modifier = canal_tax_suez_19 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+					remove_country_modifier =canal_tax_suez_18
+				}
+				add_treasury = -17600
+				event_target:has_suez_canal = { add_treasury = 17600 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -17600
+					event_target:has_suez_canal = { add_treasury = 17600 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -17600
+					event_target:has_suez_canal = { add_treasury = 17600 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -35200
+					event_target:has_suez_canal = { add_treasury = 35200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					has_country_modifier = canal_tax_suez_19
+					NOT = { has_country_modifier = canal_tax_suez_20 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+					remove_country_modifier =canal_tax_suez_18
+					remove_country_modifier =canal_tax_suez_19
+				}
+				add_treasury = -19500
+				event_target:has_suez_canal = { add_treasury = 19500 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -19500
+					event_target:has_suez_canal = { add_treasury = 19500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -19500
+					event_target:has_suez_canal = { add_treasury = 19500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -39000
+					event_target:has_suez_canal = { add_treasury = 39000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					has_country_modifier = canal_tax_suez_19
+					has_country_modifier = canal_tax_suez_20
+					NOT = { has_country_modifier = canal_tax_suez_21 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+					remove_country_modifier =canal_tax_suez_18
+					remove_country_modifier =canal_tax_suez_19
+					remove_country_modifier =canal_tax_suez_20
+				}
+				add_treasury = -21500
+				event_target:has_suez_canal = { add_treasury = 21500 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -21500
+					event_target:has_suez_canal = { add_treasury = 21500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -21500
+					event_target:has_suez_canal = { add_treasury = 21500 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -43000
+					event_target:has_suez_canal = { add_treasury = 43000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					has_country_modifier = canal_tax_suez_19
+					has_country_modifier = canal_tax_suez_20
+					has_country_modifier = canal_tax_suez_21
+					NOT = { has_country_modifier = canal_tax_suez_22 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+					remove_country_modifier =canal_tax_suez_18
+					remove_country_modifier =canal_tax_suez_19
+					remove_country_modifier =canal_tax_suez_20
+					remove_country_modifier =canal_tax_suez_21
+				}
+				add_treasury = -23600
+				event_target:has_suez_canal = { add_treasury = 23600 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -23600
+					event_target:has_suez_canal = { add_treasury = 23600 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -23600
+					event_target:has_suez_canal = { add_treasury = 23600 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -47200
+					event_target:has_suez_canal = { add_treasury = 47200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_suez
+					has_country_modifier = canal_tax_suez_2
+					has_country_modifier = canal_tax_suez_3
+					has_country_modifier = canal_tax_suez_4
+					has_country_modifier = canal_tax_suez_5
+					has_country_modifier = canal_tax_suez_6
+					has_country_modifier = canal_tax_suez_7
+					has_country_modifier = canal_tax_suez_8
+					has_country_modifier = canal_tax_suez_9
+					has_country_modifier = canal_tax_suez_10
+					has_country_modifier = canal_tax_suez_11
+					has_country_modifier = canal_tax_suez_12
+					has_country_modifier = canal_tax_suez_13
+					has_country_modifier = canal_tax_suez_14
+					has_country_modifier = canal_tax_suez_15
+					has_country_modifier = canal_tax_suez_16
+					has_country_modifier = canal_tax_suez_17
+					has_country_modifier = canal_tax_suez_18
+					has_country_modifier = canal_tax_suez_19
+					has_country_modifier = canal_tax_suez_20
+					has_country_modifier = canal_tax_suez_21
+					has_country_modifier = canal_tax_suez_22
+					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_suez
+					remove_country_modifier =canal_tax_suez_2
+					remove_country_modifier =canal_tax_suez_3
+					remove_country_modifier =canal_tax_suez_4
+					remove_country_modifier =canal_tax_suez_5
+					remove_country_modifier =canal_tax_suez_6
+					remove_country_modifier =canal_tax_suez_7
+					remove_country_modifier =canal_tax_suez_8
+					remove_country_modifier =canal_tax_suez_9
+					remove_country_modifier =canal_tax_suez_10
+					remove_country_modifier =canal_tax_suez_11
+					remove_country_modifier =canal_tax_suez_12
+					remove_country_modifier =canal_tax_suez_13
+					remove_country_modifier =canal_tax_suez_14
+					remove_country_modifier =canal_tax_suez_15
+					remove_country_modifier =canal_tax_suez_16
+					remove_country_modifier =canal_tax_suez_17
+					remove_country_modifier =canal_tax_suez_18
+					remove_country_modifier =canal_tax_suez_19
+					remove_country_modifier =canal_tax_suez_20
+					remove_country_modifier =canal_tax_suez_21
+					remove_country_modifier =canal_tax_suez_22
+					remove_country_modifier =canal_tax_suez_23
+				}
+				add_treasury = -25800
+				event_target:has_suez_canal = { add_treasury = 25800 }
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -25800
+					event_target:has_suez_canal = { add_treasury = 25800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -25800
+					event_target:has_suez_canal = { add_treasury = 25800 }
+				}
+				if = {
+					limit = {
+						event_target:has_suez_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -51600
+					event_target:has_suez_canal = { add_treasury = 51600 }
+				}
+			}
+			clear_global_event_target = has_suez_canal
+		}
+	}
+
+
+
+
+
+
+#tax_canal Point Warning X2
+country_event = {
+	id = tax_canal.2
+	title = "tax_canal.2title"
+	desc = "tax_canal.2desc"
+	picture = tax_increase_eventPicture
+	
+	is_triggered_only = yes
+	
+		
+	option = {
+		name = "tax_canal.3noting"
+	}
+}
+
+
+country_event = {
+	id = tax_canal.3
+	title = "tax_canal.3title"
+	desc = "tax_canal.3desc"
+	picture = CANAL_TAX_eventPicture
+	
+	is_triggered_only = yes
+		
+	option = {
+		name = "tax_canal.1noting"
+		if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				NOT = { has_country_modifier = canal_tax_panama_2 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_2
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { has_country_modifier = canal_tax_panama }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_panama
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				NOT = { has_country_modifier = canal_tax_panama_3 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_3
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				NOT = { has_country_modifier = canal_tax_panama_4 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_4
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				NOT = { has_country_modifier = canal_tax_panama_5 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_5
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				NOT = { has_country_modifier = canal_tax_panama_6 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_6
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				NOT = { has_country_modifier = canal_tax_panama_7 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_7
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				NOT = { has_country_modifier = canal_tax_panama_8 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_8
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				NOT = { has_country_modifier = canal_tax_panama_9 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_9
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				NOT = { has_country_modifier = canal_tax_panama_10 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_10
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				NOT = { has_country_modifier = canal_tax_panama_11 }	
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_11
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				NOT = { has_country_modifier = canal_tax_panama_12 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_12
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				NOT = { has_country_modifier = canal_tax_panama_13 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_13
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				NOT = { has_country_modifier = canal_tax_panama_14 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_14
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				NOT = { has_country_modifier = canal_tax_panama_15 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_15
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				NOT = { has_country_modifier = canal_tax_panama_16 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_16
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				NOT = { has_country_modifier = canal_tax_panama_17 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_17
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				NOT = { has_country_modifier = canal_tax_panama_18 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_18
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				has_country_modifier = canal_tax_panama_18
+				NOT = { has_country_modifier = canal_tax_panama_19 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_19
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				has_country_modifier = canal_tax_panama_18
+				has_country_modifier = canal_tax_panama_19
+				NOT = { has_country_modifier = canal_tax_panama_20 }
+				
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_20
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				has_country_modifier = canal_tax_panama_18
+				has_country_modifier = canal_tax_panama_19
+				has_country_modifier = canal_tax_panama_20
+				NOT = { has_country_modifier = canal_tax_panama_21 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_21
+				duration = -1
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				has_country_modifier = canal_tax_panama_2
+				has_country_modifier = canal_tax_panama_3
+				has_country_modifier = canal_tax_panama_4
+				has_country_modifier = canal_tax_panama_5
+				has_country_modifier = canal_tax_panama_6
+				has_country_modifier = canal_tax_panama_7
+				has_country_modifier = canal_tax_panama_8
+				has_country_modifier = canal_tax_panama_9
+				has_country_modifier = canal_tax_panama_10
+				has_country_modifier = canal_tax_panama_11
+				has_country_modifier = canal_tax_panama_12
+				has_country_modifier = canal_tax_panama_13
+				has_country_modifier = canal_tax_panama_14
+				has_country_modifier = canal_tax_panama_15
+				has_country_modifier = canal_tax_panama_16
+				has_country_modifier = canal_tax_panama_17
+				has_country_modifier = canal_tax_panama_18
+				has_country_modifier = canal_tax_panama_19
+				has_country_modifier = canal_tax_panama_20
+				has_country_modifier = canal_tax_panama_21
+				NOT = { has_country_modifier = canal_tax_panama_22 }
+			}
+			add_country_modifier = {
+				name = canal_tax_panama_22
+				duration = -1
+			}
+		}
+		else = {
+			add_country_modifier = {
+				name = canal_tax_panama_23
+				duration = -1
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					check_variable = {
+						which = tax_not_panama
+						value = 1
+					}
+				} 
+			}
+			set_variable = {
+				which = tax_not_panama
+				value = 1
+			}
+		}
+		else = {
+			change_variable = {
+				which = tax_not_panama
+				value = 1
+			}
+		}
+		event_target:has_panama_canal = {
+			country_event = {
+				id = tax_canal.6
+				days = 1
+			}
+		}
+		clear_global_event_target = has_panama_canal
+	}
+	option = {
+		name = "tax_canal.2noting"
+			set_variable = {
+				which = tax_not
+				value = 0
+			}
+			if = {
+				limit = {
+					NOT = { has_country_modifier = canal_tax_panama }	
+				}
+				add_treasury = -250
+				event_target:has_panama_canal = { add_treasury = 250 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -250
+					event_target:has_panama_canal = { add_treasury = 250 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -250
+					event_target:has_panama_canal = { add_treasury = 250 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -250
+					event_target:has_panama_canal = { add_treasury = 250 }
+				}
+			}
+			if = {
+			limit = {
+				has_country_modifier = canal_tax_panama
+				NOT = { has_country_modifier = canal_tax_panama_2 }
+			}
+			hidden_effect = {
+				remove_country_modifier =canal_tax_panama
+			}
+			add_treasury = -500
+			event_target:has_panama_canal = { add_treasury = 500 }
+			if = {
+				limit = {
+					event_target:has_panama_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 1
+						}
+					}
+				}
+				add_treasury = -500
+				event_target:has_panama_canal = { add_treasury = 500 }
+			}
+			if = {
+				limit = {
+					event_target:has_panama_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 2
+						}
+					}
+				}
+				add_treasury = -500
+				event_target:has_panama_canal = { add_treasury = 500 }
+			}
+			if = {
+				limit = {
+					event_target:has_panama_canal = { 
+						check_variable = {
+							which = canal_tax_2
+							value = 3
+						}
+					}
+				}
+				add_treasury = -500
+				event_target:has_panama_canal = { add_treasury = 500 }
+			}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					NOT = { has_country_modifier = canal_tax_panama_3 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+				}
+				add_treasury = -800
+				event_target:has_panama_canal = { add_treasury = 800 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -800
+					event_target:has_panama_canal = { add_treasury = 800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -800
+					event_target:has_panama_canal = { add_treasury = 800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -800
+					event_target:has_panama_canal = { add_treasury = 800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					NOT = { has_country_modifier = canal_tax_panama_4 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+				}
+				add_treasury = -1100
+				event_target:has_panama_canal = { add_treasury = 1100 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1100
+					event_target:has_panama_canal = { add_treasury = 1100 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1100
+					event_target:has_panama_canal = { add_treasury = 1100 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -1100
+					event_target:has_panama_canal = { add_treasury = 1100 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					NOT = { has_country_modifier = canal_tax_panama_5 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+				}
+				add_treasury = -1400
+				event_target:has_panama_canal = { add_treasury = 1400 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1400
+					event_target:has_panama_canal = { add_treasury = 1400 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1400
+					event_target:has_panama_canal = { add_treasury = 1400 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -1400
+					event_target:has_panama_canal = { add_treasury = 1400 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					NOT = { has_country_modifier = canal_tax_panama_6 }					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+				}
+				add_treasury = -1900
+				event_target:has_panama_canal = { add_treasury = 1900 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -1900
+					event_target:has_panama_canal = { add_treasury = 1900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -1900
+					event_target:has_panama_canal = { add_treasury = 1900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -1900
+					event_target:has_panama_canal = { add_treasury = 1900 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					NOT = { has_country_modifier = canal_tax_panama_7 }
+					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+				}
+				add_treasury = -2500
+				event_target:has_panama_canal = { add_treasury = 2500 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -2500
+					event_target:has_panama_canal = { add_treasury = 2500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -2500
+					event_target:has_panama_canal = { add_treasury = 2500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -2500
+					event_target:has_panama_canal = { add_treasury = 2500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					NOT = { has_country_modifier = canal_tax_panama_8 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+				}
+				add_treasury = -3200
+				event_target:has_panama_canal = { add_treasury = 3200 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -3200
+					event_target:has_panama_canal = { add_treasury = 3200 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -3200
+					event_target:has_panama_canal = { add_treasury = 3200 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -3200
+					event_target:has_panama_canal = { add_treasury = 3200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					NOT = { has_country_modifier = canal_tax_panama_9 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+				}
+				add_treasury = -4000
+				event_target:has_panama_canal = { add_treasury = 4000 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -4000
+					event_target:has_panama_canal = { add_treasury = 4000 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -4000
+					event_target:has_panama_canal = { add_treasury = 4000 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -4000
+					event_target:has_panama_canal = { add_treasury = 4000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					NOT = { has_country_modifier = canal_tax_panama_10 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+				}
+				add_treasury = -4900
+				event_target:has_panama_canal = { add_treasury = 4900 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -4900
+					event_target:has_panama_canal = { add_treasury = 4900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -4900
+					event_target:has_panama_canal = { add_treasury = 4900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -4900
+					event_target:has_panama_canal = { add_treasury = 4900 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					NOT = { has_country_modifier = canal_tax_panama_11 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+				}
+				add_treasury = -5900
+				event_target:has_panama_canal = { add_treasury = 5900 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -5900
+					event_target:has_panama_canal = { add_treasury = 5900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -5900
+					event_target:has_panama_canal = { add_treasury = 5900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -5900
+					event_target:has_panama_canal = { add_treasury = 5900 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					NOT = { has_country_modifier = canal_tax_panama_12 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+				}
+				add_treasury = -7000
+				event_target:has_panama_canal = { add_treasury = 7000 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -7000
+					event_target:has_panama_canal = { add_treasury = 7000 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -7000
+					event_target:has_panama_canal = { add_treasury = 7000 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -7000
+					event_target:has_panama_canal = { add_treasury = 7000 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					NOT = { has_country_modifier = canal_tax_panama_13 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+				}
+				add_treasury = -8200
+				event_target:has_panama_canal = { add_treasury = 8200 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -8200
+					event_target:has_panama_canal = { add_treasury = 8200 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -8200
+					event_target:has_panama_canal = { add_treasury = 8200 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -8200
+					event_target:has_panama_canal = { add_treasury = 8200 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					NOT = { has_country_modifier = canal_tax_panama_14 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+				}
+				add_treasury = -9500
+				event_target:has_panama_canal = { add_treasury = 9500 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -9500
+					event_target:has_panama_canal = { add_treasury = 9500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -9500
+					event_target:has_panama_canal = { add_treasury = 9500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -9500
+					event_target:has_panama_canal = { add_treasury = 9500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					NOT = { has_country_modifier = canal_tax_panama_15 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+				}
+				add_treasury = -10900
+				event_target:has_panama_canal = { add_treasury = 10900 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -10900
+					event_target:has_panama_canal = { add_treasury = 10900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -10900
+					event_target:has_panama_canal = { add_treasury = 10900 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -10900
+					event_target:has_panama_canal = { add_treasury = 10900 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					NOT = { has_country_modifier = canal_tax_panama_16 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+				}
+				add_treasury = -12500
+				event_target:has_panama_canal = { add_treasury = 12500 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -12500
+					event_target:has_panama_canal = { add_treasury = 12500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -12500
+					event_target:has_panama_canal = { add_treasury = 12500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -12500
+					event_target:has_panama_canal = { add_treasury = 12500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					NOT = { has_country_modifier = canal_tax_panama_17 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+				}
+				add_treasury = -14100
+				event_target:has_panama_canal = { add_treasury = 14100 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -14100
+					event_target:has_panama_canal = { add_treasury = 14100 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -14100
+					event_target:has_panama_canal = { add_treasury = 14100 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -14100
+					event_target:has_panama_canal = { add_treasury = 14100 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					NOT = { has_country_modifier = canal_tax_panama_18 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+				}
+				add_treasury = -15800
+				event_target:has_panama_canal = { add_treasury = 15800 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -15800
+					event_target:has_panama_canal = { add_treasury = 15800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -15800
+					event_target:has_panama_canal = { add_treasury = 15800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -15800
+					event_target:has_panama_canal = { add_treasury = 15800 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					NOT = { has_country_modifier = canal_tax_panama_19 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+					remove_country_modifier =canal_tax_panama_18
+				}
+				add_treasury = -17600
+				event_target:has_panama_canal = { add_treasury = 17600 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -17600
+					event_target:has_panama_canal = { add_treasury = 17600 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -17600
+					event_target:has_panama_canal = { add_treasury = 17600 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -17600
+					event_target:has_panama_canal = { add_treasury = 17600 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					has_country_modifier = canal_tax_panama_19
+					NOT = { has_country_modifier = canal_tax_panama_20 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+					remove_country_modifier =canal_tax_panama_18
+					remove_country_modifier =canal_tax_panama_19
+				}
+				add_treasury = -19500
+				event_target:has_panama_canal = { add_treasury = 19500 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -19500
+					event_target:has_panama_canal = { add_treasury = 19500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -19500
+					event_target:has_panama_canal = { add_treasury = 19500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -19500
+					event_target:has_panama_canal = { add_treasury = 19500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					has_country_modifier = canal_tax_panama_19
+					has_country_modifier = canal_tax_panama_20
+					NOT = { has_country_modifier = canal_tax_panama_21 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+					remove_country_modifier =canal_tax_panama_18
+					remove_country_modifier =canal_tax_panama_19
+					remove_country_modifier =canal_tax_panama_20
+				}
+				add_treasury = -21500
+				event_target:has_panama_canal = { add_treasury = 21500 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -21500
+					event_target:has_panama_canal = { add_treasury = 21500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -21500
+					event_target:has_panama_canal = { add_treasury = 21500 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -21500
+					event_target:has_panama_canal = { add_treasury = 21500 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					has_country_modifier = canal_tax_panama_19
+					has_country_modifier = canal_tax_panama_20
+					has_country_modifier = canal_tax_panama_21
+					NOT = { has_country_modifier = canal_tax_panama_22 }
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+					remove_country_modifier =canal_tax_panama_18
+					remove_country_modifier =canal_tax_panama_19
+					remove_country_modifier =canal_tax_panama_20
+					remove_country_modifier =canal_tax_panama_21
+				}
+				add_treasury = -23600
+				event_target:has_panama_canal = { add_treasury = 23600 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -23600
+					event_target:has_panama_canal = { add_treasury = 23600 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -23600
+					event_target:has_panama_canal = { add_treasury = 23600 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -23600
+					event_target:has_panama_canal = { add_treasury = 23600 }
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_modifier = canal_tax_panama
+					has_country_modifier = canal_tax_panama_2
+					has_country_modifier = canal_tax_panama_3
+					has_country_modifier = canal_tax_panama_4
+					has_country_modifier = canal_tax_panama_5
+					has_country_modifier = canal_tax_panama_6
+					has_country_modifier = canal_tax_panama_7
+					has_country_modifier = canal_tax_panama_8
+					has_country_modifier = canal_tax_panama_9
+					has_country_modifier = canal_tax_panama_10
+					has_country_modifier = canal_tax_panama_11
+					has_country_modifier = canal_tax_panama_12
+					has_country_modifier = canal_tax_panama_13
+					has_country_modifier = canal_tax_panama_14
+					has_country_modifier = canal_tax_panama_15
+					has_country_modifier = canal_tax_panama_16
+					has_country_modifier = canal_tax_panama_17
+					has_country_modifier = canal_tax_panama_18
+					has_country_modifier = canal_tax_panama_19
+					has_country_modifier = canal_tax_panama_20
+					has_country_modifier = canal_tax_panama_21
+					has_country_modifier = canal_tax_panama_22
+					
+				}
+				hidden_effect = {
+					remove_country_modifier =canal_tax_panama
+					remove_country_modifier =canal_tax_panama_2
+					remove_country_modifier =canal_tax_panama_3
+					remove_country_modifier =canal_tax_panama_4
+					remove_country_modifier =canal_tax_panama_5
+					remove_country_modifier =canal_tax_panama_6
+					remove_country_modifier =canal_tax_panama_7
+					remove_country_modifier =canal_tax_panama_8
+					remove_country_modifier =canal_tax_panama_9
+					remove_country_modifier =canal_tax_panama_10
+					remove_country_modifier =canal_tax_panama_11
+					remove_country_modifier =canal_tax_panama_12
+					remove_country_modifier =canal_tax_panama_13
+					remove_country_modifier =canal_tax_panama_14
+					remove_country_modifier =canal_tax_panama_15
+					remove_country_modifier =canal_tax_panama_16
+					remove_country_modifier =canal_tax_panama_17
+					remove_country_modifier =canal_tax_panama_18
+					remove_country_modifier =canal_tax_panama_19
+					remove_country_modifier =canal_tax_panama_20
+					remove_country_modifier =canal_tax_panama_21
+					remove_country_modifier =canal_tax_panama_22
+					remove_country_modifier =canal_tax_panama_23
+				}
+				add_treasury = -25800
+				event_target:has_panama_canal = { add_treasury = 25800 }
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 1
+							}
+							
+						}
+					}
+					add_treasury = -25800
+					event_target:has_panama_canal = { add_treasury = 25800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 2
+							}
+							
+						}
+					}
+					add_treasury = -25800
+					event_target:has_panama_canal = { add_treasury = 25800 }
+				}
+				if = {
+					limit = {
+						event_target:has_panama_canal = { 
+							check_variable = {
+								which = canal_tax_2
+								value = 3
+							}
+							
+						}
+					}
+					add_treasury = -25800
+					event_target:has_panama_canal = { add_treasury = 25800 }
+				}
+			}
+			clear_global_event_target = has_panama_canal
+		}
+}
+
+country_event = {
+	id = tax_canal.5
+	title = tax_canal.5title
+	desc = tax_canal.5desc
+
+	picture = CANAL_TAX_eventPicture
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "tax_canal.5noting"
+	}
+}
+country_event = {
+	id = tax_canal.6
+	title = tax_canal.6title
+	desc = tax_canal.6desc
+	picture = CANAL_TAX_eventPicture
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = "tax_canal.5noting"
+	}
+
+}

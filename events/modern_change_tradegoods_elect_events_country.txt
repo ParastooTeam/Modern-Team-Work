@@ -1,0 +1,988 @@
+namespace = carelect_tradegoods
+
+
+#######################################################################
+country_event = {
+	id = carelect_tradegoods.1
+	title = "et_tradegoods.12.t"
+	desc = "et_tradegoods.12.d"
+	picture = elect_factory_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 3
+			}
+			save_event_target_as =  farmlands_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 10
+			}
+			save_event_target_as = grasslands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 30
+			}
+			save_event_target_as = mountain_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 25
+			}
+			save_event_target_as = highlands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 15
+			}
+			save_event_target_as = steppe_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 20
+			}
+			save_event_target_as = hills_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods.OPT1"
+		goto = farmlands_goods
+		trigger = {
+			has_saved_event_target = farmlands_goods
+		}
+		event_target:farmlands_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.35
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.25
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.15
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.07
+		}
+		add_dip_power = -100
+		hidden_effect = { 
+			if = {
+        	    limit = {
+					electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT2"
+		goto = grasslands_goods
+		trigger = {
+			has_saved_event_target = grasslands_goods
+		}
+		event_target:grasslands_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.40
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.20
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.12
+		}
+		add_dip_power = -150
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT3"
+		goto = mountain_goods
+		trigger = {
+			has_saved_event_target = mountain_goods
+		}
+		event_target:mountain_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.65
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.55
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.35
+		}
+		add_dip_power = -300
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT4"
+		goto = highlands_goods
+		trigger = {
+			has_saved_event_target = highlands_goods
+		}
+		event_target:highlands_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.60
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.50
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.30
+		}
+		add_dip_power = -250
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT5"
+		goto = steppe_goods
+		trigger = {
+			has_saved_event_target = steppe_goods
+		}
+		event_target:steppe_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.50
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.20
+		}
+		add_dip_power = -175
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT6"
+		goto = hills_goods
+		trigger = {
+			has_saved_event_target = hills_goods
+		}
+		event_target:hills_goods = {
+			change_trade_goods = electronics
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.55
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.35
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.25
+		}
+		add_dip_power = -225
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        electronics = 10
+        	    }
+				set_global_flag = electronics_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+}
+
+country_event = {
+	id = carelect_tradegoods.2
+	title = "et_tradegoods.11.t"
+	desc = "et_tradegoods.11.d"
+	picture = car_factory_eventPicture
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 3
+			}
+			save_event_target_as =  farmlands_goods		
+		}
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 10
+			}
+			save_event_target_as = grasslands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 30
+			}
+			save_event_target_as = mountain_goods		
+		}	
+		random_owned_province = {
+			limit = {	
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 25
+			}
+			save_event_target_as = highlands_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 15
+			}
+			save_event_target_as = steppe_goods		
+		}	
+		random_owned_province = {
+			limit = {
+				NOT = { trade_goods = arms }
+				NOT = { trade_goods = oil }
+				NOT = { trade_goods = titanium }
+				NOT = { trade_goods = navalarms }
+				NOT = { trade_goods = electronics }
+				NOT = { trade_goods = cars }
+				NOT = { trade_goods = uranium }
+				NOT = { trade_goods = gold }
+				NOT = { trade_goods = gems }
+				NOT = { trade_goods = tourist }
+				NOT = { trade_goods = drugs }
+				NOT = { has_latent_trade_goods = arms }
+				NOT = { has_latent_trade_goods = navalarms }
+				NOT = { has_latent_trade_goods = titanium }
+				NOT = { has_province_modifier = province_nuked }
+				development = 20
+			}
+			save_event_target_as = hills_goods		
+		}			
+	}
+
+	option = {
+		name = "modern_tradegoods.OPT1"
+		goto = farmlands_goods
+		trigger = {
+			has_saved_event_target = farmlands_goods
+		}
+		event_target:farmlands_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.35
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.25
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.15
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.07
+		}
+		add_dip_power = -100
+		hidden_effect = { 
+			if = {
+        	    limit = {
+					cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT2"
+		goto = grasslands_goods
+		trigger = {
+			has_saved_event_target = grasslands_goods
+		}
+		event_target:grasslands_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.40
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.20
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.12
+		}
+		add_dip_power = -150
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT3"
+		goto = mountain_goods
+		trigger = {
+			has_saved_event_target = mountain_goods
+		}
+		event_target:mountain_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.65
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.55
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.35
+		}
+		add_dip_power = -300
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT4"
+		goto = highlands_goods
+		trigger = {
+			has_saved_event_target = highlands_goods
+		}
+		event_target:highlands_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.60
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.50
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.30
+		}
+		add_dip_power = -250
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT5"
+		goto = steppe_goods
+		trigger = {
+			has_saved_event_target = steppe_goods
+		}
+		event_target:steppe_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.50
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.40
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.30
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.20
+		}
+		add_dip_power = -175
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+	option = {
+		name = "modern_tradegoods.OPT6"
+		goto = hills_goods
+		trigger = {
+			has_saved_event_target = hills_goods
+		}
+		event_target:hills_goods = {
+			change_trade_goods = cars
+			add_base_production = 2
+		}
+		every_province = {
+			limit = {
+				owned_by = ROOT
+				OR = {
+					has_saved_event_target = farmlands_goods
+					has_saved_event_target = grasslands_goods
+					has_saved_event_target = mountain_goods
+					has_saved_event_target = highlands_goods
+					has_saved_event_target = steppe_goods
+					has_saved_event_target = hills_goods
+				}
+			}
+			clear_global_event_target = farmlands_goods
+			clear_global_event_target = grasslands_goods
+			clear_global_event_target = mountain_goods
+			clear_global_event_target = highlands_goods
+			clear_global_event_target = steppe_goods
+			clear_global_event_target = hills_goods
+		}
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -0.55
+		}
+		if = {
+			limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+			add_years_of_income = -0.45
+			}
+		if = {
+			limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+			add_years_of_income = -0.35
+			}
+		if = {
+			limit = { ROOT = { total_development = 2000 NOT = { total_development = 100000 } } }
+			add_years_of_income = -0.25
+		}
+		add_dip_power = -225
+		hidden_effect = { 
+			if = {
+        	    limit = {
+        	        cars = 10
+        	    }
+				set_global_flag = cars_are_ubiquitous
+        	}
+			add_country_modifier = {
+				name = cooldown_elect
+				duration = 3650
+			}
+		}
+	}
+}
+

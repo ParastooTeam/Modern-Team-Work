@@ -1,0 +1,185 @@
+namespace = modern_check_missil
+
+country_event = {
+
+	id = modern_check_missil.1
+	
+	title = "modern_check_missil.01.t"
+	desc = "modern_check_missil.01.d"
+	picture = INFO_BOMB_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "modern_check_missil.01.opt1"
+	}
+	
+}
+
+country_event = {
+	id = modern_check_missil.2
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.02.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.3
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.03.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.4
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.04.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.5
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.05.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.6
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.06.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.7
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.07.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.8
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.08.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.9
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.09.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.10
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.10.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.11
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.11.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.12
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.12.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.13
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.13.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.14
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.14.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+country_event = {
+	id = modern_check_missil.15
+	title = "modern_check_missil.02.t"
+	desc = "modern_check_missil.15.d"
+	picture = INFO_BOMB_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.01.opt1"
+		clear_global_event_target = spy_information
+	}
+}
+
+country_event = {
+	id = modern_check_missil.16
+	title = "modern_check_missil.03.t"
+	desc = "modern_check_missil.16.d"
+	picture = spy_information_eventPicture
+	is_triggered_only = yes
+	option = {
+		name = "modern_check_missil.1.opt1"
+	}
+}
+
+

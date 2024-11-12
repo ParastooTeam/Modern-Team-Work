@@ -1,0 +1,9 @@
+
+#Province Scope
+modern_setup_effect = {
+	add_country_modifier = {
+		name = test_2_modifire
+		duration = -1
+		hidden = yes
+	}
+}

@@ -1,0 +1,106 @@
+
+# Create new diplomatic actions like this. AI will currently never send them.
+remove_fow_5 = {
+	category = great_powers
+	alert_index = 15  
+	alert_tooltip = REMOVE_FOW_5
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+	}
+	is_allowed = {
+		
+	}
+	on_accept = {
+		FROM = { remove_fow = 60 }
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+remove_fow_10 = {
+	category = great_powers
+	alert_index = 15  
+	alert_tooltip = REMOVE_FOW_10
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+	}
+	is_allowed = {	
+	}
+	on_accept = {
+		FROM = { remove_fow = 120 }
+	}
+	on_decline = {
+	}
+
+	ai_acceptance = {
+	}
+
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+remove_fow_25 = {
+	category = great_powers
+	alert_index = 15  
+	alert_tooltip = REMOVE_FOW_25
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+	}
+	is_allowed = {	
+	}
+	on_accept = {
+		FROM = { remove_fow = 300 }
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}
+
+remove_fow_50 = {
+	category = great_powers
+	alert_index = 15  
+	alert_tooltip = REMOVE_FOW_50
+	require_acceptance = yes # Whether the recipient gets an option to decline
+	
+	is_visible = {
+		has_country_flag = opened_expotentional_diplomacy
+		ai = no
+		FROM = { ai = no }
+	}
+	is_allowed = {	
+	}
+	on_accept = {
+		FROM = { remove_fow = 600 }
+	}
+	on_decline = {
+	}
+	ai_acceptance = {
+	}
+	ai_will_do = { # this is a trigger
+		always = no
+	}
+}

@@ -1,0 +1,10 @@
+#Galleas Galley Level 6
+type = galley
+
+hull_size = 30
+base_cannons = 33
+sail_speed = 10
+
+blockade = 11
+
+sprite_level = 1

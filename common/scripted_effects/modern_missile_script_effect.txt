@@ -1,0 +1,752 @@
+
+missile_script_effect = {
+
+		if = { 
+			limit = { 
+				tag = USA
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			
+			#############################################
+			set_variable = {
+					which = missil_50
+					value = 30
+			}
+			set_variable = {
+					which = missil_100
+					value = 30
+			}
+			set_variable = {
+					which = missil_150
+					value = 30
+			}
+			set_variable = {
+					which = missil_250
+					value = 30
+			}
+			set_variable = {
+					which = missil_350
+					value = 30
+			}
+			set_variable = {
+					which = missil_500
+					value = 30
+			}
+			set_variable = {
+					which = missil_700
+					value = 20
+			}
+			set_variable = {
+					which = missil_1000
+					value = 10
+			}
+			set_variable = {
+					which = missil_1500
+					value = 5
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+			set_country_flag = missile_state_700
+			set_country_flag = missile_state_1000
+			set_country_flag = missile_state_1500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				tag = RUS
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 45
+			}
+			set_variable = {
+					which = missil_100
+					value = 45
+			}
+			set_variable = {
+					which = missil_150
+					value = 45
+			}
+			set_variable = {
+					which = missil_250
+					value = 45
+			}
+			set_variable = {
+					which = missil_350
+					value = 35
+			}
+			set_variable = {
+					which = missil_500
+					value = 30
+			}
+			set_variable = {
+					which = missil_700
+					value = 20
+			}
+			set_variable = {
+					which = missil_1000
+					value = 10
+			}
+			set_variable = {
+					which = missil_1500
+					value = 5
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+			set_country_flag = missile_state_700
+			set_country_flag = missile_state_1000
+			set_country_flag = missile_state_1500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				tag = FR2
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 10
+			}
+			set_variable = {
+					which = missil_150
+					value = 10
+			}
+			set_variable = {
+					which = missil_250
+					value = 10
+			}
+			set_variable = {
+					which = missil_350
+					value = 8
+			}
+			set_variable = {
+					which = missil_500
+					value = 7
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				tag = CHN
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 15
+			}
+			set_variable = {
+					which = missil_100
+					value = 15
+			}
+			set_variable = {
+					which = missil_150
+					value = 15
+			}
+			set_variable = {
+					which = missil_250
+					value = 10
+			}
+			set_variable = {
+					which = missil_350
+					value = 9
+			}
+			set_variable = {
+					which = missil_500
+					value = 8
+			}
+			set_variable = {
+					which = missil_700
+					value = 6
+			}
+			set_variable = {
+					which = missil_1000
+					value = 5
+			}
+			set_variable = {
+					which = missil_1500
+					value = 5
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+			set_country_flag = missile_state_700
+			set_country_flag = missile_state_1000
+			set_country_flag = missile_state_1500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				tag = GBR
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 10
+			}
+			set_variable = {
+					which = missil_150
+					value = 10
+			}
+			set_variable = {
+					which = missil_250
+					value = 10
+			}
+			set_variable = {
+					which = missil_350
+					value = 9
+			}
+			set_variable = {
+					which = missil_500
+					value = 8
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				OR = {
+					tag = PAK
+					tag = INI
+				}
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 9
+			}
+			set_variable = {
+					which = missil_150
+					value = 8
+			}
+			set_variable = {
+					which = missil_250
+					value = 7
+			}
+			set_variable = {
+					which = missil_350
+					value = 6
+			}
+			set_variable = {
+					which = missil_500
+					value = 5
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+		}
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				
+					tag = ISR
+
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 9
+			}
+			set_variable = {
+					which = missil_150
+					value = 8
+			}
+			set_variable = {
+					which = missil_250
+					value = 7
+			}
+			set_variable = {
+					which = missil_350
+					value = 6
+			}
+			set_variable = {
+					which = missil_500
+					value = 5
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+		}
+		
+		
+		if = { 
+			limit = { 
+				
+				tag = NOK
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 10
+			}
+			set_variable = {
+					which = missil_150
+					value = 10
+			}
+			set_variable = {
+					which = missil_250
+					value = 10
+			}
+			set_variable = {
+					which = missil_350
+					value = 10
+			}
+			set_variable = {
+					which = missil_500
+					value = 9
+			}
+			set_variable = {
+					which = missil_700
+					value = 8
+			}
+			set_variable = {
+					which = missil_1000
+					value = 7
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			set_country_flag = missile_state_350
+			set_country_flag = missile_state_500
+			set_country_flag = missile_state_700
+			set_country_flag = missile_state_1000
+		}
+		
+		
+		###########################################################################################################
+		
+		if = { 
+			limit = { 
+				OR = {
+					tag = IRA
+					tag = IRN
+				} 
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			set_variable = {
+					which = missil_50
+					value = 10
+			}
+			set_variable = {
+					which = missil_100
+					value = 10
+			}
+			set_variable = {
+					which = missil_150
+					value = 10
+			}
+			set_variable = {
+					which = missil_250
+					value = 10
+			}
+			set_country_flag = missile_state_50
+			set_country_flag = missile_state_100
+			set_country_flag = missile_state_150
+			set_country_flag = missile_state_250
+			##############################################
+		}
+
+	
+}
+missile_script_effect_zero = {
+	if = {
+		limit = {
+			NOT = {  
+				check_variable = {
+					which = tax_not
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		set_variable = {
+			which = tax_not
+			value = 0
+		}
+	}
+	if = {
+		limit = {
+			NOT = {  
+				check_variable = {
+					which = tax_not_panama
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		set_variable = {
+			which = tax_not_panama
+			value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = chapter_UN
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = chapter_UN
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = num_of_nuclear_weapons
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = num_of_nuclear_weapons
+				value = 0
+		}
+	}
+		if = { 
+			limit = { 
+				NOT = {
+					check_variable = {
+						which = satellite_1
+						value = 1
+					}
+				}
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			
+			#############################################
+			set_variable = {
+					which = satellite_1
+					value = 0
+			}
+		}
+		if = { 
+			limit = { 
+				NOT = {
+					check_variable = {
+						which = satellite_2
+						value = 1
+					}
+				}
+				is_year = 2021
+				NOT = { is_year = 2924 }
+			}
+			###############################################
+			
+			#############################################
+			set_variable = {
+					which = satellite_2
+					value = 0
+			}
+		}
+	#####################################################################################################
+	#####################################################################################################
+	#####################################################################################################
+	#####################################################################################################
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = attack_missile_lev
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = attack_missile_lev
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = defense_missile_lev
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = defense_missile_lev
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_50
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_50
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_100
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_100
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_150
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_150
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_250
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_250
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_350
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_350
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_500
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_500
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_700
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_700
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_1000
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_1000
+				value = 0
+		}
+	}
+	if = { 
+		limit = { 
+			NOT = {
+				check_variable = {
+					which = missil_1500
+					value = 1
+				}
+			}
+			is_year = 2021
+			NOT = { is_year = 2924 }
+		}
+		###############################################
+		
+		#############################################
+		set_variable = {
+				which = missil_1500
+				value = 0
+		}
+	}
+}

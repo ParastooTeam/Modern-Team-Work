@@ -1,0 +1,16 @@
+#Missile Destroyer
+#Heavy ship Level 10
+type = heavy_ship
+trigger = {
+	any_owned_province = {
+		trade_goods = navalarms
+	}
+}
+
+hull_size = 744
+base_cannons = 826
+sail_speed = 13
+
+blockade = 30
+
+sprite_level = 1

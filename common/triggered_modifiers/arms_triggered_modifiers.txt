@@ -1,0 +1,148 @@
+
+arms_company_bonus = {
+	potential = {
+		
+	}
+
+	trigger = {
+		trading_bonus = {
+			
+			trade_goods = arms
+			value = yes
+		}
+	}
+		shock_damage_received = -0.25
+		shock_damage = 0.25
+		leader_land_shock = 1
+		leader_land_fire = 1
+		land_forcelimit_modifier = 0.075
+		leader_land_manuever = 1
+		artillery_power = 0.25
+		cavalry_power = 0.25
+		infantry_power = 0.25
+		global_regiment_cost = -0.125
+	
+}
+
+arms_company_leader = {
+	potential = {
+		
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = arms
+		}
+	}
+		shock_damage_received = -0.25
+		shock_damage = 0.25
+		leader_land_shock = 1
+		leader_land_fire = 1
+		land_forcelimit_modifier = 0.075
+		leader_land_manuever = 1
+		artillery_power = 0.25
+		cavalry_power = 0.25
+		infantry_power = 0.25
+		global_regiment_cost = -0.125
+	
+}
+
+
+
+####################################################################################################
+
+navy_company_bonus = {
+	potential = {
+		
+	}
+
+	trigger = {
+		trading_bonus = {
+			trade_goods = navalarms
+			value = yes
+		}
+	}
+		leader_naval_shock = 1
+		naval_forcelimit_modifier = 0.125
+		leader_naval_manuever = 1
+		leader_naval_fire = 1
+		naval_attrition = -0.5
+		galley_power = 0.25
+		heavy_ship_power = 0.25
+		light_ship_power = 0.25
+		transport_power = 0.25
+		global_ship_cost = -0.15
+	
+}
+
+navy_company_leader = {
+	potential = {
+		
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = navalarms
+		}
+	}
+		leader_naval_shock = 1
+		naval_forcelimit_modifier = 0.125
+		leader_naval_manuever = 1
+		leader_naval_fire = 1
+		naval_attrition = -0.5
+		galley_power = 0.25
+		heavy_ship_power = 0.25
+		light_ship_power = 0.25
+		transport_power = 0.25
+		global_ship_cost = -0.15
+	
+}
+
+########################################################################
+
+titanium_bonus = {
+	potential = {
+		
+	}
+
+	trigger = {
+		trading_bonus = {
+			trade_goods = titanium
+			value = yes
+		}
+	}
+		artillery_power = 0.15
+		artillery_cost = -0.05
+		cavalry_power = 0.15
+		cavalry_cost = -0.05
+		infantry_power = 0.15
+		infantry_cost = -0.05
+		idea_cost = -0.1
+		build_cost = -0.05
+		global_ship_cost = -0.05
+	
+}
+
+titanium_leader = {
+	potential = {
+		
+	}
+
+	trigger = {
+		production_leader = {
+			trade_goods = titanium
+		}
+	}
+		artillery_power = 0.15
+		artillery_cost = -0.05
+		cavalry_power = 0.15
+		cavalry_cost = -0.05
+		infantry_power = 0.15
+		infantry_cost = -0.05
+		idea_cost = -0.1
+		build_cost = -0.05
+		global_ship_cost = -0.05
+	
+}
+
+

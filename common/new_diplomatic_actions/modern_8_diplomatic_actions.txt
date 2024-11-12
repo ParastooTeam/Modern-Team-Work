@@ -1,0 +1,29 @@
+clear_titanium = {
+	category = influence
+	require_acceptance = yes
+	is_visible = { 
+		ai = no
+		FROM = { ai = no }
+		FROM = { titanium = 1 }
+	}
+	is_allowed = {
+		
+	}
+	on_accept = {
+		FROM = {
+			every_owned_province = {
+				limit = {
+					trade_goods = titanium
+				}
+				change_trade_goods = unknown
+				add_province_modifier = {
+					name = titanium_ban
+					duration = 9125
+				}
+			}
+		}
+		
+	}
+	ai_will_do = {  
+	}
+}

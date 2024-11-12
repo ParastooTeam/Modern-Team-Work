@@ -1,0 +1,3152 @@
+#######################################    Trade   ############################
+#ivory
+#grain
+#wine
+#######################################   Oil  50    ##############################
+
+low_ivory_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { ivory = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			stability = 1
+			treasury = 7500
+			total_development = 300
+			
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_ivory_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_ivory_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = failling_ivory_price_from
+			}
+		}
+			ivory = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = ivory
+			key = IVORY_LOW
+			value = -0.5
+			duration = 3650
+		}
+	
+		every_country = {
+				
+		
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					ivory = 1
+				}
+				add_country_modifier = {
+							name = much_ivory_price_1_50
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_ivory_price_1_50
+					duration = 3650
+				}
+			}
+			
+			}
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = failling_ivory_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_ivory_price_root_1
+				duration = 3650
+			}
+			
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = failling_ivory_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_ivory_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_ivory_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { ivory = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			treasury = 7500
+			stability = 1
+			total_development = 300
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_ivory_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_ivory_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = rising_ivory_price_from
+			}
+		}
+			ivory = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = ivory
+			key = IVORY_MUCH
+			value = 0.5
+			duration = 3650
+		}
+		
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					ivory = 1
+					
+				}
+				add_country_modifier = {
+						name = much_ivory_price_1_50
+						duration = 3650
+					}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = low_ivory_price_1_50
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = rising_ivory_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_ivory_price_root_1
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = rising_ivory_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_ivory_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+
+
+
+###################################################    Iron 25    #########################################
+
+
+
+low_ivory_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { ivory = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			stability = 1
+			total_development = 450
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_ivory_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_ivory_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			ivory = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = ivory
+			key = IVORY_LOW
+			value = -0.25
+			duration = 3650
+		}
+		
+		
+		
+		every_country = {
+			
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					ivory = 1
+				}
+				add_country_modifier = {
+							name = much_ivory_price_1_25
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_ivory_price_1_25
+					duration = 3650
+				}
+			}
+		}
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = failling_ivory_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_ivory_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = failling_ivory_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_ivory_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_ivory_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { ivory = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			stability = 1
+			total_development = 450
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_ivory_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_ivory_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			ivory = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = ivory
+			key = IVORY_MUCH
+			value = 0.25
+			duration = 3650
+		}
+		
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					ivory = 1
+					
+				}
+				add_country_modifier = {
+						name = low_ivory_price_1_25
+						duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = much_ivory_price_1_25
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = rising_ivory_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_ivory_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = rising_ivory_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_ivory_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+
+################################################           Aluminum             #################################### 
+
+
+
+
+low_wine_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { wine = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			treasury = 7500
+			stability = 1
+			total_development = 300
+			
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_wine_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_wine_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+					trade_goods = ivory
+				}
+				production_leader = {
+					trade_goods = grain  
+				}
+				production_leader = {
+					trade_goods = wine    
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = failling_wine_price_from
+			}
+		}
+			wine = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = wine
+			key = WINE_LOW
+			value = -0.5
+			duration = 3650
+		}
+		
+		
+		every_country = {
+				
+		
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					wine = 1
+				}
+				add_country_modifier = {
+							name = much_wine_price_1_50
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_wine_price_1_50
+					duration = 3650
+				}
+			}
+			
+		}
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = failling_wine_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_wine_price_root_1
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = failling_wine_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_wine_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_wine_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { wine = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			treasury = 7500
+			stability = 1
+			total_development = 300
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_wine_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_wine_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+					trade_goods = ivory
+				}
+				production_leader = {
+					trade_goods = grain  
+				}
+				production_leader = {
+					trade_goods = wine    
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = rising_wine_price_from
+			}
+		}
+			wine = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = wine
+			key = WINE_MUCH
+			value = 0.5
+			duration = 3650
+		}
+		
+		
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					wine = 1
+					
+				}
+				add_country_modifier = {
+						name = much_wine_price_1_50
+						duration = 3650
+					}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = low_wine_price_1_50
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = rising_wine_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_wine_price_root_1
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = rising_wine_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_wine_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+
+
+
+###################################################   Wine 25    #########################################
+
+
+
+low_wine_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { wine = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			stability = 1
+			total_development = 450
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_wine_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_wine_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			wine = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = wine
+			key = WINE_LOW
+			value = -0.25
+			duration = 3650
+		}
+		
+		
+		every_country = {
+			
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					wine = 1
+				}
+				add_country_modifier = {
+							name = much_wine_price_1_25
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_wine_price_1_25
+					duration = 3650
+				}
+			}
+		}
+	
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = failling_wine_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_wine_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = failling_wine_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_wine_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_wine_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { wine = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			stability = 1
+			total_development = 450
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_wine_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_wine_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			wine = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = wine
+			key = WINE_MUCH
+			value = 0.25
+			duration = 3650
+		}
+		
+		
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					wine = 1
+					
+				}
+				add_country_modifier = {
+						name = low_wine_price_1_25
+						duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = much_wine_price_1_25
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = rising_wine_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_wine_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = rising_wine_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_wine_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+####################################################       Copper      ##############################################
+
+
+
+
+low_grain_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { grain = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			treasury = 7500
+			stability = 1
+			total_development = 300
+			
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_grain_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_grain_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+					trade_goods = ivory
+				}
+				production_leader = {
+					trade_goods = grain  
+				}
+				production_leader = {
+					trade_goods = wine    
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = failling_grain_price_from
+			}
+		}
+			grain = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = grain
+			key = GRAIN_LOW
+			value = -0.5
+			duration = 3650
+		}
+		
+		
+		every_country = {
+				
+		
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					grain = 1
+				}
+				add_country_modifier = {
+							name = much_grain_price_1_50
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_grain_price_1_50
+					duration = 3650
+				}
+			}
+			
+			}
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = failling_grain_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_grain_price_root_1
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = failling_grain_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_grain_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_grain_50 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+				production_leader = {
+						trade_goods = ivory
+					}
+				production_leader = {
+						trade_goods = grain  
+					}
+				production_leader = {
+						trade_goods = wine    
+					}
+				production_leader = {
+						trade_goods = gold    
+				}
+			}
+			FROM = { grain = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 30
+			treasury = 7500
+			total_development = 300
+			stability = 1
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_grain_price_root_1
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_grain_price_root_1
+				}
+			}
+			OR = {
+				production_leader = {
+					trade_goods = ivory
+				}
+				production_leader = {
+					trade_goods = grain  
+				}
+				production_leader = {
+					trade_goods = wine    
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 6000
+			stability = 1
+			total_development = 300
+			NOT = {
+			FROM = { 
+				has_country_modifier = rising_grain_price_from
+			}
+		}
+			grain = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = grain
+			key = GRAIN_MUCH
+			value = 0.5
+			duration = 3650
+		}
+		
+		
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					grain = 1
+					
+				}
+				add_country_modifier = {
+						name = much_grain_price_1_50
+						duration = 3650
+					}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = low_grain_price_1_50
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -7500
+			add_country_modifier = {
+				name = rising_grain_price_root
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_grain_price_root_1
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -6000
+			add_country_modifier = {
+				name = rising_grain_price_from
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_grain_price_root_1
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+
+
+
+###################################################    Uranium 25    #########################################
+
+
+
+low_grain_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { grain = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			total_development = 450
+			stability = 1
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_grain_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_grain_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			grain = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = grain
+			key = GRAIN_LOW
+			value = -0.25
+			duration = 3650
+		}
+		
+		
+		
+		
+		every_country = {
+			
+			if = {	
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					grain = 1
+				}
+				add_country_modifier = {
+							name = much_grain_price_1_25
+							duration = 3650
+				} 
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+					name = low_grain_price_1_25
+					duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = failling_grain_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_grain_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = failling_grain_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = failling_grain_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+much_grain_25 = {
+	category = papacy
+	require_acceptance = yes
+	alert_index = 35
+	alert_tooltip = ICON_TRADELEAGUEINVITE
+	
+is_visible = {
+			has_country_flag = opened_trade_diplomacy 
+        ai = no
+		OR = {
+		ivory = 1
+		grain = 1
+		wine = 1
+		production_leader = {
+			trade_goods = gold    
+		}
+		
+		}
+		FROM = { grain = 1 }
+	}
+	
+	is_allowed = {
+			has_opinion_modifier = { 
+				modifier = create_embassy  
+				who = FROM 
+			}		
+		ROOT = {
+			#prestige = 20
+			treasury = 3250
+			total_development = 450
+			stability = 1
+			
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = rising_grain_price_root_1_25
+				}
+			}
+			NOT = { 	
+				ROOT = { 
+					has_country_modifier = failling_grain_price_root_1_25
+				}
+			}
+			OR = {
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = ivory
+					}
+					amount = 5
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = grain
+					}
+					amount = 3
+				}
+				calc_true_if = {
+					all_owned_province = {
+						trade_goods = wine
+					}
+					amount = 3
+				}
+				production_leader = {
+					trade_goods = gold    
+				}
+			
+			}
+			
+		}
+		FROM = {
+			
+			treasury = 2500
+			stability = 1
+			total_development = 300
+			
+			grain = 1
+
+			
+		}
+		}
+	
+	
+	on_accept = {
+	
+		change_price = {
+			trade_goods = grain
+			key = GRAIN_MUCH
+			value = 0.25
+			duration = 3650
+		}
+		
+		
+
+
+		every_country = { 
+						
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+					grain = 1
+					
+				}
+				add_country_modifier = {
+						name = low_grain_price_1_25
+						duration = 3650
+				}
+			}
+			if = {
+				limit = {
+					NOT = { tag = ROOT }
+					NOT = { tag = FROM }
+				}
+				add_country_modifier = {
+						name = much_grain_price_1_25
+						duration = 3650
+				}
+			}
+		}
+		
+		
+		
+		
+		ROOT = {
+
+			add_treasury = -3250
+			add_country_modifier = {
+				name = rising_grain_price_root_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_grain_price_root_1_25
+				duration = 3650
+			}
+			
+		}
+		FROM = { 
+			add_treasury = -2500
+			add_country_modifier = {
+				name = rising_grain_price_from_25
+				duration = 3650
+			}
+			add_country_modifier = {
+				name = rising_grain_price_root_1_25
+				duration = 3650
+			}
+		}
+		
+				
+	}
+	
+	
+	ai_acceptance = {
+	
+		add_entry = {
+			name = BASE_EMMBASY
+			limit = { always = yes }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+			multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+				name = RIVAL_WITH
+				limit = { FROM = { is_rival = ROOT } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 100
+				}
+				multiply_variable = { which = ai_value value = -1 }
+		}
+		
+		add_entry = {
+			name = FRIENDLY_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_friendly } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+		}
+		
+		add_entry = {
+			name = NEUTRAL_ATTITUDE
+			limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_neutral } } }
+			export_to_variable = {
+				variable_name = ai_value 
+				value = 10
+			}
+	
+		}
+		add_entry = {
+				name = FRIENDLY_ATTITUDE
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_threatened } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 10
+				}
+	
+			}
+			add_entry = {
+				name = OUR_SUBJECT
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_loyal } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+			add_entry = {
+				name = OUR_OVERLORD
+				limit = { FROM = { ai_attitude = { who = ROOT attitude = attitude_overlord } } }
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+	
+			}
+		add_entry = {
+			name = WE_HAVE_GOOD_OPINON
+			limit = { FROM = { has_opinion = { who = ROOT value = 120 }   } }
+			export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+			}
+	
+		}
+		add_entry = {
+				name = OPINION
+				export_to_variable = {
+					variable_name = ai_value
+					value = opinion
+					who = FROM
+					with = THIS
+				}
+				divide_variable = { which = ai_value value = 5 }
+			}
+		
+		add_entry = {
+				name = ALLY_WITH
+				limit = { FROM = { alliance_with = ROOT } } 
+				export_to_variable = {
+					variable_name = ai_value 
+					value = 15
+				}
+		
+		}
+		
+	}
+	
+	ai_will_do = {	
+		
+		FROM = { has_opinion = { who = ROOT value = 145 }   }
+		
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

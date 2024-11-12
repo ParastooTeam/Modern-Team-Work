@@ -1,0 +1,88 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 210  210  210 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	
+	hungarian_hussar
+	polish_musketeer
+	polish_hussar
+	polish_tercio
+	polish_winged_hussar
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Mezamir #0" = 20
+	"Porga #0" = 20
+	"Porin #0" = 20
+	"Muzok #0" = 20
+	"Dragovit #0" = 20
+	"Ljudevit #0" = 20
+	"Ratimir #0" = 20
+	"Vojnomir #0" = 20
+	"Branimir #0" = 20
+	"Braslav #0" = 5
+	"Viseslav #0" = 5
+	"Vladislav #0" = 5
+	"Totila #0" = 5
+	"Samo #0" = 5
+	"Borna #0" = 10
+	"Mislav #0" = 0
+	"Trpimir #0" = 0
+	"Zdeslav #0" = 0
+    "Domagoj #0" = 0
+    "Muncimir #0" = 0
+    "Tomislav #0" = 0
+    "Rando #0" = 0
+	
+	"Ababa #0" = -1
+	"Alda #0" = -1
+	"Saruka #0" = -1
+	"Tamura #0" = -1
+	"Kazi #0" = -1
+	"Teta #0" = -1
+	"Wanda #0" = -1
+}
+
+leader_names = { 
+	Veleti Lutici Veneti Navari Sklaveni Tulga Ardo Bozhko Bozhydar Bohdan Buzhan
+}
+
+ship_names = {
+	"Arka Noego"
+        "Bialy Orzel" Burza "Bialy Lew" "Brzesko-Kujawskie" Belzkie Braclawskie
+        Charitas "Czarny Orzel" "Czarny Kruk" Chelminskie Czernichowskie
+        Fortuna
+        Gryf Gwiazda Gnieznienskie
+	Inoworclawskie
+	"Król Dawid" Kaliskie Krakowskie Kijowskie Kraków
+        Lublin "Latajacy Jelen" Lwów Leczyckie Lubelskie
+        "Maly Bialy Orzel" Malborskie Mazowieckie
+        Niewrazliwy "Nowy Czarny Orzel"
+        "Prorok Samuel" "Panna Wodna" Plomien Poznanskie Plockie Podlaskie Podolskie
+	"Rycerz Swiety Jerzy" Rawskie Ruskie
+        Strzelec Suwerenny "Swiety Piotr" Sieradzkie Sandomierskie "Swiety Kazimierz"
+        "Wielkie Slonce" Wodnik Warminskie Wolynskie Warszawa
+        Zwyciestwo "Zólty Lew"
+}
+
+

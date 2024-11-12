@@ -1,0 +1,270 @@
+country_decisions = {
+
+	desiction_satellite_1 = {
+		major = yes
+		potential = {
+			NOT = { has_country_modifier = non_satellite_modifire_all }
+			has_country_modifier = enable_missil
+		}
+		allow = {
+			has_idea = satellite_research_3
+			check_variable = {
+				which = missil_700
+				value = 1
+			}
+			NOT = {
+				check_variable = {
+					which = satellite_1
+					value = 5
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 1.75
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 1.30
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 1.10
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 0.80
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.50
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.30
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.20
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.10
+			}
+	
+
+	}
+	effect = {
+		
+		if = {
+			limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+			add_years_of_income = -1.75
+			}
+		if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				add_years_of_income = -1.30
+			}
+		if = {
+				limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+				add_years_of_income = -1.10
+			}
+		if = {
+				limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+				add_years_of_income = -0.80
+			}
+		if = {
+				limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+				add_years_of_income = -0.50
+			}
+		
+		if = {
+				limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+				add_years_of_income = -0.30
+			}
+		if = {
+				limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+				add_years_of_income = -0.20
+			}
+		if = {
+			limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+			add_years_of_income = -0.10
+		}
+				
+			if = {
+				limit = { 
+					OR = {
+						has_country_modifier = satellitee_state_1
+						check_variable = {
+							which = satellite_1
+							value = 1
+						}
+					}
+				}
+				change_variable = {
+					which = satellite_1
+					value = 1
+				}
+			}
+			if = {
+				limit = { NOT = { has_country_modifier = satellitee_state_1 } }
+				add_country_modifier = {
+					name = "satellitee_state_1"
+					duration = -1
+				}
+				set_variable = {
+					which = satellite_1
+					value = 1
+				}
+			}
+			change_variable = {
+				which = missil_700
+				value = -1
+			}
+			country_event = {
+				id = modern_satellite.2
+			}
+			
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+############################################################################################################################################	
+
+	desiction_satellite_2 = {
+		major = yes
+		potential = {		
+			NOT = { has_country_modifier = non_satellite_modifire_all }
+			has_country_modifier = enable_missil
+			ai = no
+		}
+		allow = {
+			has_idea = satellite_research_6
+			check_variable = {
+				which = missil_1500
+				value = 1
+			}
+			NOT = {
+				check_variable = {
+					which = satellite_2
+					value = 5
+				}
+			}
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				years_of_income = 2.75
+			}
+			if = {
+				limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+				years_of_income = 2.00
+			}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					years_of_income = 1.50
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					years_of_income = 1.04
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					years_of_income = 0.65
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					years_of_income = 0.39
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					years_of_income = 0.26
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				years_of_income = 0.13
+			}
+	
+
+		}
+		effect = {
+		
+			if = {
+				limit = { ROOT = { total_development = 5 NOT = { total_development = 500 } } }
+				add_years_of_income = -2.75
+			}
+			if = {
+					limit = { ROOT = { total_development = 500 NOT = { total_development = 1000 } } }
+					add_years_of_income = -2.00
+				}
+			if = {
+					limit = { ROOT = { total_development = 1000 NOT = { total_development = 2000 } } }
+					add_years_of_income = -1.50
+				}
+			if = {
+					limit = { ROOT = { total_development = 2000 NOT = { total_development = 3000 } } }
+					add_years_of_income = -1.04
+				}
+			if = {
+					limit = { ROOT = { total_development = 3000 NOT = { total_development = 4000 } } }
+					add_years_of_income = -0.65
+				}
+			
+			if = {
+					limit = { ROOT = { total_development = 4000 NOT = { total_development = 5000 } } }
+					add_years_of_income = -0.39
+				}
+			if = {
+					limit = { ROOT = { total_development = 5000 NOT = { total_development = 7000 } } }
+					add_years_of_income = -0.26
+				}
+			if = {
+				limit = { ROOT = { total_development = 7000 NOT = { total_development = 40000 } } }
+				add_years_of_income = -0.13
+			}
+			
+				if = {
+					limit = { 
+						OR = {
+							has_country_modifier = satellitee_state_2
+							check_variable = {
+								which = satellite_2
+								value = 1
+							}
+						}
+					}
+					change_variable = {
+						which = satellite_2
+						value = 1
+					}
+				}
+				if = {
+					limit = { NOT = { has_country_modifier = satellitee_state_2 } }
+					add_country_modifier = {
+						name = "satellitee_state_2"
+						duration = -1
+					}
+					set_variable = {
+						which = satellite_2
+						value = 1
+					}
+				}
+				change_variable = {
+					which = missil_1500
+					value = -1
+				}
+				country_event = {
+					id = modern_satellite.3
+				}
+		}
+		
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	
+############################################################################################################################################	
+
+	
+}

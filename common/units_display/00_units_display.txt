@@ -1,0 +1,21 @@
+infantry = {
+	factor = 1
+}
+cavalry = {
+	factor = 0.66
+}
+artillery = {
+	factor = 0.33
+}
+heavy_ship = {
+	factor = 100
+}
+galley = {
+	factor = 0
+}
+light_ship = {
+	factor = 0
+}
+transport = {
+	factor = 0
+}

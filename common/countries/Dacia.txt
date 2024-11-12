@@ -1,0 +1,71 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 122  142  86 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	
+	italian_condotta
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Rubobostes #0" = 20
+	"Oroles #0" = 20
+	"Burebista #0" = 20
+	"Cotiso #0" = 20
+	"Decebalus #0" = 20
+	"Deceneus #0" = 20
+	"Tarabostes #0" = 20
+	"Cotys #0" = 20
+	"Rhoemetalces #0" = 0
+	"Rhescuporis #0" = 0
+	"Sadalas #0" = 0
+	"Beithys #0" = 0
+	"Amatokos #0" = 0
+	"Roigos #0" = 0
+	"Teres #0" = 0
+	"Pleutarus #0" = 0
+	"Seuthes #0" = 0
+	"Raizdos #0" = 0
+	"Cetriporis #0" = 0
+	"Berisades #0" = 0
+	"Cersobleptes #0" = 0
+	"Hebryzelmis #0" = 0
+	"Amadocus #0" = 0
+	"Metokos #0" = 0
+	"Sitalces #0" = 0
+	"Sparatocos #0" = 0
+	
+	"Apula #0" = -1
+	"Blegissa #0" = -1
+	"Rescuturme #0" = -1
+	"Vezina #0" = -1
+	"Zia #0" = -1
+}
+
+leader_names = {
+        ""
+}
+
+ship_names = {
+	Zamolxis Sabazios Zibelthiurdos Cotys Bendis Semele Derzelas 
+	Cottyto Gebeleizis Kogaionon "Heros Karabazmos"
+}
+

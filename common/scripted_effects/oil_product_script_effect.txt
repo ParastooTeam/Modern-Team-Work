@@ -1,0 +1,318 @@
+oil_bought_script_effect = {
+	if = {
+		limit = { 
+			OR = {
+				tag = CHN
+				tag = INI
+				tag = USA
+			}
+		}
+		set_variable = {
+			which = bought_oil
+			value = 100
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = JAP
+				tag = SKO
+				tag = GER
+				tag = GBR
+				tag = FR2
+				tag = SPA 
+			}
+		}
+		set_variable = {
+			which = bought_oil
+			value = 90
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = EGY
+				tag = AUS
+				tag = BRZ
+				tag = IDN
+				tag = TKY
+				tag = ITA
+				tag = POL
+				tag = LAP
+				tag = RSA
+				tag = ISR
+				tag = TWN
+			}
+		}
+		set_variable = {
+			which = bought_oil
+			value = 80
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = GRE
+				tag = SWE
+				tag = UKR
+				tag = VTN
+				tag = PEU
+				tag = POR
+				tag = SER
+				tag = NOK
+				tag = THL
+				tag = PAK
+				tag = DAN
+				tag = RMN
+			}
+		}
+		set_variable = {
+			which = bought_oil
+			value = 70
+		}
+	}
+	if = {
+		limit = { 
+			OR = {
+				tag = MOR
+				tag = CNG
+				tag = BOL
+				tag = COL
+				tag = MEX
+				tag = BUL
+				tag = NED
+				tag = BEL
+				tag = IRE
+				tag = TUN
+				tag = NMB
+			}
+		}
+		set_variable = {
+			which = bought_oil
+			value = 60
+		}
+	}
+}
+oil_product_script_effect = {
+		if = {
+			limit = { 
+				tag = USA
+			}
+			set_variable = {
+				which = oil_production
+				value = 108
+			}
+		}
+		if = {
+			limit = { 
+				tag = RUS
+			}
+			set_variable = {
+				which = oil_production
+				value = 90
+			}
+		}
+		if = {
+			limit = { 
+				tag = SAU
+			}
+			set_variable = {
+				which = oil_production
+				value = 76
+			}
+		}
+		if = {
+			limit = { 
+				tag = IRQ
+			}
+			set_variable = {
+				which = oil_production
+				value = 40
+			}
+		}
+		if = {
+			limit = { 
+				tag = CAN
+			}
+			set_variable = {
+				which = oil_production
+				value = 40
+			}
+		}
+		if = {
+			limit = { 
+				tag = UAE
+			}
+			set_variable = {
+				which = oil_production
+				value = 30
+			}
+		}
+		if = {
+			limit = { 
+				tag = BRZ
+			}
+			set_variable = {
+				which = oil_production
+				value = 29
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					tag = IRA
+					tag = IRN
+				} 
+			}
+			set_variable = {
+				which = oil_production
+				value = 26
+			}
+		}
+		if = {
+			limit = { 
+				tag = KUW
+			}
+			set_variable = {
+				which = oil_production
+				value = 25
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					tag = NOR
+					tag = MEX
+					tag = KZK
+				}
+			}
+			set_variable = {
+				which = oil_production
+				value = 17
+			}
+		}
+		if = {
+			limit = { 
+				tag = NIG
+			}
+			set_variable = {
+				which = oil_production
+				value = 16
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					tag = LIB
+					tag = QTR
+				}
+			}
+			set_variable = {
+				which = oil_production
+				value = 13
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					tag = AGL
+					tag = ALG
+				}
+			}
+			set_variable = {
+				which = oil_production
+				value = 11
+			}
+		}
+		if = {
+			limit = { 
+				tag = OMA
+			}
+			set_variable = {
+				which = oil_production
+				value = 9
+			}
+		}
+		if = {
+			limit = { 
+				tag = GBR
+			}
+			set_variable = {
+				which = oil_production
+				value = 8
+			}
+		}
+		if = {
+			limit = { 
+				tag = AZE
+			}
+			set_variable = {
+				which = oil_production
+				value = 7
+			}
+		}
+		if = {
+			limit = { 
+				tag = IDN
+			}
+			set_variable = {
+				which = oil_production
+				value = 7
+			}
+		}
+		if = {
+			limit = { 
+				OR = {
+					tag = COL
+					tag = VNZ
+				}
+				
+			}
+			set_variable = {
+				which = oil_production
+				value = 4
+			}
+		}
+		if = {
+			limit = { 
+					OR = {
+						tag = BHR
+						tag = SSU
+					}
+				}
+			set_variable = {
+				which = oil_production
+				value = 1
+			}
+		}
+		if = {
+			limit = { 
+					oil = 1
+				}
+			every_country = {
+				limit = {
+					oil = 1
+				}
+
+			}
+			change_variable = {
+				which = oil_production
+				value = 1
+			}
+		}
+}
+
+set_oil_product = {
+	if = {
+		limit = {
+			NOT = { oil = 1 }
+			NOT = { check_variable = { which = oil_production value = 1 } }
+		}
+		set_variable = {
+			which = oil_production
+			value = 0
+		}
+	}
+}
+
+

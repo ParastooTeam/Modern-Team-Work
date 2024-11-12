@@ -1,0 +1,209 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_aa_missile_ship_icon"
+		texturefile = "gfx/interface/modern_icons/aa_missile_ship_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_aa_question_icon"
+		texturefile = "gfx/interface/modern_icons/aa_question_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_aa_ship_target_icon"
+		texturefile = "gfx/interface/modern_icons/aa_ship_target_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_missile_us_icon"
+		texturefile = "gfx/interface/modern_icons/missile_us_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_atomic_bomb_icon"
+		texturefile = "gfx/interface/modern_icons/atomic_bomb_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_security_council"
+		texturefile = "gfx/interface/modern_icons/security_council.dds"
+	}
+	spriteType = {
+		name = "GFX_non_aggre"
+		texturefile = "gfx/interface/modern_icons/non_aggre.dds"
+	}
+	spriteType = {
+		name = "GFX_embassy"
+		texturefile = "gfx/interface/modern_icons/embassy.dds"
+	}
+	spriteType = {
+		name = "GFX_insult"
+		texturefile = "gfx/interface/modern_icons/insult.dds"
+	}
+	spriteType = {
+		name = "GFX_upgrade_icon_defense"
+		texturefile = "gfx/interface/modern_icons/upgrade_icon_defense.dds"
+	}
+	spriteType = {
+		name = "GFX_upgrade_icon_attack"
+		texturefile = "gfx/interface/modern_icons/upgrade_icon_attack.dds"
+	}
+	spriteType = {
+		name = "GFX_EU_icon"
+		texturefile = "gfx/interface/modern_icons/EU_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_missile_desition_icon"
+		texturefile = "gfx/interface/modern_icons/missile_desition_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_info"
+		texturefile = "gfx/interface/modern_icons/info.dds"
+	}
+	spriteType = {
+		name = "GFX_tax_icon_m"
+		texturefile = "gfx/interface/modern_icons/tax_icon_m.dds"
+	}
+	spriteType = {
+		name = "GFX_vote_icon_m"
+		texturefile = "gfx/interface/modern_icons/vote_icon_m.dds"
+	}
+	spriteType = {
+		name = "GFX_bank_icon"
+		texturefile = "gfx/interface/modern_icons/bank_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_anti_drug_icon"
+		texturefile = "gfx/interface/modern_icons/anti_drug_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_oil_icon"
+		texturefile = "gfx/interface/modern_icons/oil_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_gov_fac_icon"
+		texturefile = "gfx/interface/modern_icons/gov_fac_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_car_icon"
+		texturefile = "gfx/interface/modern_icons/car_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_airplan_icon"
+		texturefile = "gfx/interface/modern_icons/airplan_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_naval_arms_icon"
+		texturefile = "gfx/interface/modern_icons/naval_arms_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_electronic_icon"
+		texturefile = "gfx/interface/modern_icons/electronic_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_arms_icon"
+		texturefile = "gfx/interface/modern_icons/arms_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_eye_icon"
+		texturefile = "gfx/interface/modern_icons/eye_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_eye_cant_icon"
+		texturefile = "gfx/interface/modern_icons/eye_cant_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_warning_icon"
+		texturefile = "gfx/interface/modern_icons/warning_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_drug"
+		texturefile = "gfx/interface/modern_icons/drug.dds"
+	}
+	spriteType = {
+		name = "GFX_all_forces"
+		texturefile = "gfx/interface/modern_icons/all_forces.dds"
+	}
+	spriteType = {
+		name = "GFX_satelite"
+		texturefile = "gfx/interface/modern_icons/satelite.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_disciplie"
+		texturefile = "gfx/interface/modern_icons/modern_disciplie.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_morale"
+		texturefile = "gfx/interface/modern_icons/modern_morale.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_naval_morale"
+		texturefile = "gfx/interface/modern_icons/modern_naval_morale.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_shock"
+		texturefile = "gfx/interface/modern_icons/modern_shock.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_shock_recived"
+		texturefile = "gfx/interface/modern_icons/modern_shock_recived.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_fire_recived"
+		texturefile = "gfx/interface/modern_icons/modern_fire_recived.dds"
+	}
+	spriteType = {
+		name = "GFX_modern_fire"
+		texturefile = "gfx/interface/modern_icons/modern_fire.dds"
+	}
+	spriteType = {
+		name = "GFX_land_limit_reduce"
+		texturefile = "gfx/interface/modern_icons/land_limit_reduce.dds"
+	}
+	spriteType = {
+		name = "GFX_land_limit"
+		texturefile = "gfx/interface/modern_icons/land_limit.dds"
+	}
+	spriteType = {
+		name = "GFX_speed_move"
+		texturefile = "gfx/interface/modern_icons/speed_move.dds"
+	}
+	spriteType = {
+		name = "GFX_morale_damage_modern"
+		texturefile = "gfx/interface/modern_icons/morale_damage_modern.dds"
+	}
+	spriteType = {
+		name = "GFX_morale_damage_recivedmodern"
+		texturefile = "gfx/interface/modern_icons/morale_damage_recivedmodern.dds"
+	}
+	spriteType = {
+		name = "GFX_gps_icon"
+		texturefile = "gfx/interface/modern_icons/gps_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_army_maitance1"
+		texturefile = "gfx/interface/modern_icons/army_maitance1.dds"
+	}
+	spriteType = {
+		name = "GFX_naval_limit"
+		texturefile = "gfx/interface/modern_icons/naval_limit.dds"
+	}
+	spriteType = {
+		name = "GFX_justify_icon"
+		texturefile = "gfx/interface/modern_icons/justify_icon.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_leader_naval_base"
+		texturefile = "gfx/interface/icon_leader_naval_base.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_leader_naval_base_send"
+		texturefile = "gfx/interface/icon_leader_naval_base_send.dds"
+	}
+	spriteType = {
+		name = "GFX_icon_diplomacy_subject_naval_base"
+		texturefile = "gfx/interface/icon_diplomacy_subject_naval_base.dds"
+	}
+	spriteType = {
+		name = "GFX_army_garrison"
+		texturefile = "gfx/interface/modern_icons/army_garrison.dds"
+	}
+	
+	
+	
+}

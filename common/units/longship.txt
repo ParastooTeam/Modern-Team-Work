@@ -1,0 +1,10 @@
+#Longboat Galley Level 3
+type = galley
+
+hull_size = 15
+base_cannons = 17
+sail_speed = 7
+
+blockade = 11
+
+sprite_level = 3

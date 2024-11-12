@@ -1,0 +1,10 @@
+#War Galley Galley Level 7
+type = galley
+
+hull_size = 38
+base_cannons = 42
+sail_speed = 11
+
+blockade = 11
+
+sprite_level = 1

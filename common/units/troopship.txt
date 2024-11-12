@@ -1,0 +1,16 @@
+#Troopship Transport Level 9
+type = transport
+
+trigger = {
+	NOT = {
+		has_country_flag = cant_make_transporter
+	}
+}
+
+
+hull_size = 9
+base_cannons = 9
+sail_speed = 13
+#blockade = 5
+
+sprite_level = 1

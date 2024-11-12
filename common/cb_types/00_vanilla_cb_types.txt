@@ -1,0 +1,76 @@
+cb_war_on_empire = {
+	valid_for_subject = no
+
+	prerequisites_self = {
+		has_country_flag = fra_enable_war_on_the_empire_cb_flag
+	}
+
+	prerequisites = {
+		FROM = { is_part_of_hre = yes } 
+	}
+
+	war_goal = war_empire_cb_wgt
+}
+
+cb_restore_personal_union = {
+	valid_for_subject = no
+
+	is_triggered_only = yes
+	months = 240
+
+	prerequisites_self = {
+		OR = {
+			government = monarchy
+			has_government_attribute = has_dutch_election
+		}
+		is_revolutionary = no
+	}
+
+	prerequisites = {
+		FROM = {
+			OR = {
+				government = monarchy
+				#has_reform = ambrosian_republic
+				# has_reform = military_dictatorship_reform
+				has_country_flag = neapolitan_republic
+			}
+			is_subject = no
+		}
+	}
+
+	war_goal = take_capital_personal_union
+}
+
+# Dishonored an alliance
+cb_dishonored_call = {
+
+	is_triggered_only = yes
+	months = 120
+
+	war_goal = superiority_insult
+}
+
+cb_fabricated_claims = {
+
+	is_triggered_only = yes
+	months = 240
+
+	war_goal = take_capital_fabricated_claims
+}
+cb_vassalize_mission = {
+	is_triggered_only = yes
+
+	war_goal = take_capital_vassalize
+}
+cb_trade_war_triggered = {
+	is_triggered_only = yes
+	war_goal = superiority_trade
+}
+cb_force_tributary = {
+	is_triggered_only = yes
+	war_goal = take_capital_vassalize
+}
+cb_hundred_years_union = {
+	is_triggered_only = yes
+	war_goal = take_capital_imperial
+}

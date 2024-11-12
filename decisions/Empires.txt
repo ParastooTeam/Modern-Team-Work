@@ -1,0 +1,155 @@
+#######################
+# written by Aetherum #
+#######################
+
+############################################################
+# some parts are written by Ruben and modified by Aetherum #
+############################################################
+
+############################################################
+# some parts are written by Imerator Orbis Terrarum Primus #
+############################################################
+
+#############################################################
+# the creation of some parts was inspired by truelove101992 #
+#############################################################
+
+country_decisions = {
+
+    form_hre_1 = {
+	    major = yes
+		color = { 100 20 200 }
+		potential = {
+             has_country_flag = open_all_decision
+		OR = {
+		religion = catholic
+		religion = anglican
+		religion = protestant
+		religion = reformed
+		religion = orthodox
+		religion = coptic
+		}
+		
+		NOT = { exists = HLR }
+		NOT = { tag = PAP }
+		NOT = { tag = ROM }
+		NOT = { tag = ROW }
+		NOT = { tag = BYZ }
+		
+		
+        OR = {
+		owns = 118 
+		owns = 134
+		owns = 266
+		owns = 50
+		owns = 85
+		owns = 1876
+		owns = 104
+		}
+		}
+		allow = {
+        owns = 118 
+		owns = 134
+		owns = 266
+		owns = 50
+		owns = 85
+		owns = 1876
+		owns = 104
+		}
+		effect = {
+		change_tag = HLR
+		
+	    }
+		ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	hre_emperor = {
+	    major = yes
+		potential = {
+             has_country_flag = open_all_decision
+		OR = {
+		tag = HLR
+	    AND = {
+		owns = 118 
+		owns = 134
+		owns = 266
+		owns = 50
+		owns = 85
+		owns = 1876
+		owns = 104
+		}
+		}
+		NOT = { has_country_modifier = HRE }
+		}
+		allow = {
+		OR = {
+        tag = HLR
+		AND = {
+		owns = 118 
+		owns = 134
+		owns = 50
+		}
+		}
+		}
+		effect = {
+		add_country_modifier = {
+				name = "HRE"
+				duration = -1
+			} 
+	    }
+		ai_will_do = {
+			factor = 1
+		}
+    }
+	
+	curia_controller = {
+	    major = yes
+		potential = {
+             has_country_flag = open_all_decision
+		has_country_modifier = kingdom_of_god
+		NOT = { has_country_modifier = THE_PAP }
+		}
+		allow = {
+        NOT = { has_country_modifier = THE_PAP }
+		}
+		effect = {
+		add_country_modifier = {
+				name = "THE_PAP"
+				duration = -1
+			} 
+	    }
+		ai_will_do = {
+			factor = 1
+		}
+		
+    }
+	
+	ge_empire_of_china = {
+	    major = yes
+		potential = {
+             has_country_flag = open_all_decision
+		is_emperor_of_china = no
+		OR = {
+		owns = 1816
+		owns = 1821
+		}
+		NOT = { has_country_modifier = mandate_of_heaven1 }
+		}
+		allow = {
+        owns = 1816
+		owns = 1821
+		}
+		effect = {
+		add_country_modifier = {
+				name = "mandate_of_heaven1"
+				duration = 3650
+			} 
+	    }
+		ai_will_do = {
+			factor = 1
+		}
+    }
+		
+}

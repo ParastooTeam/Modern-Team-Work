@@ -1,0 +1,138 @@
+country_decisions = {
+
+	modern_UN_decision = {
+		potential = {
+			#ai = no
+			has_country_flag = show_all_dip_decision
+			if = {
+				limit = {  ai = yes }
+				check_variable = {
+					which = chapter_UN value = 3
+				}
+			}
+		}
+		allow = {
+			always =  yes
+			NOT = { has_country_modifier = un_1_sanction_modifire }
+			NOT = { has_country_modifier = cooldown_request_un }
+			check_variable = {
+				which = chapter_UN value = 3
+			}
+		}
+		effect = {
+			save_global_event_target_as = un_1_sanction_target
+			add_country_modifier = {
+				name = "un_1_sanction_modifire"
+				duration = 1825
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 15
+					NOT = { great_power_rank = 16 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 2 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 14
+					NOT = { great_power_rank = 15 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 4 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 13
+					NOT = { great_power_rank = 14 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 6 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 12
+					NOT = { great_power_rank = 13 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 8 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 11
+					NOT = { great_power_rank = 12 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 10 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 10
+					NOT = { great_power_rank = 11 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 12 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 9
+					NOT = { great_power_rank = 10 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 14 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 8
+					NOT = { great_power_rank = 9 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 16 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 7
+					NOT = { great_power_rank = 8 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 18 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 6
+					NOT = { great_power_rank = 7 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 20 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 5
+					NOT = { great_power_rank = 6 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 22 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 4
+					NOT = { great_power_rank = 5 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 24 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 3
+					NOT = { great_power_rank = 4 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 26 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 2
+					NOT = { great_power_rank = 3 }
+				}
+				country_event = { id = un_sanction_less_variable_event.1 days = 28 }
+			}
+			every_country = {
+				limit = {
+					great_power_rank = 1
+					NOT = { great_power_rank = 2 }
+				}
+				country_event = { id = un_sanction_less_variable_event.2 days = 90 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

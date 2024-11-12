@@ -1,0 +1,43 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 80  60  120 } 
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	mongol_bow
+	mongol_swarm
+	mongol_steppe
+}
+
+monarch_names = {
+	"An Lushan #0" = 10
+	"Tujué #0" = 10
+	"Ton-Jazgbu #0" = 10
+	"Turpan #0" = 10
+	"Ashina #0" = 10
+}
+
+leader_names = {
+	Tocharian
+	Soghdian
+	Yaghnobi
+	Tajik
+	Yagbu
+}
+
+ship_names = {
+	Herat Kura Sumgait Bazard'uz'u Sevan
+	Agdam K'urdamir Udzary
+}
+
+
+

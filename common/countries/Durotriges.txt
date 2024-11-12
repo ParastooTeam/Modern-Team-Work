@@ -1,0 +1,75 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 74 186 183 }
+
+historical_idea_groups = {
+army_ideas
+quantity_ideas
+trade_ideas
+waffenqualitat0
+		
+}
+
+historical_units = {
+	
+	
+	gaelic_galloglaigh
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+monarch_names = {
+	"Cartimandua #0" = -10
+	"Venutius #0" = 10
+	"Vellocatus #0" = 10
+	"Caratacus #0" = 10
+	"Cunobelinus #0" = 10
+	"Cogidubnus #0" = 10
+	"Epaticcus #0" = 10
+	"Cassivellaunus #0" = 10
+	"Tasciovanus #0" = 10
+	"Togodumnus #0" = 10
+	"Canduro #0" = 10
+	"Aesu #0" = 10
+	"Saemu #0" = 10
+	"Antedi #0" = 10
+	"Prasutagus #0" = 10
+	"Boudica #0" = -10
+	"Volisios #0" = 0
+	"Cartivelios #0" = 0
+	"Imanuentius #0" = 0
+	"Mandubracius #0" = 0
+	"Addedomaros #0" = 0
+	"Dubnovellaunus #0" = 0
+}
+
+leader_names = {
+    Silures Ordovices Demetae Deceangli
+}
+
+ship_names = {
+	Aedh
+	Baedan
+	Colman
+	Donal
+	Eocha Eogan 
+	Fergal Fergus
+	Niall
+	Omagh
+	Strabane Suibne
+}
+
+
+
+

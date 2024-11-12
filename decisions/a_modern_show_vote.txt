@@ -1,0 +1,186 @@
+country_decisions = {
+	
+	dont_show_all_dip_decision = {
+		major = yes
+		color = { 110 190 40 }
+		potential = {   
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_ALL_SIDE_DECISION
+			clr_country_flag = show_all_dip_decision	
+		}
+		ai_will_do = {
+			factor = 0 
+		}
+	}
+	show_all_dip_decision = {
+		major = yes
+		color = { 110 190 40 }
+		potential = { 
+			ai = no
+			NOT = { has_country_flag = show_all_dip_decision }
+		}
+		allow = {			
+		}
+		effect = {
+			custom_tooltip = SHOW_ALL_SIDE_DECISION
+			set_country_flag = show_all_dip_decision
+			
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	dont_show_EU_decision = {
+		major = yes
+		color = { 110 190 40 }
+		potential = {   
+			ai = no
+			has_country_flag = show_EU_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_ALL_SIDE_DECISION
+			clr_country_flag = show_EU_decision
+			
+		}
+		ai_will_do = {
+			factor = 0 
+		}
+	}
+	show_EU_decision = {
+		major = yes
+		color = { 110 190 40 }
+		potential = { 
+			ai = no
+			NOT = { has_country_flag = show_EU_decision }
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = SHOW_EU_DECISION
+			set_country_flag = show_EU_decision
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	show_vote_desition = {
+		color = { 100 200 200 }
+		potential = {
+			NOT = { has_country_flag = show_vote }
+			has_country_flag = show_all_dip_decision
+			ai = no
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = SHOW_VOTE
+			set_country_flag = show_vote
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	dont_show_vote_desition = {
+		color = { 100 200 200 }
+		potential = {
+			has_country_flag = show_vote
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_VOTE
+			clr_country_flag = show_vote
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	show_veto_desition = {
+		color = { 100 200 200 }
+		potential = {
+			NOT = { has_country_flag = show_veto }
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = SHOW_VETO
+			set_country_flag = show_veto
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	dont_show_veto_desition = {
+		color = { 100 200 200 }
+		potential = {
+			has_country_flag = show_veto
+			ai = no
+			has_country_flag = show_all_dip_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_VETO
+			clr_country_flag = show_veto
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	show_EU_vote_desition = {
+		color = { 100 200 200 }
+		potential = {
+			NOT = { has_country_flag = show_EU_vote }
+			ai = no
+			has_country_flag = show_EU_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = SHOW_EU_VOTE1
+			set_country_flag = show_EU_vote
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	dont_EU_show_vote_desition = {
+		color = { 100 200 200 }
+		potential = {
+			has_country_flag = show_EU_vote
+			ai = no
+			has_country_flag = show_EU_decision
+		}
+		allow = {
+			
+		}
+		effect = {
+			custom_tooltip = DONT_SHOW_EU_VOTE
+			clr_country_flag = show_EU_vote
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

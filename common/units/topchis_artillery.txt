@@ -1,0 +1,12 @@
+# Topchis Cavalry
+	
+type = cavalry
+unit_type = western
+
+maneuver = 3
+offensive_morale = 3
+defensive_morale = 2
+offensive_fire = 3
+defensive_fire = 3
+offensive_shock = 7
+defensive_shock = 6
