@@ -1,0 +1,21 @@
+
+directory = {
+	name = "common"
+	sub_directories = yes
+	file_extension = ".txt"
+}
+directory = {
+	name = "common"
+	sub_directories = yes
+	file_extension = ".lua"
+}
+directory = {
+	name = "events"
+	sub_directories = yes
+	file_extension = ".txt"
+}
+directory = {
+	name = "decisions"
+	sub_directories = yes
+	file_extension = ".txt"
+}
